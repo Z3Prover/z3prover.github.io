@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Z3.Arithmetic.Real.html">
+<link rel="Up" href="Z3.Arithmetic.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Z3" rel="Chapter" href="Z3.html">
+<link title="Z3enums" rel="Chapter" href="Z3enums.html"><title>Z3.Arithmetic.Integer</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Z3.Arithmetic.html" title="Z3.Arithmetic">Up</a>
+&nbsp;<a class="post" href="Z3.Arithmetic.Real.html" title="Z3.Arithmetic.Real">Next</a>
+</div>
+<h1>Module <a href="type_Z3.Arithmetic.Integer.html">Z3.Arithmetic.Integer</a></h1>
+
+<pre><span class="keyword">module</span> Integer: <code class="code">sig</code> <a href="Z3.Arithmetic.Integer.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Integer Arithmetic<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALmk_sort"><span class="keyword">val</span> mk_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create a new integer sort.<br>
+</div>
+
+<pre><span id="VALget_int"><span class="keyword">val</span> get_int</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> int</code></pre><div class="info ">
+Retrieve the int value.<br>
+</div>
+
+<pre><span id="VALget_big_int"><span class="keyword">val</span> get_big_int</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> Big_int.big_int</code></pre><div class="info ">
+Get a big_int from an integer numeral<br>
+</div>
+
+<pre><span id="VALnumeral_to_string"><span class="keyword">val</span> numeral_to_string</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> string</code></pre><div class="info ">
+Returns a string representation of a numeral.<br>
+</div>
+
+<pre><span id="VALmk_const"><span class="keyword">val</span> mk_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Creates an integer constant.<br>
+</div>
+
+<pre><span id="VALmk_const_s"><span class="keyword">val</span> mk_const_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Creates an integer constant.<br>
+</div>
+
+<pre><span id="VALmk_mod"><span class="keyword">val</span> mk_mod</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create an expression representing <code class="code">t1 mod t2</code>.
+		The arguments must have int type.<br>
+</div>
+
+<pre><span id="VALmk_rem"><span class="keyword">val</span> mk_rem</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create an expression representing <code class="code">t1 rem t2</code>.
+		The arguments must have int type.<br>
+</div>
+
+<pre><span id="VALmk_numeral_s"><span class="keyword">val</span> mk_numeral_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create an integer numeral.<br>
+</div>
+
+<pre><span id="VALmk_numeral_i"><span class="keyword">val</span> mk_numeral_i</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create an integer numeral.<br>
+<b>Returns</b> A Term with the given value and sort Integer<br>
+</div>
+
+<pre><span id="VALmk_int2real"><span class="keyword">val</span> mk_int2real</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Coerce an integer to a real.	
+<p>
+
+		There is also a converse operation exposed. It follows the semantics prescribed by the SMT-LIB standard.
+<p>
+
+		You can take the floor of a real by creating an auxiliary integer Term <code class="code">k</code> and
+		and asserting <code class="code">MakeInt2Real(k) &lt;= t1 &lt; MkInt2Real(k)+1</code>.
+		The argument must be of integer sort.<br>
+</div>
+
+<pre><span id="VALmk_int2bv"><span class="keyword">val</span> mk_int2bv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create an n-bit bit-vector from an integer argument.  
+<p>
+
+		  NB. This function is essentially treated as uninterpreted. 
+		  So you cannot expect Z3 to precisely reflect the semantics of this function
+		  when solving constraints with this function.
+<p>
+
+		  The argument must be of integer sort.<br>
+</div>
+</body></html>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Z3.Params.html">
+<link rel="next" href="Z3.Boolean.html">
+<link rel="Up" href="Z3.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Z3" rel="Chapter" href="Z3.html">
+<link title="Z3enums" rel="Chapter" href="Z3enums.html"><title>Z3.Expr</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Z3.Params.html" title="Z3.Params">Previous</a>
+&nbsp;<a class="up" href="Z3.html" title="Z3">Up</a>
+&nbsp;<a class="post" href="Z3.Boolean.html" title="Z3.Boolean">Next</a>
+</div>
+<h1>Module <a href="type_Z3.Expr.html">Z3.Expr</a></h1>
+
+<pre><span class="keyword">module</span> Expr: <code class="code">sig</code> <a href="Z3.Expr.html">..</a> <code class="code">end</code></pre><div class="info module top">
+General Expressions (terms)<br>
+</div>
+<hr width="100%">
+
+<pre><code><span id="TYPEexpr"><span class="keyword">type</span> <code class="type"></code>expr</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTexpr.Expr"><span class="constructor">Expr</span></span> <span class="keyword">of</span> <code class="type"><a href="Z3.AST.html#TYPEast">AST.ast</a></code></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALast_of_expr"><span class="keyword">val</span> ast_of_expr</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.AST.html#TYPEast">AST.ast</a></code></pre>
+<pre><span id="VALexpr_of_ast"><span class="keyword">val</span> expr_of_ast</span> : <code class="type"><a href="Z3.AST.html#TYPEast">AST.ast</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre>
+<pre><span id="VALsimplify"><span class="keyword">val</span> simplify</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Params.html#TYPEparams">Params.params</a> option -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Returns a simplified version of the expression.
+      <a href="Z3.Expr.html#VALget_simplify_help"><code class="code">Expr.get_simplify_help</code></a><br>
+</div>
+
+<pre><span id="VALget_simplify_help"><span class="keyword">val</span> get_simplify_help</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string</code></pre><div class="info ">
+A string describing all available parameters to <code class="code">Expr.Simplify</code>.<br>
+</div>
+
+<pre><span id="VALget_simplify_parameter_descrs"><span class="keyword">val</span> get_simplify_parameter_descrs</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Params.ParamDescrs.html#TYPEparam_descrs">Params.ParamDescrs.param_descrs</a></code></pre><div class="info ">
+Retrieves parameter descriptions for simplifier.<br>
+</div>
+
+<pre><span id="VALget_func_decl"><span class="keyword">val</span> get_func_decl</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a></code></pre><div class="info ">
+The function declaration of the function that is applied in this expression.<br>
+</div>
+
+<pre><span id="VALget_num_args"><span class="keyword">val</span> get_num_args</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> int</code></pre><div class="info ">
+The number of arguments of the expression.<br>
+</div>
+
+<pre><span id="VALget_args"><span class="keyword">val</span> get_args</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> list</code></pre><div class="info ">
+The arguments of the expression.<br>
+</div>
+
+<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Update the arguments of the expression using an array of expressions.
+      The number of new arguments should coincide with the current number of arguments.<br>
+</div>
+
+<pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Substitute every occurrence of <code class="code">from[i]</code> in the expression with <code class="code">to[i]</code>, for <code class="code">i</code> smaller than <code class="code">num_exprs</code>.
+<p>
+
+      The result is the new expression. The arrays <code class="code">from</code> and <code class="code">to</code> must have size <code class="code">num_exprs</code>.
+      For every <code class="code">i</code> smaller than <code class="code">num_exprs</code>, we must have that 
+      sort of <code class="code">from[i]</code> must be equal to sort of <code class="code">to[i]</code>.<br>
+</div>
+
+<pre><span id="VALsubstitute_one"><span class="keyword">val</span> substitute_one</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Substitute every occurrence of <code class="code">from</code> in the expression with <code class="code">to</code>.
+      <a href="Z3.Expr.html#VALsubstitute"><code class="code">Expr.substitute</code></a><br>
+</div>
+
+<pre><span id="VALsubstitute_vars"><span class="keyword">val</span> substitute_vars</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Substitute the free variables in the expression with the expressions in the expr array
+<p>
+
+      For every <code class="code">i</code> smaller than <code class="code">num_exprs</code>, the variable with de-Bruijn index <code class="code">i</code> is replaced with term <code class="code">to[i]</code>.<br>
+</div>
+
+<pre><span id="VALtranslate"><span class="keyword">val</span> translate</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Translates (copies) the term to another context.<br>
+<b>Returns</b> A copy of the term which is associated with the other context<br>
+</div>
+
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> string</code></pre><div class="info ">
+Returns a string representation of the expression.<br>
+</div>
+
+<pre><span id="VALis_numeral"><span class="keyword">val</span> is_numeral</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a numeral<br>
+</div>
+
+<pre><span id="VALis_well_sorted"><span class="keyword">val</span> is_well_sorted</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is well-sorted.<br>
+<b>Returns</b> True if the term is well-sorted, false otherwise.<br>
+</div>
+
+<pre><span id="VALget_sort"><span class="keyword">val</span> get_sort</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+The Sort of the term.<br>
+</div>
+
+<pre><span id="VALis_const"><span class="keyword">val</span> is_const</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term represents a constant.<br>
+</div>
+
+<pre><span id="VALmk_const"><span class="keyword">val</span> mk_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Creates a new constant.<br>
+</div>
+
+<pre><span id="VALmk_const_s"><span class="keyword">val</span> mk_const_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Creates a new constant.<br>
+</div>
+
+<pre><span id="VALmk_const_f"><span class="keyword">val</span> mk_const_f</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Creates a  constant from the func_decl.<br>
+</div>
+
+<pre><span id="VALmk_fresh_const"><span class="keyword">val</span> mk_fresh_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Creates a fresh constant with a name prefixed with a string.<br>
+</div>
+
+<pre><span id="VALmk_app"><span class="keyword">val</span> mk_app</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Create a new function application.<br>
+</div>
+
+<pre><span id="VALmk_numeral_string"><span class="keyword">val</span> mk_numeral_string</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Create a numeral of a given sort.<br>
+<b>Returns</b> A Term with the given value and sort<br>
+</div>
+
+<pre><span id="VALmk_numeral_int"><span class="keyword">val</span> mk_numeral_int</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
+Create a numeral of a given sort. This function can be use to create numerals that fit in a machine integer.
+      It is slightly faster than <code class="code">MakeNumeral</code> since it is not necessary to parse a string.<br>
+<b>Returns</b> A Term with the given value and sort<br>
+</div>
+
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> -> bool</code></pre><div class="info ">
+Comparison operator.<br>
+<b>Returns</b> True if the two expr's are equal; false otherwise.<br>
+</div>
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> -> int</code></pre><div class="info ">
+Object Comparison.<br>
+<b>Returns</b> Negative if the first expr should be sorted before the second, positive if after, else zero.<br>
+</div>
+</body></html>
