@@ -8278,10 +8278,60 @@ x&nbsp;&lt;&nbsp;y<br>
 <a href="#-FPSort">FPSort</a>(8,&nbsp;24)</tt></dd></dl>
  <dl><dt><a name="-fpToFP"><strong>fpToFP</strong></a>(a1, a2<font color="#909090">=None</font>, a3<font color="#909090">=None</font>)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression&nbsp;from&nbsp;other&nbsp;terms.</tt></dd></dl>
  <dl><dt><a name="-fpToFPUnsigned"><strong>fpToFPUnsigned</strong></a>(rm, x, s)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression,&nbsp;from&nbsp;unsigned&nbsp;bit-vector&nbsp;to&nbsp;floating-point&nbsp;expression.</tt></dd></dl>
- <dl><dt><a name="-fpToIEEEBV"><strong>fpToIEEEBV</strong></a>(x)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression,&nbsp;from&nbsp;floating-point&nbsp;expression&nbsp;to&nbsp;IEEE&nbsp;bit-vector.</tt></dd></dl>
- <dl><dt><a name="-fpToReal"><strong>fpToReal</strong></a>(x)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression,&nbsp;from&nbsp;floating-point&nbsp;expression&nbsp;to&nbsp;real.</tt></dd></dl>
- <dl><dt><a name="-fpToSBV"><strong>fpToSBV</strong></a>(rm, x, s)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression,&nbsp;from&nbsp;floating-point&nbsp;expression&nbsp;to&nbsp;signed&nbsp;bit-vector.</tt></dd></dl>
- <dl><dt><a name="-fpToUBV"><strong>fpToUBV</strong></a>(rm, x, s)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression,&nbsp;from&nbsp;floating-point&nbsp;expression&nbsp;to&nbsp;unsigned&nbsp;bit-vector.</tt></dd></dl>
+ <dl><dt><a name="-fpToIEEEBV"><strong>fpToIEEEBV</strong></a>(x)</dt><dd><tt>rief&nbsp;Conversion&nbsp;of&nbsp;a&nbsp;floating-point&nbsp;term&nbsp;into&nbsp;a&nbsp;bit-vector&nbsp;term&nbsp;in&nbsp;IEEE&nbsp;754-2008&nbsp;format.<br>
+&nbsp;<br>
+The&nbsp;size&nbsp;of&nbsp;the&nbsp;resulting&nbsp;bit-vector&nbsp;is&nbsp;automatically&nbsp;determined.&nbsp;<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;IEEE&nbsp;754-2008&nbsp;allows&nbsp;multiple&nbsp;different&nbsp;representations&nbsp;of&nbsp;NaN.&nbsp;This&nbsp;conversion&nbsp;<br>
+knows&nbsp;only&nbsp;one&nbsp;NaN&nbsp;and&nbsp;it&nbsp;will&nbsp;always&nbsp;produce&nbsp;the&nbsp;same&nbsp;bit-vector&nbsp;represenatation&nbsp;of&nbsp;<br>
+that&nbsp;NaN.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-FP">FP</a>('x',&nbsp;<a href="#-FPSort">FPSort</a>(8,&nbsp;24))<br>
+&gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;<a href="#-fpToIEEEBV">fpToIEEEBV</a>(x)<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_fp">is_fp</a>(x)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_bv">is_bv</a>(y)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_fp">is_fp</a>(y)<br>
+False<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_bv">is_bv</a>(x)<br>
+False</tt></dd></dl>
+ <dl><dt><a name="-fpToReal"><strong>fpToReal</strong></a>(x)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression,&nbsp;from&nbsp;floating-point&nbsp;expression&nbsp;to&nbsp;real.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-FP">FP</a>('x',&nbsp;<a href="#-FPSort">FPSort</a>(8,&nbsp;24))<br>
+&gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;<a href="#-fpToReal">fpToReal</a>(x)<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_fp">is_fp</a>(x)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_real">is_real</a>(y)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_fp">is_fp</a>(y)<br>
+False<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_real">is_real</a>(x)<br>
+False</tt></dd></dl>
+ <dl><dt><a name="-fpToSBV"><strong>fpToSBV</strong></a>(rm, x, s)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression,&nbsp;from&nbsp;floating-point&nbsp;expression&nbsp;to&nbsp;signed&nbsp;bit-vector.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-FP">FP</a>('x',&nbsp;<a href="#-FPSort">FPSort</a>(8,&nbsp;24))<br>
+&gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;<a href="#-fpToSBV">fpToSBV</a>(<a href="#-RTZ">RTZ</a>(),&nbsp;x,&nbsp;<a href="#-BitVecSort">BitVecSort</a>(32))<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_fp">is_fp</a>(x)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_bv">is_bv</a>(y)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_fp">is_fp</a>(y)<br>
+False<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_bv">is_bv</a>(x)<br>
+False</tt></dd></dl>
+ <dl><dt><a name="-fpToUBV"><strong>fpToUBV</strong></a>(rm, x, s)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression,&nbsp;from&nbsp;floating-point&nbsp;expression&nbsp;to&nbsp;unsigned&nbsp;bit-vector.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-FP">FP</a>('x',&nbsp;<a href="#-FPSort">FPSort</a>(8,&nbsp;24))<br>
+&gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;<a href="#-fpToUBV">fpToUBV</a>(<a href="#-RTZ">RTZ</a>(),&nbsp;x,&nbsp;<a href="#-BitVecSort">BitVecSort</a>(32))<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_fp">is_fp</a>(x)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_bv">is_bv</a>(y)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_fp">is_fp</a>(y)<br>
+False<br>
+&gt;&gt;&gt;&nbsp;print&nbsp;<a href="#-is_bv">is_bv</a>(x)<br>
+False</tt></dd></dl>
  <dl><dt><a name="-fpZero"><strong>fpZero</strong></a>(s, negative)</dt></dl>
  <dl><dt><a name="-get_as_array_func"><strong>get_as_array_func</strong></a>(n)</dt><dd><tt>Return&nbsp;the&nbsp;function&nbsp;declaration&nbsp;f&nbsp;associated&nbsp;with&nbsp;a&nbsp;Z3&nbsp;expression&nbsp;of&nbsp;the&nbsp;form&nbsp;(_&nbsp;as-array&nbsp;f).</tt></dd></dl>
  <dl><dt><a name="-get_default_fp_sort"><strong>get_default_fp_sort</strong></a>(ctx<font color="#909090">=None</font>)</dt></dl>
@@ -9324,7 +9374,7 @@ solver&nbsp;that&nbsp;determines&nbsp;satisfiability.<br>
 <strong>memset</strong> = &lt;CFunctionType object&gt;<br>
 <strong>oledll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
 <strong>pydll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
-<strong>pythonapi</strong> = &lt;PyDLL 'python dll', handle 1e000000 at 24e45d0&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'python dll', handle 1e000000 at 24945b0&gt;<br>
 <strong>sat</strong> = sat<br>
 <strong>unknown</strong> = unknown<br>
 <strong>unsat</strong> = unsat<br>
