@@ -154,7 +154,7 @@ Data Fields</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Bit-Vectors. </p>
 <pre class="fragment">Bit-vector sort.</pre> 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l02908">2908</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l02922">2922</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a50006f90d8375a1c3c002658096dcf31"></a>
 <div class="memitem">
@@ -187,27 +187,27 @@ Data Fields</h2></td></tr>
 &gt;&gt;&gt; b.cast(10).sexpr()
 '#x0000000a'
 </pre> 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l02923">2923</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l02923"></a><span class="lineno"><a class="line" href="classz3py_1_1_bit_vec_sort_ref.html#a50006f90d8375a1c3c002658096dcf31"> 2923</a></span>&#160;</div>
-<div class="line"><a name="l02924"></a><span class="lineno"> 2924</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_bit_vec_sort_ref.html#a50006f90d8375a1c3c002658096dcf31">cast</a>(self, val):</div>
-<div class="line"><a name="l02925"></a><span class="lineno"> 2925</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Try to cast `val` as a Bit-Vector.</span></div>
-<div class="line"><a name="l02926"></a><span class="lineno"> 2926</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l02927"></a><span class="lineno"> 2927</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b = BitVecSort(32)</span></div>
-<div class="line"><a name="l02928"></a><span class="lineno"> 2928</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b.cast(10)</span></div>
-<div class="line"><a name="l02929"></a><span class="lineno"> 2929</span>&#160;<span class="stringliteral">        10</span></div>
-<div class="line"><a name="l02930"></a><span class="lineno"> 2930</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b.cast(10).sexpr()</span></div>
-<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;<span class="stringliteral">        &#39;#x0000000a&#39;</span></div>
-<div class="line"><a name="l02932"></a><span class="lineno"> 2932</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l02933"></a><span class="lineno"> 2933</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a7a5f9219fea66c27cbda7c31ddb2cbd7">is_expr</a>(val):</div>
-<div class="line"><a name="l02934"></a><span class="lineno"><a class="line" href="classz3py_1_1_bit_vec_sort_ref.html#a4c3a358572dcbbc235d824868164272a"> 2934</a></span>&#160;            <span class="keywordflow">if</span> __debug__:</div>
-<div class="line"><a name="l02935"></a><span class="lineno"> 2935</span>&#160;                _z3_assert(self.<a class="code" href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">ctx</a> == val.ctx, <span class="stringliteral">&quot;Context mismatch&quot;</span>)</div>
-<div class="line"><a name="l02936"></a><span class="lineno"> 2936</span>&#160;            <span class="comment"># Idea: use sign_extend if sort of val is a bitvector of smaller size</span></div>
-<div class="line"><a name="l02937"></a><span class="lineno"> 2937</span>&#160;            <span class="keywordflow">return</span> val</div>
-<div class="line"><a name="l02938"></a><span class="lineno"> 2938</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l02939"></a><span class="lineno"> 2939</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#a1c043c49540ec998f98d280bf7cc596f">BitVecVal</a>(val, self)</div>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l02937">2937</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l02937"></a><span class="lineno"><a class="line" href="classz3py_1_1_bit_vec_sort_ref.html#a50006f90d8375a1c3c002658096dcf31"> 2937</a></span>&#160;</div>
+<div class="line"><a name="l02938"></a><span class="lineno"> 2938</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_bit_vec_sort_ref.html#a50006f90d8375a1c3c002658096dcf31">cast</a>(self, val):</div>
+<div class="line"><a name="l02939"></a><span class="lineno"> 2939</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Try to cast `val` as a Bit-Vector.</span></div>
+<div class="line"><a name="l02940"></a><span class="lineno"> 2940</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l02941"></a><span class="lineno"> 2941</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b = BitVecSort(32)</span></div>
+<div class="line"><a name="l02942"></a><span class="lineno"> 2942</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b.cast(10)</span></div>
+<div class="line"><a name="l02943"></a><span class="lineno"> 2943</span>&#160;<span class="stringliteral">        10</span></div>
+<div class="line"><a name="l02944"></a><span class="lineno"> 2944</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b.cast(10).sexpr()</span></div>
+<div class="line"><a name="l02945"></a><span class="lineno"> 2945</span>&#160;<span class="stringliteral">        &#39;#x0000000a&#39;</span></div>
+<div class="line"><a name="l02946"></a><span class="lineno"> 2946</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l02947"></a><span class="lineno"> 2947</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a7a5f9219fea66c27cbda7c31ddb2cbd7">is_expr</a>(val):</div>
+<div class="line"><a name="l02948"></a><span class="lineno"><a class="line" href="classz3py_1_1_bit_vec_sort_ref.html#a4c3a358572dcbbc235d824868164272a"> 2948</a></span>&#160;            <span class="keywordflow">if</span> __debug__:</div>
+<div class="line"><a name="l02949"></a><span class="lineno"> 2949</span>&#160;                _z3_assert(self.<a class="code" href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">ctx</a> == val.ctx, <span class="stringliteral">&quot;Context mismatch&quot;</span>)</div>
+<div class="line"><a name="l02950"></a><span class="lineno"> 2950</span>&#160;            <span class="comment"># Idea: use sign_extend if sort of val is a bitvector of smaller size</span></div>
+<div class="line"><a name="l02951"></a><span class="lineno"> 2951</span>&#160;            <span class="keywordflow">return</span> val</div>
+<div class="line"><a name="l02952"></a><span class="lineno"> 2952</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l02953"></a><span class="lineno"> 2953</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#a1c043c49540ec998f98d280bf7cc596f">BitVecVal</a>(val, self)</div>
 </div>
-<div class="ttc" id="namespacez3py_html_a1c043c49540ec998f98d280bf7cc596f"><div class="ttname"><a href="namespacez3py.html#a1c043c49540ec998f98d280bf7cc596f">z3py.BitVecVal</a></div><div class="ttdeci">def BitVecVal</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l03460">z3py.py:3460</a></div></div>
-<div class="ttc" id="classz3py_1_1_bit_vec_sort_ref_html_a50006f90d8375a1c3c002658096dcf31"><div class="ttname"><a href="classz3py_1_1_bit_vec_sort_ref.html#a50006f90d8375a1c3c002658096dcf31">z3py.BitVecSortRef.cast</a></div><div class="ttdeci">def cast</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02923">z3py.py:2923</a></div></div>
+<div class="ttc" id="namespacez3py_html_a1c043c49540ec998f98d280bf7cc596f"><div class="ttname"><a href="namespacez3py.html#a1c043c49540ec998f98d280bf7cc596f">z3py.BitVecVal</a></div><div class="ttdeci">def BitVecVal</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l03474">z3py.py:3474</a></div></div>
+<div class="ttc" id="classz3py_1_1_bit_vec_sort_ref_html_a50006f90d8375a1c3c002658096dcf31"><div class="ttname"><a href="classz3py_1_1_bit_vec_sort_ref.html#a50006f90d8375a1c3c002658096dcf31">z3py.BitVecSortRef.cast</a></div><div class="ttdeci">def cast</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02937">z3py.py:2937</a></div></div>
 <div class="ttc" id="classz3py_1_1_ast_ref_html_a4c3a358572dcbbc235d824868164272a"><div class="ttname"><a href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">z3py.AstRef.ctx</a></div><div class="ttdeci">ctx</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00275">z3py.py:275</a></div></div>
 <div class="ttc" id="namespacez3py_html_a7a5f9219fea66c27cbda7c31ddb2cbd7"><div class="ttname"><a href="namespacez3py.html#a7a5f9219fea66c27cbda7c31ddb2cbd7">z3py.is_expr</a></div><div class="ttdeci">def is_expr</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00961">z3py.py:961</a></div></div>
 </div><!-- fragment -->
@@ -232,23 +232,23 @@ Data Fields</h2></td></tr>
 &gt;&gt;&gt; b.size()
 32
 </pre> 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l02911">2911</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l02925">2925</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p>Referenced by <a class="el" href="z3py_8py_source.html#l03376">BitVecNumRef.as_signed_long()</a>.</p>
-<div class="fragment"><div class="line"><a name="l02911"></a><span class="lineno"><a class="line" href="classz3py_1_1_bit_vec_sort_ref.html#a8e64882b52bf2db69e0ec31977c83dc4"> 2911</a></span>&#160;</div>
-<div class="line"><a name="l02912"></a><span class="lineno"> 2912</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_bit_vec_sort_ref.html#a8e64882b52bf2db69e0ec31977c83dc4">size</a>(self):</div>
-<div class="line"><a name="l02913"></a><span class="lineno"> 2913</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the size (number of bits) of the bit-vector sort `self`.</span></div>
-<div class="line"><a name="l02914"></a><span class="lineno"> 2914</span>&#160;<span class="stringliteral">        </span></div>
-<div class="line"><a name="l02915"></a><span class="lineno"> 2915</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b = BitVecSort(32)</span></div>
-<div class="line"><a name="l02916"></a><span class="lineno"> 2916</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b.size()</span></div>
-<div class="line"><a name="l02917"></a><span class="lineno"> 2917</span>&#160;<span class="stringliteral">        32</span></div>
-<div class="line"><a name="l02918"></a><span class="lineno"> 2918</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l02919"></a><span class="lineno"> 2919</span>&#160;        <span class="keywordflow">return</span> int(<a class="code" href="group__capi.html#ga8fc3550edace7bc046e16d1f96ddb419">Z3_get_bv_sort_size</a>(self.<a class="code" href="classz3py_1_1_ast_ref.html#a67cfce02327013436cb7b33d2312f602">ctx_ref</a>(), self.<a class="code" href="classz3py_1_1_ast_ref.html#a83d838e3813fb5999c0492e0d9474bd9">ast</a>))</div>
+<p>Referenced by <a class="el" href="z3py_8py_source.html#l03390">BitVecNumRef.as_signed_long()</a>.</p>
+<div class="fragment"><div class="line"><a name="l02925"></a><span class="lineno"><a class="line" href="classz3py_1_1_bit_vec_sort_ref.html#a8e64882b52bf2db69e0ec31977c83dc4"> 2925</a></span>&#160;</div>
+<div class="line"><a name="l02926"></a><span class="lineno"> 2926</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_bit_vec_sort_ref.html#a8e64882b52bf2db69e0ec31977c83dc4">size</a>(self):</div>
+<div class="line"><a name="l02927"></a><span class="lineno"> 2927</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the size (number of bits) of the bit-vector sort `self`.</span></div>
+<div class="line"><a name="l02928"></a><span class="lineno"> 2928</span>&#160;<span class="stringliteral">        </span></div>
+<div class="line"><a name="l02929"></a><span class="lineno"> 2929</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b = BitVecSort(32)</span></div>
+<div class="line"><a name="l02930"></a><span class="lineno"> 2930</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b.size()</span></div>
+<div class="line"><a name="l02931"></a><span class="lineno"> 2931</span>&#160;<span class="stringliteral">        32</span></div>
+<div class="line"><a name="l02932"></a><span class="lineno"> 2932</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l02933"></a><span class="lineno"> 2933</span>&#160;        <span class="keywordflow">return</span> int(<a class="code" href="group__capi.html#ga84c6e60f3bcb941fd41fd6b317430c20">Z3_get_bv_sort_size</a>(self.<a class="code" href="classz3py_1_1_ast_ref.html#a67cfce02327013436cb7b33d2312f602">ctx_ref</a>(), self.<a class="code" href="classz3py_1_1_ast_ref.html#a83d838e3813fb5999c0492e0d9474bd9">ast</a>))</div>
 </div>
-<div class="ttc" id="classz3py_1_1_bit_vec_sort_ref_html_a8e64882b52bf2db69e0ec31977c83dc4"><div class="ttname"><a href="classz3py_1_1_bit_vec_sort_ref.html#a8e64882b52bf2db69e0ec31977c83dc4">z3py.BitVecSortRef.size</a></div><div class="ttdeci">def size</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02911">z3py.py:2911</a></div></div>
+<div class="ttc" id="classz3py_1_1_bit_vec_sort_ref_html_a8e64882b52bf2db69e0ec31977c83dc4"><div class="ttname"><a href="classz3py_1_1_bit_vec_sort_ref.html#a8e64882b52bf2db69e0ec31977c83dc4">z3py.BitVecSortRef.size</a></div><div class="ttdeci">def size</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02925">z3py.py:2925</a></div></div>
+<div class="ttc" id="group__capi_html_ga84c6e60f3bcb941fd41fd6b317430c20"><div class="ttname"><a href="group__capi.html#ga84c6e60f3bcb941fd41fd6b317430c20">Z3_get_bv_sort_size</a></div><div class="ttdeci">unsigned Z3_API Z3_get_bv_sort_size(Z3_context c, Z3_sort t)</div><div class="ttdoc">Return the size of the given bit-vector sort. </div></div>
 <div class="ttc" id="classz3py_1_1_ast_ref_html_a83d838e3813fb5999c0492e0d9474bd9"><div class="ttname"><a href="classz3py_1_1_ast_ref.html#a83d838e3813fb5999c0492e0d9474bd9">z3py.AstRef.ast</a></div><div class="ttdeci">ast</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00274">z3py.py:274</a></div></div>
-<div class="ttc" id="group__capi_html_ga8fc3550edace7bc046e16d1f96ddb419"><div class="ttname"><a href="group__capi.html#ga8fc3550edace7bc046e16d1f96ddb419">Z3_get_bv_sort_size</a></div><div class="ttdeci">unsigned Z3_API Z3_get_bv_sort_size(__in Z3_context c, __in Z3_sort t)</div><div class="ttdoc">Return the size of the given bit-vector sort. </div></div>
-<div class="ttc" id="classz3py_1_1_ast_ref_html_a67cfce02327013436cb7b33d2312f602"><div class="ttname"><a href="classz3py_1_1_ast_ref.html#a67cfce02327013436cb7b33d2312f602">z3py.AstRef.ctx_ref</a></div><div class="ttdeci">def ctx_ref</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00305">z3py.py:305</a></div></div>
+<div class="ttc" id="classz3py_1_1_ast_ref_html_a67cfce02327013436cb7b33d2312f602"><div class="ttname"><a href="classz3py_1_1_ast_ref.html#a67cfce02327013436cb7b33d2312f602">z3py.AstRef.ctx_ref</a></div><div class="ttdeci">def ctx_ref</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00304">z3py.py:304</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -276,14 +276,14 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l02920">2920</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l02920"></a><span class="lineno"><a class="line" href="classz3py_1_1_bit_vec_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98"> 2920</a></span>&#160;</div>
-<div class="line"><a name="l02921"></a><span class="lineno"> 2921</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_bit_vec_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98">subsort</a>(self, other):</div>
-<div class="line"><a name="l02922"></a><span class="lineno"> 2922</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#a8e1ff7fbe25be1b470839fb002a68291">is_bv_sort</a>(other) <span class="keywordflow">and</span> self.<a class="code" href="classz3py_1_1_bit_vec_sort_ref.html#a8e64882b52bf2db69e0ec31977c83dc4">size</a>() &lt; other.size()</div>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l02934">2934</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l02934"></a><span class="lineno"><a class="line" href="classz3py_1_1_bit_vec_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98"> 2934</a></span>&#160;</div>
+<div class="line"><a name="l02935"></a><span class="lineno"> 2935</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_bit_vec_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98">subsort</a>(self, other):</div>
+<div class="line"><a name="l02936"></a><span class="lineno"> 2936</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#a8e1ff7fbe25be1b470839fb002a68291">is_bv_sort</a>(other) <span class="keywordflow">and</span> self.<a class="code" href="classz3py_1_1_bit_vec_sort_ref.html#a8e64882b52bf2db69e0ec31977c83dc4">size</a>() &lt; other.size()</div>
 </div>
-<div class="ttc" id="classz3py_1_1_bit_vec_sort_ref_html_a8e64882b52bf2db69e0ec31977c83dc4"><div class="ttname"><a href="classz3py_1_1_bit_vec_sort_ref.html#a8e64882b52bf2db69e0ec31977c83dc4">z3py.BitVecSortRef.size</a></div><div class="ttdeci">def size</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02911">z3py.py:2911</a></div></div>
-<div class="ttc" id="classz3py_1_1_bit_vec_sort_ref_html_a7ed3d4333ab74409cf55604084b5ff98"><div class="ttname"><a href="classz3py_1_1_bit_vec_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98">z3py.BitVecSortRef.subsort</a></div><div class="ttdeci">def subsort</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02920">z3py.py:2920</a></div></div>
-<div class="ttc" id="namespacez3py_html_a8e1ff7fbe25be1b470839fb002a68291"><div class="ttname"><a href="namespacez3py.html#a8e1ff7fbe25be1b470839fb002a68291">z3py.is_bv_sort</a></div><div class="ttdeci">def is_bv_sort</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02940">z3py.py:2940</a></div></div>
+<div class="ttc" id="classz3py_1_1_bit_vec_sort_ref_html_a8e64882b52bf2db69e0ec31977c83dc4"><div class="ttname"><a href="classz3py_1_1_bit_vec_sort_ref.html#a8e64882b52bf2db69e0ec31977c83dc4">z3py.BitVecSortRef.size</a></div><div class="ttdeci">def size</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02925">z3py.py:2925</a></div></div>
+<div class="ttc" id="classz3py_1_1_bit_vec_sort_ref_html_a7ed3d4333ab74409cf55604084b5ff98"><div class="ttname"><a href="classz3py_1_1_bit_vec_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98">z3py.BitVecSortRef.subsort</a></div><div class="ttdeci">def subsort</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02934">z3py.py:2934</a></div></div>
+<div class="ttc" id="namespacez3py_html_a8e1ff7fbe25be1b470839fb002a68291"><div class="ttname"><a href="namespacez3py.html#a8e1ff7fbe25be1b470839fb002a68291">z3py.is_bv_sort</a></div><div class="ttdeci">def is_bv_sort</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02954">z3py.py:2954</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -298,16 +298,16 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l02934">2934</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l02948">2948</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p>Referenced by <a class="el" href="z3py_8py_source.html#l06804">Probe.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l06791">Probe.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l04855">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l05003">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06371">ApplyResult.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06765">Probe.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l06778">Probe.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06752">Probe.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l06817">Probe.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l06172">Fixedpoint.add_rule()</a>, <a class="el" href="z3py_8py_source.html#l06497">Tactic.apply()</a>, <a class="el" href="z3py_8py_source.html#l06426">ApplyResult.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l06146">Fixedpoint.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l06395">ApplyResult.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l06242">Fixedpoint.get_answer()</a>, <a class="el" href="z3py_8py_source.html#l06288">Fixedpoint.get_assertions()</a>, <a class="el" href="z3py_8py_source.html#l06251">Fixedpoint.get_cover_delta()</a>, <a class="el" href="z3py_8py_source.html#l06284">Fixedpoint.get_rules()</a>, <a class="el" href="z3py_8py_source.html#l05062">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l06142">Fixedpoint.param_descrs()</a>, <a class="el" href="z3py_8py_source.html#l06528">Tactic.param_descrs()</a>, <a class="el" href="z3py_8py_source.html#l06280">Fixedpoint.parse_file()</a>, <a class="el" href="z3py_8py_source.html#l06276">Fixedpoint.parse_string()</a>, <a class="el" href="z3py_8py_source.html#l06203">Fixedpoint.query()</a>, <a class="el" href="z3py_8py_source.html#l06132">Fixedpoint.set()</a>, <a class="el" href="z3py_8py_source.html#l06480">Tactic.solver()</a>, <a class="el" href="z3py_8py_source.html#l06309">Fixedpoint.statistics()</a>, <a class="el" href="z3py_8py_source.html#l06058">Solver.to_smt2()</a>, and <a class="el" href="z3py_8py_source.html#l06233">Fixedpoint.update_rule()</a>.</p>
+<p>Referenced by <a class="el" href="z3py_8py_source.html#l07003">Probe.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l06990">Probe.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l04892">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l05040">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06570">ApplyResult.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06964">Probe.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l06977">Probe.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06951">Probe.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l07016">Probe.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l06207">Fixedpoint.add_rule()</a>, <a class="el" href="z3py_8py_source.html#l06460">Optimize.add_soft()</a>, <a class="el" href="z3py_8py_source.html#l06696">Tactic.apply()</a>, <a class="el" href="z3py_8py_source.html#l06625">ApplyResult.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l06181">Fixedpoint.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l06594">ApplyResult.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l06277">Fixedpoint.get_answer()</a>, <a class="el" href="z3py_8py_source.html#l06323">Fixedpoint.get_assertions()</a>, <a class="el" href="z3py_8py_source.html#l06286">Fixedpoint.get_cover_delta()</a>, <a class="el" href="z3py_8py_source.html#l06319">Fixedpoint.get_rules()</a>, <a class="el" href="z3py_8py_source.html#l05099">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l06501">Optimize.model()</a>, <a class="el" href="z3py_8py_source.html#l06177">Fixedpoint.param_descrs()</a>, <a class="el" href="z3py_8py_source.html#l06442">Optimize.param_descrs()</a>, <a class="el" href="z3py_8py_source.html#l06727">Tactic.param_descrs()</a>, <a class="el" href="z3py_8py_source.html#l06315">Fixedpoint.parse_file()</a>, <a class="el" href="z3py_8py_source.html#l06311">Fixedpoint.parse_string()</a>, <a class="el" href="z3py_8py_source.html#l06238">Fixedpoint.query()</a>, <a class="el" href="z3py_8py_source.html#l06167">Fixedpoint.set()</a>, <a class="el" href="z3py_8py_source.html#l06432">Optimize.set()</a>, <a class="el" href="z3py_8py_source.html#l06679">Tactic.solver()</a>, <a class="el" href="z3py_8py_source.html#l06344">Fixedpoint.statistics()</a>, <a class="el" href="z3py_8py_source.html#l06527">Optimize.statistics()</a>, <a class="el" href="z3py_8py_source.html#l06095">Solver.to_smt2()</a>, and <a class="el" href="z3py_8py_source.html#l06268">Fixedpoint.update_rule()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 29 2015 18:05:20 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 5 2015 16:03:57 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

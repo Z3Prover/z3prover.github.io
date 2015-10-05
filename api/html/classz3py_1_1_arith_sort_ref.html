@@ -156,7 +156,7 @@ Data Fields</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Arithmetic. </p>
 <pre class="fragment">Real and Integer sorts.</pre> 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l01846">1846</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l01856">1856</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a50006f90d8375a1c3c002658096dcf31"></a>
 <div class="memitem">
@@ -194,49 +194,54 @@ False
 &gt;&gt;&gt; is_real(RealSort().cast(10))
 True
 </pre> 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l01881">1881</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l01881"></a><span class="lineno"><a class="line" href="classz3py_1_1_arith_sort_ref.html#a50006f90d8375a1c3c002658096dcf31"> 1881</a></span>&#160;</div>
-<div class="line"><a name="l01882"></a><span class="lineno"> 1882</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_arith_sort_ref.html#a50006f90d8375a1c3c002658096dcf31">cast</a>(self, val):</div>
-<div class="line"><a name="l01883"></a><span class="lineno"> 1883</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Try to cast `val` as an Integer or Real.</span></div>
-<div class="line"><a name="l01884"></a><span class="lineno"> 1884</span>&#160;<span class="stringliteral">        </span></div>
-<div class="line"><a name="l01885"></a><span class="lineno"> 1885</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; IntSort().cast(10)</span></div>
-<div class="line"><a name="l01886"></a><span class="lineno"> 1886</span>&#160;<span class="stringliteral">        10</span></div>
-<div class="line"><a name="l01887"></a><span class="lineno"> 1887</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; is_int(IntSort().cast(10))</span></div>
-<div class="line"><a name="l01888"></a><span class="lineno"> 1888</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l01889"></a><span class="lineno"> 1889</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; is_int(10)</span></div>
-<div class="line"><a name="l01890"></a><span class="lineno"> 1890</span>&#160;<span class="stringliteral">        False</span></div>
-<div class="line"><a name="l01891"></a><span class="lineno"> 1891</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; RealSort().cast(10)</span></div>
-<div class="line"><a name="l01892"></a><span class="lineno"> 1892</span>&#160;<span class="stringliteral">        10</span></div>
-<div class="line"><a name="l01893"></a><span class="lineno"> 1893</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; is_real(RealSort().cast(10))</span></div>
-<div class="line"><a name="l01894"></a><span class="lineno"> 1894</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l01895"></a><span class="lineno"> 1895</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l01896"></a><span class="lineno"> 1896</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a7a5f9219fea66c27cbda7c31ddb2cbd7">is_expr</a>(val):</div>
-<div class="line"><a name="l01897"></a><span class="lineno"><a class="line" href="classz3py_1_1_arith_sort_ref.html#a4c3a358572dcbbc235d824868164272a"> 1897</a></span>&#160;            <span class="keywordflow">if</span> __debug__:</div>
-<div class="line"><a name="l01898"></a><span class="lineno"> 1898</span>&#160;                _z3_assert(self.<a class="code" href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">ctx</a> == val.ctx, <span class="stringliteral">&quot;Context mismatch&quot;</span>)</div>
-<div class="line"><a name="l01899"></a><span class="lineno"> 1899</span>&#160;            val_s = val.sort()</div>
-<div class="line"><a name="l01900"></a><span class="lineno"> 1900</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="classz3py_1_1_ast_ref.html#a9b19d5276f5255548b6aec6d22e21817">eq</a>(val_s):</div>
-<div class="line"><a name="l01901"></a><span class="lineno"> 1901</span>&#160;                <span class="keywordflow">return</span> val</div>
-<div class="line"><a name="l01902"></a><span class="lineno"> 1902</span>&#160;            <span class="keywordflow">if</span> val_s.is_int() <span class="keywordflow">and</span> self.<a class="code" href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">is_real</a>():</div>
-<div class="line"><a name="l01903"></a><span class="lineno"> 1903</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#ab71ec2b273d03da3023070348d0942b8">ToReal</a>(val)</div>
-<div class="line"><a name="l01904"></a><span class="lineno"> 1904</span>&#160;            <span class="keywordflow">if</span> __debug__:</div>
-<div class="line"><a name="l01905"></a><span class="lineno"> 1905</span>&#160;                _z3_assert(<span class="keyword">False</span>, <span class="stringliteral">&quot;Z3 Integer/Real expression expected&quot;</span> )</div>
-<div class="line"><a name="l01906"></a><span class="lineno"> 1906</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l01907"></a><span class="lineno"> 1907</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">is_int</a>():</div>
-<div class="line"><a name="l01908"></a><span class="lineno"> 1908</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#a933cb0f9ea6321f1a875e538d6e6b054">IntVal</a>(val, self.<a class="code" href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">ctx</a>)</div>
-<div class="line"><a name="l01909"></a><span class="lineno"> 1909</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">is_real</a>():</div>
-<div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#ab1f28dca912dbf595eaec35718212694">RealVal</a>(val, self.<a class="code" href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">ctx</a>)</div>
-<div class="line"><a name="l01911"></a><span class="lineno"> 1911</span>&#160;            <span class="keywordflow">if</span> __debug__:</div>
-<div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160;                _z3_assert(<span class="keyword">False</span>, <span class="stringliteral">&quot;int, long, float, string (numeral), or Z3 Integer/Real expression expected&quot;</span>)</div>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l01891">1891</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l01891"></a><span class="lineno"><a class="line" href="classz3py_1_1_arith_sort_ref.html#a50006f90d8375a1c3c002658096dcf31"> 1891</a></span>&#160;</div>
+<div class="line"><a name="l01892"></a><span class="lineno"> 1892</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_arith_sort_ref.html#a50006f90d8375a1c3c002658096dcf31">cast</a>(self, val):</div>
+<div class="line"><a name="l01893"></a><span class="lineno"> 1893</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Try to cast `val` as an Integer or Real.</span></div>
+<div class="line"><a name="l01894"></a><span class="lineno"> 1894</span>&#160;<span class="stringliteral">        </span></div>
+<div class="line"><a name="l01895"></a><span class="lineno"> 1895</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; IntSort().cast(10)</span></div>
+<div class="line"><a name="l01896"></a><span class="lineno"> 1896</span>&#160;<span class="stringliteral">        10</span></div>
+<div class="line"><a name="l01897"></a><span class="lineno"> 1897</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; is_int(IntSort().cast(10))</span></div>
+<div class="line"><a name="l01898"></a><span class="lineno"> 1898</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l01899"></a><span class="lineno"> 1899</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; is_int(10)</span></div>
+<div class="line"><a name="l01900"></a><span class="lineno"> 1900</span>&#160;<span class="stringliteral">        False</span></div>
+<div class="line"><a name="l01901"></a><span class="lineno"> 1901</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; RealSort().cast(10)</span></div>
+<div class="line"><a name="l01902"></a><span class="lineno"> 1902</span>&#160;<span class="stringliteral">        10</span></div>
+<div class="line"><a name="l01903"></a><span class="lineno"> 1903</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; is_real(RealSort().cast(10))</span></div>
+<div class="line"><a name="l01904"></a><span class="lineno"> 1904</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l01905"></a><span class="lineno"> 1905</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l01906"></a><span class="lineno"> 1906</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a7a5f9219fea66c27cbda7c31ddb2cbd7">is_expr</a>(val):</div>
+<div class="line"><a name="l01907"></a><span class="lineno"><a class="line" href="classz3py_1_1_arith_sort_ref.html#a4c3a358572dcbbc235d824868164272a"> 1907</a></span>&#160;            <span class="keywordflow">if</span> __debug__:</div>
+<div class="line"><a name="l01908"></a><span class="lineno"> 1908</span>&#160;                _z3_assert(self.<a class="code" href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">ctx</a> == val.ctx, <span class="stringliteral">&quot;Context mismatch&quot;</span>)</div>
+<div class="line"><a name="l01909"></a><span class="lineno"> 1909</span>&#160;            val_s = val.sort()</div>
+<div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="classz3py_1_1_ast_ref.html#a9b19d5276f5255548b6aec6d22e21817">eq</a>(val_s):</div>
+<div class="line"><a name="l01911"></a><span class="lineno"> 1911</span>&#160;                <span class="keywordflow">return</span> val</div>
+<div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160;            <span class="keywordflow">if</span> val_s.is_int() <span class="keywordflow">and</span> self.<a class="code" href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">is_real</a>():</div>
+<div class="line"><a name="l01913"></a><span class="lineno"> 1913</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#ab71ec2b273d03da3023070348d0942b8">ToReal</a>(val)</div>
+<div class="line"><a name="l01914"></a><span class="lineno"> 1914</span>&#160;            <span class="keywordflow">if</span> val_s.is_bool() <span class="keywordflow">and</span> self.<a class="code" href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">is_int</a>():</div>
+<div class="line"><a name="l01915"></a><span class="lineno"> 1915</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#a2340b7cde2aa8c9dc7aeaa5dfa7e851f">If</a>(val, 1, 0)</div>
+<div class="line"><a name="l01916"></a><span class="lineno"> 1916</span>&#160;            <span class="keywordflow">if</span> val_s.is_bool() <span class="keywordflow">and</span> self.<a class="code" href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">is_real</a>():</div>
+<div class="line"><a name="l01917"></a><span class="lineno"> 1917</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#ab71ec2b273d03da3023070348d0942b8">ToReal</a>(<a class="code" href="namespacez3py.html#a2340b7cde2aa8c9dc7aeaa5dfa7e851f">If</a>(val, 1, 0))</div>
+<div class="line"><a name="l01918"></a><span class="lineno"> 1918</span>&#160;            <span class="keywordflow">if</span> __debug__:</div>
+<div class="line"><a name="l01919"></a><span class="lineno"> 1919</span>&#160;                _z3_assert(<span class="keyword">False</span>, <span class="stringliteral">&quot;Z3 Integer/Real expression expected&quot;</span> )</div>
+<div class="line"><a name="l01920"></a><span class="lineno"> 1920</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l01921"></a><span class="lineno"> 1921</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">is_int</a>():</div>
+<div class="line"><a name="l01922"></a><span class="lineno"> 1922</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#a933cb0f9ea6321f1a875e538d6e6b054">IntVal</a>(val, self.<a class="code" href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">ctx</a>)</div>
+<div class="line"><a name="l01923"></a><span class="lineno"> 1923</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">is_real</a>():</div>
+<div class="line"><a name="l01924"></a><span class="lineno"> 1924</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#ab1f28dca912dbf595eaec35718212694">RealVal</a>(val, self.<a class="code" href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">ctx</a>)</div>
+<div class="line"><a name="l01925"></a><span class="lineno"> 1925</span>&#160;            <span class="keywordflow">if</span> __debug__:</div>
+<div class="line"><a name="l01926"></a><span class="lineno"> 1926</span>&#160;                _z3_assert(<span class="keyword">False</span>, <span class="stringliteral">&quot;int, long, float, string (numeral), or Z3 Integer/Real expression expected&quot;</span>)</div>
 </div>
-<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a27d700405b20b39ca7e8250396bb9cf7"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">z3py.ArithSortRef.is_int</a></div><div class="ttdeci">def is_int</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01863">z3py.py:1863</a></div></div>
-<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a50006f90d8375a1c3c002658096dcf31"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a50006f90d8375a1c3c002658096dcf31">z3py.ArithSortRef.cast</a></div><div class="ttdeci">def cast</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01881">z3py.py:1881</a></div></div>
-<div class="ttc" id="namespacez3py_html_ab71ec2b273d03da3023070348d0942b8"><div class="ttname"><a href="namespacez3py.html#ab71ec2b273d03da3023070348d0942b8">z3py.ToReal</a></div><div class="ttdeci">def ToReal</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02828">z3py.py:2828</a></div></div>
+<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a27d700405b20b39ca7e8250396bb9cf7"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">z3py.ArithSortRef.is_int</a></div><div class="ttdeci">def is_int</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01873">z3py.py:1873</a></div></div>
+<div class="ttc" id="namespacez3py_html_a2340b7cde2aa8c9dc7aeaa5dfa7e851f"><div class="ttname"><a href="namespacez3py.html#a2340b7cde2aa8c9dc7aeaa5dfa7e851f">z3py.If</a></div><div class="ttdeci">def If</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01092">z3py.py:1092</a></div></div>
+<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a50006f90d8375a1c3c002658096dcf31"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a50006f90d8375a1c3c002658096dcf31">z3py.ArithSortRef.cast</a></div><div class="ttdeci">def cast</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01891">z3py.py:1891</a></div></div>
+<div class="ttc" id="namespacez3py_html_ab71ec2b273d03da3023070348d0942b8"><div class="ttname"><a href="namespacez3py.html#ab71ec2b273d03da3023070348d0942b8">z3py.ToReal</a></div><div class="ttdeci">def ToReal</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02842">z3py.py:2842</a></div></div>
 <div class="ttc" id="classz3py_1_1_ast_ref_html_a4c3a358572dcbbc235d824868164272a"><div class="ttname"><a href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">z3py.AstRef.ctx</a></div><div class="ttdeci">ctx</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00275">z3py.py:275</a></div></div>
-<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a3dacdb71e0fc95c49e5e51944c536d6a"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">z3py.ArithSortRef.is_real</a></div><div class="ttdeci">def is_real</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01849">z3py.py:1849</a></div></div>
-<div class="ttc" id="classz3py_1_1_ast_ref_html_a9b19d5276f5255548b6aec6d22e21817"><div class="ttname"><a href="classz3py_1_1_ast_ref.html#a9b19d5276f5255548b6aec6d22e21817">z3py.AstRef.eq</a></div><div class="ttdeci">def eq</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00309">z3py.py:309</a></div></div>
+<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a3dacdb71e0fc95c49e5e51944c536d6a"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">z3py.ArithSortRef.is_real</a></div><div class="ttdeci">def is_real</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01859">z3py.py:1859</a></div></div>
+<div class="ttc" id="classz3py_1_1_ast_ref_html_a9b19d5276f5255548b6aec6d22e21817"><div class="ttname"><a href="classz3py_1_1_ast_ref.html#a9b19d5276f5255548b6aec6d22e21817">z3py.AstRef.eq</a></div><div class="ttdeci">def eq</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00308">z3py.py:308</a></div></div>
 <div class="ttc" id="namespacez3py_html_a7a5f9219fea66c27cbda7c31ddb2cbd7"><div class="ttname"><a href="namespacez3py.html#a7a5f9219fea66c27cbda7c31ddb2cbd7">z3py.is_expr</a></div><div class="ttdeci">def is_expr</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00961">z3py.py:961</a></div></div>
-<div class="ttc" id="namespacez3py_html_ab1f28dca912dbf595eaec35718212694"><div class="ttname"><a href="namespacez3py.html#ab1f28dca912dbf595eaec35718212694">z3py.RealVal</a></div><div class="ttdeci">def RealVal</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02683">z3py.py:2683</a></div></div>
-<div class="ttc" id="namespacez3py_html_a933cb0f9ea6321f1a875e538d6e6b054"><div class="ttname"><a href="namespacez3py.html#a933cb0f9ea6321f1a875e538d6e6b054">z3py.IntVal</a></div><div class="ttdeci">def IntVal</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02672">z3py.py:2672</a></div></div>
+<div class="ttc" id="namespacez3py_html_ab1f28dca912dbf595eaec35718212694"><div class="ttname"><a href="namespacez3py.html#ab1f28dca912dbf595eaec35718212694">z3py.RealVal</a></div><div class="ttdeci">def RealVal</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02697">z3py.py:2697</a></div></div>
+<div class="ttc" id="namespacez3py_html_a933cb0f9ea6321f1a875e538d6e6b054"><div class="ttname"><a href="namespacez3py.html#a933cb0f9ea6321f1a875e538d6e6b054">z3py.IntVal</a></div><div class="ttdeci">def IntVal</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02686">z3py.py:2686</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -264,26 +269,26 @@ True
 &gt;&gt;&gt; x.is_int()
 False
 </pre> 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l01863">1863</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l01873">1873</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p>Referenced by <a class="el" href="z3py_8py_source.html#l01881">ArithSortRef.cast()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01863"></a><span class="lineno"><a class="line" href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7"> 1863</a></span>&#160;</div>
-<div class="line"><a name="l01864"></a><span class="lineno"> 1864</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">is_int</a>(self):</div>
-<div class="line"><a name="l01865"></a><span class="lineno"> 1865</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` is of the sort Integer.</span></div>
-<div class="line"><a name="l01866"></a><span class="lineno"> 1866</span>&#160;<span class="stringliteral">        </span></div>
-<div class="line"><a name="l01867"></a><span class="lineno"> 1867</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><a name="l01868"></a><span class="lineno"> 1868</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.is_int()</span></div>
-<div class="line"><a name="l01869"></a><span class="lineno"> 1869</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l01870"></a><span class="lineno"> 1870</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; (x + 1).is_int()</span></div>
-<div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l01872"></a><span class="lineno"> 1872</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Real(&#39;x&#39;)</span></div>
-<div class="line"><a name="l01873"></a><span class="lineno"> 1873</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.is_int()</span></div>
-<div class="line"><a name="l01874"></a><span class="lineno"> 1874</span>&#160;<span class="stringliteral">        False</span></div>
-<div class="line"><a name="l01875"></a><span class="lineno"> 1875</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classz3py_1_1_sort_ref.html#a2254896a75680db987e5821aab251492">kind</a>() == Z3_INT_SORT</div>
+<p>Referenced by <a class="el" href="z3py_8py_source.html#l01891">ArithSortRef.cast()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01873"></a><span class="lineno"><a class="line" href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7"> 1873</a></span>&#160;</div>
+<div class="line"><a name="l01874"></a><span class="lineno"> 1874</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">is_int</a>(self):</div>
+<div class="line"><a name="l01875"></a><span class="lineno"> 1875</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` is of the sort Integer.</span></div>
+<div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160;<span class="stringliteral">        </span></div>
+<div class="line"><a name="l01877"></a><span class="lineno"> 1877</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.is_int()</span></div>
+<div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; (x + 1).is_int()</span></div>
+<div class="line"><a name="l01881"></a><span class="lineno"> 1881</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l01882"></a><span class="lineno"> 1882</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Real(&#39;x&#39;)</span></div>
+<div class="line"><a name="l01883"></a><span class="lineno"> 1883</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.is_int()</span></div>
+<div class="line"><a name="l01884"></a><span class="lineno"> 1884</span>&#160;<span class="stringliteral">        False</span></div>
+<div class="line"><a name="l01885"></a><span class="lineno"> 1885</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l01886"></a><span class="lineno"> 1886</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classz3py_1_1_sort_ref.html#a2254896a75680db987e5821aab251492">kind</a>() == Z3_INT_SORT</div>
 </div>
-<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a27d700405b20b39ca7e8250396bb9cf7"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">z3py.ArithSortRef.is_int</a></div><div class="ttdeci">def is_int</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01863">z3py.py:1863</a></div></div>
-<div class="ttc" id="classz3py_1_1_sort_ref_html_a2254896a75680db987e5821aab251492"><div class="ttname"><a href="classz3py_1_1_sort_ref.html#a2254896a75680db987e5821aab251492">z3py.SortRef.kind</a></div><div class="ttdeci">def kind</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00459">z3py.py:459</a></div></div>
+<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a27d700405b20b39ca7e8250396bb9cf7"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">z3py.ArithSortRef.is_int</a></div><div class="ttdeci">def is_int</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01873">z3py.py:1873</a></div></div>
+<div class="ttc" id="classz3py_1_1_sort_ref_html_a2254896a75680db987e5821aab251492"><div class="ttname"><a href="classz3py_1_1_sort_ref.html#a2254896a75680db987e5821aab251492">z3py.SortRef.kind</a></div><div class="ttdeci">def kind</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00457">z3py.py:457</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -311,26 +316,26 @@ True
 &gt;&gt;&gt; x.is_real()
 False
 </pre> 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l01849">1849</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l01859">1859</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p>Referenced by <a class="el" href="z3py_8py_source.html#l01881">ArithSortRef.cast()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01849"></a><span class="lineno"><a class="line" href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a"> 1849</a></span>&#160;</div>
-<div class="line"><a name="l01850"></a><span class="lineno"> 1850</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">is_real</a>(self):</div>
-<div class="line"><a name="l01851"></a><span class="lineno"> 1851</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` is of the sort Real.</span></div>
-<div class="line"><a name="l01852"></a><span class="lineno"> 1852</span>&#160;<span class="stringliteral">        </span></div>
-<div class="line"><a name="l01853"></a><span class="lineno"> 1853</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Real(&#39;x&#39;)</span></div>
-<div class="line"><a name="l01854"></a><span class="lineno"> 1854</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.is_real()</span></div>
-<div class="line"><a name="l01855"></a><span class="lineno"> 1855</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l01856"></a><span class="lineno"> 1856</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; (x + 1).is_real()</span></div>
-<div class="line"><a name="l01857"></a><span class="lineno"> 1857</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l01858"></a><span class="lineno"> 1858</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><a name="l01859"></a><span class="lineno"> 1859</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.is_real()</span></div>
-<div class="line"><a name="l01860"></a><span class="lineno"> 1860</span>&#160;<span class="stringliteral">        False</span></div>
-<div class="line"><a name="l01861"></a><span class="lineno"> 1861</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l01862"></a><span class="lineno"> 1862</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classz3py_1_1_sort_ref.html#a2254896a75680db987e5821aab251492">kind</a>() == Z3_REAL_SORT</div>
+<p>Referenced by <a class="el" href="z3py_8py_source.html#l01891">ArithSortRef.cast()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01859"></a><span class="lineno"><a class="line" href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a"> 1859</a></span>&#160;</div>
+<div class="line"><a name="l01860"></a><span class="lineno"> 1860</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">is_real</a>(self):</div>
+<div class="line"><a name="l01861"></a><span class="lineno"> 1861</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` is of the sort Real.</span></div>
+<div class="line"><a name="l01862"></a><span class="lineno"> 1862</span>&#160;<span class="stringliteral">        </span></div>
+<div class="line"><a name="l01863"></a><span class="lineno"> 1863</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Real(&#39;x&#39;)</span></div>
+<div class="line"><a name="l01864"></a><span class="lineno"> 1864</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.is_real()</span></div>
+<div class="line"><a name="l01865"></a><span class="lineno"> 1865</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l01866"></a><span class="lineno"> 1866</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; (x + 1).is_real()</span></div>
+<div class="line"><a name="l01867"></a><span class="lineno"> 1867</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l01868"></a><span class="lineno"> 1868</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><a name="l01869"></a><span class="lineno"> 1869</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.is_real()</span></div>
+<div class="line"><a name="l01870"></a><span class="lineno"> 1870</span>&#160;<span class="stringliteral">        False</span></div>
+<div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l01872"></a><span class="lineno"> 1872</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classz3py_1_1_sort_ref.html#a2254896a75680db987e5821aab251492">kind</a>() == Z3_REAL_SORT</div>
 </div>
-<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a3dacdb71e0fc95c49e5e51944c536d6a"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">z3py.ArithSortRef.is_real</a></div><div class="ttdeci">def is_real</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01849">z3py.py:1849</a></div></div>
-<div class="ttc" id="classz3py_1_1_sort_ref_html_a2254896a75680db987e5821aab251492"><div class="ttname"><a href="classz3py_1_1_sort_ref.html#a2254896a75680db987e5821aab251492">z3py.SortRef.kind</a></div><div class="ttdeci">def kind</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00459">z3py.py:459</a></div></div>
+<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a3dacdb71e0fc95c49e5e51944c536d6a"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a3dacdb71e0fc95c49e5e51944c536d6a">z3py.ArithSortRef.is_real</a></div><div class="ttdeci">def is_real</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01859">z3py.py:1859</a></div></div>
+<div class="ttc" id="classz3py_1_1_sort_ref_html_a2254896a75680db987e5821aab251492"><div class="ttname"><a href="classz3py_1_1_sort_ref.html#a2254896a75680db987e5821aab251492">z3py.SortRef.kind</a></div><div class="ttdeci">def kind</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00457">z3py.py:457</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -358,15 +363,15 @@ False
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return `True` if `self` is a subsort of `other`.</pre> 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l01877">1877</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l01877"></a><span class="lineno"><a class="line" href="classz3py_1_1_arith_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98"> 1877</a></span>&#160;</div>
-<div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_arith_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98">subsort</a>(self, other):</div>
-<div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` is a subsort of `other`.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">is_int</a>() <span class="keywordflow">and</span> <a class="code" href="namespacez3py.html#a3f1e28665b56db8ed4e4fb865e8b444f">is_arith_sort</a>(other) <span class="keywordflow">and</span> other.is_real()</div>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l01887">1887</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l01887"></a><span class="lineno"><a class="line" href="classz3py_1_1_arith_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98"> 1887</a></span>&#160;</div>
+<div class="line"><a name="l01888"></a><span class="lineno"> 1888</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_arith_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98">subsort</a>(self, other):</div>
+<div class="line"><a name="l01889"></a><span class="lineno"> 1889</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` is a subsort of `other`.&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l01890"></a><span class="lineno"> 1890</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">is_int</a>() <span class="keywordflow">and</span> <a class="code" href="namespacez3py.html#a3f1e28665b56db8ed4e4fb865e8b444f">is_arith_sort</a>(other) <span class="keywordflow">and</span> other.is_real()</div>
 </div>
-<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a27d700405b20b39ca7e8250396bb9cf7"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">z3py.ArithSortRef.is_int</a></div><div class="ttdeci">def is_int</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01863">z3py.py:1863</a></div></div>
-<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a7ed3d4333ab74409cf55604084b5ff98"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98">z3py.ArithSortRef.subsort</a></div><div class="ttdeci">def subsort</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01877">z3py.py:1877</a></div></div>
-<div class="ttc" id="namespacez3py_html_a3f1e28665b56db8ed4e4fb865e8b444f"><div class="ttname"><a href="namespacez3py.html#a3f1e28665b56db8ed4e4fb865e8b444f">z3py.is_arith_sort</a></div><div class="ttdeci">def is_arith_sort</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01913">z3py.py:1913</a></div></div>
+<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a27d700405b20b39ca7e8250396bb9cf7"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a27d700405b20b39ca7e8250396bb9cf7">z3py.ArithSortRef.is_int</a></div><div class="ttdeci">def is_int</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01873">z3py.py:1873</a></div></div>
+<div class="ttc" id="classz3py_1_1_arith_sort_ref_html_a7ed3d4333ab74409cf55604084b5ff98"><div class="ttname"><a href="classz3py_1_1_arith_sort_ref.html#a7ed3d4333ab74409cf55604084b5ff98">z3py.ArithSortRef.subsort</a></div><div class="ttdeci">def subsort</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01887">z3py.py:1887</a></div></div>
+<div class="ttc" id="namespacez3py_html_a3f1e28665b56db8ed4e4fb865e8b444f"><div class="ttname"><a href="namespacez3py.html#a3f1e28665b56db8ed4e4fb865e8b444f">z3py.is_arith_sort</a></div><div class="ttdeci">def is_arith_sort</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01927">z3py.py:1927</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -381,16 +386,16 @@ False
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3py_8py_source.html#l01897">1897</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p>Definition at line <a class="el" href="z3py_8py_source.html#l01907">1907</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p>Referenced by <a class="el" href="z3py_8py_source.html#l06804">Probe.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l06791">Probe.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06371">ApplyResult.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06765">Probe.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l06778">Probe.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06752">Probe.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l06817">Probe.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l06172">Fixedpoint.add_rule()</a>, <a class="el" href="z3py_8py_source.html#l06497">Tactic.apply()</a>, <a class="el" href="z3py_8py_source.html#l06426">ApplyResult.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l06146">Fixedpoint.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l06395">ApplyResult.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l06242">Fixedpoint.get_answer()</a>, <a class="el" href="z3py_8py_source.html#l06288">Fixedpoint.get_assertions()</a>, <a class="el" href="z3py_8py_source.html#l06251">Fixedpoint.get_cover_delta()</a>, <a class="el" href="z3py_8py_source.html#l06284">Fixedpoint.get_rules()</a>, <a class="el" href="z3py_8py_source.html#l06142">Fixedpoint.param_descrs()</a>, <a class="el" href="z3py_8py_source.html#l06528">Tactic.param_descrs()</a>, <a class="el" href="z3py_8py_source.html#l06280">Fixedpoint.parse_file()</a>, <a class="el" href="z3py_8py_source.html#l06276">Fixedpoint.parse_string()</a>, <a class="el" href="z3py_8py_source.html#l06203">Fixedpoint.query()</a>, <a class="el" href="z3py_8py_source.html#l06132">Fixedpoint.set()</a>, <a class="el" href="z3py_8py_source.html#l06480">Tactic.solver()</a>, <a class="el" href="z3py_8py_source.html#l06309">Fixedpoint.statistics()</a>, <a class="el" href="z3py_8py_source.html#l06058">Solver.to_smt2()</a>, and <a class="el" href="z3py_8py_source.html#l06233">Fixedpoint.update_rule()</a>.</p>
+<p>Referenced by <a class="el" href="z3py_8py_source.html#l07003">Probe.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l06990">Probe.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06570">ApplyResult.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06964">Probe.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l06977">Probe.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06951">Probe.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l07016">Probe.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l06207">Fixedpoint.add_rule()</a>, <a class="el" href="z3py_8py_source.html#l06460">Optimize.add_soft()</a>, <a class="el" href="z3py_8py_source.html#l06696">Tactic.apply()</a>, <a class="el" href="z3py_8py_source.html#l06625">ApplyResult.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l06181">Fixedpoint.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l06594">ApplyResult.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l06277">Fixedpoint.get_answer()</a>, <a class="el" href="z3py_8py_source.html#l06323">Fixedpoint.get_assertions()</a>, <a class="el" href="z3py_8py_source.html#l06286">Fixedpoint.get_cover_delta()</a>, <a class="el" href="z3py_8py_source.html#l06319">Fixedpoint.get_rules()</a>, <a class="el" href="z3py_8py_source.html#l06501">Optimize.model()</a>, <a class="el" href="z3py_8py_source.html#l06177">Fixedpoint.param_descrs()</a>, <a class="el" href="z3py_8py_source.html#l06442">Optimize.param_descrs()</a>, <a class="el" href="z3py_8py_source.html#l06727">Tactic.param_descrs()</a>, <a class="el" href="z3py_8py_source.html#l06315">Fixedpoint.parse_file()</a>, <a class="el" href="z3py_8py_source.html#l06311">Fixedpoint.parse_string()</a>, <a class="el" href="z3py_8py_source.html#l06238">Fixedpoint.query()</a>, <a class="el" href="z3py_8py_source.html#l06167">Fixedpoint.set()</a>, <a class="el" href="z3py_8py_source.html#l06432">Optimize.set()</a>, <a class="el" href="z3py_8py_source.html#l06679">Tactic.solver()</a>, <a class="el" href="z3py_8py_source.html#l06344">Fixedpoint.statistics()</a>, <a class="el" href="z3py_8py_source.html#l06527">Optimize.statistics()</a>, <a class="el" href="z3py_8py_source.html#l06095">Solver.to_smt2()</a>, and <a class="el" href="z3py_8py_source.html#l06268">Fixedpoint.update_rule()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 29 2015 18:05:20 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 5 2015 16:03:56 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

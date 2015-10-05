@@ -155,9 +155,9 @@ Properties</h2></td></tr>
 <tr class="memitem:a81a15af67c88bbd60b277b23f8a7fb1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_expr.html">Expr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_solver.html#a81a15af67c88bbd60b277b23f8a7fb1f">Proof</a><code> [get]</code></td></tr>
 <tr class="memdesc:a81a15af67c88bbd60b277b23f8a7fb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The proof of the last <code>Check</code>.  <a href="#a81a15af67c88bbd60b277b23f8a7fb1f">More...</a><br /></td></tr>
 <tr class="separator:a81a15af67c88bbd60b277b23f8a7fb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada7464ddf71a3d3f9c1e2a99f3e94461"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_expr.html">Expr</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_solver.html#ada7464ddf71a3d3f9c1e2a99f3e94461">UnsatCore</a><code> [get]</code></td></tr>
-<tr class="memdesc:ada7464ddf71a3d3f9c1e2a99f3e94461"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unsat core of the last <code>Check</code>.  <a href="#ada7464ddf71a3d3f9c1e2a99f3e94461">More...</a><br /></td></tr>
-<tr class="separator:ada7464ddf71a3d3f9c1e2a99f3e94461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885f91bf15f24bd692fec8945178b984"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_bool_expr.html">BoolExpr</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_solver.html#a885f91bf15f24bd692fec8945178b984">UnsatCore</a><code> [get]</code></td></tr>
+<tr class="memdesc:a885f91bf15f24bd692fec8945178b984"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unsat core of the last <code>Check</code>.  <a href="#a885f91bf15f24bd692fec8945178b984">More...</a><br /></td></tr>
+<tr class="separator:a885f91bf15f24bd692fec8945178b984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd6b00571dd37bd2c5252c4e5414788e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_solver.html#abd6b00571dd37bd2c5252c4e5414788e">ReasonUnknown</a><code> [get]</code></td></tr>
 <tr class="memdesc:abd6b00571dd37bd2c5252c4e5414788e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A brief justification of why the last call to <code>Check</code> returned <code>UNKNOWN</code>.  <a href="#abd6b00571dd37bd2c5252c4e5414788e">More...</a><br /></td></tr>
 <tr class="separator:abd6b00571dd37bd2c5252c4e5414788e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,23 +361,23 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks whether the assertions in the solver are consistent or not. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_microsoft_1_1_z3_1_1_model.html" title="A Model contains interpretations (assignments) of constants and functions. ">Model</a>, <a class="el" href="class_microsoft_1_1_z3_1_1_solver.html#ada7464ddf71a3d3f9c1e2a99f3e94461" title="The unsat core of the last Check. ">UnsatCore</a>, <a class="el" href="class_microsoft_1_1_z3_1_1_solver.html#a81a15af67c88bbd60b277b23f8a7fb1f" title="The proof of the last Check. ">Proof</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_microsoft_1_1_z3_1_1_model.html" title="A Model contains interpretations (assignments) of constants and functions. ">Model</a>, <a class="el" href="class_microsoft_1_1_z3_1_1_solver.html#a885f91bf15f24bd692fec8945178b984" title="The unsat core of the last Check. ">UnsatCore</a>, <a class="el" href="class_microsoft_1_1_z3_1_1_solver.html#a81a15af67c88bbd60b277b23f8a7fb1f" title="The proof of the last Check. ">Proof</a></dd></dl>
 
-<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00212">212</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        {</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a> r;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            <span class="keywordflow">if</span> (assumptions == null || assumptions.Length == 0)</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                r = (<a class="code" href="namespace_microsoft_1_1_z3.html#a6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>)Native.Z3_solver_check(Context.nCtx, NativeObject);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                r = (<a class="code" href="namespace_microsoft_1_1_z3.html#a6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>)Native.Z3_solver_check_assumptions(Context.nCtx, NativeObject, (uint)assumptions.Length, AST.ArrayToNative(assumptions));</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="keywordflow">switch</span> (r)</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>.Z3_L_TRUE: <span class="keywordflow">return</span> <a class="code" href="namespace_microsoft_1_1_z3.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>.SATISFIABLE;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>.Z3_L_FALSE: <span class="keywordflow">return</span> <a class="code" href="namespace_microsoft_1_1_z3.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>.UNSATISFIABLE;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordflow">default</span>: <span class="keywordflow">return</span> <a class="code" href="namespace_microsoft_1_1_z3.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>.UNKNOWN;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            }</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        }</div>
-<div class="ttc" id="group__capi_html_ga6c2de6ea89b244e37c3ffb17a9ea2a89"><div class="ttname"><a href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a></div><div class="ttdeci">Z3_lbool</div><div class="ttdoc">Lifted Boolean type: false, undefined, true. </div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00135">z3_api.h:135</a></div></div>
+<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00208">208</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a> r;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordflow">if</span> (assumptions == null || assumptions.Length == 0)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                r = (<a class="code" href="namespace_microsoft_1_1_z3.html#a6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>)Native.Z3_solver_check(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                r = (<a class="code" href="namespace_microsoft_1_1_z3.html#a6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>)Native.Z3_solver_check_assumptions(Context.nCtx, NativeObject, (uint)assumptions.Length, AST.ArrayToNative(assumptions));</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            <span class="keywordflow">switch</span> (r)</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>.Z3_L_TRUE: <span class="keywordflow">return</span> <a class="code" href="namespace_microsoft_1_1_z3.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>.SATISFIABLE;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>.Z3_L_FALSE: <span class="keywordflow">return</span> <a class="code" href="namespace_microsoft_1_1_z3.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>.UNSATISFIABLE;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="keywordflow">default</span>: <span class="keywordflow">return</span> <a class="code" href="namespace_microsoft_1_1_z3.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>.UNKNOWN;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        }</div>
+<div class="ttc" id="group__capi_html_ga6c2de6ea89b244e37c3ffb17a9ea2a89"><div class="ttname"><a href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a></div><div class="ttdeci">Z3_lbool</div><div class="ttdoc">Lifted Boolean type: false, undefined, true. </div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00143">z3_api.h:143</a></div></div>
 <div class="ttc" id="namespace_microsoft_1_1_z3_html_a67a0db04d321a74b7e7fcfd3f1a3f70b"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Microsoft.Z3.Status</a></div><div class="ttdeci">Status</div><div class="ttdoc">Status values. </div><div class="ttdef"><b>Definition:</b> <a href="_status_8cs_source.html#l00027">Status.cs:27</a></div></div>
 <div class="ttc" id="namespace_microsoft_1_1_z3_html_a6c2de6ea89b244e37c3ffb17a9ea2a89"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#a6c2de6ea89b244e37c3ffb17a9ea2a89">Microsoft.Z3.Z3_lbool</a></div><div class="ttdeci">Z3_lbool</div><div class="ttdoc">Z3_lbool</div><div class="ttdef"><b>Definition:</b> <a href="_enumerations_8cs_source.html#l00010">Enumerations.cs:10</a></div></div>
 </div><!-- fragment -->
@@ -501,10 +501,10 @@ Properties</h2></td></tr>
 
 <p>A string representation of the solver. </p>
 
-<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00317">317</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <span class="keywordflow">return</span> Native.Z3_solver_to_string(Context.nCtx, NativeObject);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00309">309</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="keywordflow">return</span> Native.Z3_solver_to_string(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -578,7 +578,7 @@ Properties</h2></td></tr>
 <p>The model of the last <code>Check</code>. </p>
 <p>The result is <code>null</code> if <code>Check</code> was not invoked before, if its results was not <code>SATISFIABLE</code>, or if model production is not enabled. </p>
 
-<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00235">235</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
+<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00231">231</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
 
 </div>
 </div>
@@ -700,7 +700,7 @@ Properties</h2></td></tr>
 <p>The proof of the last <code>Check</code>. </p>
 <p>The result is <code>null</code> if <code>Check</code> was not invoked before, if its results was not <code>UNSATISFIABLE</code>, or if proof production is disabled. </p>
 
-<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00254">254</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
+<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00250">250</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
 
 </div>
 </div>
@@ -724,7 +724,7 @@ Properties</h2></td></tr>
 
 <p>A brief justification of why the last call to <code>Check</code> returned <code>UNKNOWN</code>. </p>
 
-<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00292">292</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
+<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00284">284</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
 
 </div>
 </div>
@@ -748,11 +748,11 @@ Properties</h2></td></tr>
 
 <p><a class="el" href="class_microsoft_1_1_z3_1_1_solver.html" title="Solvers. ">Solver</a> statistics. </p>
 
-<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00305">305</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
+<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00297">297</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ada7464ddf71a3d3f9c1e2a99f3e94461"></a>
+<a class="anchor" id="a885f91bf15f24bd692fec8945178b984"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -760,7 +760,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_microsoft_1_1_z3_1_1_expr.html">Expr</a> [] UnsatCore</td>
+          <td class="memname"><a class="el" href="class_microsoft_1_1_z3_1_1_bool_expr.html">BoolExpr</a> [] UnsatCore</td>
         </tr>
       </table>
   </td>
@@ -773,14 +773,14 @@ Properties</h2></td></tr>
 <p>The unsat core of the last <code>Check</code>. </p>
 <p>The unsat core is a subset of <code>Assertions</code> The result is empty if <code>Check</code> was not invoked before, if its results was not <code>UNSATISFIABLE</code>, or if core production is disabled. </p>
 
-<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00274">274</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
+<p>Definition at line <a class="el" href="_solver_8cs_source.html#l00270">270</a> of file <a class="el" href="_solver_8cs_source.html">Solver.cs</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 29 2015 18:05:18 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 5 2015 16:03:54 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

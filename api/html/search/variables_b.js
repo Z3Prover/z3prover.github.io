@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['params',['params',['../classz3py_1_1_params_ref.html#a41000f175dc0115080e2a682cc06dbe9',1,'z3py::ParamsRef']]],
-  ['probe',['probe',['../classz3py_1_1_probe.html#af8a62f5d3e2aa49d97071e07ee564422',1,'z3py::Probe']]]
+  ['name',['name',['../classz3py_1_1_datatype.html#ab74e6bf80237ddc4109968cedc58c151',1,'z3py::Datatype']]]
 ];

@@ -128,6 +128,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a54667aa409dfea509a718b04822af344"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz3_1_1sort.html">sort</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1context.html#a54667aa409dfea509a718b04822af344">enumeration_sort</a> (char const *name, unsigned n, char const *const *enum_names, <a class="el" href="namespacez3.html#a1e18b9d8883cbc3394d698671752e2cd">func_decl_vector</a> &amp;cs, <a class="el" href="namespacez3.html#a1e18b9d8883cbc3394d698671752e2cd">func_decl_vector</a> &amp;ts)</td></tr>
 <tr class="memdesc:a54667aa409dfea509a718b04822af344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an enumeration sort: enum_names[0], ..., enum_names[n-1]. <code>cs</code> and <code>ts</code> are output parameters. The method stores in <code>cs</code> the constants corresponding to the enumerated elements, and in <code>ts</code> the predicates for testing if terms of the enumeration sort correspond to an enumeration.  <a href="#a54667aa409dfea509a718b04822af344">More...</a><br /></td></tr>
 <tr class="separator:a54667aa409dfea509a718b04822af344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a506663242cd8b4658d6481de508cb861"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz3_1_1sort.html">sort</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1context.html#a506663242cd8b4658d6481de508cb861">uninterpreted_sort</a> (char const *name)</td></tr>
+<tr class="memdesc:a506663242cd8b4658d6481de508cb861"><td class="mdescLeft">&#160;</td><td class="mdescRight">create an uninterpreted sort with the name given by the string or symbol.  <a href="#a506663242cd8b4658d6481de508cb861">More...</a><br /></td></tr>
+<tr class="separator:a506663242cd8b4658d6481de508cb861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10dadfc4b646db80195244a95466d476"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz3_1_1sort.html">sort</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1context.html#a10dadfc4b646db80195244a95466d476">uninterpreted_sort</a> (<a class="el" href="classz3_1_1symbol.html">symbol</a> const &amp;name)</td></tr>
+<tr class="separator:a10dadfc4b646db80195244a95466d476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab33c2a1fb5721b050333c67e054397af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz3_1_1func__decl.html">func_decl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1context.html#ab33c2a1fb5721b050333c67e054397af">function</a> (<a class="el" href="classz3_1_1symbol.html">symbol</a> const &amp;name, unsigned arity, <a class="el" href="classz3_1_1sort.html">sort</a> const *domain, <a class="el" href="classz3_1_1sort.html">sort</a> const &amp;range)</td></tr>
 <tr class="separator:ab33c2a1fb5721b050333c67e054397af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aceb4b009a0a6064fd63d0f76413cce2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classz3_1_1func__decl.html">func_decl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1context.html#aceb4b009a0a6064fd63d0f76413cce2a">function</a> (char const *name, unsigned arity, <a class="el" href="classz3_1_1sort.html">sort</a> const *domain, <a class="el" href="classz3_1_1sort.html">sort</a> const &amp;range)</td></tr>
@@ -275,8 +280,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l00135">135</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{ <a class="code" href="group__capi.html#ga556eae80ed43ab13e1e7dc3b38c35200">Z3_del_context</a>(m_ctx); }</div>
-<div class="ttc" id="group__capi_html_ga556eae80ed43ab13e1e7dc3b38c35200"><div class="ttname"><a href="group__capi.html#ga556eae80ed43ab13e1e7dc3b38c35200">Z3_del_context</a></div><div class="ttdeci">void Z3_API Z3_del_context(__in Z3_context c)</div><div class="ttdoc">Delete the given logical context. </div></div>
+<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{ <a class="code" href="group__capi.html#ga0f3c008fd1bd9c2ef73ff8e5a64d8baa">Z3_del_context</a>(m_ctx); }</div>
+<div class="ttc" id="group__capi_html_ga0f3c008fd1bd9c2ef73ff8e5a64d8baa"><div class="ttname"><a href="group__capi.html#ga0f3c008fd1bd9c2ef73ff8e5a64d8baa">Z3_del_context</a></div><div class="ttdeci">void Z3_API Z3_del_context(Z3_context c)</div><div class="ttdoc">Delete the given logical context. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -316,9 +321,9 @@ Public Member Functions</h2></td></tr>
 <p>Return an array sort for arrays from <code>d</code> to <code>r</code>. </p>
 <p>Example: Given a context <code>c</code>, <code>c.array_sort(c.int_sort(), c.bool_sort())</code> is an array sort from integer to Boolean. </p>
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01564">1564</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01564"></a><span class="lineno"> 1564</span>&#160;{ <a class="code" href="namespace_z3__sort.html">Z3_sort</a> s = <a class="code" href="group__capi.html#gafe617994cce1b516f46128e448c84445">Z3_mk_array_sort</a>(m_ctx, d, r); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> sort(*<span class="keyword">this</span>, s); }</div>
-<div class="ttc" id="group__capi_html_gafe617994cce1b516f46128e448c84445"><div class="ttname"><a href="group__capi.html#gafe617994cce1b516f46128e448c84445">Z3_mk_array_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_array_sort(__in Z3_context c, __in Z3_sort domain, __in Z3_sort range)</div><div class="ttdoc">Create an array type. </div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01633">1633</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160;{ <a class="code" href="namespace_z3__sort.html">Z3_sort</a> s = <a class="code" href="group__capi.html#gad8cd465426633bd3b8c92acff9c39130">Z3_mk_array_sort</a>(m_ctx, d, r); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> sort(*<span class="keyword">this</span>, s); }</div>
+<div class="ttc" id="group__capi_html_gad8cd465426633bd3b8c92acff9c39130"><div class="ttname"><a href="group__capi.html#gad8cd465426633bd3b8c92acff9c39130">Z3_mk_array_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_array_sort(Z3_context c, Z3_sort domain, Z3_sort range)</div><div class="ttdoc">Create an array type. </div></div>
 <div class="ttc" id="namespace_z3__sort_html"><div class="ttname"><a href="namespace_z3__sort.html">Z3_sort</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
@@ -346,10 +351,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01654">1654</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">constant</a>(name, <a class="code" href="classz3_1_1context.html#a5d4808b1b9f852bf088d897dcf90b071">bool_sort</a>()); }</div>
-<div class="ttc" id="classz3_1_1context_html_a5d4808b1b9f852bf088d897dcf90b071"><div class="ttname"><a href="classz3_1_1context.html#a5d4808b1b9f852bf088d897dcf90b071">z3::context::bool_sort</a></div><div class="ttdeci">sort bool_sort()</div><div class="ttdoc">Return the Boolean sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01560">z3++.h:1560</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_ac04a237609e1fc992f8f7e1713affc8e"><div class="ttname"><a href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">z3::context::constant</a></div><div class="ttdeci">expr constant(symbol const &amp;name, sort const &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01648">z3++.h:1648</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01730">1730</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01730"></a><span class="lineno"> 1730</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">constant</a>(name, <a class="code" href="classz3_1_1context.html#a5d4808b1b9f852bf088d897dcf90b071">bool_sort</a>()); }</div>
+<div class="ttc" id="classz3_1_1context_html_a5d4808b1b9f852bf088d897dcf90b071"><div class="ttname"><a href="classz3_1_1context.html#a5d4808b1b9f852bf088d897dcf90b071">z3::context::bool_sort</a></div><div class="ttdeci">sort bool_sort()</div><div class="ttdoc">Return the Boolean sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01629">z3++.h:1629</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_ac04a237609e1fc992f8f7e1713affc8e"><div class="ttname"><a href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">z3::context::constant</a></div><div class="ttdeci">expr constant(symbol const &amp;name, sort const &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01724">z3++.h:1724</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -376,12 +381,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Return the Boolean sort. </p>
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01560">1560</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01629">1629</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01654">context::bool_const()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01560"></a><span class="lineno"> 1560</span>&#160;{ <a class="code" href="namespace_z3__sort.html">Z3_sort</a> s = <a class="code" href="group__capi.html#gacdc73510b69a010b71793d429015f342">Z3_mk_bool_sort</a>(m_ctx); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> sort(*<span class="keyword">this</span>, s); }</div>
-<div class="ttc" id="group__capi_html_gacdc73510b69a010b71793d429015f342"><div class="ttname"><a href="group__capi.html#gacdc73510b69a010b71793d429015f342">Z3_mk_bool_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_bool_sort(__in Z3_context c)</div><div class="ttdoc">Create the Boolean type. </div></div>
+<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01730">context::bool_const()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01629"></a><span class="lineno"> 1629</span>&#160;{ <a class="code" href="namespace_z3__sort.html">Z3_sort</a> s = <a class="code" href="group__capi.html#gad10edaa60306d89cd520d910bac72408">Z3_mk_bool_sort</a>(m_ctx); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> sort(*<span class="keyword">this</span>, s); }</div>
 <div class="ttc" id="namespace_z3__sort_html"><div class="ttname"><a href="namespace_z3__sort.html">Z3_sort</a></div></div>
+<div class="ttc" id="group__capi_html_gad10edaa60306d89cd520d910bac72408"><div class="ttname"><a href="group__capi.html#gad10edaa60306d89cd520d910bac72408">Z3_mk_bool_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_bool_sort(Z3_context c)</div><div class="ttdoc">Create the Boolean type. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -408,12 +413,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01659">1659</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01735">1735</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01371">goal::as_expr()</a>, <a class="el" href="z3_09_09_8h_source.html#l00894">z3::implies()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01321">solver::to_smt2()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;{ <span class="keywordflow">return</span> b ? expr(*<span class="keyword">this</span>, <a class="code" href="group__capi.html#gae898e7380409bbc57b56cc5205ef1db7">Z3_mk_true</a>(m_ctx)) : expr(*this, <a class="code" href="group__capi.html#ga5952ac17671117a02001fed6575c778d">Z3_mk_false</a>(m_ctx)); }</div>
-<div class="ttc" id="group__capi_html_gae898e7380409bbc57b56cc5205ef1db7"><div class="ttname"><a href="group__capi.html#gae898e7380409bbc57b56cc5205ef1db7">Z3_mk_true</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_true(__in Z3_context c)</div><div class="ttdoc">Create an AST node representing true. </div></div>
-<div class="ttc" id="group__capi_html_ga5952ac17671117a02001fed6575c778d"><div class="ttname"><a href="group__capi.html#ga5952ac17671117a02001fed6575c778d">Z3_mk_false</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_false(__in Z3_context c)</div><div class="ttdoc">Create an AST node representing false. </div></div>
+<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01384">goal::as_expr()</a>, <a class="el" href="z3_09_09_8h_source.html#l00900">z3::implies()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01334">solver::to_smt2()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01735"></a><span class="lineno"> 1735</span>&#160;{ <span class="keywordflow">return</span> b ? expr(*<span class="keyword">this</span>, <a class="code" href="group__capi.html#ga1c4ede7d16e1b67b692dd9fdad2d2650">Z3_mk_true</a>(m_ctx)) : expr(*this, <a class="code" href="group__capi.html#ga3378ec1596df5a5c77a3295cc0531f90">Z3_mk_false</a>(m_ctx)); }</div>
+<div class="ttc" id="group__capi_html_ga1c4ede7d16e1b67b692dd9fdad2d2650"><div class="ttname"><a href="group__capi.html#ga1c4ede7d16e1b67b692dd9fdad2d2650">Z3_mk_true</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_true(Z3_context c)</div><div class="ttdoc">Create an AST node representing true. </div></div>
+<div class="ttc" id="group__capi_html_ga3378ec1596df5a5c77a3295cc0531f90"><div class="ttname"><a href="group__capi.html#ga3378ec1596df5a5c77a3295cc0531f90">Z3_mk_false</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_false(Z3_context c)</div><div class="ttdoc">Create an AST node representing false. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -449,10 +454,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01657">1657</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">constant</a>(name, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); }</div>
-<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01563">z3++.h:1563</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_ac04a237609e1fc992f8f7e1713affc8e"><div class="ttname"><a href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">z3::context::constant</a></div><div class="ttdeci">expr constant(symbol const &amp;name, sort const &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01648">z3++.h:1648</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01733">1733</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01733"></a><span class="lineno"> 1733</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">constant</a>(name, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); }</div>
+<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01632">z3++.h:1632</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_ac04a237609e1fc992f8f7e1713affc8e"><div class="ttname"><a href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">z3::context::constant</a></div><div class="ttdeci">expr constant(symbol const &amp;name, sort const &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01724">z3++.h:1724</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -480,11 +485,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Return the Bit-vector sort of size <code>sz</code>. That is, the sort for bit-vectors of size <code>sz</code>. </p>
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01563">1563</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01632">1632</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01657">context::bv_const()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01674">context::bv_val()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01563"></a><span class="lineno"> 1563</span>&#160;{ <a class="code" href="namespace_z3__sort.html">Z3_sort</a> s = <a class="code" href="group__capi.html#gaeed000a1bbb84b6ca6fdaac6cf0c1688">Z3_mk_bv_sort</a>(m_ctx, sz); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> sort(*<span class="keyword">this</span>, s); }</div>
-<div class="ttc" id="group__capi_html_gaeed000a1bbb84b6ca6fdaac6cf0c1688"><div class="ttname"><a href="group__capi.html#gaeed000a1bbb84b6ca6fdaac6cf0c1688">Z3_mk_bv_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_bv_sort(__in Z3_context c, __in unsigned sz)</div><div class="ttdoc">Create a bit-vector type of the given size. </div></div>
+<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01733">context::bv_const()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01750">context::bv_val()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01632"></a><span class="lineno"> 1632</span>&#160;{ <a class="code" href="namespace_z3__sort.html">Z3_sort</a> s = <a class="code" href="group__capi.html#ga8b46e75f6134e6f0a66c9fb02ea132a8">Z3_mk_bv_sort</a>(m_ctx, sz); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> sort(*<span class="keyword">this</span>, s); }</div>
+<div class="ttc" id="group__capi_html_ga8b46e75f6134e6f0a66c9fb02ea132a8"><div class="ttname"><a href="group__capi.html#ga8b46e75f6134e6f0a66c9fb02ea132a8">Z3_mk_bv_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_bv_sort(Z3_context c, unsigned sz)</div><div class="ttdoc">Create a bit-vector type of the given size. </div></div>
 <div class="ttc" id="namespace_z3__sort_html"><div class="ttname"><a href="namespace_z3__sort.html">Z3_sort</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
@@ -522,11 +527,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01674">1674</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga8779204998136569c3e166c34cfd3e2c">Z3_mk_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
-<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01563">z3++.h:1563</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01750">1750</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01750"></a><span class="lineno"> 1750</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga1751e7566cea66fb95b16d943759d14e">Z3_mk_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01632">z3++.h:1632</a></div></div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
-<div class="ttc" id="group__capi_html_ga8779204998136569c3e166c34cfd3e2c"><div class="ttname"><a href="group__capi.html#ga8779204998136569c3e166c34cfd3e2c">Z3_mk_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int(__in Z3_context c, __in int v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of an int, bit-vector, or finite-domain sort. </div></div>
+<div class="ttc" id="group__capi_html_ga1751e7566cea66fb95b16d943759d14e"><div class="ttname"><a href="group__capi.html#ga1751e7566cea66fb95b16d943759d14e">Z3_mk_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int(Z3_context c, int v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of an int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -563,10 +568,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01675">1675</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga7201b6231b61421c005457206760a121">Z3_mk_unsigned_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
-<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01563">z3++.h:1563</a></div></div>
-<div class="ttc" id="group__capi_html_ga7201b6231b61421c005457206760a121"><div class="ttname"><a href="group__capi.html#ga7201b6231b61421c005457206760a121">Z3_mk_unsigned_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int(__in Z3_context c, __in unsigned v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01751">1751</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01751"></a><span class="lineno"> 1751</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga0d734e38e6f72251880d85d15c962874">Z3_mk_unsigned_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<div class="ttc" id="group__capi_html_ga0d734e38e6f72251880d85d15c962874"><div class="ttname"><a href="group__capi.html#ga0d734e38e6f72251880d85d15c962874">Z3_mk_unsigned_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int(Z3_context c, unsigned v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
+<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01632">z3++.h:1632</a></div></div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
@@ -604,11 +609,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01676">1676</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga42cc319787d485d9cb665d80e02d206f">Z3_mk_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
-<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01563">z3++.h:1563</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01752">1752</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01752"></a><span class="lineno"> 1752</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga88787781ef913be40f171eec1c9f0d10">Z3_mk_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<div class="ttc" id="group__capi_html_ga88787781ef913be40f171eec1c9f0d10"><div class="ttname"><a href="group__capi.html#ga88787781ef913be40f171eec1c9f0d10">Z3_mk_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int64(Z3_context c, __int64 v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
+<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01632">z3++.h:1632</a></div></div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
-<div class="ttc" id="group__capi_html_ga42cc319787d485d9cb665d80e02d206f"><div class="ttname"><a href="group__capi.html#ga42cc319787d485d9cb665d80e02d206f">Z3_mk_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int64(__in Z3_context c, __in __int64 v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -645,12 +650,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01677">1677</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga88a165138162a8bac401672f0a1b7891">Z3_mk_unsigned_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
-<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01563">z3++.h:1563</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01753">1753</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01753"></a><span class="lineno"> 1753</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#gad6d4df7cfc06c9ee1be20538f72dfcd5">Z3_mk_unsigned_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01632">z3++.h:1632</a></div></div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
+<div class="ttc" id="group__capi_html_gad6d4df7cfc06c9ee1be20538f72dfcd5"><div class="ttname"><a href="group__capi.html#gad6d4df7cfc06c9ee1be20538f72dfcd5">Z3_mk_unsigned_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int64(Z3_context c, unsigned __int64 v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_ga88a165138162a8bac401672f0a1b7891"><div class="ttname"><a href="group__capi.html#ga88a165138162a8bac401672f0a1b7891">Z3_mk_unsigned_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int64(__in Z3_context c, __in unsigned __int64 v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -686,12 +691,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01678">1678</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01678"></a><span class="lineno"> 1678</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga92e75c71f0d602c65b67ae8ae82dcb6a">Z3_mk_numeral</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
-<div class="ttc" id="group__capi_html_ga92e75c71f0d602c65b67ae8ae82dcb6a"><div class="ttname"><a href="group__capi.html#ga92e75c71f0d602c65b67ae8ae82dcb6a">Z3_mk_numeral</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_numeral(__in Z3_context c, __in Z3_string numeral, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a given sort. </div></div>
-<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01563">z3++.h:1563</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01754">1754</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01754"></a><span class="lineno"> 1754</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga2adef1696d308843fdb33ad6b2d4b4a0">Z3_mk_numeral</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">bv_sort</a>(sz)); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<div class="ttc" id="classz3_1_1context_html_aa2acb5cd89c940bc19fa4ca584b3c9e4"><div class="ttname"><a href="classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4">z3::context::bv_sort</a></div><div class="ttdeci">sort bv_sort(unsigned sz)</div><div class="ttdoc">Return the Bit-vector sort of size sz. That is, the sort for bit-vectors of size sz. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01632">z3++.h:1632</a></div></div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
+<div class="ttc" id="group__capi_html_ga2adef1696d308843fdb33ad6b2d4b4a0"><div class="ttname"><a href="group__capi.html#ga2adef1696d308843fdb33ad6b2d4b4a0">Z3_mk_numeral</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_numeral(Z3_context c, Z3_string numeral, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a given sort. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -720,16 +725,16 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l00141">141</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01564">context::array_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01560">context::bool_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01563">context::bv_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01674">context::bv_val()</a>, <a class="el" href="z3_09_09_8h_source.html#l00273">object::check_error()</a>, <a class="el" href="z3_09_09_8h_source.html#l01648">context::constant()</a>, <a class="el" href="z3_09_09_8h_source.html#l01565">context::enumeration_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01577">context::function()</a>, <a class="el" href="z3_09_09_8h_source.html#l01561">context::int_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01558">context::int_symbol()</a>, <a class="el" href="z3_09_09_8h_source.html#l01661">context::int_val()</a>, <a class="el" href="z3_09_09_8h_source.html#l01680">context::num_val()</a>, <a class="el" href="z3_09_09_8h_source.html#l01703">func_decl::operator()()</a>, <a class="el" href="z3_09_09_8h_source.html#l01562">context::real_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01667">context::real_val()</a>, <a class="el" href="z3_09_09_8h_source.html#l01557">context::str_symbol()</a>, <a class="el" href="z3_09_09_8h_source.html#l00930">z3::to_expr()</a>, <a class="el" href="z3_09_09_8h_source.html#l00944">z3::to_func_decl()</a>, and <a class="el" href="z3_09_09_8h_source.html#l00939">z3::to_sort()</a>.</p>
+<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01633">context::array_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01629">context::bool_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01632">context::bv_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01750">context::bv_val()</a>, <a class="el" href="z3_09_09_8h_source.html#l00278">object::check_error()</a>, <a class="el" href="z3_09_09_8h_source.html#l01118">z3::concat()</a>, <a class="el" href="z3_09_09_8h_source.html#l01724">context::constant()</a>, <a class="el" href="z3_09_09_8h_source.html#l01634">context::enumeration_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01653">context::function()</a>, <a class="el" href="z3_09_09_8h_source.html#l01630">context::int_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01627">context::int_symbol()</a>, <a class="el" href="z3_09_09_8h_source.html#l01737">context::int_val()</a>, <a class="el" href="z3_09_09_8h_source.html#l01756">context::num_val()</a>, <a class="el" href="z3_09_09_8h_source.html#l01779">func_decl::operator()()</a>, <a class="el" href="z3_09_09_8h_source.html#l01631">context::real_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l01743">context::real_val()</a>, <a class="el" href="z3_09_09_8h_source.html#l01626">context::str_symbol()</a>, <a class="el" href="z3_09_09_8h_source.html#l00936">z3::to_expr()</a>, <a class="el" href="z3_09_09_8h_source.html#l00950">z3::to_func_decl()</a>, and <a class="el" href="z3_09_09_8h_source.html#l00945">z3::to_sort()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                 {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <a class="code" href="group__capi.html#gaa9f9e7b1b5b81381fab96debbaaa638f">Z3_error_code</a> e = <a class="code" href="group__capi.html#ga8ac771e68b28d2c86f40aa84889b3807">Z3_get_error_code</a>(m_ctx);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <a class="code" href="group__capi.html#gaa9f9e7b1b5b81381fab96debbaaa638f">Z3_error_code</a> e = <a class="code" href="group__capi.html#gaad9e6bdd12c165b4157bba9496b04ade">Z3_get_error_code</a>(m_ctx);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">if</span> (e != <a class="code" href="group__capi.html#ggaa9f9e7b1b5b81381fab96debbaaa638fa5602d6f32f6ae578e5f07bc5579a8f25">Z3_OK</a>)</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <span class="keywordflow">throw</span> exception(<a class="code" href="group__capi.html#gae0aba52b5738b2ea78e0d6ad67ef1f92">Z3_get_error_msg_ex</a>(m_ctx, e));</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <span class="keywordflow">throw</span> exception(<a class="code" href="group__capi.html#ga5f41d9cfd893609342a3072cbe2e0486">Z3_get_error_msg_ex</a>(m_ctx, e));</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        }</div>
-<div class="ttc" id="group__capi_html_ggaa9f9e7b1b5b81381fab96debbaaa638fa5602d6f32f6ae578e5f07bc5579a8f25"><div class="ttname"><a href="group__capi.html#ggaa9f9e7b1b5b81381fab96debbaaa638fa5602d6f32f6ae578e5f07bc5579a8f25">Z3_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l01285">z3_api.h:1285</a></div></div>
-<div class="ttc" id="group__capi_html_gaa9f9e7b1b5b81381fab96debbaaa638f"><div class="ttname"><a href="group__capi.html#gaa9f9e7b1b5b81381fab96debbaaa638f">Z3_error_code</a></div><div class="ttdeci">Z3_error_code</div><div class="ttdoc">Z3 error codes (See Z3_get_error_code). </div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l01283">z3_api.h:1283</a></div></div>
-<div class="ttc" id="group__capi_html_gae0aba52b5738b2ea78e0d6ad67ef1f92"><div class="ttname"><a href="group__capi.html#gae0aba52b5738b2ea78e0d6ad67ef1f92">Z3_get_error_msg_ex</a></div><div class="ttdeci">BEGIN_MLAPI_EXCLUDE Z3_string Z3_API Z3_get_error_msg_ex(__in Z3_context c, __in Z3_error_code err)</div><div class="ttdoc">Return a string describing the given error code. </div></div>
-<div class="ttc" id="group__capi_html_ga8ac771e68b28d2c86f40aa84889b3807"><div class="ttname"><a href="group__capi.html#ga8ac771e68b28d2c86f40aa84889b3807">Z3_get_error_code</a></div><div class="ttdeci">Z3_error_code Z3_API Z3_get_error_code(__in Z3_context c)</div><div class="ttdoc">Return the error code for the last API call. </div></div>
+<div class="ttc" id="group__capi_html_ggaa9f9e7b1b5b81381fab96debbaaa638fa5602d6f32f6ae578e5f07bc5579a8f25"><div class="ttname"><a href="group__capi.html#ggaa9f9e7b1b5b81381fab96debbaaa638fa5602d6f32f6ae578e5f07bc5579a8f25">Z3_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l01313">z3_api.h:1313</a></div></div>
+<div class="ttc" id="group__capi_html_gaa9f9e7b1b5b81381fab96debbaaa638f"><div class="ttname"><a href="group__capi.html#gaa9f9e7b1b5b81381fab96debbaaa638f">Z3_error_code</a></div><div class="ttdeci">Z3_error_code</div><div class="ttdoc">Z3 error codes (See Z3_get_error_code). </div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l01311">z3_api.h:1311</a></div></div>
+<div class="ttc" id="group__capi_html_gaad9e6bdd12c165b4157bba9496b04ade"><div class="ttname"><a href="group__capi.html#gaad9e6bdd12c165b4157bba9496b04ade">Z3_get_error_code</a></div><div class="ttdeci">Z3_error_code Z3_API Z3_get_error_code(Z3_context c)</div><div class="ttdoc">Return the error code for the last API call. </div></div>
+<div class="ttc" id="group__capi_html_ga5f41d9cfd893609342a3072cbe2e0486"><div class="ttname"><a href="group__capi.html#ga5f41d9cfd893609342a3072cbe2e0486">Z3_get_error_msg_ex</a></div><div class="ttdeci">BEGIN_MLAPI_EXCLUDE Z3_string Z3_API Z3_get_error_msg_ex(Z3_context c, Z3_error_code err)</div><div class="ttdoc">Return a string describing the given error code. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -765,15 +770,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01648">1648</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01724">1724</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01654">context::bool_const()</a>, <a class="el" href="z3_09_09_8h_source.html#l01657">context::bv_const()</a>, <a class="el" href="z3_09_09_8h_source.html#l01653">context::constant()</a>, <a class="el" href="z3_09_09_8h_source.html#l01655">context::int_const()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01656">context::real_const()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;                                                                     {</div>
-<div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;        <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga093c9703393f33ae282ec5e8729354ef">Z3_mk_const</a>(m_ctx, name, s); </div>
-<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); </div>
-<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;        <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); </div>
-<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;    }</div>
-<div class="ttc" id="group__capi_html_ga093c9703393f33ae282ec5e8729354ef"><div class="ttname"><a href="group__capi.html#ga093c9703393f33ae282ec5e8729354ef">Z3_mk_const</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_const(__in Z3_context c, __in Z3_symbol s, __in Z3_sort ty)</div><div class="ttdoc">Declare and create a constant. </div></div>
+<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01730">context::bool_const()</a>, <a class="el" href="z3_09_09_8h_source.html#l01733">context::bv_const()</a>, <a class="el" href="z3_09_09_8h_source.html#l01729">context::constant()</a>, <a class="el" href="z3_09_09_8h_source.html#l01731">context::int_const()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01732">context::real_const()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01724"></a><span class="lineno"> 1724</span>&#160;                                                                     {</div>
+<div class="line"><a name="l01725"></a><span class="lineno"> 1725</span>&#160;        <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#gac296c50e39905c32570e1473b54f256e">Z3_mk_const</a>(m_ctx, name, s); </div>
+<div class="line"><a name="l01726"></a><span class="lineno"> 1726</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); </div>
+<div class="line"><a name="l01727"></a><span class="lineno"> 1727</span>&#160;        <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); </div>
+<div class="line"><a name="l01728"></a><span class="lineno"> 1728</span>&#160;    }</div>
+<div class="ttc" id="group__capi_html_gac296c50e39905c32570e1473b54f256e"><div class="ttname"><a href="group__capi.html#gac296c50e39905c32570e1473b54f256e">Z3_mk_const</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_const(Z3_context c, Z3_symbol s, Z3_sort ty)</div><div class="ttdoc">Declare and create a constant. </div></div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
@@ -811,10 +816,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01653">1653</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">constant</a>(<a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), s); }</div>
-<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01557">z3++.h:1557</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_ac04a237609e1fc992f8f7e1713affc8e"><div class="ttname"><a href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">z3::context::constant</a></div><div class="ttdeci">expr constant(symbol const &amp;name, sort const &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01648">z3++.h:1648</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01729">1729</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01729"></a><span class="lineno"> 1729</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">constant</a>(<a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), s); }</div>
+<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01626">z3++.h:1626</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_ac04a237609e1fc992f8f7e1713affc8e"><div class="ttname"><a href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">z3::context::constant</a></div><div class="ttdeci">expr constant(symbol const &amp;name, sort const &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01724">z3++.h:1724</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -870,22 +875,22 @@ Public Member Functions</h2></td></tr>
 
 <p>Return an enumeration sort: enum_names[0], ..., enum_names[n-1]. <code>cs</code> and <code>ts</code> are output parameters. The method stores in <code>cs</code> the constants corresponding to the enumerated elements, and in <code>ts</code> the predicates for testing if terms of the enumeration sort correspond to an enumeration. </p>
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01565">1565</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01565"></a><span class="lineno"> 1565</span>&#160;                                                                                                                                                      {</div>
-<div class="line"><a name="l01566"></a><span class="lineno"> 1566</span>&#160;        array&lt;Z3_symbol&gt; _enum_names(n);</div>
-<div class="line"><a name="l01567"></a><span class="lineno"> 1567</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; i++) { _enum_names[i] = <a class="code" href="group__capi.html#ga6b9ed981ba0180962928394fe828b0a7">Z3_mk_string_symbol</a>(*<span class="keyword">this</span>, enum_names[i]); }</div>
-<div class="line"><a name="l01568"></a><span class="lineno"> 1568</span>&#160;        array&lt;Z3_func_decl&gt; _cs(n);</div>
-<div class="line"><a name="l01569"></a><span class="lineno"> 1569</span>&#160;        array&lt;Z3_func_decl&gt; _ts(n);</div>
-<div class="line"><a name="l01570"></a><span class="lineno"> 1570</span>&#160;        Z3_symbol _name = <a class="code" href="group__capi.html#ga6b9ed981ba0180962928394fe828b0a7">Z3_mk_string_symbol</a>(*<span class="keyword">this</span>, name);</div>
-<div class="line"><a name="l01571"></a><span class="lineno"> 1571</span>&#160;        sort s = <a class="code" href="namespacez3.html#ab2e9286d72e116e43d4dc0c0cde0b755">to_sort</a>(*<span class="keyword">this</span>, <a class="code" href="group__capi.html#ga8d4c1550f5f1bdefbe957bcd0ea4324a">Z3_mk_enumeration_sort</a>(*<span class="keyword">this</span>, _name, n, _enum_names.ptr(), _cs.ptr(), _ts.ptr()));</div>
-<div class="line"><a name="l01572"></a><span class="lineno"> 1572</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
-<div class="line"><a name="l01573"></a><span class="lineno"> 1573</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; i++) { cs.push_back(func_decl(*<span class="keyword">this</span>, _cs[i])); ts.push_back(func_decl(*<span class="keyword">this</span>, _ts[i])); }</div>
-<div class="line"><a name="l01574"></a><span class="lineno"> 1574</span>&#160;        <span class="keywordflow">return</span> s;</div>
-<div class="line"><a name="l01575"></a><span class="lineno"> 1575</span>&#160;    }</div>
-<div class="ttc" id="group__capi_html_ga8d4c1550f5f1bdefbe957bcd0ea4324a"><div class="ttname"><a href="group__capi.html#ga8d4c1550f5f1bdefbe957bcd0ea4324a">Z3_mk_enumeration_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_enumeration_sort(__in Z3_context c, __in Z3_symbol name, __in unsigned n, __in_ecount(n) Z3_symbol const enum_names[], __out_ecount(n) Z3_func_decl enum_consts[], __out_ecount(n) Z3_func_decl enum_testers[])</div><div class="ttdoc">Create a enumeration sort. </div></div>
-<div class="ttc" id="group__capi_html_ga6b9ed981ba0180962928394fe828b0a7"><div class="ttname"><a href="group__capi.html#ga6b9ed981ba0180962928394fe828b0a7">Z3_mk_string_symbol</a></div><div class="ttdeci">Z3_symbol Z3_API Z3_mk_string_symbol(__in Z3_context c, __in Z3_string s)</div><div class="ttdoc">Create a Z3 symbol using a C string. </div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01634">1634</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;                                                                                                                                                      {</div>
+<div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;        array&lt;Z3_symbol&gt; _enum_names(n);</div>
+<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; i++) { _enum_names[i] = <a class="code" href="group__capi.html#gac2c18f73e8711f6d03a85e1b0f0e5397">Z3_mk_string_symbol</a>(*<span class="keyword">this</span>, enum_names[i]); }</div>
+<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;        array&lt;Z3_func_decl&gt; _cs(n);</div>
+<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;        array&lt;Z3_func_decl&gt; _ts(n);</div>
+<div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;        Z3_symbol _name = <a class="code" href="group__capi.html#gac2c18f73e8711f6d03a85e1b0f0e5397">Z3_mk_string_symbol</a>(*<span class="keyword">this</span>, name);</div>
+<div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;        sort s = <a class="code" href="namespacez3.html#ab2e9286d72e116e43d4dc0c0cde0b755">to_sort</a>(*<span class="keyword">this</span>, <a class="code" href="group__capi.html#ga84a4ecc3d5585ac586d2a57fe8e364b3">Z3_mk_enumeration_sort</a>(*<span class="keyword">this</span>, _name, n, _enum_names.ptr(), _cs.ptr(), _ts.ptr()));</div>
+<div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
+<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; i++) { cs.push_back(func_decl(*<span class="keyword">this</span>, _cs[i])); ts.push_back(func_decl(*<span class="keyword">this</span>, _ts[i])); }</div>
+<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;        <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;    }</div>
+<div class="ttc" id="group__capi_html_gac2c18f73e8711f6d03a85e1b0f0e5397"><div class="ttname"><a href="group__capi.html#gac2c18f73e8711f6d03a85e1b0f0e5397">Z3_mk_string_symbol</a></div><div class="ttdeci">Z3_symbol Z3_API Z3_mk_string_symbol(Z3_context c, Z3_string s)</div><div class="ttdoc">Create a Z3 symbol using a C string. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="namespacez3_html_ab2e9286d72e116e43d4dc0c0cde0b755"><div class="ttname"><a href="namespacez3.html#ab2e9286d72e116e43d4dc0c0cde0b755">z3::to_sort</a></div><div class="ttdeci">sort to_sort(context &amp;c, Z3_sort s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00939">z3++.h:939</a></div></div>
+<div class="ttc" id="group__capi_html_ga84a4ecc3d5585ac586d2a57fe8e364b3"><div class="ttname"><a href="group__capi.html#ga84a4ecc3d5585ac586d2a57fe8e364b3">Z3_mk_enumeration_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_enumeration_sort(Z3_context c, Z3_symbol name, unsigned n, Z3_symbol const enum_names[], Z3_func_decl enum_consts[], Z3_func_decl enum_testers[])</div><div class="ttdoc">Create a enumeration sort. </div></div>
+<div class="ttc" id="namespacez3_html_ab2e9286d72e116e43d4dc0c0cde0b755"><div class="ttname"><a href="namespacez3.html#ab2e9286d72e116e43d4dc0c0cde0b755">z3::to_sort</a></div><div class="ttdeci">sort to_sort(context &amp;c, Z3_sort s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00945">z3++.h:945</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -933,23 +938,23 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01577">1577</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01653">1653</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01766">z3::function()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01577"></a><span class="lineno"> 1577</span>&#160;                                                                                                                   {</div>
-<div class="line"><a name="l01578"></a><span class="lineno"> 1578</span>&#160;        array&lt;Z3_sort&gt; args(arity);</div>
-<div class="line"><a name="l01579"></a><span class="lineno"> 1579</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; arity; i++) {</div>
-<div class="line"><a name="l01580"></a><span class="lineno"> 1580</span>&#160;            <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(domain[i], range);</div>
-<div class="line"><a name="l01581"></a><span class="lineno"> 1581</span>&#160;            args[i] = domain[i];</div>
-<div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160;        }</div>
-<div class="line"><a name="l01583"></a><span class="lineno"> 1583</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a>(m_ctx, name, arity, args.ptr(), range);</div>
-<div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
-<div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
-<div class="line"><a name="l01586"></a><span class="lineno"> 1586</span>&#160;    }</div>
-<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00276">z3++.h:276</a></div></div>
+<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01842">z3::function()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;                                                                                                                   {</div>
+<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;        array&lt;Z3_sort&gt; args(arity);</div>
+<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; arity; i++) {</div>
+<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;            <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(domain[i], range);</div>
+<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;            args[i] = domain[i];</div>
+<div class="line"><a name="l01658"></a><span class="lineno"> 1658</span>&#160;        }</div>
+<div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a>(m_ctx, name, arity, args.ptr(), range);</div>
+<div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
+<div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
+<div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160;    }</div>
+<div class="ttc" id="group__capi_html_ga57f1e4997521d0f7cb5aa8f1f46e15f7"><div class="ttname"><a href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(Z3_context c, Z3_symbol s, unsigned domain_size, Z3_sort const domain[], Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
+<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00281">z3++.h:281</a></div></div>
 <div class="ttc" id="namespace_z3__func__decl_html"><div class="ttname"><a href="namespace_z3__func__decl.html">Z3_func_decl</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_gaa5c5e2602a44d5f1373f077434859ca2"><div class="ttname"><a href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(__in Z3_context c, __in Z3_symbol s, __in unsigned domain_size, __in_ecount(domain_size) Z3_sort const domain[], __in Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -997,10 +1002,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01588">1588</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160;                                                                                                                 {</div>
-<div class="line"><a name="l01589"></a><span class="lineno"> 1589</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">function</span>(range.ctx().str_symbol(name), arity, domain, range);</div>
-<div class="line"><a name="l01590"></a><span class="lineno"> 1590</span>&#160;    }</div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01664">1664</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;                                                                                                                 {</div>
+<div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">function</span>(range.ctx().str_symbol(name), arity, domain, range);</div>
+<div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1042,21 +1047,21 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01592">1592</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01592"></a><span class="lineno"> 1592</span>&#160;                                                                                                       {</div>
-<div class="line"><a name="l01593"></a><span class="lineno"> 1593</span>&#160;        array&lt;Z3_sort&gt; args(domain.size());</div>
-<div class="line"><a name="l01594"></a><span class="lineno"> 1594</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; domain.size(); i++) {</div>
-<div class="line"><a name="l01595"></a><span class="lineno"> 1595</span>&#160;            <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(domain[i], range);</div>
-<div class="line"><a name="l01596"></a><span class="lineno"> 1596</span>&#160;            args[i] = domain[i];</div>
-<div class="line"><a name="l01597"></a><span class="lineno"> 1597</span>&#160;        }</div>
-<div class="line"><a name="l01598"></a><span class="lineno"> 1598</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a>(m_ctx, name, domain.size(), args.ptr(), range);</div>
-<div class="line"><a name="l01599"></a><span class="lineno"> 1599</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
-<div class="line"><a name="l01600"></a><span class="lineno"> 1600</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
-<div class="line"><a name="l01601"></a><span class="lineno"> 1601</span>&#160;    }</div>
-<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00276">z3++.h:276</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01668">1668</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;                                                                                                       {</div>
+<div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;        array&lt;Z3_sort&gt; args(domain.size());</div>
+<div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; domain.size(); i++) {</div>
+<div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;            <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(domain[i], range);</div>
+<div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;            args[i] = domain[i];</div>
+<div class="line"><a name="l01673"></a><span class="lineno"> 1673</span>&#160;        }</div>
+<div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a>(m_ctx, name, domain.size(), args.ptr(), range);</div>
+<div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
+<div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
+<div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160;    }</div>
+<div class="ttc" id="group__capi_html_ga57f1e4997521d0f7cb5aa8f1f46e15f7"><div class="ttname"><a href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(Z3_context c, Z3_symbol s, unsigned domain_size, Z3_sort const domain[], Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
+<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00281">z3++.h:281</a></div></div>
 <div class="ttc" id="namespace_z3__func__decl_html"><div class="ttname"><a href="namespace_z3__func__decl.html">Z3_func_decl</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_gaa5c5e2602a44d5f1373f077434859ca2"><div class="ttname"><a href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(__in Z3_context c, __in Z3_symbol s, __in unsigned domain_size, __in_ecount(domain_size) Z3_sort const domain[], __in Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1098,10 +1103,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01603">1603</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01603"></a><span class="lineno"> 1603</span>&#160;                                                                                                      {</div>
-<div class="line"><a name="l01604"></a><span class="lineno"> 1604</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">function</span>(range.ctx().str_symbol(name), domain, range);        </div>
-<div class="line"><a name="l01605"></a><span class="lineno"> 1605</span>&#160;    }</div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01679">1679</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01679"></a><span class="lineno"> 1679</span>&#160;                                                                                                      {</div>
+<div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">function</span>(range.ctx().str_symbol(name), domain, range);        </div>
+<div class="line"><a name="l01681"></a><span class="lineno"> 1681</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1143,20 +1148,20 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01608">1608</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01608"></a><span class="lineno"> 1608</span>&#160;                                                                                                 {</div>
-<div class="line"><a name="l01609"></a><span class="lineno"> 1609</span>&#160;        <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(domain, range);</div>
-<div class="line"><a name="l01610"></a><span class="lineno"> 1610</span>&#160;        <a class="code" href="namespace_z3__sort.html">Z3_sort</a> args[1] = { domain };</div>
-<div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a>(m_ctx, <a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), 1, args, range);</div>
-<div class="line"><a name="l01612"></a><span class="lineno"> 1612</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
-<div class="line"><a name="l01613"></a><span class="lineno"> 1613</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
-<div class="line"><a name="l01614"></a><span class="lineno"> 1614</span>&#160;    }</div>
-<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01557">z3++.h:1557</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01684">1684</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01684"></a><span class="lineno"> 1684</span>&#160;                                                                                                 {</div>
+<div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;        <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(domain, range);</div>
+<div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;        <a class="code" href="namespace_z3__sort.html">Z3_sort</a> args[1] = { domain };</div>
+<div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a>(m_ctx, <a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), 1, args, range);</div>
+<div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
+<div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
+<div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;    }</div>
+<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01626">z3++.h:1626</a></div></div>
+<div class="ttc" id="group__capi_html_ga57f1e4997521d0f7cb5aa8f1f46e15f7"><div class="ttname"><a href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(Z3_context c, Z3_symbol s, unsigned domain_size, Z3_sort const domain[], Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 <div class="ttc" id="namespace_z3__sort_html"><div class="ttname"><a href="namespace_z3__sort.html">Z3_sort</a></div></div>
-<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00276">z3++.h:276</a></div></div>
+<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00281">z3++.h:281</a></div></div>
 <div class="ttc" id="namespace_z3__func__decl_html"><div class="ttname"><a href="namespace_z3__func__decl.html">Z3_func_decl</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_gaa5c5e2602a44d5f1373f077434859ca2"><div class="ttname"><a href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(__in Z3_context c, __in Z3_symbol s, __in unsigned domain_size, __in_ecount(domain_size) Z3_sort const domain[], __in Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1204,20 +1209,20 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01616">1616</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;                                                                                                              {</div>
-<div class="line"><a name="l01617"></a><span class="lineno"> 1617</span>&#160;        <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d1, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d2, range);</div>
-<div class="line"><a name="l01618"></a><span class="lineno"> 1618</span>&#160;        <a class="code" href="namespace_z3__sort.html">Z3_sort</a> args[2] = { d1, d2 };</div>
-<div class="line"><a name="l01619"></a><span class="lineno"> 1619</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a>(m_ctx, <a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), 2, args, range);</div>
-<div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
-<div class="line"><a name="l01621"></a><span class="lineno"> 1621</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
-<div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;    }</div>
-<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01557">z3++.h:1557</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01692">1692</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;                                                                                                              {</div>
+<div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160;        <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d1, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d2, range);</div>
+<div class="line"><a name="l01694"></a><span class="lineno"> 1694</span>&#160;        <a class="code" href="namespace_z3__sort.html">Z3_sort</a> args[2] = { d1, d2 };</div>
+<div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a>(m_ctx, <a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), 2, args, range);</div>
+<div class="line"><a name="l01696"></a><span class="lineno"> 1696</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
+<div class="line"><a name="l01697"></a><span class="lineno"> 1697</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
+<div class="line"><a name="l01698"></a><span class="lineno"> 1698</span>&#160;    }</div>
+<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01626">z3++.h:1626</a></div></div>
+<div class="ttc" id="group__capi_html_ga57f1e4997521d0f7cb5aa8f1f46e15f7"><div class="ttname"><a href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(Z3_context c, Z3_symbol s, unsigned domain_size, Z3_sort const domain[], Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 <div class="ttc" id="namespace_z3__sort_html"><div class="ttname"><a href="namespace_z3__sort.html">Z3_sort</a></div></div>
-<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00276">z3++.h:276</a></div></div>
+<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00281">z3++.h:281</a></div></div>
 <div class="ttc" id="namespace_z3__func__decl_html"><div class="ttname"><a href="namespace_z3__func__decl.html">Z3_func_decl</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_gaa5c5e2602a44d5f1373f077434859ca2"><div class="ttname"><a href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(__in Z3_context c, __in Z3_symbol s, __in unsigned domain_size, __in_ecount(domain_size) Z3_sort const domain[], __in Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1271,20 +1276,20 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01624">1624</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01624"></a><span class="lineno"> 1624</span>&#160;                                                                                                                               {</div>
-<div class="line"><a name="l01625"></a><span class="lineno"> 1625</span>&#160;        <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d1, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d2, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d3, range);</div>
-<div class="line"><a name="l01626"></a><span class="lineno"> 1626</span>&#160;        <a class="code" href="namespace_z3__sort.html">Z3_sort</a> args[3] = { d1, d2, d3 };</div>
-<div class="line"><a name="l01627"></a><span class="lineno"> 1627</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a>(m_ctx, <a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), 3, args, range);</div>
-<div class="line"><a name="l01628"></a><span class="lineno"> 1628</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
-<div class="line"><a name="l01629"></a><span class="lineno"> 1629</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
-<div class="line"><a name="l01630"></a><span class="lineno"> 1630</span>&#160;    }</div>
-<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01557">z3++.h:1557</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01700">1700</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01700"></a><span class="lineno"> 1700</span>&#160;                                                                                                                               {</div>
+<div class="line"><a name="l01701"></a><span class="lineno"> 1701</span>&#160;        <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d1, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d2, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d3, range);</div>
+<div class="line"><a name="l01702"></a><span class="lineno"> 1702</span>&#160;        <a class="code" href="namespace_z3__sort.html">Z3_sort</a> args[3] = { d1, d2, d3 };</div>
+<div class="line"><a name="l01703"></a><span class="lineno"> 1703</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a>(m_ctx, <a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), 3, args, range);</div>
+<div class="line"><a name="l01704"></a><span class="lineno"> 1704</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
+<div class="line"><a name="l01705"></a><span class="lineno"> 1705</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
+<div class="line"><a name="l01706"></a><span class="lineno"> 1706</span>&#160;    }</div>
+<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01626">z3++.h:1626</a></div></div>
+<div class="ttc" id="group__capi_html_ga57f1e4997521d0f7cb5aa8f1f46e15f7"><div class="ttname"><a href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(Z3_context c, Z3_symbol s, unsigned domain_size, Z3_sort const domain[], Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 <div class="ttc" id="namespace_z3__sort_html"><div class="ttname"><a href="namespace_z3__sort.html">Z3_sort</a></div></div>
-<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00276">z3++.h:276</a></div></div>
+<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00281">z3++.h:281</a></div></div>
 <div class="ttc" id="namespace_z3__func__decl_html"><div class="ttname"><a href="namespace_z3__func__decl.html">Z3_func_decl</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_gaa5c5e2602a44d5f1373f077434859ca2"><div class="ttname"><a href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(__in Z3_context c, __in Z3_symbol s, __in unsigned domain_size, __in_ecount(domain_size) Z3_sort const domain[], __in Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1344,20 +1349,20 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01632">1632</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01632"></a><span class="lineno"> 1632</span>&#160;                                                                                                                                                {</div>
-<div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160;        <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d1, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d2, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d3, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d4, range);</div>
-<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;        <a class="code" href="namespace_z3__sort.html">Z3_sort</a> args[4] = { d1, d2, d3, d4 };</div>
-<div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a>(m_ctx, <a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), 4, args, range);</div>
-<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
-<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
-<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;    }</div>
-<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01557">z3++.h:1557</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01708">1708</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01708"></a><span class="lineno"> 1708</span>&#160;                                                                                                                                                {</div>
+<div class="line"><a name="l01709"></a><span class="lineno"> 1709</span>&#160;        <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d1, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d2, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d3, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d4, range);</div>
+<div class="line"><a name="l01710"></a><span class="lineno"> 1710</span>&#160;        <a class="code" href="namespace_z3__sort.html">Z3_sort</a> args[4] = { d1, d2, d3, d4 };</div>
+<div class="line"><a name="l01711"></a><span class="lineno"> 1711</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a>(m_ctx, <a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), 4, args, range);</div>
+<div class="line"><a name="l01712"></a><span class="lineno"> 1712</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
+<div class="line"><a name="l01713"></a><span class="lineno"> 1713</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
+<div class="line"><a name="l01714"></a><span class="lineno"> 1714</span>&#160;    }</div>
+<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01626">z3++.h:1626</a></div></div>
+<div class="ttc" id="group__capi_html_ga57f1e4997521d0f7cb5aa8f1f46e15f7"><div class="ttname"><a href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(Z3_context c, Z3_symbol s, unsigned domain_size, Z3_sort const domain[], Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 <div class="ttc" id="namespace_z3__sort_html"><div class="ttname"><a href="namespace_z3__sort.html">Z3_sort</a></div></div>
-<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00276">z3++.h:276</a></div></div>
+<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00281">z3++.h:281</a></div></div>
 <div class="ttc" id="namespace_z3__func__decl_html"><div class="ttname"><a href="namespace_z3__func__decl.html">Z3_func_decl</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_gaa5c5e2602a44d5f1373f077434859ca2"><div class="ttname"><a href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(__in Z3_context c, __in Z3_symbol s, __in unsigned domain_size, __in_ecount(domain_size) Z3_sort const domain[], __in Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1423,20 +1428,20 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01640">1640</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;                                                                                                                                                                 {</div>
-<div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;        <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d1, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d2, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d3, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d4, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d5, range);</div>
-<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;        <a class="code" href="namespace_z3__sort.html">Z3_sort</a> args[5] = { d1, d2, d3, d4, d5 };</div>
-<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a>(m_ctx, <a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), 5, args, range);</div>
-<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
-<div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
-<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160;    }</div>
-<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01557">z3++.h:1557</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01716">1716</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01716"></a><span class="lineno"> 1716</span>&#160;                                                                                                                                                                 {</div>
+<div class="line"><a name="l01717"></a><span class="lineno"> 1717</span>&#160;        <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d1, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d2, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d3, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d4, range); <a class="code" href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">check_context</a>(d5, range);</div>
+<div class="line"><a name="l01718"></a><span class="lineno"> 1718</span>&#160;        <a class="code" href="namespace_z3__sort.html">Z3_sort</a> args[5] = { d1, d2, d3, d4, d5 };</div>
+<div class="line"><a name="l01719"></a><span class="lineno"> 1719</span>&#160;        <a class="code" href="namespace_z3__func__decl.html">Z3_func_decl</a> f = <a class="code" href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a>(m_ctx, <a class="code" href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">str_symbol</a>(name), 5, args, range);</div>
+<div class="line"><a name="l01720"></a><span class="lineno"> 1720</span>&#160;        <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>();</div>
+<div class="line"><a name="l01721"></a><span class="lineno"> 1721</span>&#160;        <span class="keywordflow">return</span> func_decl(*<span class="keyword">this</span>, f);</div>
+<div class="line"><a name="l01722"></a><span class="lineno"> 1722</span>&#160;    }</div>
+<div class="ttc" id="classz3_1_1context_html_a1391be53bebe0167752f2648e14d6bfb"><div class="ttname"><a href="classz3_1_1context.html#a1391be53bebe0167752f2648e14d6bfb">z3::context::str_symbol</a></div><div class="ttdeci">symbol str_symbol(char const *s)</div><div class="ttdoc">Create a Z3 symbol based on the given string. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01626">z3++.h:1626</a></div></div>
+<div class="ttc" id="group__capi_html_ga57f1e4997521d0f7cb5aa8f1f46e15f7"><div class="ttname"><a href="group__capi.html#ga57f1e4997521d0f7cb5aa8f1f46e15f7">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(Z3_context c, Z3_symbol s, unsigned domain_size, Z3_sort const domain[], Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 <div class="ttc" id="namespace_z3__sort_html"><div class="ttname"><a href="namespace_z3__sort.html">Z3_sort</a></div></div>
-<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00276">z3++.h:276</a></div></div>
+<div class="ttc" id="namespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00281">z3++.h:281</a></div></div>
 <div class="ttc" id="namespace_z3__func__decl_html"><div class="ttname"><a href="namespace_z3__func__decl.html">Z3_func_decl</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_gaa5c5e2602a44d5f1373f077434859ca2"><div class="ttname"><a href="group__capi.html#gaa5c5e2602a44d5f1373f077434859ca2">Z3_mk_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_mk_func_decl(__in Z3_context c, __in Z3_symbol s, __in unsigned domain_size, __in_ecount(domain_size) Z3_sort const domain[], __in Z3_sort range)</div><div class="ttdoc">Declare a constant or function. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1462,10 +1467,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01655">1655</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">constant</a>(name, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); }</div>
-<div class="ttc" id="classz3_1_1context_html_ac04a237609e1fc992f8f7e1713affc8e"><div class="ttname"><a href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">z3::context::constant</a></div><div class="ttdeci">expr constant(symbol const &amp;name, sort const &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01648">z3++.h:1648</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01561">z3++.h:1561</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01731">1731</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01731"></a><span class="lineno"> 1731</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">constant</a>(name, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); }</div>
+<div class="ttc" id="classz3_1_1context_html_ac04a237609e1fc992f8f7e1713affc8e"><div class="ttname"><a href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">z3::context::constant</a></div><div class="ttdeci">expr constant(symbol const &amp;name, sort const &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01724">z3++.h:1724</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01630">z3++.h:1630</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1492,11 +1497,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Return the integer sort. </p>
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01561">1561</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01630">1630</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01655">context::int_const()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01661">context::int_val()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01561"></a><span class="lineno"> 1561</span>&#160;{ <a class="code" href="namespace_z3__sort.html">Z3_sort</a> s = <a class="code" href="group__capi.html#ga6cd426ab5748653b77d389fd3eac1015">Z3_mk_int_sort</a>(m_ctx); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> sort(*<span class="keyword">this</span>, s); }</div>
-<div class="ttc" id="group__capi_html_ga6cd426ab5748653b77d389fd3eac1015"><div class="ttname"><a href="group__capi.html#ga6cd426ab5748653b77d389fd3eac1015">Z3_mk_int_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_int_sort(__in Z3_context c)</div><div class="ttdoc">Create the integer type. </div></div>
+<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01731">context::int_const()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01737">context::int_val()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01630"></a><span class="lineno"> 1630</span>&#160;{ <a class="code" href="namespace_z3__sort.html">Z3_sort</a> s = <a class="code" href="group__capi.html#ga034ecfcc5ed32f51734061160f4aeffc">Z3_mk_int_sort</a>(m_ctx); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> sort(*<span class="keyword">this</span>, s); }</div>
+<div class="ttc" id="group__capi_html_ga034ecfcc5ed32f51734061160f4aeffc"><div class="ttname"><a href="group__capi.html#ga034ecfcc5ed32f51734061160f4aeffc">Z3_mk_int_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_int_sort(Z3_context c)</div><div class="ttdoc">Create the integer type. </div></div>
 <div class="ttc" id="namespace_z3__sort_html"><div class="ttname"><a href="namespace_z3__sort.html">Z3_sort</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
@@ -1526,10 +1531,10 @@ Public Member Functions</h2></td></tr>
 
 <p>Create a Z3 symbol based on the given integer. </p>
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01558">1558</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01558"></a><span class="lineno"> 1558</span>&#160;{ Z3_symbol r = <a class="code" href="group__capi.html#ga3df806baf6124df3e63a58cf23e12411">Z3_mk_int_symbol</a>(m_ctx, n); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> symbol(*<span class="keyword">this</span>, r); }</div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01627">1627</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01627"></a><span class="lineno"> 1627</span>&#160;{ Z3_symbol r = <a class="code" href="group__capi.html#gaedacd3ac78e546a48d2d840d11d04211">Z3_mk_int_symbol</a>(m_ctx, n); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> symbol(*<span class="keyword">this</span>, r); }</div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_ga3df806baf6124df3e63a58cf23e12411"><div class="ttname"><a href="group__capi.html#ga3df806baf6124df3e63a58cf23e12411">Z3_mk_int_symbol</a></div><div class="ttdeci">Z3_symbol Z3_API Z3_mk_int_symbol(__in Z3_context c, __in int i)</div><div class="ttdoc">Create a Z3 symbol using an integer. </div></div>
+<div class="ttc" id="group__capi_html_gaedacd3ac78e546a48d2d840d11d04211"><div class="ttname"><a href="group__capi.html#gaedacd3ac78e546a48d2d840d11d04211">Z3_mk_int_symbol</a></div><div class="ttdeci">Z3_symbol Z3_API Z3_mk_int_symbol(Z3_context c, int i)</div><div class="ttdoc">Create a Z3 symbol using an integer. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1555,12 +1560,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01661">1661</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga8779204998136569c3e166c34cfd3e2c">Z3_mk_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01737">1737</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01737"></a><span class="lineno"> 1737</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga1751e7566cea66fb95b16d943759d14e">Z3_mk_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
-<div class="ttc" id="group__capi_html_ga8779204998136569c3e166c34cfd3e2c"><div class="ttname"><a href="group__capi.html#ga8779204998136569c3e166c34cfd3e2c">Z3_mk_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int(__in Z3_context c, __in int v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of an int, bit-vector, or finite-domain sort. </div></div>
+<div class="ttc" id="group__capi_html_ga1751e7566cea66fb95b16d943759d14e"><div class="ttname"><a href="group__capi.html#ga1751e7566cea66fb95b16d943759d14e">Z3_mk_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int(Z3_context c, int v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of an int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01561">z3++.h:1561</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01630">z3++.h:1630</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1586,12 +1591,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01662">1662</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga7201b6231b61421c005457206760a121">Z3_mk_unsigned_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
-<div class="ttc" id="group__capi_html_ga7201b6231b61421c005457206760a121"><div class="ttname"><a href="group__capi.html#ga7201b6231b61421c005457206760a121">Z3_mk_unsigned_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int(__in Z3_context c, __in unsigned v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01738">1738</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01738"></a><span class="lineno"> 1738</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga0d734e38e6f72251880d85d15c962874">Z3_mk_unsigned_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<div class="ttc" id="group__capi_html_ga0d734e38e6f72251880d85d15c962874"><div class="ttname"><a href="group__capi.html#ga0d734e38e6f72251880d85d15c962874">Z3_mk_unsigned_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int(Z3_context c, unsigned v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01561">z3++.h:1561</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01630">z3++.h:1630</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1617,12 +1622,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01663">1663</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01663"></a><span class="lineno"> 1663</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga42cc319787d485d9cb665d80e02d206f">Z3_mk_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01739">1739</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01739"></a><span class="lineno"> 1739</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga88787781ef913be40f171eec1c9f0d10">Z3_mk_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<div class="ttc" id="group__capi_html_ga88787781ef913be40f171eec1c9f0d10"><div class="ttname"><a href="group__capi.html#ga88787781ef913be40f171eec1c9f0d10">Z3_mk_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int64(Z3_context c, __int64 v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
-<div class="ttc" id="group__capi_html_ga42cc319787d485d9cb665d80e02d206f"><div class="ttname"><a href="group__capi.html#ga42cc319787d485d9cb665d80e02d206f">Z3_mk_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int64(__in Z3_context c, __in __int64 v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01561">z3++.h:1561</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01630">z3++.h:1630</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1648,12 +1653,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01664">1664</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga88a165138162a8bac401672f0a1b7891">Z3_mk_unsigned_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01740">1740</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01740"></a><span class="lineno"> 1740</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#gad6d4df7cfc06c9ee1be20538f72dfcd5">Z3_mk_unsigned_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
+<div class="ttc" id="group__capi_html_gad6d4df7cfc06c9ee1be20538f72dfcd5"><div class="ttname"><a href="group__capi.html#gad6d4df7cfc06c9ee1be20538f72dfcd5">Z3_mk_unsigned_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int64(Z3_context c, unsigned __int64 v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_ga88a165138162a8bac401672f0a1b7891"><div class="ttname"><a href="group__capi.html#ga88a165138162a8bac401672f0a1b7891">Z3_mk_unsigned_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int64(__in Z3_context c, __in unsigned __int64 v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
-<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01561">z3++.h:1561</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01630">z3++.h:1630</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1679,12 +1684,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01665">1665</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga92e75c71f0d602c65b67ae8ae82dcb6a">Z3_mk_numeral</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
-<div class="ttc" id="group__capi_html_ga92e75c71f0d602c65b67ae8ae82dcb6a"><div class="ttname"><a href="group__capi.html#ga92e75c71f0d602c65b67ae8ae82dcb6a">Z3_mk_numeral</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_numeral(__in Z3_context c, __in Z3_string numeral, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a given sort. </div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01741">1741</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01741"></a><span class="lineno"> 1741</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga2adef1696d308843fdb33ad6b2d4b4a0">Z3_mk_numeral</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">int_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01561">z3++.h:1561</a></div></div>
+<div class="ttc" id="group__capi_html_ga2adef1696d308843fdb33ad6b2d4b4a0"><div class="ttname"><a href="group__capi.html#ga2adef1696d308843fdb33ad6b2d4b4a0">Z3_mk_numeral</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_numeral(Z3_context c, Z3_string numeral, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a given sort. </div></div>
+<div class="ttc" id="classz3_1_1context_html_ad5962d2494f436962977ea8c0f5e2464"><div class="ttname"><a href="classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464">z3::context::int_sort</a></div><div class="ttdeci">sort int_sort()</div><div class="ttdoc">Return the integer sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01630">z3++.h:1630</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1712,8 +1717,8 @@ Public Member Functions</h2></td></tr>
 <p>Interrupt the current procedure being executed by any object managed by this context. This is a soft interruption: there is no guarantee the object will actualy stop. </p>
 
 <p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l00168">168</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{ <a class="code" href="group__capi.html#ga6f052f6ff476bba7b9342434ef9261bb">Z3_interrupt</a>(m_ctx); }</div>
-<div class="ttc" id="group__capi_html_ga6f052f6ff476bba7b9342434ef9261bb"><div class="ttname"><a href="group__capi.html#ga6f052f6ff476bba7b9342434ef9261bb">Z3_interrupt</a></div><div class="ttdeci">void Z3_API Z3_interrupt(__in Z3_context c)</div><div class="ttdoc">Interrupt the execution of a Z3 procedure. This procedure can be used to interrupt: solvers...</div></div>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{ <a class="code" href="group__capi.html#ga2f50aa31f6ac3d9ee882d347afa6d492">Z3_interrupt</a>(m_ctx); }</div>
+<div class="ttc" id="group__capi_html_ga2f50aa31f6ac3d9ee882d347afa6d492"><div class="ttname"><a href="group__capi.html#ga2f50aa31f6ac3d9ee882d347afa6d492">Z3_interrupt</a></div><div class="ttdeci">void Z3_API Z3_interrupt(Z3_context c)</div><div class="ttdoc">Interrupt the execution of a Z3 procedure. This procedure can be used to interrupt: solvers...</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1749,12 +1754,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01680">1680</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01756">1756</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01715">func_decl::operator()()</a>, <a class="el" href="z3_09_09_8h_source.html#l00904">z3::pw()</a>, <a class="el" href="z3_09_09_8h_source.html#l01794">z3::select()</a>, <a class="el" href="z3_09_09_8h_source.html#l01801">z3::store()</a>, <a class="el" href="z3_09_09_8h_source.html#l00977">z3::udiv()</a>, <a class="el" href="z3_09_09_8h_source.html#l00965">z3::uge()</a>, <a class="el" href="z3_09_09_8h_source.html#l00971">z3::ugt()</a>, <a class="el" href="z3_09_09_8h_source.html#l00953">z3::ule()</a>, and <a class="el" href="z3_09_09_8h_source.html#l00959">z3::ult()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga8779204998136569c3e166c34cfd3e2c">Z3_mk_int</a>(m_ctx, n, s); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01791">func_decl::operator()()</a>, <a class="el" href="z3_09_09_8h_source.html#l00910">z3::pw()</a>, <a class="el" href="z3_09_09_8h_source.html#l01870">z3::select()</a>, <a class="el" href="z3_09_09_8h_source.html#l01877">z3::store()</a>, <a class="el" href="z3_09_09_8h_source.html#l00983">z3::udiv()</a>, <a class="el" href="z3_09_09_8h_source.html#l00971">z3::uge()</a>, <a class="el" href="z3_09_09_8h_source.html#l00977">z3::ugt()</a>, <a class="el" href="z3_09_09_8h_source.html#l00959">z3::ule()</a>, and <a class="el" href="z3_09_09_8h_source.html#l00965">z3::ult()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01756"></a><span class="lineno"> 1756</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga1751e7566cea66fb95b16d943759d14e">Z3_mk_int</a>(m_ctx, n, s); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
-<div class="ttc" id="group__capi_html_ga8779204998136569c3e166c34cfd3e2c"><div class="ttname"><a href="group__capi.html#ga8779204998136569c3e166c34cfd3e2c">Z3_mk_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int(__in Z3_context c, __in int v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of an int, bit-vector, or finite-domain sort. </div></div>
+<div class="ttc" id="group__capi_html_ga1751e7566cea66fb95b16d943759d14e"><div class="ttname"><a href="group__capi.html#ga1751e7566cea66fb95b16d943759d14e">Z3_mk_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int(Z3_context c, int v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of an int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1807,10 +1812,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01656">1656</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">constant</a>(name, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); }</div>
-<div class="ttc" id="classz3_1_1context_html_ac04a237609e1fc992f8f7e1713affc8e"><div class="ttname"><a href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">z3::context::constant</a></div><div class="ttdeci">expr constant(symbol const &amp;name, sort const &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01648">z3++.h:1648</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01562">z3++.h:1562</a></div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01732">1732</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01732"></a><span class="lineno"> 1732</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">constant</a>(name, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); }</div>
+<div class="ttc" id="classz3_1_1context_html_ac04a237609e1fc992f8f7e1713affc8e"><div class="ttname"><a href="classz3_1_1context.html#ac04a237609e1fc992f8f7e1713affc8e">z3::context::constant</a></div><div class="ttdeci">expr constant(symbol const &amp;name, sort const &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01724">z3++.h:1724</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01631">z3++.h:1631</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1837,12 +1842,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Return the Real sort. </p>
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01562">1562</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01631">1631</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01656">context::real_const()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01668">context::real_val()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01562"></a><span class="lineno"> 1562</span>&#160;{ <a class="code" href="namespace_z3__sort.html">Z3_sort</a> s = <a class="code" href="group__capi.html#ga40ef93b9738485caed6dc84631c3c1a0">Z3_mk_real_sort</a>(m_ctx); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> sort(*<span class="keyword">this</span>, s); }</div>
-<div class="ttc" id="group__capi_html_ga40ef93b9738485caed6dc84631c3c1a0"><div class="ttname"><a href="group__capi.html#ga40ef93b9738485caed6dc84631c3c1a0">Z3_mk_real_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_real_sort(__in Z3_context c)</div><div class="ttdoc">Create the real type. </div></div>
+<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01732">context::real_const()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01744">context::real_val()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01631"></a><span class="lineno"> 1631</span>&#160;{ <a class="code" href="namespace_z3__sort.html">Z3_sort</a> s = <a class="code" href="group__capi.html#ga21e6ca942ce87dd55ff099d8633532ad">Z3_mk_real_sort</a>(m_ctx); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> sort(*<span class="keyword">this</span>, s); }</div>
 <div class="ttc" id="namespace_z3__sort_html"><div class="ttname"><a href="namespace_z3__sort.html">Z3_sort</a></div></div>
+<div class="ttc" id="group__capi_html_ga21e6ca942ce87dd55ff099d8633532ad"><div class="ttname"><a href="group__capi.html#ga21e6ca942ce87dd55ff099d8633532ad">Z3_mk_real_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_real_sort(Z3_context c)</div><div class="ttdoc">Create the real type. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1879,11 +1884,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01667">1667</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#gaca5f639e917eb848b6289fb9add5744d">Z3_mk_real</a>(m_ctx, n, d); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01743">1743</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01743"></a><span class="lineno"> 1743</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#gaa8542d403add28f97a5d9da19bd96816">Z3_mk_real</a>(m_ctx, n, d); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
+<div class="ttc" id="group__capi_html_gaa8542d403add28f97a5d9da19bd96816"><div class="ttname"><a href="group__capi.html#gaa8542d403add28f97a5d9da19bd96816">Z3_mk_real</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_real(Z3_context c, int num, int den)</div><div class="ttdoc">Create a real from a fraction. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_gaca5f639e917eb848b6289fb9add5744d"><div class="ttname"><a href="group__capi.html#gaca5f639e917eb848b6289fb9add5744d">Z3_mk_real</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_real(__in Z3_context c, __in int num, __in int den)</div><div class="ttdoc">Create a real from a fraction. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1909,11 +1914,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01668">1668</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01668"></a><span class="lineno"> 1668</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga8779204998136569c3e166c34cfd3e2c">Z3_mk_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01744">1744</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01744"></a><span class="lineno"> 1744</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga1751e7566cea66fb95b16d943759d14e">Z3_mk_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
-<div class="ttc" id="group__capi_html_ga8779204998136569c3e166c34cfd3e2c"><div class="ttname"><a href="group__capi.html#ga8779204998136569c3e166c34cfd3e2c">Z3_mk_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int(__in Z3_context c, __in int v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of an int, bit-vector, or finite-domain sort. </div></div>
-<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01562">z3++.h:1562</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01631">z3++.h:1631</a></div></div>
+<div class="ttc" id="group__capi_html_ga1751e7566cea66fb95b16d943759d14e"><div class="ttname"><a href="group__capi.html#ga1751e7566cea66fb95b16d943759d14e">Z3_mk_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int(Z3_context c, int v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of an int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1940,11 +1945,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01669">1669</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01669"></a><span class="lineno"> 1669</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga7201b6231b61421c005457206760a121">Z3_mk_unsigned_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
-<div class="ttc" id="group__capi_html_ga7201b6231b61421c005457206760a121"><div class="ttname"><a href="group__capi.html#ga7201b6231b61421c005457206760a121">Z3_mk_unsigned_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int(__in Z3_context c, __in unsigned v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01745">1745</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01745"></a><span class="lineno"> 1745</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga0d734e38e6f72251880d85d15c962874">Z3_mk_unsigned_int</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<div class="ttc" id="group__capi_html_ga0d734e38e6f72251880d85d15c962874"><div class="ttname"><a href="group__capi.html#ga0d734e38e6f72251880d85d15c962874">Z3_mk_unsigned_int</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int(Z3_context c, unsigned v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01562">z3++.h:1562</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01631">z3++.h:1631</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1971,11 +1976,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01670">1670</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01670"></a><span class="lineno"> 1670</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga42cc319787d485d9cb665d80e02d206f">Z3_mk_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01746">1746</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01746"></a><span class="lineno"> 1746</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga88787781ef913be40f171eec1c9f0d10">Z3_mk_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<div class="ttc" id="group__capi_html_ga88787781ef913be40f171eec1c9f0d10"><div class="ttname"><a href="group__capi.html#ga88787781ef913be40f171eec1c9f0d10">Z3_mk_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int64(Z3_context c, __int64 v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01562">z3++.h:1562</a></div></div>
-<div class="ttc" id="group__capi_html_ga42cc319787d485d9cb665d80e02d206f"><div class="ttname"><a href="group__capi.html#ga42cc319787d485d9cb665d80e02d206f">Z3_mk_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_int64(__in Z3_context c, __in __int64 v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
+<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01631">z3++.h:1631</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -2002,12 +2007,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01671">1671</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01671"></a><span class="lineno"> 1671</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga88a165138162a8bac401672f0a1b7891">Z3_mk_unsigned_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01747">1747</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01747"></a><span class="lineno"> 1747</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#gad6d4df7cfc06c9ee1be20538f72dfcd5">Z3_mk_unsigned_int64</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01562">z3++.h:1562</a></div></div>
+<div class="ttc" id="group__capi_html_gad6d4df7cfc06c9ee1be20538f72dfcd5"><div class="ttname"><a href="group__capi.html#gad6d4df7cfc06c9ee1be20538f72dfcd5">Z3_mk_unsigned_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int64(Z3_context c, unsigned __int64 v, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
+<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01631">z3++.h:1631</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
-<div class="ttc" id="group__capi_html_ga88a165138162a8bac401672f0a1b7891"><div class="ttname"><a href="group__capi.html#ga88a165138162a8bac401672f0a1b7891">Z3_mk_unsigned_int64</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_unsigned_int64(__in Z3_context c, __in unsigned __int64 v, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a int, bit-vector, or finite-domain sort. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2033,12 +2038,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01672">1672</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01672"></a><span class="lineno"> 1672</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga92e75c71f0d602c65b67ae8ae82dcb6a">Z3_mk_numeral</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
-<div class="ttc" id="group__capi_html_ga92e75c71f0d602c65b67ae8ae82dcb6a"><div class="ttname"><a href="group__capi.html#ga92e75c71f0d602c65b67ae8ae82dcb6a">Z3_mk_numeral</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_numeral(__in Z3_context c, __in Z3_string numeral, __in Z3_sort ty)</div><div class="ttdoc">Create a numeral of a given sort. </div></div>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01748">1748</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01748"></a><span class="lineno"> 1748</span>&#160;{ <a class="code" href="namespace_z3__ast.html">Z3_ast</a> r = <a class="code" href="group__capi.html#ga2adef1696d308843fdb33ad6b2d4b4a0">Z3_mk_numeral</a>(m_ctx, n, <a class="code" href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">real_sort</a>()); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> expr(*<span class="keyword">this</span>, r); }</div>
 <div class="ttc" id="namespace_z3__ast_html"><div class="ttname"><a href="namespace_z3__ast.html">Z3_ast</a></div></div>
-<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01562">z3++.h:1562</a></div></div>
+<div class="ttc" id="classz3_1_1context_html_a416885c6932643cd14850e60570a9ff4"><div class="ttname"><a href="classz3_1_1context.html#a416885c6932643cd14850e60570a9ff4">z3::context::real_sort</a></div><div class="ttdeci">sort real_sort()</div><div class="ttdoc">Return the Real sort. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l01631">z3++.h:1631</a></div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
+<div class="ttc" id="group__capi_html_ga2adef1696d308843fdb33ad6b2d4b4a0"><div class="ttname"><a href="group__capi.html#ga2adef1696d308843fdb33ad6b2d4b4a0">Z3_mk_numeral</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_numeral(Z3_context c, Z3_string numeral, Z3_sort ty)</div><div class="ttdoc">Create a numeral of a given sort. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2077,8 +2082,8 @@ Public Member Functions</h2></td></tr>
 <p>Update global parameter <code>param</code> with string <code>value</code>. </p>
 
 <p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l00150">150</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{ <a class="code" href="group__capi.html#ga46114df7ed31a1d30ba5817dafc7b3ca">Z3_update_param_value</a>(m_ctx, param, value); }</div>
-<div class="ttc" id="group__capi_html_ga46114df7ed31a1d30ba5817dafc7b3ca"><div class="ttname"><a href="group__capi.html#ga46114df7ed31a1d30ba5817dafc7b3ca">Z3_update_param_value</a></div><div class="ttdeci">void Z3_API Z3_update_param_value(__in Z3_context c, __in Z3_string param_id, __in Z3_string param_value)</div><div class="ttdoc">Set a value of a context parameter. </div></div>
+<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{ <a class="code" href="group__capi.html#ga4532cf3ec88234be55098a9ed601dc7e">Z3_update_param_value</a>(m_ctx, param, value); }</div>
+<div class="ttc" id="group__capi_html_ga4532cf3ec88234be55098a9ed601dc7e"><div class="ttname"><a href="group__capi.html#ga4532cf3ec88234be55098a9ed601dc7e">Z3_update_param_value</a></div><div class="ttdeci">void Z3_API Z3_update_param_value(Z3_context c, Z3_string param_id, Z3_string param_value)</div><div class="ttdoc">Set a value of a context parameter. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2117,8 +2122,8 @@ Public Member Functions</h2></td></tr>
 <p>Update global parameter <code>param</code> with Boolean <code>value</code>. </p>
 
 <p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l00154">154</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{ <a class="code" href="group__capi.html#ga46114df7ed31a1d30ba5817dafc7b3ca">Z3_update_param_value</a>(m_ctx, param, value ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>); }</div>
-<div class="ttc" id="group__capi_html_ga46114df7ed31a1d30ba5817dafc7b3ca"><div class="ttname"><a href="group__capi.html#ga46114df7ed31a1d30ba5817dafc7b3ca">Z3_update_param_value</a></div><div class="ttdeci">void Z3_API Z3_update_param_value(__in Z3_context c, __in Z3_string param_id, __in Z3_string param_value)</div><div class="ttdoc">Set a value of a context parameter. </div></div>
+<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{ <a class="code" href="group__capi.html#ga4532cf3ec88234be55098a9ed601dc7e">Z3_update_param_value</a>(m_ctx, param, value ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>); }</div>
+<div class="ttc" id="group__capi_html_ga4532cf3ec88234be55098a9ed601dc7e"><div class="ttname"><a href="group__capi.html#ga4532cf3ec88234be55098a9ed601dc7e">Z3_update_param_value</a></div><div class="ttdeci">void Z3_API Z3_update_param_value(Z3_context c, Z3_string param_id, Z3_string param_value)</div><div class="ttdoc">Set a value of a context parameter. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2160,9 +2165,9 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                                { </div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            std::ostringstream oss;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            oss &lt;&lt; value;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <a class="code" href="group__capi.html#ga46114df7ed31a1d30ba5817dafc7b3ca">Z3_update_param_value</a>(m_ctx, param, oss.str().c_str());</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <a class="code" href="group__capi.html#ga4532cf3ec88234be55098a9ed601dc7e">Z3_update_param_value</a>(m_ctx, param, oss.str().c_str());</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        }</div>
-<div class="ttc" id="group__capi_html_ga46114df7ed31a1d30ba5817dafc7b3ca"><div class="ttname"><a href="group__capi.html#ga46114df7ed31a1d30ba5817dafc7b3ca">Z3_update_param_value</a></div><div class="ttdeci">void Z3_API Z3_update_param_value(__in Z3_context c, __in Z3_string param_id, __in Z3_string param_value)</div><div class="ttdoc">Set a value of a context parameter. </div></div>
+<div class="ttc" id="group__capi_html_ga4532cf3ec88234be55098a9ed601dc7e"><div class="ttname"><a href="group__capi.html#ga4532cf3ec88234be55098a9ed601dc7e">Z3_update_param_value</a></div><div class="ttdeci">void Z3_API Z3_update_param_value(Z3_context c, Z3_string param_id, Z3_string param_value)</div><div class="ttdoc">Set a value of a context parameter. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2190,19 +2195,85 @@ Public Member Functions</h2></td></tr>
 
 <p>Create a Z3 symbol based on the given string. </p>
 
-<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01557">1557</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01626">1626</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01653">context::constant()</a>, <a class="el" href="z3_09_09_8h_source.html#l01588">context::function()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01267">solver::solver()</a>.</p>
-<div class="fragment"><div class="line"><a name="l01557"></a><span class="lineno"> 1557</span>&#160;{ Z3_symbol r = <a class="code" href="group__capi.html#ga6b9ed981ba0180962928394fe828b0a7">Z3_mk_string_symbol</a>(m_ctx, s); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> symbol(*<span class="keyword">this</span>, r); }</div>
-<div class="ttc" id="group__capi_html_ga6b9ed981ba0180962928394fe828b0a7"><div class="ttname"><a href="group__capi.html#ga6b9ed981ba0180962928394fe828b0a7">Z3_mk_string_symbol</a></div><div class="ttdeci">Z3_symbol Z3_API Z3_mk_string_symbol(__in Z3_context c, __in Z3_string s)</div><div class="ttdoc">Create a Z3 symbol using a C string. </div></div>
+<p>Referenced by <a class="el" href="z3_09_09_8h_source.html#l01729">context::constant()</a>, <a class="el" href="z3_09_09_8h_source.html#l01664">context::function()</a>, and <a class="el" href="z3_09_09_8h_source.html#l01280">solver::solver()</a>.</p>
+<div class="fragment"><div class="line"><a name="l01626"></a><span class="lineno"> 1626</span>&#160;{ Z3_symbol r = <a class="code" href="group__capi.html#gac2c18f73e8711f6d03a85e1b0f0e5397">Z3_mk_string_symbol</a>(m_ctx, s); <a class="code" href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">check_error</a>(); <span class="keywordflow">return</span> symbol(*<span class="keyword">this</span>, r); }</div>
+<div class="ttc" id="group__capi_html_gac2c18f73e8711f6d03a85e1b0f0e5397"><div class="ttname"><a href="group__capi.html#gac2c18f73e8711f6d03a85e1b0f0e5397">Z3_mk_string_symbol</a></div><div class="ttdeci">Z3_symbol Z3_API Z3_mk_string_symbol(Z3_context c, Z3_string s)</div><div class="ttdoc">Create a Z3 symbol using a C string. </div></div>
 <div class="ttc" id="classz3_1_1context_html_a870a777fd6661d55e9102edbed9fca1d"><div class="ttname"><a href="classz3_1_1context.html#a870a777fd6661d55e9102edbed9fca1d">z3::context::check_error</a></div><div class="ttdeci">void check_error() const </div><div class="ttdoc">Auxiliary method used to check for API usage errors. </div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00141">z3++.h:141</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a506663242cd8b4658d6481de508cb861"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz3_1_1sort.html">sort</a> uninterpreted_sort </td>
+          <td>(</td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create an uninterpreted sort with the name given by the string or symbol. </p>
+
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01645">1645</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;                                                            {</div>
+<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160;        Z3_symbol _name = <a class="code" href="group__capi.html#gac2c18f73e8711f6d03a85e1b0f0e5397">Z3_mk_string_symbol</a>(*<span class="keyword">this</span>, name);</div>
+<div class="line"><a name="l01647"></a><span class="lineno"> 1647</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacez3.html#ab2e9286d72e116e43d4dc0c0cde0b755">to_sort</a>(*<span class="keyword">this</span>, <a class="code" href="group__capi.html#ga32efff139d2661e5a33b0479b8c507ee">Z3_mk_uninterpreted_sort</a>(*<span class="keyword">this</span>, _name));</div>
+<div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;    }</div>
+<div class="ttc" id="group__capi_html_gac2c18f73e8711f6d03a85e1b0f0e5397"><div class="ttname"><a href="group__capi.html#gac2c18f73e8711f6d03a85e1b0f0e5397">Z3_mk_string_symbol</a></div><div class="ttdeci">Z3_symbol Z3_API Z3_mk_string_symbol(Z3_context c, Z3_string s)</div><div class="ttdoc">Create a Z3 symbol using a C string. </div></div>
+<div class="ttc" id="group__capi_html_ga32efff139d2661e5a33b0479b8c507ee"><div class="ttname"><a href="group__capi.html#ga32efff139d2661e5a33b0479b8c507ee">Z3_mk_uninterpreted_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_uninterpreted_sort(Z3_context c, Z3_symbol s)</div><div class="ttdoc">Create a free (uninterpreted) type using the given name (symbol). </div></div>
+<div class="ttc" id="namespacez3_html_ab2e9286d72e116e43d4dc0c0cde0b755"><div class="ttname"><a href="namespacez3.html#ab2e9286d72e116e43d4dc0c0cde0b755">z3::to_sort</a></div><div class="ttdeci">sort to_sort(context &amp;c, Z3_sort s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00945">z3++.h:945</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a10dadfc4b646db80195244a95466d476"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classz3_1_1sort.html">sort</a> uninterpreted_sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classz3_1_1symbol.html">symbol</a> const &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="z3_09_09_8h_source.html#l01649">1649</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;                                                              {</div>
+<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacez3.html#ab2e9286d72e116e43d4dc0c0cde0b755">to_sort</a>(*<span class="keyword">this</span>, <a class="code" href="group__capi.html#ga32efff139d2661e5a33b0479b8c507ee">Z3_mk_uninterpreted_sort</a>(*<span class="keyword">this</span>, name));</div>
+<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;    }</div>
+<div class="ttc" id="group__capi_html_ga32efff139d2661e5a33b0479b8c507ee"><div class="ttname"><a href="group__capi.html#ga32efff139d2661e5a33b0479b8c507ee">Z3_mk_uninterpreted_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_mk_uninterpreted_sort(Z3_context c, Z3_symbol s)</div><div class="ttdoc">Create a free (uninterpreted) type using the given name (symbol). </div></div>
+<div class="ttc" id="namespacez3_html_ab2e9286d72e116e43d4dc0c0cde0b755"><div class="ttname"><a href="namespacez3.html#ab2e9286d72e116e43d4dc0c0cde0b755">z3::to_sort</a></div><div class="ttdeci">sort to_sort(context &amp;c, Z3_sort s)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00945">z3++.h:945</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 29 2015 18:05:18 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 5 2015 16:03:54 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

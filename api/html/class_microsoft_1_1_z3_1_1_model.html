@@ -243,7 +243,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">return</span> Expr.Create(Context, n);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="ttc" id="group__capi_html_ga4cd6ad05aba48f4b679f0c13310ed2a4"><div class="ttname"><a href="group__capi.html#ga4cd6ad05aba48f4b679f0c13310ed2a4">Z3_sort_kind</a></div><div class="ttdeci">Z3_sort_kind</div><div class="ttdoc">The different kinds of Z3 types (See Z3_get_sort_kind). </div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00186">z3_api.h:186</a></div></div>
+<div class="ttc" id="group__capi_html_ga4cd6ad05aba48f4b679f0c13310ed2a4"><div class="ttname"><a href="group__capi.html#ga4cd6ad05aba48f4b679f0c13310ed2a4">Z3_sort_kind</a></div><div class="ttdeci">Z3_sort_kind</div><div class="ttdoc">The different kinds of Z3 types (See Z3_get_sort_kind). </div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00194">z3_api.h:194</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -418,7 +418,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_microsoft_1_1_z3_1_1_model.html#a7df49079a289dc38841fc4538e6f9d98">FuncInterp</a>(Context, n);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
-<div class="ttc" id="group__capi_html_ga4cd6ad05aba48f4b679f0c13310ed2a4"><div class="ttname"><a href="group__capi.html#ga4cd6ad05aba48f4b679f0c13310ed2a4">Z3_sort_kind</a></div><div class="ttdeci">Z3_sort_kind</div><div class="ttdoc">The different kinds of Z3 types (See Z3_get_sort_kind). </div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00186">z3_api.h:186</a></div></div>
+<div class="ttc" id="group__capi_html_ga4cd6ad05aba48f4b679f0c13310ed2a4"><div class="ttname"><a href="group__capi.html#ga4cd6ad05aba48f4b679f0c13310ed2a4">Z3_sort_kind</a></div><div class="ttdeci">Z3_sort_kind</div><div class="ttdoc">The different kinds of Z3 types (See Z3_get_sort_kind). </div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00194">z3_api.h:194</a></div></div>
 <div class="ttc" id="namespace_microsoft_1_1_z3_html_a4cd6ad05aba48f4b679f0c13310ed2a4"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#a4cd6ad05aba48f4b679f0c13310ed2a4">Microsoft.Z3.Z3_sort_kind</a></div><div class="ttdeci">Z3_sort_kind</div><div class="ttdoc">Z3_sort_kind</div><div class="ttdef"><b>Definition:</b> <a href="_enumerations_8cs_source.html#l00034">Enumerations.cs:34</a></div></div>
 <div class="ttc" id="class_microsoft_1_1_z3_1_1_model_html_a7df49079a289dc38841fc4538e6f9d98"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_model.html#a7df49079a289dc38841fc4538e6f9d98">Microsoft.Z3.Model.FuncInterp</a></div><div class="ttdeci">FuncInterp FuncInterp(FuncDecl f)</div><div class="ttdoc">Retrieves the interpretation (the assignment) of a non-constant f  in the model. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8cs_source.html#l00070">Model.cs:70</a></div></div>
 </div><!-- fragment -->
@@ -461,13 +461,9 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            Contract.Requires(s != null);</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            Contract.Ensures(Contract.Result&lt;Expr[]&gt;() != null);</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            ASTVector nUniv = <span class="keyword">new</span> ASTVector(Context, Native.Z3_model_get_sort_universe(Context.nCtx, NativeObject, s.NativeObject));</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            uint n = nUniv.Size;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            Expr[] res = <span class="keyword">new</span> Expr[n];</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordflow">for</span> (uint i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                res[i] = Expr.Create(Context, nUniv[i].NativeObject);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            ASTVector av = <span class="keyword">new</span> ASTVector(Context, Native.Z3_model_get_sort_universe(Context.nCtx, NativeObject, s.NativeObject));            </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordflow">return</span> av.ToExprArray();</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -495,10 +491,10 @@ Properties</h2></td></tr>
 <p>Conversion of models to strings. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string representation of the model.</dd></dl>
 
-<p>Definition at line <a class="el" href="_model_8cs_source.html#l00280">280</a> of file <a class="el" href="_model_8cs_source.html">Model.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="keywordflow">return</span> Native.Z3_model_to_string(Context.nCtx, NativeObject);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="_model_8cs_source.html#l00276">276</a> of file <a class="el" href="_model_8cs_source.html">Model.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            <span class="keywordflow">return</span> Native.Z3_model_to_string(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -676,7 +672,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 29 2015 18:05:13 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 5 2015 16:03:49 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

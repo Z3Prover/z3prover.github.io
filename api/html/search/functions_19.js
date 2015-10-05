@@ -10,6 +10,7 @@ var searchData=
   ['_7efunc_5finterp',['~func_interp',['../classz3_1_1func__interp.html#a1e89c106b182439821f721a1e577b9b2',1,'z3::func_interp']]],
   ['_7egoal',['~goal',['../classz3_1_1goal.html#acb91359c061d1e50d8413c8c8684d0b2',1,'z3::goal']]],
   ['_7emodel',['~model',['../classz3_1_1model.html#a16ddd8ff1148e1272bdb68346ca40f2e',1,'z3::model']]],
+  ['_7eoptimize',['~optimize',['../classz3_1_1optimize.html#aa71c92a436d0b3da51ca92467a5eb413',1,'z3::optimize']]],
   ['_7eparams',['~params',['../classz3_1_1params.html#a50f9c1762628188aba30a79196cf53ff',1,'z3::params']]],
   ['_7eprobe',['~probe',['../classz3_1_1probe.html#a961077a7899d2d01eba3da228c4339dd',1,'z3::probe']]],
   ['_7esolver',['~solver',['../classz3_1_1solver.html#a0b47098daa82570d497838081bb0b27c',1,'z3::solver']]],

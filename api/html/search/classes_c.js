@@ -1,19 +1,9 @@
 var searchData=
 [
-  ['paramdescrs',['ParamDescrs',['../classcom_1_1microsoft_1_1z3_1_1_param_descrs.html',1,'com::microsoft::z3']]],
-  ['paramdescrs',['ParamDescrs',['../class_microsoft_1_1_z3_1_1_param_descrs.html',1,'Microsoft::Z3']]],
-  ['paramdescrsref',['ParamDescrsRef',['../classz3py_1_1_param_descrs_ref.html',1,'z3py']]],
-  ['parameter',['Parameter',['../classcom_1_1microsoft_1_1z3_1_1_func_decl_1_1_parameter.html',1,'com::microsoft::z3::FuncDecl']]],
-  ['parameter',['Parameter',['../class_microsoft_1_1_z3_1_1_func_decl_1_1_parameter.html',1,'Microsoft::Z3::FuncDecl']]],
-  ['params',['params',['../classz3_1_1params.html',1,'z3']]],
-  ['params',['Params',['../classcom_1_1microsoft_1_1z3_1_1_params.html',1,'com::microsoft::z3']]],
-  ['params',['Params',['../class_microsoft_1_1_z3_1_1_params.html',1,'Microsoft::Z3']]],
-  ['paramsref',['ParamsRef',['../classz3py_1_1_params_ref.html',1,'z3py']]],
-  ['pattern',['Pattern',['../classcom_1_1microsoft_1_1z3_1_1_pattern.html',1,'com::microsoft::z3']]],
-  ['pattern',['Pattern',['../class_microsoft_1_1_z3_1_1_pattern.html',1,'Microsoft::Z3']]],
-  ['patternref',['PatternRef',['../classz3py_1_1_pattern_ref.html',1,'z3py']]],
-  ['probe',['Probe',['../class_microsoft_1_1_z3_1_1_probe.html',1,'Microsoft::Z3']]],
-  ['probe',['Probe',['../classcom_1_1microsoft_1_1z3_1_1_probe.html',1,'com::microsoft::z3']]],
-  ['probe',['probe',['../classz3_1_1probe.html',1,'z3']]],
-  ['probe',['Probe',['../classz3py_1_1_probe.html',1,'z3py']]]
+  ['object',['object',['../classz3_1_1object.html',1,'z3']]],
+  ['optimize',['Optimize',['../classz3py_1_1_optimize.html',1,'z3py']]],
+  ['optimize',['Optimize',['../class_microsoft_1_1_z3_1_1_optimize.html',1,'Microsoft::Z3']]],
+  ['optimize',['Optimize',['../classcom_1_1microsoft_1_1z3_1_1_optimize.html',1,'com::microsoft::z3']]],
+  ['optimize',['optimize',['../classz3_1_1optimize.html',1,'z3']]],
+  ['optimizeobjective',['OptimizeObjective',['../classz3py_1_1_optimize_objective.html',1,'z3py']]]
 ];

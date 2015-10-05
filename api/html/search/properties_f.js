@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['tactic_5fdrq',['Tactic_DRQ',['../class_microsoft_1_1_z3_1_1_context.html#ad6f475d8e92a346d10bce6549160f950',1,'Microsoft::Z3::Context']]],
-  ['tacticnames',['TacticNames',['../class_microsoft_1_1_z3_1_1_context.html#a14f289fa3bb547fb9d75bb26f37d0fb9',1,'Microsoft::Z3::Context']]],
-  ['taildecl',['TailDecl',['../class_microsoft_1_1_z3_1_1_list_sort.html#a64d0e993abbeaae32dfde09b630b924e',1,'Microsoft::Z3::ListSort']]],
-  ['terms',['Terms',['../class_microsoft_1_1_z3_1_1_pattern.html#aedf36b6215b5814e3d624ec45695be69',1,'Microsoft::Z3::Pattern']]],
-  ['testerdecl',['TesterDecl',['../class_microsoft_1_1_z3_1_1_constructor.html#ac42f6ef79625ff53e0099acd45875d39',1,'Microsoft::Z3::Constructor']]],
-  ['testerdecls',['TesterDecls',['../class_microsoft_1_1_z3_1_1_enum_sort.html#aa7188292688f6c247ae35101b361f227',1,'Microsoft::Z3::EnumSort']]],
-  ['this_5bgoal_20g_5d',['this[Goal g]',['../class_microsoft_1_1_z3_1_1_probe.html#a15d69e94669071567cc9bf2c63bdc0f5',1,'Microsoft.Z3.Probe.this[Goal g]()'],['../class_microsoft_1_1_z3_1_1_tactic.html#ab85d9ef6e0572d9c1e8224ee5ab015eb',1,'Microsoft.Z3.Tactic.this[Goal g]()']]],
-  ['this_5bstring_20key_5d',['this[string key]',['../class_microsoft_1_1_z3_1_1_statistics.html#acb283b8ac219253d47a018ad26ecc961',1,'Microsoft::Z3::Statistics']]],
-  ['this_5buint_20i_5d',['this[uint i]',['../class_microsoft_1_1_z3_1_1_a_s_t_vector.html#a436840313424572aaf69f0ab113b4915',1,'Microsoft::Z3::ASTVector']]]
+  ['range',['Range',['../class_microsoft_1_1_z3_1_1_array_sort.html#a21d9c32f3de29d8e4ba4e57cadede1f1',1,'Microsoft.Z3.ArraySort.Range()'],['../class_microsoft_1_1_z3_1_1_func_decl.html#a21d9c32f3de29d8e4ba4e57cadede1f1',1,'Microsoft.Z3.FuncDecl.Range()']]],
+  ['rational',['Rational',['../class_microsoft_1_1_z3_1_1_func_decl_1_1_parameter.html#a83eacfa32653229fb9de5d44ad0ae8b5',1,'Microsoft::Z3::FuncDecl::Parameter']]],
+  ['realsort',['RealSort',['../class_microsoft_1_1_z3_1_1_context.html#a8d234cf11554e05c81e076645a8a45ec',1,'Microsoft::Z3::Context']]],
+  ['reasonunknown',['ReasonUnknown',['../class_microsoft_1_1_z3_1_1_solver.html#abd6b00571dd37bd2c5252c4e5414788e',1,'Microsoft::Z3::Solver']]],
+  ['recognizers',['Recognizers',['../class_microsoft_1_1_z3_1_1_datatype_sort.html#aae2d5d5116df20981c007659ef08e90d',1,'Microsoft::Z3::DatatypeSort']]],
+  ['rules',['Rules',['../class_microsoft_1_1_z3_1_1_fixedpoint.html#a21495691483fcd4a925d9736036c2db9',1,'Microsoft::Z3::Fixedpoint']]]
 ];
