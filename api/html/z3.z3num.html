@@ -1,0 +1,791 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module z3.z3num</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="z3.html"><font color="#ffffff">z3</font></a>.z3num</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/mnt/f/dev/z3-master/src/api/python/z3/z3num.py">/mnt/f/dev/z3-master/src/api/python/z3/z3num.py</a></font></td></tr></table>
+    <p><tt>############################################<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2012&nbsp;Microsoft&nbsp;Corporation<br>
+#&nbsp;<br>
+#&nbsp;Z3&nbsp;Python&nbsp;interface&nbsp;for&nbsp;Z3&nbsp;numerals<br>
+#<br>
+#&nbsp;Author:&nbsp;Leonardo&nbsp;de&nbsp;Moura&nbsp;(leonardo)<br>
+############################################</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="codecs.html">codecs</a><br>
+<a href="copy.html">copy</a><br>
+<a href="ctypes.html">ctypes</a><br>
+</td><td width="25%" valign=top><a href="io.html">io</a><br>
+<a href="math.html">math</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="pkg_resources.html">pkg_resources</a><br>
+<a href="sys.html">sys</a><br>
+<a href="z3.z3.html">z3.z3</a><br>
+</td><td width="25%" valign=top><a href="z3.z3core.html">z3.z3core</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="z3.z3num.html#Numeral">Numeral</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Numeral">class <strong>Numeral</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;Z3&nbsp;numeral&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;perform&nbsp;computations&nbsp;over&nbsp;arbitrary<br>
+precision&nbsp;integers,&nbsp;rationals&nbsp;and&nbsp;real&nbsp;algebraic&nbsp;numbers.<br>
+It&nbsp;also&nbsp;automatically&nbsp;converts&nbsp;python&nbsp;numeric&nbsp;values.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2)<br>
+2<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>("3/2")&nbsp;+&nbsp;1<br>
+5/2<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+1.4142135623?<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;+&nbsp;2<br>
+3.4142135623?<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;+&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3))<br>
+3.1462643699?<br>
+&nbsp;<br>
+Z3&nbsp;numerals&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;perform&nbsp;computations&nbsp;with&nbsp;<br>
+values&nbsp;in&nbsp;a&nbsp;Z3&nbsp;model.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;s&nbsp;=&nbsp;Solver()<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;Real('x')<br>
+&gt;&gt;&gt;&nbsp;s.add(x*x&nbsp;==&nbsp;2)<br>
+&gt;&gt;&gt;&nbsp;s.add(x&nbsp;&gt;&nbsp;0)<br>
+&gt;&gt;&gt;&nbsp;s.check()<br>
+sat<br>
+&gt;&gt;&gt;&nbsp;m&nbsp;=&nbsp;s.model()<br>
+&gt;&gt;&gt;&nbsp;m[x]<br>
+1.4142135623?<br>
+&gt;&gt;&gt;&nbsp;m[x]&nbsp;+&nbsp;1<br>
+1.4142135623?&nbsp;+&nbsp;1<br>
+&nbsp;<br>
+The&nbsp;previous&nbsp;result&nbsp;is&nbsp;a&nbsp;Z3&nbsp;expression.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;(m[x]&nbsp;+&nbsp;1).<a href="#Numeral-sexpr">sexpr</a>()<br>
+'(+&nbsp;(root-obj&nbsp;(+&nbsp;(^&nbsp;x&nbsp;2)&nbsp;(-&nbsp;2))&nbsp;2)&nbsp;1.0)'<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(m[x])&nbsp;+&nbsp;1<br>
+2.4142135623?<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(m[x]).<a href="#Numeral-is_pos">is_pos</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(m[x])**2<br>
+2<br>
+&nbsp;<br>
+We&nbsp;can&nbsp;also&nbsp;isolate&nbsp;the&nbsp;roots&nbsp;of&nbsp;polynomials.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x0,&nbsp;x1,&nbsp;x2&nbsp;=&nbsp;RealVarVector(3)<br>
+&gt;&gt;&gt;&nbsp;r0&nbsp;=&nbsp;<a href="#-isolate_roots">isolate_roots</a>(x0**5&nbsp;-&nbsp;x0&nbsp;-&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;r0<br>
+[1.1673039782?]<br>
+&nbsp;<br>
+In&nbsp;the&nbsp;following&nbsp;example,&nbsp;we&nbsp;are&nbsp;isolating&nbsp;the&nbsp;roots<br>
+of&nbsp;a&nbsp;univariate&nbsp;polynomial&nbsp;(on&nbsp;x1)&nbsp;obtained&nbsp;after&nbsp;substituting<br>
+x0&nbsp;-&gt;&nbsp;r0[0]<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;r1&nbsp;=&nbsp;<a href="#-isolate_roots">isolate_roots</a>(x1**2&nbsp;-&nbsp;x0&nbsp;+&nbsp;1,&nbsp;[&nbsp;r0[0]&nbsp;])<br>
+&gt;&gt;&gt;&nbsp;r1<br>
+[-0.4090280898?,&nbsp;0.4090280898?]<br>
+&nbsp;<br>
+Similarly,&nbsp;in&nbsp;the&nbsp;next&nbsp;example&nbsp;we&nbsp;isolate&nbsp;the&nbsp;roots&nbsp;of<br>
+a&nbsp;univariate&nbsp;polynomial&nbsp;(on&nbsp;x2)&nbsp;obtained&nbsp;after&nbsp;substituting<br>
+x0&nbsp;-&gt;&nbsp;r0[0]&nbsp;and&nbsp;x1&nbsp;-&gt;&nbsp;r1[0]<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-isolate_roots">isolate_roots</a>(x1*x2&nbsp;+&nbsp;x0,&nbsp;[&nbsp;r0[0],&nbsp;r1[0]&nbsp;])<br>
+[2.8538479564?]<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Numeral-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`self&nbsp;+&nbsp;other`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2)&nbsp;+&nbsp;3<br>
+5<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2)&nbsp;+&nbsp;<a href="#Numeral">Numeral</a>(4)<br>
+6<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>("2/3")&nbsp;+&nbsp;1<br>
+5/3</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Numeral-__div__"><strong>__div__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`self&nbsp;/&nbsp;other`.<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2)&nbsp;/&nbsp;3<br>
+2/3<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-root">root</a>(2)&nbsp;/&nbsp;3<br>
+0.4714045207?<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;/&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3))<br>
+0.8164965809?</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;`self&nbsp;==&nbsp;other`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;==&nbsp;2<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3))&nbsp;==&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;==&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+True</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__ge__"><strong>__ge__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;`self&nbsp;&gt;=&nbsp;other`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;&gt;=&nbsp;2<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3))&nbsp;&gt;=&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;&gt;=&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+True</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__gt__"><strong>__gt__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;`self&nbsp;&gt;&nbsp;other`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;&gt;&nbsp;2<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3))&nbsp;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+False</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__init__"><strong>__init__</strong></a>(self, num, ctx<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Numeral-__le__"><strong>__le__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;`self&nbsp;&lt;=&nbsp;other`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;&lt;=&nbsp;2<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3))&nbsp;&lt;=&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;&lt;=&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+True</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__lt__"><strong>__lt__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;`self&nbsp;&lt;&nbsp;other`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;&lt;&nbsp;2<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3))&nbsp;&lt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;&lt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+False</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__mul__"><strong>__mul__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`self&nbsp;*&nbsp;other`.<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2)&nbsp;*&nbsp;3<br>
+6</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__ne__"><strong>__ne__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;`self&nbsp;!=&nbsp;other`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;!=&nbsp;2<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3))&nbsp;!=&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;!=&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+False</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__pow__"><strong>__pow__</strong></a>(self, k)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`self^k`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;sqrt3&nbsp;=&nbsp;<a href="#Numeral">Numeral</a>(3).<a href="#Numeral-root">root</a>(2)<br>
+&gt;&gt;&gt;&nbsp;sqrt3<br>
+1.7320508075?<br>
+&gt;&gt;&gt;&nbsp;sqrt3**2<br>
+3</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__radd__"><strong>__radd__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`other&nbsp;+&nbsp;self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;3&nbsp;+&nbsp;<a href="#Numeral">Numeral</a>(2)<br>
+5</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__rdiv__"><strong>__rdiv__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`other&nbsp;/&nbsp;self`.<br>
+&gt;&gt;&gt;&nbsp;3&nbsp;/&nbsp;<a href="#Numeral">Numeral</a>(2)&nbsp;<br>
+3/2<br>
+&gt;&gt;&gt;&nbsp;3&nbsp;/&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-root">root</a>(2)<br>
+2.1213203435?</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Numeral-__rge__"><strong>__rge__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;`other&nbsp;&gt;=&nbsp;self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;2&nbsp;&gt;=&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+True</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__rgt__"><strong>__rgt__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;`other&nbsp;&gt;&nbsp;self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;2&nbsp;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))<br>
+True</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__rle__"><strong>__rle__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;`other&nbsp;&lt;=&nbsp;self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;2&nbsp;&lt;=&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;<br>
+False</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__rlt__"><strong>__rlt__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;`other&nbsp;&lt;&nbsp;self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;2&nbsp;&lt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;<br>
+False</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__rmul__"><strong>__rmul__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`other&nbsp;*&nbsp;mul`.<br>
+&gt;&gt;&gt;&nbsp;3&nbsp;*&nbsp;<a href="#Numeral">Numeral</a>(2)<br>
+6</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__rsub__"><strong>__rsub__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`other&nbsp;-&nbsp;self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;3&nbsp;-&nbsp;<a href="#Numeral">Numeral</a>(2)<br>
+1</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__rtruediv__"><strong>__rtruediv__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Numeral-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Numeral-__sub__"><strong>__sub__</strong></a>(self, other)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`self&nbsp;-&nbsp;other`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2)&nbsp;-&nbsp;3<br>
+-1</tt></dd></dl>
+
+<dl><dt><a name="Numeral-__truediv__"><strong>__truediv__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="Numeral-approx"><strong>approx</strong></a>(self, precision<font color="#909090">=10</font>)</dt><dd><tt>Return&nbsp;a&nbsp;numeral&nbsp;that&nbsp;approximates&nbsp;the&nbsp;numeral&nbsp;`self`.&nbsp;<br>
+The&nbsp;result&nbsp;`r`&nbsp;is&nbsp;such&nbsp;that&nbsp;|r&nbsp;-&nbsp;self|&nbsp;&lt;=&nbsp;1/10^precision&nbsp;<br>
+&nbsp;<br>
+If&nbsp;`self`&nbsp;is&nbsp;rational,&nbsp;then&nbsp;the&nbsp;result&nbsp;is&nbsp;`self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-root">root</a>(2)<br>
+&gt;&gt;&gt;&nbsp;x.<a href="#Numeral-approx">approx</a>(20)<br>
+6838717160008073720548335/4835703278458516698824704<br>
+&gt;&gt;&gt;&nbsp;x.<a href="#Numeral-approx">approx</a>(5)<br>
+2965821/2097152<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-approx">approx</a>(10)<br>
+2</tt></dd></dl>
+
+<dl><dt><a name="Numeral-as_ast"><strong>as_ast</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Numeral-as_fraction"><strong>as_fraction</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;numeral&nbsp;(that&nbsp;is&nbsp;a&nbsp;rational)&nbsp;as&nbsp;a&nbsp;Python&nbsp;Fraction.<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>("1/5").<a href="#Numeral-as_fraction">as_fraction</a>()<br>
+Fraction(1,&nbsp;5)</tt></dd></dl>
+
+<dl><dt><a name="Numeral-as_long"><strong>as_long</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;numeral&nbsp;(that&nbsp;is&nbsp;an&nbsp;integer)&nbsp;as&nbsp;a&nbsp;Python&nbsp;long.</tt></dd></dl>
+
+<dl><dt><a name="Numeral-ctx_ref"><strong>ctx_ref</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Numeral-denominator"><strong>denominator</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;denominator&nbsp;if&nbsp;`self`&nbsp;is&nbsp;rational.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>("2/3").<a href="#Numeral-denominator">denominator</a>()<br>
+3</tt></dd></dl>
+
+<dl><dt><a name="Numeral-is_integer"><strong>is_integer</strong></a>(self)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;the&nbsp;numeral&nbsp;is&nbsp;integer.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-is_integer">is_integer</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;(<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;*&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))).<a href="#Numeral-is_integer">is_integer</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2)).<a href="#Numeral-is_integer">is_integer</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>("2/3").<a href="#Numeral-is_integer">is_integer</a>()<br>
+False</tt></dd></dl>
+
+<dl><dt><a name="Numeral-is_irrational"><strong>is_irrational</strong></a>(self)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;the&nbsp;numeral&nbsp;is&nbsp;irrational.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-is_irrational">is_irrational</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>("2/3").<a href="#Numeral-is_irrational">is_irrational</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2)).<a href="#Numeral-is_irrational">is_irrational</a>()<br>
+True</tt></dd></dl>
+
+<dl><dt><a name="Numeral-is_neg"><strong>is_neg</strong></a>(self)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;the&nbsp;numeral&nbsp;is&nbsp;negative.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-is_neg">is_neg</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(-3).<a href="#Numeral-is_neg">is_neg</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(0).<a href="#Numeral-is_neg">is_neg</a>()<br>
+False</tt></dd></dl>
+
+<dl><dt><a name="Numeral-is_pos"><strong>is_pos</strong></a>(self)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;the&nbsp;numeral&nbsp;is&nbsp;positive.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-is_pos">is_pos</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(-3).<a href="#Numeral-is_pos">is_pos</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(0).<a href="#Numeral-is_pos">is_pos</a>()<br>
+False</tt></dd></dl>
+
+<dl><dt><a name="Numeral-is_rational"><strong>is_rational</strong></a>(self)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;the&nbsp;numeral&nbsp;is&nbsp;rational.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-is_rational">is_rational</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>("2/3").<a href="#Numeral-is_rational">is_rational</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2)).<a href="#Numeral-is_rational">is_rational</a>()<br>
+False</tt></dd></dl>
+
+<dl><dt><a name="Numeral-is_zero"><strong>is_zero</strong></a>(self)</dt><dd><tt>Return&nbsp;True&nbsp;if&nbsp;the&nbsp;numeral&nbsp;is&nbsp;zero.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-is_zero">is_zero</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(-3).<a href="#Numeral-is_zero">is_zero</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(0).<a href="#Numeral-is_zero">is_zero</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;sqrt2&nbsp;=&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-root">root</a>(2)<br>
+&gt;&gt;&gt;&nbsp;sqrt2.<a href="#Numeral-is_zero">is_zero</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;(sqrt2&nbsp;-&nbsp;sqrt2).<a href="#Numeral-is_zero">is_zero</a>()<br>
+True</tt></dd></dl>
+
+<dl><dt><a name="Numeral-lower"><strong>lower</strong></a>(self, precision<font color="#909090">=10</font>)</dt><dd><tt>Return&nbsp;a&nbsp;lower&nbsp;bound&nbsp;that&nbsp;approximates&nbsp;the&nbsp;numeral&nbsp;`self`.&nbsp;<br>
+The&nbsp;result&nbsp;`r`&nbsp;is&nbsp;such&nbsp;that&nbsp;self&nbsp;-&nbsp;r&nbsp;&lt;=&nbsp;1/10^precision&nbsp;<br>
+&nbsp;<br>
+If&nbsp;`self`&nbsp;is&nbsp;rational,&nbsp;then&nbsp;the&nbsp;result&nbsp;is&nbsp;`self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-root">root</a>(2)<br>
+&gt;&gt;&gt;&nbsp;x.<a href="#Numeral-lower">lower</a>(20)<br>
+1709679290002018430137083/1208925819614629174706176<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>("2/3").<a href="#Numeral-lower">lower</a>(10)<br>
+2/3</tt></dd></dl>
+
+<dl><dt><a name="Numeral-numerator"><strong>numerator</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;numerator&nbsp;if&nbsp;`self`&nbsp;is&nbsp;rational.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>("2/3").<a href="#Numeral-numerator">numerator</a>()<br>
+2</tt></dd></dl>
+
+<dl><dt><a name="Numeral-power"><strong>power</strong></a>(self, k)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`self^k`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;sqrt3&nbsp;=&nbsp;<a href="#Numeral">Numeral</a>(3).<a href="#Numeral-root">root</a>(2)<br>
+&gt;&gt;&gt;&nbsp;sqrt3<br>
+1.7320508075?<br>
+&gt;&gt;&gt;&nbsp;sqrt3.<a href="#Numeral-power">power</a>(2)<br>
+3</tt></dd></dl>
+
+<dl><dt><a name="Numeral-root"><strong>root</strong></a>(self, k)</dt><dd><tt>Return&nbsp;the&nbsp;numeral&nbsp;`self^(1/k)`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;sqrt2&nbsp;=&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-root">root</a>(2)<br>
+&gt;&gt;&gt;&nbsp;sqrt2<br>
+1.4142135623?<br>
+&gt;&gt;&gt;&nbsp;sqrt2&nbsp;*&nbsp;sqrt2<br>
+2<br>
+&gt;&gt;&gt;&nbsp;sqrt2&nbsp;*&nbsp;2&nbsp;+&nbsp;1<br>
+3.8284271247?<br>
+&gt;&gt;&gt;&nbsp;(sqrt2&nbsp;*&nbsp;2&nbsp;+&nbsp;1).<a href="#Numeral-sexpr">sexpr</a>()<br>
+'(root-obj&nbsp;(+&nbsp;(^&nbsp;x&nbsp;2)&nbsp;(*&nbsp;(-&nbsp;2)&nbsp;x)&nbsp;(-&nbsp;7))&nbsp;2)'</tt></dd></dl>
+
+<dl><dt><a name="Numeral-sexpr"><strong>sexpr</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Numeral-sign"><strong>sign</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;sign&nbsp;of&nbsp;the&nbsp;numeral.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-sign">sign</a>()<br>
+1<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(-3).<a href="#Numeral-sign">sign</a>()<br>
+-1<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(0).<a href="#Numeral-sign">sign</a>()<br>
+0</tt></dd></dl>
+
+<dl><dt><a name="Numeral-upper"><strong>upper</strong></a>(self, precision<font color="#909090">=10</font>)</dt><dd><tt>Return&nbsp;a&nbsp;upper&nbsp;bound&nbsp;that&nbsp;approximates&nbsp;the&nbsp;numeral&nbsp;`self`.&nbsp;<br>
+The&nbsp;result&nbsp;`r`&nbsp;is&nbsp;such&nbsp;that&nbsp;r&nbsp;-&nbsp;self&nbsp;&lt;=&nbsp;1/10^precision&nbsp;<br>
+&nbsp;<br>
+If&nbsp;`self`&nbsp;is&nbsp;rational,&nbsp;then&nbsp;the&nbsp;result&nbsp;is&nbsp;`self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-root">root</a>(2)<br>
+&gt;&gt;&gt;&nbsp;x.<a href="#Numeral-upper">upper</a>(20)<br>
+6838717160008073720548335/4835703278458516698824704<br>
+&gt;&gt;&gt;&nbsp;x.<a href="#Numeral-upper">upper</a>(5)<br>
+2965821/2097152<br>
+&gt;&gt;&gt;&nbsp;<a href="#Numeral">Numeral</a>(2).<a href="#Numeral-upper">upper</a>(10)<br>
+2</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-POINTER"><strong>POINTER</strong></a>(...)</dt></dl>
+ <dl><dt><a name="-addressof"><strong>addressof</strong></a>(...)</dt><dd><tt><a href="#-addressof">addressof</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
+Return&nbsp;the&nbsp;address&nbsp;of&nbsp;the&nbsp;C&nbsp;instance&nbsp;internal&nbsp;buffer</tt></dd></dl>
+ <dl><dt><a name="-alignment"><strong>alignment</strong></a>(...)</dt><dd><tt><a href="#-alignment">alignment</a>(C&nbsp;type)&nbsp;-&gt;&nbsp;integer<br>
+<a href="#-alignment">alignment</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
+Return&nbsp;the&nbsp;alignment&nbsp;requirements&nbsp;of&nbsp;a&nbsp;C&nbsp;instance</tt></dd></dl>
+ <dl><dt><a name="-byref"><strong>byref</strong></a>(...)</dt><dd><tt><a href="#-byref">byref</a>(C&nbsp;instance[,&nbsp;offset=0])&nbsp;-&gt;&nbsp;byref-object<br>
+Return&nbsp;a&nbsp;pointer&nbsp;lookalike&nbsp;to&nbsp;a&nbsp;C&nbsp;instance,&nbsp;only&nbsp;usable<br>
+as&nbsp;function&nbsp;argument</tt></dd></dl>
+ <dl><dt><a name="-eval_sign_at"><strong>eval_sign_at</strong></a>(p, vs)</dt><dd><tt>Evaluate&nbsp;the&nbsp;sign&nbsp;of&nbsp;the&nbsp;polynomial&nbsp;`p`&nbsp;at&nbsp;`vs`.&nbsp;&nbsp;`p`&nbsp;is&nbsp;a&nbsp;Z3<br>
+Expression&nbsp;containing&nbsp;arithmetic&nbsp;operators:&nbsp;+,&nbsp;-,&nbsp;*,&nbsp;^k&nbsp;where&nbsp;k&nbsp;is<br>
+an&nbsp;integer;&nbsp;and&nbsp;free&nbsp;variables&nbsp;x&nbsp;that&nbsp;is_var(x)&nbsp;is&nbsp;True.&nbsp;Moreover,<br>
+all&nbsp;variables&nbsp;must&nbsp;be&nbsp;real.<br>
+&nbsp;<br>
+The&nbsp;result&nbsp;is&nbsp;1&nbsp;if&nbsp;the&nbsp;polynomial&nbsp;is&nbsp;positive&nbsp;at&nbsp;the&nbsp;given&nbsp;point,<br>
+-1&nbsp;if&nbsp;negative,&nbsp;and&nbsp;0&nbsp;if&nbsp;zero.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x0,&nbsp;x1,&nbsp;x2&nbsp;=&nbsp;RealVarVector(3)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-eval_sign_at">eval_sign_at</a>(x0**2&nbsp;+&nbsp;x1*x2&nbsp;+&nbsp;1,&nbsp;(<a href="#Numeral">Numeral</a>(0),&nbsp;<a href="#Numeral">Numeral</a>(1),&nbsp;<a href="#Numeral">Numeral</a>(2)))<br>
+1<br>
+&gt;&gt;&gt;&nbsp;<a href="#-eval_sign_at">eval_sign_at</a>(x0**2&nbsp;-&nbsp;2,&nbsp;[&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;])<br>
+0<br>
+&gt;&gt;&gt;&nbsp;<a href="#-eval_sign_at">eval_sign_at</a>((x0&nbsp;+&nbsp;x1)*(x0&nbsp;+&nbsp;x2),&nbsp;(<a href="#Numeral">Numeral</a>(0),&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2)),&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3))))<br>
+1</tt></dd></dl>
+ <dl><dt><a name="-get_errno"><strong>get_errno</strong></a>(...)</dt></dl>
+ <dl><dt><a name="-isolate_roots"><strong>isolate_roots</strong></a>(p, vs<font color="#909090">=[]</font>)</dt><dd><tt>Given&nbsp;a&nbsp;multivariate&nbsp;polynomial&nbsp;p(x_0,&nbsp;...,&nbsp;x_{n-1},&nbsp;x_n),&nbsp;returns&nbsp;the&nbsp;<br>
+roots&nbsp;of&nbsp;the&nbsp;univariate&nbsp;polynomial&nbsp;p(vs[0],&nbsp;...,&nbsp;vs[len(vs)-1],&nbsp;x_n).<br>
+&nbsp;&nbsp;&nbsp;<br>
+Remarks:<br>
+*&nbsp;p&nbsp;is&nbsp;a&nbsp;Z3&nbsp;expression&nbsp;that&nbsp;contains&nbsp;only&nbsp;arithmetic&nbsp;terms&nbsp;and&nbsp;free&nbsp;variables.<br>
+*&nbsp;forall&nbsp;i&nbsp;in&nbsp;[0,&nbsp;n)&nbsp;vs&nbsp;is&nbsp;a&nbsp;numeral.<br>
+&nbsp;<br>
+The&nbsp;result&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;numerals<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x0&nbsp;=&nbsp;RealVar(0)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-isolate_roots">isolate_roots</a>(x0**5&nbsp;-&nbsp;x0&nbsp;-&nbsp;1)<br>
+[1.1673039782?]<br>
+&gt;&gt;&gt;&nbsp;x1&nbsp;=&nbsp;RealVar(1)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-isolate_roots">isolate_roots</a>(x0**2&nbsp;-&nbsp;x1**4&nbsp;-&nbsp;1,&nbsp;[&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3))&nbsp;])<br>
+[-1.1892071150?,&nbsp;1.1892071150?]<br>
+&gt;&gt;&gt;&nbsp;x2&nbsp;=&nbsp;RealVar(2)<br>
+&gt;&gt;&gt;&nbsp;<a href="#-isolate_roots">isolate_roots</a>(x2**2&nbsp;+&nbsp;x0&nbsp;-&nbsp;x1,&nbsp;[&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(3)),&nbsp;<a href="#Numeral">Numeral</a>(Sqrt(2))&nbsp;])<br>
+[]</tt></dd></dl>
+ <dl><dt><a name="-pointer"><strong>pointer</strong></a>(...)</dt></dl>
+ <dl><dt><a name="-resize"><strong>resize</strong></a>(...)</dt><dd><tt>Resize&nbsp;the&nbsp;memory&nbsp;buffer&nbsp;of&nbsp;a&nbsp;ctypes&nbsp;instance</tt></dd></dl>
+ <dl><dt><a name="-set_conversion_mode"><strong>set_conversion_mode</strong></a>(...)</dt><dd><tt><a href="#-set_conversion_mode">set_conversion_mode</a>(encoding,&nbsp;errors)&nbsp;-&gt;&nbsp;(previous-encoding,&nbsp;previous-errors)<br>
+&nbsp;<br>
+Set&nbsp;the&nbsp;encoding&nbsp;and&nbsp;error&nbsp;handling&nbsp;ctypes&nbsp;uses&nbsp;when&nbsp;converting<br>
+between&nbsp;unicode&nbsp;and&nbsp;strings.&nbsp;&nbsp;Returns&nbsp;the&nbsp;previous&nbsp;values.</tt></dd></dl>
+ <dl><dt><a name="-set_errno"><strong>set_errno</strong></a>(...)</dt></dl>
+ <dl><dt><a name="-sizeof"><strong>sizeof</strong></a>(...)</dt><dd><tt><a href="#-sizeof">sizeof</a>(C&nbsp;type)&nbsp;-&gt;&nbsp;integer<br>
+<a href="#-sizeof">sizeof</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
+Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>DEFAULT_MODE</strong> = 0<br>
+<strong>RTLD_GLOBAL</strong> = 256<br>
+<strong>RTLD_LOCAL</strong> = 0<br>
+<strong>Z3_APP_AST</strong> = 1<br>
+<strong>Z3_ARRAY_SORT</strong> = 5<br>
+<strong>Z3_BOOL_SORT</strong> = 1<br>
+<strong>Z3_BV_SORT</strong> = 4<br>
+<strong>Z3_DATATYPE_SORT</strong> = 6<br>
+<strong>Z3_DEC_REF_ERROR</strong> = 11<br>
+<strong>Z3_EXCEPTION</strong> = 12<br>
+<strong>Z3_FILE_ACCESS_ERROR</strong> = 8<br>
+<strong>Z3_FINITE_DOMAIN_SORT</strong> = 8<br>
+<strong>Z3_FLOATING_POINT_SORT</strong> = 9<br>
+<strong>Z3_FUNC_DECL_AST</strong> = 5<br>
+<strong>Z3_GOAL_OVER</strong> = 2<br>
+<strong>Z3_GOAL_PRECISE</strong> = 0<br>
+<strong>Z3_GOAL_UNDER</strong> = 1<br>
+<strong>Z3_GOAL_UNDER_OVER</strong> = 3<br>
+<strong>Z3_INTERNAL_FATAL</strong> = 9<br>
+<strong>Z3_INT_SORT</strong> = 2<br>
+<strong>Z3_INT_SYMBOL</strong> = 0<br>
+<strong>Z3_INVALID_ARG</strong> = 3<br>
+<strong>Z3_INVALID_PATTERN</strong> = 6<br>
+<strong>Z3_INVALID_USAGE</strong> = 10<br>
+<strong>Z3_IOB</strong> = 2<br>
+<strong>Z3_L_FALSE</strong> = -1<br>
+<strong>Z3_L_TRUE</strong> = 1<br>
+<strong>Z3_L_UNDEF</strong> = 0<br>
+<strong>Z3_MEMOUT_FAIL</strong> = 7<br>
+<strong>Z3_NO_PARSER</strong> = 5<br>
+<strong>Z3_NUMERAL_AST</strong> = 0<br>
+<strong>Z3_OK</strong> = 0<br>
+<strong>Z3_OP_ADD</strong> = 518<br>
+<strong>Z3_OP_AGNUM</strong> = 513<br>
+<strong>Z3_OP_AND</strong> = 261<br>
+<strong>Z3_OP_ANUM</strong> = 512<br>
+<strong>Z3_OP_ARRAY_DEFAULT</strong> = 772<br>
+<strong>Z3_OP_ARRAY_EXT</strong> = 779<br>
+<strong>Z3_OP_ARRAY_MAP</strong> = 771<br>
+<strong>Z3_OP_AS_ARRAY</strong> = 778<br>
+<strong>Z3_OP_BADD</strong> = 1028<br>
+<strong>Z3_OP_BAND</strong> = 1049<br>
+<strong>Z3_OP_BASHR</strong> = 1066<br>
+<strong>Z3_OP_BCOMP</strong> = 1063<br>
+<strong>Z3_OP_BIT0</strong> = 1026<br>
+<strong>Z3_OP_BIT1</strong> = 1025<br>
+<strong>Z3_OP_BIT2BOOL</strong> = 1071<br>
+<strong>Z3_OP_BLSHR</strong> = 1065<br>
+<strong>Z3_OP_BMUL</strong> = 1030<br>
+<strong>Z3_OP_BNAND</strong> = 1053<br>
+<strong>Z3_OP_BNEG</strong> = 1027<br>
+<strong>Z3_OP_BNOR</strong> = 1054<br>
+<strong>Z3_OP_BNOT</strong> = 1051<br>
+<strong>Z3_OP_BNUM</strong> = 1024<br>
+<strong>Z3_OP_BOR</strong> = 1050<br>
+<strong>Z3_OP_BREDAND</strong> = 1062<br>
+<strong>Z3_OP_BREDOR</strong> = 1061<br>
+<strong>Z3_OP_BSDIV</strong> = 1031<br>
+<strong>Z3_OP_BSDIV0</strong> = 1036<br>
+<strong>Z3_OP_BSDIV_I</strong> = 1079<br>
+<strong>Z3_OP_BSHL</strong> = 1064<br>
+<strong>Z3_OP_BSMOD</strong> = 1035<br>
+<strong>Z3_OP_BSMOD0</strong> = 1040<br>
+<strong>Z3_OP_BSMOD_I</strong> = 1083<br>
+<strong>Z3_OP_BSMUL_NO_OVFL</strong> = 1076<br>
+<strong>Z3_OP_BSMUL_NO_UDFL</strong> = 1078<br>
+<strong>Z3_OP_BSREM</strong> = 1033<br>
+<strong>Z3_OP_BSREM0</strong> = 1038<br>
+<strong>Z3_OP_BSREM_I</strong> = 1081<br>
+<strong>Z3_OP_BSUB</strong> = 1029<br>
+<strong>Z3_OP_BUDIV</strong> = 1032<br>
+<strong>Z3_OP_BUDIV0</strong> = 1037<br>
+<strong>Z3_OP_BUDIV_I</strong> = 1080<br>
+<strong>Z3_OP_BUMUL_NO_OVFL</strong> = 1077<br>
+<strong>Z3_OP_BUREM</strong> = 1034<br>
+<strong>Z3_OP_BUREM0</strong> = 1039<br>
+<strong>Z3_OP_BUREM_I</strong> = 1082<br>
+<strong>Z3_OP_BV2INT</strong> = 1073<br>
+<strong>Z3_OP_BXNOR</strong> = 1055<br>
+<strong>Z3_OP_BXOR</strong> = 1052<br>
+<strong>Z3_OP_CARRY</strong> = 1074<br>
+<strong>Z3_OP_CONCAT</strong> = 1056<br>
+<strong>Z3_OP_CONST_ARRAY</strong> = 770<br>
+<strong>Z3_OP_DISTINCT</strong> = 259<br>
+<strong>Z3_OP_DIV</strong> = 522<br>
+<strong>Z3_OP_DT_ACCESSOR</strong> = 2050<br>
+<strong>Z3_OP_DT_CONSTRUCTOR</strong> = 2048<br>
+<strong>Z3_OP_DT_RECOGNISER</strong> = 2049<br>
+<strong>Z3_OP_DT_UPDATE_FIELD</strong> = 2051<br>
+<strong>Z3_OP_EQ</strong> = 258<br>
+<strong>Z3_OP_EXTRACT</strong> = 1059<br>
+<strong>Z3_OP_EXT_ROTATE_LEFT</strong> = 1069<br>
+<strong>Z3_OP_EXT_ROTATE_RIGHT</strong> = 1070<br>
+<strong>Z3_OP_FALSE</strong> = 257<br>
+<strong>Z3_OP_FD_CONSTANT</strong> = 1549<br>
+<strong>Z3_OP_FD_LT</strong> = 1550<br>
+<strong>Z3_OP_FPA_ABS</strong> = 2326<br>
+<strong>Z3_OP_FPA_ADD</strong> = 2320<br>
+<strong>Z3_OP_FPA_BV2RM</strong> = 2352<br>
+<strong>Z3_OP_FPA_BVWRAP</strong> = 2351<br>
+<strong>Z3_OP_FPA_DIV</strong> = 2324<br>
+<strong>Z3_OP_FPA_EQ</strong> = 2332<br>
+<strong>Z3_OP_FPA_FMA</strong> = 2329<br>
+<strong>Z3_OP_FPA_FP</strong> = 2344<br>
+<strong>Z3_OP_FPA_GE</strong> = 2336<br>
+<strong>Z3_OP_FPA_GT</strong> = 2334<br>
+<strong>Z3_OP_FPA_IS_INF</strong> = 2338<br>
+<strong>Z3_OP_FPA_IS_NAN</strong> = 2337<br>
+<strong>Z3_OP_FPA_IS_NEGATIVE</strong> = 2342<br>
+<strong>Z3_OP_FPA_IS_NORMAL</strong> = 2340<br>
+<strong>Z3_OP_FPA_IS_POSITIVE</strong> = 2343<br>
+<strong>Z3_OP_FPA_IS_SUBNORMAL</strong> = 2341<br>
+<strong>Z3_OP_FPA_IS_ZERO</strong> = 2339<br>
+<strong>Z3_OP_FPA_LE</strong> = 2335<br>
+<strong>Z3_OP_FPA_LT</strong> = 2333<br>
+<strong>Z3_OP_FPA_MAX</strong> = 2328<br>
+<strong>Z3_OP_FPA_MIN</strong> = 2327<br>
+<strong>Z3_OP_FPA_MINUS_INF</strong> = 2316<br>
+<strong>Z3_OP_FPA_MINUS_ZERO</strong> = 2319<br>
+<strong>Z3_OP_FPA_MUL</strong> = 2323<br>
+<strong>Z3_OP_FPA_NAN</strong> = 2317<br>
+<strong>Z3_OP_FPA_NEG</strong> = 2322<br>
+<strong>Z3_OP_FPA_NUM</strong> = 2314<br>
+<strong>Z3_OP_FPA_PLUS_INF</strong> = 2315<br>
+<strong>Z3_OP_FPA_PLUS_ZERO</strong> = 2318<br>
+<strong>Z3_OP_FPA_REM</strong> = 2325<br>
+<strong>Z3_OP_FPA_RM_NEAREST_TIES_TO_AWAY</strong> = 2310<br>
+<strong>Z3_OP_FPA_RM_NEAREST_TIES_TO_EVEN</strong> = 2309<br>
+<strong>Z3_OP_FPA_RM_TOWARD_NEGATIVE</strong> = 2312<br>
+<strong>Z3_OP_FPA_RM_TOWARD_POSITIVE</strong> = 2311<br>
+<strong>Z3_OP_FPA_RM_TOWARD_ZERO</strong> = 2313<br>
+<strong>Z3_OP_FPA_ROUND_TO_INTEGRAL</strong> = 2331<br>
+<strong>Z3_OP_FPA_SQRT</strong> = 2330<br>
+<strong>Z3_OP_FPA_SUB</strong> = 2321<br>
+<strong>Z3_OP_FPA_TO_FP</strong> = 2345<br>
+<strong>Z3_OP_FPA_TO_FP_UNSIGNED</strong> = 2346<br>
+<strong>Z3_OP_FPA_TO_IEEE_BV</strong> = 2350<br>
+<strong>Z3_OP_FPA_TO_REAL</strong> = 2349<br>
+<strong>Z3_OP_FPA_TO_SBV</strong> = 2348<br>
+<strong>Z3_OP_FPA_TO_UBV</strong> = 2347<br>
+<strong>Z3_OP_GE</strong> = 515<br>
+<strong>Z3_OP_GT</strong> = 517<br>
+<strong>Z3_OP_IDIV</strong> = 523<br>
+<strong>Z3_OP_IFF</strong> = 263<br>
+<strong>Z3_OP_IMPLIES</strong> = 266<br>
+<strong>Z3_OP_INT2BV</strong> = 1072<br>
+<strong>Z3_OP_INTERNAL</strong> = 2353<br>
+<strong>Z3_OP_INTERP</strong> = 268<br>
+<strong>Z3_OP_INT_TO_STR</strong> = 1565<br>
+<strong>Z3_OP_IS_INT</strong> = 528<br>
+<strong>Z3_OP_ITE</strong> = 260<br>
+<strong>Z3_OP_LABEL</strong> = 1792<br>
+<strong>Z3_OP_LABEL_LIT</strong> = 1793<br>
+<strong>Z3_OP_LE</strong> = 514<br>
+<strong>Z3_OP_LT</strong> = 516<br>
+<strong>Z3_OP_MOD</strong> = 525<br>
+<strong>Z3_OP_MUL</strong> = 521<br>
+<strong>Z3_OP_NOT</strong> = 265<br>
+<strong>Z3_OP_OEQ</strong> = 267<br>
+<strong>Z3_OP_OR</strong> = 262<br>
+<strong>Z3_OP_PB_AT_LEAST</strong> = 2305<br>
+<strong>Z3_OP_PB_AT_MOST</strong> = 2304<br>
+<strong>Z3_OP_PB_EQ</strong> = 2308<br>
+<strong>Z3_OP_PB_GE</strong> = 2307<br>
+<strong>Z3_OP_PB_LE</strong> = 2306<br>
+<strong>Z3_OP_POWER</strong> = 529<br>
+<strong>Z3_OP_PR_AND_ELIM</strong> = 1292<br>
+<strong>Z3_OP_PR_APPLY_DEF</strong> = 1310<br>
+<strong>Z3_OP_PR_ASSERTED</strong> = 1282<br>
+<strong>Z3_OP_PR_CNF_STAR</strong> = 1315<br>
+<strong>Z3_OP_PR_COMMUTATIVITY</strong> = 1307<br>
+<strong>Z3_OP_PR_DEF_AXIOM</strong> = 1308<br>
+<strong>Z3_OP_PR_DEF_INTRO</strong> = 1309<br>
+<strong>Z3_OP_PR_DER</strong> = 1300<br>
+<strong>Z3_OP_PR_DISTRIBUTIVITY</strong> = 1291<br>
+<strong>Z3_OP_PR_ELIM_UNUSED_VARS</strong> = 1299<br>
+<strong>Z3_OP_PR_GOAL</strong> = 1283<br>
+<strong>Z3_OP_PR_HYPER_RESOLVE</strong> = 1319<br>
+<strong>Z3_OP_PR_HYPOTHESIS</strong> = 1302<br>
+<strong>Z3_OP_PR_IFF_FALSE</strong> = 1306<br>
+<strong>Z3_OP_PR_IFF_OEQ</strong> = 1311<br>
+<strong>Z3_OP_PR_IFF_TRUE</strong> = 1305<br>
+<strong>Z3_OP_PR_LEMMA</strong> = 1303<br>
+<strong>Z3_OP_PR_MODUS_PONENS</strong> = 1284<br>
+<strong>Z3_OP_PR_MODUS_PONENS_OEQ</strong> = 1317<br>
+<strong>Z3_OP_PR_MONOTONICITY</strong> = 1289<br>
+<strong>Z3_OP_PR_NNF_NEG</strong> = 1313<br>
+<strong>Z3_OP_PR_NNF_POS</strong> = 1312<br>
+<strong>Z3_OP_PR_NNF_STAR</strong> = 1314<br>
+<strong>Z3_OP_PR_NOT_OR_ELIM</strong> = 1293<br>
+<strong>Z3_OP_PR_PULL_QUANT</strong> = 1296<br>
+<strong>Z3_OP_PR_PULL_QUANT_STAR</strong> = 1297<br>
+<strong>Z3_OP_PR_PUSH_QUANT</strong> = 1298<br>
+<strong>Z3_OP_PR_QUANT_INST</strong> = 1301<br>
+<strong>Z3_OP_PR_QUANT_INTRO</strong> = 1290<br>
+<strong>Z3_OP_PR_REFLEXIVITY</strong> = 1285<br>
+<strong>Z3_OP_PR_REWRITE</strong> = 1294<br>
+<strong>Z3_OP_PR_REWRITE_STAR</strong> = 1295<br>
+<strong>Z3_OP_PR_SKOLEMIZE</strong> = 1316<br>
+<strong>Z3_OP_PR_SYMMETRY</strong> = 1286<br>
+<strong>Z3_OP_PR_TH_LEMMA</strong> = 1318<br>
+<strong>Z3_OP_PR_TRANSITIVITY</strong> = 1287<br>
+<strong>Z3_OP_PR_TRANSITIVITY_STAR</strong> = 1288<br>
+<strong>Z3_OP_PR_TRUE</strong> = 1281<br>
+<strong>Z3_OP_PR_UNDEF</strong> = 1280<br>
+<strong>Z3_OP_PR_UNIT_RESOLUTION</strong> = 1304<br>
+<strong>Z3_OP_RA_CLONE</strong> = 1548<br>
+<strong>Z3_OP_RA_COMPLEMENT</strong> = 1546<br>
+<strong>Z3_OP_RA_EMPTY</strong> = 1537<br>
+<strong>Z3_OP_RA_FILTER</strong> = 1543<br>
+<strong>Z3_OP_RA_IS_EMPTY</strong> = 1538<br>
+<strong>Z3_OP_RA_JOIN</strong> = 1539<br>
+<strong>Z3_OP_RA_NEGATION_FILTER</strong> = 1544<br>
+<strong>Z3_OP_RA_PROJECT</strong> = 1542<br>
+<strong>Z3_OP_RA_RENAME</strong> = 1545<br>
+<strong>Z3_OP_RA_SELECT</strong> = 1547<br>
+<strong>Z3_OP_RA_STORE</strong> = 1536<br>
+<strong>Z3_OP_RA_UNION</strong> = 1540<br>
+<strong>Z3_OP_RA_WIDEN</strong> = 1541<br>
+<strong>Z3_OP_REM</strong> = 524<br>
+<strong>Z3_OP_REPEAT</strong> = 1060<br>
+<strong>Z3_OP_RE_COMPLEMENT</strong> = 1576<br>
+<strong>Z3_OP_RE_CONCAT</strong> = 1569<br>
+<strong>Z3_OP_RE_EMPTY_SET</strong> = 1574<br>
+<strong>Z3_OP_RE_FULL_SET</strong> = 1575<br>
+<strong>Z3_OP_RE_INTERSECT</strong> = 1573<br>
+<strong>Z3_OP_RE_LOOP</strong> = 1572<br>
+<strong>Z3_OP_RE_OPTION</strong> = 1568<br>
+<strong>Z3_OP_RE_PLUS</strong> = 1566<br>
+<strong>Z3_OP_RE_RANGE</strong> = 1571<br>
+<strong>Z3_OP_RE_STAR</strong> = 1567<br>
+<strong>Z3_OP_RE_UNION</strong> = 1570<br>
+<strong>Z3_OP_ROTATE_LEFT</strong> = 1067<br>
+<strong>Z3_OP_ROTATE_RIGHT</strong> = 1068<br>
+<strong>Z3_OP_SELECT</strong> = 769<br>
+<strong>Z3_OP_SEQ_AT</strong> = 1559<br>
+<strong>Z3_OP_SEQ_CONCAT</strong> = 1553<br>
+<strong>Z3_OP_SEQ_CONTAINS</strong> = 1556<br>
+<strong>Z3_OP_SEQ_EMPTY</strong> = 1552<br>
+<strong>Z3_OP_SEQ_EXTRACT</strong> = 1557<br>
+<strong>Z3_OP_SEQ_INDEX</strong> = 1561<br>
+<strong>Z3_OP_SEQ_IN_RE</strong> = 1563<br>
+<strong>Z3_OP_SEQ_LENGTH</strong> = 1560<br>
+<strong>Z3_OP_SEQ_PREFIX</strong> = 1554<br>
+<strong>Z3_OP_SEQ_REPLACE</strong> = 1558<br>
+<strong>Z3_OP_SEQ_SUFFIX</strong> = 1555<br>
+<strong>Z3_OP_SEQ_TO_RE</strong> = 1562<br>
+<strong>Z3_OP_SEQ_UNIT</strong> = 1551<br>
+<strong>Z3_OP_SET_COMPLEMENT</strong> = 776<br>
+<strong>Z3_OP_SET_DIFFERENCE</strong> = 775<br>
+<strong>Z3_OP_SET_INTERSECT</strong> = 774<br>
+<strong>Z3_OP_SET_SUBSET</strong> = 777<br>
+<strong>Z3_OP_SET_UNION</strong> = 773<br>
+<strong>Z3_OP_SGEQ</strong> = 1044<br>
+<strong>Z3_OP_SGT</strong> = 1048<br>
+<strong>Z3_OP_SIGN_EXT</strong> = 1057<br>
+<strong>Z3_OP_SLEQ</strong> = 1042<br>
+<strong>Z3_OP_SLT</strong> = 1046<br>
+<strong>Z3_OP_STORE</strong> = 768<br>
+<strong>Z3_OP_STR_TO_INT</strong> = 1564<br>
+<strong>Z3_OP_SUB</strong> = 519<br>
+<strong>Z3_OP_TO_INT</strong> = 527<br>
+<strong>Z3_OP_TO_REAL</strong> = 526<br>
+<strong>Z3_OP_TRUE</strong> = 256<br>
+<strong>Z3_OP_UGEQ</strong> = 1043<br>
+<strong>Z3_OP_UGT</strong> = 1047<br>
+<strong>Z3_OP_ULEQ</strong> = 1041<br>
+<strong>Z3_OP_ULT</strong> = 1045<br>
+<strong>Z3_OP_UMINUS</strong> = 520<br>
+<strong>Z3_OP_UNINTERPRETED</strong> = 2354<br>
+<strong>Z3_OP_XOR</strong> = 264<br>
+<strong>Z3_OP_XOR3</strong> = 1075<br>
+<strong>Z3_OP_ZERO_EXT</strong> = 1058<br>
+<strong>Z3_PARAMETER_AST</strong> = 5<br>
+<strong>Z3_PARAMETER_DOUBLE</strong> = 1<br>
+<strong>Z3_PARAMETER_FUNC_DECL</strong> = 6<br>
+<strong>Z3_PARAMETER_INT</strong> = 0<br>
+<strong>Z3_PARAMETER_RATIONAL</strong> = 2<br>
+<strong>Z3_PARAMETER_SORT</strong> = 4<br>
+<strong>Z3_PARAMETER_SYMBOL</strong> = 3<br>
+<strong>Z3_PARSER_ERROR</strong> = 4<br>
+<strong>Z3_PK_BOOL</strong> = 1<br>
+<strong>Z3_PK_DOUBLE</strong> = 2<br>
+<strong>Z3_PK_INVALID</strong> = 6<br>
+<strong>Z3_PK_OTHER</strong> = 5<br>
+<strong>Z3_PK_STRING</strong> = 4<br>
+<strong>Z3_PK_SYMBOL</strong> = 3<br>
+<strong>Z3_PK_UINT</strong> = 0<br>
+<strong>Z3_PRINT_LOW_LEVEL</strong> = 1<br>
+<strong>Z3_PRINT_SMTLIB2_COMPLIANT</strong> = 2<br>
+<strong>Z3_PRINT_SMTLIB_FULL</strong> = 0<br>
+<strong>Z3_QUANTIFIER_AST</strong> = 3<br>
+<strong>Z3_REAL_SORT</strong> = 3<br>
+<strong>Z3_RELATION_SORT</strong> = 7<br>
+<strong>Z3_RE_SORT</strong> = 12<br>
+<strong>Z3_ROUNDING_MODE_SORT</strong> = 10<br>
+<strong>Z3_SEQ_SORT</strong> = 11<br>
+<strong>Z3_SORT_AST</strong> = 4<br>
+<strong>Z3_SORT_ERROR</strong> = 1<br>
+<strong>Z3_STRING_SYMBOL</strong> = 1<br>
+<strong>Z3_UNINTERPRETED_SORT</strong> = 0<br>
+<strong>Z3_UNKNOWN_AST</strong> = 1000<br>
+<strong>Z3_UNKNOWN_SORT</strong> = 1000<br>
+<strong>Z3_VAR_AST</strong> = 2<br>
+<strong>cdll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
+<strong>d</strong> = '/mnt/f/dev/z3-master/build/libz3.so'<br>
+<strong>lds</strong> = ['/mnt/c/cwinter/.opam/4.02.3/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/Docker/Docker/resources/bin', '/mnt/c/ProgramData/Oracle/Java/javapath_target_316908937', '/mnt/c/Program Files/Common Files/microsoft shared/Microsoft Online Services', '/mnt/c/Program Files (x86)/Common Files/microsoft shared/Microsoft Online Services', '/mnt/c/Windows/System32', '/mnt/c/Windows', '/mnt/c/Windows/System32/wbem', '/mnt/c/Windows/System32/WindowsPowerShell/v1.0', '/mnt/c/Program Files (x86)/Microsoft SQL Server/110/Tools/Binn/ManagementStudio', '/mnt/c/Program Files (x86)/Microsoft SQL Server/110/Tools/Binn', '/mnt/c/Program Files/Microsoft SQL Server/110/Tools/Binn', ...]<br>
+<strong>lp</strong> = '/mnt/c/cwinter/.opam/4.02.3/bin:/usr/local/sbin:.../c/Users/cwinter/AppData/Local/Yarn/bin:/snap/bin'<br>
+<strong>memmove</strong> = &lt;CFunctionType object&gt;<br>
+<strong>memset</strong> = &lt;CFunctionType object&gt;<br>
+<strong>pydll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7fc286227168 at 7fc284c46ad0&gt;<br>
+<strong>sat</strong> = sat<br>
+<strong>unknown</strong> = unknown<br>
+<strong>unsat</strong> = unsat<br>
+<strong>v</strong> = 'PATH'</td></tr></table>
+</body></html>

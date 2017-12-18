@@ -1,5 +1,9 @@
 var searchData=
 [
+  ['finitedomainexpr_2ecs',['FiniteDomainExpr.cs',['../_finite_domain_expr_8cs.html',1,'']]],
+  ['finitedomainexpr_2ejava',['FiniteDomainExpr.java',['../_finite_domain_expr_8java.html',1,'']]],
+  ['finitedomainnum_2ecs',['FiniteDomainNum.cs',['../_finite_domain_num_8cs.html',1,'']]],
+  ['finitedomainnum_2ejava',['FiniteDomainNum.java',['../_finite_domain_num_8java.html',1,'']]],
   ['finitedomainsort_2ecs',['FiniteDomainSort.cs',['../_finite_domain_sort_8cs.html',1,'']]],
   ['finitedomainsort_2ejava',['FiniteDomainSort.java',['../_finite_domain_sort_8java.html',1,'']]],
   ['fixedpoint_2ecs',['Fixedpoint.cs',['../_fixedpoint_8cs.html',1,'']]],

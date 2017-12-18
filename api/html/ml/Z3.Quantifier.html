@@ -26,40 +26,32 @@ Quantifier expressions<br>
 </div>
 <hr width="100%">
 
-<pre><code><span id="TYPEquantifier"><span class="keyword">type</span> <code class="type"></code>quantifier</span> = </code></pre><table class="typetable">
-<tr>
-<td align="left" valign="top" >
-<code><span class="keyword">|</span></code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTquantifier.Quantifier"><span class="constructor">Quantifier</span></span> <span class="keyword">of</span> <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></code></td>
-
-</tr></table>
-
+<pre><span id="TYPEquantifier"><span class="keyword">type</span> <code class="type"></code>quantifier</span> </pre>
 
 
 <pre><span id="VALexpr_of_quantifier"><span class="keyword">val</span> expr_of_quantifier</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
 <pre><span id="VALquantifier_of_expr"><span class="keyword">val</span> quantifier_of_expr</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a></code></pre>
 <pre><span class="keyword">module</span> <a href="Z3.Quantifier.Pattern.html">Pattern</a>: <code class="code">sig</code> <a href="Z3.Quantifier.Pattern.html">..</a> <code class="code">end</code></pre><div class="info">
-Quantifier patterns
+Quantifier patterns
 </div>
 
 <pre><span id="VALget_index"><span class="keyword">val</span> get_index</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> int</code></pre><div class="info ">
-The de-Burijn index of a bound variable.
+The de-Burijn index of a bound variable.
 <p>
 
-      Bound variables are indexed by de-Bruijn indices. It is perhaps easiest to explain
-      the meaning of de-Bruijn indices by indicating the compilation process from
-      non-de-Bruijn formulas to de-Bruijn format.
-      <code class="code">
-      abs(forall (x1) phi) = forall (x1) abs1(phi, x1, 0)
-      abs(forall (x1, x2) phi) = abs(forall (x1) abs(forall (x2) phi))
-      abs1(x, x, n) = b_n
-      abs1(y, x, n) = y
-      abs1(f(t1,...,tn), x, n) = f(abs1(t1,x,n), ..., abs1(tn,x,n))
-      abs1(forall (x1) phi, x, n) = forall (x1) (abs1(phi, x, n+1))
-      </code>
-      The last line is significant: the index of a bound variable is different depending
-      on the scope in which it appears. The deeper ( x : expr ) appears, the higher is its
+      Bound variables are indexed by de-Bruijn indices. It is perhaps easiest to explain
+      the meaning of de-Bruijn indices by indicating the compilation process from
+      non-de-Bruijn formulas to de-Bruijn format.
+      <code class="code">
+      abs(forall (x1) phi) = forall (x1) abs1(phi, x1, 0)
+      abs(forall (x1, x2) phi) = abs(forall (x1) abs(forall (x2) phi))
+      abs1(x, x, n) = b_n
+      abs1(y, x, n) = y
+      abs1(f(t1,...,tn), x, n) = f(abs1(t1,x,n), ..., abs1(tn,x,n))
+      abs1(forall (x1) phi, x, n) = forall (x1) (abs1(phi, x, n+1))
+      </code>
+      The last line is significant: the index of a bound variable is different depending
+      on the scope in which it appears. The deeper ( x : expr ) appears, the higher is its
       index.<br>
 </div>
 

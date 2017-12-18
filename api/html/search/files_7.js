@@ -2,7 +2,6 @@ var searchData=
 [
   ['idecrefqueue_2ecs',['IDecRefQueue.cs',['../_i_dec_ref_queue_8cs.html',1,'']]],
   ['idecrefqueue_2ejava',['IDecRefQueue.java',['../_i_dec_ref_queue_8java.html',1,'']]],
-  ['idisposable_2ejava',['IDisposable.java',['../_i_disposable_8java.html',1,'']]],
   ['interpolationcontext_2ecs',['InterpolationContext.cs',['../_interpolation_context_8cs.html',1,'']]],
   ['interpolationcontext_2ejava',['InterpolationContext.java',['../_interpolation_context_8java.html',1,'']]],
   ['intexpr_2ecs',['IntExpr.cs',['../_int_expr_8cs.html',1,'']]],

@@ -1,5 +1,9 @@
 var searchData=
 [
+  ['seqexpr_2ecs',['SeqExpr.cs',['../_seq_expr_8cs.html',1,'']]],
+  ['seqexpr_2ejava',['SeqExpr.java',['../_seq_expr_8java.html',1,'']]],
+  ['seqsort_2ecs',['SeqSort.cs',['../_seq_sort_8cs.html',1,'']]],
+  ['seqsort_2ejava',['SeqSort.java',['../_seq_sort_8java.html',1,'']]],
   ['setsort_2ecs',['SetSort.cs',['../_set_sort_8cs.html',1,'']]],
   ['setsort_2ejava',['SetSort.java',['../_set_sort_8java.html',1,'']]],
   ['solver_2ecs',['Solver.cs',['../_solver_8cs.html',1,'']]],

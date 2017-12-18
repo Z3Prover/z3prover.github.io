@@ -5,7 +5,7 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Z3.Probe.html">
-<link rel="next" href="Z3.Solver.html">
+<link rel="next" href="Z3.Statistics.html">
 <link rel="Up" href="Z3.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
@@ -17,18 +17,18 @@
 <body>
 <div class="navbar"><a class="pre" href="Z3.Probe.html" title="Z3.Probe">Previous</a>
 &nbsp;<a class="up" href="Z3.html" title="Z3">Up</a>
-&nbsp;<a class="post" href="Z3.Solver.html" title="Z3.Solver">Next</a>
+&nbsp;<a class="post" href="Z3.Statistics.html" title="Z3.Statistics">Next</a>
 </div>
 <h1>Module <a href="type_Z3.Tactic.html">Z3.Tactic</a></h1>
 
 <pre><span class="keyword">module</span> Tactic: <code class="code">sig</code> <a href="Z3.Tactic.html">..</a> <code class="code">end</code></pre><div class="info module top">
-Tactics
+Tactics
 <p>
 
-    Tactics are the basic building block for creating custom solvers for specific problem domains.
-    The complete list of tactics may be obtained using <code class="code">Context.get_num_tactics</code> 
-    and <code class="code">Context.get_tactic_names</code>.
-    It may also be obtained using the command <code class="code">(help-tactics)</code> in the SMT 2.0 front-end.<br>
+    Tactics are the basic building block for creating custom solvers for specific problem domains.
+    The complete list of tactics may be obtained using <code class="code">Context.get_num_tactics</code>
+    and <code class="code">Context.get_tactic_names</code>.
+    It may also be obtained using the command <code class="code">(help-tactic)</code> in the SMT 2.0 front-end.<br>
 </div>
 <hr width="100%">
 
@@ -36,7 +36,7 @@ Tactics
 
 
 <pre><span class="keyword">module</span> <a href="Z3.Tactic.ApplyResult.html">ApplyResult</a>: <code class="code">sig</code> <a href="Z3.Tactic.ApplyResult.html">..</a> <code class="code">end</code></pre><div class="info">
-Tactic application results 
+Tactic application results
 </div>
 
 <pre><span id="VALget_help"><span class="keyword">val</span> get_help</span> : <code class="type"><a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> string</code></pre><div class="info ">
@@ -68,37 +68,37 @@ Creates a new Tactic.<br>
 </div>
 
 <pre><span id="VALand_then"><span class="keyword">val</span> and_then</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -><br>       <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> list -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a></code></pre><div class="info ">
-Create a tactic that applies one tactic to a Goal and
+Create a tactic that applies one tactic to a Goal and
       then another one to every subgoal produced by the first one.<br>
 </div>
 
 <pre><span id="VALor_else"><span class="keyword">val</span> or_else</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a></code></pre><div class="info ">
-Create a tactic that first applies one tactic to a Goal and
+Create a tactic that first applies one tactic to a Goal and
       if it fails then returns the result of another tactic applied to the Goal.<br>
 </div>
 
 <pre><span id="VALtry_for"><span class="keyword">val</span> try_for</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> int -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a></code></pre><div class="info ">
-Create a tactic that applies one tactic to a goal for some time (in milliseconds).    
+Create a tactic that applies one tactic to a goal for some time (in milliseconds).
 <p>
 
       If the tactic does not terminate within the timeout, then it fails.<br>
 </div>
 
 <pre><span id="VALwhen_"><span class="keyword">val</span> when_</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Probe.html#TYPEprobe">Probe.probe</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a></code></pre><div class="info ">
-Create a tactic that applies one tactic to a given goal if the probe 
-      evaluates to true. 
+Create a tactic that applies one tactic to a given goal if the probe
+      evaluates to true.
 <p>
 
       If the probe evaluates to false, then the new tactic behaves like the <code class="code">skip</code> tactic.<br>
 </div>
 
 <pre><span id="VALcond"><span class="keyword">val</span> cond</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Probe.html#TYPEprobe">Probe.probe</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a></code></pre><div class="info ">
-Create a tactic that applies a tactic to a given goal if the probe 
+Create a tactic that applies a tactic to a given goal if the probe
       evaluates to true and another tactic otherwise.<br>
 </div>
 
 <pre><span id="VALrepeat"><span class="keyword">val</span> repeat</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> int -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a></code></pre><div class="info ">
-Create a tactic that keeps applying one tactic until the goal is not 
+Create a tactic that keeps applying one tactic until the goal is not
       modified anymore or the maximum number of iterations is reached.<br>
 </div>
 
@@ -115,7 +115,7 @@ Create a tactic that fails if the probe evaluates to false.<br>
 </div>
 
 <pre><span id="VALfail_if_not_decided"><span class="keyword">val</span> fail_if_not_decided</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a></code></pre><div class="info ">
-Create a tactic that fails if the goal is not triviall satisfiable (i.e., empty)
+Create a tactic that fails if the goal is not triviall satisfiable (i.e., empty)
       or trivially unsatisfiable (i.e., contains `false').<br>
 </div>
 
@@ -124,21 +124,21 @@ Create a tactic that applies a tactic using the given set of parameters.<br>
 </div>
 
 <pre><span id="VALwith_"><span class="keyword">val</span> with_</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> <a href="Z3.Params.html#TYPEparams">Params.params</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a></code></pre><div class="info ">
-Create a tactic that applies a tactic using the given set of parameters.
+Create a tactic that applies a tactic using the given set of parameters.
       Alias for <code class="code">UsingParams</code><br>
 </div>
 
 <pre><span id="VALpar_or"><span class="keyword">val</span> par_or</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> list -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a></code></pre><div class="info ">
-Create a tactic that applies the given tactics in parallel.<br>
+Create a tactic that applies the given tactics in parallel until one of them succeeds (i.e., the first that doesn't fail).<br>
 </div>
 
 <pre><span id="VALpar_and_then"><span class="keyword">val</span> par_and_then</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a> -> <a href="Z3.Tactic.html#TYPEtactic">tactic</a></code></pre><div class="info ">
-Create a tactic that applies a tactic to a given goal and then another tactic
+Create a tactic that applies a tactic to a given goal and then another tactic
       to every subgoal produced by the first one. The subgoals are processed in parallel.<br>
 </div>
 
 <pre><span id="VALinterrupt"><span class="keyword">val</span> interrupt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> unit</code></pre><div class="info ">
-Interrupt the execution of a Z3 procedure.        
+Interrupt the execution of a Z3 procedure.
       This procedure can be used to interrupt: solvers, simplifiers and tactics.<br>
 </div>
 </body></html>

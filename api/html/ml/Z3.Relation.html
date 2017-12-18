@@ -31,11 +31,11 @@ Indicates whether the term is of a relation sort.<br>
 </div>
 
 <pre><span id="VALis_store"><span class="keyword">val</span> is_store</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
-Indicates whether the term is an relation store
+Indicates whether the term is an relation store
 <p>
 
-      Insert a record into a relation.
-      The function takes <code class="code">n+1</code> arguments, where the first argument is the relation and the remaining <code class="code">n</code> elements 
+      Insert a record into a relation.
+      The function takes <code class="code">n+1</code> arguments, where the first argument is the relation and the remaining <code class="code">n</code> elements
       correspond to the <code class="code">n</code> columns of the relation.<br>
 </div>
 
@@ -52,53 +52,53 @@ Indicates whether the term is a relational join<br>
 </div>
 
 <pre><span id="VALis_union"><span class="keyword">val</span> is_union</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
-Indicates whether the term is the union or convex hull of two relations. 
+Indicates whether the term is the union or convex hull of two relations.
       The function takes two arguments.<br>
 </div>
 
 <pre><span id="VALis_widen"><span class="keyword">val</span> is_widen</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
-Indicates whether the term is the widening of two relations
+Indicates whether the term is the widening of two relations
       The function takes two arguments.<br>
 </div>
 
 <pre><span id="VALis_project"><span class="keyword">val</span> is_project</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
-Indicates whether the term is a projection of columns (provided as numbers in the parameters).
+Indicates whether the term is a projection of columns (provided as numbers in the parameters).
       The function takes one argument.<br>
 </div>
 
 <pre><span id="VALis_filter"><span class="keyword">val</span> is_filter</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
-Indicates whether the term is a relation filter
+Indicates whether the term is a relation filter
 <p>
 
-      Filter (restrict) a relation with respect to a predicate.
-      The first argument is a relation. 
-      The second argument is a predicate with free de-Brujin indices
-      corresponding to the columns of the relation.
+      Filter (restrict) a relation with respect to a predicate.
+      The first argument is a relation.
+      The second argument is a predicate with free de-Brujin indices
+      corresponding to the columns of the relation.
       So the first column in the relation has index 0.<br>
 </div>
 
 <pre><span id="VALis_negation_filter"><span class="keyword">val</span> is_negation_filter</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
-Indicates whether the term is an intersection of a relation with the negation of another.
+Indicates whether the term is an intersection of a relation with the negation of another.
 <p>
 
-      Intersect the first relation with respect to negation
-      of the second relation (the function takes two arguments).
-      Logically, the specification can be described by a function
+      Intersect the first relation with respect to negation
+      of the second relation (the function takes two arguments).
+      Logically, the specification can be described by a function
 <p>
 
-      target = filter_by_negation(pos, neg, columns)
+      target = filter_by_negation(pos, neg, columns)
 <p>
 
-      where columns are pairs c1, d1, .., cN, dN of columns from pos and neg, such that
-      target are elements in ( x : expr ) in pos, such that there is no y in neg that agrees with
+      where columns are pairs c1, d1, .., cN, dN of columns from pos and neg, such that
+      target are elements in ( x : expr ) in pos, such that there is no y in neg that agrees with
       ( x : expr ) on the columns c1, d1, .., cN, dN.<br>
 </div>
 
 <pre><span id="VALis_rename"><span class="keyword">val</span> is_rename</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
-Indicates whether the term is the renaming of a column in a relation
+Indicates whether the term is the renaming of a column in a relation
 <p>
 
-      The function takes one argument.
+      The function takes one argument.
       The parameters contain the renaming as a cycle.<br>
 </div>
 
@@ -107,22 +107,22 @@ Indicates whether the term is the complement of a relation<br>
 </div>
 
 <pre><span id="VALis_select"><span class="keyword">val</span> is_select</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
-Indicates whether the term is a relational select
+Indicates whether the term is a relational select
 <p>
 
-      Check if a record is an element of the relation.
-      The function takes <code class="code">n+1</code> arguments, where the first argument is a relation,
+      Check if a record is an element of the relation.
+      The function takes <code class="code">n+1</code> arguments, where the first argument is a relation,
       and the remaining <code class="code">n</code> arguments correspond to a record.<br>
 </div>
 
 <pre><span id="VALis_clone"><span class="keyword">val</span> is_clone</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
-Indicates whether the term is a relational clone (copy)
+Indicates whether the term is a relational clone (copy)
 <p>
 
-      Create a fresh copy (clone) of a relation. 
-      The function is logically the identity, but
-      in the context of a register machine allows 
-      for terms of kind <a href="Z3.Relation.html#VALis_union"><code class="code">Relation.is_union</code></a> 
+      Create a fresh copy (clone) of a relation.
+      The function is logically the identity, but
+      in the context of a register machine allows
+      for terms of kind <a href="Z3.Relation.html#VALis_union"><code class="code">Relation.is_union</code></a>
       to perform destructive updates to the first argument.<br>
 </div>
 

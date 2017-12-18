@@ -25,50 +25,50 @@ Interpolation<br>
 <hr width="100%">
 
 <pre><span id="VALmk_interpolant"><span class="keyword">val</span> mk_interpolant</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
-Create an AST node marking a formula position for interpolation.
+Create an AST node marking a formula position for interpolation.
       The expression must have Boolean sort.<br>
 </div>
 
 <pre><span id="VALmk_interpolation_context"><span class="keyword">val</span> mk_interpolation_context</span> : <code class="type">(string * string) list -> <a href="Z3.html#TYPEcontext">context</a></code></pre><div class="info ">
-The interpolation context is suitable for generation of interpolants.
-      For more information on interpolation please refer
+The interpolation context is suitable for generation of interpolants.
+      For more information on interpolation please refer
       too the C/C++ API, which is well documented.<br>
 </div>
 
-<pre><span id="VALget_interpolant"><span class="keyword">val</span> get_interpolant</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Params.html#TYPEparams">Params.params</a> -> <a href="Z3.AST.ASTVector.html#TYPEast_vector">AST.ASTVector.ast_vector</a></code></pre><div class="info ">
-Gets an interpolant.
-      For more information on interpolation please refer
+<pre><span id="VALget_interpolant"><span class="keyword">val</span> get_interpolant</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Params.html#TYPEparams">Params.params</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
+Gets an interpolant.
+      For more information on interpolation please refer
       too the C/C++ API, which is well documented.<br>
 </div>
 
-<pre><span id="VALcompute_interpolant"><span class="keyword">val</span> compute_interpolant</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -><br>       <a href="Z3.Params.html#TYPEparams">Params.params</a> -> <a href="Z3.AST.ASTVector.html#TYPEast_vector">AST.ASTVector.ast_vector</a> * <a href="Z3.Model.html#TYPEmodel">Model.model</a></code></pre><div class="info ">
-Computes an interpolant.
-      For more information on interpolation please refer
+<pre><span id="VALcompute_interpolant"><span class="keyword">val</span> compute_interpolant</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -><br>       <a href="Z3.Params.html#TYPEparams">Params.params</a> -><br>       <a href="Z3enums.html#TYPElbool">Z3enums.lbool</a> * <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list option * <a href="Z3.Model.html#TYPEmodel">Model.model</a> option</code></pre><div class="info ">
+Computes an interpolant.
+      For more information on interpolation please refer
       too the C/C++ API, which is well documented.<br>
 </div>
 
 <pre><span id="VALget_interpolation_profile"><span class="keyword">val</span> get_interpolation_profile</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string</code></pre><div class="info ">
-Retrieves an interpolation profile.
-      For more information on interpolation please refer
+Retrieves an interpolation profile.
+      For more information on interpolation please refer
       too the C/C++ API, which is well documented.<br>
 </div>
 
 <pre><span id="VALread_interpolation_problem"><span class="keyword">val</span> read_interpolation_problem</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list * int list * <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
-Read an interpolation problem from file.
-      For more information on interpolation please refer
+Read an interpolation problem from file.
+      For more information on interpolation please refer
       too the C/C++ API, which is well documented.<br>
 </div>
 
 <pre><span id="VALcheck_interpolant"><span class="keyword">val</span> check_interpolant</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       int -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -><br>       int list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> unit</code></pre><div class="info ">
-Check the correctness of an interpolant.
-      For more information on interpolation please refer
+Check the correctness of an interpolant.
+      For more information on interpolation please refer
       too the C/C++ API, which is well documented.<br>
 </div>
 
 <pre><span id="VALwrite_interpolation_problem"><span class="keyword">val</span> write_interpolation_problem</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       int -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> int list -> string -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> unit</code></pre><div class="info ">
-Write an interpolation problem to file suitable for reading with
-      Z3_read_interpolation_problem.
-      For more information on interpolation please refer
+Write an interpolation problem to file suitable for reading with
+      Z3_read_interpolation_problem.
+      For more information on interpolation please refer
       too the C/C++ API, which is well documented.<br>
 </div>
 </body></html>

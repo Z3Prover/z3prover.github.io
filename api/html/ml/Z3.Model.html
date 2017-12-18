@@ -22,7 +22,7 @@
 <h1>Module <a href="type_Z3.Model.html">Z3.Model</a></h1>
 
 <pre><span class="keyword">module</span> Model: <code class="code">sig</code> <a href="Z3.Model.html">..</a> <code class="code">end</code></pre><div class="info module top">
-Models
+Models
 <p>
 
     A Model contains interpretations (assignments) of constants and functions.<br>
@@ -33,7 +33,7 @@ Models
 
 
 <pre><span class="keyword">module</span> <a href="Z3.Model.FuncInterp.html">FuncInterp</a>: <code class="code">sig</code> <a href="Z3.Model.FuncInterp.html">..</a> <code class="code">end</code></pre><div class="info">
-Function interpretations 
+Function interpretations
 </div>
 
 <pre><span id="VALget_const_interp"><span class="keyword">val</span> get_const_interp</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> option</code></pre><div class="info ">
@@ -72,11 +72,11 @@ All symbols that have an interpretation in the model.<br>
 </div>
 
 <pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> option</code></pre><div class="info ">
-Evaluates an expression in the current model.
+Evaluates an expression in the current model.
 <p>
 
-      This function may fail if the argument contains quantifiers, 
-      is partial (MODEL_PARTIAL enabled), or if it is not well-sorted.
+      This function may fail if the argument contains quantifiers,
+      is partial (MODEL_PARTIAL enabled), or if it is not well-sorted.
       In this case a <code class="code">ModelEvaluationFailedException</code> is thrown.<br>
 </div>
 
@@ -89,18 +89,18 @@ The number of uninterpreted sorts that the model has an interpretation for.<br>
 </div>
 
 <pre><span id="VALget_sorts"><span class="keyword">val</span> get_sorts</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list</code></pre><div class="info ">
-The uninterpreted sorts that the model has an interpretation for. 
+The uninterpreted sorts that the model has an interpretation for.
 <p>
 
-      Z3 also provides an intepretation for uninterpreted sorts used in a formula.
-      The interpretation for a sort is a finite set of distinct values. We say this finite set is
-      the "universe" of the sort.
-      <a href="Z3.Model.html#VALget_num_sorts"><code class="code">Model.get_num_sorts</code></a>
+      Z3 also provides an intepretation for uninterpreted sorts used in a formula.
+      The interpretation for a sort is a finite set of distinct values. We say this finite set is
+      the "universe" of the sort.
+      <a href="Z3.Model.html#VALget_num_sorts"><code class="code">Model.get_num_sorts</code></a>
       <a href="Z3.Model.html#VALsort_universe"><code class="code">Model.sort_universe</code></a><br>
 </div>
 
-<pre><span id="VALsort_universe"><span class="keyword">val</span> sort_universe</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.AST.html#TYPEast">AST.ast</a> list</code></pre><div class="info ">
-The finite set of distinct values that represent the interpretation of a sort. 
+<pre><span id="VALsort_universe"><span class="keyword">val</span> sort_universe</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
+The finite set of distinct values that represent the interpretation of a sort.
       <a href="Z3.Model.html#VALget_sorts"><code class="code">Model.get_sorts</code></a><br>
 <b>Returns</b> A list of expressions, where each is an element of the universe of the sort<br>
 </div>

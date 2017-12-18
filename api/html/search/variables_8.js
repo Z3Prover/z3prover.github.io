@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['key',['Key',['../class_microsoft_1_1_z3_1_1_statistics_1_1_entry.html#a4206d56ea01160ee4be15e14afcde2da',1,'Microsoft.Z3.Statistics.Entry.Key()'],['../classcom_1_1microsoft_1_1z3_1_1_statistics_1_1_entry.html#a36e68d56271fc972a6092aadd0a342ff',1,'com.microsoft.z3.Statistics.Entry.Key()']]]
+  ['m_5fast',['m_ast',['../classz3_1_1ast.html#a61dff9ee1946b8b70d105bf1d968166b',1,'z3::ast']]],
+  ['m_5fctx',['m_ctx',['../classz3_1_1object.html#a0a4dbf95178ff102fc37d6c122e985b4',1,'z3::object']]],
+  ['map',['map',['../classz3py_1_1_ast_map.html#a9ec9dda576db2a36c42c1c3af155d07c',1,'z3py::AstMap']]],
+  ['model',['model',['../classz3py_1_1_model_ref.html#a508cc3106d2c29fe07dc87cbe3ea6927',1,'z3py.ModelRef.model()'],['../classcom_1_1microsoft_1_1z3_1_1_interpolation_context_1_1_compute_interpolant_result.html#aa7373a131d63421e546eaa40689df69d',1,'com.microsoft.z3.InterpolationContext.ComputeInterpolantResult.model()']]]
 ];

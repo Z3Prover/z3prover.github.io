@@ -22,11 +22,11 @@
 <h1>Module <a href="type_Z3.Goal.html">Z3.Goal</a></h1>
 
 <pre><span class="keyword">module</span> Goal: <code class="code">sig</code> <a href="Z3.Goal.html">..</a> <code class="code">end</code></pre><div class="info module top">
-Goals 
+Goals
 <p>
 
-    A goal (aka problem). A goal is essentially a 
-    of formulas, that can be solved and/or transformed using
+    A goal (aka problem). A goal is essentially a
+    of formulas, that can be solved and/or transformed using
     tactics and solvers.<br>
 </div>
 <hr width="100%">
@@ -35,11 +35,11 @@ Goals
 
 
 <pre><span id="VALget_precision"><span class="keyword">val</span> get_precision</span> : <code class="type"><a href="Z3.Goal.html#TYPEgoal">goal</a> -> <a href="Z3enums.html#TYPEgoal_prec">Z3enums.goal_prec</a></code></pre><div class="info ">
-The precision of the goal. 
+The precision of the goal.
 <p>
 
-      Goals can be transformed using over and under approximations.
-      An under approximation is applied when the objective is to find a model for a given goal.
+      Goals can be transformed using over and under approximations.
+      An under approximation is applied when the objective is to find a model for a given goal.
       An over approximation is applied when the objective is to find a proof for a given goal.<br>
 </div>
 
@@ -68,7 +68,7 @@ Indicates whether the goal contains `false'.<br>
 </div>
 
 <pre><span id="VALget_depth"><span class="keyword">val</span> get_depth</span> : <code class="type"><a href="Z3.Goal.html#TYPEgoal">goal</a> -> int</code></pre><div class="info ">
-The depth of the goal.      
+The depth of the goal.
       This tracks how many transformations were applied to it.<br>
 </div>
 
@@ -105,14 +105,18 @@ Simplifies the goal. Essentially invokes the `simplify' tactic on the goal.<br>
 </div>
 
 <pre><span id="VALmk_goal"><span class="keyword">val</span> mk_goal</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> bool -> bool -> bool -> <a href="Z3.Goal.html#TYPEgoal">goal</a></code></pre><div class="info ">
-Creates a new Goal.
+Creates a new Goal.
 <p>
 
-      Note that the Context must have been created with proof generation support if 
+      Note that the Context must have been created with proof generation support if
       the fourth argument is set to true here.<br>
 </div>
 
 <pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Z3.Goal.html#TYPEgoal">goal</a> -> string</code></pre><div class="info ">
 A string representation of the Goal.<br>
+</div>
+
+<pre><span id="VALas_expr"><span class="keyword">val</span> as_expr</span> : <code class="type"><a href="Z3.Goal.html#TYPEgoal">goal</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Goal to BoolExpr conversion.<br>
 </div>
 </body></html>

@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['params',['params',['../classz3py_1_1_params_ref.html#a41000f175dc0115080e2a682cc06dbe9',1,'z3py::ParamsRef']]],
-  ['parents',['parents',['../classcom_1_1microsoft_1_1z3_1_1_interpolation_context_1_1_read_interpolation_problem_result.html#a8b6028bb60b51ff867e43b35e19ad86c',1,'com::microsoft::z3::InterpolationContext::ReadInterpolationProblemResult']]],
-  ['probe',['probe',['../classz3py_1_1_probe.html#af8a62f5d3e2aa49d97071e07ee564422',1,'z3py::Probe']]]
+  ['sat',['sat',['../namespacez3py.html#a822741fa71dcd0d93d98d90b31be8eeb',1,'z3py']]],
+  ['satisfiable',['SATISFIABLE',['../enumcom_1_1microsoft_1_1z3_1_1_status.html#a03ce059e9e1d3b623e69b7f36e5ad4db',1,'com::microsoft::z3::Status']]],
+  ['solver',['solver',['../classz3py_1_1_solver.html#a2debe316c6874c013213554b33d598bf',1,'z3py::Solver']]],
+  ['stats',['stats',['../classz3py_1_1_statistics.html#aa57ebe01934de43865125819a3c4af74',1,'z3py::Statistics']]],
+  ['status',['status',['../classcom_1_1microsoft_1_1z3_1_1_interpolation_context_1_1_compute_interpolant_result.html#a8da428f1738371335dfd15c60a227d80',1,'com::microsoft::z3::InterpolationContext::ComputeInterpolantResult']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['repeat',['repeat',['../classz3_1_1tactic.html#a2806f1be8c8cb7efcf2039b3e85a1eb1',1,'z3::tactic']]]
+  ['nand',['nand',['../classz3_1_1expr.html#a52ec1651ca0e5a4ac0461ac952033fdf',1,'z3::expr']]],
+  ['nor',['nor',['../classz3_1_1expr.html#a45cef15a6d1bab30100d04fbd580541b',1,'z3::expr']]]
 ];

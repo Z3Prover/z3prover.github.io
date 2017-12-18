@@ -10,8 +10,9 @@ var searchData=
   ['z3_5fparameter_5fkind',['Z3_parameter_kind',['../enumcom_1_1microsoft_1_1z3_1_1enumerations_1_1_z3__parameter__kind.html',1,'com::microsoft::z3::enumerations']]],
   ['z3_5fsort_5fkind',['Z3_sort_kind',['../enumcom_1_1microsoft_1_1z3_1_1enumerations_1_1_z3__sort__kind.html',1,'com::microsoft::z3::enumerations']]],
   ['z3_5fsymbol_5fkind',['Z3_symbol_kind',['../enumcom_1_1microsoft_1_1z3_1_1enumerations_1_1_z3__symbol__kind.html',1,'com::microsoft::z3::enumerations']]],
+  ['z3exception',['Z3Exception',['../classcom_1_1microsoft_1_1z3_1_1_z3_exception.html',1,'com::microsoft::z3']]],
   ['z3exception',['Z3Exception',['../class_microsoft_1_1_z3_1_1_z3_exception.html',1,'Microsoft::Z3']]],
-  ['z3object',['Z3Object',['../classcom_1_1microsoft_1_1z3_1_1_z3_object.html',1,'com::microsoft::z3']]],
   ['z3object',['Z3Object',['../class_microsoft_1_1_z3_1_1_z3_object.html',1,'Microsoft::Z3']]],
+  ['z3object',['Z3Object',['../classcom_1_1microsoft_1_1z3_1_1_z3_object.html',1,'com::microsoft::z3']]],
   ['z3ppobject',['Z3PPObject',['../classz3py_1_1_z3_p_p_object.html',1,'z3py']]]
 ];

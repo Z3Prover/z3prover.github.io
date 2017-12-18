@@ -80,7 +80,7 @@ A string representation of the AST in s-expression notation.<br>
 
 <pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Z3.AST.html#TYPEast">ast</a> -> <a href="Z3.AST.html#TYPEast">ast</a> -> bool</code></pre><div class="info ">
 Comparison operator.<br>
-<b>Returns</b> True if the two ast's are from the same context 
+<b>Returns</b> True if the two ast's are from the same context
       and represent the same sort; false otherwise.<br>
 </div>
 
@@ -92,27 +92,5 @@ Object Comparison.<br>
 <pre><span id="VALtranslate"><span class="keyword">val</span> translate</span> : <code class="type"><a href="Z3.AST.html#TYPEast">ast</a> -> <a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.AST.html#TYPEast">ast</a></code></pre><div class="info ">
 Translates (copies) the AST to another context.<br>
 <b>Returns</b> A copy of the AST which is associated with the other context.<br>
-</div>
-
-<pre><span id="VALunwrap_ast"><span class="keyword">val</span> unwrap_ast</span> : <code class="type"><a href="Z3.AST.html#TYPEast">ast</a> -> Z3native.ptr</code></pre><div class="info ">
-Unwraps an AST.
-      This function is used for transitions between native and 
-      managed objects. It returns the native pointer to the AST. Note that 
-      AST objects are reference counted and unwrapping an AST disables automatic
-      reference counting, i.e., all references to the IntPtr that is returned 
-      must be handled externally and through native calls (see e.g., 
-      <code class="code">Z3native.inc_ref</code>).
-      <a href="Z3.AST.html#VALwrap_ast"><code class="code">AST.wrap_ast</code></a><br>
-</div>
-
-<pre><span id="VALwrap_ast"><span class="keyword">val</span> wrap_ast</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> Z3native.z3_ast -> <a href="Z3.AST.html#TYPEast">ast</a></code></pre><div class="info ">
-Wraps an AST.
-<p>
-
-      This function is used for transitions between native and 
-      managed objects. Note that the native ast that is passed must be a 
-      native object obtained from Z3 (e.g., through <a href="Z3.AST.html#VALunwrap_ast"><code class="code">AST.unwrap_ast</code></a>)
-      and that it must have a correct reference count (see e.g., 
-      <code class="code">Z3native.inc_ref</code>).<br>
 </div>
 </body></html>

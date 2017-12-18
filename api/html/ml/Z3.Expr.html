@@ -26,21 +26,13 @@ General Expressions (terms)<br>
 </div>
 <hr width="100%">
 
-<pre><code><span id="TYPEexpr"><span class="keyword">type</span> <code class="type"></code>expr</span> = </code></pre><table class="typetable">
-<tr>
-<td align="left" valign="top" >
-<code><span class="keyword">|</span></code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTexpr.Expr"><span class="constructor">Expr</span></span> <span class="keyword">of</span> <code class="type"><a href="Z3.AST.html#TYPEast">AST.ast</a></code></code></td>
-
-</tr></table>
-
+<pre><span id="TYPEexpr"><span class="keyword">type</span> <code class="type"></code>expr</span> </pre>
 
 
 <pre><span id="VALast_of_expr"><span class="keyword">val</span> ast_of_expr</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.AST.html#TYPEast">AST.ast</a></code></pre>
 <pre><span id="VALexpr_of_ast"><span class="keyword">val</span> expr_of_ast</span> : <code class="type"><a href="Z3.AST.html#TYPEast">AST.ast</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre>
 <pre><span id="VALsimplify"><span class="keyword">val</span> simplify</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Params.html#TYPEparams">Params.params</a> option -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
-Returns a simplified version of the expression.
+Returns a simplified version of the expression.
       <a href="Z3.Expr.html#VALget_simplify_help"><code class="code">Expr.get_simplify_help</code></a><br>
 </div>
 
@@ -65,26 +57,26 @@ The arguments of the expression.<br>
 </div>
 
 <pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
-Update the arguments of the expression using an array of expressions.
+Update the arguments of the expression using an array of expressions.
       The number of new arguments should coincide with the current number of arguments.<br>
 </div>
 
 <pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
-Substitute every occurrence of <code class="code">from[i]</code> in the expression with <code class="code">to[i]</code>, for <code class="code">i</code> smaller than <code class="code">num_exprs</code>.
+Substitute every occurrence of <code class="code">from[i]</code> in the expression with <code class="code">to[i]</code>, for <code class="code">i</code> smaller than <code class="code">num_exprs</code>.
 <p>
 
-      The result is the new expression. The arrays <code class="code">from</code> and <code class="code">to</code> must have size <code class="code">num_exprs</code>.
-      For every <code class="code">i</code> smaller than <code class="code">num_exprs</code>, we must have that 
+      The result is the new expression. The arrays <code class="code">from</code> and <code class="code">to</code> must have size <code class="code">num_exprs</code>.
+      For every <code class="code">i</code> smaller than <code class="code">num_exprs</code>, we must have that
       sort of <code class="code">from[i]</code> must be equal to sort of <code class="code">to[i]</code>.<br>
 </div>
 
 <pre><span id="VALsubstitute_one"><span class="keyword">val</span> substitute_one</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
-Substitute every occurrence of <code class="code">from</code> in the expression with <code class="code">to</code>.
+Substitute every occurrence of <code class="code">from</code> in the expression with <code class="code">to</code>.
       <a href="Z3.Expr.html#VALsubstitute"><code class="code">Expr.substitute</code></a><br>
 </div>
 
 <pre><span id="VALsubstitute_vars"><span class="keyword">val</span> substitute_vars</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">expr</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
-Substitute the free variables in the expression with the expressions in the expr array
+Substitute the free variables in the expression with the expressions in the expr array
 <p>
 
       For every <code class="code">i</code> smaller than <code class="code">num_exprs</code>, the variable with de-Bruijn index <code class="code">i</code> is replaced with term <code class="code">to[i]</code>.<br>
@@ -142,7 +134,7 @@ Create a numeral of a given sort.<br>
 </div>
 
 <pre><span id="VALmk_numeral_int"><span class="keyword">val</span> mk_numeral_int</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">expr</a></code></pre><div class="info ">
-Create a numeral of a given sort. This function can be use to create numerals that fit in a machine integer.
+Create a numeral of a given sort. This function can be use to create numerals that fit in a machine integer.
       It is slightly faster than <code class="code">MakeNumeral</code> since it is not necessary to parse a string.<br>
 <b>Returns</b> A Term with the given value and sort<br>
 </div>
