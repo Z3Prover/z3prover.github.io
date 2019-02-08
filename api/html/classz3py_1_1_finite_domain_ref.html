@@ -88,6 +88,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classz3py_1_1_finite_domain_ref__inherit__graph.png" border="0" usemap="#_finite_domain_ref_inherit__map" alt="Inheritance graph"/></div>
 <map name="_finite_domain_ref_inherit__map" id="_finite_domain_ref_inherit__map">
+<area shape="rect" id="node5" href="classz3py_1_1_finite_domain_num_ref.html" title="FiniteDomainNumRef" alt="" coords="5,304,149,331"/>
+<area shape="rect" id="node2" href="classz3py_1_1_expr_ref.html" title="Expressions. " alt="" coords="43,155,111,181"/>
+<area shape="rect" id="node3" href="classz3py_1_1_ast_ref.html" title="AstRef" alt="" coords="47,80,108,107"/>
+<area shape="rect" id="node4" href="classz3py_1_1_z3_p_p_object.html" title="ASTs base class. " alt="" coords="31,5,123,32"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -171,7 +175,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Finite-domain expressions.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07094">7094</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07176">7176</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aed8194b891258fc0b90afdc8ca371eaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed8194b891258fc0b90afdc8ca371eaa">&#9670;&nbsp;</a></span>as_string()</h2>
@@ -189,10 +193,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a Z3 floating point expression as a Python string.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07101">7101</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07183">7183</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07121">FiniteDomainNumRef.as_long()</a>.</p>
-<div class="fragment"><div class="line"><a name="l07101"></a><span class="lineno"> 7101</span>&#160;    <span class="keyword">def </span>as_string(self):</div><div class="line"><a name="l07102"></a><span class="lineno"> 7102</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a Z3 floating point expression as a Python string.&quot;&quot;&quot;</span></div><div class="line"><a name="l07103"></a><span class="lineno"> 7103</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga3975f8427c68d0a938834afd78ccef4d">Z3_ast_to_string</a>(self.ctx_ref(), self.as_ast())</div><div class="line"><a name="l07104"></a><span class="lineno"> 7104</span>&#160;</div><div class="ttc" id="group__capi_html_ga3975f8427c68d0a938834afd78ccef4d"><div class="ttname"><a href="group__capi.html#ga3975f8427c68d0a938834afd78ccef4d">Z3_ast_to_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_ast_to_string(Z3_context c, Z3_ast a)</div><div class="ttdoc">Convert the given AST node into a string. </div></div>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07203">FiniteDomainNumRef.as_long()</a>.</p>
+<div class="fragment"><div class="line"><a name="l07183"></a><span class="lineno"> 7183</span>&#160;    <span class="keyword">def </span>as_string(self):</div><div class="line"><a name="l07184"></a><span class="lineno"> 7184</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a Z3 floating point expression as a Python string.&quot;&quot;&quot;</span></div><div class="line"><a name="l07185"></a><span class="lineno"> 7185</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga3975f8427c68d0a938834afd78ccef4d">Z3_ast_to_string</a>(self.ctx_ref(), self.as_ast())</div><div class="line"><a name="l07186"></a><span class="lineno"> 7186</span>&#160;</div><div class="ttc" id="group__capi_html_ga3975f8427c68d0a938834afd78ccef4d"><div class="ttname"><a href="group__capi.html#ga3975f8427c68d0a938834afd78ccef4d">Z3_ast_to_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_ast_to_string(Z3_context c, Z3_ast a)</div><div class="ttdoc">Convert the given AST node into a string. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -212,15 +216,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return the sort of the finite-domain expression `self`.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07097">7097</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l07097"></a><span class="lineno"> 7097</span>&#160;    <span class="keyword">def </span>sort(self):</div><div class="line"><a name="l07098"></a><span class="lineno"> 7098</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the sort of the finite-domain expression `self`.&quot;&quot;&quot;</span></div><div class="line"><a name="l07099"></a><span class="lineno"> 7099</span>&#160;        <span class="keywordflow">return</span> FiniteDomainSortRef(<a class="code" href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a>(self.ctx_ref(), self.as_ast()), self.ctx)</div><div class="line"><a name="l07100"></a><span class="lineno"> 7100</span>&#160;</div><div class="ttc" id="group__capi_html_gafa9565c0deefe46f8e2de14dc6b8b6a3"><div class="ttname"><a href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_get_sort(Z3_context c, Z3_ast a)</div><div class="ttdoc">Return the sort of an AST node. </div></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07179">7179</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l07179"></a><span class="lineno"> 7179</span>&#160;    <span class="keyword">def </span>sort(self):</div><div class="line"><a name="l07180"></a><span class="lineno"> 7180</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the sort of the finite-domain expression `self`.&quot;&quot;&quot;</span></div><div class="line"><a name="l07181"></a><span class="lineno"> 7181</span>&#160;        <span class="keywordflow">return</span> FiniteDomainSortRef(<a class="code" href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a>(self.ctx_ref(), self.as_ast()), self.ctx)</div><div class="line"><a name="l07182"></a><span class="lineno"> 7182</span>&#160;</div><div class="ttc" id="group__capi_html_gafa9565c0deefe46f8e2de14dc6b8b6a3"><div class="ttname"><a href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_get_sort(Z3_context c, Z3_ast a)</div><div class="ttdoc">Return the sort of an AST node. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 2 2018 10:07:55 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 8 2019 11:28:12 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

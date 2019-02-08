@@ -91,6 +91,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classz3py_1_1_pattern_ref__inherit__graph.png" border="0" usemap="#_pattern_ref_inherit__map" alt="Inheritance graph"/></div>
 <map name="_pattern_ref_inherit__map" id="_pattern_ref_inherit__map">
+<area shape="rect" id="node2" href="classz3py_1_1_expr_ref.html" title="Expressions. " alt="" coords="17,155,85,181"/>
+<area shape="rect" id="node3" href="classz3py_1_1_ast_ref.html" title="AstRef" alt="" coords="21,80,82,107"/>
+<area shape="rect" id="node4" href="classz3py_1_1_z3_p_p_object.html" title="ASTs base class. " alt="" coords="5,5,97,32"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -174,11 +177,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Patterns. </p>
-<pre class="fragment">Patterns are hints for quantifier instantiation.
-
-See http://rise4fun.com/Z3Py/tutorial/advanced for more details.
-</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01675">1675</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<pre class="fragment">Patterns are hints for quantifier instantiation.</pre> 
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01731">1731</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a80aaaa525e93a5c0a6ca25e12463d610"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80aaaa525e93a5c0a6ca25e12463d610">&#9670;&nbsp;</a></span>as_ast()</h2>
@@ -196,8 +196,8 @@ See http://rise4fun.com/Z3Py/tutorial/advanced for more details.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01680">1680</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;    <span class="keyword">def </span>as_ast(self):</div><div class="line"><a name="l01681"></a><span class="lineno"> 1681</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga804e7c4e103bd0a88301f0ac3ceb8d5f">Z3_pattern_to_ast</a>(self.ctx_ref(), self.ast)</div><div class="line"><a name="l01682"></a><span class="lineno"> 1682</span>&#160;</div><div class="ttc" id="group__capi_html_ga804e7c4e103bd0a88301f0ac3ceb8d5f"><div class="ttname"><a href="group__capi.html#ga804e7c4e103bd0a88301f0ac3ceb8d5f">Z3_pattern_to_ast</a></div><div class="ttdeci">Z3_ast Z3_API Z3_pattern_to_ast(Z3_context c, Z3_pattern p)</div><div class="ttdoc">Convert a Z3_pattern into Z3_ast. This is just type casting. </div></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01735">1735</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l01735"></a><span class="lineno"> 1735</span>&#160;    <span class="keyword">def </span>as_ast(self):</div><div class="line"><a name="l01736"></a><span class="lineno"> 1736</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga804e7c4e103bd0a88301f0ac3ceb8d5f">Z3_pattern_to_ast</a>(self.ctx_ref(), self.ast)</div><div class="line"><a name="l01737"></a><span class="lineno"> 1737</span>&#160;</div><div class="ttc" id="group__capi_html_ga804e7c4e103bd0a88301f0ac3ceb8d5f"><div class="ttname"><a href="group__capi.html#ga804e7c4e103bd0a88301f0ac3ceb8d5f">Z3_pattern_to_ast</a></div><div class="ttdeci">Z3_ast Z3_API Z3_pattern_to_ast(Z3_context c, Z3_pattern p)</div><div class="ttdoc">Convert a Z3_pattern into Z3_ast. This is just type casting. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -217,15 +217,15 @@ See http://rise4fun.com/Z3Py/tutorial/advanced for more details.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01683">1683</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l01683"></a><span class="lineno"> 1683</span>&#160;    <span class="keyword">def </span>get_id(self):</div><div class="line"><a name="l01684"></a><span class="lineno"> 1684</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gac736a04d331ec558400f2bc8eadb5e49">Z3_get_ast_id</a>(self.ctx_ref(), self.as_ast())</div><div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;</div><div class="ttc" id="group__capi_html_gac736a04d331ec558400f2bc8eadb5e49"><div class="ttname"><a href="group__capi.html#gac736a04d331ec558400f2bc8eadb5e49">Z3_get_ast_id</a></div><div class="ttdeci">unsigned Z3_API Z3_get_ast_id(Z3_context c, Z3_ast t)</div><div class="ttdoc">Return a unique identifier for t. The identifier is unique up to structural equality. Thus, two ast nodes created by the same context and having the same children and same function symbols have the same identifiers. Ast nodes created in the same context, but having different children or different functions have different identifiers. Variables and quantifiers are also assigned different identifiers according to their structure. </div></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01738">1738</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l01738"></a><span class="lineno"> 1738</span>&#160;    <span class="keyword">def </span>get_id(self):</div><div class="line"><a name="l01739"></a><span class="lineno"> 1739</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gac736a04d331ec558400f2bc8eadb5e49">Z3_get_ast_id</a>(self.ctx_ref(), self.as_ast())</div><div class="line"><a name="l01740"></a><span class="lineno"> 1740</span>&#160;</div><div class="ttc" id="group__capi_html_gac736a04d331ec558400f2bc8eadb5e49"><div class="ttname"><a href="group__capi.html#gac736a04d331ec558400f2bc8eadb5e49">Z3_get_ast_id</a></div><div class="ttdeci">unsigned Z3_API Z3_get_ast_id(Z3_context c, Z3_ast t)</div><div class="ttdoc">Return a unique identifier for t. The identifier is unique up to structural equality. Thus, two ast nodes created by the same context and having the same children and same function symbols have the same identifiers. Ast nodes created in the same context, but having different children or different functions have different identifiers. Variables and quantifiers are also assigned different identifiers according to their structure. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 2 2018 10:07:57 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 8 2019 11:28:14 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

@@ -88,6 +88,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classz3py_1_1_finite_domain_sort_ref__inherit__graph.png" border="0" usemap="#_finite_domain_sort_ref_inherit__map" alt="Inheritance graph"/></div>
 <map name="_finite_domain_sort_ref_inherit__map" id="_finite_domain_sort_ref_inherit__map">
+<area shape="rect" id="node2" href="classz3py_1_1_sort_ref.html" title="SortRef" alt="" coords="43,155,109,181"/>
+<area shape="rect" id="node3" href="classz3py_1_1_ast_ref.html" title="AstRef" alt="" coords="45,80,107,107"/>
+<area shape="rect" id="node4" href="classz3py_1_1_z3_p_p_object.html" title="ASTs base class. " alt="" coords="30,5,122,32"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -163,7 +166,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Finite domain sort.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07065">7065</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07147">7147</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6d620a10dad91cadcb542e6098ada619"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d620a10dad91cadcb542e6098ada619">&#9670;&nbsp;</a></span>size()</h2>
@@ -181,15 +184,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return the size of the finite domain sort</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07068">7068</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l07068"></a><span class="lineno"> 7068</span>&#160;    <span class="keyword">def </span>size(self):</div><div class="line"><a name="l07069"></a><span class="lineno"> 7069</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the size of the finite domain sort&quot;&quot;&quot;</span></div><div class="line"><a name="l07070"></a><span class="lineno"> 7070</span>&#160;        r = (ctypes.c_ulonglong * 1)()</div><div class="line"><a name="l07071"></a><span class="lineno"> 7071</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="group__capi.html#gaccf185c2da063d98dd3fd102e87954b8">Z3_get_finite_domain_sort_size</a>(self.ctx_ref(), self.ast, r):</div><div class="line"><a name="l07072"></a><span class="lineno"> 7072</span>&#160;            <span class="keywordflow">return</span> r[0]</div><div class="line"><a name="l07073"></a><span class="lineno"> 7073</span>&#160;        <span class="keywordflow">else</span>:</div><div class="line"><a name="l07074"></a><span class="lineno"> 7074</span>&#160;            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Failed to retrieve finite domain sort size&quot;</span>)</div><div class="line"><a name="l07075"></a><span class="lineno"> 7075</span>&#160;</div><div class="ttc" id="group__capi_html_gaccf185c2da063d98dd3fd102e87954b8"><div class="ttname"><a href="group__capi.html#gaccf185c2da063d98dd3fd102e87954b8">Z3_get_finite_domain_sort_size</a></div><div class="ttdeci">Z3_bool Z3_API Z3_get_finite_domain_sort_size(Z3_context c, Z3_sort s, uint64_t *r)</div><div class="ttdoc">Store the size of the sort in r. Return Z3_FALSE if the call failed. That is, Z3_get_sort_kind(s) == ...</div></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07150">7150</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l07150"></a><span class="lineno"> 7150</span>&#160;    <span class="keyword">def </span>size(self):</div><div class="line"><a name="l07151"></a><span class="lineno"> 7151</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the size of the finite domain sort&quot;&quot;&quot;</span></div><div class="line"><a name="l07152"></a><span class="lineno"> 7152</span>&#160;        r = (ctypes.c_ulonglong * 1)()</div><div class="line"><a name="l07153"></a><span class="lineno"> 7153</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="group__capi.html#gaccf185c2da063d98dd3fd102e87954b8">Z3_get_finite_domain_sort_size</a>(self.ctx_ref(), self.ast, r):</div><div class="line"><a name="l07154"></a><span class="lineno"> 7154</span>&#160;            <span class="keywordflow">return</span> r[0]</div><div class="line"><a name="l07155"></a><span class="lineno"> 7155</span>&#160;        <span class="keywordflow">else</span>:</div><div class="line"><a name="l07156"></a><span class="lineno"> 7156</span>&#160;            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Failed to retrieve finite domain sort size&quot;</span>)</div><div class="line"><a name="l07157"></a><span class="lineno"> 7157</span>&#160;</div><div class="ttc" id="group__capi_html_gaccf185c2da063d98dd3fd102e87954b8"><div class="ttname"><a href="group__capi.html#gaccf185c2da063d98dd3fd102e87954b8">Z3_get_finite_domain_sort_size</a></div><div class="ttdeci">Z3_bool Z3_API Z3_get_finite_domain_sort_size(Z3_context c, Z3_sort s, uint64_t *r)</div><div class="ttdoc">Store the size of the sort in r. Return false if the call failed. That is, Z3_get_sort_kind(s) == Z3_...</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 2 2018 10:07:55 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 8 2019 11:28:12 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>
