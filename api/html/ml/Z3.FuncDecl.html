@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Z3.Sort.html">
+<link rel="next" href="Z3.Params.html">
+<link rel="Up" href="Z3.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Z3" rel="Chapter" href="Z3.html">
+<link title="Z3enums" rel="Chapter" href="Z3enums.html"><title>Z3.FuncDecl</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Z3.Sort.html" title="Z3.Sort">Previous</a>
+&nbsp;<a class="up" href="Z3.html" title="Z3">Up</a>
+&nbsp;<a class="post" href="Z3.Params.html" title="Z3.Params">Next</a>
+</div>
+<h1>Module <a href="type_Z3.FuncDecl.html">Z3.FuncDecl</a></h1>
+
+<pre><span class="keyword">module</span> FuncDecl: <code class="code">sig</code> <a href="Z3.FuncDecl.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Function declarations<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEfunc_decl"><span class="keyword">type</span> <code class="type"></code>func_decl</span> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Z3.FuncDecl.Parameter.html">Parameter</a>: <code class="code">sig</code> <a href="Z3.FuncDecl.Parameter.html">..</a> <code class="code">end</code></pre><div class="info">
+Parameters of Func_Decls
+</div>
+
+<pre><span id="VALmk_func_decl"><span class="keyword">val</span> mk_func_decl</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -><br>       <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a></code></pre><div class="info ">
+Creates a new function declaration.<br>
+</div>
+
+<pre><span id="VALmk_func_decl_s"><span class="keyword">val</span> mk_func_decl_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       string -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a></code></pre><div class="info ">
+Creates a new function declaration.
+<p>
+Creates a fresh function declaration with a name prefixed with a prefix string.<br>
+</div>
+
+<pre><span id="VALmk_fresh_func_decl"><span class="keyword">val</span> mk_fresh_func_decl</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       string -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a></code></pre>
+<pre><span id="VALmk_const_decl"><span class="keyword">val</span> mk_const_decl</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a></code></pre><div class="info ">
+Creates a new constant function declaration.<br>
+</div>
+
+<pre><span id="VALmk_const_decl_s"><span class="keyword">val</span> mk_const_decl_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a></code></pre><div class="info ">
+Creates a new constant function declaration.<br>
+</div>
+
+<pre><span id="VALmk_fresh_const_decl"><span class="keyword">val</span> mk_fresh_const_decl</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a></code></pre><div class="info ">
+Creates a fresh constant function declaration with a name prefixed with a prefix string.
+      <a href="Z3.FuncDecl.html#VALmk_func_decl"><code class="code">FuncDecl.mk_func_decl</code></a>
+      <a href="Z3.FuncDecl.html#VALmk_func_decl"><code class="code">FuncDecl.mk_func_decl</code></a><br>
+</div>
+
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> bool</code></pre><div class="info ">
+Comparison operator.<br>
+<b>Returns</b> True if a and b are from the same context and represent the same func_decl; false otherwise.<br>
+</div>
+
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> string</code></pre><div class="info ">
+A string representations of the function declaration.<br>
+</div>
+
+<pre><span id="VALget_id"><span class="keyword">val</span> get_id</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> int</code></pre><div class="info ">
+Returns a unique identifier for the function declaration.<br>
+</div>
+
+<pre><span id="VALget_arity"><span class="keyword">val</span> get_arity</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> int</code></pre><div class="info ">
+The arity of the function declaration<br>
+</div>
+
+<pre><span id="VALget_domain_size"><span class="keyword">val</span> get_domain_size</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> int</code></pre><div class="info ">
+The size of the domain of the function declaration
+      <a href="Z3.FuncDecl.html#VALget_arity"><code class="code">FuncDecl.get_arity</code></a><br>
+</div>
+
+<pre><span id="VALget_domain"><span class="keyword">val</span> get_domain</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list</code></pre><div class="info ">
+The domain of the function declaration<br>
+</div>
+
+<pre><span id="VALget_range"><span class="keyword">val</span> get_range</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+The range of the function declaration<br>
+</div>
+
+<pre><span id="VALget_decl_kind"><span class="keyword">val</span> get_decl_kind</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> <a href="Z3enums.html#TYPEdecl_kind">Z3enums.decl_kind</a></code></pre><div class="info ">
+The kind of the function declaration.<br>
+</div>
+
+<pre><span id="VALget_name"><span class="keyword">val</span> get_name</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a></code></pre><div class="info ">
+The name of the function declaration<br>
+</div>
+
+<pre><span id="VALget_num_parameters"><span class="keyword">val</span> get_num_parameters</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> int</code></pre><div class="info ">
+The number of parameters of the function declaration<br>
+</div>
+
+<pre><span id="VALget_parameters"><span class="keyword">val</span> get_parameters</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> <a href="Z3.FuncDecl.Parameter.html#TYPEparameter">Parameter.parameter</a> list</code></pre><div class="info ">
+The parameters of the function declaration<br>
+</div>
+
+<pre><span id="VALapply"><span class="keyword">val</span> apply</span> : <code class="type"><a href="Z3.FuncDecl.html#TYPEfunc_decl">func_decl</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create expression that applies function to arguments.<br>
+</div>
+</body></html>

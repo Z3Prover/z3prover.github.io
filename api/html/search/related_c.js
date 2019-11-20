@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['sqrt',['sqrt',['../classz3_1_1expr.html#a87941cc3f51658295fe2b02396cfdf83',1,'z3::expr']]],
-  ['sum',['sum',['../classz3_1_1expr.html#a12e1f691f00f950803dae47b01cc175c',1,'z3::expr']]]
+  ['try_5ffor',['try_for',['../classz3_1_1tactic.html#aaef2251f59d80d4ba69cf1dd5e12c349',1,'z3::tactic']]]
 ];

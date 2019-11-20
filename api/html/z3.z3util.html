@@ -1,6 +1,7 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module z3.z3util</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -8,7 +9,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="z3.html"><font color="#ffffff">z3</font></a>.z3util</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:d%3A%5Cz3%5Cbuild%5Cpython%5Cz3%5Cz3util.py">d:\z3\build\python\z3\z3util.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/root/z3/src/api/python/z3/z3util.py">/root/z3/src/api/python/z3/z3util.py</a></font></td></tr></table>
     <p><tt>Usage:&nbsp;&nbsp;<br>
 import&nbsp;common_z3&nbsp;as&nbsp;CM_Z3</tt></p>
 <p>
@@ -18,7 +19,7 @@ import&nbsp;common_z3&nbsp;as&nbsp;CM_Z3</tt></p>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="builtins.html">builtins</a><br>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="codecs.html">codecs</a><br>
 <a href="copy.html">copy</a><br>
 <a href="ctypes.html">ctypes</a><br>
 </td><td width="25%" valign=top><a href="io.html">io</a><br>
@@ -26,7 +27,7 @@ import&nbsp;common_z3&nbsp;as&nbsp;CM_Z3</tt></p>
 <a href="os.html">os</a><br>
 </td><td width="25%" valign=top><a href="pkg_resources.html">pkg_resources</a><br>
 <a href="sys.html">sys</a><br>
-<a href="z3.html">z3</a><br>
+<a href="z3.z3.html">z3.z3</a><br>
 </td><td width="25%" valign=top><a href="z3.z3core.html">z3.z3core</a><br>
 </td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -35,11 +36,7 @@ import&nbsp;common_z3&nbsp;as&nbsp;CM_Z3</tt></p>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-FormatError"><strong>FormatError</strong></a>(...)</dt><dd><tt><a href="#-FormatError">FormatError</a>([integer])&nbsp;-&gt;&nbsp;string<br>
-&nbsp;<br>
-Convert&nbsp;a&nbsp;win32&nbsp;error&nbsp;code&nbsp;into&nbsp;a&nbsp;string.&nbsp;If&nbsp;the&nbsp;error&nbsp;code&nbsp;is&nbsp;not<br>
-given,&nbsp;the&nbsp;return&nbsp;value&nbsp;of&nbsp;a&nbsp;call&nbsp;to&nbsp;GetLastError()&nbsp;is&nbsp;used.</tt></dd></dl>
- <dl><dt><strong>Iff</strong> <em>lambda</em> f</dt></dl>
+<td width="100%"><dl><dt><strong>Iff</strong> <em>lambda</em> f</dt></dl>
  <dl><dt><a name="-POINTER"><strong>POINTER</strong></a>(...)</dt></dl>
  <dl><dt><a name="-addressof"><strong>addressof</strong></a>(...)</dt><dd><tt><a href="#-addressof">addressof</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
 Return&nbsp;the&nbsp;address&nbsp;of&nbsp;the&nbsp;C&nbsp;instance&nbsp;internal&nbsp;buffer</tt></dd></dl>
@@ -77,7 +74,6 @@ False<br>
 &gt;&gt;&gt;&nbsp;<a href="#-exact_one_model">exact_one_model</a>(And(0&lt;=x,x&nbsp;&lt;=&nbsp;-1))<br>
 False</tt></dd></dl>
  <dl><dt><a name="-get_errno"><strong>get_errno</strong></a>(...)</dt></dl>
- <dl><dt><a name="-get_last_error"><strong>get_last_error</strong></a>(...)</dt></dl>
  <dl><dt><a name="-get_models"><strong>get_models</strong></a>(f, k)</dt><dd><tt>Returns&nbsp;the&nbsp;first&nbsp;k&nbsp;models&nbsp;satisfiying&nbsp;f.<br>
 If&nbsp;f&nbsp;is&nbsp;not&nbsp;satisfiable,&nbsp;returns&nbsp;False.<br>
 If&nbsp;f&nbsp;cannot&nbsp;be&nbsp;solved,&nbsp;returns&nbsp;None<br>
@@ -108,12 +104,12 @@ False<br>
 []<br>
 &gt;&gt;&gt;&nbsp;<a href="#-get_models">get_models</a>(BoolVal(True),k=1)<br>
 []</tt></dd></dl>
- <dl><dt><a name="-get_vars"><strong>get_vars</strong></a>(f, rs=[])</dt><dd><tt>&gt;&gt;&gt;&nbsp;x,y&nbsp;=&nbsp;Ints('x&nbsp;y')<br>
+ <dl><dt><a name="-get_vars"><strong>get_vars</strong></a>(f, rs<font color="#909090">=[]</font>)</dt><dd><tt>&gt;&gt;&gt;&nbsp;x,y&nbsp;=&nbsp;Ints('x&nbsp;y')<br>
 &gt;&gt;&gt;&nbsp;a,b&nbsp;=&nbsp;Bools('a&nbsp;b')<br>
 &gt;&gt;&gt;&nbsp;<a href="#-get_vars">get_vars</a>(Implies(And(x+y==0,x*2==10),Or(a,Implies(a,b==False))))<br>
 [x,&nbsp;y,&nbsp;a,&nbsp;b]</tt></dd></dl>
- <dl><dt><a name="-get_z3_version"><strong>get_z3_version</strong></a>(as_str=False)</dt></dl>
- <dl><dt><a name="-is_contradiction"><strong>is_contradiction</strong></a>(claim, verbose=0)</dt><dd><tt>&gt;&gt;&gt;&nbsp;x,y=Bools('x&nbsp;y')<br>
+ <dl><dt><a name="-get_z3_version"><strong>get_z3_version</strong></a>(as_str<font color="#909090">=False</font>)</dt></dl>
+ <dl><dt><a name="-is_contradiction"><strong>is_contradiction</strong></a>(claim, verbose<font color="#909090">=0</font>)</dt><dd><tt>&gt;&gt;&gt;&nbsp;x,y=Bools('x&nbsp;y')<br>
 &gt;&gt;&gt;&nbsp;<a href="#-is_contradiction">is_contradiction</a>(BoolVal(False))<br>
 True<br>
 &nbsp;<br>
@@ -171,7 +167,7 @@ False<br>
 True<br>
 &gt;&gt;&gt;&nbsp;<a href="#-is_expr_var">is_expr_var</a>(SafetyInjection)<br>
 True</tt></dd></dl>
- <dl><dt><a name="-is_tautology"><strong>is_tautology</strong></a>(claim, verbose=0)</dt><dd><tt>&gt;&gt;&gt;&nbsp;<a href="#-is_tautology">is_tautology</a>(Implies(Bool('x'),Bool('x')))<br>
+ <dl><dt><a name="-is_tautology"><strong>is_tautology</strong></a>(claim, verbose<font color="#909090">=0</font>)</dt><dd><tt>&gt;&gt;&gt;&nbsp;<a href="#-is_tautology">is_tautology</a>(Implies(Bool('x'),Bool('x')))<br>
 True<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#-is_tautology">is_tautology</a>(Implies(Bool('x'),Bool('y')))<br>
@@ -183,7 +179,7 @@ True<br>
 &gt;&gt;&gt;&nbsp;<a href="#-is_tautology">is_tautology</a>(BoolVal(False))<br>
 False</tt></dd></dl>
  <dl><dt><a name="-mk_var"><strong>mk_var</strong></a>(name, vsort)</dt></dl>
- <dl><dt><a name="-model_str"><strong>model_str</strong></a>(m, as_str=True)</dt><dd><tt>Returned&nbsp;a&nbsp;'sorted'&nbsp;model&nbsp;(so&nbsp;that&nbsp;it's&nbsp;easier&nbsp;to&nbsp;see)<br>
+ <dl><dt><a name="-model_str"><strong>model_str</strong></a>(m, as_str<font color="#909090">=True</font>)</dt><dd><tt>Returned&nbsp;a&nbsp;'sorted'&nbsp;model&nbsp;(so&nbsp;that&nbsp;it's&nbsp;easier&nbsp;to&nbsp;see)<br>
 The&nbsp;model&nbsp;is&nbsp;sorted&nbsp;by&nbsp;its&nbsp;key,&nbsp;<br>
 e.g.&nbsp;if&nbsp;the&nbsp;model&nbsp;is&nbsp;y&nbsp;=&nbsp;3&nbsp;,&nbsp;x&nbsp;=&nbsp;10,&nbsp;then&nbsp;the&nbsp;result&nbsp;is&nbsp;<br>
 x&nbsp;=&nbsp;10,&nbsp;y&nbsp;=&nbsp;3<br>
@@ -221,7 +217,7 @@ AssertionError</tt></dd></dl>
  <dl><dt><a name="-myImplies"><strong>myImplies</strong></a>(a, b)</dt></dl>
  <dl><dt><a name="-myOr"><strong>myOr</strong></a>(*L)</dt></dl>
  <dl><dt><a name="-pointer"><strong>pointer</strong></a>(...)</dt></dl>
- <dl><dt><a name="-prove"><strong>prove</strong></a>(claim, assume=None, verbose=0)</dt><dd><tt>&gt;&gt;&gt;&nbsp;r,m&nbsp;=&nbsp;<a href="#-prove">prove</a>(BoolVal(True),verbose=0);&nbsp;r,<a href="#-model_str">model_str</a>(m,as_str=False)<br>
+ <dl><dt><a name="-prove"><strong>prove</strong></a>(claim, assume<font color="#909090">=None</font>, verbose<font color="#909090">=0</font>)</dt><dd><tt>&gt;&gt;&gt;&nbsp;r,m&nbsp;=&nbsp;<a href="#-prove">prove</a>(BoolVal(True),verbose=0);&nbsp;r,<a href="#-model_str">model_str</a>(m,as_str=False)<br>
 (True,&nbsp;None)<br>
 &nbsp;<br>
 #infinite&nbsp;counter&nbsp;example&nbsp;when&nbsp;proving&nbsp;contradiction<br>
@@ -262,12 +258,15 @@ E:&nbsp;cannot&nbsp;solve&nbsp;!<br>
 &gt;&gt;&gt;&nbsp;r&nbsp;is&nbsp;None&nbsp;and&nbsp;m&nbsp;is&nbsp;None<br>
 True</tt></dd></dl>
  <dl><dt><a name="-resize"><strong>resize</strong></a>(...)</dt><dd><tt>Resize&nbsp;the&nbsp;memory&nbsp;buffer&nbsp;of&nbsp;a&nbsp;ctypes&nbsp;instance</tt></dd></dl>
+ <dl><dt><a name="-set_conversion_mode"><strong>set_conversion_mode</strong></a>(...)</dt><dd><tt><a href="#-set_conversion_mode">set_conversion_mode</a>(encoding,&nbsp;errors)&nbsp;-&gt;&nbsp;(previous-encoding,&nbsp;previous-errors)<br>
+&nbsp;<br>
+Set&nbsp;the&nbsp;encoding&nbsp;and&nbsp;error&nbsp;handling&nbsp;ctypes&nbsp;uses&nbsp;when&nbsp;converting<br>
+between&nbsp;unicode&nbsp;and&nbsp;strings.&nbsp;&nbsp;Returns&nbsp;the&nbsp;previous&nbsp;values.</tt></dd></dl>
  <dl><dt><a name="-set_errno"><strong>set_errno</strong></a>(...)</dt></dl>
- <dl><dt><a name="-set_last_error"><strong>set_last_error</strong></a>(...)</dt></dl>
  <dl><dt><a name="-sizeof"><strong>sizeof</strong></a>(...)</dt><dd><tt><a href="#-sizeof">sizeof</a>(C&nbsp;type)&nbsp;-&gt;&nbsp;integer<br>
 <a href="#-sizeof">sizeof</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
 Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance</tt></dd></dl>
- <dl><dt><a name="-vset"><strong>vset</strong></a>(seq, idfun=None, as_list=True)</dt><dd><tt>order&nbsp;preserving<br>
+ <dl><dt><a name="-vset"><strong>vset</strong></a>(seq, idfun<font color="#909090">=None</font>, as_list<font color="#909090">=True</font>)</dt><dd><tt>order&nbsp;preserving<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#-vset">vset</a>([[11,2],1,&nbsp;[10,['9',1]],2,&nbsp;1,&nbsp;[11,2],[3,3],[10,99],1,[10,['9',1]]],idfun=repr)<br>
 [[11,&nbsp;2],&nbsp;1,&nbsp;[10,&nbsp;['9',&nbsp;1]],&nbsp;2,&nbsp;[3,&nbsp;3],&nbsp;[10,&nbsp;99]]</tt></dd></dl>
@@ -279,8 +278,7 @@ Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>DEFAULT_MODE</strong> = 0<br>
-<strong>GetLastError</strong> = &lt;_FuncPtr object&gt;<br>
-<strong>RTLD_GLOBAL</strong> = 0<br>
+<strong>RTLD_GLOBAL</strong> = 256<br>
 <strong>RTLD_LOCAL</strong> = 0<br>
 <strong>Z3_APP_AST</strong> = 1<br>
 <strong>Z3_ARRAY_SORT</strong> = 5<br>
@@ -597,17 +595,15 @@ Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance
 <strong>Z3_UNKNOWN_SORT</strong> = 1000<br>
 <strong>Z3_VAR_AST</strong> = 2<br>
 <strong>cdll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
-<strong>d</strong> = r'D:\z3\build\libz3.dll'<br>
-<strong>lds</strong> = [r'D:\Programs\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\bin\HostX64\x64', r'D:\Programs\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCPackages', r'C:\Program Files (x86)\Microsoft SDKs\TypeScript\3.1', r'D:\Programs\Microsoft Visual Studio\2017\Enterpr...Common7\IDE\CommonExtensions\Microsoft\TestWindow', r'D:\Programs\Microsoft Visual Studio\2017\Enterpr...Extensions\Microsoft\TeamFoundation\Team Explorer', r'D:\Programs\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\Roslyn', r'D:\Programs\Microsoft Visual Studio\2017\Enterprise\Team Tools\Performance Tools\x64', r'D:\Programs\Microsoft Visual Studio\2017\Enterprise\Team Tools\Performance Tools', r'C:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\\x64', r'C:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\', r'C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\x64\', r'D:\Programs\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\FSharp\', r'C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x64', r'C:\Program Files (x86)\Windows Kits\10\bin\x64', r'D:\Programs\Microsoft Visual Studio\2017\Enterprise\\MSBuild\15.0\bin', r'C:\Windows\Microsoft.NET\Framework64\v4.0.30319', r'D:\Programs\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\', r'D:\Programs\Microsoft Visual Studio\2017\Enterprise\Common7\Tools\', r'C:\ProgramData\DockerDesktop\version-bin', r'C:\Program Files\Docker\Docker\Resources\bin', ...]<br>
-<strong>lp</strong> = r'D:\Programs\Microsoft Visual Studio\2017\Enterpr...ommon7\IDE\CommonExtensions\Microsoft\CMake\Ninja'<br>
+<strong>d</strong> = '/root/z3/build/libz3.so'<br>
+<strong>lds</strong> = ['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupL...buntuonWindows_1804.2019.521.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath', '/mnt/c/Program Files/Common Files/Microsoft Shared/Microsoft Online Services', '/mnt/c/Program Files (x86)/Common Files/Microsoft Shared/Microsoft Online Services', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/dotnet/', '/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn/', '/mnt/c/Program Files (x86)/XEmacs/XEmacs-21.4.22/i586-pc-win32', ...]<br>
+<strong>lp</strong> = '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bi...l/GitHubDesktop/bin:/snap/bin:/root/.dotnet/tools'<br>
 <strong>memmove</strong> = &lt;CFunctionType object&gt;<br>
 <strong>memset</strong> = &lt;CFunctionType object&gt;<br>
-<strong>oledll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
 <strong>pydll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
-<strong>pythonapi</strong> = &lt;PyDLL 'python dll', handle 6c170000&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7fb269029170 at 7fb2675c6d90&gt;<br>
 <strong>sat</strong> = sat<br>
 <strong>unknown</strong> = unknown<br>
 <strong>unsat</strong> = unsat<br>
-<strong>v</strong> = 'PYTHONPATH'<br>
-<strong>windll</strong> = &lt;ctypes.LibraryLoader object&gt;</td></tr></table>
+<strong>v</strong> = 'PYTHONPATH'</td></tr></table>
 </body></html>

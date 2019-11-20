@@ -12,7 +12,7 @@ var searchData=
   ['inre',['InRe',['../namespacez3py.html#ae2af603e2d945fc55e68c1e9a6e01ed8',1,'z3py']]],
   ['insert',['insert',['../classz3py_1_1_goal.html#a066e37b95a78c6b1517965e1a6fe3b9e',1,'z3py.Goal.insert()'],['../classz3py_1_1_solver.html#a066e37b95a78c6b1517965e1a6fe3b9e',1,'z3py.Solver.insert()'],['../classz3py_1_1_fixedpoint.html#a066e37b95a78c6b1517965e1a6fe3b9e',1,'z3py.Fixedpoint.insert()']]],
   ['int',['Int',['../namespacez3py.html#abf0908445b20a1b8118d6057932e8640',1,'z3py']]],
-  ['int2bv',['Int2BV',['../namespacez3py.html#ac516cd29fb1da802c07a51b6be605115',1,'z3py.Int2BV()'],['../namespacez3.html#acb1199339ad32bcbdfd95f19f3cbf843',1,'z3::int2bv()']]],
+  ['int2bv',['Int2BV',['../namespacez3py.html#ac516cd29fb1da802c07a51b6be605115',1,'z3py']]],
   ['int_5fconst',['int_const',['../classz3_1_1context.html#a974e948ed24d9c00df5f3f536df197f3',1,'z3::context']]],
   ['int_5fsort',['int_sort',['../classz3_1_1context.html#ad5962d2494f436962977ea8c0f5e2464',1,'z3::context']]],
   ['int_5fsymbol',['int_symbol',['../classz3_1_1context.html#a90da48e6ce0c229877389dd3446cedea',1,'z3::context']]],

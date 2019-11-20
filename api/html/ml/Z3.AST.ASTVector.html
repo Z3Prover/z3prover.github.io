@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="next" href="Z3.AST.ASTMap.html">
+<link rel="Up" href="Z3.AST.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Z3" rel="Chapter" href="Z3.html">
+<link title="Z3enums" rel="Chapter" href="Z3enums.html"><title>Z3.AST.ASTVector</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Z3.AST.html" title="Z3.AST">Up</a>
+&nbsp;<a class="post" href="Z3.AST.ASTMap.html" title="Z3.AST.ASTMap">Next</a>
+</div>
+<h1>Module <a href="type_Z3.AST.ASTVector.html">Z3.AST.ASTVector</a></h1>
+
+<pre><span class="keyword">module</span> ASTVector: <code class="code">sig</code> <a href="Z3.AST.ASTVector.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Vectors of ASTs<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEast_vector"><span class="keyword">type</span> <code class="type"></code>ast_vector</span> </pre>
+
+
+<pre><span id="VALmk_ast_vector"><span class="keyword">val</span> mk_ast_vector</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a></code></pre><div class="info ">
+Create an empty AST vector<br>
+</div>
+
+<pre><span id="VALget_size"><span class="keyword">val</span> get_size</span> : <code class="type"><a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a> -> int</code></pre><div class="info ">
+The size of the vector<br>
+</div>
+
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type"><a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a> -> int -> <a href="Z3.AST.html#TYPEast">AST.ast</a></code></pre><div class="info ">
+Retrieves the i-th object in the vector.<br>
+<b>Returns</b> An AST<br>
+</div>
+
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a> -> int -> <a href="Z3.AST.html#TYPEast">AST.ast</a> -> unit</code></pre><div class="info ">
+Sets the i-th object in the vector.<br>
+</div>
+
+<pre><span id="VALresize"><span class="keyword">val</span> resize</span> : <code class="type"><a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a> -> int -> unit</code></pre><div class="info ">
+Resize the vector to a new size.<br>
+</div>
+
+<pre><span id="VALpush"><span class="keyword">val</span> push</span> : <code class="type"><a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a> -> <a href="Z3.AST.html#TYPEast">AST.ast</a> -> unit</code></pre><div class="info ">
+Add an ast to the back of the vector. The size
+                is increased by 1.<br>
+</div>
+
+<pre><span id="VALtranslate"><span class="keyword">val</span> translate</span> : <code class="type"><a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a> -> <a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a></code></pre><div class="info ">
+Translates all ASTs in the vector to another context.<br>
+<b>Returns</b> A new ASTVector<br>
+</div>
+
+<pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type"><a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a> -> <a href="Z3.AST.html#TYPEast">AST.ast</a> list</code></pre><div class="info ">
+Translates the ASTVector into an (Ast.ast list)<br>
+</div>
+
+<pre><span id="VALto_expr_list"><span class="keyword">val</span> to_expr_list</span> : <code class="type"><a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
+Translates the ASTVector into an (Expr.expr list)<br>
+</div>
+
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Z3.AST.ASTVector.html#TYPEast_vector">ast_vector</a> -> string</code></pre><div class="info ">
+Retrieves a string representation of the vector.<br>
+</div>
+</body></html>

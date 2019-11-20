@@ -1,7 +1,6 @@
 var searchData=
 [
   ['z3_5fbool',['Z3_bool',['../group__capi.html#gad09829c991421b0917486343dbd42df5',1,'z3_api.h']]],
-  ['z3_5fchar_5fptr',['Z3_char_ptr',['../group__capi.html#ga48f5ad38b1e2932193cf0e21688261c6',1,'z3_api.h']]],
   ['z3_5ferror_5fhandler',['Z3_error_handler',['../group__capi.html#ga311274c8a65a5d25cf715ebdf0c68747',1,'z3_api.h']]],
   ['z3_5ffixedpoint_5fnew_5flemma_5feh',['Z3_fixedpoint_new_lemma_eh',['../group__capi.html#gabbe4a5c20819a1895ea291c529ecb27e',1,'z3_fixedpoint.h']]],
   ['z3_5ffixedpoint_5fpredecessor_5feh',['Z3_fixedpoint_predecessor_eh',['../group__capi.html#ga0f14362b8946a6999cf49c29907d4565',1,'z3_fixedpoint.h']]],

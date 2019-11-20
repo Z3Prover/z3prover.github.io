@@ -1,0 +1,621 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Z3.Arithmetic.html">
+<link rel="next" href="Z3.Seq.html">
+<link rel="Up" href="Z3.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Z3" rel="Chapter" href="Z3.html">
+<link title="Z3enums" rel="Chapter" href="Z3enums.html"><title>Z3.BitVector</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Z3.Arithmetic.html" title="Z3.Arithmetic">Previous</a>
+&nbsp;<a class="up" href="Z3.html" title="Z3">Up</a>
+&nbsp;<a class="post" href="Z3.Seq.html" title="Z3.Seq">Next</a>
+</div>
+<h1>Module <a href="type_Z3.BitVector.html">Z3.BitVector</a></h1>
+
+<pre><span class="keyword">module</span> BitVector: <code class="code">sig</code> <a href="Z3.BitVector.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Functions to manipulate bit-vector expressions<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALmk_sort"><span class="keyword">val</span> mk_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create a new bit-vector sort.<br>
+</div>
+
+<pre><span id="VALis_bv"><span class="keyword">val</span> is_bv</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the terms is of bit-vector sort.<br>
+</div>
+
+<pre><span id="VALis_bv_numeral"><span class="keyword">val</span> is_bv_numeral</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector numeral<br>
+</div>
+
+<pre><span id="VALis_bv_bit1"><span class="keyword">val</span> is_bv_bit1</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a one-bit bit-vector with value one<br>
+</div>
+
+<pre><span id="VALis_bv_bit0"><span class="keyword">val</span> is_bv_bit0</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a one-bit bit-vector with value zero<br>
+</div>
+
+<pre><span id="VALis_bv_uminus"><span class="keyword">val</span> is_bv_uminus</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector unary minus<br>
+</div>
+
+<pre><span id="VALis_bv_add"><span class="keyword">val</span> is_bv_add</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector addition (binary)<br>
+</div>
+
+<pre><span id="VALis_bv_sub"><span class="keyword">val</span> is_bv_sub</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector subtraction (binary)<br>
+</div>
+
+<pre><span id="VALis_bv_mul"><span class="keyword">val</span> is_bv_mul</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector multiplication (binary)<br>
+</div>
+
+<pre><span id="VALis_bv_sdiv"><span class="keyword">val</span> is_bv_sdiv</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector signed division (binary)<br>
+</div>
+
+<pre><span id="VALis_bv_udiv"><span class="keyword">val</span> is_bv_udiv</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector unsigned division (binary)<br>
+</div>
+
+<pre><span id="VALis_bv_SRem"><span class="keyword">val</span> is_bv_SRem</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector signed remainder (binary)<br>
+</div>
+
+<pre><span id="VALis_bv_urem"><span class="keyword">val</span> is_bv_urem</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector unsigned remainder (binary)<br>
+</div>
+
+<pre><span id="VALis_bv_smod"><span class="keyword">val</span> is_bv_smod</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector signed modulus<br>
+</div>
+
+<pre><span id="VALis_bv_sdiv0"><span class="keyword">val</span> is_bv_sdiv0</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector signed division by zero<br>
+</div>
+
+<pre><span id="VALis_bv_udiv0"><span class="keyword">val</span> is_bv_udiv0</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector unsigned division by zero<br>
+</div>
+
+<pre><span id="VALis_bv_srem0"><span class="keyword">val</span> is_bv_srem0</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector signed remainder by zero<br>
+</div>
+
+<pre><span id="VALis_bv_urem0"><span class="keyword">val</span> is_bv_urem0</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector unsigned remainder by zero<br>
+</div>
+
+<pre><span id="VALis_bv_smod0"><span class="keyword">val</span> is_bv_smod0</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector signed modulus by zero<br>
+</div>
+
+<pre><span id="VALis_bv_ule"><span class="keyword">val</span> is_bv_ule</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is an unsigned bit-vector less-than-or-equal<br>
+</div>
+
+<pre><span id="VALis_bv_sle"><span class="keyword">val</span> is_bv_sle</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a signed bit-vector less-than-or-equal<br>
+</div>
+
+<pre><span id="VALis_bv_uge"><span class="keyword">val</span> is_bv_uge</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is an unsigned bit-vector greater-than-or-equal<br>
+</div>
+
+<pre><span id="VALis_bv_sge"><span class="keyword">val</span> is_bv_sge</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a signed bit-vector greater-than-or-equal<br>
+</div>
+
+<pre><span id="VALis_bv_ult"><span class="keyword">val</span> is_bv_ult</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is an unsigned bit-vector less-than<br>
+</div>
+
+<pre><span id="VALis_bv_slt"><span class="keyword">val</span> is_bv_slt</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a signed bit-vector less-than<br>
+</div>
+
+<pre><span id="VALis_bv_ugt"><span class="keyword">val</span> is_bv_ugt</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is an unsigned bit-vector greater-than<br>
+</div>
+
+<pre><span id="VALis_bv_sgt"><span class="keyword">val</span> is_bv_sgt</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a signed bit-vector greater-than<br>
+</div>
+
+<pre><span id="VALis_bv_and"><span class="keyword">val</span> is_bv_and</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-wise AND<br>
+</div>
+
+<pre><span id="VALis_bv_or"><span class="keyword">val</span> is_bv_or</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-wise OR<br>
+</div>
+
+<pre><span id="VALis_bv_not"><span class="keyword">val</span> is_bv_not</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-wise NOT<br>
+</div>
+
+<pre><span id="VALis_bv_xor"><span class="keyword">val</span> is_bv_xor</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-wise XOR<br>
+</div>
+
+<pre><span id="VALis_bv_nand"><span class="keyword">val</span> is_bv_nand</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-wise NAND<br>
+</div>
+
+<pre><span id="VALis_bv_nor"><span class="keyword">val</span> is_bv_nor</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-wise NOR<br>
+</div>
+
+<pre><span id="VALis_bv_xnor"><span class="keyword">val</span> is_bv_xnor</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-wise XNOR<br>
+</div>
+
+<pre><span id="VALis_bv_concat"><span class="keyword">val</span> is_bv_concat</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector concatenation (binary)<br>
+</div>
+
+<pre><span id="VALis_bv_signextension"><span class="keyword">val</span> is_bv_signextension</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector sign extension<br>
+</div>
+
+<pre><span id="VALis_bv_zeroextension"><span class="keyword">val</span> is_bv_zeroextension</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector zero extension<br>
+</div>
+
+<pre><span id="VALis_bv_extract"><span class="keyword">val</span> is_bv_extract</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector extraction<br>
+</div>
+
+<pre><span id="VALis_bv_repeat"><span class="keyword">val</span> is_bv_repeat</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector repetition<br>
+</div>
+
+<pre><span id="VALis_bv_reduceor"><span class="keyword">val</span> is_bv_reduceor</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector reduce OR<br>
+</div>
+
+<pre><span id="VALis_bv_reduceand"><span class="keyword">val</span> is_bv_reduceand</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector reduce AND<br>
+</div>
+
+<pre><span id="VALis_bv_comp"><span class="keyword">val</span> is_bv_comp</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector comparison<br>
+</div>
+
+<pre><span id="VALis_bv_shiftleft"><span class="keyword">val</span> is_bv_shiftleft</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector shift left<br>
+</div>
+
+<pre><span id="VALis_bv_shiftrightlogical"><span class="keyword">val</span> is_bv_shiftrightlogical</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector logical shift right<br>
+</div>
+
+<pre><span id="VALis_bv_shiftrightarithmetic"><span class="keyword">val</span> is_bv_shiftrightarithmetic</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector arithmetic shift left<br>
+</div>
+
+<pre><span id="VALis_bv_rotateleft"><span class="keyword">val</span> is_bv_rotateleft</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector rotate left<br>
+</div>
+
+<pre><span id="VALis_bv_rotateright"><span class="keyword">val</span> is_bv_rotateright</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector rotate right<br>
+</div>
+
+<pre><span id="VALis_bv_rotateleftextended"><span class="keyword">val</span> is_bv_rotateleftextended</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector rotate left (extended)
+      Similar to Z3_OP_ROTATE_LEFT, but it is a binary operator instead of a parametric one.<br>
+</div>
+
+<pre><span id="VALis_bv_rotaterightextended"><span class="keyword">val</span> is_bv_rotaterightextended</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector rotate right (extended)
+      Similar to Z3_OP_ROTATE_RIGHT, but it is a binary operator instead of a parametric one.<br>
+</div>
+
+<pre><span id="VALis_int2bv"><span class="keyword">val</span> is_int2bv</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a coercion from bit-vector to integer
+      This function is not supported by the decision procedures. Only the most
+      rudimentary simplification rules are applied to this function.<br>
+</div>
+
+<pre><span id="VALis_bv2int"><span class="keyword">val</span> is_bv2int</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a coercion from integer to bit-vector
+      This function is not supported by the decision procedures. Only the most
+      rudimentary simplification rules are applied to this function.<br>
+</div>
+
+<pre><span id="VALis_bv_carry"><span class="keyword">val</span> is_bv_carry</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector carry
+      Compute the carry bit in a full-adder.  The meaning is given by the
+      equivalence (carry l1 l2 l3) &lt;=&gt; (or (and l1 l2) (and l1 l3) (and l2 l3)))<br>
+</div>
+
+<pre><span id="VALis_bv_xor3"><span class="keyword">val</span> is_bv_xor3</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the term is a bit-vector ternary XOR
+      The meaning is given by the equivalence (xor3 l1 l2 l3) &lt;=&gt; (xor (xor l1 l2) l3)<br>
+</div>
+
+<pre><span id="VALget_size"><span class="keyword">val</span> get_size</span> : <code class="type"><a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> int</code></pre><div class="info ">
+The size of a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALnumeral_to_string"><span class="keyword">val</span> numeral_to_string</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> string</code></pre><div class="info ">
+Returns a string representation of a numeral.<br>
+</div>
+
+<pre><span id="VALmk_const"><span class="keyword">val</span> mk_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Creates a bit-vector constant.<br>
+</div>
+
+<pre><span id="VALmk_const_s"><span class="keyword">val</span> mk_const_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Creates a bit-vector constant.<br>
+</div>
+
+<pre><span id="VALmk_not"><span class="keyword">val</span> mk_not</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bitwise negation.
+      The argument must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_redand"><span class="keyword">val</span> mk_redand</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Take conjunction of bits in a vector,vector of length 1.
+      The argument must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_redor"><span class="keyword">val</span> mk_redor</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Take disjunction of bits in a vector,vector of length 1.
+      The argument must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_and"><span class="keyword">val</span> mk_and</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bitwise conjunction.
+      The arguments must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_or"><span class="keyword">val</span> mk_or</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bitwise disjunction.
+      The arguments must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_xor"><span class="keyword">val</span> mk_xor</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bitwise XOR.
+      The arguments must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_nand"><span class="keyword">val</span> mk_nand</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bitwise NAND.
+      The arguments must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_nor"><span class="keyword">val</span> mk_nor</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bitwise NOR.
+      The arguments must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_xnor"><span class="keyword">val</span> mk_xnor</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bitwise XNOR.
+      The arguments must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_neg"><span class="keyword">val</span> mk_neg</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Standard two's complement unary minus.
+      The arguments must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_add"><span class="keyword">val</span> mk_add</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Two's complement addition.
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_sub"><span class="keyword">val</span> mk_sub</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Two's complement subtraction.
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_mul"><span class="keyword">val</span> mk_mul</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Two's complement multiplication.
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_udiv"><span class="keyword">val</span> mk_udiv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Unsigned division.
+<p>
+
+      It is defined as the floor of <code class="code">t1/t2</code> if \c t2 is
+      different from zero. If <code class="code">t2</code> is zero, then the result
+      is undefined.
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_sdiv"><span class="keyword">val</span> mk_sdiv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Signed division.
+<p>
+
+      It is defined in the following way:
+<p>
+<ul>
+<li>The \c floor of <code class="code">t1/t2</code> if \c t2 is different from zero, and <code class="code">t1*t2 &gt;= 0</code>.</li>
+</ul>
+<ul>
+<li>The \c ceiling of <code class="code">t1/t2</code> if \c t2 is different from zero, and <code class="code">t1*t2 &lt; 0</code>.</li>
+</ul>
+
+      If <code class="code">t2</code> is zero, then the result is undefined.
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_urem"><span class="keyword">val</span> mk_urem</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Unsigned remainder.
+<p>
+
+      It is defined as <code class="code">t1 - (t1 /u t2) * t2</code>, where <code class="code">/u</code> represents unsigned division.
+      If <code class="code">t2</code> is zero, then the result is undefined.
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_srem"><span class="keyword">val</span> mk_srem</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Signed remainder.
+<p>
+
+      It is defined as <code class="code">t1 - (t1 /s t2) * t2</code>, where <code class="code">/s</code> represents signed division.
+      The most significant bit (sign) of the result is equal to the most significant bit of \c t1.
+<p>
+
+      If <code class="code">t2</code> is zero, then the result is undefined.
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_smod"><span class="keyword">val</span> mk_smod</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Two's complement signed remainder (sign follows divisor).
+<p>
+
+      If <code class="code">t2</code> is zero, then the result is undefined.
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_ult"><span class="keyword">val</span> mk_ult</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Unsigned less-than
+<p>
+
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_slt"><span class="keyword">val</span> mk_slt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Two's complement signed less-than
+<p>
+
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_ule"><span class="keyword">val</span> mk_ule</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Unsigned less-than or equal to.
+<p>
+
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_sle"><span class="keyword">val</span> mk_sle</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Two's complement signed less-than or equal to.
+<p>
+
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_uge"><span class="keyword">val</span> mk_uge</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Unsigned greater than or equal to.
+<p>
+
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_sge"><span class="keyword">val</span> mk_sge</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Two's complement signed greater than or equal to.
+<p>
+
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_ugt"><span class="keyword">val</span> mk_ugt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Unsigned greater-than.
+<p>
+
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_sgt"><span class="keyword">val</span> mk_sgt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Two's complement signed greater-than.
+<p>
+
+      The arguments must have the same bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_concat"><span class="keyword">val</span> mk_concat</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bit-vector concatenation.
+<p>
+
+      The arguments must have a bit-vector sort.<br>
+<b>Returns</b> The result is a bit-vector of size <code class="code">n1+n2</code>, where <code class="code">n1</code> (<code class="code">n2</code>)
+      is the size of <code class="code">t1</code> (<code class="code">t2</code>).<br>
+</div>
+
+<pre><span id="VALmk_extract"><span class="keyword">val</span> mk_extract</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bit-vector extraction.
+<p>
+
+      Extract the bits between two limits from a bitvector of
+      size <code class="code">m</code> to yield a new bitvector of size <code class="code">n</code>, where
+      <code class="code">n = high - low + 1</code>.<br>
+</div>
+
+<pre><span id="VALmk_sign_ext"><span class="keyword">val</span> mk_sign_ext</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bit-vector sign extension.
+<p>
+
+      Sign-extends the given bit-vector to the (signed) equivalent bitvector of
+      size <code class="code">m+i</code>, where \c m is the size of the given bit-vector.<br>
+</div>
+
+<pre><span id="VALmk_zero_ext"><span class="keyword">val</span> mk_zero_ext</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bit-vector zero extension.
+<p>
+
+      Extend the given bit-vector with zeros to the (unsigned) equivalent
+      bitvector of size <code class="code">m+i</code>, where \c m is the size of the
+      given bit-vector.<br>
+</div>
+
+<pre><span id="VALmk_repeat"><span class="keyword">val</span> mk_repeat</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Bit-vector repetition.<br>
+</div>
+
+<pre><span id="VALmk_shl"><span class="keyword">val</span> mk_shl</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Shift left.
+<p>
+
+      It is equivalent to multiplication by <code class="code">2^x</code> where \c x is the value of third argument.
+<p>
+
+      NB. The semantics of shift operations varies between environments. This
+      definition does not necessarily capture directly the semantics of the
+      programming language or assembly architecture you are modeling.<br>
+</div>
+
+<pre><span id="VALmk_lshr"><span class="keyword">val</span> mk_lshr</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Logical shift right
+<p>
+
+      It is equivalent to unsigned division by <code class="code">2^x</code> where \c x is the value of the third argument.
+<p>
+
+      NB. The semantics of shift operations varies between environments. This
+      definition does not necessarily capture directly the semantics of the
+      programming language or assembly architecture you are modeling.
+<p>
+
+      The arguments must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_ashr"><span class="keyword">val</span> mk_ashr</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Arithmetic shift right
+<p>
+
+      It is like logical shift right except that the most significant
+      bits of the result always copy the most significant bit of the
+      second argument.
+<p>
+
+      NB. The semantics of shift operations varies between environments. This
+      definition does not necessarily capture directly the semantics of the
+      programming language or assembly architecture you are modeling.
+<p>
+
+      The arguments must have a bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_rotate_left"><span class="keyword">val</span> mk_rotate_left</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Rotate Left.
+      Rotate bits of \c t to the left \c i times.<br>
+</div>
+
+<pre><span id="VALmk_rotate_right"><span class="keyword">val</span> mk_rotate_right</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Rotate Right.
+      Rotate bits of \c t to the right \c i times.<br>
+</div>
+
+<pre><span id="VALmk_ext_rotate_left"><span class="keyword">val</span> mk_ext_rotate_left</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Rotate Left.
+      Rotate bits of the second argument to the left.<br>
+</div>
+
+<pre><span id="VALmk_ext_rotate_right"><span class="keyword">val</span> mk_ext_rotate_right</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Rotate Right.
+      Rotate bits of the second argument to the right.<br>
+</div>
+
+<pre><span id="VALmk_bv2int"><span class="keyword">val</span> mk_bv2int</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create an integer from the bit-vector argument
+<p>
+
+      If \c is_signed is false, then the bit-vector \c t1 is treated as unsigned.
+      So the result is non-negative and in the range <code class="code">[0..2^N-1]</code>, where
+      N are the number of bits in the argument.
+      If \c is_signed is true, \c t1 is treated as a signed bit-vector.
+<p>
+
+      NB. This function is essentially treated as uninterpreted.
+      So you cannot expect Z3 to precisely reflect the semantics of this function
+      when solving constraints with this function.<br>
+</div>
+
+<pre><span id="VALmk_add_no_overflow"><span class="keyword">val</span> mk_add_no_overflow</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a predicate that checks that the bit-wise addition does not overflow.
+<p>
+
+      The arguments must be of bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_add_no_underflow"><span class="keyword">val</span> mk_add_no_underflow</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a predicate that checks that the bit-wise addition does not underflow.
+<p>
+
+      The arguments must be of bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_sub_no_overflow"><span class="keyword">val</span> mk_sub_no_overflow</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a predicate that checks that the bit-wise subtraction does not overflow.
+<p>
+
+      The arguments must be of bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_sub_no_underflow"><span class="keyword">val</span> mk_sub_no_underflow</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a predicate that checks that the bit-wise subtraction does not underflow.
+<p>
+
+      The arguments must be of bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_sdiv_no_overflow"><span class="keyword">val</span> mk_sdiv_no_overflow</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a predicate that checks that the bit-wise signed division does not overflow.
+<p>
+
+      The arguments must be of bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_neg_no_overflow"><span class="keyword">val</span> mk_neg_no_overflow</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a predicate that checks that the bit-wise negation does not overflow.
+<p>
+
+      The arguments must be of bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_mul_no_overflow"><span class="keyword">val</span> mk_mul_no_overflow</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a predicate that checks that the bit-wise multiplication does not overflow.
+<p>
+
+      The arguments must be of bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_mul_no_underflow"><span class="keyword">val</span> mk_mul_no_underflow</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a predicate that checks that the bit-wise multiplication does not underflow.
+<p>
+
+      The arguments must be of bit-vector sort.<br>
+</div>
+
+<pre><span id="VALmk_numeral"><span class="keyword">val</span> mk_numeral</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a bit-vector numeral.<br>
+</div>
+</body></html>

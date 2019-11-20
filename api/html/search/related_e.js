@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['with',['with',['../classz3_1_1tactic.html#a76e1ce250d68e17fb737a1dd7d124758',1,'z3::tactic']]]
+  ['xnor',['xnor',['../classz3_1_1expr.html#a610a76e709e6b05ba9536ca055c218a7',1,'z3::expr']]]
 ];

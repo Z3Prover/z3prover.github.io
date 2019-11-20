@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['par_5fand_5fthen',['par_and_then',['../classz3_1_1tactic.html#a096620b30688f7be7a103384da518479',1,'z3::tactic']]],
-  ['par_5for',['par_or',['../classz3_1_1tactic.html#a080e05a04cda9f2e3f8972a2ccefe7d6',1,'z3::tactic']]],
-  ['pbeq',['pbeq',['../classz3_1_1expr.html#a860c5359d1566e5decd864fce1595ce1',1,'z3::expr']]],
-  ['pbge',['pbge',['../classz3_1_1expr.html#a62fb8efd0ad028c4b1ef5729ea9dc824',1,'z3::expr']]],
-  ['pble',['pble',['../classz3_1_1expr.html#a89376b345eb3104438928e4627a2a51e',1,'z3::expr']]],
-  ['pw',['pw',['../classz3_1_1expr.html#a05aaaf82e91ebd38b8a6188d512a799b',1,'z3::expr::pw()'],['../classz3_1_1expr.html#a7d6b2bb1a4925283e5181a1e4f1b1671',1,'z3::expr::pw()'],['../classz3_1_1expr.html#aced1d2ec89bcfe22c61d7e0332151239',1,'z3::expr::pw()']]]
+  ['range',['range',['../classz3_1_1expr.html#ae97809401131a653906f3577a0c35709',1,'z3::expr']]],
+  ['rem',['rem',['../classz3_1_1expr.html#abb6592ff3cb59428f6f4bbb2cbd857fe',1,'z3::expr::rem()'],['../classz3_1_1expr.html#a51c01e7353efbdde319731b5e6d08878',1,'z3::expr::rem()'],['../classz3_1_1expr.html#aa8261d9cecb2d71ca4d84c98fc0f0e79',1,'z3::expr::rem()']]],
+  ['repeat',['repeat',['../classz3_1_1tactic.html#a2806f1be8c8cb7efcf2039b3e85a1eb1',1,'z3::tactic']]]
 ];
