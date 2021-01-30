@@ -1,0 +1,466 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Z3.Seq.html">
+<link rel="next" href="Z3.Proof.html">
+<link rel="Up" href="Z3.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Z3" rel="Chapter" href="Z3.html">
+<link title="Z3enums" rel="Chapter" href="Z3enums.html"><title>Z3.FloatingPoint</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Z3.Seq.html" title="Z3.Seq">Previous</a>
+&nbsp;<a class="up" href="Z3.html" title="Z3">Up</a>
+&nbsp;<a class="post" href="Z3.Proof.html" title="Z3.Proof">Next</a>
+</div>
+<h1>Module <a href="type_Z3.FloatingPoint.html">Z3.FloatingPoint</a></h1>
+
+<pre><span class="keyword">module</span> FloatingPoint: <code class="code">sig</code> <a href="Z3.FloatingPoint.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Floating-Point Arithmetic<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module</span> <a href="Z3.FloatingPoint.RoundingMode.html">RoundingMode</a>: <code class="code">sig</code> <a href="Z3.FloatingPoint.RoundingMode.html">..</a> <code class="code">end</code></pre><div class="info">
+Rounding Modes
+</div>
+
+<pre><span id="VALmk_sort"><span class="keyword">val</span> mk_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> int -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create a FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_sort_half"><span class="keyword">val</span> mk_sort_half</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create the half-precision (16-bit) FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_sort_16"><span class="keyword">val</span> mk_sort_16</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create the half-precision (16-bit) FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_sort_single"><span class="keyword">val</span> mk_sort_single</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create the single-precision (32-bit) FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_sort_32"><span class="keyword">val</span> mk_sort_32</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create the single-precision (32-bit) FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_sort_double"><span class="keyword">val</span> mk_sort_double</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create the double-precision (64-bit) FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_sort_64"><span class="keyword">val</span> mk_sort_64</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create the double-precision (64-bit) FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_sort_quadruple"><span class="keyword">val</span> mk_sort_quadruple</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create the quadruple-precision (128-bit) FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_sort_128"><span class="keyword">val</span> mk_sort_128</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+Create the quadruple-precision (128-bit) FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_nan"><span class="keyword">val</span> mk_nan</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a floating-point NaN of a given FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_inf"><span class="keyword">val</span> mk_inf</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a floating-point infinity of a given FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_zero"><span class="keyword">val</span> mk_zero</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a floating-point zero of a given FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_fp"><span class="keyword">val</span> mk_fp</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create an expression of FloatingPoint sort from three bit-vector expressions.
+<p>
+
+      This is the operator named `fp' in the SMT FP theory definition.
+      Note that \c sign is required to be a bit-vector of size 1. Significand and exponent
+      are required to be greater than 1 and 2 respectively. The FloatingPoint sort
+      of the resulting expression is automatically determined from the bit-vector sizes
+      of the arguments.<br>
+</div>
+
+<pre><span id="VALmk_numeral_f"><span class="keyword">val</span> mk_numeral_f</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> float -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a numeral of FloatingPoint sort from a float.
+<p>
+
+      This function is used to create numerals that fit in a float value.
+      It is slightly faster than #Z3_mk_numeral since it is not necessary to parse a string.<br>
+</div>
+
+<pre><span id="VALmk_numeral_i"><span class="keyword">val</span> mk_numeral_i</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a numeral of FloatingPoint sort from a signed integer.<br>
+</div>
+
+<pre><span id="VALmk_numeral_i_u"><span class="keyword">val</span> mk_numeral_i_u</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> bool -> int -> int -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a numeral of FloatingPoint sort from a sign bit and two integers.<br>
+</div>
+
+<pre><span id="VALmk_numeral_s"><span class="keyword">val</span> mk_numeral_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Create a numeral of FloatingPoint sort from a string<br>
+</div>
+
+<pre><span id="VALis_fp"><span class="keyword">val</span> is_fp</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether the terms is of floating-point sort.<br>
+</div>
+
+<pre><span id="VALis_abs"><span class="keyword">val</span> is_abs</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point abs expression<br>
+</div>
+
+<pre><span id="VALis_neg"><span class="keyword">val</span> is_neg</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point neg expression<br>
+</div>
+
+<pre><span id="VALis_add"><span class="keyword">val</span> is_add</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point add expression<br>
+</div>
+
+<pre><span id="VALis_sub"><span class="keyword">val</span> is_sub</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point sub expression<br>
+</div>
+
+<pre><span id="VALis_mul"><span class="keyword">val</span> is_mul</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point mul expression<br>
+</div>
+
+<pre><span id="VALis_div"><span class="keyword">val</span> is_div</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point div expression<br>
+</div>
+
+<pre><span id="VALis_fma"><span class="keyword">val</span> is_fma</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point fma expression<br>
+</div>
+
+<pre><span id="VALis_sqrt"><span class="keyword">val</span> is_sqrt</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point sqrt expression<br>
+</div>
+
+<pre><span id="VALis_rem"><span class="keyword">val</span> is_rem</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point rem expression<br>
+</div>
+
+<pre><span id="VALis_round_to_integral"><span class="keyword">val</span> is_round_to_integral</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point round_to_integral expression<br>
+</div>
+
+<pre><span id="VALis_min"><span class="keyword">val</span> is_min</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point min expression<br>
+</div>
+
+<pre><span id="VALis_max"><span class="keyword">val</span> is_max</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point max expression<br>
+</div>
+
+<pre><span id="VALis_leq"><span class="keyword">val</span> is_leq</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point leq expression<br>
+</div>
+
+<pre><span id="VALis_lt"><span class="keyword">val</span> is_lt</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point lt expression<br>
+</div>
+
+<pre><span id="VALis_geq"><span class="keyword">val</span> is_geq</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point geq expression<br>
+</div>
+
+<pre><span id="VALis_gt"><span class="keyword">val</span> is_gt</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point gt expression<br>
+</div>
+
+<pre><span id="VALis_eq"><span class="keyword">val</span> is_eq</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point eq expression<br>
+</div>
+
+<pre><span id="VALis_is_normal"><span class="keyword">val</span> is_is_normal</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point is_normal expression<br>
+</div>
+
+<pre><span id="VALis_is_subnormal"><span class="keyword">val</span> is_is_subnormal</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point is_subnormal expression<br>
+</div>
+
+<pre><span id="VALis_is_zero"><span class="keyword">val</span> is_is_zero</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point is_zero expression<br>
+</div>
+
+<pre><span id="VALis_is_infinite"><span class="keyword">val</span> is_is_infinite</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point is_infinite expression<br>
+</div>
+
+<pre><span id="VALis_is_nan"><span class="keyword">val</span> is_is_nan</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point is_nan expression<br>
+</div>
+
+<pre><span id="VALis_is_negative"><span class="keyword">val</span> is_is_negative</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point is_negative expression<br>
+</div>
+
+<pre><span id="VALis_is_positive"><span class="keyword">val</span> is_is_positive</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point is_positive expression<br>
+</div>
+
+<pre><span id="VALis_to_fp"><span class="keyword">val</span> is_to_fp</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point to_fp expression<br>
+</div>
+
+<pre><span id="VALis_to_fp_unsigned"><span class="keyword">val</span> is_to_fp_unsigned</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point to_fp_unsigned expression<br>
+</div>
+
+<pre><span id="VALis_to_ubv"><span class="keyword">val</span> is_to_ubv</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point to_ubv expression<br>
+</div>
+
+<pre><span id="VALis_to_sbv"><span class="keyword">val</span> is_to_sbv</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point to_sbv expression<br>
+</div>
+
+<pre><span id="VALis_to_real"><span class="keyword">val</span> is_to_real</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point to_real expression<br>
+</div>
+
+<pre><span id="VALis_to_ieee_bv"><span class="keyword">val</span> is_to_ieee_bv</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether an expression is a floating-point to_ieee_bv expression<br>
+</div>
+
+<pre><span id="VALnumeral_to_string"><span class="keyword">val</span> numeral_to_string</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> string</code></pre><div class="info ">
+Returns a string representation of a numeral.<br>
+</div>
+
+<pre><span id="VALmk_const"><span class="keyword">val</span> mk_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Creates a floating-point constant.<br>
+</div>
+
+<pre><span id="VALmk_const_s"><span class="keyword">val</span> mk_const_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Creates a floating-point constant.<br>
+</div>
+
+<pre><span id="VALmk_abs"><span class="keyword">val</span> mk_abs</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point absolute value<br>
+</div>
+
+<pre><span id="VALmk_neg"><span class="keyword">val</span> mk_neg</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point negation<br>
+</div>
+
+<pre><span id="VALmk_add"><span class="keyword">val</span> mk_add</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point addition<br>
+</div>
+
+<pre><span id="VALmk_sub"><span class="keyword">val</span> mk_sub</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point subtraction<br>
+</div>
+
+<pre><span id="VALmk_mul"><span class="keyword">val</span> mk_mul</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point multiplication<br>
+</div>
+
+<pre><span id="VALmk_div"><span class="keyword">val</span> mk_div</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point division<br>
+</div>
+
+<pre><span id="VALmk_fma"><span class="keyword">val</span> mk_fma</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point fused multiply-add.<br>
+</div>
+
+<pre><span id="VALmk_sqrt"><span class="keyword">val</span> mk_sqrt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point square root<br>
+</div>
+
+<pre><span id="VALmk_rem"><span class="keyword">val</span> mk_rem</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point remainder<br>
+</div>
+
+<pre><span id="VALmk_round_to_integral"><span class="keyword">val</span> mk_round_to_integral</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point roundToIntegral.
+<p>
+
+      Rounds a floating-point number to the closest integer,
+      again represented as a floating-point number.<br>
+</div>
+
+<pre><span id="VALmk_min"><span class="keyword">val</span> mk_min</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Minimum of floating-point numbers.<br>
+</div>
+
+<pre><span id="VALmk_max"><span class="keyword">val</span> mk_max</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Maximum of floating-point numbers.<br>
+</div>
+
+<pre><span id="VALmk_leq"><span class="keyword">val</span> mk_leq</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point less than or equal.<br>
+</div>
+
+<pre><span id="VALmk_lt"><span class="keyword">val</span> mk_lt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point less than.<br>
+</div>
+
+<pre><span id="VALmk_geq"><span class="keyword">val</span> mk_geq</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point greater than or equal.<br>
+</div>
+
+<pre><span id="VALmk_gt"><span class="keyword">val</span> mk_gt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point greater than.<br>
+</div>
+
+<pre><span id="VALmk_eq"><span class="keyword">val</span> mk_eq</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Floating-point equality.<br>
+</div>
+
+<pre><span id="VALmk_is_normal"><span class="keyword">val</span> mk_is_normal</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Predicate indicating whether t is a normal floating-point number.<br>
+</div>
+
+<pre><span id="VALmk_is_subnormal"><span class="keyword">val</span> mk_is_subnormal</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Predicate indicating whether t is a subnormal floating-point number.<br>
+</div>
+
+<pre><span id="VALmk_is_zero"><span class="keyword">val</span> mk_is_zero</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Predicate indicating whether t is a floating-point number with zero value, i.e., +zero or -zero.<br>
+</div>
+
+<pre><span id="VALmk_is_infinite"><span class="keyword">val</span> mk_is_infinite</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Predicate indicating whether t is a floating-point number representing +oo or -oo.<br>
+</div>
+
+<pre><span id="VALmk_is_nan"><span class="keyword">val</span> mk_is_nan</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Predicate indicating whether t is a NaN.<br>
+</div>
+
+<pre><span id="VALmk_is_negative"><span class="keyword">val</span> mk_is_negative</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Predicate indicating whether t is a negative floating-point number.<br>
+</div>
+
+<pre><span id="VALmk_is_positive"><span class="keyword">val</span> mk_is_positive</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Predicate indicating whether t is a positive floating-point number.<br>
+</div>
+
+<pre><span id="VALmk_to_fp_bv"><span class="keyword">val</span> mk_to_fp_bv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Conversion of a single IEEE 754-2008 bit-vector into a floating-point number.<br>
+</div>
+
+<pre><span id="VALmk_to_fp_float"><span class="keyword">val</span> mk_to_fp_float</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Conversion of a FloatingPoint term into another term of different FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_to_fp_real"><span class="keyword">val</span> mk_to_fp_real</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Conversion of a term of real sort into a term of FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_to_fp_signed"><span class="keyword">val</span> mk_to_fp_signed</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Conversion of a 2's complement signed bit-vector term into a term of FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_to_fp_unsigned"><span class="keyword">val</span> mk_to_fp_unsigned</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Conversion of a 2's complement unsigned bit-vector term into a term of FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALmk_to_ubv"><span class="keyword">val</span> mk_to_ubv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Conversion of a floating-point term into an unsigned bit-vector.<br>
+</div>
+
+<pre><span id="VALmk_to_sbv"><span class="keyword">val</span> mk_to_sbv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Conversion of a floating-point term into a signed bit-vector.<br>
+</div>
+
+<pre><span id="VALmk_to_real"><span class="keyword">val</span> mk_to_real</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Conversion of a floating-point term into a real-numbered term.<br>
+</div>
+
+<pre><span id="VALget_ebits"><span class="keyword">val</span> get_ebits</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> int</code></pre><div class="info ">
+Retrieves the number of bits reserved for the exponent in a FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALget_sbits"><span class="keyword">val</span> get_sbits</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> int</code></pre><div class="info ">
+Retrieves the number of bits reserved for the significand in a FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALget_numeral_sign"><span class="keyword">val</span> get_numeral_sign</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool * int</code></pre><div class="info ">
+Retrieves the sign of a floating-point literal.<br>
+</div>
+
+<pre><span id="VALget_numeral_sign_bv"><span class="keyword">val</span> get_numeral_sign_bv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Return the sign of a floating-point numeral as a bit-vector expression. 
+      Remark: NaN's do not have a bit-vector sign, so they are invalid arguments.<br>
+</div>
+
+<pre><span id="VALget_numeral_exponent_string"><span class="keyword">val</span> get_numeral_exponent_string</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool -> string</code></pre><div class="info ">
+Return the exponent value of a floating-point numeral as a string<br>
+</div>
+
+<pre><span id="VALget_numeral_exponent_int"><span class="keyword">val</span> get_numeral_exponent_int</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool -> bool * int</code></pre><div class="info ">
+Return the exponent value of a floating-point numeral as a signed integer<br>
+</div>
+
+<pre><span id="VALget_numeral_exponent_bv"><span class="keyword">val</span> get_numeral_exponent_bv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Return the exponent of a floating-point numeral as a bit-vector expression. 
+      Remark: NaN's do not have a bit-vector exponent, so they are invalid arguments.<br>
+</div>
+
+<pre><span id="VALget_numeral_significand_bv"><span class="keyword">val</span> get_numeral_significand_bv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Return the significand value of a floating-point numeral as a bit-vector expression. 
+      Remark: NaN's do not have a bit-vector significand, so they are invalid arguments.<br>
+</div>
+
+<pre><span id="VALget_numeral_significand_string"><span class="keyword">val</span> get_numeral_significand_string</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> string</code></pre><div class="info ">
+Return the significand value of a floating-point numeral as a string.<br>
+</div>
+
+<pre><span id="VALget_numeral_significand_uint"><span class="keyword">val</span> get_numeral_significand_uint</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool * int</code></pre><div class="info ">
+Return the significand value of a floating-point numeral as a uint64.
+      Remark: This function extracts the significand bits, without the
+      hidden bit or normalization. Throws an exception if the
+      significand does not fit into an int.<br>
+</div>
+
+<pre><span id="VALis_numeral_nan"><span class="keyword">val</span> is_numeral_nan</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether a floating-point numeral is a NaN.<br>
+</div>
+
+<pre><span id="VALis_numeral_inf"><span class="keyword">val</span> is_numeral_inf</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether a floating-point numeral is +oo or -oo.<br>
+</div>
+
+<pre><span id="VALis_numeral_zero"><span class="keyword">val</span> is_numeral_zero</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether a floating-point numeral is +zero or -zero.<br>
+</div>
+
+<pre><span id="VALis_numeral_normal"><span class="keyword">val</span> is_numeral_normal</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether a floating-point numeral is normal.<br>
+</div>
+
+<pre><span id="VALis_numeral_subnormal"><span class="keyword">val</span> is_numeral_subnormal</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether a floating-point numeral is subnormal.<br>
+</div>
+
+<pre><span id="VALis_numeral_positive"><span class="keyword">val</span> is_numeral_positive</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether a floating-point numeral is positive.<br>
+</div>
+
+<pre><span id="VALis_numeral_negative"><span class="keyword">val</span> is_numeral_negative</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+Indicates whether a floating-point numeral is negative.<br>
+</div>
+
+<pre><span id="VALmk_to_ieee_bv"><span class="keyword">val</span> mk_to_ieee_bv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Conversion of a floating-point term into a bit-vector term in IEEE 754-2008 format.<br>
+</div>
+
+<pre><span id="VALmk_to_fp_int_real"><span class="keyword">val</span> mk_to_fp_int_real</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+Conversion of a real-sorted significand and an integer-sorted exponent into a term of FloatingPoint sort.<br>
+</div>
+
+<pre><span id="VALnumeral_to_string"><span class="keyword">val</span> numeral_to_string</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> string</code></pre><div class="info ">
+The string representation of a numeral<br>
+</div>
+</body></html>

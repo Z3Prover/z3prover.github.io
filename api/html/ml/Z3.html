@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="next" href="Z3enums.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Z3" rel="Chapter" href="Z3.html">
+<link title="Z3enums" rel="Chapter" href="Z3enums.html"><title>Z3</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Z3enums.html" title="Z3enums">Next</a>
+</div>
+<h1>Module <a href="type_Z3.html">Z3</a></h1>
+
+<pre><span class="keyword">module</span> Z3: <code class="code">sig</code> <a href="Z3.html">..</a> <code class="code">end</code></pre><div class="info module top">
+The Z3 ML/OCaml Interface.
+<p>
+
+   Copyright (C) 2012 Microsoft Corporation<br>
+<b>Author(s):</b> CM Wintersteiger (cwinter) 2012-12-17<br>
+</div>
+<hr width="100%">
+
+<pre><span id="EXCEPTIONError"><span class="keyword">exception</span> Error</span> <span class="keyword">of</span> <code class="type">string</code></pre>
+<div class="info ">
+General Z3 exceptions
+<p>
+
+    Many functions in this API may throw an exception; if they do, it is this one.<br>
+</div>
+
+<pre><span id="TYPEcontext"><span class="keyword">type</span> <code class="type"></code>context</span> </pre>
+<div class="info ">
+Context objects.
+<p>
+
+    Most interactions with Z3 are interpreted in some context; many users will only
+    require one such object, but power users may require more than one. To start using
+    Z3, do
+<p>
+
+    <code class="code">
+    let ctx = (mk_context []) in
+    (...)
+    </code>
+<p>
+
+    where a list of pairs of strings may be passed to set options on
+    the context, e.g., like so:
+<p>
+
+    <code class="code">
+    let cfg = [("model", "true"); ("...", "...")] in
+    let ctx = (mk_context cfg) in
+    (...)
+    </code><br>
+</div>
+
+
+<pre><span id="VALmk_context"><span class="keyword">val</span> mk_context</span> : <code class="type">(string * string) list -> <a href="Z3.html#TYPEcontext">context</a></code></pre><div class="info ">
+Create a context object
+    The following parameters can be set:
+<p>
+<ul>
+<li>proof  (Boolean)           Enable proof generation</li>
+<li>debug_ref_count (Boolean)  Enable debug support for Z3_ast reference counting</li>
+<li>trace  (Boolean)           Tracing support for VCC</li>
+<li>trace_file_name (String)   Trace out file for VCC traces</li>
+<li>timeout (unsigned)         default timeout (in milliseconds) used for solvers</li>
+<li>well_sorted_check          type checker</li>
+<li>auto_config                use heuristics to automatically select solver and configure it</li>
+<li>model                      model generation for solvers, this parameter can be overwritten when creating a solver</li>
+<li>model_validate             validate models produced by solvers</li>
+<li>unsat_core                 unsat-core generation for solvers, this parameter can be overwritten when creating a solver</li>
+</ul>
+<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Log.html">Log</a>: <code class="code">sig</code> <a href="Z3.Log.html">..</a> <code class="code">end</code></pre><div class="info">
+Interaction logging for Z3
+    Note that this is a global, static log and if multiple Context
+    objects are created, it logs the interaction with all of them.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Version.html">Version</a>: <code class="code">sig</code> <a href="Z3.Version.html">..</a> <code class="code">end</code></pre><div class="info">
+Version information
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Symbol.html">Symbol</a>: <code class="code">sig</code> <a href="Z3.Symbol.html">..</a> <code class="code">end</code></pre><div class="info">
+Symbols are used to name several term and type constructors
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.AST.html">AST</a>: <code class="code">sig</code> <a href="Z3.AST.html">..</a> <code class="code">end</code></pre><div class="info">
+The abstract syntax tree (AST) module
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Sort.html">Sort</a>: <code class="code">sig</code> <a href="Z3.Sort.html">..</a> <code class="code">end</code></pre><div class="info">
+The Sort module implements type information for ASTs
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.FuncDecl.html">FuncDecl</a>: <code class="code">sig</code> <a href="Z3.FuncDecl.html">..</a> <code class="code">end</code></pre><div class="info">
+Function declarations
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Params.html">Params</a>: <code class="code">sig</code> <a href="Z3.Params.html">..</a> <code class="code">end</code></pre><div class="info">
+Parameter sets (of Solvers, Tactics, ...)
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Expr.html">Expr</a>: <code class="code">sig</code> <a href="Z3.Expr.html">..</a> <code class="code">end</code></pre><div class="info">
+General Expressions (terms)
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Boolean.html">Boolean</a>: <code class="code">sig</code> <a href="Z3.Boolean.html">..</a> <code class="code">end</code></pre><div class="info">
+Boolean expressions; Propositional logic and equality
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Quantifier.html">Quantifier</a>: <code class="code">sig</code> <a href="Z3.Quantifier.html">..</a> <code class="code">end</code></pre><div class="info">
+Quantifier expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Z3Array.html">Z3Array</a>: <code class="code">sig</code> <a href="Z3.Z3Array.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate Array expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Set.html">Set</a>: <code class="code">sig</code> <a href="Z3.Set.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate Set expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.FiniteDomain.html">FiniteDomain</a>: <code class="code">sig</code> <a href="Z3.FiniteDomain.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate Finite Domain expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Relation.html">Relation</a>: <code class="code">sig</code> <a href="Z3.Relation.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate Relation expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Datatype.html">Datatype</a>: <code class="code">sig</code> <a href="Z3.Datatype.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate Datatype expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Enumeration.html">Enumeration</a>: <code class="code">sig</code> <a href="Z3.Enumeration.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate Enumeration expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Z3List.html">Z3List</a>: <code class="code">sig</code> <a href="Z3.Z3List.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate List expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Tuple.html">Tuple</a>: <code class="code">sig</code> <a href="Z3.Tuple.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate Tuple expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Arithmetic.html">Arithmetic</a>: <code class="code">sig</code> <a href="Z3.Arithmetic.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate arithmetic expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.BitVector.html">BitVector</a>: <code class="code">sig</code> <a href="Z3.BitVector.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate bit-vector expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Seq.html">Seq</a>: <code class="code">sig</code> <a href="Z3.Seq.html">..</a> <code class="code">end</code></pre><div class="info">
+Sequences, Strings and Regular Expressions *
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.FloatingPoint.html">FloatingPoint</a>: <code class="code">sig</code> <a href="Z3.FloatingPoint.html">..</a> <code class="code">end</code></pre><div class="info">
+Floating-Point Arithmetic
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Proof.html">Proof</a>: <code class="code">sig</code> <a href="Z3.Proof.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions to manipulate proof expressions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Goal.html">Goal</a>: <code class="code">sig</code> <a href="Z3.Goal.html">..</a> <code class="code">end</code></pre><div class="info">
+Goals
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Model.html">Model</a>: <code class="code">sig</code> <a href="Z3.Model.html">..</a> <code class="code">end</code></pre><div class="info">
+Models
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Probe.html">Probe</a>: <code class="code">sig</code> <a href="Z3.Probe.html">..</a> <code class="code">end</code></pre><div class="info">
+Probes
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Tactic.html">Tactic</a>: <code class="code">sig</code> <a href="Z3.Tactic.html">..</a> <code class="code">end</code></pre><div class="info">
+Tactics
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Statistics.html">Statistics</a>: <code class="code">sig</code> <a href="Z3.Statistics.html">..</a> <code class="code">end</code></pre><div class="info">
+Objects that track statistical information.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Solver.html">Solver</a>: <code class="code">sig</code> <a href="Z3.Solver.html">..</a> <code class="code">end</code></pre><div class="info">
+Solvers
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Fixedpoint.html">Fixedpoint</a>: <code class="code">sig</code> <a href="Z3.Fixedpoint.html">..</a> <code class="code">end</code></pre><div class="info">
+Fixedpoint solving
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Optimize.html">Optimize</a>: <code class="code">sig</code> <a href="Z3.Optimize.html">..</a> <code class="code">end</code></pre><div class="info">
+Optimization
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.SMT.html">SMT</a>: <code class="code">sig</code> <a href="Z3.SMT.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions for handling SMT and SMT2 expressions and files
+</div>
+
+<pre><span id="VALset_global_param"><span class="keyword">val</span> set_global_param</span> : <code class="type">string -> string -> unit</code></pre><div class="info ">
+Set a global (or module) parameter, which is shared by all Z3 contexts.
+<p>
+
+    When a Z3 module is initialized it will use the value of these parameters
+    when Z3_params objects are not provided.
+    The name of parameter can be composed of characters <code class="code">a-z</code><code class="code">A-Z</code>, digits <code class="code">0-9</code>, '-' and '_'.
+    The character '.' is a delimiter (more later).
+    The parameter names are case-insensitive. The character '-' should be viewed as an "alias" for '_'.
+    Thus, the following parameter names are considered equivalent: "pp.decimal-precision"  and "PP.DECIMAL_PRECISION".
+    This function can be used to set parameters for a specific Z3 module.
+    This can be done by using &lt;module-name&gt;.&lt;parameter-name&gt;.
+    For example:
+    (set_global_param "pp.decimal" "true")
+    will set the parameter "decimal" in the module "pp" to true.<br>
+</div>
+
+<pre><span id="VALget_global_param"><span class="keyword">val</span> get_global_param</span> : <code class="type">string -> string option</code></pre><div class="info ">
+Get a global (or module) parameter.
+<p>
+
+    Returns None if the parameter does not exist.
+    The caller must invoke #Z3_global_param_del_value to delete the value returned at param_value.
+    This function cannot be invoked simultaneously from different threads without synchronization.
+    The result string stored in param_value is stored in a shared location.<br>
+</div>
+<br>
+Restore the value of all global (and module) parameters.
+<p>
+
+    This command will not affect already created objects (such as tactics and solvers)
+    <a href="Z3.html#VALset_global_param"><code class="code">set_global_param</code></a><br>
+
+<pre><span id="VALglobal_param_reset_all"><span class="keyword">val</span> global_param_reset_all</span> : <code class="type">unit -> unit</code></pre>
+<pre><span id="VALtoggle_warning_messages"><span class="keyword">val</span> toggle_warning_messages</span> : <code class="type">bool -> unit</code></pre><div class="info ">
+Enable/disable printing of warning messages to the console.
+<p>
+
+    Note that this function is static and effects the behaviour of
+    all contexts globally.<br>
+</div>
+
+<pre><span id="VALenable_trace"><span class="keyword">val</span> enable_trace</span> : <code class="type">string -> unit</code></pre><div class="info ">
+Enable tracing messages tagged as `tag' when Z3 is compiled in debug mode.
+<p>
+
+   Remarks: It is a NOOP otherwise.<br>
+</div>
+
+<pre><span id="VALdisable_trace"><span class="keyword">val</span> disable_trace</span> : <code class="type">string -> unit</code></pre><div class="info ">
+Disable tracing messages tagged as `tag' when Z3 is compiled in debug mode.
+<p>
+
+   Remarks: It is a NOOP otherwise.<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Z3.Memory.html">Memory</a>: <code class="code">sig</code> <a href="Z3.Memory.html">..</a> <code class="code">end</code></pre><div class="info">
+Memory management *
+</div>
+</body></html>

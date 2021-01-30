@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Z3.Optimize.html">
+<link rel="next" href="Z3.Memory.html">
+<link rel="Up" href="Z3.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Z3" rel="Chapter" href="Z3.html">
+<link title="Z3enums" rel="Chapter" href="Z3enums.html"><title>Z3.SMT</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Z3.Optimize.html" title="Z3.Optimize">Previous</a>
+&nbsp;<a class="up" href="Z3.html" title="Z3">Up</a>
+&nbsp;<a class="post" href="Z3.Memory.html" title="Z3.Memory">Next</a>
+</div>
+<h1>Module <a href="type_Z3.SMT.html">Z3.SMT</a></h1>
+
+<pre><span class="keyword">module</span> SMT: <code class="code">sig</code> <a href="Z3.SMT.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Functions for handling SMT and SMT2 expressions and files<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALbenchmark_to_smtstring"><span class="keyword">val</span> benchmark_to_smtstring</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       string -><br>       string -> string -> string -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> string</code></pre><div class="info ">
+Convert a benchmark into an SMT-LIB formatted string.<br>
+<b>Returns</b> A string representation of the benchmark.<br>
+</div>
+
+<pre><span id="VALparse_smtlib2_string"><span class="keyword">val</span> parse_smtlib2_string</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       string -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -><br>       <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -><br>       <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> list -> <a href="Z3.AST.ASTVector.html#TYPEast_vector">AST.ASTVector.ast_vector</a></code></pre><div class="info ">
+Parse the given string using the SMT-LIB2 parser.<br>
+<b>Returns</b> A conjunction of assertions in the scope (up to push/pop) at the end of the string.<br>
+</div>
+
+<pre><span id="VALparse_smtlib2_file"><span class="keyword">val</span> parse_smtlib2_file</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       string -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -><br>       <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -><br>       <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> list -> <a href="Z3.AST.ASTVector.html#TYPEast_vector">AST.ASTVector.ast_vector</a></code></pre><div class="info ">
+Parse the given file using the SMT-LIB2 parser.<br>
+</div>
+</body></html>
