@@ -6,7 +6,7 @@ var searchData=
   ['no_5fpattern',['no_pattern',['../classz3py_1_1_quantifier_ref.html#a33808f4adef071cf820c94a80d38d0e1',1,'z3py::QuantifierRef']]],
   ['non_5funits',['non_units',['../classz3py_1_1_solver.html#a0cc8d1d1c482046b0b1dd873e7879b05',1,'z3py.Solver.non_units()'],['../classz3_1_1solver.html#a18f6146d21060d1c7ca7972590cf44c7',1,'z3::solver::non_units()']]],
   ['nor',['nor',['../namespacez3.html#aacd0d16d88ad6c3de951639ea28a18de',1,'z3']]],
-  ['not',['not',['../classcom_1_1microsoft_1_1z3_1_1_context.html#ab86db8a187d7f44d60c50716bb3eb77a',1,'com.microsoft.z3.Context.not()'],['../class_microsoft_1_1_z3_1_1_context.html#acd8122289b61945b8b5d94fe34069b32',1,'Microsoft.Z3.Context.Not()'],['../namespacez3py.html#a6e92b086cedf440a95e1dd710a2d83d6',1,'z3py.Not()']]],
+  ['not',['Not',['../class_microsoft_1_1_z3_1_1_context.html#acd8122289b61945b8b5d94fe34069b32',1,'Microsoft.Z3.Context.Not()'],['../classcom_1_1microsoft_1_1z3_1_1_context.html#ab86db8a187d7f44d60c50716bb3eb77a',1,'com.microsoft.z3.Context.not()'],['../namespacez3py.html#a6e92b086cedf440a95e1dd710a2d83d6',1,'z3py.Not()']]],
   ['nth',['nth',['../classz3_1_1expr.html#adde85f033cde6c660e094775425c7814',1,'z3::expr']]],
   ['num_5fargs',['num_args',['../classz3py_1_1_expr_ref.html#ab96f800294c00db2349b44ab8df19e49',1,'z3py.ExprRef.num_args()'],['../classz3py_1_1_func_entry.html#ab96f800294c00db2349b44ab8df19e49',1,'z3py.FuncEntry.num_args()'],['../classz3_1_1expr.html#a44a8a4ba6c05a8f1dc9665a750046789',1,'z3::expr::num_args()'],['../classz3_1_1func__entry.html#a44a8a4ba6c05a8f1dc9665a750046789',1,'z3::func_entry::num_args()']]],
   ['num_5fconstructors',['num_constructors',['../classz3py_1_1_datatype_sort_ref.html#a42ef40de659218efb1a155b8d1c5f06b',1,'z3py::DatatypeSortRef']]],

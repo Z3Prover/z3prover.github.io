@@ -10,7 +10,7 @@
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="z3.html"><font color="#ffffff">z3</font></a>.z3util</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/vsts/work/1/s/build/python/z3/z3util.py">/home/vsts/work/1/s/build/python/z3/z3util.py</a></font></td></tr></table>
-    <p><tt>Usage:&nbsp;&nbsp;<br>
+    <p><tt>Usage:<br>
 import&nbsp;common_z3&nbsp;as&nbsp;CM_Z3</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -36,7 +36,7 @@ import&nbsp;common_z3&nbsp;as&nbsp;CM_Z3</tt></p>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><strong>Iff</strong> <em>lambda</em> f</dt></dl>
+<td width="100%"><dl><dt><a name="-Iff"><strong>Iff</strong></a>(f)</dt></dl>
  <dl><dt><a name="-POINTER"><strong>POINTER</strong></a>(...)</dt></dl>
  <dl><dt><a name="-addressof"><strong>addressof</strong></a>(...)</dt><dd><tt><a href="#-addressof">addressof</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
 Return&nbsp;the&nbsp;address&nbsp;of&nbsp;the&nbsp;C&nbsp;instance&nbsp;internal&nbsp;buffer</tt></dd></dl>
@@ -47,13 +47,13 @@ Return&nbsp;the&nbsp;alignment&nbsp;requirements&nbsp;of&nbsp;a&nbsp;C&nbsp;inst
 Return&nbsp;a&nbsp;pointer&nbsp;lookalike&nbsp;to&nbsp;a&nbsp;C&nbsp;instance,&nbsp;only&nbsp;usable<br>
 as&nbsp;function&nbsp;argument</tt></dd></dl>
  <dl><dt><a name="-ehash"><strong>ehash</strong></a>(v)</dt><dd><tt>Returns&nbsp;a&nbsp;'stronger'&nbsp;hash&nbsp;value&nbsp;than&nbsp;the&nbsp;default&nbsp;hash()&nbsp;method.<br>
-The&nbsp;result&nbsp;from&nbsp;hash()&nbsp;is&nbsp;not&nbsp;enough&nbsp;to&nbsp;distinguish&nbsp;between&nbsp;2&nbsp;<br>
+The&nbsp;result&nbsp;from&nbsp;hash()&nbsp;is&nbsp;not&nbsp;enough&nbsp;to&nbsp;distinguish&nbsp;between&nbsp;2<br>
 z3&nbsp;expressions&nbsp;in&nbsp;some&nbsp;cases.<br>
 &nbsp;<br>
 Note:&nbsp;the&nbsp;following&nbsp;doctests&nbsp;will&nbsp;fail&nbsp;with&nbsp;Python&nbsp;2.x&nbsp;as&nbsp;the<br>
 default&nbsp;formatting&nbsp;doesn't&nbsp;match&nbsp;that&nbsp;of&nbsp;3.x.<br>
 &gt;&gt;&gt;&nbsp;x1&nbsp;=&nbsp;Bool('x');&nbsp;x2&nbsp;=&nbsp;Bool('x');&nbsp;x3&nbsp;=&nbsp;Int('x')<br>
-&gt;&gt;&gt;&nbsp;print(x1.hash(),x2.hash(),x3.hash())&nbsp;#BAD:&nbsp;all&nbsp;same&nbsp;hash&nbsp;values<br>
+&gt;&gt;&gt;&nbsp;print(x1.hash(),&nbsp;x2.hash(),&nbsp;x3.hash())&nbsp;#BAD:&nbsp;all&nbsp;same&nbsp;hash&nbsp;values<br>
 783810685&nbsp;783810685&nbsp;783810685<br>
 &gt;&gt;&gt;&nbsp;print(<a href="#-ehash">ehash</a>(x1),&nbsp;<a href="#-ehash">ehash</a>(x2),&nbsp;<a href="#-ehash">ehash</a>(x3))<br>
 x_783810685_1&nbsp;x_783810685_1&nbsp;x_783810685_2</tt></dd></dl>
@@ -104,7 +104,7 @@ False<br>
 []<br>
 &gt;&gt;&gt;&nbsp;<a href="#-get_models">get_models</a>(BoolVal(True),k=1)<br>
 []</tt></dd></dl>
- <dl><dt><a name="-get_vars"><strong>get_vars</strong></a>(f, rs<font color="#909090">=[]</font>)</dt><dd><tt>&gt;&gt;&gt;&nbsp;x,y&nbsp;=&nbsp;Ints('x&nbsp;y')<br>
+ <dl><dt><a name="-get_vars"><strong>get_vars</strong></a>(f, rs<font color="#909090">=None</font>)</dt><dd><tt>&gt;&gt;&gt;&nbsp;x,y&nbsp;=&nbsp;Ints('x&nbsp;y')<br>
 &gt;&gt;&gt;&nbsp;a,b&nbsp;=&nbsp;Bools('a&nbsp;b')<br>
 &gt;&gt;&gt;&nbsp;<a href="#-get_vars">get_vars</a>(Implies(And(x+y==0,x*2==10),Or(a,Implies(a,b==False))))<br>
 [x,&nbsp;y,&nbsp;a,&nbsp;b]</tt></dd></dl>
@@ -180,8 +180,8 @@ True<br>
 False</tt></dd></dl>
  <dl><dt><a name="-mk_var"><strong>mk_var</strong></a>(name, vsort)</dt></dl>
  <dl><dt><a name="-model_str"><strong>model_str</strong></a>(m, as_str<font color="#909090">=True</font>)</dt><dd><tt>Returned&nbsp;a&nbsp;'sorted'&nbsp;model&nbsp;(so&nbsp;that&nbsp;it's&nbsp;easier&nbsp;to&nbsp;see)<br>
-The&nbsp;model&nbsp;is&nbsp;sorted&nbsp;by&nbsp;its&nbsp;key,&nbsp;<br>
-e.g.&nbsp;if&nbsp;the&nbsp;model&nbsp;is&nbsp;y&nbsp;=&nbsp;3&nbsp;,&nbsp;x&nbsp;=&nbsp;10,&nbsp;then&nbsp;the&nbsp;result&nbsp;is&nbsp;<br>
+The&nbsp;model&nbsp;is&nbsp;sorted&nbsp;by&nbsp;its&nbsp;key,<br>
+e.g.&nbsp;if&nbsp;the&nbsp;model&nbsp;is&nbsp;y&nbsp;=&nbsp;3&nbsp;,&nbsp;x&nbsp;=&nbsp;10,&nbsp;then&nbsp;the&nbsp;result&nbsp;is<br>
 x&nbsp;=&nbsp;10,&nbsp;y&nbsp;=&nbsp;3<br>
 &nbsp;<br>
 EXAMPLES:<br>
@@ -234,11 +234,11 @@ Traceback&nbsp;(most&nbsp;recent&nbsp;call&nbsp;last):<br>
 AssertionError:&nbsp;Assumption&nbsp;is&nbsp;always&nbsp;False!<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;r,m&nbsp;=&nbsp;<a href="#-prove">prove</a>(Implies(x,x),assume=y,verbose=2);&nbsp;r,<a href="#-model_str">model_str</a>(m,as_str=False)<br>
-assume:&nbsp;<br>
+assume:<br>
 y<br>
-claim:&nbsp;<br>
+claim:<br>
 Implies(x,&nbsp;x)<br>
-to_prove:&nbsp;<br>
+to_prove:<br>
 Implies(y,&nbsp;Implies(x,&nbsp;x))<br>
 (True,&nbsp;None)<br>
 &nbsp;<br>
@@ -598,12 +598,12 @@ Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance
 <strong>Z3_VAR_AST</strong> = 2<br>
 <strong>cdll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
 <strong>d</strong> = '/home/vsts/work/1/s/build/libz3.so'<br>
-<strong>lds</strong> = ['/home/vsts/.opam/system/bin', '/home/linuxbrew/.linuxbrew/bin', '/home/linuxbrew/.linuxbrew/sbin', '/opt/pipx_bin', '/usr/share/rust/.cargo/bin', '/home/runner/.config/composer/vendor/bin', '/home/runner/.dotnet/tools', '/snap/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin']<br>
+<strong>lds</strong> = ['/home/vsts/.opam/system/bin', '/home/linuxbrew/.linuxbrew/bin', '/home/linuxbrew/.linuxbrew/sbin', '/home/vsts/.local/bin', '/opt/pipx_bin', '/usr/share/rust/.cargo/bin', '/home/vsts/.config/composer/vendor/bin', '/usr/local/.ghcup/bin', '/home/vsts/.dotnet/tools', '/snap/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin']<br>
 <strong>lp</strong> = '/home/vsts/.opam/system/bin:/home/linuxbrew/.lin...:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'<br>
 <strong>memmove</strong> = &lt;CFunctionType object&gt;<br>
 <strong>memset</strong> = &lt;CFunctionType object&gt;<br>
 <strong>pydll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
-<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7f2674413170 at 7f2671d5ea10&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7f0c212f5170 at 7f0c1f47a9d0&gt;<br>
 <strong>sat</strong> = sat<br>
 <strong>unknown</strong> = unknown<br>
 <strong>unsat</strong> = unsat<br>

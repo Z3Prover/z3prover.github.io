@@ -548,6 +548,7 @@ var searchData=
   ['z3_5foptimize_5fminimize',['Z3_optimize_minimize',['../group__capi.html#gabada3dea18a1fb666fc1d528e73e1031',1,'z3_optimization.h']]],
   ['z3_5foptimize_5fpop',['Z3_optimize_pop',['../group__capi.html#ga336b7ffc808fb2ce68458ef56d3c60e7',1,'z3_optimization.h']]],
   ['z3_5foptimize_5fpush',['Z3_optimize_push',['../group__capi.html#ga6f729a0d478c58cc4f56a64f7958ec54',1,'z3_optimization.h']]],
+  ['z3_5foptimize_5fregister_5fmodel_5feh',['Z3_optimize_register_model_eh',['../group__capi.html#gae862b0b792bef26a12f8fbe6ac0126d5',1,'z3_optimization.h']]],
   ['z3_5foptimize_5fset_5fparams',['Z3_optimize_set_params',['../group__capi.html#ga68f46ada83492500761659274169bc4a',1,'z3_optimization.h']]],
   ['z3_5foptimize_5fto_5fstring',['Z3_optimize_to_string',['../group__capi.html#ga944276e33c5211f8b102942aea85be58',1,'z3_optimization.h']]],
   ['z3_5fparam_5fdescrs_5fdec_5fref',['Z3_param_descrs_dec_ref',['../group__capi.html#ga9557ae44924951b71a43f53fc4a7f49e',1,'z3_api.h']]],

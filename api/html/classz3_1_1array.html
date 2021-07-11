@@ -85,8 +85,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9f551a82c72a3e471c9880f96a38e795"><td class="memTemplParams" colspan="2">template&lt;typename T2 &gt; </td></tr>
 <tr class="memitem:a9f551a82c72a3e471c9880f96a38e795"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classz3_1_1array.html#a9f551a82c72a3e471c9880f96a38e795">array</a> (<a class="el" href="classz3_1_1ast__vector__tpl.html">ast_vector_tpl</a>&lt; T2 &gt; const &amp;v)</td></tr>
 <tr class="separator:a9f551a82c72a3e471c9880f96a38e795"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ec8b3d923f76dab805bc55dc821be1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1array.html#a8ec8b3d923f76dab805bc55dc821be1d">~array</a> ()</td></tr>
-<tr class="separator:a8ec8b3d923f76dab805bc55dc821be1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18087078bd0d47df08a62b5e16c4b361"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1array.html#a18087078bd0d47df08a62b5e16c4b361">resize</a> (unsigned sz)</td></tr>
 <tr class="separator:a18087078bd0d47df08a62b5e16c4b361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a126a73e6d140f9e2a7b795c20fa42f70"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1array.html#a126a73e6d140f9e2a7b795c20fa42f70">size</a> () const</td></tr>
@@ -105,7 +103,7 @@ Public Member Functions</h2></td></tr>
 class z3::array&lt; T &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00394">394</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00400">400</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3bfa7ad8bb1dba7cfc150a2590be7320"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3bfa7ad8bb1dba7cfc150a2590be7320">&#9670;&nbsp;</a></span>array() <span class="overload">[1/2]</span></h2>
@@ -131,8 +129,8 @@ class z3::array&lt; T &gt;</h3>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00400">400</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;:m_size(sz) { m_array = <span class="keyword">new</span> T[sz]; }</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00406">406</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;:m_array(<span class="keyword">new</span> T[sz]),m_size(sz) {}</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a9f551a82c72a3e471c9880f96a38e795"></a>
@@ -151,35 +149,8 @@ class z3::array&lt; T &gt;</h3>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l01989">1989</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01989"></a><span class="lineno"> 1989</span>&#160;                                                {</div><div class="line"><a name="l01990"></a><span class="lineno"> 1990</span>&#160;        m_array = <span class="keyword">new</span> T[v.size()];</div><div class="line"><a name="l01991"></a><span class="lineno"> 1991</span>&#160;        m_size  = v.size();</div><div class="line"><a name="l01992"></a><span class="lineno"> 1992</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; m_size; i++) {</div><div class="line"><a name="l01993"></a><span class="lineno"> 1993</span>&#160;            m_array[i] = v[i];</div><div class="line"><a name="l01994"></a><span class="lineno"> 1994</span>&#160;        }</div><div class="line"><a name="l01995"></a><span class="lineno"> 1995</span>&#160;    }</div></div><!-- fragment -->
-</div>
-</div>
-<a id="a8ec8b3d923f76dab805bc55dc821be1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ec8b3d923f76dab805bc55dc821be1d">&#9670;&nbsp;</a></span>~array()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">~<a class="el" href="classz3_1_1array.html">array</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00403">403</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;{ <span class="keyword">delete</span>[] m_array; }</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02181">2181</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l02181"></a><span class="lineno"> 2181</span>&#160;                                               :m_array(<span class="keyword">new</span> T[v.size()]), m_size(v.size()) {</div><div class="line"><a name="l02182"></a><span class="lineno"> 2182</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; m_size; i++) {</div><div class="line"><a name="l02183"></a><span class="lineno"> 2183</span>&#160;            m_array[i] = v[i];</div><div class="line"><a name="l02184"></a><span class="lineno"> 2184</span>&#160;        }</div><div class="line"><a name="l02185"></a><span class="lineno"> 2185</span>&#160;    }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -207,8 +178,10 @@ class z3::array&lt; T &gt;</h3>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00406">406</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;{ assert(0 &lt;= i); assert(static_cast&lt;unsigned&gt;(i) &lt; m_size); <span class="keywordflow">return</span> m_array[i]; }</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00411">411</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l02809">goal::as_expr()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;{ assert(0 &lt;= i); assert(static_cast&lt;unsigned&gt;(i) &lt; m_size); <span class="keywordflow">return</span> m_array[i]; }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a80643b4b08ab88a3700f1ae29a7ac86c"></a>
@@ -235,8 +208,8 @@ class z3::array&lt; T &gt;</h3>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00407">407</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;{ assert(0 &lt;= i); assert(static_cast&lt;unsigned&gt;(i) &lt; m_size); <span class="keywordflow">return</span> m_array[i]; }</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00412">412</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;{ assert(0 &lt;= i); assert(static_cast&lt;unsigned&gt;(i) &lt; m_size); <span class="keywordflow">return</span> m_array[i]; }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a6acb58d65ee42c3c8bcb8dd90744d97d"></a>
@@ -262,10 +235,10 @@ class z3::array&lt; T &gt;</h3>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00408">408</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00413">413</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l03027">context::array_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l02619">goal::as_expr()</a>, <a class="el" href="z3_09_09_8h_source.html#l02104">z3::atleast()</a>, <a class="el" href="z3_09_09_8h_source.html#l02096">z3::atmost()</a>, <a class="el" href="z3_09_09_8h_source.html#l03200">context::bv_val()</a>, <a class="el" href="z3_09_09_8h_source.html#l02413">solver::check()</a>, <a class="el" href="z3_09_09_8h_source.html#l02895">optimize::check()</a>, <a class="el" href="z3_09_09_8h_source.html#l02148">z3::concat()</a>, <a class="el" href="z3_09_09_8h_source.html#l02121">z3::distinct()</a>, <a class="el" href="z3_09_09_8h_source.html#l03031">context::enumeration_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l02043">z3::exists()</a>, <a class="el" href="z3_09_09_8h_source.html#l02019">z3::forall()</a>, <a class="el" href="z3_09_09_8h_source.html#l03063">context::function()</a>, <a class="el" href="z3_09_09_8h_source.html#l02067">z3::lambda()</a>, <a class="el" href="z3_09_09_8h_source.html#l02180">z3::mk_and()</a>, <a class="el" href="z3_09_09_8h_source.html#l02174">z3::mk_or()</a>, <a class="el" href="z3_09_09_8h_source.html#l03215">func_decl::operator()()</a>, <a class="el" href="z3_09_09_8h_source.html#l02731">z3::par_or()</a>, <a class="el" href="z3_09_09_8h_source.html#l03555">context::parse_file()</a>, <a class="el" href="z3_09_09_8h_source.html#l03538">context::parse_string()</a>, <a class="el" href="z3_09_09_8h_source.html#l02088">z3::pbeq()</a>, <a class="el" href="z3_09_09_8h_source.html#l02080">z3::pbge()</a>, <a class="el" href="z3_09_09_8h_source.html#l02072">z3::pble()</a>, <a class="el" href="z3_09_09_8h_source.html#l02940">fixedpoint::query()</a>, <a class="el" href="z3_09_09_8h_source.html#l03504">z3::re_intersect()</a>, <a class="el" href="z3_09_09_8h_source.html#l03159">context::recdef()</a>, <a class="el" href="z3_09_09_8h_source.html#l03134">context::recfun()</a>, <a class="el" href="z3_09_09_8h_source.html#l03349">z3::select()</a>, <a class="el" href="z3_09_09_8h_source.html#l03369">z3::store()</a>, <a class="el" href="z3_09_09_8h_source.html#l02112">z3::sum()</a>, <a class="el" href="z3_09_09_8h_source.html#l02460">solver::to_smt2()</a>, <a class="el" href="z3_09_09_8h_source.html#l02964">fixedpoint::to_string()</a>, <a class="el" href="z3_09_09_8h_source.html#l02447">solver::trail()</a>, and <a class="el" href="z3_09_09_8h_source.html#l03042">context::tuple_sort()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;{ <span class="keywordflow">return</span> m_array; }</div></div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l03221">context::array_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l02809">goal::as_expr()</a>, <a class="el" href="z3_09_09_8h_source.html#l02294">z3::atleast()</a>, <a class="el" href="z3_09_09_8h_source.html#l02286">z3::atmost()</a>, <a class="el" href="z3_09_09_8h_source.html#l03408">context::bv_val()</a>, <a class="el" href="z3_09_09_8h_source.html#l02603">solver::check()</a>, <a class="el" href="z3_09_09_8h_source.html#l03084">optimize::check()</a>, <a class="el" href="z3_09_09_8h_source.html#l02338">z3::concat()</a>, <a class="el" href="z3_09_09_8h_source.html#l02311">z3::distinct()</a>, <a class="el" href="z3_09_09_8h_source.html#l03225">context::enumeration_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l02233">z3::exists()</a>, <a class="el" href="z3_09_09_8h_source.html#l02209">z3::forall()</a>, <a class="el" href="z3_09_09_8h_source.html#l03257">context::function()</a>, <a class="el" href="z3_09_09_8h_source.html#l02257">z3::lambda()</a>, <a class="el" href="z3_09_09_8h_source.html#l02370">z3::mk_and()</a>, <a class="el" href="z3_09_09_8h_source.html#l02364">z3::mk_or()</a>, <a class="el" href="z3_09_09_8h_source.html#l03425">func_decl::operator()()</a>, <a class="el" href="z3_09_09_8h_source.html#l02921">z3::par_or()</a>, <a class="el" href="z3_09_09_8h_source.html#l03765">context::parse_file()</a>, <a class="el" href="z3_09_09_8h_source.html#l03748">context::parse_string()</a>, <a class="el" href="z3_09_09_8h_source.html#l02278">z3::pbeq()</a>, <a class="el" href="z3_09_09_8h_source.html#l02270">z3::pbge()</a>, <a class="el" href="z3_09_09_8h_source.html#l02262">z3::pble()</a>, <a class="el" href="z3_09_09_8h_source.html#l03145">fixedpoint::query()</a>, <a class="el" href="z3_09_09_8h_source.html#l03714">z3::re_intersect()</a>, <a class="el" href="z3_09_09_8h_source.html#l03353">context::recdef()</a>, <a class="el" href="z3_09_09_8h_source.html#l03328">context::recfun()</a>, <a class="el" href="z3_09_09_8h_source.html#l03559">z3::select()</a>, <a class="el" href="z3_09_09_8h_source.html#l03579">z3::store()</a>, <a class="el" href="z3_09_09_8h_source.html#l02302">z3::sum()</a>, <a class="el" href="z3_09_09_8h_source.html#l02650">solver::to_smt2()</a>, <a class="el" href="z3_09_09_8h_source.html#l03169">fixedpoint::to_string()</a>, <a class="el" href="z3_09_09_8h_source.html#l02637">solver::trail()</a>, and <a class="el" href="z3_09_09_8h_source.html#l03236">context::tuple_sort()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;{ <span class="keywordflow">return</span> m_array.get(); }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a3295aee3e56bc13ea3aa5d1a5dc6bcda"></a>
@@ -291,8 +264,8 @@ class z3::array&lt; T &gt;</h3>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00409">409</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;{ <span class="keywordflow">return</span> m_array; }</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00414">414</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;{ <span class="keywordflow">return</span> m_array.get(); }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a18087078bd0d47df08a62b5e16c4b361"></a>
@@ -319,10 +292,10 @@ class z3::array&lt; T &gt;</h3>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00404">404</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00409">409</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l02447">solver::trail()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;{ <span class="keyword">delete</span>[] m_array; m_size = sz; m_array = <span class="keyword">new</span> T[sz]; }</div></div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l02637">solver::trail()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;{ m_array.reset(<span class="keyword">new</span> T[sz]); m_size = sz; }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a126a73e6d140f9e2a7b795c20fa42f70"></a>
@@ -348,16 +321,16 @@ class z3::array&lt; T &gt;</h3>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00405">405</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00410">410</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l03027">context::array_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l02104">z3::atleast()</a>, <a class="el" href="z3_09_09_8h_source.html#l02096">z3::atmost()</a>, <a class="el" href="z3_09_09_8h_source.html#l02148">z3::concat()</a>, <a class="el" href="z3_09_09_8h_source.html#l02121">z3::distinct()</a>, <a class="el" href="z3_09_09_8h_source.html#l02043">z3::exists()</a>, <a class="el" href="z3_09_09_8h_source.html#l02019">z3::forall()</a>, <a class="el" href="z3_09_09_8h_source.html#l02067">z3::lambda()</a>, <a class="el" href="z3_09_09_8h_source.html#l02180">z3::mk_and()</a>, <a class="el" href="z3_09_09_8h_source.html#l02174">z3::mk_or()</a>, <a class="el" href="z3_09_09_8h_source.html#l02088">z3::pbeq()</a>, <a class="el" href="z3_09_09_8h_source.html#l02080">z3::pbge()</a>, <a class="el" href="z3_09_09_8h_source.html#l02072">z3::pble()</a>, <a class="el" href="z3_09_09_8h_source.html#l02940">fixedpoint::query()</a>, <a class="el" href="z3_09_09_8h_source.html#l03504">z3::re_intersect()</a>, <a class="el" href="z3_09_09_8h_source.html#l03159">context::recdef()</a>, <a class="el" href="z3_09_09_8h_source.html#l03349">z3::select()</a>, <a class="el" href="z3_09_09_8h_source.html#l03369">z3::store()</a>, <a class="el" href="z3_09_09_8h_source.html#l02112">z3::sum()</a>, <a class="el" href="z3_09_09_8h_source.html#l02460">solver::to_smt2()</a>, and <a class="el" href="z3_09_09_8h_source.html#l02964">fixedpoint::to_string()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{ <span class="keywordflow">return</span> m_size; }</div></div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l03221">context::array_sort()</a>, <a class="el" href="z3_09_09_8h_source.html#l02809">goal::as_expr()</a>, <a class="el" href="z3_09_09_8h_source.html#l02294">z3::atleast()</a>, <a class="el" href="z3_09_09_8h_source.html#l02286">z3::atmost()</a>, <a class="el" href="z3_09_09_8h_source.html#l02338">z3::concat()</a>, <a class="el" href="z3_09_09_8h_source.html#l02311">z3::distinct()</a>, <a class="el" href="z3_09_09_8h_source.html#l02233">z3::exists()</a>, <a class="el" href="z3_09_09_8h_source.html#l02209">z3::forall()</a>, <a class="el" href="z3_09_09_8h_source.html#l02257">z3::lambda()</a>, <a class="el" href="z3_09_09_8h_source.html#l02370">z3::mk_and()</a>, <a class="el" href="z3_09_09_8h_source.html#l02364">z3::mk_or()</a>, <a class="el" href="z3_09_09_8h_source.html#l02278">z3::pbeq()</a>, <a class="el" href="z3_09_09_8h_source.html#l02270">z3::pbge()</a>, <a class="el" href="z3_09_09_8h_source.html#l02262">z3::pble()</a>, <a class="el" href="z3_09_09_8h_source.html#l03145">fixedpoint::query()</a>, <a class="el" href="z3_09_09_8h_source.html#l03714">z3::re_intersect()</a>, <a class="el" href="z3_09_09_8h_source.html#l03353">context::recdef()</a>, <a class="el" href="z3_09_09_8h_source.html#l03559">z3::select()</a>, <a class="el" href="z3_09_09_8h_source.html#l03579">z3::store()</a>, <a class="el" href="z3_09_09_8h_source.html#l02302">z3::sum()</a>, <a class="el" href="z3_09_09_8h_source.html#l02650">solver::to_smt2()</a>, and <a class="el" href="z3_09_09_8h_source.html#l03169">fixedpoint::to_string()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;{ <span class="keywordflow">return</span> m_size; }</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 30 2021 13:51:34 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 11 2021 03:18:27 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

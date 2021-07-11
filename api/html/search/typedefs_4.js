@@ -12,6 +12,7 @@ var searchData=
   ['z3_5ffixedpoint_5freduce_5fassign_5fcallback_5ffptr',['Z3_fixedpoint_reduce_assign_callback_fptr',['../group__capi.html#gaae8bf633620896b4c1b0ad4611d4669a',1,'z3_fixedpoint.h']]],
   ['z3_5ffixedpoint_5funfold_5feh',['Z3_fixedpoint_unfold_eh',['../group__capi.html#gafb038a515889a5acb1fa746d170d65d4',1,'z3_fixedpoint.h']]],
   ['z3_5ffresh_5feh',['Z3_fresh_eh',['../group__capi.html#gab37e15d5cddaf5cfc510755007bc7925',1,'z3_api.h']]],
+  ['z3_5fmodel_5feh',['Z3_model_eh',['../z3__optimization_8h.html#a806aa215442f2eb055e8366f3bf6e356',1,'z3_optimization.h']]],
   ['z3_5fpop_5feh',['Z3_pop_eh',['../group__capi.html#gad9ba57589aaf687f580942c94a7f0bff',1,'z3_api.h']]],
   ['z3_5fpush_5feh',['Z3_push_eh',['../group__capi.html#ga2b9bf845ad670e090822775a3fc18be1',1,'z3_api.h']]],
   ['z3_5fstring',['Z3_string',['../group__capi.html#ga49f047b93b0282e686956678da5b86b1',1,'z3_api.h']]],

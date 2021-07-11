@@ -977,7 +977,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gac736a04d331ec558400f2bc8eadb5e49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a unique identifier for <code>t</code>. The identifier is unique up to structural equality. Thus, two ast nodes created by the same context and having the same children and same function symbols have the same identifiers. Ast nodes created in the same context, but having different children or different functions have different identifiers. Variables and quantifiers are also assigned different identifiers according to their structure.  <a href="group__capi.html#gac736a04d331ec558400f2bc8eadb5e49">More...</a><br /></td></tr>
 <tr class="separator:gac736a04d331ec558400f2bc8eadb5e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab512c338c328f47d1facd470e752f049"><td class="memItemLeft" align="right" valign="top">unsigned Z3_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__capi.html#gab512c338c328f47d1facd470e752f049">Z3_get_ast_hash</a> (Z3_context c, Z3_ast a)</td></tr>
-<tr class="memdesc:gab512c338c328f47d1facd470e752f049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a hash code for the given AST. The hash code is structural. You can use Z3_get_ast_id interchangeably with this function.  <a href="group__capi.html#gab512c338c328f47d1facd470e752f049">More...</a><br /></td></tr>
+<tr class="memdesc:gab512c338c328f47d1facd470e752f049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a hash code for the given AST. The hash code is structural but two different AST objects can map to the same hash. The result of <code>Z3_get_ast_id</code> returns an indentifier that is unique over the set of live AST objects.  <a href="group__capi.html#gab512c338c328f47d1facd470e752f049">More...</a><br /></td></tr>
 <tr class="separator:gab512c338c328f47d1facd470e752f049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafa9565c0deefe46f8e2de14dc6b8b6a3"><td class="memItemLeft" align="right" valign="top">Z3_sort Z3_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a> (Z3_context c, Z3_ast a)</td></tr>
 <tr class="memdesc:gafa9565c0deefe46f8e2de14dc6b8b6a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the sort of an AST node.  <a href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">More...</a><br /></td></tr>
@@ -2661,7 +2661,7 @@ Types</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 30 2021 13:51:32 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 11 2021 03:18:24 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

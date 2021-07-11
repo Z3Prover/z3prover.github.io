@@ -106,7 +106,7 @@ var searchData=
   ['getisconsdecl',['getIsConsDecl',['../classcom_1_1microsoft_1_1z3_1_1_list_sort.html#a7fd5b9bd0f1fdc1ff3a2df6ddbe62354',1,'com::microsoft::z3::ListSort']]],
   ['getisnildecl',['getIsNilDecl',['../classcom_1_1microsoft_1_1z3_1_1_list_sort.html#a9b3f99fad3a69aa5c1b3cce81ce1d7de',1,'com::microsoft::z3::ListSort']]],
   ['getkeys',['getKeys',['../classcom_1_1microsoft_1_1z3_1_1_statistics.html#aeaef3859dee7082b686f1c1045f79548',1,'com::microsoft::z3::Statistics']]],
-  ['getkind',['GetKind',['../class_microsoft_1_1_z3_1_1_param_descrs.html#ae68c2293b3f34f0deaba22be36093073',1,'Microsoft.Z3.ParamDescrs.GetKind()'],['../classcom_1_1microsoft_1_1z3_1_1_param_descrs.html#ac2f16606b677d843bd8f03c93d543cc0',1,'com.microsoft.z3.ParamDescrs.getKind()'],['../classcom_1_1microsoft_1_1z3_1_1_symbol.html#a41293b0854dad63ebcd1caaf5ce2a0cd',1,'com.microsoft.z3.Symbol.getKind()']]],
+  ['getkind',['getKind',['../classcom_1_1microsoft_1_1z3_1_1_param_descrs.html#ac2f16606b677d843bd8f03c93d543cc0',1,'com.microsoft.z3.ParamDescrs.getKind()'],['../classcom_1_1microsoft_1_1z3_1_1_symbol.html#a41293b0854dad63ebcd1caaf5ce2a0cd',1,'com.microsoft.z3.Symbol.getKind()'],['../class_microsoft_1_1_z3_1_1_param_descrs.html#ae68c2293b3f34f0deaba22be36093073',1,'Microsoft.Z3.ParamDescrs.GetKind()']]],
   ['getlong',['getLong',['../classcom_1_1microsoft_1_1z3_1_1_bit_vec_num.html#a15679fbb8a237dabb101fdf01365eaa1',1,'com::microsoft::z3::BitVecNum']]],
   ['getmajor',['getMajor',['../classcom_1_1microsoft_1_1z3_1_1_version.html#a7bd4d0f85a3e32b68f22966ce1df4d15',1,'com::microsoft::z3::Version']]],
   ['getminor',['getMinor',['../classcom_1_1microsoft_1_1z3_1_1_version.html#a6c8e7e38e6061863fe1e1a253f5666b8',1,'com::microsoft::z3::Version']]],

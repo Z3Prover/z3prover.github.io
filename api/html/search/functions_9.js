@@ -9,7 +9,7 @@ var searchData=
   ['in_5fre',['in_re',['../namespacez3.html#aa8352a9f94a0f63d4a232625dd0f04ac',1,'z3']]],
   ['inconsistent',['inconsistent',['../classz3py_1_1_goal.html#aefae068dc928a74625ec8e32548b8cdb',1,'z3py.Goal.inconsistent()'],['../classz3_1_1goal.html#a44761b3086a483c813bb95e2baa8b32d',1,'z3::goal::inconsistent()'],['../classcom_1_1microsoft_1_1z3_1_1_goal.html#aec956b9a4c8c2193317d8bd03977c971',1,'com.microsoft.z3.Goal.inconsistent()']]],
   ['index',['index',['../classz3py_1_1_algebraic_num_ref.html#a6ec5fb69ce01aeadd4a3ac6362665b58',1,'z3py::AlgebraicNumRef']]],
-  ['indexof',['IndexOf',['../namespacez3py.html#a31d9214ebe11eb0300964042d61db893',1,'z3py.IndexOf(s, substr)'],['../namespacez3py.html#a444b9e3df89da56c45efd9779fe5c227',1,'z3py.IndexOf(s, substr, offset)'],['../namespacez3.html#a0259f079d406626bd131cb13e319667e',1,'z3::indexof()']]],
+  ['indexof',['IndexOf',['../namespacez3py.html#a5e0cf47b5e6631c6797177b9fd642687',1,'z3py.IndexOf()'],['../namespacez3.html#a0259f079d406626bd131cb13e319667e',1,'z3::indexof()']]],
   ['inre',['InRe',['../namespacez3py.html#ae2af603e2d945fc55e68c1e9a6e01ed8',1,'z3py']]],
   ['insert',['insert',['../classz3py_1_1_goal.html#a066e37b95a78c6b1517965e1a6fe3b9e',1,'z3py.Goal.insert()'],['../classz3py_1_1_solver.html#a066e37b95a78c6b1517965e1a6fe3b9e',1,'z3py.Solver.insert()'],['../classz3py_1_1_fixedpoint.html#a066e37b95a78c6b1517965e1a6fe3b9e',1,'z3py.Fixedpoint.insert()'],['../classz3py_1_1_prop_closures.html#aacda14cfc0686db2f38d95484e243526',1,'z3py.PropClosures.insert()']]],
   ['int',['Int',['../namespacez3py.html#abf0908445b20a1b8118d6057932e8640',1,'z3py']]],
@@ -300,6 +300,6 @@ var searchData=
   ['isxor',['isXor',['../classcom_1_1microsoft_1_1z3_1_1_expr.html#a77d721de1868506335093318648b90b4',1,'com::microsoft::z3::Expr']]],
   ['iszero',['isZero',['../classz3py_1_1_f_p_num_ref.html#ad8a8da1c1bdaedee06fce56e0a28b25f',1,'z3py.FPNumRef.isZero()'],['../classcom_1_1microsoft_1_1z3_1_1_f_p_num.html#a1c28402673f5c82938a56c379197af67',1,'com.microsoft.z3.FPNum.isZero()']]],
   ['ite',['ite',['../namespacez3.html#a842a7bf060fa8e81d5b75f60397d9972',1,'z3']]],
-  ['iterator',['iterator',['../classz3_1_1ast__vector__tpl_1_1iterator.html#a0ed2215583bfce4ea2afaf7f8d836351',1,'z3::ast_vector_tpl::iterator::iterator(ast_vector_tpl const *v, unsigned i)'],['../classz3_1_1ast__vector__tpl_1_1iterator.html#a38c766c9b5d97f6c186d0373f8c663db',1,'z3::ast_vector_tpl::iterator::iterator(iterator const &amp;other)']]],
+  ['iterator',['iterator',['../classz3_1_1ast__vector__tpl_1_1iterator.html#a0ed2215583bfce4ea2afaf7f8d836351',1,'z3::ast_vector_tpl::iterator']]],
   ['itos',['itos',['../classz3_1_1expr.html#ac4fde6fde8f755fa1c771513e094a3de',1,'z3::expr']]]
 ];

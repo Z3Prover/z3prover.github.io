@@ -1,7 +1,6 @@
 var searchData=
 [
   ['_7eapply_5fresult',['~apply_result',['../classz3_1_1apply__result.html#a0eda8e8fa33c9392718f66284cf06e21',1,'z3::apply_result']]],
-  ['_7earray',['~array',['../classz3_1_1array.html#a8ec8b3d923f76dab805bc55dc821be1d',1,'z3::array']]],
   ['_7east',['~ast',['../classz3_1_1ast.html#a0512e26e45eae5261c2d88947509f497',1,'z3::ast']]],
   ['_7east_5fvector_5ftpl',['~ast_vector_tpl',['../classz3_1_1ast__vector__tpl.html#a726dc4c37e925ca612345ddd24a0d39c',1,'z3::ast_vector_tpl']]],
   ['_7econfig',['~config',['../classz3_1_1config.html#a2a5ea9eb2fdc9553f23e2c6419243049',1,'z3::config']]],

@@ -27,38 +27,151 @@ Sequences, Strings and Regular Expressions *<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VALmk_seq_sort"><span class="keyword">val</span> mk_seq_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre>
-<pre><span id="VALis_seq_sort"><span class="keyword">val</span> is_seq_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> bool</code></pre>
-<pre><span id="VALmk_re_sort"><span class="keyword">val</span> mk_re_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre>
-<pre><span id="VALis_re_sort"><span class="keyword">val</span> is_re_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> bool</code></pre>
-<pre><span id="VALmk_string_sort"><span class="keyword">val</span> mk_string_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre>
-<pre><span id="VALis_string_sort"><span class="keyword">val</span> is_string_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> bool</code></pre>
-<pre><span id="VALmk_string"><span class="keyword">val</span> mk_string</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALis_string"><span class="keyword">val</span> is_string</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre>
-<pre><span id="VALget_string"><span class="keyword">val</span> get_string</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> string</code></pre>
-<pre><span id="VALmk_seq_empty"><span class="keyword">val</span> mk_seq_empty</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_unit"><span class="keyword">val</span> mk_seq_unit</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_concat"><span class="keyword">val</span> mk_seq_concat</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_prefix"><span class="keyword">val</span> mk_seq_prefix</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_suffix"><span class="keyword">val</span> mk_seq_suffix</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_contains"><span class="keyword">val</span> mk_seq_contains</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_extract"><span class="keyword">val</span> mk_seq_extract</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_replace"><span class="keyword">val</span> mk_seq_replace</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_at"><span class="keyword">val</span> mk_seq_at</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_length"><span class="keyword">val</span> mk_seq_length</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_index"><span class="keyword">val</span> mk_seq_index</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_str_to_int"><span class="keyword">val</span> mk_str_to_int</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_int_to_str"><span class="keyword">val</span> mk_int_to_str</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_to_re"><span class="keyword">val</span> mk_seq_to_re</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_seq_in_re"><span class="keyword">val</span> mk_seq_in_re</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_plus"><span class="keyword">val</span> mk_re_plus</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_star"><span class="keyword">val</span> mk_re_star</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_option"><span class="keyword">val</span> mk_re_option</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_union"><span class="keyword">val</span> mk_re_union</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_concat"><span class="keyword">val</span> mk_re_concat</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_range"><span class="keyword">val</span> mk_re_range</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_loop"><span class="keyword">val</span> mk_re_loop</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> int -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_intersect"><span class="keyword">val</span> mk_re_intersect</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_complement"><span class="keyword">val</span> mk_re_complement</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_empty"><span class="keyword">val</span> mk_re_empty</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
-<pre><span id="VALmk_re_full"><span class="keyword">val</span> mk_re_full</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre></body></html>
+<pre><span id="VALmk_seq_sort"><span class="keyword">val</span> mk_seq_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+create a sequence sort<br>
+</div>
+
+<pre><span id="VALis_seq_sort"><span class="keyword">val</span> is_seq_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> bool</code></pre><div class="info ">
+test if sort is a sequence sort<br>
+</div>
+
+<pre><span id="VALmk_re_sort"><span class="keyword">val</span> mk_re_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+create regular expression sorts over sequences of the argument sort<br>
+</div>
+
+<pre><span id="VALis_re_sort"><span class="keyword">val</span> is_re_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> bool</code></pre><div class="info ">
+test if sort is a regular expression sort<br>
+</div>
+
+<pre><span id="VALmk_string_sort"><span class="keyword">val</span> mk_string_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+create string sort<br>
+</div>
+
+<pre><span id="VALis_string_sort"><span class="keyword">val</span> is_string_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> bool</code></pre><div class="info ">
+test if sort is a string sort (a sequence of 8-bit bit-vectors)<br>
+</div>
+
+<pre><span id="VALmk_string"><span class="keyword">val</span> mk_string</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+create a string literal<br>
+</div>
+
+<pre><span id="VALis_string"><span class="keyword">val</span> is_string</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+test if expression is a string<br>
+</div>
+
+<pre><span id="VALget_string"><span class="keyword">val</span> get_string</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> string</code></pre><div class="info ">
+retrieve string from string Expr.expr<br>
+</div>
+
+<pre><span id="VALmk_seq_empty"><span class="keyword">val</span> mk_seq_empty</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+the empty sequence over base sort<br>
+</div>
+
+<pre><span id="VALmk_seq_unit"><span class="keyword">val</span> mk_seq_unit</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+a unit sequence<br>
+</div>
+
+<pre><span id="VALmk_seq_concat"><span class="keyword">val</span> mk_seq_concat</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+sequence concatenation<br>
+</div>
+
+<pre><span id="VALmk_seq_prefix"><span class="keyword">val</span> mk_seq_prefix</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+predicate if the first argument is a prefix of the second<br>
+</div>
+
+<pre><span id="VALmk_seq_suffix"><span class="keyword">val</span> mk_seq_suffix</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+predicate if the first argument is a suffix of the second<br>
+</div>
+
+<pre><span id="VALmk_seq_contains"><span class="keyword">val</span> mk_seq_contains</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+predicate if the first argument contains the second<br>
+</div>
+
+<pre><span id="VALmk_seq_extract"><span class="keyword">val</span> mk_seq_extract</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+extract sub-sequence starting at index given by second argument and of length provided by third argument<br>
+</div>
+
+<pre><span id="VALmk_seq_replace"><span class="keyword">val</span> mk_seq_replace</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+replace first occurrence of second argument by third<br>
+</div>
+
+<pre><span id="VALmk_seq_at"><span class="keyword">val</span> mk_seq_at</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+a unit sequence at index provided by second argument<br>
+</div>
+
+<pre><span id="VALmk_seq_length"><span class="keyword">val</span> mk_seq_length</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+length of a sequence<br>
+</div>
+
+<pre><span id="VALmk_seq_index"><span class="keyword">val</span> mk_seq_index</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+index of the first occurrence of the second argument in the first<br>
+</div>
+
+<pre><span id="VALmk_str_to_int"><span class="keyword">val</span> mk_str_to_int</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+retrieve integer expression encoded in string<br>
+</div>
+
+<pre><span id="VALmk_str_le"><span class="keyword">val</span> mk_str_le</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+compare strings less-than-or-equal<br>
+</div>
+
+<pre><span id="VALmk_str_lt"><span class="keyword">val</span> mk_str_lt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+compare strings less-than<br>
+</div>
+
+<pre><span id="VALmk_int_to_str"><span class="keyword">val</span> mk_int_to_str</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+convert an integer expression to a string<br>
+</div>
+
+<pre><span id="VALmk_seq_to_re"><span class="keyword">val</span> mk_seq_to_re</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+create regular expression that accepts the argument sequence<br>
+</div>
+
+<pre><span id="VALmk_seq_in_re"><span class="keyword">val</span> mk_seq_in_re</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+regular expression membership predicate<br>
+</div>
+
+<pre><span id="VALmk_re_plus"><span class="keyword">val</span> mk_re_plus</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+regular expression plus<br>
+</div>
+
+<pre><span id="VALmk_re_star"><span class="keyword">val</span> mk_re_star</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+regular expression star<br>
+</div>
+
+<pre><span id="VALmk_re_option"><span class="keyword">val</span> mk_re_option</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+optional regular expression<br>
+</div>
+
+<pre><span id="VALmk_re_union"><span class="keyword">val</span> mk_re_union</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+union of regular expressions<br>
+</div>
+
+<pre><span id="VALmk_re_concat"><span class="keyword">val</span> mk_re_concat</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+concatenation of regular expressions<br>
+</div>
+
+<pre><span id="VALmk_re_range"><span class="keyword">val</span> mk_re_range</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+regular expression for the range between two characters<br>
+</div>
+
+<pre><span id="VALmk_re_loop"><span class="keyword">val</span> mk_re_loop</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> int -> int -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+bounded loop regular expression<br>
+</div>
+
+<pre><span id="VALmk_re_intersect"><span class="keyword">val</span> mk_re_intersect</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+intersection of regular expressions<br>
+</div>
+
+<pre><span id="VALmk_re_complement"><span class="keyword">val</span> mk_re_complement</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+the regular expression complement<br>
+</div>
+
+<pre><span id="VALmk_re_empty"><span class="keyword">val</span> mk_re_empty</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+the regular expression that accepts no sequences<br>
+</div>
+
+<pre><span id="VALmk_re_full"><span class="keyword">val</span> mk_re_full</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+the regular expression that accepts all sequences<br>
+</div>
+</body></html>
