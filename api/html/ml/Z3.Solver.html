@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Z3.Statistics.html">
+<link rel="next" href="Z3.Fixedpoint.html">
+<link rel="Up" href="Z3.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Z3" rel="Chapter" href="Z3.html">
+<link title="Z3enums" rel="Chapter" href="Z3enums.html"><title>Z3.Solver</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Z3.Statistics.html" title="Z3.Statistics">Previous</a>
+&nbsp;<a class="up" href="Z3.html" title="Z3">Up</a>
+&nbsp;<a class="post" href="Z3.Fixedpoint.html" title="Z3.Fixedpoint">Next</a>
+</div>
+<h1>Module <a href="type_Z3.Solver.html">Z3.Solver</a></h1>
+
+<pre><span id="MODULESolver"><span class="keyword">module</span> Solver</span>: <code class="code">sig</code> <a href="Z3.Solver.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Solvers</p>
+</div>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEsolver"><span class="keyword">type</span> <code class="type"></code>solver</span> </pre>
+
+
+<pre><code><span id="TYPEstatus"><span class="keyword">type</span> <code class="type"></code>status</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstatus.UNSATISFIABLE"><span class="constructor">UNSATISFIABLE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstatus.UNKNOWN"><span class="constructor">UNKNOWN</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstatus.SATISFIABLE"><span class="constructor">SATISFIABLE</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALstring_of_status"><span class="keyword">val</span> string_of_status</span> : <code class="type"><a href="Z3.Solver.html#TYPEstatus">status</a> -> string</code></pre>
+<pre><span id="VALget_help"><span class="keyword">val</span> get_help</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> string</code></pre><div class="info ">
+<div class="info-desc">
+<p>A string that describes all available solver parameters.</p>
+</div>
+</div>
+
+<pre><span id="VALset_parameters"><span class="keyword">val</span> set_parameters</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Params.html#TYPEparams">Params.params</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Sets the solver parameters.</p>
+</div>
+</div>
+
+<pre><span id="VALget_param_descrs"><span class="keyword">val</span> get_param_descrs</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Params.ParamDescrs.html#TYPEparam_descrs">Params.ParamDescrs.param_descrs</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Retrieves parameter descriptions for solver.</p>
+</div>
+</div>
+
+<pre><span id="VALget_num_scopes"><span class="keyword">val</span> get_num_scopes</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p>The current number of backtracking points (scopes).
+      <a href="Z3.Solver.html#VALpop"><code class="code">Solver.pop</code></a>
+      <a href="Z3.Solver.html#VALpush"><code class="code">Solver.push</code></a></p>
+</div>
+</div>
+
+<pre><span id="VALpush"><span class="keyword">val</span> push</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Creates a backtracking point.
+      <a href="Z3.Solver.html#VALpop"><code class="code">Solver.pop</code></a></p>
+</div>
+</div>
+
+<pre><span id="VALpop"><span class="keyword">val</span> pop</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> int -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Backtracks a number of backtracking points.
+      Note that an exception is thrown if the integer is not smaller than <a href="Z3.Solver.html#VALget_num_scopes"><code class="code">Solver.get_num_scopes</code></a>
+      <a href="Z3.Solver.html#VALpush"><code class="code">Solver.push</code></a></p>
+</div>
+</div>
+
+<pre><span id="VALreset"><span class="keyword">val</span> reset</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Resets the Solver.
+      This removes all assertions from the solver.</p>
+</div>
+</div>
+
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Assert a constraint (or multiple) into the solver.</p>
+</div>
+</div>
+
+<pre><span id="VALassert_and_track_l"><span class="keyword">val</span> assert_and_track_l</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Assert multiple constraints (cs) into the solver, and track them (in the
+      unsat) core using the Boolean constants in ps.</p>
+
+<p>This API is an alternative to <a href="Z3.Solver.html#VALcheck"><code class="code">Solver.check</code></a> with assumptions for extracting unsat cores.
+      Both APIs can be used in the same solver. The unsat core will contain a combination
+      of the Boolean variables provided using <a href="Z3.Solver.html#VALassert_and_track"><code class="code">Solver.assert_and_track</code></a> and the Boolean literals
+      provided using <a href="Z3.Solver.html#VALcheck"><code class="code">Solver.check</code></a> with assumptions.</p>
+</div>
+</div>
+
+<pre><span id="VALassert_and_track"><span class="keyword">val</span> assert_and_track</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Assert a constraint (c) into the solver, and track it (in the unsat) core
+      using the Boolean constant p.</p>
+
+<p>This API is an alternative to <a href="Z3.Solver.html#VALcheck"><code class="code">Solver.check</code></a> with assumptions for extracting unsat cores. 
+      Both APIs can be used in the same solver. The unsat core will contain a combination  
+      of the Boolean variables provided using <a href="Z3.Solver.html#VALassert_and_track"><code class="code">Solver.assert_and_track</code></a> and the Boolean literals 
+      provided using <a href="Z3.Solver.html#VALcheck"><code class="code">Solver.check</code></a> with assumptions.</p>
+</div>
+</div>
+
+<pre><span id="VALget_num_assertions"><span class="keyword">val</span> get_num_assertions</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p>The number of assertions in the solver.</p>
+</div>
+</div>
+
+<pre><span id="VALget_assertions"><span class="keyword">val</span> get_assertions</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p>The set of asserted formulas.</p>
+</div>
+</div>
+
+<pre><span id="VALcheck"><span class="keyword">val</span> check</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Solver.html#TYPEstatus">status</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Checks whether the assertions in the solver are consistent or not.</p>
+
+<p><a href="Z3.Model.html"><code class="code">Model</code></a>
+      <a href="Z3.Solver.html#VALget_unsat_core"><code class="code">Solver.get_unsat_core</code></a>
+      <a href="Z3.Proof.html"><code class="code">Proof</code></a></p>
+</div>
+</div>
+
+<pre><span id="VALget_model"><span class="keyword">val</span> get_model</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Model.html#TYPEmodel">Model.model</a> option</code></pre><div class="info ">
+<div class="info-desc">
+<p>The model of the last <code class="code">Check</code>.</p>
+
+<p>The result is <code class="code">None</code> if <code class="code">Check</code> was not invoked before,
+      if its results was not <code class="code">SATISFIABLE</code>, or if model production is not enabled.</p>
+</div>
+</div>
+
+<pre><span id="VALget_proof"><span class="keyword">val</span> get_proof</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> option</code></pre><div class="info ">
+<div class="info-desc">
+<p>The proof of the last <code class="code">Check</code>.</p>
+
+<p>The result is <code class="code">null</code> if <code class="code">Check</code> was not invoked before,
+      if its results was not <code class="code">UNSATISFIABLE</code>, or if proof production is disabled.</p>
+</div>
+</div>
+
+<pre><span id="VALget_unsat_core"><span class="keyword">val</span> get_unsat_core</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p>The unsat core of the last <code class="code">Check</code>.</p>
+
+<p>The unsat core is a subset of <code class="code">Assertions</code>
+      The result is empty if <code class="code">Check</code> was not invoked before,
+      if its results was not <code class="code">UNSATISFIABLE</code>, or if core production is disabled.</p>
+</div>
+</div>
+
+<pre><span id="VALget_reason_unknown"><span class="keyword">val</span> get_reason_unknown</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> string</code></pre><div class="info ">
+<div class="info-desc">
+<p>A brief justification of why the last call to <code class="code">Check</code> returned <code class="code">UNKNOWN</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALget_statistics"><span class="keyword">val</span> get_statistics</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.Statistics.html#TYPEstatistics">Statistics.statistics</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Solver statistics.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_solver"><span class="keyword">val</span> mk_solver</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -> <a href="Z3.Solver.html#TYPEsolver">solver</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Creates a new (incremental) solver.</p>
+
+<p>This solver also uses a set of builtin tactics for handling the first
+      check-sat command, and check-sat commands that take more than a given
+      number of milliseconds to be solved.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_solver_s"><span class="keyword">val</span> mk_solver_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Solver.html#TYPEsolver">solver</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Creates a new (incremental) solver.
+      <a href="Z3.Solver.html#VALmk_solver"><code class="code">Solver.mk_solver</code></a></p>
+</div>
+</div>
+
+<pre><span id="VALmk_simple_solver"><span class="keyword">val</span> mk_simple_solver</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Solver.html#TYPEsolver">solver</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Creates a new (incremental) solver.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_solver_t"><span class="keyword">val</span> mk_solver_t</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Tactic.html#TYPEtactic">Tactic.tactic</a> -> <a href="Z3.Solver.html#TYPEsolver">solver</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Creates a solver that is implemented using the given tactic.</p>
+
+<p>The solver supports the commands <code class="code">Push</code> and <code class="code">Pop</code>, but it
+      will always solve each check from scratch.</p>
+</div>
+</div>
+
+<pre><span id="VALtranslate"><span class="keyword">val</span> translate</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> <a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Solver.html#TYPEsolver">solver</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create a clone of the current solver with respect to a context.</p>
+</div>
+</div>
+
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -> string</code></pre><div class="info ">
+<div class="info-desc">
+<p>A string representation of the solver.</p>
+</div>
+</div>
+</body></html>

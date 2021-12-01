@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Z3.Expr.html">
+<link rel="next" href="Z3.Quantifier.html">
+<link rel="Up" href="Z3.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Z3" rel="Chapter" href="Z3.html">
+<link title="Z3enums" rel="Chapter" href="Z3enums.html"><title>Z3.Boolean</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Z3.Expr.html" title="Z3.Expr">Previous</a>
+&nbsp;<a class="up" href="Z3.html" title="Z3">Up</a>
+&nbsp;<a class="post" href="Z3.Quantifier.html" title="Z3.Quantifier">Next</a>
+</div>
+<h1>Module <a href="type_Z3.Boolean.html">Z3.Boolean</a></h1>
+
+<pre><span id="MODULEBoolean"><span class="keyword">module</span> Boolean</span>: <code class="code">sig</code> <a href="Z3.Boolean.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Boolean expressions; Propositional logic and equality</p>
+</div>
+</div>
+<hr width="100%">
+
+<pre><span id="VALmk_sort"><span class="keyword">val</span> mk_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create a Boolean sort</p>
+</div>
+</div>
+
+<pre><span id="VALmk_const"><span class="keyword">val</span> mk_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create a Boolean constant.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_const_s"><span class="keyword">val</span> mk_const_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create a Boolean constant.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_true"><span class="keyword">val</span> mk_true</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>The true Term.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_false"><span class="keyword">val</span> mk_false</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>The false Term.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_val"><span class="keyword">val</span> mk_val</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Creates a Boolean value.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_not"><span class="keyword">val</span> mk_not</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Mk an expression representing <code class="code">not(a)</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_ite"><span class="keyword">val</span> mk_ite</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create an expression representing an if-then-else: <code class="code">ite(t1, t2, t3)</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_iff"><span class="keyword">val</span> mk_iff</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create an expression representing <code class="code">t1 iff t2</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_implies"><span class="keyword">val</span> mk_implies</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create an expression representing <code class="code">t1 -&gt; t2</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_xor"><span class="keyword">val</span> mk_xor</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create an expression representing <code class="code">t1 xor t2</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_and"><span class="keyword">val</span> mk_and</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create an expression representing the AND of args</p>
+</div>
+</div>
+
+<pre><span id="VALmk_or"><span class="keyword">val</span> mk_or</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create an expression representing the OR of args</p>
+</div>
+</div>
+
+<pre><span id="VALmk_eq"><span class="keyword">val</span> mk_eq</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Creates the equality between two expr's.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_distinct"><span class="keyword">val</span> mk_distinct</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Creates a <code class="code">distinct</code> term.</p>
+</div>
+</div>
+
+<pre><span id="VALget_bool_value"><span class="keyword">val</span> get_bool_value</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3enums.html#TYPElbool">Z3enums.lbool</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the expression is the true or false expression
+      or something else (L_UNDEF).</p>
+</div>
+</div>
+
+<pre><span id="VALis_bool"><span class="keyword">val</span> is_bool</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term has Boolean sort.</p>
+</div>
+</div>
+
+<pre><span id="VALis_true"><span class="keyword">val</span> is_true</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is the constant true.</p>
+</div>
+</div>
+
+<pre><span id="VALis_false"><span class="keyword">val</span> is_false</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is the constant false.</p>
+</div>
+</div>
+
+<pre><span id="VALis_eq"><span class="keyword">val</span> is_eq</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is an equality predicate.</p>
+</div>
+</div>
+
+<pre><span id="VALis_distinct"><span class="keyword">val</span> is_distinct</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is an n-ary distinct predicate (every argument is mutually distinct).</p>
+</div>
+</div>
+
+<pre><span id="VALis_ite"><span class="keyword">val</span> is_ite</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is a ternary if-then-else term</p>
+</div>
+</div>
+
+<pre><span id="VALis_and"><span class="keyword">val</span> is_and</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is an n-ary conjunction</p>
+</div>
+</div>
+
+<pre><span id="VALis_or"><span class="keyword">val</span> is_or</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is an n-ary disjunction</p>
+</div>
+</div>
+
+<pre><span id="VALis_iff"><span class="keyword">val</span> is_iff</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is an if-and-only-if (Boolean equivalence, binary)</p>
+</div>
+</div>
+
+<pre><span id="VALis_xor"><span class="keyword">val</span> is_xor</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is an exclusive or</p>
+</div>
+</div>
+
+<pre><span id="VALis_not"><span class="keyword">val</span> is_not</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is a negation</p>
+</div>
+</div>
+
+<pre><span id="VALis_implies"><span class="keyword">val</span> is_implies</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>Indicates whether the term is an implication</p>
+</div>
+</div>
+</body></html>
