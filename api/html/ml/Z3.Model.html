@@ -22,95 +22,133 @@
 </div>
 <h1>Module <a href="type_Z3.Model.html">Z3.Model</a></h1>
 
-<pre><span class="keyword">module</span> Model: <code class="code">sig</code> <a href="Z3.Model.html">..</a> <code class="code">end</code></pre><div class="info module top">
-Models
-<p>
+<pre><span id="MODULEModel"><span class="keyword">module</span> Model</span>: <code class="code">sig</code> <a href="Z3.Model.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Models</p>
 
-    A Model contains interpretations (assignments) of constants and functions.<br>
+<p>A Model contains interpretations (assignments) of constants and functions.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEmodel"><span class="keyword">type</span> <code class="type"></code>model</span> </pre>
 
 
-<pre><span class="keyword">module</span> <a href="Z3.Model.FuncInterp.html">FuncInterp</a>: <code class="code">sig</code> <a href="Z3.Model.FuncInterp.html">..</a> <code class="code">end</code></pre><div class="info">
-Function interpretations
+<pre><span id="MODULEFuncInterp"><span class="keyword">module</span> <a href="Z3.Model.FuncInterp.html">FuncInterp</a></span>: <code class="code">sig</code> <a href="Z3.Model.FuncInterp.html">..</a> <code class="code">end</code></pre><div class="info">
+<p>Function interpretations</p>
+
 </div>
 
 <pre><span id="VALget_const_interp"><span class="keyword">val</span> get_const_interp</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> option</code></pre><div class="info ">
-Retrieves the interpretation (the assignment) of a func_decl in the model.<br>
-<b>Returns</b> An expression if the function has an interpretation in the model, null otherwise.<br>
+<div class="info-desc">
+<p>Retrieves the interpretation (the assignment) of a func_decl in the model.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Returns</b> An expression if the function has an interpretation in the model, null otherwise.</li>
+</ul>
 </div>
 
 <pre><span id="VALget_const_interp_e"><span class="keyword">val</span> get_const_interp_e</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> option</code></pre><div class="info ">
-Retrieves the interpretation (the assignment) of an expression in the model.<br>
-<b>Returns</b> An expression if the constant has an interpretation in the model, null otherwise.<br>
+<div class="info-desc">
+<p>Retrieves the interpretation (the assignment) of an expression in the model.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Returns</b> An expression if the constant has an interpretation in the model, null otherwise.</li>
+</ul>
 </div>
 
 <pre><span id="VALget_func_interp"><span class="keyword">val</span> get_func_interp</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -><br>       <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> -> <a href="Z3.Model.FuncInterp.html#TYPEfunc_interp">FuncInterp.func_interp</a> option</code></pre><div class="info ">
-Retrieves the interpretation (the assignment) of a non-constant func_decl in the model.<br>
-<b>Returns</b> A FunctionInterpretation if the function has an interpretation in the model, null otherwise.<br>
+<div class="info-desc">
+<p>Retrieves the interpretation (the assignment) of a non-constant func_decl in the model.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Returns</b> A FunctionInterpretation if the function has an interpretation in the model, null otherwise.</li>
+</ul>
 </div>
 
 <pre><span id="VALget_num_consts"><span class="keyword">val</span> get_num_consts</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> int</code></pre><div class="info ">
-The number of constant interpretations in the model.<br>
+<div class="info-desc">
+<p>The number of constant interpretations in the model.</p>
+</div>
 </div>
 
 <pre><span id="VALget_const_decls"><span class="keyword">val</span> get_const_decls</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> list</code></pre><div class="info ">
-The function declarations of the constants in the model.<br>
+<div class="info-desc">
+<p>The function declarations of the constants in the model.</p>
+</div>
 </div>
 
 <pre><span id="VALget_num_funcs"><span class="keyword">val</span> get_num_funcs</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> int</code></pre><div class="info ">
-The number of function interpretations in the model.<br>
+<div class="info-desc">
+<p>The number of function interpretations in the model.</p>
+</div>
 </div>
 
 <pre><span id="VALget_func_decls"><span class="keyword">val</span> get_func_decls</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> list</code></pre><div class="info ">
-The function declarations of the function interpretations in the model.<br>
+<div class="info-desc">
+<p>The function declarations of the function interpretations in the model.</p>
+</div>
 </div>
 
 <pre><span id="VALget_decls"><span class="keyword">val</span> get_decls</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> list</code></pre><div class="info ">
-All symbols that have an interpretation in the model.<br>
+<div class="info-desc">
+<p>All symbols that have an interpretation in the model.</p>
+</div>
 </div>
 
 <pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> option</code></pre><div class="info ">
-Evaluates an expression in the current model.
+<div class="info-desc">
+<p>Evaluates an expression in the current model.
       The Boolean argument indicates whether to apply model completion.
       When model completion is true it will assign an interpretation for
-      constants and functions that do not have an interpretation in the model.
-<p>
+      constants and functions that do not have an interpretation in the model.</p>
 
-      This function may fail if the argument contains quantifiers,
+<p>This function may fail if the argument contains quantifiers,
       is partial (MODEL_PARTIAL enabled), or if it is not well-sorted.
-      In this case a <code class="code">ModelEvaluationFailedException</code> is thrown.<br>
+      In this case a <code class="code">ModelEvaluationFailedException</code> is thrown.</p>
+</div>
 </div>
 
 <pre><span id="VALevaluate"><span class="keyword">val</span> evaluate</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> option</code></pre><div class="info ">
-Alias for <code class="code">eval</code>.<br>
+<div class="info-desc">
+<p>Alias for <code class="code">eval</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALget_num_sorts"><span class="keyword">val</span> get_num_sorts</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> int</code></pre><div class="info ">
-The number of uninterpreted sorts that the model has an interpretation for.<br>
+<div class="info-desc">
+<p>The number of uninterpreted sorts that the model has an interpretation for.</p>
+</div>
 </div>
 
 <pre><span id="VALget_sorts"><span class="keyword">val</span> get_sorts</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list</code></pre><div class="info ">
-The uninterpreted sorts that the model has an interpretation for.
-<p>
+<div class="info-desc">
+<p>The uninterpreted sorts that the model has an interpretation for.</p>
 
-      Z3 also provides an interpretation for uninterpreted sorts used in a formula.
+<p>Z3 also provides an interpretation for uninterpreted sorts used in a formula.
       The interpretation for a sort is a finite set of distinct values. We say this finite set is
       the "universe" of the sort.
       <a href="Z3.Model.html#VALget_num_sorts"><code class="code">Model.get_num_sorts</code></a>
-      <a href="Z3.Model.html#VALsort_universe"><code class="code">Model.sort_universe</code></a><br>
+      <a href="Z3.Model.html#VALsort_universe"><code class="code">Model.sort_universe</code></a></p>
+</div>
 </div>
 
 <pre><span id="VALsort_universe"><span class="keyword">val</span> sort_universe</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
-The finite set of distinct values that represent the interpretation of a sort.
-      <a href="Z3.Model.html#VALget_sorts"><code class="code">Model.get_sorts</code></a><br>
-<b>Returns</b> A list of expressions, where each is an element of the universe of the sort<br>
+<div class="info-desc">
+<p>The finite set of distinct values that represent the interpretation of a sort.
+      <a href="Z3.Model.html#VALget_sorts"><code class="code">Model.get_sorts</code></a></p>
+</div>
+<ul class="info-attributes">
+<li><b>Returns</b> A list of expressions, where each is an element of the universe of the sort</li>
+</ul>
 </div>
 
 <pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Z3.Model.html#TYPEmodel">model</a> -> string</code></pre><div class="info ">
-Conversion of models to strings.<br>
-<b>Returns</b> A string representation of the model.<br>
+<div class="info-desc">
+<p>Conversion of models to strings.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Returns</b> A string representation of the model.</li>
+</ul>
 </div>
 </body></html>

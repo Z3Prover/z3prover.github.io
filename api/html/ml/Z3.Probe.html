@@ -22,15 +22,16 @@
 </div>
 <h1>Module <a href="type_Z3.Probe.html">Z3.Probe</a></h1>
 
-<pre><span class="keyword">module</span> Probe: <code class="code">sig</code> <a href="Z3.Probe.html">..</a> <code class="code">end</code></pre><div class="info module top">
-Probes
-<p>
+<pre><span id="MODULEProbe"><span class="keyword">module</span> Probe</span>: <code class="code">sig</code> <a href="Z3.Probe.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Probes</p>
 
-    Probes are used to inspect a goal (aka problem) and collect information that may be used to decide
+<p>Probes are used to inspect a goal (aka problem) and collect information that may be used to decide
     which solver and/or preprocessing step will be used.
     The complete list of probes may be obtained using the procedures <code class="code">Context.NumProbes</code>
     and <code class="code">Context.ProbeNames</code>.
-    It may also be obtained using the command <code class="code">(help-tactic)</code> in the SMT 2.0 front-end.<br>
+    It may also be obtained using the command <code class="code">(help-tactic)</code> in the SMT 2.0 front-end.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -38,65 +39,95 @@ Probes
 
 
 <pre><span id="VALapply"><span class="keyword">val</span> apply</span> : <code class="type"><a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Goal.html#TYPEgoal">Goal.goal</a> -> float</code></pre><div class="info ">
-Execute the probe over the goal.<br>
-<b>Returns</b> A probe always produce a float value.
-      "Boolean" probes return 0.0 for false, and a value different from 0.0 for true.<br>
+<div class="info-desc">
+<p>Execute the probe over the goal.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Returns</b> A probe always produce a float value.
+      "Boolean" probes return 0.0 for false, and a value different from 0.0 for true.</li>
+</ul>
 </div>
 
 <pre><span id="VALget_num_probes"><span class="keyword">val</span> get_num_probes</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int</code></pre><div class="info ">
-The number of supported Probes.<br>
+<div class="info-desc">
+<p>The number of supported Probes.</p>
+</div>
 </div>
 
 <pre><span id="VALget_probe_names"><span class="keyword">val</span> get_probe_names</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string list</code></pre><div class="info ">
-The names of all supported Probes.<br>
+<div class="info-desc">
+<p>The names of all supported Probes.</p>
+</div>
 </div>
 
 <pre><span id="VALget_probe_description"><span class="keyword">val</span> get_probe_description</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> string</code></pre><div class="info ">
-Returns a string containing a description of the probe with the given name.<br>
+<div class="info-desc">
+<p>Returns a string containing a description of the probe with the given name.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_probe"><span class="keyword">val</span> mk_probe</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Probe.html#TYPEprobe">probe</a></code></pre><div class="info ">
-Creates a new Probe.<br>
+<div class="info-desc">
+<p>Creates a new Probe.</p>
+</div>
 </div>
 
 <pre><span id="VALconst"><span class="keyword">val</span> const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> float -> <a href="Z3.Probe.html#TYPEprobe">probe</a></code></pre><div class="info ">
-Create a probe that always evaluates to a float value.<br>
+<div class="info-desc">
+<p>Create a probe that always evaluates to a float value.</p>
+</div>
 </div>
 
 <pre><span id="VALlt"><span class="keyword">val</span> lt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a></code></pre><div class="info ">
-Create a probe that evaluates to "true" when the value returned by the first argument
-      is less than the value returned by second argument<br>
+<div class="info-desc">
+<p>Create a probe that evaluates to "true" when the value returned by the first argument
+      is less than the value returned by second argument</p>
+</div>
 </div>
 
 <pre><span id="VALgt"><span class="keyword">val</span> gt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a></code></pre><div class="info ">
-Create a probe that evaluates to "true" when the value returned by the first argument
-      is greater than the value returned by second argument<br>
+<div class="info-desc">
+<p>Create a probe that evaluates to "true" when the value returned by the first argument
+      is greater than the value returned by second argument</p>
+</div>
 </div>
 
 <pre><span id="VALle"><span class="keyword">val</span> le</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a></code></pre><div class="info ">
-Create a probe that evaluates to "true" when the value returned by the first argument
-      is less than or equal the value returned by second argument<br>
+<div class="info-desc">
+<p>Create a probe that evaluates to "true" when the value returned by the first argument
+      is less than or equal the value returned by second argument</p>
+</div>
 </div>
 
 <pre><span id="VALge"><span class="keyword">val</span> ge</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a></code></pre><div class="info ">
-Create a probe that evaluates to "true" when the value returned by the first argument
-      is greater than or equal the value returned by second argument<br>
+<div class="info-desc">
+<p>Create a probe that evaluates to "true" when the value returned by the first argument
+      is greater than or equal the value returned by second argument</p>
+</div>
 </div>
 
 <pre><span id="VALeq"><span class="keyword">val</span> eq</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a></code></pre><div class="info ">
-Create a probe that evaluates to "true" when the value returned by the first argument
-      is equal the value returned by second argument<br>
+<div class="info-desc">
+<p>Create a probe that evaluates to "true" when the value returned by the first argument
+      is equal the value returned by second argument</p>
+</div>
 </div>
 
 <pre><span id="VALand_"><span class="keyword">val</span> and_</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a></code></pre><div class="info ">
-Create a probe that evaluates to "true" when both of two probes evaluate to "true".<br>
+<div class="info-desc">
+<p>Create a probe that evaluates to "true" when both of two probes evaluate to "true".</p>
+</div>
 </div>
 
 <pre><span id="VALor_"><span class="keyword">val</span> or_</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a></code></pre><div class="info ">
-Create a probe that evaluates to "true" when either of two probes evaluates to "true".<br>
+<div class="info-desc">
+<p>Create a probe that evaluates to "true" when either of two probes evaluates to "true".</p>
+</div>
 </div>
 
 <pre><span id="VALnot_"><span class="keyword">val</span> not_</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a> -> <a href="Z3.Probe.html#TYPEprobe">probe</a></code></pre><div class="info ">
-Create a probe that evaluates to "true" when another probe does not evaluate to "true".<br>
+<div class="info-desc">
+<p>Create a probe that evaluates to "true" when another probe does not evaluate to "true".</p>
+</div>
 </div>
 </body></html>

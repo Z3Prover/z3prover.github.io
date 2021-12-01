@@ -22,8 +22,10 @@
 </div>
 <h1>Module <a href="type_Z3.Quantifier.html">Z3.Quantifier</a></h1>
 
-<pre><span class="keyword">module</span> Quantifier: <code class="code">sig</code> <a href="Z3.Quantifier.html">..</a> <code class="code">end</code></pre><div class="info module top">
-Quantifier expressions<br>
+<pre><span id="MODULEQuantifier"><span class="keyword">module</span> Quantifier</span>: <code class="code">sig</code> <a href="Z3.Quantifier.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Quantifier expressions</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -32,15 +34,16 @@ Quantifier expressions<br>
 
 <pre><span id="VALexpr_of_quantifier"><span class="keyword">val</span> expr_of_quantifier</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre>
 <pre><span id="VALquantifier_of_expr"><span class="keyword">val</span> quantifier_of_expr</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a></code></pre>
-<pre><span class="keyword">module</span> <a href="Z3.Quantifier.Pattern.html">Pattern</a>: <code class="code">sig</code> <a href="Z3.Quantifier.Pattern.html">..</a> <code class="code">end</code></pre><div class="info">
-Quantifier patterns
+<pre><span id="MODULEPattern"><span class="keyword">module</span> <a href="Z3.Quantifier.Pattern.html">Pattern</a></span>: <code class="code">sig</code> <a href="Z3.Quantifier.Pattern.html">..</a> <code class="code">end</code></pre><div class="info">
+<p>Quantifier patterns</p>
+
 </div>
 
 <pre><span id="VALget_index"><span class="keyword">val</span> get_index</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> int</code></pre><div class="info ">
-The de-Bruijn index of a bound variable.
-<p>
+<div class="info-desc">
+<p>The de-Bruijn index of a bound variable.</p>
 
-      Bound variables are indexed by de-Bruijn indices. It is perhaps easiest to explain
+<p>Bound variables are indexed by de-Bruijn indices. It is perhaps easiest to explain
       the meaning of de-Bruijn indices by indicating the compilation process from
       non-de-Bruijn formulas to de-Bruijn format.
       <code class="code">
@@ -53,94 +56,139 @@ The de-Bruijn index of a bound variable.
       </code>
       The last line is significant: the index of a bound variable is different depending
       on the scope in which it appears. The deeper ( x : expr ) appears, the higher is its
-      index.<br>
+      index.</p>
+</div>
 </div>
 
 <pre><span id="VALis_universal"><span class="keyword">val</span> is_universal</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> bool</code></pre><div class="info ">
-Indicates whether the quantifier is universal.<br>
+<div class="info-desc">
+<p>Indicates whether the quantifier is universal.</p>
+</div>
 </div>
 
 <pre><span id="VALis_existential"><span class="keyword">val</span> is_existential</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> bool</code></pre><div class="info ">
-Indicates whether the quantifier is existential.<br>
+<div class="info-desc">
+<p>Indicates whether the quantifier is existential.</p>
+</div>
 </div>
 
 <pre><span id="VALget_weight"><span class="keyword">val</span> get_weight</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> int</code></pre><div class="info ">
-The weight of the quantifier.<br>
+<div class="info-desc">
+<p>The weight of the quantifier.</p>
+</div>
 </div>
 
 <pre><span id="VALget_num_patterns"><span class="keyword">val</span> get_num_patterns</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> int</code></pre><div class="info ">
-The number of patterns.<br>
+<div class="info-desc">
+<p>The number of patterns.</p>
+</div>
 </div>
 
 <pre><span id="VALget_patterns"><span class="keyword">val</span> get_patterns</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> <a href="Z3.Quantifier.Pattern.html#TYPEpattern">Pattern.pattern</a> list</code></pre><div class="info ">
-The patterns.<br>
+<div class="info-desc">
+<p>The patterns.</p>
+</div>
 </div>
 
 <pre><span id="VALget_num_no_patterns"><span class="keyword">val</span> get_num_no_patterns</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> int</code></pre><div class="info ">
-The number of no-patterns.<br>
+<div class="info-desc">
+<p>The number of no-patterns.</p>
+</div>
 </div>
 
 <pre><span id="VALget_no_patterns"><span class="keyword">val</span> get_no_patterns</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> <a href="Z3.Quantifier.Pattern.html#TYPEpattern">Pattern.pattern</a> list</code></pre><div class="info ">
-The no-patterns.<br>
+<div class="info-desc">
+<p>The no-patterns.</p>
+</div>
 </div>
 
 <pre><span id="VALget_num_bound"><span class="keyword">val</span> get_num_bound</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> int</code></pre><div class="info ">
-The number of bound variables.<br>
+<div class="info-desc">
+<p>The number of bound variables.</p>
+</div>
 </div>
 
 <pre><span id="VALget_bound_variable_names"><span class="keyword">val</span> get_bound_variable_names</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list</code></pre><div class="info ">
-The symbols for the bound variables.<br>
+<div class="info-desc">
+<p>The symbols for the bound variables.</p>
+</div>
 </div>
 
 <pre><span id="VALget_bound_variable_sorts"><span class="keyword">val</span> get_bound_variable_sorts</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list</code></pre><div class="info ">
-The sorts of the bound variables.<br>
+<div class="info-desc">
+<p>The sorts of the bound variables.</p>
+</div>
 </div>
 
 <pre><span id="VALget_body"><span class="keyword">val</span> get_body</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
-The body of the quantifier.<br>
+<div class="info-desc">
+<p>The body of the quantifier.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_bound"><span class="keyword">val</span> mk_bound</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> int -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
-Creates a new bound variable.<br>
+<div class="info-desc">
+<p>Creates a new bound variable.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_pattern"><span class="keyword">val</span> mk_pattern</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Quantifier.Pattern.html#TYPEpattern">Pattern.pattern</a></code></pre><div class="info ">
-Create a quantifier pattern.<br>
+<div class="info-desc">
+<p>Create a quantifier pattern.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_forall"><span class="keyword">val</span> mk_forall</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -><br>       int option -><br>       <a href="Z3.Quantifier.Pattern.html#TYPEpattern">Pattern.pattern</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -> <a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a></code></pre><div class="info ">
-Create a universal Quantifier.<br>
+<div class="info-desc">
+<p>Create a universal Quantifier.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_forall_const"><span class="keyword">val</span> mk_forall_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -><br>       int option -><br>       <a href="Z3.Quantifier.Pattern.html#TYPEpattern">Pattern.pattern</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -> <a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a></code></pre><div class="info ">
-Create a universal Quantifier.<br>
+<div class="info-desc">
+<p>Create a universal Quantifier.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_exists"><span class="keyword">val</span> mk_exists</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -><br>       int option -><br>       <a href="Z3.Quantifier.Pattern.html#TYPEpattern">Pattern.pattern</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -> <a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a></code></pre><div class="info ">
-Create an existential Quantifier.<br>
+<div class="info-desc">
+<p>Create an existential Quantifier.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_exists_const"><span class="keyword">val</span> mk_exists_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -><br>       int option -><br>       <a href="Z3.Quantifier.Pattern.html#TYPEpattern">Pattern.pattern</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -> <a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a></code></pre><div class="info ">
-Create an existential Quantifier.<br>
+<div class="info-desc">
+<p>Create an existential Quantifier.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_lambda_const"><span class="keyword">val</span> mk_lambda_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a></code></pre><div class="info ">
-Create a lambda binding.<br>
+<div class="info-desc">
+<p>Create a lambda binding.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_lambda"><span class="keyword">val</span> mk_lambda</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       (<a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> * <a href="Z3.Sort.html#TYPEsort">Sort.sort</a>) list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a></code></pre><div class="info ">
-Create a lambda binding where bound variables are given by symbols and sorts<br>
+<div class="info-desc">
+<p>Create a lambda binding where bound variables are given by symbols and sorts</p>
+</div>
 </div>
 
 <pre><span id="VALmk_quantifier"><span class="keyword">val</span> mk_quantifier</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       bool -><br>       <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -><br>       int option -><br>       <a href="Z3.Quantifier.Pattern.html#TYPEpattern">Pattern.pattern</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -> <a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a></code></pre><div class="info ">
-Create a Quantifier.<br>
+<div class="info-desc">
+<p>Create a Quantifier.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_quantifier_const"><span class="keyword">val</span> mk_quantifier_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       bool -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -><br>       int option -><br>       <a href="Z3.Quantifier.Pattern.html#TYPEpattern">Pattern.pattern</a> list -><br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> option -> <a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a></code></pre><div class="info ">
-Create a Quantifier.<br>
+<div class="info-desc">
+<p>Create a Quantifier.</p>
+</div>
 </div>
 
 <pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Z3.Quantifier.html#TYPEquantifier">quantifier</a> -> string</code></pre><div class="info ">
-A string representation of the quantifier.<br>
+<div class="info-desc">
+<p>A string representation of the quantifier.</p>
+</div>
 </div>
 </body></html>

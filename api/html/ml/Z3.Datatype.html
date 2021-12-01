@@ -22,56 +22,79 @@
 </div>
 <h1>Module <a href="type_Z3.Datatype.html">Z3.Datatype</a></h1>
 
-<pre><span class="keyword">module</span> Datatype: <code class="code">sig</code> <a href="Z3.Datatype.html">..</a> <code class="code">end</code></pre><div class="info module top">
-Functions to manipulate Datatype expressions<br>
+<pre><span id="MODULEDatatype"><span class="keyword">module</span> Datatype</span>: <code class="code">sig</code> <a href="Z3.Datatype.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Functions to manipulate Datatype expressions</p>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Z3.Datatype.Constructor.html">Constructor</a>: <code class="code">sig</code> <a href="Z3.Datatype.Constructor.html">..</a> <code class="code">end</code></pre><div class="info">
-Datatype Constructors
+<pre><span id="MODULEConstructor"><span class="keyword">module</span> <a href="Z3.Datatype.Constructor.html">Constructor</a></span>: <code class="code">sig</code> <a href="Z3.Datatype.Constructor.html">..</a> <code class="code">end</code></pre><div class="info">
+<p>Datatype Constructors</p>
+
 </div>
 
 <pre><span id="VALmk_constructor"><span class="keyword">val</span> mk_constructor</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -><br>       <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> option list -> int list -> <a href="Z3.Datatype.Constructor.html#TYPEconstructor">Constructor.constructor</a></code></pre><div class="info ">
-Create a datatype constructor.
+<div class="info-desc">
+<p>Create a datatype constructor.
       if the corresponding sort reference is 0, then the value in sort_refs should be an index
-      referring to one of the recursive datatypes that is declared.<br>
+      referring to one of the recursive datatypes that is declared.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_constructor_s"><span class="keyword">val</span> mk_constructor_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       string -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -><br>       <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> option list -> int list -> <a href="Z3.Datatype.Constructor.html#TYPEconstructor">Constructor.constructor</a></code></pre><div class="info ">
-Create a datatype constructor.
+<div class="info-desc">
+<p>Create a datatype constructor.
       if the corresponding sort reference is 0, then the value in sort_refs should be an index
-      referring to one of the recursive datatypes that is declared.<br>
+      referring to one of the recursive datatypes that is declared.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_sort"><span class="keyword">val</span> mk_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -> <a href="Z3.Datatype.Constructor.html#TYPEconstructor">Constructor.constructor</a> list -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
-Create a new datatype sort.<br>
+<div class="info-desc">
+<p>Create a new datatype sort.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_sort_s"><span class="keyword">val</span> mk_sort_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       string -> <a href="Z3.Datatype.Constructor.html#TYPEconstructor">Constructor.constructor</a> list -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
-Create a new datatype sort.<br>
+<div class="info-desc">
+<p>Create a new datatype sort.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_sorts"><span class="keyword">val</span> mk_sorts</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -><br>       <a href="Z3.Datatype.Constructor.html#TYPEconstructor">Constructor.constructor</a> list list -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list</code></pre><div class="info ">
-Create mutually recursive datatypes.<br>
+<div class="info-desc">
+<p>Create mutually recursive datatypes.</p>
+</div>
 </div>
 
 <pre><span id="VALmk_sorts_s"><span class="keyword">val</span> mk_sorts_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       string list -><br>       <a href="Z3.Datatype.Constructor.html#TYPEconstructor">Constructor.constructor</a> list list -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list</code></pre><div class="info ">
-Create mutually recursive data-types.<br>
+<div class="info-desc">
+<p>Create mutually recursive data-types.</p>
+</div>
 </div>
 
 <pre><span id="VALget_num_constructors"><span class="keyword">val</span> get_num_constructors</span> : <code class="type"><a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> int</code></pre><div class="info ">
-The number of constructors of the datatype sort.<br>
+<div class="info-desc">
+<p>The number of constructors of the datatype sort.</p>
+</div>
 </div>
 
 <pre><span id="VALget_constructors"><span class="keyword">val</span> get_constructors</span> : <code class="type"><a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> list</code></pre><div class="info ">
-The constructors.<br>
+<div class="info-desc">
+<p>The constructors.</p>
+</div>
 </div>
 
 <pre><span id="VALget_recognizers"><span class="keyword">val</span> get_recognizers</span> : <code class="type"><a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> list</code></pre><div class="info ">
-The recognizers.<br>
+<div class="info-desc">
+<p>The recognizers.</p>
+</div>
 </div>
 
 <pre><span id="VALget_accessors"><span class="keyword">val</span> get_accessors</span> : <code class="type"><a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> list list</code></pre><div class="info ">
-The constructor accessors.<br>
+<div class="info-desc">
+<p>The constructor accessors.</p>
+</div>
 </div>
 </body></html>
