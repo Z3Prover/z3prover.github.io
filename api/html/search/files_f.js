@@ -1,8 +1,23 @@
 var searchData=
 [
-  ['tactic_2ecs_3459',['Tactic.cs',['../_tactic_8cs.html',1,'']]],
-  ['tactic_2ejava_3460',['Tactic.java',['../_tactic_8java.html',1,'']]],
-  ['tacticdecrefqueue_2ejava_3461',['TacticDecRefQueue.java',['../_tactic_dec_ref_queue_8java.html',1,'']]],
-  ['tuplesort_2ecs_3462',['TupleSort.cs',['../_tuple_sort_8cs.html',1,'']]],
-  ['tuplesort_2ejava_3463',['TupleSort.java',['../_tuple_sort_8java.html',1,'']]]
+  ['seqexpr_2ecs_3515',['SeqExpr.cs',['../_seq_expr_8cs.html',1,'']]],
+  ['seqexpr_2ejava_3516',['SeqExpr.java',['../_seq_expr_8java.html',1,'']]],
+  ['seqsort_2ecs_3517',['SeqSort.cs',['../_seq_sort_8cs.html',1,'']]],
+  ['seqsort_2ejava_3518',['SeqSort.java',['../_seq_sort_8java.html',1,'']]],
+  ['setsort_2ecs_3519',['SetSort.cs',['../_set_sort_8cs.html',1,'']]],
+  ['setsort_2ejava_3520',['SetSort.java',['../_set_sort_8java.html',1,'']]],
+  ['solver_2ecs_3521',['Solver.cs',['../_solver_8cs.html',1,'']]],
+  ['solver_2ejava_3522',['Solver.java',['../_solver_8java.html',1,'']]],
+  ['solverdecrefqueue_2ejava_3523',['SolverDecRefQueue.java',['../_solver_dec_ref_queue_8java.html',1,'']]],
+  ['sort_2ecs_3524',['Sort.cs',['../_sort_8cs.html',1,'']]],
+  ['sort_2ejava_3525',['Sort.java',['../_sort_8java.html',1,'']]],
+  ['statistics_2ecs_3526',['Statistics.cs',['../_statistics_8cs.html',1,'']]],
+  ['statistics_2ejava_3527',['Statistics.java',['../_statistics_8java.html',1,'']]],
+  ['statisticsdecrefqueue_2ejava_3528',['StatisticsDecRefQueue.java',['../_statistics_dec_ref_queue_8java.html',1,'']]],
+  ['status_2ecs_3529',['Status.cs',['../_status_8cs.html',1,'']]],
+  ['status_2ejava_3530',['Status.java',['../_status_8java.html',1,'']]],
+  ['stringsymbol_2ecs_3531',['StringSymbol.cs',['../_string_symbol_8cs.html',1,'']]],
+  ['stringsymbol_2ejava_3532',['StringSymbol.java',['../_string_symbol_8java.html',1,'']]],
+  ['symbol_2ecs_3533',['Symbol.cs',['../_symbol_8cs.html',1,'']]],
+  ['symbol_2ejava_3534',['Symbol.java',['../_symbol_8java.html',1,'']]]
 ];

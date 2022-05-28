@@ -116,7 +116,7 @@ A Tactic can be converted into a Solver using the method solver().
 Several combinators are available for creating new tactics using the built-in ones:
 Then(), OrElse(), FailIf(), Repeat(), When(), Cond().
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08068">8068</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08130">8130</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a67638b6cbc1a4a650e37a49f9c2c42ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a67638b6cbc1a4a650e37a49f9c2c42ad">&#9670;&nbsp;</a></span>__init__()</h2>
@@ -150,21 +150,21 @@ Then(), OrElse(), FailIf(), Repeat(), When(), Cond().
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08076">8076</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08076"></a><span class="lineno"> 8076</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">__init__</a>(self, tactic, ctx=None):</div>
-<div class="line"><a name="l08077"></a><span class="lineno"> 8077</span>&#160;        self.ctx = _get_ctx(ctx)</div>
-<div class="line"><a name="l08078"></a><span class="lineno"> 8078</span>&#160;        self.tactic = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l08079"></a><span class="lineno"> 8079</span>&#160;        <span class="keywordflow">if</span> isinstance(tactic, TacticObj):</div>
-<div class="line"><a name="l08080"></a><span class="lineno"> 8080</span>&#160;            self.tactic = tactic</div>
-<div class="line"><a name="l08081"></a><span class="lineno"> 8081</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l08082"></a><span class="lineno"> 8082</span>&#160;            <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
-<div class="line"><a name="l08083"></a><span class="lineno"> 8083</span>&#160;                _z3_assert(isinstance(tactic, str), <span class="stringliteral">&quot;tactic name expected&quot;</span>)</div>
-<div class="line"><a name="l08084"></a><span class="lineno"> 8084</span>&#160;            <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l08085"></a><span class="lineno"> 8085</span>&#160;                self.tactic = <a class="code" href="group__capi.html#gaa4b9d53ba194d2d3a8bb2f55bec7e78e">Z3_mk_tactic</a>(self.ctx.ref(), str(tactic))</div>
-<div class="line"><a name="l08086"></a><span class="lineno"> 8086</span>&#160;            <span class="keywordflow">except</span> Z3Exception:</div>
-<div class="line"><a name="l08087"></a><span class="lineno"> 8087</span>&#160;                <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;unknown tactic &#39;%s&#39;&quot;</span> % tactic)</div>
-<div class="line"><a name="l08088"></a><span class="lineno"> 8088</span>&#160;        <a class="code" href="group__capi.html#gabd0874d8777b3bc426782a87c04206b9">Z3_tactic_inc_ref</a>(self.ctx.ref(), self.tactic)</div>
-<div class="line"><a name="l08089"></a><span class="lineno"> 8089</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08138">8138</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08138"></a><span class="lineno"> 8138</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">__init__</a>(self, tactic, ctx=None):</div>
+<div class="line"><a name="l08139"></a><span class="lineno"> 8139</span>&#160;        self.ctx = _get_ctx(ctx)</div>
+<div class="line"><a name="l08140"></a><span class="lineno"> 8140</span>&#160;        self.tactic = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l08141"></a><span class="lineno"> 8141</span>&#160;        <span class="keywordflow">if</span> isinstance(tactic, TacticObj):</div>
+<div class="line"><a name="l08142"></a><span class="lineno"> 8142</span>&#160;            self.tactic = tactic</div>
+<div class="line"><a name="l08143"></a><span class="lineno"> 8143</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l08144"></a><span class="lineno"> 8144</span>&#160;            <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
+<div class="line"><a name="l08145"></a><span class="lineno"> 8145</span>&#160;                _z3_assert(isinstance(tactic, str), <span class="stringliteral">&quot;tactic name expected&quot;</span>)</div>
+<div class="line"><a name="l08146"></a><span class="lineno"> 8146</span>&#160;            <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l08147"></a><span class="lineno"> 8147</span>&#160;                self.tactic = <a class="code" href="group__capi.html#gaa4b9d53ba194d2d3a8bb2f55bec7e78e">Z3_mk_tactic</a>(self.ctx.ref(), str(tactic))</div>
+<div class="line"><a name="l08148"></a><span class="lineno"> 8148</span>&#160;            <span class="keywordflow">except</span> Z3Exception:</div>
+<div class="line"><a name="l08149"></a><span class="lineno"> 8149</span>&#160;                <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;unknown tactic &#39;%s&#39;&quot;</span> % tactic)</div>
+<div class="line"><a name="l08150"></a><span class="lineno"> 8150</span>&#160;        <a class="code" href="group__capi.html#gabd0874d8777b3bc426782a87c04206b9">Z3_tactic_inc_ref</a>(self.ctx.ref(), self.tactic)</div>
+<div class="line"><a name="l08151"></a><span class="lineno"> 8151</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -184,11 +184,11 @@ Then(), OrElse(), FailIf(), Repeat(), When(), Cond().
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08093">8093</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08093"></a><span class="lineno"> 8093</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#a41a65d7030dd1006b177d0bc24e1a12b">__del__</a>(self):</div>
-<div class="line"><a name="l08094"></a><span class="lineno"> 8094</span>&#160;        <span class="keywordflow">if</span> self.tactic <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><a name="l08095"></a><span class="lineno"> 8095</span>&#160;            <a class="code" href="group__capi.html#ga8feaef3d36dcb136fa7812a8c10cf178">Z3_tactic_dec_ref</a>(self.ctx.ref(), self.tactic)</div>
-<div class="line"><a name="l08096"></a><span class="lineno"> 8096</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08155">8155</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08155"></a><span class="lineno"> 8155</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#a41a65d7030dd1006b177d0bc24e1a12b">__del__</a>(self):</div>
+<div class="line"><a name="l08156"></a><span class="lineno"> 8156</span>&#160;        <span class="keywordflow">if</span> self.tactic <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l08157"></a><span class="lineno"> 8157</span>&#160;            <a class="code" href="group__capi.html#ga8feaef3d36dcb136fa7812a8c10cf178">Z3_tactic_dec_ref</a>(self.ctx.ref(), self.tactic)</div>
+<div class="line"><a name="l08158"></a><span class="lineno"> 8158</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,17 +237,17 @@ Then(), OrElse(), FailIf(), Repeat(), When(), Cond().
 &gt;&gt;&gt; t(And(x == 0, y &gt;= x + 1))
 [[y &gt;= 1]]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08131">8131</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08131"></a><span class="lineno"> 8131</span>&#160;    <span class="keyword">def </span>__call__(self, goal, *arguments, **keywords):</div>
-<div class="line"><a name="l08132"></a><span class="lineno"> 8132</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Apply tactic `self` to the given goal or Z3 Boolean expression using the given options.</span></div>
-<div class="line"><a name="l08133"></a><span class="lineno"> 8133</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08134"></a><span class="lineno"> 8134</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
-<div class="line"><a name="l08135"></a><span class="lineno"> 8135</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; t = Tactic(&#39;solve-eqs&#39;)</span></div>
-<div class="line"><a name="l08136"></a><span class="lineno"> 8136</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; t(And(x == 0, y &gt;= x + 1))</span></div>
-<div class="line"><a name="l08137"></a><span class="lineno"> 8137</span>&#160;<span class="stringliteral">        [[y &gt;= 1]]</span></div>
-<div class="line"><a name="l08138"></a><span class="lineno"> 8138</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08139"></a><span class="lineno"> 8139</span>&#160;        <span class="keywordflow">return</span> self.apply(goal, *arguments, **keywords)</div>
-<div class="line"><a name="l08140"></a><span class="lineno"> 8140</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08193">8193</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08193"></a><span class="lineno"> 8193</span>&#160;    <span class="keyword">def </span>__call__(self, goal, *arguments, **keywords):</div>
+<div class="line"><a name="l08194"></a><span class="lineno"> 8194</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Apply tactic `self` to the given goal or Z3 Boolean expression using the given options.</span></div>
+<div class="line"><a name="l08195"></a><span class="lineno"> 8195</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08196"></a><span class="lineno"> 8196</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
+<div class="line"><a name="l08197"></a><span class="lineno"> 8197</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; t = Tactic(&#39;solve-eqs&#39;)</span></div>
+<div class="line"><a name="l08198"></a><span class="lineno"> 8198</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; t(And(x == 0, y &gt;= x + 1))</span></div>
+<div class="line"><a name="l08199"></a><span class="lineno"> 8199</span>&#160;<span class="stringliteral">        [[y &gt;= 1]]</span></div>
+<div class="line"><a name="l08200"></a><span class="lineno"> 8200</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08201"></a><span class="lineno"> 8201</span>&#160;        <span class="keywordflow">return</span> self.apply(goal, *arguments, **keywords)</div>
+<div class="line"><a name="l08202"></a><span class="lineno"> 8202</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -277,10 +277,10 @@ Then(), OrElse(), FailIf(), Repeat(), When(), Cond().
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08090">8090</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08090"></a><span class="lineno"> 8090</span>&#160;    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
-<div class="line"><a name="l08091"></a><span class="lineno"> 8091</span>&#160;        <span class="keywordflow">return</span> Tactic(self.tactic, self.ctx)</div>
-<div class="line"><a name="l08092"></a><span class="lineno"> 8092</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08152">8152</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08152"></a><span class="lineno"> 8152</span>&#160;    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
+<div class="line"><a name="l08153"></a><span class="lineno"> 8153</span>&#160;        <span class="keywordflow">return</span> Tactic(self.tactic, self.ctx)</div>
+<div class="line"><a name="l08154"></a><span class="lineno"> 8154</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -328,26 +328,26 @@ Then(), OrElse(), FailIf(), Repeat(), When(), Cond().
 &gt;&gt;&gt; t.apply(And(x == 0, y &gt;= x + 1))
 [[y &gt;= 1]]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08114">8114</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08114"></a><span class="lineno"> 8114</span>&#160;    <span class="keyword">def </span>apply(self, goal, *arguments, **keywords):</div>
-<div class="line"><a name="l08115"></a><span class="lineno"> 8115</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Apply tactic `self` to the given goal or Z3 Boolean expression using the given options.</span></div>
-<div class="line"><a name="l08116"></a><span class="lineno"> 8116</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08117"></a><span class="lineno"> 8117</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
-<div class="line"><a name="l08118"></a><span class="lineno"> 8118</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; t = Tactic(&#39;solve-eqs&#39;)</span></div>
-<div class="line"><a name="l08119"></a><span class="lineno"> 8119</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; t.apply(And(x == 0, y &gt;= x + 1))</span></div>
-<div class="line"><a name="l08120"></a><span class="lineno"> 8120</span>&#160;<span class="stringliteral">        [[y &gt;= 1]]</span></div>
-<div class="line"><a name="l08121"></a><span class="lineno"> 8121</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08122"></a><span class="lineno"> 8122</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
-<div class="line"><a name="l08123"></a><span class="lineno"> 8123</span>&#160;            _z3_assert(isinstance(goal, (Goal, BoolRef)), <span class="stringliteral">&quot;Z3 Goal or Boolean expressions expected&quot;</span>)</div>
-<div class="line"><a name="l08124"></a><span class="lineno"> 8124</span>&#160;        goal = _to_goal(goal)</div>
-<div class="line"><a name="l08125"></a><span class="lineno"> 8125</span>&#160;        <span class="keywordflow">if</span> len(arguments) &gt; 0 <span class="keywordflow">or</span> len(keywords) &gt; 0:</div>
-<div class="line"><a name="l08126"></a><span class="lineno"> 8126</span>&#160;            p = <a class="code" href="namespacez3py.html#a23cd025588f602f6970c1b1f2ad0c73f">args2params</a>(arguments, keywords, self.ctx)</div>
-<div class="line"><a name="l08127"></a><span class="lineno"> 8127</span>&#160;            <span class="keywordflow">return</span> ApplyResult(<a class="code" href="group__capi.html#gaa3af74df3d2220b3ddd3256fe5d32867">Z3_tactic_apply_ex</a>(self.ctx.ref(), self.tactic, goal.goal, p.params), self.ctx)</div>
-<div class="line"><a name="l08128"></a><span class="lineno"> 8128</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l08129"></a><span class="lineno"> 8129</span>&#160;            <span class="keywordflow">return</span> ApplyResult(<a class="code" href="group__capi.html#gac9e9da38d6a9acff293bc22bf0cf1a20">Z3_tactic_apply</a>(self.ctx.ref(), self.tactic, goal.goal), self.ctx)</div>
-<div class="line"><a name="l08130"></a><span class="lineno"> 8130</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08176">8176</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08176"></a><span class="lineno"> 8176</span>&#160;    <span class="keyword">def </span>apply(self, goal, *arguments, **keywords):</div>
+<div class="line"><a name="l08177"></a><span class="lineno"> 8177</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Apply tactic `self` to the given goal or Z3 Boolean expression using the given options.</span></div>
+<div class="line"><a name="l08178"></a><span class="lineno"> 8178</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08179"></a><span class="lineno"> 8179</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
+<div class="line"><a name="l08180"></a><span class="lineno"> 8180</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; t = Tactic(&#39;solve-eqs&#39;)</span></div>
+<div class="line"><a name="l08181"></a><span class="lineno"> 8181</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; t.apply(And(x == 0, y &gt;= x + 1))</span></div>
+<div class="line"><a name="l08182"></a><span class="lineno"> 8182</span>&#160;<span class="stringliteral">        [[y &gt;= 1]]</span></div>
+<div class="line"><a name="l08183"></a><span class="lineno"> 8183</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08184"></a><span class="lineno"> 8184</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
+<div class="line"><a name="l08185"></a><span class="lineno"> 8185</span>&#160;            _z3_assert(isinstance(goal, (Goal, BoolRef)), <span class="stringliteral">&quot;Z3 Goal or Boolean expressions expected&quot;</span>)</div>
+<div class="line"><a name="l08186"></a><span class="lineno"> 8186</span>&#160;        goal = _to_goal(goal)</div>
+<div class="line"><a name="l08187"></a><span class="lineno"> 8187</span>&#160;        <span class="keywordflow">if</span> len(arguments) &gt; 0 <span class="keywordflow">or</span> len(keywords) &gt; 0:</div>
+<div class="line"><a name="l08188"></a><span class="lineno"> 8188</span>&#160;            p = <a class="code" href="namespacez3py.html#a23cd025588f602f6970c1b1f2ad0c73f">args2params</a>(arguments, keywords, self.ctx)</div>
+<div class="line"><a name="l08189"></a><span class="lineno"> 8189</span>&#160;            <span class="keywordflow">return</span> ApplyResult(<a class="code" href="group__capi.html#gaa3af74df3d2220b3ddd3256fe5d32867">Z3_tactic_apply_ex</a>(self.ctx.ref(), self.tactic, goal.goal, p.params), self.ctx)</div>
+<div class="line"><a name="l08190"></a><span class="lineno"> 8190</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l08191"></a><span class="lineno"> 8191</span>&#160;            <span class="keywordflow">return</span> ApplyResult(<a class="code" href="group__capi.html#gac9e9da38d6a9acff293bc22bf0cf1a20">Z3_tactic_apply</a>(self.ctx.ref(), self.tactic, goal.goal), self.ctx)</div>
+<div class="line"><a name="l08192"></a><span class="lineno"> 8192</span>&#160; </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08131">Tactic.__call__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08193">Tactic.__call__()</a>.</p>
 
 </div>
 </div>
@@ -367,11 +367,11 @@ Then(), OrElse(), FailIf(), Repeat(), When(), Cond().
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Display a string containing a description of the available options for the `self` tactic.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08141">8141</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08141"></a><span class="lineno"> 8141</span>&#160;    <span class="keyword">def </span>help(self):</div>
-<div class="line"><a name="l08142"></a><span class="lineno"> 8142</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Display a string containing a description of the available options for the `self` tactic.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08143"></a><span class="lineno"> 8143</span>&#160;        print(<a class="code" href="group__capi.html#ga76ab586c6da112cf1680c0c570abb14e">Z3_tactic_get_help</a>(self.ctx.ref(), self.tactic))</div>
-<div class="line"><a name="l08144"></a><span class="lineno"> 8144</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08203">8203</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08203"></a><span class="lineno"> 8203</span>&#160;    <span class="keyword">def </span>help(self):</div>
+<div class="line"><a name="l08204"></a><span class="lineno"> 8204</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Display a string containing a description of the available options for the `self` tactic.&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08205"></a><span class="lineno"> 8205</span>&#160;        print(<a class="code" href="group__capi.html#ga76ab586c6da112cf1680c0c570abb14e">Z3_tactic_get_help</a>(self.ctx.ref(), self.tactic))</div>
+<div class="line"><a name="l08206"></a><span class="lineno"> 8206</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -391,12 +391,12 @@ Then(), OrElse(), FailIf(), Repeat(), When(), Cond().
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return the parameter description set.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08145">8145</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08145"></a><span class="lineno"> 8145</span>&#160;    <span class="keyword">def </span>param_descrs(self):</div>
-<div class="line"><a name="l08146"></a><span class="lineno"> 8146</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the parameter description set.&quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08147"></a><span class="lineno"> 8147</span>&#160;        <span class="keywordflow">return</span> ParamDescrsRef(<a class="code" href="group__capi.html#ga4b35632ea93088f638ef5396390c31de">Z3_tactic_get_param_descrs</a>(self.ctx.ref(), self.tactic), self.ctx)</div>
-<div class="line"><a name="l08148"></a><span class="lineno"> 8148</span>&#160; </div>
-<div class="line"><a name="l08149"></a><span class="lineno"> 8149</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08207">8207</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08207"></a><span class="lineno"> 8207</span>&#160;    <span class="keyword">def </span>param_descrs(self):</div>
+<div class="line"><a name="l08208"></a><span class="lineno"> 8208</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the parameter description set.&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08209"></a><span class="lineno"> 8209</span>&#160;        <span class="keywordflow">return</span> ParamDescrsRef(<a class="code" href="group__capi.html#ga4b35632ea93088f638ef5396390c31de">Z3_tactic_get_param_descrs</a>(self.ctx.ref(), self.tactic), self.ctx)</div>
+<div class="line"><a name="l08210"></a><span class="lineno"> 8210</span>&#160; </div>
+<div class="line"><a name="l08211"></a><span class="lineno"> 8211</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -439,24 +439,24 @@ sat
 &gt;&gt;&gt; s.model()
 [x = 1.4142135623?]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08097">8097</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08097"></a><span class="lineno"> 8097</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#a2debe316c6874c013213554b33d598bf">solver</a>(self, logFile=None):</div>
-<div class="line"><a name="l08098"></a><span class="lineno"> 8098</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Create a solver using the tactic `self`.</span></div>
-<div class="line"><a name="l08099"></a><span class="lineno"> 8099</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08100"></a><span class="lineno"> 8100</span>&#160;<span class="stringliteral">        The solver supports the methods `push()` and `pop()`, but it</span></div>
-<div class="line"><a name="l08101"></a><span class="lineno"> 8101</span>&#160;<span class="stringliteral">        will always solve each `check()` from scratch.</span></div>
-<div class="line"><a name="l08102"></a><span class="lineno"> 8102</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08103"></a><span class="lineno"> 8103</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; t = Then(&#39;simplify&#39;, &#39;nlsat&#39;)</span></div>
-<div class="line"><a name="l08104"></a><span class="lineno"> 8104</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; s = t.solver()</span></div>
-<div class="line"><a name="l08105"></a><span class="lineno"> 8105</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Real(&#39;x&#39;)</span></div>
-<div class="line"><a name="l08106"></a><span class="lineno"> 8106</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; s.add(x**2 == 2, x &gt; 0)</span></div>
-<div class="line"><a name="l08107"></a><span class="lineno"> 8107</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><a name="l08108"></a><span class="lineno"> 8108</span>&#160;<span class="stringliteral">        sat</span></div>
-<div class="line"><a name="l08109"></a><span class="lineno"> 8109</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; s.model()</span></div>
-<div class="line"><a name="l08110"></a><span class="lineno"> 8110</span>&#160;<span class="stringliteral">        [x = 1.4142135623?]</span></div>
-<div class="line"><a name="l08111"></a><span class="lineno"> 8111</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08112"></a><span class="lineno"> 8112</span>&#160;        <span class="keywordflow">return</span> Solver(<a class="code" href="group__capi.html#ga3cd1b64f6812def11b200dc4a05d2abb">Z3_mk_solver_from_tactic</a>(self.ctx.ref(), self.tactic), self.ctx, logFile)</div>
-<div class="line"><a name="l08113"></a><span class="lineno"> 8113</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08159">8159</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08159"></a><span class="lineno"> 8159</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#a2debe316c6874c013213554b33d598bf">solver</a>(self, logFile=None):</div>
+<div class="line"><a name="l08160"></a><span class="lineno"> 8160</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Create a solver using the tactic `self`.</span></div>
+<div class="line"><a name="l08161"></a><span class="lineno"> 8161</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08162"></a><span class="lineno"> 8162</span>&#160;<span class="stringliteral">        The solver supports the methods `push()` and `pop()`, but it</span></div>
+<div class="line"><a name="l08163"></a><span class="lineno"> 8163</span>&#160;<span class="stringliteral">        will always solve each `check()` from scratch.</span></div>
+<div class="line"><a name="l08164"></a><span class="lineno"> 8164</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08165"></a><span class="lineno"> 8165</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; t = Then(&#39;simplify&#39;, &#39;nlsat&#39;)</span></div>
+<div class="line"><a name="l08166"></a><span class="lineno"> 8166</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; s = t.solver()</span></div>
+<div class="line"><a name="l08167"></a><span class="lineno"> 8167</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Real(&#39;x&#39;)</span></div>
+<div class="line"><a name="l08168"></a><span class="lineno"> 8168</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; s.add(x**2 == 2, x &gt; 0)</span></div>
+<div class="line"><a name="l08169"></a><span class="lineno"> 8169</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><a name="l08170"></a><span class="lineno"> 8170</span>&#160;<span class="stringliteral">        sat</span></div>
+<div class="line"><a name="l08171"></a><span class="lineno"> 8171</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; s.model()</span></div>
+<div class="line"><a name="l08172"></a><span class="lineno"> 8172</span>&#160;<span class="stringliteral">        [x = 1.4142135623?]</span></div>
+<div class="line"><a name="l08173"></a><span class="lineno"> 8173</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08174"></a><span class="lineno"> 8174</span>&#160;        <span class="keywordflow">return</span> Solver(<a class="code" href="group__capi.html#ga3cd1b64f6812def11b200dc4a05d2abb">Z3_mk_solver_from_tactic</a>(self.ctx.ref(), self.tactic), self.ctx, logFile)</div>
+<div class="line"><a name="l08175"></a><span class="lineno"> 8175</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -473,9 +473,9 @@ sat
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08077">8077</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08139">8139</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08493">Probe.__call__()</a>, <a class="el" href="z3py_8py_source.html#l08090">Tactic.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l08401">Probe.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l08093">Tactic.__del__()</a>, <a class="el" href="z3py_8py_source.html#l08404">Probe.__del__()</a>, <a class="el" href="z3py_8py_source.html#l08464">Probe.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l08450">Probe.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l08422">Probe.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l08436">Probe.__le__()</a>, <a class="el" href="z3py_8py_source.html#l08408">Probe.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l08478">Probe.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l08114">Tactic.apply()</a>, <a class="el" href="z3py_8py_source.html#l11306">UserPropagateBase.conflict()</a>, <a class="el" href="z3py_8py_source.html#l11248">UserPropagateBase.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l08141">Tactic.help()</a>, <a class="el" href="z3py_8py_source.html#l08145">Tactic.param_descrs()</a>, and <a class="el" href="z3py_8py_source.html#l08097">Tactic.solver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08555">Probe.__call__()</a>, <a class="el" href="z3py_8py_source.html#l08152">Tactic.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l08463">Probe.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l08155">Tactic.__del__()</a>, <a class="el" href="z3py_8py_source.html#l08466">Probe.__del__()</a>, <a class="el" href="z3py_8py_source.html#l08526">Probe.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l08512">Probe.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l08484">Probe.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l08498">Probe.__le__()</a>, <a class="el" href="z3py_8py_source.html#l08470">Probe.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l08540">Probe.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l08176">Tactic.apply()</a>, <a class="el" href="z3py_8py_source.html#l11439">UserPropagateBase.conflict()</a>, <a class="el" href="z3py_8py_source.html#l11387">UserPropagateBase.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l08203">Tactic.help()</a>, <a class="el" href="z3py_8py_source.html#l08207">Tactic.param_descrs()</a>, and <a class="el" href="z3py_8py_source.html#l08159">Tactic.solver()</a>.</p>
 
 </div>
 </div>
@@ -491,29 +491,29 @@ sat
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08078">8078</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08140">8140</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08090">Tactic.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l08093">Tactic.__del__()</a>, <a class="el" href="z3py_8py_source.html#l08114">Tactic.apply()</a>, <a class="el" href="z3py_8py_source.html#l08141">Tactic.help()</a>, <a class="el" href="z3py_8py_source.html#l08145">Tactic.param_descrs()</a>, and <a class="el" href="z3py_8py_source.html#l08097">Tactic.solver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08152">Tactic.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l08155">Tactic.__del__()</a>, <a class="el" href="z3py_8py_source.html#l08176">Tactic.apply()</a>, <a class="el" href="z3py_8py_source.html#l08203">Tactic.help()</a>, <a class="el" href="z3py_8py_source.html#l08207">Tactic.param_descrs()</a>, and <a class="el" href="z3py_8py_source.html#l08159">Tactic.solver()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="agroup__capi_html_ga4b35632ea93088f638ef5396390c31de"><div class="ttname"><a href="group__capi.html#ga4b35632ea93088f638ef5396390c31de">Z3_tactic_get_param_descrs</a></div><div class="ttdeci">Z3_param_descrs Z3_API Z3_tactic_get_param_descrs(Z3_context c, Z3_tactic t)</div><div class="ttdoc">Return the parameter description set for the given tactic object.</div></div>
 <div class="ttc" id="agroup__capi_html_gabd0874d8777b3bc426782a87c04206b9"><div class="ttname"><a href="group__capi.html#gabd0874d8777b3bc426782a87c04206b9">Z3_tactic_inc_ref</a></div><div class="ttdeci">void Z3_API Z3_tactic_inc_ref(Z3_context c, Z3_tactic t)</div><div class="ttdoc">Increment the reference counter of the given tactic.</div></div>
-<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_ac4bf85b220e85e838b0ebae74cd10c69"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">z3py.UserPropagateBase.__init__</a></div><div class="ttdeci">def __init__(self, s, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11212">z3py.py:11212</a></div></div>
+<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_ac4bf85b220e85e838b0ebae74cd10c69"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">z3py.UserPropagateBase.__init__</a></div><div class="ttdeci">def __init__(self, s, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11351">z3py.py:11351</a></div></div>
 <div class="ttc" id="agroup__capi_html_gac9e9da38d6a9acff293bc22bf0cf1a20"><div class="ttname"><a href="group__capi.html#gac9e9da38d6a9acff293bc22bf0cf1a20">Z3_tactic_apply</a></div><div class="ttdeci">Z3_apply_result Z3_API Z3_tactic_apply(Z3_context c, Z3_tactic t, Z3_goal g)</div><div class="ttdoc">Apply tactic t to the goal g.</div></div>
 <div class="ttc" id="agroup__capi_html_ga8feaef3d36dcb136fa7812a8c10cf178"><div class="ttname"><a href="group__capi.html#ga8feaef3d36dcb136fa7812a8c10cf178">Z3_tactic_dec_ref</a></div><div class="ttdeci">void Z3_API Z3_tactic_dec_ref(Z3_context c, Z3_tactic g)</div><div class="ttdoc">Decrement the reference counter of the given tactic.</div></div>
-<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_a41a65d7030dd1006b177d0bc24e1a12b"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#a41a65d7030dd1006b177d0bc24e1a12b">z3py.UserPropagateBase.__del__</a></div><div class="ttdeci">def __del__(self)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11238">z3py.py:11238</a></div></div>
+<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_a41a65d7030dd1006b177d0bc24e1a12b"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#a41a65d7030dd1006b177d0bc24e1a12b">z3py.UserPropagateBase.__del__</a></div><div class="ttdeci">def __del__(self)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11377">z3py.py:11377</a></div></div>
 <div class="ttc" id="agroup__capi_html_ga3cd1b64f6812def11b200dc4a05d2abb"><div class="ttname"><a href="group__capi.html#ga3cd1b64f6812def11b200dc4a05d2abb">Z3_mk_solver_from_tactic</a></div><div class="ttdeci">Z3_solver Z3_API Z3_mk_solver_from_tactic(Z3_context c, Z3_tactic t)</div><div class="ttdoc">Create a new solver that is implemented using the given tactic. The solver supports the commands Z3_s...</div></div>
 <div class="ttc" id="agroup__capi_html_gaa3af74df3d2220b3ddd3256fe5d32867"><div class="ttname"><a href="group__capi.html#gaa3af74df3d2220b3ddd3256fe5d32867">Z3_tactic_apply_ex</a></div><div class="ttdeci">Z3_apply_result Z3_API Z3_tactic_apply_ex(Z3_context c, Z3_tactic t, Z3_goal g, Z3_params p)</div><div class="ttdoc">Apply tactic t to the goal g using the parameter set p.</div></div>
-<div class="ttc" id="anamespacez3py_html_a07c5d7436e6cc76649ef11d122e6ebee"><div class="ttname"><a href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3py.z3_debug</a></div><div class="ttdeci">def z3_debug()</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00064">z3py.py:64</a></div></div>
-<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_a2debe316c6874c013213554b33d598bf"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#a2debe316c6874c013213554b33d598bf">z3py.UserPropagateBase.solver</a></div><div class="ttdeci">solver</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11215">z3py.py:11215</a></div></div>
+<div class="ttc" id="anamespacez3py_html_a07c5d7436e6cc76649ef11d122e6ebee"><div class="ttname"><a href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3py.z3_debug</a></div><div class="ttdeci">def z3_debug()</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00062">z3py.py:62</a></div></div>
+<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_a2debe316c6874c013213554b33d598bf"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#a2debe316c6874c013213554b33d598bf">z3py.UserPropagateBase.solver</a></div><div class="ttdeci">solver</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11354">z3py.py:11354</a></div></div>
 <div class="ttc" id="agroup__capi_html_gaa4b9d53ba194d2d3a8bb2f55bec7e78e"><div class="ttname"><a href="group__capi.html#gaa4b9d53ba194d2d3a8bb2f55bec7e78e">Z3_mk_tactic</a></div><div class="ttdeci">Z3_tactic Z3_API Z3_mk_tactic(Z3_context c, Z3_string name)</div><div class="ttdoc">Return a tactic associated with the given name. The complete list of tactics may be obtained using th...</div></div>
 <div class="ttc" id="agroup__capi_html_ga76ab586c6da112cf1680c0c570abb14e"><div class="ttname"><a href="group__capi.html#ga76ab586c6da112cf1680c0c570abb14e">Z3_tactic_get_help</a></div><div class="ttdeci">Z3_string Z3_API Z3_tactic_get_help(Z3_context c, Z3_tactic t)</div><div class="ttdoc">Return a string containing a description of parameters accepted by the given tactic.</div></div>
-<div class="ttc" id="anamespacez3py_html_a23cd025588f602f6970c1b1f2ad0c73f"><div class="ttname"><a href="namespacez3py.html#a23cd025588f602f6970c1b1f2ad0c73f">z3py.args2params</a></div><div class="ttdeci">def args2params(arguments, keywords, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l05398">z3py.py:5398</a></div></div>
+<div class="ttc" id="anamespacez3py_html_a23cd025588f602f6970c1b1f2ad0c73f"><div class="ttname"><a href="namespacez3py.html#a23cd025588f602f6970c1b1f2ad0c73f">z3py.args2params</a></div><div class="ttdeci">def args2params(arguments, keywords, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l05447">z3py.py:5447</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 23 2021 21:02:16 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 5 2022 00:39:49 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -253,8 +253,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_enum_sort_8cs_source.html#l00075">75</a> of file <a class="el" href="_enum_sort_8cs_source.html">EnumSort.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#a58bc1af793e07d24016338c66d80f2dc">MkApp</a>(<a class="code" href="class_microsoft_1_1_z3_1_1_enum_sort.html#a9a5b7b9487dd504ec0f0a701df6f0c16">ConstDecl</a>(inx));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">using</span> var decl = <a class="code" href="class_microsoft_1_1_z3_1_1_enum_sort.html#a9a5b7b9487dd504ec0f0a701df6f0c16">ConstDecl</a>(inx);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">return</span> Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#a58bc1af793e07d24016338c66d80f2dc">MkApp</a>(decl);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -333,10 +334,10 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_enum_sort_8cs_source.html#l00100">100</a> of file <a class="el" href="_enum_sort_8cs_source.html">EnumSort.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> FuncDecl(Context, Native.Z3_get_datatype_sort_recognizer(Context.nCtx, NativeObject, inx));</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_enum_sort_8cs_source.html#l00101">101</a> of file <a class="el" href="_enum_sort_8cs_source.html">EnumSort.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> FuncDecl(Context, Native.Z3_get_datatype_sort_recognizer(Context.nCtx, NativeObject, inx));</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -435,27 +436,27 @@ Additional Inherited Members</h2></td></tr>
 
 <p>The test predicates (recognizers) for the constants in the enumeration. </p>
 
-<p class="definition">Definition at line <a class="el" href="_enum_sort_8cs_source.html#l00084">84</a> of file <a class="el" href="_enum_sort_8cs_source.html">EnumSort.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keyword">get</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                uint n = Native.Z3_get_datatype_sort_num_constructors(Context.nCtx, NativeObject);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                FuncDecl[] t = <span class="keyword">new</span> FuncDecl[n];</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">for</span> (uint i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    t[i] = <span class="keyword">new</span> FuncDecl(Context, Native.Z3_get_datatype_sort_recognizer(Context.nCtx, NativeObject, i));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">return</span> t;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_enum_sort_8cs_source.html#l00085">85</a> of file <a class="el" href="_enum_sort_8cs_source.html">EnumSort.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keyword">get</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                uint n = Native.Z3_get_datatype_sort_num_constructors(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                FuncDecl[] t = <span class="keyword">new</span> FuncDecl[n];</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">for</span> (uint i = 0; i &lt; n; i++)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    t[i] = <span class="keyword">new</span> FuncDecl(Context, Native.Z3_get_datatype_sort_recognizer(Context.nCtx, NativeObject, i));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">return</span> t;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_enum_sort_html_a9a5b7b9487dd504ec0f0a701df6f0c16"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_enum_sort.html#a9a5b7b9487dd504ec0f0a701df6f0c16">Microsoft.Z3.EnumSort.ConstDecl</a></div><div class="ttdeci">FuncDecl ConstDecl(uint inx)</div><div class="ttdoc">Retrieves the inx'th constant declaration in the enumeration.</div><div class="ttdef"><b>Definition:</b> <a href="_enum_sort_8cs_source.html#l00050">EnumSort.cs:50</a></div></div>
-<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_context_html_a58bc1af793e07d24016338c66d80f2dc"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_context.html#a58bc1af793e07d24016338c66d80f2dc">Microsoft.Z3.Context.MkApp</a></div><div class="ttdeci">Expr MkApp(FuncDecl f, params Expr[] args)</div><div class="ttdoc">Create a new function application.</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cs_source.html#l00798">Context.cs:798</a></div></div>
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_context_html_a58bc1af793e07d24016338c66d80f2dc"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_context.html#a58bc1af793e07d24016338c66d80f2dc">Microsoft.Z3.Context.MkApp</a></div><div class="ttdeci">Expr MkApp(FuncDecl f, params Expr[] args)</div><div class="ttdoc">Create a new function application.</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cs_source.html#l00835">Context.cs:835</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_enum_sort_html_aa5ea778ae8a8c5074e085a4dda3716d4"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_enum_sort.html#aa5ea778ae8a8c5074e085a4dda3716d4">Microsoft.Z3.EnumSort.ConstDecls</a></div><div class="ttdeci">FuncDecl[] ConstDecls</div><div class="ttdoc">The function declarations of the constants in the enumeration.</div><div class="ttdef"><b>Definition:</b> <a href="_enum_sort_8cs_source.html#l00034">EnumSort.cs:34</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 23 2021 21:02:15 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 5 2022 00:39:48 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['object_3249',['object',['../classz3_1_1object.html',1,'z3']]],
-  ['optimize_3250',['Optimize',['../class_microsoft_1_1_z3_1_1_optimize.html',1,'Optimize'],['../classcom_1_1microsoft_1_1z3_1_1_optimize.html',1,'Optimize'],['../classz3py_1_1_optimize.html',1,'Optimize'],['../classz3_1_1optimize.html',1,'optimize']]],
-  ['optimizeobjective_3251',['OptimizeObjective',['../classz3py_1_1_optimize_objective.html',1,'z3py']]]
+  ['nativecontext_3318',['NativeContext',['../class_microsoft_1_1_z3_1_1_native_context.html',1,'Microsoft::Z3']]],
+  ['nativefuncinterp_3319',['NativeFuncInterp',['../class_microsoft_1_1_z3_1_1_native_func_interp.html',1,'Microsoft::Z3']]],
+  ['nativemodel_3320',['NativeModel',['../class_microsoft_1_1_z3_1_1_native_model.html',1,'Microsoft::Z3']]],
+  ['nativesolver_3321',['NativeSolver',['../class_microsoft_1_1_z3_1_1_native_solver.html',1,'Microsoft::Z3']]]
 ];

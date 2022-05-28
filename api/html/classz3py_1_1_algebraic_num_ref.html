@@ -176,6 +176,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad1f186ee0010f5d71b1c4dccb26424b2 inherit pub_methods_classz3py_1_1_expr_ref"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b3e33bf411fb3403b26a02ec6ad93d4 inherit pub_methods_classz3py_1_1_expr_ref"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_expr_ref.html#a6b3e33bf411fb3403b26a02ec6ad93d4">children</a> (self)</td></tr>
 <tr class="separator:a6b3e33bf411fb3403b26a02ec6ad93d4 inherit pub_methods_classz3py_1_1_expr_ref"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc816cc244d38cd4508ae83d5cd39bd inherit pub_methods_classz3py_1_1_expr_ref"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_expr_ref.html#a3cc816cc244d38cd4508ae83d5cd39bd">from_string</a> (self, s)</td></tr>
+<tr class="separator:a3cc816cc244d38cd4508ae83d5cd39bd inherit pub_methods_classz3py_1_1_expr_ref"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad2fd8b7bbd35cf90e442b27a20e78a2 inherit pub_methods_classz3py_1_1_expr_ref"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_expr_ref.html#aad2fd8b7bbd35cf90e442b27a20e78a2">serialize</a> (self)</td></tr>
+<tr class="separator:aad2fd8b7bbd35cf90e442b27a20e78a2 inherit pub_methods_classz3py_1_1_expr_ref"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classz3py_1_1_ast_ref"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classz3py_1_1_ast_ref')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classz3py_1_1_ast_ref.html">AstRef</a></td></tr>
 <tr class="memitem:aac5ae4548119ed94f2e1737d943e7adc inherit pub_methods_classz3py_1_1_ast_ref"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_ast_ref.html#aac5ae4548119ed94f2e1737d943e7adc">__init__</a> (self, <a class="el" href="classz3py_1_1_ast_ref.html#a83d838e3813fb5999c0492e0d9474bd9">ast</a>, <a class="el" href="classz3py_1_1_ast_ref.html#a4c3a358572dcbbc235d824868164272a">ctx</a>=None)</td></tr>
 <tr class="separator:aac5ae4548119ed94f2e1737d943e7adc inherit pub_methods_classz3py_1_1_ast_ref"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,7 +221,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Algebraic irrational values.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03053">3053</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03074">3074</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afc9f91e7a60e6d828333a19f0b84996c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc9f91e7a60e6d828333a19f0b84996c">&#9670;&nbsp;</a></span>approx()</h2>
@@ -253,19 +257,19 @@ The result `r` is such that |r - self| &lt;= 1/10^precision
 &gt;&gt;&gt; x.approx(5)
 2965821/2097152
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03056">3056</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l03056"></a><span class="lineno"> 3056</span>&#160;    <span class="keyword">def </span>approx(self, precision=10):</div>
-<div class="line"><a name="l03057"></a><span class="lineno"> 3057</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a Z3 rational number that approximates the algebraic number `self`.</span></div>
-<div class="line"><a name="l03058"></a><span class="lineno"> 3058</span>&#160;<span class="stringliteral">        The result `r` is such that |r - self| &lt;= 1/10^precision</span></div>
-<div class="line"><a name="l03059"></a><span class="lineno"> 3059</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l03060"></a><span class="lineno"> 3060</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = simplify(Sqrt(2))</span></div>
-<div class="line"><a name="l03061"></a><span class="lineno"> 3061</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.approx(20)</span></div>
-<div class="line"><a name="l03062"></a><span class="lineno"> 3062</span>&#160;<span class="stringliteral">        6838717160008073720548335/4835703278458516698824704</span></div>
-<div class="line"><a name="l03063"></a><span class="lineno"> 3063</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.approx(5)</span></div>
-<div class="line"><a name="l03064"></a><span class="lineno"> 3064</span>&#160;<span class="stringliteral">        2965821/2097152</span></div>
-<div class="line"><a name="l03065"></a><span class="lineno"> 3065</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l03066"></a><span class="lineno"> 3066</span>&#160;        <span class="keywordflow">return</span> RatNumRef(<a class="code" href="group__capi.html#ga84019f84e6a2e69d3bdfc80441ca0f7d">Z3_get_algebraic_number_upper</a>(self.ctx_ref(), self.as_ast(), precision), self.ctx)</div>
-<div class="line"><a name="l03067"></a><span class="lineno"> 3067</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03077">3077</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l03077"></a><span class="lineno"> 3077</span>&#160;    <span class="keyword">def </span>approx(self, precision=10):</div>
+<div class="line"><a name="l03078"></a><span class="lineno"> 3078</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a Z3 rational number that approximates the algebraic number `self`.</span></div>
+<div class="line"><a name="l03079"></a><span class="lineno"> 3079</span>&#160;<span class="stringliteral">        The result `r` is such that |r - self| &lt;= 1/10^precision</span></div>
+<div class="line"><a name="l03080"></a><span class="lineno"> 3080</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l03081"></a><span class="lineno"> 3081</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = simplify(Sqrt(2))</span></div>
+<div class="line"><a name="l03082"></a><span class="lineno"> 3082</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.approx(20)</span></div>
+<div class="line"><a name="l03083"></a><span class="lineno"> 3083</span>&#160;<span class="stringliteral">        6838717160008073720548335/4835703278458516698824704</span></div>
+<div class="line"><a name="l03084"></a><span class="lineno"> 3084</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.approx(5)</span></div>
+<div class="line"><a name="l03085"></a><span class="lineno"> 3085</span>&#160;<span class="stringliteral">        2965821/2097152</span></div>
+<div class="line"><a name="l03086"></a><span class="lineno"> 3086</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l03087"></a><span class="lineno"> 3087</span>&#160;        <span class="keywordflow">return</span> RatNumRef(<a class="code" href="group__capi.html#ga84019f84e6a2e69d3bdfc80441ca0f7d">Z3_get_algebraic_number_upper</a>(self.ctx_ref(), self.as_ast(), precision), self.ctx)</div>
+<div class="line"><a name="l03088"></a><span class="lineno"> 3088</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -303,19 +307,19 @@ using `prec` decimal places.
 &gt;&gt;&gt; x.as_decimal(20)
 '1.41421356237309504880?'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03068">3068</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l03068"></a><span class="lineno"> 3068</span>&#160;    <span class="keyword">def </span>as_decimal(self, prec):</div>
-<div class="line"><a name="l03069"></a><span class="lineno"> 3069</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a string representation of the algebraic number `self` in decimal notation</span></div>
-<div class="line"><a name="l03070"></a><span class="lineno"> 3070</span>&#160;<span class="stringliteral">        using `prec` decimal places.</span></div>
-<div class="line"><a name="l03071"></a><span class="lineno"> 3071</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l03072"></a><span class="lineno"> 3072</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = simplify(Sqrt(2))</span></div>
-<div class="line"><a name="l03073"></a><span class="lineno"> 3073</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.as_decimal(10)</span></div>
-<div class="line"><a name="l03074"></a><span class="lineno"> 3074</span>&#160;<span class="stringliteral">        &#39;1.4142135623?&#39;</span></div>
-<div class="line"><a name="l03075"></a><span class="lineno"> 3075</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.as_decimal(20)</span></div>
-<div class="line"><a name="l03076"></a><span class="lineno"> 3076</span>&#160;<span class="stringliteral">        &#39;1.41421356237309504880?&#39;</span></div>
-<div class="line"><a name="l03077"></a><span class="lineno"> 3077</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l03078"></a><span class="lineno"> 3078</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gaf8e1ec34d62bb2c45a8aa7394593d7fb">Z3_get_numeral_decimal_string</a>(self.ctx_ref(), self.as_ast(), prec)</div>
-<div class="line"><a name="l03079"></a><span class="lineno"> 3079</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03089">3089</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l03089"></a><span class="lineno"> 3089</span>&#160;    <span class="keyword">def </span>as_decimal(self, prec):</div>
+<div class="line"><a name="l03090"></a><span class="lineno"> 3090</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a string representation of the algebraic number `self` in decimal notation</span></div>
+<div class="line"><a name="l03091"></a><span class="lineno"> 3091</span>&#160;<span class="stringliteral">        using `prec` decimal places.</span></div>
+<div class="line"><a name="l03092"></a><span class="lineno"> 3092</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l03093"></a><span class="lineno"> 3093</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = simplify(Sqrt(2))</span></div>
+<div class="line"><a name="l03094"></a><span class="lineno"> 3094</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.as_decimal(10)</span></div>
+<div class="line"><a name="l03095"></a><span class="lineno"> 3095</span>&#160;<span class="stringliteral">        &#39;1.4142135623?&#39;</span></div>
+<div class="line"><a name="l03096"></a><span class="lineno"> 3096</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.as_decimal(20)</span></div>
+<div class="line"><a name="l03097"></a><span class="lineno"> 3097</span>&#160;<span class="stringliteral">        &#39;1.41421356237309504880?&#39;</span></div>
+<div class="line"><a name="l03098"></a><span class="lineno"> 3098</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l03099"></a><span class="lineno"> 3099</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gaf8e1ec34d62bb2c45a8aa7394593d7fb">Z3_get_numeral_decimal_string</a>(self.ctx_ref(), self.as_ast(), prec)</div>
+<div class="line"><a name="l03100"></a><span class="lineno"> 3100</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -335,11 +339,11 @@ using `prec` decimal places.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03083">3083</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l03083"></a><span class="lineno"> 3083</span>&#160;    <span class="keyword">def </span>index(self):</div>
-<div class="line"><a name="l03084"></a><span class="lineno"> 3084</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga74a3d8420906fdcd54a1d533dc2c6a22">Z3_algebraic_get_i</a>(self.ctx_ref(), self.as_ast())</div>
-<div class="line"><a name="l03085"></a><span class="lineno"> 3085</span>&#160; </div>
-<div class="line"><a name="l03086"></a><span class="lineno"> 3086</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03104">3104</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l03104"></a><span class="lineno"> 3104</span>&#160;    <span class="keyword">def </span>index(self):</div>
+<div class="line"><a name="l03105"></a><span class="lineno"> 3105</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga74a3d8420906fdcd54a1d533dc2c6a22">Z3_algebraic_get_i</a>(self.ctx_ref(), self.as_ast())</div>
+<div class="line"><a name="l03106"></a><span class="lineno"> 3106</span>&#160; </div>
+<div class="line"><a name="l03107"></a><span class="lineno"> 3107</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -359,10 +363,10 @@ using `prec` decimal places.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03080">3080</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l03080"></a><span class="lineno"> 3080</span>&#160;    <span class="keyword">def </span>poly(self):</div>
-<div class="line"><a name="l03081"></a><span class="lineno"> 3081</span>&#160;        <span class="keywordflow">return</span> AstVector(<a class="code" href="group__capi.html#ga5cd26496a3673c9bdf7181c5e79652ee">Z3_algebraic_get_poly</a>(self.ctx_ref(), self.as_ast()), self.ctx)</div>
-<div class="line"><a name="l03082"></a><span class="lineno"> 3082</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03101">3101</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l03101"></a><span class="lineno"> 3101</span>&#160;    <span class="keyword">def </span>poly(self):</div>
+<div class="line"><a name="l03102"></a><span class="lineno"> 3102</span>&#160;        <span class="keywordflow">return</span> AstVector(<a class="code" href="group__capi.html#ga5cd26496a3673c9bdf7181c5e79652ee">Z3_algebraic_get_poly</a>(self.ctx_ref(), self.as_ast()), self.ctx)</div>
+<div class="line"><a name="l03103"></a><span class="lineno"> 3103</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -373,7 +377,7 @@ using `prec` decimal places.
 <div class="ttc" id="agroup__capi_html_ga74a3d8420906fdcd54a1d533dc2c6a22"><div class="ttname"><a href="group__capi.html#ga74a3d8420906fdcd54a1d533dc2c6a22">Z3_algebraic_get_i</a></div><div class="ttdeci">unsigned Z3_API Z3_algebraic_get_i(Z3_context c, Z3_ast a)</div><div class="ttdoc">Return which root of the polynomial the algebraic number represents.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 23 2021 21:02:16 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 5 2022 00:39:49 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

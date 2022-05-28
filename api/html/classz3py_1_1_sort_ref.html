@@ -166,7 +166,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">A Sort is essentially a type. Every Z3 expression has a sort. A sort is an AST node.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00558">558</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00553">553</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad794ff077f2f05f228a7109f3670ac40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad794ff077f2f05f228a7109f3670ac40">&#9670;&nbsp;</a></span>__eq__()</h2>
@@ -203,22 +203,22 @@ False
 </pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_ast_ref.html#ad794ff077f2f05f228a7109f3670ac40">AstRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00617">617</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="keyword">def </span>__eq__(self, other):</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` and `other` are the same Z3 sort.</span></div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Bool(&#39;p&#39;)</span></div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p.sort() == BoolSort()</span></div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p.sort() == IntSort()</span></div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;<span class="stringliteral">        False</span></div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        <span class="keywordflow">if</span> other <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">False</span></div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gaf260f3b5bc786cd0552e1ed4f8232a4b">Z3_is_eq_sort</a>(self.ctx_ref(), self.ast, other.ast)</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00612">612</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <span class="keyword">def </span>__eq__(self, other):</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` and `other` are the same Z3 sort.</span></div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Bool(&#39;p&#39;)</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p.sort() == BoolSort()</span></div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p.sort() == IntSort()</span></div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;<span class="stringliteral">        False</span></div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        <span class="keywordflow">if</span> other <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gaf260f3b5bc786cd0552e1ed4f8232a4b">Z3_is_eq_sort</a>(self.ctx_ref(), self.ast, other.ast)</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160; </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06766">CheckSatResult.__ne__()</a>, and <a class="el" href="z3py_8py_source.html#l08478">Probe.__ne__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06828">CheckSatResult.__ne__()</a>, and <a class="el" href="z3py_8py_source.html#l08540">Probe.__ne__()</a>.</p>
 
 </div>
 </div>
@@ -240,12 +240,12 @@ False
 <pre class="fragment">Hash code. </pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_ast_ref.html#a3195ea87162f33a34d0079931a8194ca">AstRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00641">641</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="keyword">def </span>__hash__(self):</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        <span class="stringliteral">&quot;&quot;&quot; Hash code. &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        <span class="keywordflow">return</span> AstRef.__hash__(self)</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160; </div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00636">636</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <span class="keyword">def </span>__hash__(self):</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        <span class="stringliteral">&quot;&quot;&quot; Hash code. &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <span class="keywordflow">return</span> AstRef.__hash__(self)</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -282,18 +282,18 @@ False
 &gt;&gt;&gt; p.sort() != IntSort()
 True
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00630">630</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keyword">def </span>__ne__(self, other):</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` and `other` are not the same Z3 sort.</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Bool(&#39;p&#39;)</span></div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p.sort() != BoolSort()</span></div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;<span class="stringliteral">        False</span></div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p.sort() != IntSort()</span></div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        <span class="keywordflow">return</span> <span class="keywordflow">not</span> <a class="code" href="group__capi.html#gaf260f3b5bc786cd0552e1ed4f8232a4b">Z3_is_eq_sort</a>(self.ctx_ref(), self.ast, other.ast)</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00625">625</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="keyword">def </span>__ne__(self, other):</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` and `other` are not the same Z3 sort.</span></div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Bool(&#39;p&#39;)</span></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p.sort() != BoolSort()</span></div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;<span class="stringliteral">        False</span></div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p.sort() != IntSort()</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        <span class="keywordflow">return</span> <span class="keywordflow">not</span> <a class="code" href="group__capi.html#gaf260f3b5bc786cd0552e1ed4f8232a4b">Z3_is_eq_sort</a>(self.ctx_ref(), self.ast, other.ast)</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -315,10 +315,10 @@ True
 <pre class="fragment">Return a pointer to the corresponding C Z3_ast object.</pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_ast_ref.html#a80aaaa525e93a5c0a6ca25e12463d610">AstRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00561">561</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="keyword">def </span>as_ast(self):</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gac68cabaff75abfbf3d99f1f66d2e39a5">Z3_sort_to_ast</a>(self.ctx_ref(), self.ast)</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00556">556</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <span class="keyword">def </span>as_ast(self):</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gac68cabaff75abfbf3d99f1f66d2e39a5">Z3_sort_to_ast</a>(self.ctx_ref(), self.ast)</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -358,22 +358,22 @@ ToReal(x)
 </pre> 
 <p>Reimplemented in <a class="el" href="classz3py_1_1_f_p_sort_ref.html#aa9d469a670f6bab296b858f1be04ac93">FPSortRef</a>, <a class="el" href="classz3py_1_1_bit_vec_sort_ref.html#aa9d469a670f6bab296b858f1be04ac93">BitVecSortRef</a>, <a class="el" href="classz3py_1_1_arith_sort_ref.html#aa9d469a670f6bab296b858f1be04ac93">ArithSortRef</a>, and <a class="el" href="classz3py_1_1_bool_sort_ref.html#aa9d469a670f6bab296b858f1be04ac93">BoolSortRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00592">592</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keyword">def </span>cast(self, val):</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Try to cast `val` as an element of sort `self`.</span></div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="stringliteral">        This method is used in Z3Py to convert Python objects such as integers,</span></div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="stringliteral">        floats, longs and strings into Z3 expressions.</span></div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; RealSort().cast(x)</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;<span class="stringliteral">        ToReal(x)</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            _z3_assert(<a class="code" href="namespacez3py.html#a72088668440fe702e0ea1106c4084f57">is_expr</a>(val), <span class="stringliteral">&quot;Z3 expression expected&quot;</span>)</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            _z3_assert(self.eq(val.sort()), <span class="stringliteral">&quot;Sort mismatch&quot;</span>)</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        <span class="keywordflow">return</span> val</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00587">587</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="keyword">def </span>cast(self, val):</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Try to cast `val` as an element of sort `self`.</span></div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;<span class="stringliteral">        This method is used in Z3Py to convert Python objects such as integers,</span></div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;<span class="stringliteral">        floats, longs and strings into Z3 expressions.</span></div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; RealSort().cast(x)</span></div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;<span class="stringliteral">        ToReal(x)</span></div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            _z3_assert(<a class="code" href="namespacez3py.html#a72088668440fe702e0ea1106c4084f57">is_expr</a>(val), <span class="stringliteral">&quot;Z3 expression expected&quot;</span>)</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            _z3_assert(self.eq(val.sort()), <span class="stringliteral">&quot;Sort mismatch&quot;</span>)</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <span class="keywordflow">return</span> val</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -395,10 +395,10 @@ ToReal(x)
 <pre class="fragment">Return unique identifier for object. It can be used for hash-tables and maps.</pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_ast_ref.html#a52cfbb3619e7f1360e8dc7cb0e90635b">AstRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00564">564</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="keyword">def </span>get_id(self):</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gac736a04d331ec558400f2bc8eadb5e49">Z3_get_ast_id</a>(self.ctx_ref(), self.as_ast())</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00559">559</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="keyword">def </span>get_id(self):</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gac736a04d331ec558400f2bc8eadb5e49">Z3_get_ast_id</a>(self.ctx_ref(), self.as_ast())</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -431,26 +431,26 @@ True
 &gt;&gt;&gt; A.kind() == Z3_INT_SORT
 False
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00567">567</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="keyword">def </span>kind(self):</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the Z3 internal kind of a sort.</span></div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;<span class="stringliteral">        This method can be used to test if `self` is one of the Z3 builtin sorts.</span></div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b = BoolSort()</span></div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b.kind() == Z3_BOOL_SORT</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00562">562</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keyword">def </span>kind(self):</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the Z3 internal kind of a sort.</span></div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;<span class="stringliteral">        This method can be used to test if `self` is one of the Z3 builtin sorts.</span></div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b = BoolSort()</span></div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b.kind() == Z3_BOOL_SORT</span></div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b.kind() == Z3_INT_SORT</span></div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;<span class="stringliteral">        False</span></div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; A = ArraySort(IntSort(), IntSort())</span></div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; A.kind() == Z3_ARRAY_SORT</span></div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; b.kind() == Z3_INT_SORT</span></div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; A.kind() == Z3_INT_SORT</span></div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="stringliteral">        False</span></div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; A = ArraySort(IntSort(), IntSort())</span></div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; A.kind() == Z3_ARRAY_SORT</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; A.kind() == Z3_INT_SORT</span></div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;<span class="stringliteral">        False</span></div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        <span class="keywordflow">return</span> _sort_kind(self.ctx, self.ast)</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        <span class="keywordflow">return</span> _sort_kind(self.ctx, self.ast)</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02272">ArithSortRef.is_int()</a>, and <a class="el" href="z3py_8py_source.html#l02258">ArithSortRef.is_real()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02290">ArithSortRef.is_int()</a>, and <a class="el" href="z3py_8py_source.html#l02276">ArithSortRef.is_real()</a>.</p>
 
 </div>
 </div>
@@ -476,17 +476,17 @@ False
 &gt;&gt;&gt; ArraySort(IntSort(), IntSort()).name()
 'Array'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00607">607</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="keyword">def </span>name(self):</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the name (string) of sort `self`.</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; BoolSort().name()</span></div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;<span class="stringliteral">        &#39;Bool&#39;</span></div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; ArraySort(IntSort(), IntSort()).name()</span></div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;<span class="stringliteral">        &#39;Array&#39;</span></div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        <span class="keywordflow">return</span> _symbol2py(self.ctx, <a class="code" href="group__capi.html#gab66884f00730c61cf3a5e6814aa2ebd0">Z3_get_sort_name</a>(self.ctx_ref(), self.ast))</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00602">602</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="keyword">def </span>name(self):</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the name (string) of sort `self`.</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; BoolSort().name()</span></div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;<span class="stringliteral">        &#39;Bool&#39;</span></div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; ArraySort(IntSort(), IntSort()).name()</span></div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;<span class="stringliteral">        &#39;Array&#39;</span></div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        <span class="keywordflow">return</span> _symbol2py(self.ctx, <a class="code" href="group__capi.html#gab66884f00730c61cf3a5e6814aa2ebd0">Z3_get_sort_name</a>(self.ctx_ref(), self.ast))</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -522,28 +522,28 @@ True
 </pre> 
 <p>Reimplemented in <a class="el" href="classz3py_1_1_bit_vec_sort_ref.html#a34514723de5ee70df32778f75fa284fe">BitVecSortRef</a>, <a class="el" href="classz3py_1_1_arith_sort_ref.html#a34514723de5ee70df32778f75fa284fe">ArithSortRef</a>, and <a class="el" href="classz3py_1_1_bool_sort_ref.html#a34514723de5ee70df32778f75fa284fe">BoolSortRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00584">584</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="keyword">def </span>subsort(self, other):</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` is a subsort of `other`.</span></div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; IntSort().subsort(RealSort())</span></div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l00579">579</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keyword">def </span>subsort(self, other):</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` is a subsort of `other`.</span></div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; IntSort().subsort(RealSort())</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="agroup__capi_html_gab66884f00730c61cf3a5e6814aa2ebd0"><div class="ttname"><a href="group__capi.html#gab66884f00730c61cf3a5e6814aa2ebd0">Z3_get_sort_name</a></div><div class="ttdeci">Z3_symbol Z3_API Z3_get_sort_name(Z3_context c, Z3_sort d)</div><div class="ttdoc">Return the sort name as a symbol.</div></div>
 <div class="ttc" id="agroup__capi_html_gaf260f3b5bc786cd0552e1ed4f8232a4b"><div class="ttname"><a href="group__capi.html#gaf260f3b5bc786cd0552e1ed4f8232a4b">Z3_is_eq_sort</a></div><div class="ttdeci">bool Z3_API Z3_is_eq_sort(Z3_context c, Z3_sort s1, Z3_sort s2)</div><div class="ttdoc">compare sorts.</div></div>
-<div class="ttc" id="anamespacez3py_html_a07c5d7436e6cc76649ef11d122e6ebee"><div class="ttname"><a href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3py.z3_debug</a></div><div class="ttdeci">def z3_debug()</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00064">z3py.py:64</a></div></div>
+<div class="ttc" id="anamespacez3py_html_a07c5d7436e6cc76649ef11d122e6ebee"><div class="ttname"><a href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3py.z3_debug</a></div><div class="ttdeci">def z3_debug()</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00062">z3py.py:62</a></div></div>
 <div class="ttc" id="agroup__capi_html_gac68cabaff75abfbf3d99f1f66d2e39a5"><div class="ttname"><a href="group__capi.html#gac68cabaff75abfbf3d99f1f66d2e39a5">Z3_sort_to_ast</a></div><div class="ttdeci">Z3_ast Z3_API Z3_sort_to_ast(Z3_context c, Z3_sort s)</div><div class="ttdoc">Convert a Z3_sort into Z3_ast. This is just type casting.</div></div>
-<div class="ttc" id="anamespacez3py_html_a72088668440fe702e0ea1106c4084f57"><div class="ttname"><a href="namespacez3py.html#a72088668440fe702e0ea1106c4084f57">z3py.is_expr</a></div><div class="ttdeci">def is_expr(a)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01212">z3py.py:1212</a></div></div>
+<div class="ttc" id="anamespacez3py_html_a72088668440fe702e0ea1106c4084f57"><div class="ttname"><a href="namespacez3py.html#a72088668440fe702e0ea1106c4084f57">z3py.is_expr</a></div><div class="ttdeci">def is_expr(a)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01231">z3py.py:1231</a></div></div>
 <div class="ttc" id="agroup__capi_html_gac736a04d331ec558400f2bc8eadb5e49"><div class="ttname"><a href="group__capi.html#gac736a04d331ec558400f2bc8eadb5e49">Z3_get_ast_id</a></div><div class="ttdeci">unsigned Z3_API Z3_get_ast_id(Z3_context c, Z3_ast t)</div><div class="ttdoc">Return a unique identifier for t. The identifier is unique up to structural equality....</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 23 2021 21:02:16 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 5 2022 00:39:49 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

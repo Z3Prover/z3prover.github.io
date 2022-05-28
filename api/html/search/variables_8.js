@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['key_5750',['Key',['../class_microsoft_1_1_z3_1_1_statistics_1_1_entry.html#a4206d56ea01160ee4be15e14afcde2da',1,'Microsoft.Z3.Statistics.Entry.Key()'],['../classcom_1_1microsoft_1_1z3_1_1_statistics_1_1_entry.html#a36e68d56271fc972a6092aadd0a342ff',1,'com.microsoft.z3.Statistics.Entry.Key()']]]
+  ['id_5878',['id',['../classz3py_1_1_user_propagate_base.html#acf2488b95c97e0378c9bf49de3b50f28',1,'z3py::UserPropagateBase']]],
+  ['intsort_5879',['IntSort',['../class_microsoft_1_1_z3_1_1_native_context.html#a14a97c7b6d14a01603931b3e1d60d44d',1,'Microsoft::Z3::NativeContext']]]
 ];

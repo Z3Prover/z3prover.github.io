@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['id_5749',['id',['../classz3py_1_1_user_propagate_base.html#acf2488b95c97e0378c9bf49de3b50f28',1,'z3py::UserPropagateBase']]]
+  ['help_5877',['Help',['../class_microsoft_1_1_z3_1_1_native_solver.html#a21653f2cfc732a330302490b0d729509',1,'Microsoft::Z3::NativeSolver']]]
 ];

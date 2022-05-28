@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['uninterpretedsort_3295',['UninterpretedSort',['../classcom_1_1microsoft_1_1z3_1_1_uninterpreted_sort.html',1,'UninterpretedSort'],['../class_microsoft_1_1_z3_1_1_uninterpreted_sort.html',1,'UninterpretedSort']]],
-  ['user_5fpropagator_5fbase_3296',['user_propagator_base',['../classz3_1_1user__propagator__base.html',1,'z3']]],
-  ['userpropagatebase_3297',['UserPropagateBase',['../classz3py_1_1_user_propagate_base.html',1,'z3py']]]
+  ['tactic_3364',['tactic',['../classz3_1_1tactic.html',1,'tactic'],['../classz3py_1_1_tactic.html',1,'Tactic'],['../class_microsoft_1_1_z3_1_1_tactic.html',1,'Tactic'],['../classcom_1_1microsoft_1_1z3_1_1_tactic.html',1,'Tactic']]],
+  ['translate_3365',['translate',['../structz3_1_1model_1_1translate.html',1,'model::translate'],['../structz3_1_1solver_1_1translate.html',1,'solver::translate']]],
+  ['tuplesort_3366',['TupleSort',['../classcom_1_1microsoft_1_1z3_1_1_tuple_sort.html',1,'TupleSort'],['../class_microsoft_1_1_z3_1_1_tuple_sort.html',1,'TupleSort']]]
 ];

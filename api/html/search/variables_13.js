@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['z3_5fdebug_5772',['Z3_DEBUG',['../namespacez3py.html#ae524c4f490a2de230a8266652dedd7b4',1,'z3py']]],
-  ['z3_5fstring_5773',['Z3_string',['../group__capi.html#ga3c763501f2dbabff170d19760397141e',1,'z3_api.h']]]
+  ['vars_5909',['vars',['../classz3py_1_1_fixedpoint.html#a34afa21b3f4aa9ee760d8638def79157',1,'z3py::Fixedpoint']]],
+  ['vector_5910',['vector',['../classz3py_1_1_ast_vector.html#a7ea82552101f041fad7635b3ed036a84',1,'z3py::AstVector']]]
 ];
