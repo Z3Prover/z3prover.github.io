@@ -1,4 +1,4 @@
-<html><head><title>Guide</title><link rel="stylesheet" href="/z3-wasm/guide.002cff88.css"><script src="/z3-wasm/guide.1c95a30a.js"></script></head><body> <script type="module" src="/z3-wasm/guide.723dc414.js"></script> <h1>Getting Started with Z3: A Guide</h1> <p style="clear:both">Be sure to follow along with the examples by clicking the "edit" link in the corner. See what the tool says, try your own formulas, and experiment!</p> <h2>Introduction</h2> <p> Z3 is a state-of-the art theorem prover from Microsoft Research. It can be used to check the satisfiability of logical formulas over one or more theories. Z3 offers a compelling match for software analysis and verification tools, since several common software constructs map directly into supported theories. </p> <p> The main objective of the tutorial is to introduce the reader on how to use Z3 effectively for logical modeling and solving. The tutorial provides some general background on logical modeling, but we have to defer a full introduction to first-order logic and decision procedures to text-books. </p> <p> Z3 is a low level tool. It is best used as a component in the context of other tools that require solving logical formulas. Consequently, Z3 exposes a number of API facilities to make it convenient for tools to map into Z3, but there are no stand-alone editors or user-centric facilities for interacting with Z3. The language syntax used in the front ends favor simplicity in contrast to linguistic convenience. </p> <h2>Basic Commands</h2> <p> The Z3 input format is an extension of the one defined by the <a href="http://www.smtlib.org/" target="_blank">SMT-LIB 2.0 standard</a>. A Z3 script is a sequence of commands. The <b>help</b> command displays a list of all available commands. The command <b>echo</b> displays a message. Internally, Z3 maintains a <b>stack</b> of user provided formulas and declarations. We say these are the <b>assertions</b> provided by the user. The command <b>declare-const</b> declares a constant of a given type (aka sort). The command <b>declare-fun</b> declares a function. In the following example, we declared a function that receives an integer and a boolean, and returns an integer. </p> <pre class="listing" pref="z3.1">
+<html><head><title>Guide</title><link rel="stylesheet" href="/tutorial/guide.002cff88.css"><script src="/tutorial/guide.1c95a30a.js"></script></head><body> <script type="module" src="/tutorial/guide.17f097a6.js"></script> <h1>Getting Started with Z3: A Guide</h1> <p style="clear:both">Be sure to follow along with the examples by clicking the "edit" link in the corner. See what the tool says, try your own formulas, and experiment!</p> <h2>Introduction</h2> <p> Z3 is a state-of-the art theorem prover from Microsoft Research. It can be used to check the satisfiability of logical formulas over one or more theories. Z3 offers a compelling match for software analysis and verification tools, since several common software constructs map directly into supported theories. </p> <p> The main objective of the tutorial is to introduce the reader on how to use Z3 effectively for logical modeling and solving. The tutorial provides some general background on logical modeling, but we have to defer a full introduction to first-order logic and decision procedures to text-books. </p> <p> Z3 is a low level tool. It is best used as a component in the context of other tools that require solving logical formulas. Consequently, Z3 exposes a number of API facilities to make it convenient for tools to map into Z3, but there are no stand-alone editors or user-centric facilities for interacting with Z3. The language syntax used in the front ends favor simplicity in contrast to linguistic convenience. </p> <h2>Basic Commands</h2> <p> The Z3 input format is an extension of the one defined by the <a href="http://www.smtlib.org/" target="_blank">SMT-LIB 2.0 standard</a>. A Z3 script is a sequence of commands. The <b>help</b> command displays a list of all available commands. The command <b>echo</b> displays a message. Internally, Z3 maintains a <b>stack</b> of user provided formulas and declarations. We say these are the <b>assertions</b> provided by the user. The command <b>declare-const</b> declares a constant of a given type (aka sort). The command <b>declare-fun</b> declares a function. In the following example, we declared a function that receives an integer and a boolean, and returns an integer. </p> <pre class="listing" pref="z3.1">
 (echo "starting Z3...")
 (declare-const a Int)
 (declare-fun f (Int Bool) Int)
@@ -6,13 +6,13 @@
 (declare-const a Int)
 (declare-fun f (Int Bool) Int)
 (assert (> a 10))
-(assert (< (f a true) 100)) 
+(assert ( (f a true) 100))
 (check-sat)
 </pre> <p> The first asserted formula states that the constant <tt>a</tt> must be greater than 10. The second one states that the function <tt>f</tt> applied to <tt>a</tt> and <tt>true</tt> must return a value less than 100. The command <b>check-sat</b> determines whether the current formulas on the Z3 stack are satisfiable or not. If the formulas are satisfiable, Z3 returns <b>sat</b>. If they are not satisfiable (i.e., they are <b>unsatisfiable</b>), Z3 returns <b>unsat</b>. Z3 may also return <b>unknown</b> when it can't determine whether a formula is satisfiable or not. </p> <p> When the command check-sat returns <b>sat</b>, the command <b>get-model</b> can be used to retrieve an interpretation that makes all formulas on the Z3 internal stack true. </p> <pre class="listing" pref="z3.3">
 (declare-const a Int)
 (declare-fun f (Int Bool) Int)
 (assert (> a 10))
-(assert (&lt; (f a true) 100))
+(assert (< (f a true) 100))
 (check-sat)
 (get-model)
 </pre> <p> The interpretation is provided using <b>definitions</b>. For example, the definition: </p> <pre>
@@ -81,7 +81,7 @@
 (assert (= (select s2 l) false))
 (check-sat)
 (get-model)
-</pre> <h2>Propositional  Logic</h2> <p> The pre-defined sort <bb>Bool</bb> is the sort (type) of all Boolean propositional expressions. Z3 supports the usual Boolean operators <tt>and</tt>, <tt>or</tt>, <tt>xor</tt>, <tt>not</tt>, <tt>=></tt> (implication), <tt>ite</tt> (if-then-else). Bi-implications are represented using equatity <tt>=</tt>. The following example shows how to prove that if <tt>p</tt> implies <tt>q</tt> and <tt>q</tt> implies <tt>r</tt>, then <tt>p</tt> implies <tt>r</tt>. We accomplish that by showing that the negation is unsatisfiable. The command <bb>define-fun</bb> is used to define a macro (aka alias). In this example, <tt>conjecture</tt> is an alias for the conjecture we want to prove. </p> <pre class="listing" pref="z3.4">
+</pre> <h2>Propositional Logic</h2> <p> The pre-defined sort <bb>Bool</bb> is the sort (type) of all Boolean propositional expressions. Z3 supports the usual Boolean operators <tt>and</tt>, <tt>or</tt>, <tt>xor</tt>, <tt>not</tt>, <tt>=></tt> (implication), <tt>ite</tt> (if-then-else). Bi-implications are represented using equatity <tt>=</tt>. The following example shows how to prove that if <tt>p</tt> implies <tt>q</tt> and <tt>q</tt> implies <tt>r</tt>, then <tt>p</tt> implies <tt>r</tt>. We accomplish that by showing that the negation is unsatisfiable. The command <bb>define-fun</bb> is used to define a macro (aka alias). In this example, <tt>conjecture</tt> is an alias for the conjecture we want to prove. </p> <pre class="listing" pref="z3.4">
 (declare-const p Bool)
 (declare-const q Bool)
 (declare-const r Bool)
@@ -130,7 +130,7 @@
 (declare-const e Real)
 (assert (> a (+ b 2)))
 (assert (= a (+ (* 2 c) 10)))
-(assert (&lt;= (+ c b) 1000))
+(assert (<= (+ c b) 1000))
 (assert (>= d e))
 (check-sat)
 (get-model)
@@ -511,7 +511,7 @@
 
 (assert (forall ((x Int)) (>= (f x x) (+ x a))))
 
-(assert (&lt; (f a b) a))
+(assert (< (f a b) a))
 (assert (> a 0))
 (check-sat)
 (get-model)
@@ -526,7 +526,7 @@
 ; click on edit to see the example
 </pre> <h4>Stratified Sorts Fragment</h4> <p>The <b>statified sorts fragment</b> is another decidable fragment of many sorted first-order logic formulas. It corresponds to formulas which, when written in prenex normal form, there is a function <tt>level</tt> from sorts to naturals, and for every function </p> <pre>
 (declare-fun f (S_1 ... S_n) R)
-</pre> <p> <tt>level(R) &lt; level(S_i)</tt>. </p> <h4>Array Property Fragment</h4> <p>The <b>array property fragment</b> can encode properties about unidimensional, and is strong enough to say an array is sorted. More information about this fragment can be found in the paper <a href="http://academic.research.microsoft.com/Paper/1843442.aspx" target="_blank">What's Decidable About Arrays?</a>. </p> <pre class="listing" pref="z3.45">
+</pre> <p> <tt>level(R) < level(S_i)</tt>. </p> <h4>Array Property Fragment</h4> <p>The <b>array property fragment</b> can encode properties about unidimensional, and is strong enough to say an array is sorted. More information about this fragment can be found in the paper <a href="http://academic.research.microsoft.com/Paper/1843442.aspx" target="_blank">What's Decidable About Arrays?</a>. </p> <pre class="listing" pref="z3.45">
 ; click on edit to see the example
 </pre> <h4>List Fragment</h4> <p>The <b>list fragment</b> can encode properties about data-structures such as lists. For each quantified axiom <tt>q</tt> in this fragment, there is an "easy" way to satisfy <tt>q</tt>. More information about this fragment can be found in the paper <a href="http://www.cs.berkeley.edu/~necula/Papers/verifier-cav05.pdf" target="_blank"> Data Structure Specifications via Local Equality Axioms</a>. </p> <pre class="listing" pref="z3.46">
 ; click on edit to see the example
@@ -542,13 +542,13 @@
 ;; to the segment [0, n] of stream g.
 (declare-const n Int)
 (declare-const a Int)
-(assert (forall ((x Int)) (=> (and (&lt;= 0 x) (&lt;= x n))
+(assert (forall ((x Int)) (=> (and (<= 0 x) (<= x n))
                               (= (f (+ x a)) (g x)))))
 
 ;; adding some constraints to a
 (assert (> a 10))
 (assert (>= (f a) 2))
-(assert (&lt;= (g 3) (- 10)))
+(assert (<= (g 3) (- 10)))
 
 (check-sat)
 (get-model)
