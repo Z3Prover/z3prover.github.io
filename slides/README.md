@@ -1,6 +1,5 @@
 # Slides
 
-* [Slides on Wiki](https://github.com/Z3Prover/z3/wiki/Slides)
 * [TU Wien 2022 lecture](https://z3prover.github.io/slides/tuv22.html)
 * [CPAIOR 2021](https://z3prover.github.io/slides/CPAIOR.pptx)
 * [TU Wien 2019 lecture](https://z3prover.github.io/slides/tuv.html)
@@ -11,3 +10,4 @@
   * [Lecture 1](https://z3prover.github.io/slides/MOD-10-8-15.pptx)
   * [Lecture 2](https://z3prover.github.io/slides/MOD-12-8-2015.pptx)
   * [Lecture 3](https://z3prover.github.io/slides/MOD-14-8-2015.pptx)
+* [Slides on Z3 Wiki](https://github.com/Z3Prover/z3/wiki/Slides)
