@@ -1,5 +1,6 @@
 # Slides
 
+* [Slides on Wiki](https://github.com/Z3Prover/z3/wiki/Slides)
 * [TU Wien 2022 lecture](https://z3prover.github.io/slides/tuv22.html)
 * [CPAIOR 2021](https://z3prover.github.io/slides/CPAIOR.pptx)
 * [TU Wien 2019 lecture](https://z3prover.github.io/slides/tuv.html)
