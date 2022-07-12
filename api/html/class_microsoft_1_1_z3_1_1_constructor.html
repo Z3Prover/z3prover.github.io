@@ -111,6 +111,10 @@ Properties</h2></td></tr>
 <tr class="memitem:a0981e95b2c8f6fad193166e699bc8fb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_func_decl.html">FuncDecl</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_constructor.html#a0981e95b2c8f6fad193166e699bc8fb8">AccessorDecls</a><code> [get]</code></td></tr>
 <tr class="memdesc:a0981e95b2c8f6fad193166e699bc8fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function declarations of the accessors  <a href="class_microsoft_1_1_z3_1_1_constructor.html#a0981e95b2c8f6fad193166e699bc8fb8">More...</a><br /></td></tr>
 <tr class="separator:a0981e95b2c8f6fad193166e699bc8fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_microsoft_1_1_z3_1_1_z3_object"><td colspan="2" onclick="javascript:toggleInherit('properties_class_microsoft_1_1_z3_1_1_z3_object')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html">Z3Object</a></td></tr>
+<tr class="memitem:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a><code> [get]</code></td></tr>
+<tr class="memdesc:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access <a class="el" href="class_microsoft_1_1_z3_1_1_context.html" title="The main interaction with Z3 happens via the Context.">Context</a> object  <a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">More...</a><br /></td></tr>
+<tr class="separator:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -153,10 +157,10 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                IntPtr constructor = IntPtr.Zero;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                IntPtr tester = IntPtr.Zero;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                IntPtr[] accessors = <span class="keyword">new</span> IntPtr[n];</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                Native.Z3_query_constructor(Context.nCtx, NativeObject, n, ref constructor, ref tester, accessors);                </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                Native.Z3_query_constructor(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, n, ref constructor, ref tester, accessors);                </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                FuncDecl[] t = <span class="keyword">new</span> FuncDecl[n];</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordflow">for</span> (uint i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    t[i] = <span class="keyword">new</span> FuncDecl(Context, accessors[i]); </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    t[i] = <span class="keyword">new</span> FuncDecl(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, accessors[i]); </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">return</span> t;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
@@ -192,8 +196,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                IntPtr constructor = IntPtr.Zero;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                IntPtr tester = IntPtr.Zero;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                IntPtr[] accessors = <span class="keyword">new</span> IntPtr[n];</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                Native.Z3_query_constructor(Context.nCtx, NativeObject, n, ref constructor, ref tester, accessors);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> FuncDecl(Context, constructor);                </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                Native.Z3_query_constructor(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, n, ref constructor, ref tester, accessors);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> FuncDecl(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, constructor);                </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -260,17 +264,18 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                IntPtr constructor = IntPtr.Zero;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                IntPtr tester = IntPtr.Zero;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                IntPtr[] accessors = <span class="keyword">new</span> IntPtr[n];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                Native.Z3_query_constructor(Context.nCtx, NativeObject, n, ref constructor, ref tester, accessors);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> FuncDecl(Context, tester);                </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                Native.Z3_query_constructor(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, n, ref constructor, ref tester, accessors);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> FuncDecl(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, tester);                </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_z3_object_html_acf606a89a6d7474fa0ef78c69da736c7"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Microsoft.Z3.Z3Object.Context</a></div><div class="ttdeci">Context Context</div><div class="ttdoc">Access Context object</div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8cs_source.html#l00120">Z3Object.cs:120</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:47 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:42 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

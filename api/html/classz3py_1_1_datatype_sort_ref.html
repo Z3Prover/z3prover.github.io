@@ -165,7 +165,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Datatype sorts.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05239">5239</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05244">5244</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab1e6a00a4f728cebe361b23c4f6b2e93"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1e6a00a4f728cebe361b23c4f6b2e93">&#9670;&nbsp;</a></span>accessor()</h2>
@@ -222,41 +222,41 @@ nil
 &gt;&gt;&gt; num_accs
 0
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05302">5302</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l05302"></a><span class="lineno"> 5302</span>&#160;    <span class="keyword">def </span>accessor(self, i, j):</div>
-<div class="line"><a name="l05303"></a><span class="lineno"> 5303</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;In Z3, each constructor has 0 or more accessor.</span></div>
-<div class="line"><a name="l05304"></a><span class="lineno"> 5304</span>&#160;<span class="stringliteral">        The number of accessors is equal to the arity of the constructor.</span></div>
-<div class="line"><a name="l05305"></a><span class="lineno"> 5305</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l05306"></a><span class="lineno"> 5306</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = Datatype(&#39;List&#39;)</span></div>
-<div class="line"><a name="l05307"></a><span class="lineno"> 5307</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;cons&#39;, (&#39;car&#39;, IntSort()), (&#39;cdr&#39;, List))</span></div>
-<div class="line"><a name="l05308"></a><span class="lineno"> 5308</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;nil&#39;)</span></div>
-<div class="line"><a name="l05309"></a><span class="lineno"> 5309</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = List.create()</span></div>
-<div class="line"><a name="l05310"></a><span class="lineno"> 5310</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.num_constructors()</span></div>
-<div class="line"><a name="l05311"></a><span class="lineno"> 5311</span>&#160;<span class="stringliteral">        2</span></div>
-<div class="line"><a name="l05312"></a><span class="lineno"> 5312</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.constructor(0)</span></div>
-<div class="line"><a name="l05313"></a><span class="lineno"> 5313</span>&#160;<span class="stringliteral">        cons</span></div>
-<div class="line"><a name="l05314"></a><span class="lineno"> 5314</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; num_accs = List.constructor(0).arity()</span></div>
-<div class="line"><a name="l05315"></a><span class="lineno"> 5315</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; num_accs</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05307">5307</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l05307"></a><span class="lineno"> 5307</span>&#160;    <span class="keyword">def </span>accessor(self, i, j):</div>
+<div class="line"><a name="l05308"></a><span class="lineno"> 5308</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;In Z3, each constructor has 0 or more accessor.</span></div>
+<div class="line"><a name="l05309"></a><span class="lineno"> 5309</span>&#160;<span class="stringliteral">        The number of accessors is equal to the arity of the constructor.</span></div>
+<div class="line"><a name="l05310"></a><span class="lineno"> 5310</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l05311"></a><span class="lineno"> 5311</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = Datatype(&#39;List&#39;)</span></div>
+<div class="line"><a name="l05312"></a><span class="lineno"> 5312</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;cons&#39;, (&#39;car&#39;, IntSort()), (&#39;cdr&#39;, List))</span></div>
+<div class="line"><a name="l05313"></a><span class="lineno"> 5313</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;nil&#39;)</span></div>
+<div class="line"><a name="l05314"></a><span class="lineno"> 5314</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = List.create()</span></div>
+<div class="line"><a name="l05315"></a><span class="lineno"> 5315</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.num_constructors()</span></div>
 <div class="line"><a name="l05316"></a><span class="lineno"> 5316</span>&#160;<span class="stringliteral">        2</span></div>
-<div class="line"><a name="l05317"></a><span class="lineno"> 5317</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.accessor(0, 0)</span></div>
-<div class="line"><a name="l05318"></a><span class="lineno"> 5318</span>&#160;<span class="stringliteral">        car</span></div>
-<div class="line"><a name="l05319"></a><span class="lineno"> 5319</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.accessor(0, 1)</span></div>
-<div class="line"><a name="l05320"></a><span class="lineno"> 5320</span>&#160;<span class="stringliteral">        cdr</span></div>
-<div class="line"><a name="l05321"></a><span class="lineno"> 5321</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.constructor(1)</span></div>
-<div class="line"><a name="l05322"></a><span class="lineno"> 5322</span>&#160;<span class="stringliteral">        nil</span></div>
-<div class="line"><a name="l05323"></a><span class="lineno"> 5323</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; num_accs = List.constructor(1).arity()</span></div>
-<div class="line"><a name="l05324"></a><span class="lineno"> 5324</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; num_accs</span></div>
-<div class="line"><a name="l05325"></a><span class="lineno"> 5325</span>&#160;<span class="stringliteral">        0</span></div>
-<div class="line"><a name="l05326"></a><span class="lineno"> 5326</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l05327"></a><span class="lineno"> 5327</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
-<div class="line"><a name="l05328"></a><span class="lineno"> 5328</span>&#160;            _z3_assert(i &lt; self.num_constructors(), <span class="stringliteral">&quot;Invalid constructor index&quot;</span>)</div>
-<div class="line"><a name="l05329"></a><span class="lineno"> 5329</span>&#160;            _z3_assert(j &lt; self.constructor(i).arity(), <span class="stringliteral">&quot;Invalid accessor index&quot;</span>)</div>
-<div class="line"><a name="l05330"></a><span class="lineno"> 5330</span>&#160;        <span class="keywordflow">return</span> FuncDeclRef(</div>
-<div class="line"><a name="l05331"></a><span class="lineno"> 5331</span>&#160;            <a class="code" href="group__capi.html#gafadf6fcb83ba59ebbb229565a6a8a792">Z3_get_datatype_sort_constructor_accessor</a>(self.ctx_ref(), self.ast, i, j),</div>
-<div class="line"><a name="l05332"></a><span class="lineno"> 5332</span>&#160;            ctx=self.ctx,</div>
-<div class="line"><a name="l05333"></a><span class="lineno"> 5333</span>&#160;        )</div>
-<div class="line"><a name="l05334"></a><span class="lineno"> 5334</span>&#160; </div>
-<div class="line"><a name="l05335"></a><span class="lineno"> 5335</span>&#160; </div>
+<div class="line"><a name="l05317"></a><span class="lineno"> 5317</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.constructor(0)</span></div>
+<div class="line"><a name="l05318"></a><span class="lineno"> 5318</span>&#160;<span class="stringliteral">        cons</span></div>
+<div class="line"><a name="l05319"></a><span class="lineno"> 5319</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; num_accs = List.constructor(0).arity()</span></div>
+<div class="line"><a name="l05320"></a><span class="lineno"> 5320</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; num_accs</span></div>
+<div class="line"><a name="l05321"></a><span class="lineno"> 5321</span>&#160;<span class="stringliteral">        2</span></div>
+<div class="line"><a name="l05322"></a><span class="lineno"> 5322</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.accessor(0, 0)</span></div>
+<div class="line"><a name="l05323"></a><span class="lineno"> 5323</span>&#160;<span class="stringliteral">        car</span></div>
+<div class="line"><a name="l05324"></a><span class="lineno"> 5324</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.accessor(0, 1)</span></div>
+<div class="line"><a name="l05325"></a><span class="lineno"> 5325</span>&#160;<span class="stringliteral">        cdr</span></div>
+<div class="line"><a name="l05326"></a><span class="lineno"> 5326</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.constructor(1)</span></div>
+<div class="line"><a name="l05327"></a><span class="lineno"> 5327</span>&#160;<span class="stringliteral">        nil</span></div>
+<div class="line"><a name="l05328"></a><span class="lineno"> 5328</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; num_accs = List.constructor(1).arity()</span></div>
+<div class="line"><a name="l05329"></a><span class="lineno"> 5329</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; num_accs</span></div>
+<div class="line"><a name="l05330"></a><span class="lineno"> 5330</span>&#160;<span class="stringliteral">        0</span></div>
+<div class="line"><a name="l05331"></a><span class="lineno"> 5331</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l05332"></a><span class="lineno"> 5332</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
+<div class="line"><a name="l05333"></a><span class="lineno"> 5333</span>&#160;            _z3_assert(i &lt; self.num_constructors(), <span class="stringliteral">&quot;Invalid constructor index&quot;</span>)</div>
+<div class="line"><a name="l05334"></a><span class="lineno"> 5334</span>&#160;            _z3_assert(j &lt; self.constructor(i).arity(), <span class="stringliteral">&quot;Invalid accessor index&quot;</span>)</div>
+<div class="line"><a name="l05335"></a><span class="lineno"> 5335</span>&#160;        <span class="keywordflow">return</span> FuncDeclRef(</div>
+<div class="line"><a name="l05336"></a><span class="lineno"> 5336</span>&#160;            <a class="code" href="group__capi.html#gafadf6fcb83ba59ebbb229565a6a8a792">Z3_get_datatype_sort_constructor_accessor</a>(self.ctx_ref(), self.ast, i, j),</div>
+<div class="line"><a name="l05337"></a><span class="lineno"> 5337</span>&#160;            ctx=self.ctx,</div>
+<div class="line"><a name="l05338"></a><span class="lineno"> 5338</span>&#160;        )</div>
+<div class="line"><a name="l05339"></a><span class="lineno"> 5339</span>&#160; </div>
+<div class="line"><a name="l05340"></a><span class="lineno"> 5340</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -299,28 +299,28 @@ cons
 &gt;&gt;&gt; List.constructor(1)
 nil
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05255">5255</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l05255"></a><span class="lineno"> 5255</span>&#160;    <span class="keyword">def </span>constructor(self, idx):</div>
-<div class="line"><a name="l05256"></a><span class="lineno"> 5256</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a constructor of the datatype `self`.</span></div>
-<div class="line"><a name="l05257"></a><span class="lineno"> 5257</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l05258"></a><span class="lineno"> 5258</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = Datatype(&#39;List&#39;)</span></div>
-<div class="line"><a name="l05259"></a><span class="lineno"> 5259</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;cons&#39;, (&#39;car&#39;, IntSort()), (&#39;cdr&#39;, List))</span></div>
-<div class="line"><a name="l05260"></a><span class="lineno"> 5260</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;nil&#39;)</span></div>
-<div class="line"><a name="l05261"></a><span class="lineno"> 5261</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = List.create()</span></div>
-<div class="line"><a name="l05262"></a><span class="lineno"> 5262</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; # List is now a Z3 declaration</span></div>
-<div class="line"><a name="l05263"></a><span class="lineno"> 5263</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.num_constructors()</span></div>
-<div class="line"><a name="l05264"></a><span class="lineno"> 5264</span>&#160;<span class="stringliteral">        2</span></div>
-<div class="line"><a name="l05265"></a><span class="lineno"> 5265</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.constructor(0)</span></div>
-<div class="line"><a name="l05266"></a><span class="lineno"> 5266</span>&#160;<span class="stringliteral">        cons</span></div>
-<div class="line"><a name="l05267"></a><span class="lineno"> 5267</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.constructor(1)</span></div>
-<div class="line"><a name="l05268"></a><span class="lineno"> 5268</span>&#160;<span class="stringliteral">        nil</span></div>
-<div class="line"><a name="l05269"></a><span class="lineno"> 5269</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l05270"></a><span class="lineno"> 5270</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
-<div class="line"><a name="l05271"></a><span class="lineno"> 5271</span>&#160;            _z3_assert(idx &lt; self.num_constructors(), <span class="stringliteral">&quot;Invalid constructor index&quot;</span>)</div>
-<div class="line"><a name="l05272"></a><span class="lineno"> 5272</span>&#160;        <span class="keywordflow">return</span> FuncDeclRef(<a class="code" href="group__capi.html#ga6b7db7830f1e98554b7179522f8c42c4">Z3_get_datatype_sort_constructor</a>(self.ctx_ref(), self.ast, idx), self.ctx)</div>
-<div class="line"><a name="l05273"></a><span class="lineno"> 5273</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05260">5260</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l05260"></a><span class="lineno"> 5260</span>&#160;    <span class="keyword">def </span>constructor(self, idx):</div>
+<div class="line"><a name="l05261"></a><span class="lineno"> 5261</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a constructor of the datatype `self`.</span></div>
+<div class="line"><a name="l05262"></a><span class="lineno"> 5262</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l05263"></a><span class="lineno"> 5263</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = Datatype(&#39;List&#39;)</span></div>
+<div class="line"><a name="l05264"></a><span class="lineno"> 5264</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;cons&#39;, (&#39;car&#39;, IntSort()), (&#39;cdr&#39;, List))</span></div>
+<div class="line"><a name="l05265"></a><span class="lineno"> 5265</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;nil&#39;)</span></div>
+<div class="line"><a name="l05266"></a><span class="lineno"> 5266</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = List.create()</span></div>
+<div class="line"><a name="l05267"></a><span class="lineno"> 5267</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; # List is now a Z3 declaration</span></div>
+<div class="line"><a name="l05268"></a><span class="lineno"> 5268</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.num_constructors()</span></div>
+<div class="line"><a name="l05269"></a><span class="lineno"> 5269</span>&#160;<span class="stringliteral">        2</span></div>
+<div class="line"><a name="l05270"></a><span class="lineno"> 5270</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.constructor(0)</span></div>
+<div class="line"><a name="l05271"></a><span class="lineno"> 5271</span>&#160;<span class="stringliteral">        cons</span></div>
+<div class="line"><a name="l05272"></a><span class="lineno"> 5272</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.constructor(1)</span></div>
+<div class="line"><a name="l05273"></a><span class="lineno"> 5273</span>&#160;<span class="stringliteral">        nil</span></div>
+<div class="line"><a name="l05274"></a><span class="lineno"> 5274</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l05275"></a><span class="lineno"> 5275</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
+<div class="line"><a name="l05276"></a><span class="lineno"> 5276</span>&#160;            _z3_assert(idx &lt; self.num_constructors(), <span class="stringliteral">&quot;Invalid constructor index&quot;</span>)</div>
+<div class="line"><a name="l05277"></a><span class="lineno"> 5277</span>&#160;        <span class="keywordflow">return</span> FuncDeclRef(<a class="code" href="group__capi.html#ga6b7db7830f1e98554b7179522f8c42c4">Z3_get_datatype_sort_constructor</a>(self.ctx_ref(), self.ast, idx), self.ctx)</div>
+<div class="line"><a name="l05278"></a><span class="lineno"> 5278</span>&#160; </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05302">DatatypeSortRef.accessor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05307">DatatypeSortRef.accessor()</a>.</p>
 
 </div>
 </div>
@@ -349,22 +349,22 @@ nil
 &gt;&gt;&gt; List.num_constructors()
 2
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05242">5242</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l05242"></a><span class="lineno"> 5242</span>&#160;    <span class="keyword">def </span>num_constructors(self):</div>
-<div class="line"><a name="l05243"></a><span class="lineno"> 5243</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the number of constructors in the given Z3 datatype.</span></div>
-<div class="line"><a name="l05244"></a><span class="lineno"> 5244</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l05245"></a><span class="lineno"> 5245</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = Datatype(&#39;List&#39;)</span></div>
-<div class="line"><a name="l05246"></a><span class="lineno"> 5246</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;cons&#39;, (&#39;car&#39;, IntSort()), (&#39;cdr&#39;, List))</span></div>
-<div class="line"><a name="l05247"></a><span class="lineno"> 5247</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;nil&#39;)</span></div>
-<div class="line"><a name="l05248"></a><span class="lineno"> 5248</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = List.create()</span></div>
-<div class="line"><a name="l05249"></a><span class="lineno"> 5249</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; # List is now a Z3 declaration</span></div>
-<div class="line"><a name="l05250"></a><span class="lineno"> 5250</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.num_constructors()</span></div>
-<div class="line"><a name="l05251"></a><span class="lineno"> 5251</span>&#160;<span class="stringliteral">        2</span></div>
-<div class="line"><a name="l05252"></a><span class="lineno"> 5252</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l05253"></a><span class="lineno"> 5253</span>&#160;        <span class="keywordflow">return</span> int(<a class="code" href="group__capi.html#ga655a30b499ea4c4d098f697f847331bb">Z3_get_datatype_sort_num_constructors</a>(self.ctx_ref(), self.ast))</div>
-<div class="line"><a name="l05254"></a><span class="lineno"> 5254</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05247">5247</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l05247"></a><span class="lineno"> 5247</span>&#160;    <span class="keyword">def </span>num_constructors(self):</div>
+<div class="line"><a name="l05248"></a><span class="lineno"> 5248</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return the number of constructors in the given Z3 datatype.</span></div>
+<div class="line"><a name="l05249"></a><span class="lineno"> 5249</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l05250"></a><span class="lineno"> 5250</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = Datatype(&#39;List&#39;)</span></div>
+<div class="line"><a name="l05251"></a><span class="lineno"> 5251</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;cons&#39;, (&#39;car&#39;, IntSort()), (&#39;cdr&#39;, List))</span></div>
+<div class="line"><a name="l05252"></a><span class="lineno"> 5252</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;nil&#39;)</span></div>
+<div class="line"><a name="l05253"></a><span class="lineno"> 5253</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = List.create()</span></div>
+<div class="line"><a name="l05254"></a><span class="lineno"> 5254</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; # List is now a Z3 declaration</span></div>
+<div class="line"><a name="l05255"></a><span class="lineno"> 5255</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.num_constructors()</span></div>
+<div class="line"><a name="l05256"></a><span class="lineno"> 5256</span>&#160;<span class="stringliteral">        2</span></div>
+<div class="line"><a name="l05257"></a><span class="lineno"> 5257</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l05258"></a><span class="lineno"> 5258</span>&#160;        <span class="keywordflow">return</span> int(<a class="code" href="group__capi.html#ga655a30b499ea4c4d098f697f847331bb">Z3_get_datatype_sort_num_constructors</a>(self.ctx_ref(), self.ast))</div>
+<div class="line"><a name="l05259"></a><span class="lineno"> 5259</span>&#160; </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05302">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l05255">DatatypeSortRef.constructor()</a>, and <a class="el" href="z3py_8py_source.html#l05274">DatatypeSortRef.recognizer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05307">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l05260">DatatypeSortRef.constructor()</a>, and <a class="el" href="z3py_8py_source.html#l05279">DatatypeSortRef.recognizer()</a>.</p>
 
 </div>
 </div>
@@ -416,35 +416,35 @@ True
 &gt;&gt;&gt; simplify(List.is_cons(l))
 is(cons, l)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05274">5274</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l05274"></a><span class="lineno"> 5274</span>&#160;    <span class="keyword">def </span>recognizer(self, idx):</div>
-<div class="line"><a name="l05275"></a><span class="lineno"> 5275</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;In Z3, each constructor has an associated recognizer predicate.</span></div>
-<div class="line"><a name="l05276"></a><span class="lineno"> 5276</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l05277"></a><span class="lineno"> 5277</span>&#160;<span class="stringliteral">        If the constructor is named `name`, then the recognizer `is_name`.</span></div>
-<div class="line"><a name="l05278"></a><span class="lineno"> 5278</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l05279"></a><span class="lineno"> 5279</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = Datatype(&#39;List&#39;)</span></div>
-<div class="line"><a name="l05280"></a><span class="lineno"> 5280</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;cons&#39;, (&#39;car&#39;, IntSort()), (&#39;cdr&#39;, List))</span></div>
-<div class="line"><a name="l05281"></a><span class="lineno"> 5281</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;nil&#39;)</span></div>
-<div class="line"><a name="l05282"></a><span class="lineno"> 5282</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = List.create()</span></div>
-<div class="line"><a name="l05283"></a><span class="lineno"> 5283</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; # List is now a Z3 declaration</span></div>
-<div class="line"><a name="l05284"></a><span class="lineno"> 5284</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.num_constructors()</span></div>
-<div class="line"><a name="l05285"></a><span class="lineno"> 5285</span>&#160;<span class="stringliteral">        2</span></div>
-<div class="line"><a name="l05286"></a><span class="lineno"> 5286</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.recognizer(0)</span></div>
-<div class="line"><a name="l05287"></a><span class="lineno"> 5287</span>&#160;<span class="stringliteral">        is(cons)</span></div>
-<div class="line"><a name="l05288"></a><span class="lineno"> 5288</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.recognizer(1)</span></div>
-<div class="line"><a name="l05289"></a><span class="lineno"> 5289</span>&#160;<span class="stringliteral">        is(nil)</span></div>
-<div class="line"><a name="l05290"></a><span class="lineno"> 5290</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; simplify(List.is_nil(List.cons(10, List.nil)))</span></div>
-<div class="line"><a name="l05291"></a><span class="lineno"> 5291</span>&#160;<span class="stringliteral">        False</span></div>
-<div class="line"><a name="l05292"></a><span class="lineno"> 5292</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; simplify(List.is_cons(List.cons(10, List.nil)))</span></div>
-<div class="line"><a name="l05293"></a><span class="lineno"> 5293</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l05294"></a><span class="lineno"> 5294</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; l = Const(&#39;l&#39;, List)</span></div>
-<div class="line"><a name="l05295"></a><span class="lineno"> 5295</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; simplify(List.is_cons(l))</span></div>
-<div class="line"><a name="l05296"></a><span class="lineno"> 5296</span>&#160;<span class="stringliteral">        is(cons, l)</span></div>
-<div class="line"><a name="l05297"></a><span class="lineno"> 5297</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l05298"></a><span class="lineno"> 5298</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
-<div class="line"><a name="l05299"></a><span class="lineno"> 5299</span>&#160;            _z3_assert(idx &lt; self.num_constructors(), <span class="stringliteral">&quot;Invalid recognizer index&quot;</span>)</div>
-<div class="line"><a name="l05300"></a><span class="lineno"> 5300</span>&#160;        <span class="keywordflow">return</span> FuncDeclRef(<a class="code" href="group__capi.html#gab6f226a6e0ea2097e53cc8ca4f3f3a39">Z3_get_datatype_sort_recognizer</a>(self.ctx_ref(), self.ast, idx), self.ctx)</div>
-<div class="line"><a name="l05301"></a><span class="lineno"> 5301</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05279">5279</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l05279"></a><span class="lineno"> 5279</span>&#160;    <span class="keyword">def </span>recognizer(self, idx):</div>
+<div class="line"><a name="l05280"></a><span class="lineno"> 5280</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;In Z3, each constructor has an associated recognizer predicate.</span></div>
+<div class="line"><a name="l05281"></a><span class="lineno"> 5281</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l05282"></a><span class="lineno"> 5282</span>&#160;<span class="stringliteral">        If the constructor is named `name`, then the recognizer `is_name`.</span></div>
+<div class="line"><a name="l05283"></a><span class="lineno"> 5283</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l05284"></a><span class="lineno"> 5284</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = Datatype(&#39;List&#39;)</span></div>
+<div class="line"><a name="l05285"></a><span class="lineno"> 5285</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;cons&#39;, (&#39;car&#39;, IntSort()), (&#39;cdr&#39;, List))</span></div>
+<div class="line"><a name="l05286"></a><span class="lineno"> 5286</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.declare(&#39;nil&#39;)</span></div>
+<div class="line"><a name="l05287"></a><span class="lineno"> 5287</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List = List.create()</span></div>
+<div class="line"><a name="l05288"></a><span class="lineno"> 5288</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; # List is now a Z3 declaration</span></div>
+<div class="line"><a name="l05289"></a><span class="lineno"> 5289</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.num_constructors()</span></div>
+<div class="line"><a name="l05290"></a><span class="lineno"> 5290</span>&#160;<span class="stringliteral">        2</span></div>
+<div class="line"><a name="l05291"></a><span class="lineno"> 5291</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.recognizer(0)</span></div>
+<div class="line"><a name="l05292"></a><span class="lineno"> 5292</span>&#160;<span class="stringliteral">        is(cons)</span></div>
+<div class="line"><a name="l05293"></a><span class="lineno"> 5293</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; List.recognizer(1)</span></div>
+<div class="line"><a name="l05294"></a><span class="lineno"> 5294</span>&#160;<span class="stringliteral">        is(nil)</span></div>
+<div class="line"><a name="l05295"></a><span class="lineno"> 5295</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; simplify(List.is_nil(List.cons(10, List.nil)))</span></div>
+<div class="line"><a name="l05296"></a><span class="lineno"> 5296</span>&#160;<span class="stringliteral">        False</span></div>
+<div class="line"><a name="l05297"></a><span class="lineno"> 5297</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; simplify(List.is_cons(List.cons(10, List.nil)))</span></div>
+<div class="line"><a name="l05298"></a><span class="lineno"> 5298</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l05299"></a><span class="lineno"> 5299</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; l = Const(&#39;l&#39;, List)</span></div>
+<div class="line"><a name="l05300"></a><span class="lineno"> 5300</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; simplify(List.is_cons(l))</span></div>
+<div class="line"><a name="l05301"></a><span class="lineno"> 5301</span>&#160;<span class="stringliteral">        is(cons, l)</span></div>
+<div class="line"><a name="l05302"></a><span class="lineno"> 5302</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l05303"></a><span class="lineno"> 5303</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
+<div class="line"><a name="l05304"></a><span class="lineno"> 5304</span>&#160;            _z3_assert(idx &lt; self.num_constructors(), <span class="stringliteral">&quot;Invalid recognizer index&quot;</span>)</div>
+<div class="line"><a name="l05305"></a><span class="lineno"> 5305</span>&#160;        <span class="keywordflow">return</span> FuncDeclRef(<a class="code" href="group__capi.html#gab6f226a6e0ea2097e53cc8ca4f3f3a39">Z3_get_datatype_sort_recognizer</a>(self.ctx_ref(), self.ast, idx), self.ctx)</div>
+<div class="line"><a name="l05306"></a><span class="lineno"> 5306</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -456,7 +456,7 @@ is(cons, l)
 <div class="ttc" id="agroup__capi_html_ga6b7db7830f1e98554b7179522f8c42c4"><div class="ttname"><a href="group__capi.html#ga6b7db7830f1e98554b7179522f8c42c4">Z3_get_datatype_sort_constructor</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_get_datatype_sort_constructor(Z3_context c, Z3_sort t, unsigned idx)</div><div class="ttdoc">Return idx'th constructor.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:49 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:44 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -132,6 +132,10 @@ Properties</h2></td></tr>
 <tr class="memitem:a2503c4f4f43a42e071b4c8b0595548d4"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_func_interp.html#a2503c4f4f43a42e071b4c8b0595548d4">Arity</a><code> [get]</code></td></tr>
 <tr class="memdesc:a2503c4f4f43a42e071b4c8b0595548d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The arity of the function interpretation  <a href="class_microsoft_1_1_z3_1_1_func_interp.html#a2503c4f4f43a42e071b4c8b0595548d4">More...</a><br /></td></tr>
 <tr class="separator:a2503c4f4f43a42e071b4c8b0595548d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_microsoft_1_1_z3_1_1_z3_object"><td colspan="2" onclick="javascript:toggleInherit('properties_class_microsoft_1_1_z3_1_1_z3_object')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html">Z3Object</a></td></tr>
+<tr class="memitem:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a><code> [get]</code></td></tr>
+<tr class="memdesc:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access <a class="el" href="class_microsoft_1_1_z3_1_1_context.html" title="The main interaction with Z3 happens via the Context.">Context</a> object  <a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">More...</a><br /></td></tr>
+<tr class="separator:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A function interpretation is represented as a finite map and an 'else' value. Each entry in the finite map represents the value of a function given a set of arguments. <br  />
@@ -215,7 +219,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_func_interp_8cs_source.html#l00157">157</a> of file <a class="el" href="_func_interp_8cs_source.html">FuncInterp.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_func_interp_get_arity(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_func_interp_get_arity(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -247,7 +251,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keywordflow">return</span> Expr.Create(Context, Native.Z3_func_interp_get_else(Context.nCtx, NativeObject));</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keywordflow">return</span> Expr.Create(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_func_interp_get_else(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject));</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            }</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -285,7 +289,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                uint n = <a class="code" href="class_microsoft_1_1_z3_1_1_func_interp.html#ad147fa7fff4df57c91c4171d0781f5ce">NumEntries</a>;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                Entry[] res = <span class="keyword">new</span> Entry[n];</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <span class="keywordflow">for</span> (uint i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    res[i] = <span class="keyword">new</span> Entry(Context, Native.Z3_func_interp_get_entry(Context.nCtx, NativeObject, i));</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    res[i] = <span class="keyword">new</span> Entry(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_func_interp_get_entry(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i));</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
@@ -318,18 +322,19 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_func_interp_8cs_source.html#l00121">121</a> of file <a class="el" href="_func_interp_8cs_source.html">FuncInterp.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_func_interp_get_num_entries(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_func_interp_get_num_entries(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_z3_object_html_acf606a89a6d7474fa0ef78c69da736c7"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Microsoft.Z3.Z3Object.Context</a></div><div class="ttdeci">Context Context</div><div class="ttdoc">Access Context object</div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8cs_source.html#l00120">Z3Object.cs:120</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_func_interp_html_ad147fa7fff4df57c91c4171d0781f5ce"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_func_interp.html#ad147fa7fff4df57c91c4171d0781f5ce">Microsoft.Z3.FuncInterp.NumEntries</a></div><div class="ttdeci">uint NumEntries</div><div class="ttdoc">The number of entries in the function interpretation.</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8cs_source.html#l00121">FuncInterp.cs:121</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_func_interp_html_aad75f221f015a1984f0c2a135ccc4da0"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_func_interp.html#aad75f221f015a1984f0c2a135ccc4da0">Microsoft.Z3.FuncInterp.Entries</a></div><div class="ttdeci">Entry[] Entries</div><div class="ttdoc">The entries in the function interpretation</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8cs_source.html#l00129">FuncInterp.cs:129</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_func_interp_html_adc25dcc29a405e0a3c049413203f58e2"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_func_interp.html#adc25dcc29a405e0a3c049413203f58e2">Microsoft.Z3.FuncInterp.Else</a></div><div class="ttdeci">Expr Else</div><div class="ttdoc">The (symbolic) ‘else’ value of the function interpretation.</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8cs_source.html#l00145">FuncInterp.cs:145</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:48 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:43 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

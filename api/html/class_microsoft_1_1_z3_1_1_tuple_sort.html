@@ -146,6 +146,10 @@ Properties</h2></td></tr>
 <tr class="memitem:a4e52f01782f5eb0e04cfba8aa2130e7e inherit properties_class_microsoft_1_1_z3_1_1_a_s_t"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_a_s_t.html#a4e52f01782f5eb0e04cfba8aa2130e7e">IsFuncDecl</a><code> [get]</code></td></tr>
 <tr class="memdesc:a4e52f01782f5eb0e04cfba8aa2130e7e inherit properties_class_microsoft_1_1_z3_1_1_a_s_t"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the <a class="el" href="class_microsoft_1_1_z3_1_1_a_s_t.html" title="The abstract syntax tree (AST) class.">AST</a> is a FunctionDeclaration  <a href="class_microsoft_1_1_z3_1_1_a_s_t.html#a4e52f01782f5eb0e04cfba8aa2130e7e">More...</a><br /></td></tr>
 <tr class="separator:a4e52f01782f5eb0e04cfba8aa2130e7e inherit properties_class_microsoft_1_1_z3_1_1_a_s_t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_microsoft_1_1_z3_1_1_z3_object"><td colspan="2" onclick="javascript:toggleInherit('properties_class_microsoft_1_1_z3_1_1_z3_object')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html">Z3Object</a></td></tr>
+<tr class="memitem:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a><code> [get]</code></td></tr>
+<tr class="memdesc:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access <a class="el" href="class_microsoft_1_1_z3_1_1_context.html" title="The main interaction with Z3 happens via the Context.">Context</a> object  <a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">More...</a><br /></td></tr>
+<tr class="separator:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -235,7 +239,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                uint n = <a class="code" href="class_microsoft_1_1_z3_1_1_tuple_sort.html#a19369180363c5a6b3ef1c29eda34eed3">NumFields</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                FuncDecl[] res = <span class="keyword">new</span> FuncDecl[n];</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">for</span> (uint i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    res[i] = <span class="keyword">new</span> FuncDecl(Context, Native.Z3_get_tuple_sort_field_decl(Context.nCtx, NativeObject, i));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    res[i] = <span class="keyword">new</span> FuncDecl(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_get_tuple_sort_field_decl(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i));</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
@@ -269,7 +273,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> FuncDecl(Context, Native.Z3_get_tuple_sort_mk_decl(Context.nCtx, NativeObject));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> FuncDecl(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_get_tuple_sort_mk_decl(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject));</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -299,16 +303,17 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_tuple_sort_8cs_source.html#l00046">46</a> of file <a class="el" href="_tuple_sort_8cs_source.html">TupleSort.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_tuple_sort_num_fields(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_tuple_sort_num_fields(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_tuple_sort_html_a19369180363c5a6b3ef1c29eda34eed3"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_tuple_sort.html#a19369180363c5a6b3ef1c29eda34eed3">Microsoft.Z3.TupleSort.NumFields</a></div><div class="ttdeci">uint NumFields</div><div class="ttdoc">The number of fields in the tuple.</div><div class="ttdef"><b>Definition:</b> <a href="_tuple_sort_8cs_source.html#l00046">TupleSort.cs:46</a></div></div>
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_z3_object_html_acf606a89a6d7474fa0ef78c69da736c7"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Microsoft.Z3.Z3Object.Context</a></div><div class="ttdeci">Context Context</div><div class="ttdoc">Access Context object</div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8cs_source.html#l00120">Z3Object.cs:120</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:48 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:43 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -129,6 +129,10 @@ Properties</h2></td></tr>
 <tr class="memitem:aeb21dc751c0958f6568fc31afeac9fb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_solver.html">Solver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_tactic.html#aeb21dc751c0958f6568fc31afeac9fb6">Solver</a><code> [get]</code></td></tr>
 <tr class="memdesc:aeb21dc751c0958f6568fc31afeac9fb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a solver that is implemented using the given tactic.  <a href="class_microsoft_1_1_z3_1_1_tactic.html#aeb21dc751c0958f6568fc31afeac9fb6">More...</a><br /></td></tr>
 <tr class="separator:aeb21dc751c0958f6568fc31afeac9fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_microsoft_1_1_z3_1_1_z3_object"><td colspan="2" onclick="javascript:toggleInherit('properties_class_microsoft_1_1_z3_1_1_z3_object')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html">Z3Object</a></td></tr>
+<tr class="memitem:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a><code> [get]</code></td></tr>
+<tr class="memdesc:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access <a class="el" href="class_microsoft_1_1_z3_1_1_context.html" title="The main interaction with Z3 happens via the Context.">Context</a> object  <a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">More...</a><br /></td></tr>
+<tr class="separator:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Tactics are the basic building block for creating custom solvers for specific problem domains. The complete list of tactics may be obtained using <code><a class="el" href="class_microsoft_1_1_z3_1_1_context.html#a406eba8a200beb676a425f6026a32e46" title="The number of supported tactics.">Context.NumTactics</a></code> and <code><a class="el" href="class_microsoft_1_1_z3_1_1_context.html#a14f289fa3bb547fb9d75bb26f37d0fb9" title="The names of all supported tactics.">Context.TacticNames</a></code>. It may also be obtained using the command <code>(help-tactic)</code> in the SMT 2.0 front-end. </p>
@@ -175,13 +179,13 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            Debug.Assert(g != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            Context.CheckContextMatch(g);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch(g);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> (p == <span class="keyword">null</span>)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> ApplyResult(Context, Native.Z3_tactic_apply(Context.nCtx, NativeObject, g.NativeObject));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> ApplyResult(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_tactic_apply(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, g.NativeObject));</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                Context.CheckContextMatch(p);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> ApplyResult(Context, Native.Z3_tactic_apply_ex(Context.nCtx, NativeObject, g.NativeObject, p.NativeObject));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch(p);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> ApplyResult(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_tactic_apply_ex(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, g.NativeObject, p.NativeObject));</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -217,7 +221,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> Native.Z3_tactic_get_help(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> Native.Z3_tactic_get_help(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -247,7 +251,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_tactic_8cs_source.html#l00050">50</a> of file <a class="el" href="_tactic_8cs_source.html">Tactic.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">new</span> ParamDescrs(Context, Native.Z3_tactic_get_param_descrs(Context.nCtx, NativeObject)); }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">new</span> ParamDescrs(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_tactic_get_param_descrs(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject)); }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -280,7 +284,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">return</span> Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af1475836f8666da83ea3b75179253ac6">MkSolver</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af1475836f8666da83ea3b75179253ac6">MkSolver</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -322,10 +326,11 @@ Properties</h2></td></tr>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_tactic_html_af07faf164d13a507a8d97d173c04549c"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_tactic.html#af07faf164d13a507a8d97d173c04549c">Microsoft.Z3.Tactic.Apply</a></div><div class="ttdeci">ApplyResult Apply(Goal g, Params p=null)</div><div class="ttdoc">Execute the tactic over the goal.</div><div class="ttdef"><b>Definition:</b> <a href="_tactic_8cs_source.html#l00058">Tactic.cs:58</a></div></div>
-<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_context_html_af1475836f8666da83ea3b75179253ac6"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_context.html#af1475836f8666da83ea3b75179253ac6">Microsoft.Z3.Context.MkSolver</a></div><div class="ttdeci">Solver MkSolver(Symbol logic=null)</div><div class="ttdoc">Creates a new (incremental) solver.</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cs_source.html#l03861">Context.cs:3861</a></div></div>
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_z3_object_html_acf606a89a6d7474fa0ef78c69da736c7"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Microsoft.Z3.Z3Object.Context</a></div><div class="ttdeci">Context Context</div><div class="ttdoc">Access Context object</div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8cs_source.html#l00120">Z3Object.cs:120</a></div></div>
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_context_html_af1475836f8666da83ea3b75179253ac6"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_context.html#af1475836f8666da83ea3b75179253ac6">Microsoft.Z3.Context.MkSolver</a></div><div class="ttdeci">Solver MkSolver(Symbol logic=null)</div><div class="ttdoc">Creates a new (incremental) solver.</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cs_source.html#l03890">Context.cs:3890</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:48 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:43 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

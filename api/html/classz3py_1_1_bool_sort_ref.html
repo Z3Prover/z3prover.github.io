@@ -165,7 +165,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Booleans. </p>
 <pre class="fragment">Boolean sort.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01501">1501</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01506">1506</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa9d469a670f6bab296b858f1be04ac93"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9d469a670f6bab296b858f1be04ac93">&#9670;&nbsp;</a></span>cast()</h2>
@@ -206,30 +206,30 @@ Bool
 </pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_sort_ref.html#aa9d469a670f6bab296b858f1be04ac93">SortRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01504">1504</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;    <span class="keyword">def </span>cast(self, val):</div>
-<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Try to cast `val` as a Boolean.</span></div>
-<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = BoolSort().cast(True)</span></div>
-<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x</span></div>
-<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; is_expr(x)</span></div>
-<div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160;<span class="stringliteral">        True</span></div>
-<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; is_expr(True)</span></div>
-<div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;<span class="stringliteral">        False</span></div>
-<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.sort()</span></div>
-<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;<span class="stringliteral">        Bool</span></div>
-<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;        <span class="keywordflow">if</span> isinstance(val, bool):</div>
-<div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#ae964a3cae27fcd4de94ecdae0cb68467">BoolVal</a>(val, self.ctx)</div>
-<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
-<div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> <a class="code" href="namespacez3py.html#a72088668440fe702e0ea1106c4084f57">is_expr</a>(val):</div>
-<div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;                msg = <span class="stringliteral">&quot;True, False or Z3 Boolean expression expected. Received %s of type %s&quot;</span></div>
-<div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;                _z3_assert(<a class="code" href="namespacez3py.html#a72088668440fe702e0ea1106c4084f57">is_expr</a>(val), msg % (val, type(val)))</div>
-<div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.eq(val.sort()):</div>
-<div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;                _z3_assert(self.eq(val.sort()), <span class="stringliteral">&quot;Value cannot be converted into a Z3 Boolean value&quot;</span>)</div>
-<div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;        <span class="keywordflow">return</span> val</div>
-<div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01509">1509</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;    <span class="keyword">def </span>cast(self, val):</div>
+<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Try to cast `val` as a Boolean.</span></div>
+<div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = BoolSort().cast(True)</span></div>
+<div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x</span></div>
+<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; is_expr(x)</span></div>
+<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;<span class="stringliteral">        True</span></div>
+<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; is_expr(True)</span></div>
+<div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;<span class="stringliteral">        False</span></div>
+<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x.sort()</span></div>
+<div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;<span class="stringliteral">        Bool</span></div>
+<div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;        <span class="keywordflow">if</span> isinstance(val, bool):</div>
+<div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacez3py.html#ae964a3cae27fcd4de94ecdae0cb68467">BoolVal</a>(val, self.ctx)</div>
+<div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
+<div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> <a class="code" href="namespacez3py.html#a72088668440fe702e0ea1106c4084f57">is_expr</a>(val):</div>
+<div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;                msg = <span class="stringliteral">&quot;True, False or Z3 Boolean expression expected. Received %s of type %s&quot;</span></div>
+<div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;                _z3_assert(<a class="code" href="namespacez3py.html#a72088668440fe702e0ea1106c4084f57">is_expr</a>(val), msg % (val, type(val)))</div>
+<div class="line"><a name="l01528"></a><span class="lineno"> 1528</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.eq(val.sort()):</div>
+<div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160;                _z3_assert(self.eq(val.sort()), <span class="stringliteral">&quot;Value cannot be converted into a Z3 Boolean value&quot;</span>)</div>
+<div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;        <span class="keywordflow">return</span> val</div>
+<div class="line"><a name="l01531"></a><span class="lineno"> 1531</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -249,11 +249,11 @@ Bool
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01533">1533</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;    <span class="keyword">def </span><a class="code" href="namespacez3py.html#aa98e43402f6da8b26d19cca280ac7852">is_bool</a>(self):</div>
-<div class="line"><a name="l01534"></a><span class="lineno"> 1534</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
-<div class="line"><a name="l01535"></a><span class="lineno"> 1535</span>&#160; </div>
-<div class="line"><a name="l01536"></a><span class="lineno"> 1536</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01538">1538</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l01538"></a><span class="lineno"> 1538</span>&#160;    <span class="keyword">def </span><a class="code" href="namespacez3py.html#aa98e43402f6da8b26d19cca280ac7852">is_bool</a>(self):</div>
+<div class="line"><a name="l01539"></a><span class="lineno"> 1539</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><a name="l01540"></a><span class="lineno"> 1540</span>&#160; </div>
+<div class="line"><a name="l01541"></a><span class="lineno"> 1541</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -273,12 +273,12 @@ Bool
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01530">1530</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;    <span class="keyword">def </span><a class="code" href="namespacez3py.html#aacb8236340e61612d099471ff9406a66">is_int</a>(self):</div>
-<div class="line"><a name="l01531"></a><span class="lineno"> 1531</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
-<div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01535">1535</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l01535"></a><span class="lineno"> 1535</span>&#160;    <span class="keyword">def </span><a class="code" href="namespacez3py.html#aacb8236340e61612d099471ff9406a66">is_int</a>(self):</div>
+<div class="line"><a name="l01536"></a><span class="lineno"> 1536</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><a name="l01537"></a><span class="lineno"> 1537</span>&#160; </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02947">IntNumRef.as_long()</a>, and <a class="el" href="z3py_8py_source.html#l02307">ArithSortRef.subsort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02952">IntNumRef.as_long()</a>, and <a class="el" href="z3py_8py_source.html#l02312">ArithSortRef.subsort()</a>.</p>
 
 </div>
 </div>
@@ -314,22 +314,22 @@ True
 </pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_sort_ref.html#a34514723de5ee70df32778f75fa284fe">SortRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01527">1527</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;    <span class="keyword">def </span>subsort(self, other):</div>
-<div class="line"><a name="l01528"></a><span class="lineno"> 1528</span>&#160;        <span class="keywordflow">return</span> isinstance(other, ArithSortRef)</div>
-<div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l01532">1532</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160;    <span class="keyword">def </span>subsort(self, other):</div>
+<div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;        <span class="keywordflow">return</span> isinstance(other, ArithSortRef)</div>
+<div class="line"><a name="l01534"></a><span class="lineno"> 1534</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="anamespacez3py_html_aacb8236340e61612d099471ff9406a66"><div class="ttname"><a href="namespacez3py.html#aacb8236340e61612d099471ff9406a66">z3py.is_int</a></div><div class="ttdeci">def is_int(a)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02671">z3py.py:2671</a></div></div>
+<div class="ttc" id="anamespacez3py_html_aacb8236340e61612d099471ff9406a66"><div class="ttname"><a href="namespacez3py.html#aacb8236340e61612d099471ff9406a66">z3py.is_int</a></div><div class="ttdeci">def is_int(a)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l02676">z3py.py:2676</a></div></div>
 <div class="ttc" id="anamespacez3py_html_a07c5d7436e6cc76649ef11d122e6ebee"><div class="ttname"><a href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3py.z3_debug</a></div><div class="ttdeci">def z3_debug()</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l00062">z3py.py:62</a></div></div>
-<div class="ttc" id="anamespacez3py_html_ae964a3cae27fcd4de94ecdae0cb68467"><div class="ttname"><a href="namespacez3py.html#ae964a3cae27fcd4de94ecdae0cb68467">z3py.BoolVal</a></div><div class="ttdeci">def BoolVal(val, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01694">z3py.py:1694</a></div></div>
-<div class="ttc" id="anamespacez3py_html_a72088668440fe702e0ea1106c4084f57"><div class="ttname"><a href="namespacez3py.html#a72088668440fe702e0ea1106c4084f57">z3py.is_expr</a></div><div class="ttdeci">def is_expr(a)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01231">z3py.py:1231</a></div></div>
-<div class="ttc" id="anamespacez3py_html_aa98e43402f6da8b26d19cca280ac7852"><div class="ttname"><a href="namespacez3py.html#aa98e43402f6da8b26d19cca280ac7852">z3py.is_bool</a></div><div class="ttdeci">def is_bool(a)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01556">z3py.py:1556</a></div></div>
+<div class="ttc" id="anamespacez3py_html_ae964a3cae27fcd4de94ecdae0cb68467"><div class="ttname"><a href="namespacez3py.html#ae964a3cae27fcd4de94ecdae0cb68467">z3py.BoolVal</a></div><div class="ttdeci">def BoolVal(val, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01699">z3py.py:1699</a></div></div>
+<div class="ttc" id="anamespacez3py_html_a72088668440fe702e0ea1106c4084f57"><div class="ttname"><a href="namespacez3py.html#a72088668440fe702e0ea1106c4084f57">z3py.is_expr</a></div><div class="ttdeci">def is_expr(a)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01236">z3py.py:1236</a></div></div>
+<div class="ttc" id="anamespacez3py_html_aa98e43402f6da8b26d19cca280ac7852"><div class="ttname"><a href="namespacez3py.html#aa98e43402f6da8b26d19cca280ac7852">z3py.is_bool</a></div><div class="ttdeci">def is_bool(a)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l01561">z3py.py:1561</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:49 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:44 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

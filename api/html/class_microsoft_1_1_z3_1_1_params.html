@@ -142,6 +142,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e2d745cdb7a7b983f861ed6a9a541a7 inherit pub_methods_class_microsoft_1_1_z3_1_1_z3_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html#a6e2d745cdb7a7b983f861ed6a9a541a7">Dispose</a> ()</td></tr>
 <tr class="memdesc:a6e2d745cdb7a7b983f861ed6a9a541a7 inherit pub_methods_class_microsoft_1_1_z3_1_1_z3_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disposes of the underlying native <a class="el" href="namespace_microsoft_1_1_z3.html">Z3</a> object.  <a href="class_microsoft_1_1_z3_1_1_z3_object.html#a6e2d745cdb7a7b983f861ed6a9a541a7">More...</a><br /></td></tr>
 <tr class="separator:a6e2d745cdb7a7b983f861ed6a9a541a7 inherit pub_methods_class_microsoft_1_1_z3_1_1_z3_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header properties_class_microsoft_1_1_z3_1_1_z3_object"><td colspan="2" onclick="javascript:toggleInherit('properties_class_microsoft_1_1_z3_1_1_z3_object')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html">Z3Object</a></td></tr>
+<tr class="memitem:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a><code> [get]</code></td></tr>
+<tr class="memdesc:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access <a class="el" href="class_microsoft_1_1_z3_1_1_context.html" title="The main interaction with Z3 happens via the Context.">Context</a> object  <a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">More...</a><br /></td></tr>
+<tr class="separator:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A <a class="el" href="class_microsoft_1_1_z3_1_1_params.html" title="A Params objects represents a configuration in the form of Symbol/value pairs.">Params</a> objects represents a configuration in the form of Symbol/value pairs. </p>
@@ -186,7 +193,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_params_8cs_source.html#l00090">90</a> of file <a class="el" href="_params_8cs_source.html">Params.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            Native.Z3_params_set_bool(Context.nCtx, NativeObject, Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(name).NativeObject, (<span class="keywordtype">byte</span>)(value ? 1 : 0));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            Native.Z3_params_set_bool(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(name).NativeObject, (<span class="keywordtype">byte</span>)(value ? 1 : 0));</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -230,7 +237,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_params_8cs_source.html#l00108">108</a> of file <a class="el" href="_params_8cs_source.html">Params.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            Native.Z3_params_set_double(Context.nCtx, NativeObject, Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(name).NativeObject, value);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            Native.Z3_params_set_double(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(name).NativeObject, value);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -277,7 +284,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            Debug.Assert(name != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            Debug.Assert(value != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            Native.Z3_params_set_symbol(Context.nCtx, NativeObject, Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(name).NativeObject, Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(value).NativeObject);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            Native.Z3_params_set_symbol(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(name).NativeObject, <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(value).NativeObject);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -323,7 +330,7 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            Debug.Assert(value != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            Native.Z3_params_set_symbol(Context.nCtx, NativeObject, Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(name).NativeObject, value.NativeObject);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            Native.Z3_params_set_symbol(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(name).NativeObject, value.NativeObject);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -367,7 +374,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_params_8cs_source.html#l00099">99</a> of file <a class="el" href="_params_8cs_source.html">Params.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            Native.Z3_params_set_uint(Context.nCtx, NativeObject, Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(name).NativeObject, value);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            Native.Z3_params_set_uint(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(name).NativeObject, value);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -413,7 +420,7 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            Debug.Assert(name != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            Native.Z3_params_set_bool(Context.nCtx, NativeObject, name.NativeObject, (<span class="keywordtype">byte</span>)(value ? 1 : 0));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            Native.Z3_params_set_bool(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, name.NativeObject, (<span class="keywordtype">byte</span>)(value ? 1 : 0));</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -461,7 +468,7 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            Debug.Assert(name != <span class="keyword">null</span>);            </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            Native.Z3_params_set_double(Context.nCtx, NativeObject, name.NativeObject, value);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            Native.Z3_params_set_double(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, name.NativeObject, value);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -507,7 +514,7 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            Debug.Assert(value != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Native.Z3_params_set_symbol(Context.nCtx, NativeObject, name.NativeObject, Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(value).NativeObject);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Native.Z3_params_set_symbol(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, name.NativeObject, <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">MkSymbol</a>(value).NativeObject);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -554,7 +561,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            Debug.Assert(name != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            Debug.Assert(value != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            Native.Z3_params_set_symbol(Context.nCtx, NativeObject, name.NativeObject, value.NativeObject);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            Native.Z3_params_set_symbol(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, name.NativeObject, value.NativeObject);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -600,7 +607,7 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Debug.Assert(name != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            Native.Z3_params_set_uint(Context.nCtx, NativeObject, name.NativeObject, value);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            Native.Z3_params_set_uint(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, name.NativeObject, value);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -633,16 +640,17 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_params_8cs_source.html#l00140">140</a> of file <a class="el" href="_params_8cs_source.html">Params.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordflow">return</span> Native.Z3_params_to_string(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordflow">return</span> Native.Z3_params_to_string(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_context_html_af67ab6df999acca3b6c6d2af4d36e057"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">Microsoft.Z3.Context.MkSymbol</a></div><div class="ttdeci">IntSymbol MkSymbol(int i)</div><div class="ttdoc">Creates a new symbol using an integer.</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cs_source.html#l00090">Context.cs:90</a></div></div>
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_context_html_af67ab6df999acca3b6c6d2af4d36e057"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_context.html#af67ab6df999acca3b6c6d2af4d36e057">Microsoft.Z3.Context.MkSymbol</a></div><div class="ttdeci">IntSymbol MkSymbol(int i)</div><div class="ttdoc">Creates a new symbol using an integer.</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cs_source.html#l00109">Context.cs:109</a></div></div>
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_z3_object_html_acf606a89a6d7474fa0ef78c69da736c7"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Microsoft.Z3.Z3Object.Context</a></div><div class="ttdeci">Context Context</div><div class="ttdoc">Access Context object</div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8cs_source.html#l00120">Z3Object.cs:120</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:48 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:43 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

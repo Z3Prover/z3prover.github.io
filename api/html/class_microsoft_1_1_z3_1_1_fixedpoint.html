@@ -185,6 +185,10 @@ Properties</h2></td></tr>
 <tr class="memitem:a699d6f2e6a6282d3057145a5fb97a04b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_statistics.html">Statistics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_fixedpoint.html#a699d6f2e6a6282d3057145a5fb97a04b">Statistics</a><code> [get]</code></td></tr>
 <tr class="memdesc:a699d6f2e6a6282d3057145a5fb97a04b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_microsoft_1_1_z3_1_1_fixedpoint.html" title="Object for managing fixedpoints">Fixedpoint</a> statistics.  <a href="class_microsoft_1_1_z3_1_1_fixedpoint.html#a699d6f2e6a6282d3057145a5fb97a04b">More...</a><br /></td></tr>
 <tr class="separator:a699d6f2e6a6282d3057145a5fb97a04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_microsoft_1_1_z3_1_1_z3_object"><td colspan="2" onclick="javascript:toggleInherit('properties_class_microsoft_1_1_z3_1_1_z3_object')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html">Z3Object</a></td></tr>
+<tr class="memitem:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a><code> [get]</code></td></tr>
+<tr class="memdesc:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access <a class="el" href="class_microsoft_1_1_z3_1_1_context.html" title="The main interaction with Z3 happens via the Context.">Context</a> object  <a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">More...</a><br /></td></tr>
+<tr class="separator:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Object for managing fixedpoints </p>
@@ -272,7 +276,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_fixedpoint_8cs_source.html#l00215">215</a> of file <a class="el" href="_fixedpoint_8cs_source.html">Fixedpoint.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            Native.Z3_fixedpoint_add_cover(Context.nCtx, NativeObject, level, predicate.NativeObject, property.NativeObject);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            Native.Z3_fixedpoint_add_cover(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, level, predicate.NativeObject, property.NativeObject);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -320,8 +324,8 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            Debug.Assert(pred != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            Debug.Assert(args != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            Context.CheckContextMatch(pred);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            Native.Z3_fixedpoint_add_fact(Context.nCtx, NativeObject, pred.NativeObject, (uint)args.Length, args);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch(pred);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            Native.Z3_fixedpoint_add_fact(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, pred.NativeObject, (uint)args.Length, args);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -368,8 +372,8 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            Debug.Assert(rule != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            Context.CheckContextMatch(rule);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            Native.Z3_fixedpoint_add_rule(Context.nCtx, NativeObject, rule.NativeObject, AST.GetNativeObject(name));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch(rule);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            Native.Z3_fixedpoint_add_rule(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, rule.NativeObject, AST.GetNativeObject(name));</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -407,10 +411,10 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Debug.Assert(constraints != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            Debug.Assert(constraints.All(c =&gt; c != <span class="keyword">null</span>));</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            Context.CheckContextMatch&lt;BoolExpr&gt;(constraints);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch&lt;BoolExpr&gt;(constraints);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">foreach</span> (BoolExpr a <span class="keywordflow">in</span> constraints)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                Native.Z3_fixedpoint_assert(Context.nCtx, NativeObject, a.NativeObject);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                Native.Z3_fixedpoint_assert(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, a.NativeObject);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -447,8 +451,8 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_fixedpoint_8cs_source.html#l00179">179</a> of file <a class="el" href="_fixedpoint_8cs_source.html">Fixedpoint.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            IntPtr ans = Native.Z3_fixedpoint_get_answer(Context.nCtx, NativeObject);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordflow">return</span> (ans == IntPtr.Zero) ? null : Expr.Create(Context, ans);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            IntPtr ans = Native.Z3_fixedpoint_get_answer(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordflow">return</span> (ans == IntPtr.Zero) ? null : Expr.Create(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, ans);</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -493,8 +497,8 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_fixedpoint_8cs_source.html#l00205">205</a> of file <a class="el" href="_fixedpoint_8cs_source.html">Fixedpoint.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            IntPtr res = Native.Z3_fixedpoint_get_cover_delta(Context.nCtx, NativeObject, level, predicate.NativeObject);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">return</span> (res == IntPtr.Zero) ? null : Expr.Create(Context, res);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            IntPtr res = Native.Z3_fixedpoint_get_cover_delta(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, level, predicate.NativeObject);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">return</span> (res == IntPtr.Zero) ? null : Expr.Create(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, res);</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -529,7 +533,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_fixedpoint_8cs_source.html#l00197">197</a> of file <a class="el" href="_fixedpoint_8cs_source.html">Fixedpoint.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">return</span> Native.Z3_fixedpoint_get_num_levels(Context.nCtx, NativeObject, predicate.NativeObject);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">return</span> Native.Z3_fixedpoint_get_num_levels(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, predicate.NativeObject);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -564,7 +568,7 @@ Properties</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_fixedpoint_8cs_source.html#l00188">188</a> of file <a class="el" href="_fixedpoint_8cs_source.html">Fixedpoint.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        {</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">return</span> Native.Z3_fixedpoint_get_reason_unknown(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">return</span> Native.Z3_fixedpoint_get_reason_unknown(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -599,7 +603,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_fixedpoint_8cs_source.html#l00293">293</a> of file <a class="el" href="_fixedpoint_8cs_source.html">Fixedpoint.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keyword">using</span> ASTVector av = <span class="keyword">new</span> ASTVector(Context, Native.Z3_fixedpoint_from_file(Context.nCtx, NativeObject, file));</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keyword">using</span> ASTVector av = <span class="keyword">new</span> ASTVector(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_fixedpoint_from_file(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, file));</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <span class="keywordflow">return</span> av.ToBoolExprArray();</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -633,7 +637,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_fixedpoint_8cs_source.html#l00302">302</a> of file <a class="el" href="_fixedpoint_8cs_source.html">Fixedpoint.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <span class="keyword">using</span> ASTVector av = <span class="keyword">new</span> ASTVector(Context, Native.Z3_fixedpoint_from_string(Context.nCtx, NativeObject, s));</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <span class="keyword">using</span> ASTVector av = <span class="keyword">new</span> ASTVector(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_fixedpoint_from_string(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, s));</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keywordflow">return</span> av.ToBoolExprArray();</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -671,8 +675,8 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        {</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            Debug.Assert(query != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            Context.CheckContextMatch(query);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a> r = (<a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>)Native.Z3_fixedpoint_query(Context.nCtx, NativeObject, query.NativeObject);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch(query);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a> r = (<a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>)Native.Z3_fixedpoint_query(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, query.NativeObject);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">switch</span> (r)</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>.Z3_L_TRUE: <span class="keywordflow">return</span> <a class="code" href="namespace_microsoft_1_1_z3.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Status</a>.SATISFIABLE;</div>
@@ -716,8 +720,8 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            Debug.Assert(relations != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            Debug.Assert(relations.All(rel =&gt; rel != <span class="keyword">null</span>));</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            Context.CheckContextMatch&lt;FuncDecl&gt;(relations);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a> r = (<a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>)Native.Z3_fixedpoint_query_relations(Context.nCtx, NativeObject,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch&lt;FuncDecl&gt;(relations);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a> r = (<a class="code" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a>)Native.Z3_fixedpoint_query_relations(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject,</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                   AST.ArrayLength(relations), AST.ArrayToNative(relations));</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">switch</span> (r)</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            {</div>
@@ -761,8 +765,8 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            Debug.Assert(f != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            Context.CheckContextMatch(f);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            Native.Z3_fixedpoint_register_relation(Context.nCtx, NativeObject, f.NativeObject);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch(f);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            Native.Z3_fixedpoint_register_relation(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, f.NativeObject);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -809,7 +813,7 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        {</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            Debug.Assert(f != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            Native.Z3_fixedpoint_set_predicate_representation(Context.nCtx, NativeObject,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            Native.Z3_fixedpoint_set_predicate_representation(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject,</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                               f.NativeObject, AST.ArrayLength(kinds), Symbol.ArrayToNative(kinds));</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        }</div>
@@ -845,7 +849,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_fixedpoint_8cs_source.html#l00223">223</a> of file <a class="el" href="_fixedpoint_8cs_source.html">Fixedpoint.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">return</span> Native.Z3_fixedpoint_to_string(Context.nCtx, NativeObject, 0, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">return</span> Native.Z3_fixedpoint_to_string(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, 0, <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -881,7 +885,7 @@ Properties</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_fixedpoint_8cs_source.html#l00243">243</a> of file <a class="el" href="_fixedpoint_8cs_source.html">Fixedpoint.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        {</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordflow">return</span> Native.Z3_fixedpoint_to_string(Context.nCtx, NativeObject,</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordflow">return</span> Native.Z3_fixedpoint_to_string(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject,</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                             AST.ArrayLength(queries), AST.ArrayToNative(queries));</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -929,8 +933,8 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        {</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            Debug.Assert(rule != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            Context.CheckContextMatch(rule);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            Native.Z3_fixedpoint_update_rule(Context.nCtx, NativeObject, rule.NativeObject, AST.GetNativeObject(name));</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch(rule);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            Native.Z3_fixedpoint_update_rule(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, rule.NativeObject, AST.GetNativeObject(name));</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -965,7 +969,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            {</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="keyword">using</span> ASTVector av = <span class="keyword">new</span> ASTVector(Context, Native.Z3_fixedpoint_get_assertions(Context.nCtx, NativeObject));</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="keyword">using</span> ASTVector av = <span class="keyword">new</span> ASTVector(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_fixedpoint_get_assertions(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject));</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="keywordflow">return</span> av.ToBoolExprArray();</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            }</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div>
@@ -998,7 +1002,7 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">return</span> Native.Z3_fixedpoint_get_help(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">return</span> Native.Z3_fixedpoint_get_help(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -1028,7 +1032,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_fixedpoint_8cs_source.html#l00060">60</a> of file <a class="el" href="_fixedpoint_8cs_source.html">Fixedpoint.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">new</span> ParamDescrs(Context, Native.Z3_fixedpoint_get_param_descrs(Context.nCtx, NativeObject)); }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">new</span> ParamDescrs(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_fixedpoint_get_param_descrs(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject)); }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -1060,8 +1064,8 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">set</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                Debug.Assert(value != <span class="keyword">null</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                Context.CheckContextMatch(value);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                Native.Z3_fixedpoint_set_params(Context.nCtx, NativeObject, value.NativeObject);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch(value);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                Native.Z3_fixedpoint_set_params(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, value.NativeObject);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -1096,7 +1100,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            {</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="keyword">using</span> ASTVector av = <span class="keyword">new</span> ASTVector(Context, Native.Z3_fixedpoint_get_rules(Context.nCtx, NativeObject));</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="keyword">using</span> ASTVector av = <span class="keyword">new</span> ASTVector(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_fixedpoint_get_rules(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject));</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="keywordflow">return</span> av.ToBoolExprArray();</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            }</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        }</div>
@@ -1130,7 +1134,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            {</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_microsoft_1_1_z3_1_1_fixedpoint.html#a699d6f2e6a6282d3057145a5fb97a04b">Statistics</a>(Context, Native.Z3_fixedpoint_get_statistics(Context.nCtx, NativeObject));</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_microsoft_1_1_z3_1_1_fixedpoint.html#a699d6f2e6a6282d3057145a5fb97a04b">Statistics</a>(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_fixedpoint_get_statistics(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject));</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            }</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -1138,12 +1142,13 @@ Properties</h2></td></tr>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_fixedpoint_html_a4948752a63694ab17235408631d7ac2d"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_fixedpoint.html#a4948752a63694ab17235408631d7ac2d">Microsoft.Z3.Fixedpoint.Assert</a></div><div class="ttdeci">void Assert(params BoolExpr[] constraints)</div><div class="ttdoc">Assert a constraint (or multiple) into the fixedpoint solver.</div><div class="ttdef"><b>Definition:</b> <a href="_fixedpoint_8cs_source.html#l00068">Fixedpoint.cs:68</a></div></div>
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_z3_object_html_acf606a89a6d7474fa0ef78c69da736c7"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Microsoft.Z3.Z3Object.Context</a></div><div class="ttdeci">Context Context</div><div class="ttdoc">Access Context object</div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8cs_source.html#l00120">Z3Object.cs:120</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_fixedpoint_html_a699d6f2e6a6282d3057145a5fb97a04b"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_fixedpoint.html#a699d6f2e6a6282d3057145a5fb97a04b">Microsoft.Z3.Fixedpoint.Statistics</a></div><div class="ttdeci">Statistics Statistics</div><div class="ttdoc">Fixedpoint statistics.</div><div class="ttdef"><b>Definition:</b> <a href="_fixedpoint_8cs_source.html#l00280">Fixedpoint.cs:280</a></div></div>
-<div class="ttc" id="agroup__capi_html_ga6c2de6ea89b244e37c3ffb17a9ea2a89"><div class="ttname"><a href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a></div><div class="ttdeci">Z3_lbool</div><div class="ttdoc">Lifted Boolean type: false, undefined, true.</div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00101">z3_api.h:101</a></div></div>
+<div class="ttc" id="agroup__capi_html_ga6c2de6ea89b244e37c3ffb17a9ea2a89"><div class="ttname"><a href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a></div><div class="ttdeci">Z3_lbool</div><div class="ttdoc">Lifted Boolean type: false, undefined, true.</div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00074">z3_api.h:74</a></div></div>
 <div class="ttc" id="anamespace_microsoft_1_1_z3_html_a67a0db04d321a74b7e7fcfd3f1a3f70b"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#a67a0db04d321a74b7e7fcfd3f1a3f70b">Microsoft.Z3.Status</a></div><div class="ttdeci">Status</div><div class="ttdoc">Status values.</div><div class="ttdef"><b>Definition:</b> <a href="_status_8cs_source.html#l00028">Status.cs:28</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:48 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:43 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -109,14 +109,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            Debug.Assert(k != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> 0 != Native.Z3_ast_map_contains(Context.nCtx, NativeObject, k.NativeObject);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> 0 != Native.Z3_ast_map_contains(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, k.NativeObject);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">public</span> AST Find(AST k)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            Debug.Assert(k != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> AST(Context, Native.Z3_ast_map_find(Context.nCtx, NativeObject, k.NativeObject));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> AST(Context, Native.Z3_ast_map_find(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, k.NativeObject));</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> Insert(AST k, AST v)</div>
@@ -124,38 +124,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            Debug.Assert(k != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            Debug.Assert(v != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            Native.Z3_ast_map_insert(Context.nCtx, NativeObject, k.NativeObject, v.NativeObject);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            Native.Z3_ast_map_insert(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, k.NativeObject, v.NativeObject);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> Erase(AST k)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            Debug.Assert(k != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            Native.Z3_ast_map_erase(Context.nCtx, NativeObject, k.NativeObject);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            Native.Z3_ast_map_erase(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, k.NativeObject);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> Reset()</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            Native.Z3_ast_map_reset(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            Native.Z3_ast_map_reset(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">public</span> uint Size</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_ast_map_size(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_ast_map_size(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">public</span> AST[] Keys</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keyword">using</span> ASTVector res = <span class="keyword">new</span> ASTVector(Context, Native.Z3_ast_map_keys(Context.nCtx, NativeObject));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keyword">using</span> ASTVector res = <span class="keyword">new</span> ASTVector(Context, Native.Z3_ast_map_keys(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject));</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">return</span> res.ToArray();</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> ToString()</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">return</span> Native.Z3_ast_map_to_string(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">return</span> Native.Z3_ast_map_to_string(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">        #region Internal</span></div>
@@ -187,26 +187,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">internal</span> <span class="keyword">override</span> <span class="keywordtype">void</span> IncRef(IntPtr o)</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#aed778ee6e118ba1cfdfba12ca7b06d2c">ASTMap_DRQ</a>.IncAndClear(Context, o);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#aed778ee6e118ba1cfdfba12ca7b06d2c">ASTMap_DRQ</a>.IncAndClear(Context, o);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            base.IncRef(o);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keyword">internal</span> <span class="keyword">override</span> <span class="keywordtype">void</span> DecRef(IntPtr o)</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            Context.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#aed778ee6e118ba1cfdfba12ca7b06d2c">ASTMap_DRQ</a>.Add(o);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.<a class="code" href="class_microsoft_1_1_z3_1_1_context.html#aed778ee6e118ba1cfdfba12ca7b06d2c">ASTMap_DRQ</a>.Add(o);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            base.DecRef(o);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">        #endregion</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_z3_object_html_acf606a89a6d7474fa0ef78c69da736c7"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Microsoft.Z3.Z3Object.Context</a></div><div class="ttdeci">Context Context</div><div class="ttdoc">Access Context object</div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8cs_source.html#l00120">Z3Object.cs:120</a></div></div>
 <div class="ttc" id="agroup__capi_html_gabd92a8f16a13fcdbb11e66f59967c399"><div class="ttname"><a href="group__capi.html#gabd92a8f16a13fcdbb11e66f59967c399">Z3_mk_ast_map</a></div><div class="ttdeci">Z3_ast_map Z3_API Z3_mk_ast_map(Z3_context c)</div><div class="ttdoc">Return an empty mapping from AST to AST.</div></div>
-<div class="ttc" id="anamespacez3py_html_ada058544efbae7608acaef3233aa4422"><div class="ttname"><a href="namespacez3py.html#ada058544efbae7608acaef3233aa4422">z3py.Contains</a></div><div class="ttdeci">def Contains(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l10928">z3py.py:10928</a></div></div>
-<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_context_html_aed778ee6e118ba1cfdfba12ca7b06d2c"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_context.html#aed778ee6e118ba1cfdfba12ca7b06d2c">Microsoft.Z3.Context.ASTMap_DRQ</a></div><div class="ttdeci">IDecRefQueue ASTMap_DRQ</div><div class="ttdoc">ASTMap DRQ</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cs_source.html#l04860">Context.cs:4860</a></div></div>
+<div class="ttc" id="anamespacez3py_html_ada058544efbae7608acaef3233aa4422"><div class="ttname"><a href="namespacez3py.html#ada058544efbae7608acaef3233aa4422">z3py.Contains</a></div><div class="ttdeci">def Contains(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l10995">z3py.py:10995</a></div></div>
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_context_html_aed778ee6e118ba1cfdfba12ca7b06d2c"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_context.html#aed778ee6e118ba1cfdfba12ca7b06d2c">Microsoft.Z3.Context.ASTMap_DRQ</a></div><div class="ttdeci">IDecRefQueue ASTMap_DRQ</div><div class="ttdoc">ASTMap DRQ</div><div class="ttdef"><b>Definition:</b> <a href="_context_8cs_source.html#l04889">Context.cs:4889</a></div></div>
 <div class="ttc" id="anamespace_microsoft_1_1_z3_html"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html">Microsoft.Z3</a></div><div class="ttdef"><b>Definition:</b> <a href="_algebraic_num_8cs_source.html#l00026">AlgebraicNum.cs:26</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:46 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:41 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

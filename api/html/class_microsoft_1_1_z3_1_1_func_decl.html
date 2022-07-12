@@ -223,6 +223,10 @@ Properties</h2></td></tr>
 <tr class="memitem:a4e52f01782f5eb0e04cfba8aa2130e7e inherit properties_class_microsoft_1_1_z3_1_1_a_s_t"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_a_s_t.html#a4e52f01782f5eb0e04cfba8aa2130e7e">IsFuncDecl</a><code> [get]</code></td></tr>
 <tr class="memdesc:a4e52f01782f5eb0e04cfba8aa2130e7e inherit properties_class_microsoft_1_1_z3_1_1_a_s_t"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the <a class="el" href="class_microsoft_1_1_z3_1_1_a_s_t.html" title="The abstract syntax tree (AST) class.">AST</a> is a FunctionDeclaration  <a href="class_microsoft_1_1_z3_1_1_a_s_t.html#a4e52f01782f5eb0e04cfba8aa2130e7e">More...</a><br /></td></tr>
 <tr class="separator:a4e52f01782f5eb0e04cfba8aa2130e7e inherit properties_class_microsoft_1_1_z3_1_1_a_s_t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_microsoft_1_1_z3_1_1_z3_object"><td colspan="2" onclick="javascript:toggleInherit('properties_class_microsoft_1_1_z3_1_1_z3_object')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html">Z3Object</a></td></tr>
+<tr class="memitem:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a><code> [get]</code></td></tr>
+<tr class="memdesc:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access <a class="el" href="class_microsoft_1_1_z3_1_1_context.html" title="The main interaction with Z3 happens via the Context.">Context</a> object  <a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">More...</a><br /></td></tr>
+<tr class="separator:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function declarations. </p>
@@ -266,8 +270,8 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        {</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            Debug.Assert(<a class="code" href="class_microsoft_1_1_z3_1_1_func_decl.html#a393b39abff242eae7b1ccb23f67c0226">args</a> == <span class="keyword">null</span> || <a class="code" href="class_microsoft_1_1_z3_1_1_func_decl.html#a393b39abff242eae7b1ccb23f67c0226">args</a>.All(a =&gt; a != <span class="keyword">null</span>));</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            Context.CheckContextMatch&lt;Expr&gt;(<a class="code" href="class_microsoft_1_1_z3_1_1_func_decl.html#a393b39abff242eae7b1ccb23f67c0226">args</a>);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">return</span> Expr.Create(Context, <span class="keyword">this</span>, <a class="code" href="class_microsoft_1_1_z3_1_1_func_decl.html#a393b39abff242eae7b1ccb23f67c0226">args</a>);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.CheckContextMatch&lt;Expr&gt;(<a class="code" href="class_microsoft_1_1_z3_1_1_func_decl.html#a393b39abff242eae7b1ccb23f67c0226">args</a>);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">return</span> Expr.Create(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, <span class="keyword">this</span>, <a class="code" href="class_microsoft_1_1_z3_1_1_func_decl.html#a393b39abff242eae7b1ccb23f67c0226">args</a>);</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -458,7 +462,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_func_decl_8cs_source.html#l00075">75</a> of file <a class="el" href="_func_decl_8cs_source.html">FuncDecl.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> Native.Z3_func_decl_to_string(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> Native.Z3_func_decl_to_string(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -573,7 +577,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_func_decl_8cs_source.html#l00092">92</a> of file <a class="el" href="_func_decl_8cs_source.html">FuncDecl.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_arity(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_arity(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="_model_8cs_source.html#l00049">Model.ConstInterp()</a>, and <a class="el" href="_model_8cs_source.html#l00069">Model.FuncInterp()</a>.</p>
@@ -604,7 +608,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_func_decl_8cs_source.html#l00137">137</a> of file <a class="el" href="_func_decl_8cs_source.html">FuncDecl.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> (<a class="code" href="group__capi.html#ga1fe4399e5468621e2a799a680c6667cd">Z3_decl_kind</a>)Native.Z3_get_decl_kind(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> (<a class="code" href="group__capi.html#ga1fe4399e5468621e2a799a680c6667cd">Z3_decl_kind</a>)Native.Z3_get_decl_kind(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -640,7 +644,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                Sort[] res = <span class="keyword">new</span> Sort[n];</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordflow">for</span> (uint i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    res[i] = Sort.Create(Context, Native.Z3_get_domain(Context.nCtx, NativeObject, i));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    res[i] = Sort.Create(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_get_domain(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i));</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            }</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
@@ -672,7 +676,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_func_decl_8cs_source.html#l00101">101</a> of file <a class="el" href="_func_decl_8cs_source.html">FuncDecl.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_domain_size(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_domain_size(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -701,7 +705,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_func_decl_8cs_source.html#l00084">84</a> of file <a class="el" href="_func_decl_8cs_source.html">FuncDecl.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_func_decl_id(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_func_decl_id(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -732,7 +736,7 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        {</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <span class="keywordflow">return</span> Symbol.Create(Context, Native.Z3_get_decl_name(Context.nCtx, NativeObject));</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <span class="keywordflow">return</span> Symbol.Create(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_get_decl_name(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject));</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            }</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -762,7 +766,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_func_decl_8cs_source.html#l00156">156</a> of file <a class="el" href="_func_decl_8cs_source.html">FuncDecl.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_decl_num_parameters(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_decl_num_parameters(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -798,29 +802,29 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                Parameter[] res = <span class="keyword">new</span> Parameter[num];</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keywordflow">for</span> (uint i = 0; i &lt; num; i++)</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a> k = (<a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a>)Native.Z3_get_decl_parameter_kind(Context.nCtx, NativeObject, i);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a> k = (<a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a>)Native.Z3_get_decl_parameter_kind(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i);</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    <span class="keywordflow">switch</span> (k)</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                    {</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a>.Z3_PARAMETER_INT:</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, Native.Z3_get_decl_int_parameter(Context.nCtx, NativeObject, i));</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, Native.Z3_get_decl_int_parameter(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i));</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a>.Z3_PARAMETER_DOUBLE:</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, Native.Z3_get_decl_double_parameter(Context.nCtx, NativeObject, i));</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, Native.Z3_get_decl_double_parameter(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i));</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a>.Z3_PARAMETER_SYMBOL:</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, Symbol.Create(Context, Native.Z3_get_decl_symbol_parameter(Context.nCtx, NativeObject, i)));</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, Symbol.Create(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_get_decl_symbol_parameter(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i)));</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a>.Z3_PARAMETER_SORT:</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, Sort.Create(Context, Native.Z3_get_decl_sort_parameter(Context.nCtx, NativeObject, i)));</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, Sort.Create(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_get_decl_sort_parameter(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i)));</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a>.Z3_PARAMETER_AST:</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, <span class="keyword">new</span> AST(Context, Native.Z3_get_decl_ast_parameter(Context.nCtx, NativeObject, i)));</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, <span class="keyword">new</span> AST(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_get_decl_ast_parameter(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i)));</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a>.Z3_PARAMETER_FUNC_DECL:</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, <span class="keyword">new</span> FuncDecl(Context, Native.Z3_get_decl_func_decl_parameter(Context.nCtx, NativeObject, i)));</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, <span class="keyword">new</span> FuncDecl(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_get_decl_func_decl_parameter(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i)));</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a>.Z3_PARAMETER_RATIONAL:</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, Native.Z3_get_decl_rational_parameter(Context.nCtx, NativeObject, i));</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                            res[i] = <span class="keyword">new</span> Parameter(k, Native.Z3_get_decl_rational_parameter(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i));</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                        <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                            <span class="keywordflow">throw</span> <span class="keyword">new</span> Z3Exception(<span class="stringliteral">&quot;Unknown function declaration parameter kind encountered&quot;</span>);</div>
@@ -858,7 +862,7 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">return</span> Sort.Create(Context, Native.Z3_get_range(Context.nCtx, NativeObject));</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">return</span> Sort.Create(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, Native.Z3_get_range(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject));</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -866,14 +870,15 @@ Properties</h2></td></tr>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_func_decl_html_a3f802736d8394bf9704726a786510a53"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_func_decl.html#a3f802736d8394bf9704726a786510a53">Microsoft.Z3.FuncDecl.Apply</a></div><div class="ttdeci">Expr Apply(params Expr[] args)</div><div class="ttdoc">Create expression that applies function to arguments.</div><div class="ttdef"><b>Definition:</b> <a href="_func_decl_8cs_source.html#l00355">FuncDecl.cs:355</a></div></div>
-<div class="ttc" id="agroup__capi_html_ga78e078a95f8bb6b65918cb1e2ac48216"><div class="ttname"><a href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a></div><div class="ttdeci">Z3_parameter_kind</div><div class="ttdoc">The different kinds of parameters that can be associated with function symbols.</div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00135">z3_api.h:135</a></div></div>
+<div class="ttc" id="agroup__capi_html_ga78e078a95f8bb6b65918cb1e2ac48216"><div class="ttname"><a href="group__capi.html#ga78e078a95f8bb6b65918cb1e2ac48216">Z3_parameter_kind</a></div><div class="ttdeci">Z3_parameter_kind</div><div class="ttdoc">The different kinds of parameters that can be associated with function symbols.</div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00108">z3_api.h:108</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_func_decl_html_acc80564be88e917eff958686b124db89"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_func_decl.html#acc80564be88e917eff958686b124db89">Microsoft.Z3.FuncDecl.NumParameters</a></div><div class="ttdeci">uint NumParameters</div><div class="ttdoc">The number of parameters of the function declaration</div><div class="ttdef"><b>Definition:</b> <a href="_func_decl_8cs_source.html#l00156">FuncDecl.cs:156</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_func_decl_html_a393b39abff242eae7b1ccb23f67c0226"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_func_decl.html#a393b39abff242eae7b1ccb23f67c0226">Microsoft.Z3.FuncDecl.args</a></div><div class="ttdeci">Expr this[params Expr[] args</div><div class="ttdoc">Create expression that applies function to arguments.</div><div class="ttdef"><b>Definition:</b> <a href="_func_decl_8cs_source.html#l00341">FuncDecl.cs:341</a></div></div>
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_z3_object_html_acf606a89a6d7474fa0ef78c69da736c7"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Microsoft.Z3.Z3Object.Context</a></div><div class="ttdeci">Context Context</div><div class="ttdoc">Access Context object</div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8cs_source.html#l00120">Z3Object.cs:120</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_func_decl_html_a4ad0a4b9d0129b410fa78632b087f361"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_func_decl.html#a4ad0a4b9d0129b410fa78632b087f361">Microsoft.Z3.FuncDecl.DomainSize</a></div><div class="ttdeci">uint DomainSize</div><div class="ttdoc">The size of the domain of the function declaration Arity</div><div class="ttdef"><b>Definition:</b> <a href="_func_decl_8cs_source.html#l00101">FuncDecl.cs:101</a></div></div>
-<div class="ttc" id="agroup__capi_html_ga1fe4399e5468621e2a799a680c6667cd"><div class="ttname"><a href="group__capi.html#ga1fe4399e5468621e2a799a680c6667cd">Z3_decl_kind</a></div><div class="ttdeci">Z3_decl_kind</div><div class="ttdoc">The different kinds of interpreted function kinds.</div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l01003">z3_api.h:1003</a></div></div>
+<div class="ttc" id="agroup__capi_html_ga1fe4399e5468621e2a799a680c6667cd"><div class="ttname"><a href="group__capi.html#ga1fe4399e5468621e2a799a680c6667cd">Z3_decl_kind</a></div><div class="ttdeci">Z3_decl_kind</div><div class="ttdoc">The different kinds of interpreted function kinds.</div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00976">z3_api.h:976</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:48 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:43 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

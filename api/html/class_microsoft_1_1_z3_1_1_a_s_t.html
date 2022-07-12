@@ -210,6 +210,10 @@ Properties</h2></td></tr>
 <tr class="memitem:a4e52f01782f5eb0e04cfba8aa2130e7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_a_s_t.html#a4e52f01782f5eb0e04cfba8aa2130e7e">IsFuncDecl</a><code> [get]</code></td></tr>
 <tr class="memdesc:a4e52f01782f5eb0e04cfba8aa2130e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the <a class="el" href="class_microsoft_1_1_z3_1_1_a_s_t.html" title="The abstract syntax tree (AST) class.">AST</a> is a FunctionDeclaration  <a href="class_microsoft_1_1_z3_1_1_a_s_t.html#a4e52f01782f5eb0e04cfba8aa2130e7e">More...</a><br /></td></tr>
 <tr class="separator:a4e52f01782f5eb0e04cfba8aa2130e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_microsoft_1_1_z3_1_1_z3_object"><td colspan="2" onclick="javascript:toggleInherit('properties_class_microsoft_1_1_z3_1_1_z3_object')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html">Z3Object</a></td></tr>
+<tr class="memitem:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a><code> [get]</code></td></tr>
+<tr class="memdesc:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access <a class="el" href="class_microsoft_1_1_z3_1_1_context.html" title="The main interaction with Z3 happens via the Context.">Context</a> object  <a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">More...</a><br /></td></tr>
+<tr class="separator:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The abstract syntax tree (<a class="el" href="class_microsoft_1_1_z3_1_1_a_s_t.html" title="The abstract syntax tree (AST) class.">AST</a>) class. </p>
@@ -331,7 +335,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_a_s_t_8cs_source.html#l00096">96</a> of file <a class="el" href="_a_s_t_8cs_source.html">AST.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)Native.Z3_get_ast_hash(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)Native.Z3_get_ast_hash(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -470,7 +474,7 @@ Properties</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_a_s_t_8cs_source.html#l00201">201</a> of file <a class="el" href="_a_s_t_8cs_source.html">AST.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        {</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">return</span> Native.Z3_ast_to_string(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">return</span> Native.Z3_ast_to_string(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -502,7 +506,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_a_s_t_8cs_source.html#l00193">193</a> of file <a class="el" href="_a_s_t_8cs_source.html">AST.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">return</span> Native.Z3_ast_to_string(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">return</span> Native.Z3_ast_to_string(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -544,10 +548,10 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            Debug.Assert(ctx != <span class="keyword">null</span>);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">if</span> (ReferenceEquals(Context, ctx))</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">if</span> (ReferenceEquals(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>, ctx))</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordflow">return</span> Create(ctx, Native.Z3_translate(Context.nCtx, NativeObject, ctx.nCtx));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordflow">return</span> Create(ctx, Native.Z3_translate(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, ctx.nCtx));</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -577,7 +581,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_a_s_t_8cs_source.html#l00128">128</a> of file <a class="el" href="_a_s_t_8cs_source.html">AST.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> (<a class="code" href="group__capi.html#ga015148ad21a032e79a496629651dedb8">Z3_ast_kind</a>)Native.Z3_get_ast_kind(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> (<a class="code" href="group__capi.html#ga015148ad21a032e79a496629651dedb8">Z3_ast_kind</a>)Native.Z3_get_ast_kind(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -606,7 +610,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_a_s_t_8cs_source.html#l00105">105</a> of file <a class="el" href="_a_s_t_8cs_source.html">AST.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_ast_id(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_get_ast_id(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="_a_s_t_8cs_source.html#l00075">AST.CompareTo()</a>.</p>
@@ -801,11 +805,12 @@ Properties</h2></td></tr>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_a_s_t_html_a7f8acc47ae173ad0035676f9ef407d06"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_a_s_t.html#a7f8acc47ae173ad0035676f9ef407d06">Microsoft.Z3.AST.Id</a></div><div class="ttdeci">uint Id</div><div class="ttdoc">A unique identifier for the AST (unique among all ASTs).</div><div class="ttdef"><b>Definition:</b> <a href="_a_s_t_8cs_source.html#l00105">AST.cs:105</a></div></div>
-<div class="ttc" id="agroup__capi_html_ga015148ad21a032e79a496629651dedb8"><div class="ttname"><a href="group__capi.html#ga015148ad21a032e79a496629651dedb8">Z3_ast_kind</a></div><div class="ttdeci">Z3_ast_kind</div><div class="ttdoc">The different kinds of Z3 AST (abstract syntax trees). That is, terms, formulas and types.</div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00180">z3_api.h:180</a></div></div>
+<div class="ttc" id="agroup__capi_html_ga015148ad21a032e79a496629651dedb8"><div class="ttname"><a href="group__capi.html#ga015148ad21a032e79a496629651dedb8">Z3_ast_kind</a></div><div class="ttdeci">Z3_ast_kind</div><div class="ttdoc">The different kinds of Z3 AST (abstract syntax trees). That is, terms, formulas and types.</div><div class="ttdef"><b>Definition:</b> <a href="z3__api_8h_source.html#l00153">z3_api.h:153</a></div></div>
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_z3_object_html_acf606a89a6d7474fa0ef78c69da736c7"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Microsoft.Z3.Z3Object.Context</a></div><div class="ttdeci">Context Context</div><div class="ttdoc">Access Context object</div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8cs_source.html#l00120">Z3Object.cs:120</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_a_s_t_html_a748d5c27d31eea0aae106709a3c03098"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_a_s_t.html#a748d5c27d31eea0aae106709a3c03098">Microsoft.Z3.AST.ASTKind</a></div><div class="ttdeci">Z3_ast_kind ASTKind</div><div class="ttdoc">The kind of the AST.</div><div class="ttdef"><b>Definition:</b> <a href="_a_s_t_8cs_source.html#l00128">AST.cs:128</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:47 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:42 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

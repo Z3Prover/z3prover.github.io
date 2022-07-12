@@ -131,6 +131,10 @@ Properties</h2></td></tr>
 <tr class="memitem:acb283b8ac219253d47a018ad26ecc961"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_statistics_1_1_entry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_statistics.html#acb283b8ac219253d47a018ad26ecc961">this[string key]</a><code> [get]</code></td></tr>
 <tr class="memdesc:acb283b8ac219253d47a018ad26ecc961"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of a particular statistical counter.  <a href="class_microsoft_1_1_z3_1_1_statistics.html#acb283b8ac219253d47a018ad26ecc961">More...</a><br /></td></tr>
 <tr class="separator:acb283b8ac219253d47a018ad26ecc961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_microsoft_1_1_z3_1_1_z3_object"><td colspan="2" onclick="javascript:toggleInherit('properties_class_microsoft_1_1_z3_1_1_z3_object')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html">Z3Object</a></td></tr>
+<tr class="memitem:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a><code> [get]</code></td></tr>
+<tr class="memdesc:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access <a class="el" href="class_microsoft_1_1_z3_1_1_context.html" title="The main interaction with Z3 happens via the Context.">Context</a> object  <a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">More...</a><br /></td></tr>
+<tr class="separator:acf606a89a6d7474fa0ef78c69da736c7 inherit properties_class_microsoft_1_1_z3_1_1_z3_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Objects of this class track statistical information about solvers. </p>
@@ -166,7 +170,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_statistics_8cs_source.html#l00109">109</a> of file <a class="el" href="_statistics_8cs_source.html">Statistics.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> Native.Z3_stats_to_string(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> Native.Z3_stats_to_string(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -198,7 +202,7 @@ Properties</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keyword">get</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">return</span> NativeEntries(Context.nCtx, NativeObject);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">return</span> NativeEntries(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -234,7 +238,7 @@ Properties</h2></td></tr>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                uint n = <a class="code" href="class_microsoft_1_1_z3_1_1_statistics.html#a7ca98a80f1042d79250adc873baf5bf2">Size</a>;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordtype">string</span>[] res = <span class="keyword">new</span> <span class="keywordtype">string</span>[n];</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="keywordflow">for</span> (uint i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    res[i] = Native.Z3_stats_get_key(Context.nCtx, NativeObject, i);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    res[i] = Native.Z3_stats_get_key(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject, i);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordflow">return</span> res;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            }</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
@@ -265,7 +269,7 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_statistics_8cs_source.html#l00118">118</a> of file <a class="el" href="_statistics_8cs_source.html">Statistics.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_stats_size(Context.nCtx, NativeObject); }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> Native.Z3_stats_size(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a>.nCtx, NativeObject); }</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -311,11 +315,12 @@ Properties</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="aclass_microsoft_1_1_z3_1_1_z3_object_html_acf606a89a6d7474fa0ef78c69da736c7"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Microsoft.Z3.Z3Object.Context</a></div><div class="ttdeci">Context Context</div><div class="ttdoc">Access Context object</div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8cs_source.html#l00120">Z3Object.cs:120</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_statistics_html_aad75f221f015a1984f0c2a135ccc4da0"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_statistics.html#aad75f221f015a1984f0c2a135ccc4da0">Microsoft.Z3.Statistics.Entries</a></div><div class="ttdeci">Entry[] Entries</div><div class="ttdoc">The data entries.</div><div class="ttdef"><b>Definition:</b> <a href="_statistics_8cs_source.html#l00126">Statistics.cs:126</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_statistics_html_a7ca98a80f1042d79250adc873baf5bf2"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_statistics.html#a7ca98a80f1042d79250adc873baf5bf2">Microsoft.Z3.Statistics.Size</a></div><div class="ttdeci">uint Size</div><div class="ttdoc">The number of statistical data.</div><div class="ttdef"><b>Definition:</b> <a href="_statistics_8cs_source.html#l00118">Statistics.cs:118</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 5 2022 00:39:48 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 19:05:43 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
