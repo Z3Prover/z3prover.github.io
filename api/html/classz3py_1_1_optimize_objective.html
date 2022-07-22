@@ -105,7 +105,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classz3py_1_1_optimize.html">Optimize</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07793">7793</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07798">7798</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a887994cc9b63fdb2584233db10f0181b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a887994cc9b63fdb2584233db10f0181b">&#9670;&nbsp;</a></span>__init__()</h2>
@@ -145,12 +145,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07794">7794</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l07794"></a><span class="lineno"> 7794</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">__init__</a>(self, opt, value, is_max):</div>
-<div class="line"><a name="l07795"></a><span class="lineno"> 7795</span>&#160;        self._opt = opt</div>
-<div class="line"><a name="l07796"></a><span class="lineno"> 7796</span>&#160;        self._value = value</div>
-<div class="line"><a name="l07797"></a><span class="lineno"> 7797</span>&#160;        self._is_max = is_max</div>
-<div class="line"><a name="l07798"></a><span class="lineno"> 7798</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07799">7799</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l07799"></a><span class="lineno"> 7799</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">__init__</a>(self, opt, value, is_max):</div>
+<div class="line"><a name="l07800"></a><span class="lineno"> 7800</span>&#160;        self._opt = opt</div>
+<div class="line"><a name="l07801"></a><span class="lineno"> 7801</span>&#160;        self._value = value</div>
+<div class="line"><a name="l07802"></a><span class="lineno"> 7802</span>&#160;        self._is_max = is_max</div>
+<div class="line"><a name="l07803"></a><span class="lineno"> 7803</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -171,11 +171,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07821">7821</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l07821"></a><span class="lineno"> 7821</span>&#160;    <span class="keyword">def </span>__str__(self):</div>
-<div class="line"><a name="l07822"></a><span class="lineno"> 7822</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;%s:%s&quot;</span> % (self._value, self._is_max)</div>
-<div class="line"><a name="l07823"></a><span class="lineno"> 7823</span>&#160; </div>
-<div class="line"><a name="l07824"></a><span class="lineno"> 7824</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07826">7826</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l07826"></a><span class="lineno"> 7826</span>&#160;    <span class="keyword">def </span>__str__(self):</div>
+<div class="line"><a name="l07827"></a><span class="lineno"> 7827</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;%s:%s&quot;</span> % (self._value, self._is_max)</div>
+<div class="line"><a name="l07828"></a><span class="lineno"> 7828</span>&#160; </div>
+<div class="line"><a name="l07829"></a><span class="lineno"> 7829</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -195,13 +195,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07799">7799</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l07799"></a><span class="lineno"> 7799</span>&#160;    <span class="keyword">def </span>lower(self):</div>
-<div class="line"><a name="l07800"></a><span class="lineno"> 7800</span>&#160;        opt = self._opt</div>
-<div class="line"><a name="l07801"></a><span class="lineno"> 7801</span>&#160;        <span class="keywordflow">return</span> _to_expr_ref(<a class="code" href="group__capi.html#ga1c754dd577a3c138bd12badb0c2f1ad9">Z3_optimize_get_lower</a>(opt.ctx.ref(), opt.optimize, self._value), opt.ctx)</div>
-<div class="line"><a name="l07802"></a><span class="lineno"> 7802</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07804">7804</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l07804"></a><span class="lineno"> 7804</span>&#160;    <span class="keyword">def </span>lower(self):</div>
+<div class="line"><a name="l07805"></a><span class="lineno"> 7805</span>&#160;        opt = self._opt</div>
+<div class="line"><a name="l07806"></a><span class="lineno"> 7806</span>&#160;        <span class="keywordflow">return</span> _to_expr_ref(<a class="code" href="group__capi.html#ga1c754dd577a3c138bd12badb0c2f1ad9">Z3_optimize_get_lower</a>(opt.ctx.ref(), opt.optimize, self._value), opt.ctx)</div>
+<div class="line"><a name="l07807"></a><span class="lineno"> 7807</span>&#160; </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07815">OptimizeObjective.value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07820">OptimizeObjective.value()</a>.</p>
 
 </div>
 </div>
@@ -221,11 +221,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07807">7807</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l07807"></a><span class="lineno"> 7807</span>&#160;    <span class="keyword">def </span>lower_values(self):</div>
-<div class="line"><a name="l07808"></a><span class="lineno"> 7808</span>&#160;        opt = self._opt</div>
-<div class="line"><a name="l07809"></a><span class="lineno"> 7809</span>&#160;        <span class="keywordflow">return</span> AstVector(<a class="code" href="group__capi.html#ga47303d64f47ad21e8235a99415704672">Z3_optimize_get_lower_as_vector</a>(opt.ctx.ref(), opt.optimize, self._value), opt.ctx)</div>
-<div class="line"><a name="l07810"></a><span class="lineno"> 7810</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07812">7812</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l07812"></a><span class="lineno"> 7812</span>&#160;    <span class="keyword">def </span>lower_values(self):</div>
+<div class="line"><a name="l07813"></a><span class="lineno"> 7813</span>&#160;        opt = self._opt</div>
+<div class="line"><a name="l07814"></a><span class="lineno"> 7814</span>&#160;        <span class="keywordflow">return</span> AstVector(<a class="code" href="group__capi.html#ga47303d64f47ad21e8235a99415704672">Z3_optimize_get_lower_as_vector</a>(opt.ctx.ref(), opt.optimize, self._value), opt.ctx)</div>
+<div class="line"><a name="l07815"></a><span class="lineno"> 7815</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -245,13 +245,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07803">7803</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l07803"></a><span class="lineno"> 7803</span>&#160;    <span class="keyword">def </span>upper(self):</div>
-<div class="line"><a name="l07804"></a><span class="lineno"> 7804</span>&#160;        opt = self._opt</div>
-<div class="line"><a name="l07805"></a><span class="lineno"> 7805</span>&#160;        <span class="keywordflow">return</span> _to_expr_ref(<a class="code" href="group__capi.html#ga658c4858c031d5affffcea9f857636fd">Z3_optimize_get_upper</a>(opt.ctx.ref(), opt.optimize, self._value), opt.ctx)</div>
-<div class="line"><a name="l07806"></a><span class="lineno"> 7806</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07808">7808</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l07808"></a><span class="lineno"> 7808</span>&#160;    <span class="keyword">def </span>upper(self):</div>
+<div class="line"><a name="l07809"></a><span class="lineno"> 7809</span>&#160;        opt = self._opt</div>
+<div class="line"><a name="l07810"></a><span class="lineno"> 7810</span>&#160;        <span class="keywordflow">return</span> _to_expr_ref(<a class="code" href="group__capi.html#ga658c4858c031d5affffcea9f857636fd">Z3_optimize_get_upper</a>(opt.ctx.ref(), opt.optimize, self._value), opt.ctx)</div>
+<div class="line"><a name="l07811"></a><span class="lineno"> 7811</span>&#160; </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07815">OptimizeObjective.value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07820">OptimizeObjective.value()</a>.</p>
 
 </div>
 </div>
@@ -271,11 +271,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07811">7811</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l07811"></a><span class="lineno"> 7811</span>&#160;    <span class="keyword">def </span>upper_values(self):</div>
-<div class="line"><a name="l07812"></a><span class="lineno"> 7812</span>&#160;        opt = self._opt</div>
-<div class="line"><a name="l07813"></a><span class="lineno"> 7813</span>&#160;        <span class="keywordflow">return</span> AstVector(<a class="code" href="group__capi.html#ga1b371ccf1c207127354f7ab2a7fe8c7b">Z3_optimize_get_upper_as_vector</a>(opt.ctx.ref(), opt.optimize, self._value), opt.ctx)</div>
-<div class="line"><a name="l07814"></a><span class="lineno"> 7814</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07816">7816</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l07816"></a><span class="lineno"> 7816</span>&#160;    <span class="keyword">def </span>upper_values(self):</div>
+<div class="line"><a name="l07817"></a><span class="lineno"> 7817</span>&#160;        opt = self._opt</div>
+<div class="line"><a name="l07818"></a><span class="lineno"> 7818</span>&#160;        <span class="keywordflow">return</span> AstVector(<a class="code" href="group__capi.html#ga1b371ccf1c207127354f7ab2a7fe8c7b">Z3_optimize_get_upper_as_vector</a>(opt.ctx.ref(), opt.optimize, self._value), opt.ctx)</div>
+<div class="line"><a name="l07819"></a><span class="lineno"> 7819</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -295,25 +295,25 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07815">7815</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l07815"></a><span class="lineno"> 7815</span>&#160;    <span class="keyword">def </span>value(self):</div>
-<div class="line"><a name="l07816"></a><span class="lineno"> 7816</span>&#160;        <span class="keywordflow">if</span> self._is_max:</div>
-<div class="line"><a name="l07817"></a><span class="lineno"> 7817</span>&#160;            <span class="keywordflow">return</span> self.upper()</div>
-<div class="line"><a name="l07818"></a><span class="lineno"> 7818</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l07819"></a><span class="lineno"> 7819</span>&#160;            <span class="keywordflow">return</span> self.lower()</div>
-<div class="line"><a name="l07820"></a><span class="lineno"> 7820</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l07820">7820</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l07820"></a><span class="lineno"> 7820</span>&#160;    <span class="keyword">def </span>value(self):</div>
+<div class="line"><a name="l07821"></a><span class="lineno"> 7821</span>&#160;        <span class="keywordflow">if</span> self._is_max:</div>
+<div class="line"><a name="l07822"></a><span class="lineno"> 7822</span>&#160;            <span class="keywordflow">return</span> self.upper()</div>
+<div class="line"><a name="l07823"></a><span class="lineno"> 7823</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l07824"></a><span class="lineno"> 7824</span>&#160;            <span class="keywordflow">return</span> self.lower()</div>
+<div class="line"><a name="l07825"></a><span class="lineno"> 7825</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_ac4bf85b220e85e838b0ebae74cd10c69"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">z3py.UserPropagateBase.__init__</a></div><div class="ttdeci">def __init__(self, s, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11418">z3py.py:11418</a></div></div>
+<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_ac4bf85b220e85e838b0ebae74cd10c69"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">z3py.UserPropagateBase.__init__</a></div><div class="ttdeci">def __init__(self, s, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11434">z3py.py:11434</a></div></div>
 <div class="ttc" id="agroup__capi_html_ga1c754dd577a3c138bd12badb0c2f1ad9"><div class="ttname"><a href="group__capi.html#ga1c754dd577a3c138bd12badb0c2f1ad9">Z3_optimize_get_lower</a></div><div class="ttdeci">Z3_ast Z3_API Z3_optimize_get_lower(Z3_context c, Z3_optimize o, unsigned idx)</div><div class="ttdoc">Retrieve lower bound value or approximation for the i'th optimization objective.</div></div>
 <div class="ttc" id="agroup__capi_html_ga1b371ccf1c207127354f7ab2a7fe8c7b"><div class="ttname"><a href="group__capi.html#ga1b371ccf1c207127354f7ab2a7fe8c7b">Z3_optimize_get_upper_as_vector</a></div><div class="ttdeci">Z3_ast_vector Z3_API Z3_optimize_get_upper_as_vector(Z3_context c, Z3_optimize o, unsigned idx)</div><div class="ttdoc">Retrieve upper bound value or approximation for the i'th optimization objective.</div></div>
 <div class="ttc" id="agroup__capi_html_ga658c4858c031d5affffcea9f857636fd"><div class="ttname"><a href="group__capi.html#ga658c4858c031d5affffcea9f857636fd">Z3_optimize_get_upper</a></div><div class="ttdeci">Z3_ast Z3_API Z3_optimize_get_upper(Z3_context c, Z3_optimize o, unsigned idx)</div><div class="ttdoc">Retrieve upper bound value or approximation for the i'th optimization objective.</div></div>
 <div class="ttc" id="agroup__capi_html_ga47303d64f47ad21e8235a99415704672"><div class="ttname"><a href="group__capi.html#ga47303d64f47ad21e8235a99415704672">Z3_optimize_get_lower_as_vector</a></div><div class="ttdeci">Z3_ast_vector Z3_API Z3_optimize_get_lower_as_vector(Z3_context c, Z3_optimize o, unsigned idx)</div><div class="ttdoc">Retrieve lower bound value or approximation for the i'th optimization objective. The returned vector ...</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 6 2022 19:05:44 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 22 2022 19:13:37 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

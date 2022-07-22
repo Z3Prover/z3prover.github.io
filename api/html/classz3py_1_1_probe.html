@@ -117,7 +117,7 @@ Data Fields</h2></td></tr>
 <div class="textblock"><pre class="fragment">Probes are used to inspect a goal (aka problem) and collect information that may be used
 to decide which solver and/or preprocessing step will be used.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08458">8458</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08463">8463</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a97aaaa4f75ff8c87f2d93b84eb2f70d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97aaaa4f75ff8c87f2d93b84eb2f70d4">&#9670;&nbsp;</a></span>__init__()</h2>
@@ -151,30 +151,30 @@ to decide which solver and/or preprocessing step will be used.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08463">8463</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08463"></a><span class="lineno"> 8463</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">__init__</a>(self, probe, ctx=None):</div>
-<div class="line"><a name="l08464"></a><span class="lineno"> 8464</span>&#160;        self.ctx = _get_ctx(ctx)</div>
-<div class="line"><a name="l08465"></a><span class="lineno"> 8465</span>&#160;        self.probe = <span class="keywordtype">None</span></div>
-<div class="line"><a name="l08466"></a><span class="lineno"> 8466</span>&#160;        <span class="keywordflow">if</span> isinstance(probe, ProbeObj):</div>
-<div class="line"><a name="l08467"></a><span class="lineno"> 8467</span>&#160;            self.probe = probe</div>
-<div class="line"><a name="l08468"></a><span class="lineno"> 8468</span>&#160;        <span class="keywordflow">elif</span> isinstance(probe, float):</div>
-<div class="line"><a name="l08469"></a><span class="lineno"> 8469</span>&#160;            self.probe = <a class="code" href="group__capi.html#gaef1657e9f2fe4b8c64fc88249296128b">Z3_probe_const</a>(self.ctx.ref(), probe)</div>
-<div class="line"><a name="l08470"></a><span class="lineno"> 8470</span>&#160;        <span class="keywordflow">elif</span> _is_int(probe):</div>
-<div class="line"><a name="l08471"></a><span class="lineno"> 8471</span>&#160;            self.probe = <a class="code" href="group__capi.html#gaef1657e9f2fe4b8c64fc88249296128b">Z3_probe_const</a>(self.ctx.ref(), float(probe))</div>
-<div class="line"><a name="l08472"></a><span class="lineno"> 8472</span>&#160;        <span class="keywordflow">elif</span> isinstance(probe, bool):</div>
-<div class="line"><a name="l08473"></a><span class="lineno"> 8473</span>&#160;            <span class="keywordflow">if</span> probe:</div>
-<div class="line"><a name="l08474"></a><span class="lineno"> 8474</span>&#160;                self.probe = <a class="code" href="group__capi.html#gaef1657e9f2fe4b8c64fc88249296128b">Z3_probe_const</a>(self.ctx.ref(), 1.0)</div>
-<div class="line"><a name="l08475"></a><span class="lineno"> 8475</span>&#160;            <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l08476"></a><span class="lineno"> 8476</span>&#160;                self.probe = <a class="code" href="group__capi.html#gaef1657e9f2fe4b8c64fc88249296128b">Z3_probe_const</a>(self.ctx.ref(), 0.0)</div>
-<div class="line"><a name="l08477"></a><span class="lineno"> 8477</span>&#160;        <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l08478"></a><span class="lineno"> 8478</span>&#160;            <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
-<div class="line"><a name="l08479"></a><span class="lineno"> 8479</span>&#160;                _z3_assert(isinstance(probe, str), <span class="stringliteral">&quot;probe name expected&quot;</span>)</div>
-<div class="line"><a name="l08480"></a><span class="lineno"> 8480</span>&#160;            <span class="keywordflow">try</span>:</div>
-<div class="line"><a name="l08481"></a><span class="lineno"> 8481</span>&#160;                self.probe = <a class="code" href="group__capi.html#ga6c549642ecd7e08a9fabd5a4a01003e5">Z3_mk_probe</a>(self.ctx.ref(), probe)</div>
-<div class="line"><a name="l08482"></a><span class="lineno"> 8482</span>&#160;            <span class="keywordflow">except</span> Z3Exception:</div>
-<div class="line"><a name="l08483"></a><span class="lineno"> 8483</span>&#160;                <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;unknown probe &#39;%s&#39;&quot;</span> % probe)</div>
-<div class="line"><a name="l08484"></a><span class="lineno"> 8484</span>&#160;        <a class="code" href="group__capi.html#ga6fe664f31af8362b37cab54796a84a99">Z3_probe_inc_ref</a>(self.ctx.ref(), self.probe)</div>
-<div class="line"><a name="l08485"></a><span class="lineno"> 8485</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08468">8468</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08468"></a><span class="lineno"> 8468</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">__init__</a>(self, probe, ctx=None):</div>
+<div class="line"><a name="l08469"></a><span class="lineno"> 8469</span>&#160;        self.ctx = _get_ctx(ctx)</div>
+<div class="line"><a name="l08470"></a><span class="lineno"> 8470</span>&#160;        self.probe = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l08471"></a><span class="lineno"> 8471</span>&#160;        <span class="keywordflow">if</span> isinstance(probe, ProbeObj):</div>
+<div class="line"><a name="l08472"></a><span class="lineno"> 8472</span>&#160;            self.probe = probe</div>
+<div class="line"><a name="l08473"></a><span class="lineno"> 8473</span>&#160;        <span class="keywordflow">elif</span> isinstance(probe, float):</div>
+<div class="line"><a name="l08474"></a><span class="lineno"> 8474</span>&#160;            self.probe = <a class="code" href="group__capi.html#gaef1657e9f2fe4b8c64fc88249296128b">Z3_probe_const</a>(self.ctx.ref(), probe)</div>
+<div class="line"><a name="l08475"></a><span class="lineno"> 8475</span>&#160;        <span class="keywordflow">elif</span> _is_int(probe):</div>
+<div class="line"><a name="l08476"></a><span class="lineno"> 8476</span>&#160;            self.probe = <a class="code" href="group__capi.html#gaef1657e9f2fe4b8c64fc88249296128b">Z3_probe_const</a>(self.ctx.ref(), float(probe))</div>
+<div class="line"><a name="l08477"></a><span class="lineno"> 8477</span>&#160;        <span class="keywordflow">elif</span> isinstance(probe, bool):</div>
+<div class="line"><a name="l08478"></a><span class="lineno"> 8478</span>&#160;            <span class="keywordflow">if</span> probe:</div>
+<div class="line"><a name="l08479"></a><span class="lineno"> 8479</span>&#160;                self.probe = <a class="code" href="group__capi.html#gaef1657e9f2fe4b8c64fc88249296128b">Z3_probe_const</a>(self.ctx.ref(), 1.0)</div>
+<div class="line"><a name="l08480"></a><span class="lineno"> 8480</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l08481"></a><span class="lineno"> 8481</span>&#160;                self.probe = <a class="code" href="group__capi.html#gaef1657e9f2fe4b8c64fc88249296128b">Z3_probe_const</a>(self.ctx.ref(), 0.0)</div>
+<div class="line"><a name="l08482"></a><span class="lineno"> 8482</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l08483"></a><span class="lineno"> 8483</span>&#160;            <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
+<div class="line"><a name="l08484"></a><span class="lineno"> 8484</span>&#160;                _z3_assert(isinstance(probe, str), <span class="stringliteral">&quot;probe name expected&quot;</span>)</div>
+<div class="line"><a name="l08485"></a><span class="lineno"> 8485</span>&#160;            <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l08486"></a><span class="lineno"> 8486</span>&#160;                self.probe = <a class="code" href="group__capi.html#ga6c549642ecd7e08a9fabd5a4a01003e5">Z3_mk_probe</a>(self.ctx.ref(), probe)</div>
+<div class="line"><a name="l08487"></a><span class="lineno"> 8487</span>&#160;            <span class="keywordflow">except</span> Z3Exception:</div>
+<div class="line"><a name="l08488"></a><span class="lineno"> 8488</span>&#160;                <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;unknown probe &#39;%s&#39;&quot;</span> % probe)</div>
+<div class="line"><a name="l08489"></a><span class="lineno"> 8489</span>&#160;        <a class="code" href="group__capi.html#ga6fe664f31af8362b37cab54796a84a99">Z3_probe_inc_ref</a>(self.ctx.ref(), self.probe)</div>
+<div class="line"><a name="l08490"></a><span class="lineno"> 8490</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -194,11 +194,11 @@ to decide which solver and/or preprocessing step will be used.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08489">8489</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08489"></a><span class="lineno"> 8489</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#a41a65d7030dd1006b177d0bc24e1a12b">__del__</a>(self):</div>
-<div class="line"><a name="l08490"></a><span class="lineno"> 8490</span>&#160;        <span class="keywordflow">if</span> self.probe <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_probe_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><a name="l08491"></a><span class="lineno"> 8491</span>&#160;            <a class="code" href="group__capi.html#ga88032b351b7ef84c5d71d31f81282058">Z3_probe_dec_ref</a>(self.ctx.ref(), self.probe)</div>
-<div class="line"><a name="l08492"></a><span class="lineno"> 8492</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08494">8494</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08494"></a><span class="lineno"> 8494</span>&#160;    <span class="keyword">def </span><a class="code" href="classz3py_1_1_user_propagate_base.html#a41a65d7030dd1006b177d0bc24e1a12b">__del__</a>(self):</div>
+<div class="line"><a name="l08495"></a><span class="lineno"> 8495</span>&#160;        <span class="keywordflow">if</span> self.probe <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_probe_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l08496"></a><span class="lineno"> 8496</span>&#160;            <a class="code" href="group__capi.html#ga88032b351b7ef84c5d71d31f81282058">Z3_probe_dec_ref</a>(self.ctx.ref(), self.probe)</div>
+<div class="line"><a name="l08497"></a><span class="lineno"> 8497</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -250,36 +250,36 @@ to decide which solver and/or preprocessing step will be used.
 &gt;&gt;&gt; p(g)
 1.0
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08578">8578</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08578"></a><span class="lineno"> 8578</span>&#160;    <span class="keyword">def </span>__call__(self, goal):</div>
-<div class="line"><a name="l08579"></a><span class="lineno"> 8579</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Evaluate the probe `self` in the given goal.</span></div>
-<div class="line"><a name="l08580"></a><span class="lineno"> 8580</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08581"></a><span class="lineno"> 8581</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;)</span></div>
-<div class="line"><a name="l08582"></a><span class="lineno"> 8582</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><a name="l08583"></a><span class="lineno"> 8583</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><a name="l08584"></a><span class="lineno"> 8584</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
-<div class="line"><a name="l08585"></a><span class="lineno"> 8585</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
-<div class="line"><a name="l08586"></a><span class="lineno"> 8586</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08587"></a><span class="lineno"> 8587</span>&#160;<span class="stringliteral">        2.0</span></div>
-<div class="line"><a name="l08588"></a><span class="lineno"> 8588</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 20)</span></div>
-<div class="line"><a name="l08589"></a><span class="lineno"> 8589</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08590"></a><span class="lineno"> 8590</span>&#160;<span class="stringliteral">        3.0</span></div>
-<div class="line"><a name="l08591"></a><span class="lineno"> 8591</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;num-consts&#39;)</span></div>
-<div class="line"><a name="l08592"></a><span class="lineno"> 8592</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08593"></a><span class="lineno"> 8593</span>&#160;<span class="stringliteral">        1.0</span></div>
-<div class="line"><a name="l08594"></a><span class="lineno"> 8594</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;is-propositional&#39;)</span></div>
-<div class="line"><a name="l08595"></a><span class="lineno"> 8595</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08596"></a><span class="lineno"> 8596</span>&#160;<span class="stringliteral">        0.0</span></div>
-<div class="line"><a name="l08597"></a><span class="lineno"> 8597</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;is-qflia&#39;)</span></div>
-<div class="line"><a name="l08598"></a><span class="lineno"> 8598</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08599"></a><span class="lineno"> 8599</span>&#160;<span class="stringliteral">        1.0</span></div>
-<div class="line"><a name="l08600"></a><span class="lineno"> 8600</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08601"></a><span class="lineno"> 8601</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
-<div class="line"><a name="l08602"></a><span class="lineno"> 8602</span>&#160;            _z3_assert(isinstance(goal, (Goal, BoolRef)), <span class="stringliteral">&quot;Z3 Goal or Boolean expression expected&quot;</span>)</div>
-<div class="line"><a name="l08603"></a><span class="lineno"> 8603</span>&#160;        goal = _to_goal(goal)</div>
-<div class="line"><a name="l08604"></a><span class="lineno"> 8604</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gad4b286469cd56992ad80fbe0c8c4e40a">Z3_probe_apply</a>(self.ctx.ref(), self.probe, goal.goal)</div>
-<div class="line"><a name="l08605"></a><span class="lineno"> 8605</span>&#160; </div>
-<div class="line"><a name="l08606"></a><span class="lineno"> 8606</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08583">8583</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08583"></a><span class="lineno"> 8583</span>&#160;    <span class="keyword">def </span>__call__(self, goal):</div>
+<div class="line"><a name="l08584"></a><span class="lineno"> 8584</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Evaluate the probe `self` in the given goal.</span></div>
+<div class="line"><a name="l08585"></a><span class="lineno"> 8585</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08586"></a><span class="lineno"> 8586</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;)</span></div>
+<div class="line"><a name="l08587"></a><span class="lineno"> 8587</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><a name="l08588"></a><span class="lineno"> 8588</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><a name="l08589"></a><span class="lineno"> 8589</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
+<div class="line"><a name="l08590"></a><span class="lineno"> 8590</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
+<div class="line"><a name="l08591"></a><span class="lineno"> 8591</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08592"></a><span class="lineno"> 8592</span>&#160;<span class="stringliteral">        2.0</span></div>
+<div class="line"><a name="l08593"></a><span class="lineno"> 8593</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 20)</span></div>
+<div class="line"><a name="l08594"></a><span class="lineno"> 8594</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08595"></a><span class="lineno"> 8595</span>&#160;<span class="stringliteral">        3.0</span></div>
+<div class="line"><a name="l08596"></a><span class="lineno"> 8596</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;num-consts&#39;)</span></div>
+<div class="line"><a name="l08597"></a><span class="lineno"> 8597</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08598"></a><span class="lineno"> 8598</span>&#160;<span class="stringliteral">        1.0</span></div>
+<div class="line"><a name="l08599"></a><span class="lineno"> 8599</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;is-propositional&#39;)</span></div>
+<div class="line"><a name="l08600"></a><span class="lineno"> 8600</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08601"></a><span class="lineno"> 8601</span>&#160;<span class="stringliteral">        0.0</span></div>
+<div class="line"><a name="l08602"></a><span class="lineno"> 8602</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;is-qflia&#39;)</span></div>
+<div class="line"><a name="l08603"></a><span class="lineno"> 8603</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08604"></a><span class="lineno"> 8604</span>&#160;<span class="stringliteral">        1.0</span></div>
+<div class="line"><a name="l08605"></a><span class="lineno"> 8605</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08606"></a><span class="lineno"> 8606</span>&#160;        <span class="keywordflow">if</span> <a class="code" href="namespacez3py.html#a07c5d7436e6cc76649ef11d122e6ebee">z3_debug</a>():</div>
+<div class="line"><a name="l08607"></a><span class="lineno"> 8607</span>&#160;            _z3_assert(isinstance(goal, (Goal, BoolRef)), <span class="stringliteral">&quot;Z3 Goal or Boolean expression expected&quot;</span>)</div>
+<div class="line"><a name="l08608"></a><span class="lineno"> 8608</span>&#160;        goal = _to_goal(goal)</div>
+<div class="line"><a name="l08609"></a><span class="lineno"> 8609</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gad4b286469cd56992ad80fbe0c8c4e40a">Z3_probe_apply</a>(self.ctx.ref(), self.probe, goal.goal)</div>
+<div class="line"><a name="l08610"></a><span class="lineno"> 8610</span>&#160; </div>
+<div class="line"><a name="l08611"></a><span class="lineno"> 8611</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -309,10 +309,10 @@ to decide which solver and/or preprocessing step will be used.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08486">8486</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08486"></a><span class="lineno"> 8486</span>&#160;    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
-<div class="line"><a name="l08487"></a><span class="lineno"> 8487</span>&#160;        <span class="keywordflow">return</span> Probe(self.probe, self.ctx)</div>
-<div class="line"><a name="l08488"></a><span class="lineno"> 8488</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08491">8491</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08491"></a><span class="lineno"> 8491</span>&#160;    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
+<div class="line"><a name="l08492"></a><span class="lineno"> 8492</span>&#160;        <span class="keywordflow">return</span> Probe(self.probe, self.ctx)</div>
+<div class="line"><a name="l08493"></a><span class="lineno"> 8493</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -352,23 +352,23 @@ is equal to the value returned by `other`.
 &gt;&gt;&gt; p(g)
 1.0
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08549">8549</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08549"></a><span class="lineno"> 8549</span>&#160;    <span class="keyword">def </span>__eq__(self, other):</div>
-<div class="line"><a name="l08550"></a><span class="lineno"> 8550</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
-<div class="line"><a name="l08551"></a><span class="lineno"> 8551</span>&#160;<span class="stringliteral">        is equal to the value returned by `other`.</span></div>
-<div class="line"><a name="l08552"></a><span class="lineno"> 8552</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08553"></a><span class="lineno"> 8553</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) == 2</span></div>
-<div class="line"><a name="l08554"></a><span class="lineno"> 8554</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><a name="l08555"></a><span class="lineno"> 8555</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><a name="l08556"></a><span class="lineno"> 8556</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
-<div class="line"><a name="l08557"></a><span class="lineno"> 8557</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
-<div class="line"><a name="l08558"></a><span class="lineno"> 8558</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08559"></a><span class="lineno"> 8559</span>&#160;<span class="stringliteral">        1.0</span></div>
-<div class="line"><a name="l08560"></a><span class="lineno"> 8560</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08561"></a><span class="lineno"> 8561</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#ga0beba558248d108ab5841dbfe66f7a74">Z3_probe_eq</a>(self.ctx.ref(), self.probe, _to_probe(other, self.ctx).probe), self.ctx)</div>
-<div class="line"><a name="l08562"></a><span class="lineno"> 8562</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08554">8554</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08554"></a><span class="lineno"> 8554</span>&#160;    <span class="keyword">def </span>__eq__(self, other):</div>
+<div class="line"><a name="l08555"></a><span class="lineno"> 8555</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
+<div class="line"><a name="l08556"></a><span class="lineno"> 8556</span>&#160;<span class="stringliteral">        is equal to the value returned by `other`.</span></div>
+<div class="line"><a name="l08557"></a><span class="lineno"> 8557</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08558"></a><span class="lineno"> 8558</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) == 2</span></div>
+<div class="line"><a name="l08559"></a><span class="lineno"> 8559</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><a name="l08560"></a><span class="lineno"> 8560</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><a name="l08561"></a><span class="lineno"> 8561</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
+<div class="line"><a name="l08562"></a><span class="lineno"> 8562</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
+<div class="line"><a name="l08563"></a><span class="lineno"> 8563</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08564"></a><span class="lineno"> 8564</span>&#160;<span class="stringliteral">        1.0</span></div>
+<div class="line"><a name="l08565"></a><span class="lineno"> 8565</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08566"></a><span class="lineno"> 8566</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#ga0beba558248d108ab5841dbfe66f7a74">Z3_probe_eq</a>(self.ctx.ref(), self.probe, _to_probe(other, self.ctx).probe), self.ctx)</div>
+<div class="line"><a name="l08567"></a><span class="lineno"> 8567</span>&#160; </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08563">Probe.__ne__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08568">Probe.__ne__()</a>.</p>
 
 </div>
 </div>
@@ -408,21 +408,21 @@ is greater than or equal to the value returned by `other`.
 &gt;&gt;&gt; p(g)
 1.0
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08535">8535</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08535"></a><span class="lineno"> 8535</span>&#160;    <span class="keyword">def </span>__ge__(self, other):</div>
-<div class="line"><a name="l08536"></a><span class="lineno"> 8536</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
-<div class="line"><a name="l08537"></a><span class="lineno"> 8537</span>&#160;<span class="stringliteral">        is greater than or equal to the value returned by `other`.</span></div>
-<div class="line"><a name="l08538"></a><span class="lineno"> 8538</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08539"></a><span class="lineno"> 8539</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) &gt;= 2</span></div>
-<div class="line"><a name="l08540"></a><span class="lineno"> 8540</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><a name="l08541"></a><span class="lineno"> 8541</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><a name="l08542"></a><span class="lineno"> 8542</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
-<div class="line"><a name="l08543"></a><span class="lineno"> 8543</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
-<div class="line"><a name="l08544"></a><span class="lineno"> 8544</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08545"></a><span class="lineno"> 8545</span>&#160;<span class="stringliteral">        1.0</span></div>
-<div class="line"><a name="l08546"></a><span class="lineno"> 8546</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08547"></a><span class="lineno"> 8547</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#ga2dc85f2400688fb6fab5694f5472c938">Z3_probe_ge</a>(self.ctx.ref(), self.probe, _to_probe(other, self.ctx).probe), self.ctx)</div>
-<div class="line"><a name="l08548"></a><span class="lineno"> 8548</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08540">8540</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08540"></a><span class="lineno"> 8540</span>&#160;    <span class="keyword">def </span>__ge__(self, other):</div>
+<div class="line"><a name="l08541"></a><span class="lineno"> 8541</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
+<div class="line"><a name="l08542"></a><span class="lineno"> 8542</span>&#160;<span class="stringliteral">        is greater than or equal to the value returned by `other`.</span></div>
+<div class="line"><a name="l08543"></a><span class="lineno"> 8543</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08544"></a><span class="lineno"> 8544</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) &gt;= 2</span></div>
+<div class="line"><a name="l08545"></a><span class="lineno"> 8545</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><a name="l08546"></a><span class="lineno"> 8546</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><a name="l08547"></a><span class="lineno"> 8547</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
+<div class="line"><a name="l08548"></a><span class="lineno"> 8548</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
+<div class="line"><a name="l08549"></a><span class="lineno"> 8549</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08550"></a><span class="lineno"> 8550</span>&#160;<span class="stringliteral">        1.0</span></div>
+<div class="line"><a name="l08551"></a><span class="lineno"> 8551</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08552"></a><span class="lineno"> 8552</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#ga2dc85f2400688fb6fab5694f5472c938">Z3_probe_ge</a>(self.ctx.ref(), self.probe, _to_probe(other, self.ctx).probe), self.ctx)</div>
+<div class="line"><a name="l08553"></a><span class="lineno"> 8553</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -462,21 +462,21 @@ is greater than the value returned by `other`.
 &gt;&gt;&gt; p(g)
 0.0
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08507">8507</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08507"></a><span class="lineno"> 8507</span>&#160;    <span class="keyword">def </span>__gt__(self, other):</div>
-<div class="line"><a name="l08508"></a><span class="lineno"> 8508</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
-<div class="line"><a name="l08509"></a><span class="lineno"> 8509</span>&#160;<span class="stringliteral">        is greater than the value returned by `other`.</span></div>
-<div class="line"><a name="l08510"></a><span class="lineno"> 8510</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08511"></a><span class="lineno"> 8511</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) &gt; 10</span></div>
-<div class="line"><a name="l08512"></a><span class="lineno"> 8512</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><a name="l08513"></a><span class="lineno"> 8513</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><a name="l08514"></a><span class="lineno"> 8514</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
-<div class="line"><a name="l08515"></a><span class="lineno"> 8515</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
-<div class="line"><a name="l08516"></a><span class="lineno"> 8516</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08517"></a><span class="lineno"> 8517</span>&#160;<span class="stringliteral">        0.0</span></div>
-<div class="line"><a name="l08518"></a><span class="lineno"> 8518</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08519"></a><span class="lineno"> 8519</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#gab82522fbef0c78296d86cc1c3fb405c1">Z3_probe_gt</a>(self.ctx.ref(), self.probe, _to_probe(other, self.ctx).probe), self.ctx)</div>
-<div class="line"><a name="l08520"></a><span class="lineno"> 8520</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08512">8512</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08512"></a><span class="lineno"> 8512</span>&#160;    <span class="keyword">def </span>__gt__(self, other):</div>
+<div class="line"><a name="l08513"></a><span class="lineno"> 8513</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
+<div class="line"><a name="l08514"></a><span class="lineno"> 8514</span>&#160;<span class="stringliteral">        is greater than the value returned by `other`.</span></div>
+<div class="line"><a name="l08515"></a><span class="lineno"> 8515</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08516"></a><span class="lineno"> 8516</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) &gt; 10</span></div>
+<div class="line"><a name="l08517"></a><span class="lineno"> 8517</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><a name="l08518"></a><span class="lineno"> 8518</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><a name="l08519"></a><span class="lineno"> 8519</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
+<div class="line"><a name="l08520"></a><span class="lineno"> 8520</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
+<div class="line"><a name="l08521"></a><span class="lineno"> 8521</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08522"></a><span class="lineno"> 8522</span>&#160;<span class="stringliteral">        0.0</span></div>
+<div class="line"><a name="l08523"></a><span class="lineno"> 8523</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08524"></a><span class="lineno"> 8524</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#gab82522fbef0c78296d86cc1c3fb405c1">Z3_probe_gt</a>(self.ctx.ref(), self.probe, _to_probe(other, self.ctx).probe), self.ctx)</div>
+<div class="line"><a name="l08525"></a><span class="lineno"> 8525</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -516,21 +516,21 @@ is less than or equal to the value returned by `other`.
 &gt;&gt;&gt; p(g)
 1.0
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08521">8521</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08521"></a><span class="lineno"> 8521</span>&#160;    <span class="keyword">def </span>__le__(self, other):</div>
-<div class="line"><a name="l08522"></a><span class="lineno"> 8522</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
-<div class="line"><a name="l08523"></a><span class="lineno"> 8523</span>&#160;<span class="stringliteral">        is less than or equal to the value returned by `other`.</span></div>
-<div class="line"><a name="l08524"></a><span class="lineno"> 8524</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08525"></a><span class="lineno"> 8525</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) &lt;= 2</span></div>
-<div class="line"><a name="l08526"></a><span class="lineno"> 8526</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><a name="l08527"></a><span class="lineno"> 8527</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><a name="l08528"></a><span class="lineno"> 8528</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
-<div class="line"><a name="l08529"></a><span class="lineno"> 8529</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
-<div class="line"><a name="l08530"></a><span class="lineno"> 8530</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08531"></a><span class="lineno"> 8531</span>&#160;<span class="stringliteral">        1.0</span></div>
-<div class="line"><a name="l08532"></a><span class="lineno"> 8532</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08533"></a><span class="lineno"> 8533</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#gac4fdfc318202d4647f877041ff5b7c08">Z3_probe_le</a>(self.ctx.ref(), self.probe, _to_probe(other, self.ctx).probe), self.ctx)</div>
-<div class="line"><a name="l08534"></a><span class="lineno"> 8534</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08526">8526</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08526"></a><span class="lineno"> 8526</span>&#160;    <span class="keyword">def </span>__le__(self, other):</div>
+<div class="line"><a name="l08527"></a><span class="lineno"> 8527</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
+<div class="line"><a name="l08528"></a><span class="lineno"> 8528</span>&#160;<span class="stringliteral">        is less than or equal to the value returned by `other`.</span></div>
+<div class="line"><a name="l08529"></a><span class="lineno"> 8529</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08530"></a><span class="lineno"> 8530</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) &lt;= 2</span></div>
+<div class="line"><a name="l08531"></a><span class="lineno"> 8531</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><a name="l08532"></a><span class="lineno"> 8532</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><a name="l08533"></a><span class="lineno"> 8533</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
+<div class="line"><a name="l08534"></a><span class="lineno"> 8534</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
+<div class="line"><a name="l08535"></a><span class="lineno"> 8535</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08536"></a><span class="lineno"> 8536</span>&#160;<span class="stringliteral">        1.0</span></div>
+<div class="line"><a name="l08537"></a><span class="lineno"> 8537</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08538"></a><span class="lineno"> 8538</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#gac4fdfc318202d4647f877041ff5b7c08">Z3_probe_le</a>(self.ctx.ref(), self.probe, _to_probe(other, self.ctx).probe), self.ctx)</div>
+<div class="line"><a name="l08539"></a><span class="lineno"> 8539</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -570,21 +570,21 @@ is less than the value returned by `other`.
 &gt;&gt;&gt; p(g)
 1.0
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08493">8493</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08493"></a><span class="lineno"> 8493</span>&#160;    <span class="keyword">def </span>__lt__(self, other):</div>
-<div class="line"><a name="l08494"></a><span class="lineno"> 8494</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
-<div class="line"><a name="l08495"></a><span class="lineno"> 8495</span>&#160;<span class="stringliteral">        is less than the value returned by `other`.</span></div>
-<div class="line"><a name="l08496"></a><span class="lineno"> 8496</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08497"></a><span class="lineno"> 8497</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) &lt; 10</span></div>
-<div class="line"><a name="l08498"></a><span class="lineno"> 8498</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><a name="l08499"></a><span class="lineno"> 8499</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><a name="l08500"></a><span class="lineno"> 8500</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
-<div class="line"><a name="l08501"></a><span class="lineno"> 8501</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
-<div class="line"><a name="l08502"></a><span class="lineno"> 8502</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08503"></a><span class="lineno"> 8503</span>&#160;<span class="stringliteral">        1.0</span></div>
-<div class="line"><a name="l08504"></a><span class="lineno"> 8504</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08505"></a><span class="lineno"> 8505</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#ga0467383bd6ed59ee29ee4e9be15ff883">Z3_probe_lt</a>(self.ctx.ref(), self.probe, _to_probe(other, self.ctx).probe), self.ctx)</div>
-<div class="line"><a name="l08506"></a><span class="lineno"> 8506</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08498">8498</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08498"></a><span class="lineno"> 8498</span>&#160;    <span class="keyword">def </span>__lt__(self, other):</div>
+<div class="line"><a name="l08499"></a><span class="lineno"> 8499</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
+<div class="line"><a name="l08500"></a><span class="lineno"> 8500</span>&#160;<span class="stringliteral">        is less than the value returned by `other`.</span></div>
+<div class="line"><a name="l08501"></a><span class="lineno"> 8501</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08502"></a><span class="lineno"> 8502</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) &lt; 10</span></div>
+<div class="line"><a name="l08503"></a><span class="lineno"> 8503</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><a name="l08504"></a><span class="lineno"> 8504</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><a name="l08505"></a><span class="lineno"> 8505</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
+<div class="line"><a name="l08506"></a><span class="lineno"> 8506</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
+<div class="line"><a name="l08507"></a><span class="lineno"> 8507</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08508"></a><span class="lineno"> 8508</span>&#160;<span class="stringliteral">        1.0</span></div>
+<div class="line"><a name="l08509"></a><span class="lineno"> 8509</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08510"></a><span class="lineno"> 8510</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#ga0467383bd6ed59ee29ee4e9be15ff883">Z3_probe_lt</a>(self.ctx.ref(), self.probe, _to_probe(other, self.ctx).probe), self.ctx)</div>
+<div class="line"><a name="l08511"></a><span class="lineno"> 8511</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -624,22 +624,22 @@ is not equal to the value returned by `other`.
 &gt;&gt;&gt; p(g)
 0.0
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08563">8563</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l08563"></a><span class="lineno"> 8563</span>&#160;    <span class="keyword">def </span>__ne__(self, other):</div>
-<div class="line"><a name="l08564"></a><span class="lineno"> 8564</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
-<div class="line"><a name="l08565"></a><span class="lineno"> 8565</span>&#160;<span class="stringliteral">        is not equal to the value returned by `other`.</span></div>
-<div class="line"><a name="l08566"></a><span class="lineno"> 8566</span>&#160;<span class="stringliteral"></span> </div>
-<div class="line"><a name="l08567"></a><span class="lineno"> 8567</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) != 2</span></div>
-<div class="line"><a name="l08568"></a><span class="lineno"> 8568</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><a name="l08569"></a><span class="lineno"> 8569</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><a name="l08570"></a><span class="lineno"> 8570</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
-<div class="line"><a name="l08571"></a><span class="lineno"> 8571</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
-<div class="line"><a name="l08572"></a><span class="lineno"> 8572</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
-<div class="line"><a name="l08573"></a><span class="lineno"> 8573</span>&#160;<span class="stringliteral">        0.0</span></div>
-<div class="line"><a name="l08574"></a><span class="lineno"> 8574</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><a name="l08575"></a><span class="lineno"> 8575</span>&#160;        p = self.__eq__(other)</div>
-<div class="line"><a name="l08576"></a><span class="lineno"> 8576</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#ga086232d553c2469328f86a0408091ebf">Z3_probe_not</a>(self.ctx.ref(), p.probe), self.ctx)</div>
-<div class="line"><a name="l08577"></a><span class="lineno"> 8577</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08568">8568</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l08568"></a><span class="lineno"> 8568</span>&#160;    <span class="keyword">def </span>__ne__(self, other):</div>
+<div class="line"><a name="l08569"></a><span class="lineno"> 8569</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Return a probe that evaluates to &quot;true&quot; when the value returned by `self`</span></div>
+<div class="line"><a name="l08570"></a><span class="lineno"> 8570</span>&#160;<span class="stringliteral">        is not equal to the value returned by `other`.</span></div>
+<div class="line"><a name="l08571"></a><span class="lineno"> 8571</span>&#160;<span class="stringliteral"></span> </div>
+<div class="line"><a name="l08572"></a><span class="lineno"> 8572</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p = Probe(&#39;size&#39;) != 2</span></div>
+<div class="line"><a name="l08573"></a><span class="lineno"> 8573</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><a name="l08574"></a><span class="lineno"> 8574</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><a name="l08575"></a><span class="lineno"> 8575</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0)</span></div>
+<div class="line"><a name="l08576"></a><span class="lineno"> 8576</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
+<div class="line"><a name="l08577"></a><span class="lineno"> 8577</span>&#160;<span class="stringliteral">        &gt;&gt;&gt; p(g)</span></div>
+<div class="line"><a name="l08578"></a><span class="lineno"> 8578</span>&#160;<span class="stringliteral">        0.0</span></div>
+<div class="line"><a name="l08579"></a><span class="lineno"> 8579</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l08580"></a><span class="lineno"> 8580</span>&#160;        p = self.__eq__(other)</div>
+<div class="line"><a name="l08581"></a><span class="lineno"> 8581</span>&#160;        <span class="keywordflow">return</span> Probe(<a class="code" href="group__capi.html#ga086232d553c2469328f86a0408091ebf">Z3_probe_not</a>(self.ctx.ref(), p.probe), self.ctx)</div>
+<div class="line"><a name="l08582"></a><span class="lineno"> 8582</span>&#160; </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -656,9 +656,9 @@ is not equal to the value returned by `other`.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08464">8464</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08469">8469</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08578">Probe.__call__()</a>, <a class="el" href="z3py_8py_source.html#l08486">Probe.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l08489">Probe.__del__()</a>, <a class="el" href="z3py_8py_source.html#l09201">ParserContext.__del__()</a>, <a class="el" href="z3py_8py_source.html#l08549">Probe.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l08535">Probe.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l08507">Probe.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l08521">Probe.__le__()</a>, <a class="el" href="z3py_8py_source.html#l08493">Probe.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l08563">Probe.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l09209">ParserContext.add_decl()</a>, <a class="el" href="z3py_8py_source.html#l09206">ParserContext.add_sort()</a>, <a class="el" href="z3py_8py_source.html#l11506">UserPropagateBase.conflict()</a>, <a class="el" href="z3py_8py_source.html#l11454">UserPropagateBase.ctx_ref()</a>, and <a class="el" href="z3py_8py_source.html#l09212">ParserContext.from_string()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08583">Probe.__call__()</a>, <a class="el" href="z3py_8py_source.html#l08491">Probe.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l08494">Probe.__del__()</a>, <a class="el" href="z3py_8py_source.html#l09206">ParserContext.__del__()</a>, <a class="el" href="z3py_8py_source.html#l08554">Probe.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l08540">Probe.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l08512">Probe.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l08526">Probe.__le__()</a>, <a class="el" href="z3py_8py_source.html#l08498">Probe.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l08568">Probe.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l09214">ParserContext.add_decl()</a>, <a class="el" href="z3py_8py_source.html#l09211">ParserContext.add_sort()</a>, <a class="el" href="z3py_8py_source.html#l11522">UserPropagateBase.conflict()</a>, <a class="el" href="z3py_8py_source.html#l11466">UserPropagateBase.ctx_ref()</a>, and <a class="el" href="z3py_8py_source.html#l09217">ParserContext.from_string()</a>.</p>
 
 </div>
 </div>
@@ -674,14 +674,14 @@ is not equal to the value returned by `other`.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08465">8465</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08470">8470</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08578">Probe.__call__()</a>, <a class="el" href="z3py_8py_source.html#l08486">Probe.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l08489">Probe.__del__()</a>, <a class="el" href="z3py_8py_source.html#l08549">Probe.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l08535">Probe.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l08507">Probe.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l08521">Probe.__le__()</a>, and <a class="el" href="z3py_8py_source.html#l08493">Probe.__lt__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l08583">Probe.__call__()</a>, <a class="el" href="z3py_8py_source.html#l08491">Probe.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l08494">Probe.__del__()</a>, <a class="el" href="z3py_8py_source.html#l08554">Probe.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l08540">Probe.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l08512">Probe.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l08526">Probe.__le__()</a>, and <a class="el" href="z3py_8py_source.html#l08498">Probe.__lt__()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_ac4bf85b220e85e838b0ebae74cd10c69"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">z3py.UserPropagateBase.__init__</a></div><div class="ttdeci">def __init__(self, s, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11418">z3py.py:11418</a></div></div>
+<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_ac4bf85b220e85e838b0ebae74cd10c69"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#ac4bf85b220e85e838b0ebae74cd10c69">z3py.UserPropagateBase.__init__</a></div><div class="ttdeci">def __init__(self, s, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11434">z3py.py:11434</a></div></div>
 <div class="ttc" id="agroup__capi_html_gab82522fbef0c78296d86cc1c3fb405c1"><div class="ttname"><a href="group__capi.html#gab82522fbef0c78296d86cc1c3fb405c1">Z3_probe_gt</a></div><div class="ttdeci">Z3_probe Z3_API Z3_probe_gt(Z3_context x, Z3_probe p1, Z3_probe p2)</div><div class="ttdoc">Return a probe that evaluates to &quot;true&quot; when the value returned by p1 is greater than the value retur...</div></div>
 <div class="ttc" id="agroup__capi_html_ga0beba558248d108ab5841dbfe66f7a74"><div class="ttname"><a href="group__capi.html#ga0beba558248d108ab5841dbfe66f7a74">Z3_probe_eq</a></div><div class="ttdeci">Z3_probe Z3_API Z3_probe_eq(Z3_context x, Z3_probe p1, Z3_probe p2)</div><div class="ttdoc">Return a probe that evaluates to &quot;true&quot; when the value returned by p1 is equal to the value returned ...</div></div>
 <div class="ttc" id="agroup__capi_html_ga88032b351b7ef84c5d71d31f81282058"><div class="ttname"><a href="group__capi.html#ga88032b351b7ef84c5d71d31f81282058">Z3_probe_dec_ref</a></div><div class="ttdeci">void Z3_API Z3_probe_dec_ref(Z3_context c, Z3_probe p)</div><div class="ttdoc">Decrement the reference counter of the given probe.</div></div>
@@ -689,7 +689,7 @@ is not equal to the value returned by `other`.
 <div class="ttc" id="agroup__capi_html_gad4b286469cd56992ad80fbe0c8c4e40a"><div class="ttname"><a href="group__capi.html#gad4b286469cd56992ad80fbe0c8c4e40a">Z3_probe_apply</a></div><div class="ttdeci">double Z3_API Z3_probe_apply(Z3_context c, Z3_probe p, Z3_goal g)</div><div class="ttdoc">Execute the probe over the goal. The probe always produce a double value. &quot;Boolean&quot; probes return 0....</div></div>
 <div class="ttc" id="agroup__capi_html_gac4fdfc318202d4647f877041ff5b7c08"><div class="ttname"><a href="group__capi.html#gac4fdfc318202d4647f877041ff5b7c08">Z3_probe_le</a></div><div class="ttdeci">Z3_probe Z3_API Z3_probe_le(Z3_context x, Z3_probe p1, Z3_probe p2)</div><div class="ttdoc">Return a probe that evaluates to &quot;true&quot; when the value returned by p1 is less than or equal to the va...</div></div>
 <div class="ttc" id="agroup__capi_html_ga6fe664f31af8362b37cab54796a84a99"><div class="ttname"><a href="group__capi.html#ga6fe664f31af8362b37cab54796a84a99">Z3_probe_inc_ref</a></div><div class="ttdeci">void Z3_API Z3_probe_inc_ref(Z3_context c, Z3_probe p)</div><div class="ttdoc">Increment the reference counter of the given probe.</div></div>
-<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_a41a65d7030dd1006b177d0bc24e1a12b"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#a41a65d7030dd1006b177d0bc24e1a12b">z3py.UserPropagateBase.__del__</a></div><div class="ttdeci">def __del__(self)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11444">z3py.py:11444</a></div></div>
+<div class="ttc" id="aclassz3py_1_1_user_propagate_base_html_a41a65d7030dd1006b177d0bc24e1a12b"><div class="ttname"><a href="classz3py_1_1_user_propagate_base.html#a41a65d7030dd1006b177d0bc24e1a12b">z3py.UserPropagateBase.__del__</a></div><div class="ttdeci">def __del__(self)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11456">z3py.py:11456</a></div></div>
 <div class="ttc" id="agroup__capi_html_gaef1657e9f2fe4b8c64fc88249296128b"><div class="ttname"><a href="group__capi.html#gaef1657e9f2fe4b8c64fc88249296128b">Z3_probe_const</a></div><div class="ttdeci">Z3_probe Z3_API Z3_probe_const(Z3_context x, double val)</div><div class="ttdoc">Return a probe that always evaluates to val.</div></div>
 <div class="ttc" id="agroup__capi_html_ga0467383bd6ed59ee29ee4e9be15ff883"><div class="ttname"><a href="group__capi.html#ga0467383bd6ed59ee29ee4e9be15ff883">Z3_probe_lt</a></div><div class="ttdeci">Z3_probe Z3_API Z3_probe_lt(Z3_context x, Z3_probe p1, Z3_probe p2)</div><div class="ttdoc">Return a probe that evaluates to &quot;true&quot; when the value returned by p1 is less than the value returned...</div></div>
 <div class="ttc" id="agroup__capi_html_ga086232d553c2469328f86a0408091ebf"><div class="ttname"><a href="group__capi.html#ga086232d553c2469328f86a0408091ebf">Z3_probe_not</a></div><div class="ttdeci">Z3_probe Z3_API Z3_probe_not(Z3_context x, Z3_probe p)</div><div class="ttdoc">Return a probe that evaluates to &quot;true&quot; when p does not evaluate to true.</div></div>
@@ -697,7 +697,7 @@ is not equal to the value returned by `other`.
 <div class="ttc" id="agroup__capi_html_ga6c549642ecd7e08a9fabd5a4a01003e5"><div class="ttname"><a href="group__capi.html#ga6c549642ecd7e08a9fabd5a4a01003e5">Z3_mk_probe</a></div><div class="ttdeci">Z3_probe Z3_API Z3_mk_probe(Z3_context c, Z3_string name)</div><div class="ttdoc">Return a probe associated with the given name. The complete list of probes may be obtained using the ...</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 6 2022 19:05:44 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 22 2022 19:13:37 for Z3 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
