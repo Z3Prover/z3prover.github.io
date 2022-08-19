@@ -10118,6 +10118,10 @@ Data descriptors defined here:<br>
 
 <dl><dt><a name="UserPropagateBase-add"><strong>add</strong></a>(self, e)</dt></dl>
 
+<dl><dt><a name="UserPropagateBase-add_created"><strong>add_created</strong></a>(self, created)</dt></dl>
+
+<dl><dt><a name="UserPropagateBase-add_decide"><strong>add_decide</strong></a>(self, decide)</dt></dl>
+
 <dl><dt><a name="UserPropagateBase-add_diseq"><strong>add_diseq</strong></a>(self, diseq)</dt></dl>
 
 <dl><dt><a name="UserPropagateBase-add_eq"><strong>add_eq</strong></a>(self, eq)</dt></dl>
@@ -10126,13 +10130,17 @@ Data descriptors defined here:<br>
 
 <dl><dt><a name="UserPropagateBase-add_fixed"><strong>add_fixed</strong></a>(self, fixed)</dt></dl>
 
-<dl><dt><a name="UserPropagateBase-conflict"><strong>conflict</strong></a>(self, deps)</dt></dl>
+<dl><dt><a name="UserPropagateBase-conflict"><strong>conflict</strong></a>(self, deps=[], eqs=[])</dt></dl>
 
 <dl><dt><a name="UserPropagateBase-ctx"><strong>ctx</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="UserPropagateBase-ctx_ref"><strong>ctx_ref</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="UserPropagateBase-fresh"><strong>fresh</strong></a>(self, new_ctx)</dt></dl>
+
+<dl><dt><a name="UserPropagateBase-next_split"><strong>next_split</strong></a>(self, t, idx, phase)</dt><dd><tt>#&nbsp;Tell&nbsp;the&nbsp;solver&nbsp;to&nbsp;perform&nbsp;the&nbsp;next&nbsp;split&nbsp;on&nbsp;a&nbsp;given&nbsp;term<br>
+#&nbsp;If&nbsp;the&nbsp;term&nbsp;is&nbsp;a&nbsp;bit-vector&nbsp;the&nbsp;index&nbsp;idx&nbsp;specifies&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;Boolean&nbsp;variable&nbsp;being<br>
+#&nbsp;split&nbsp;on.&nbsp;A&nbsp;phase&nbsp;of&nbsp;true&nbsp;=&nbsp;1/false&nbsp;=&nbsp;-1/undef&nbsp;=&nbsp;0&nbsp;=&nbsp;let&nbsp;solver&nbsp;decide&nbsp;is&nbsp;the&nbsp;last&nbsp;argument.</tt></dd></dl>
 
 <dl><dt><a name="UserPropagateBase-pop"><strong>pop</strong></a>(self, num_scopes)</dt></dl>
 
@@ -10895,6 +10903,10 @@ a*b*c<br>
 &gt;&gt;&gt;&nbsp;A&nbsp;=&nbsp;<a href="#-IntVector">IntVector</a>('a',&nbsp;5)<br>
 &gt;&gt;&gt;&nbsp;<a href="#-Product">Product</a>(A)<br>
 a__0*a__1*a__2*a__3*a__4</tt></dd></dl>
+ <dl><dt><a name="-PropagateFunction"><strong>PropagateFunction</strong></a>(name, *sig)</dt><dd><tt>Create&nbsp;a&nbsp;function&nbsp;that&nbsp;gets&nbsp;tracked&nbsp;by&nbsp;user&nbsp;propagator.<br>
+Every&nbsp;term&nbsp;headed&nbsp;by&nbsp;this&nbsp;function&nbsp;symbol&nbsp;is&nbsp;tracked.<br>
+If&nbsp;a&nbsp;term&nbsp;is&nbsp;fixed&nbsp;and&nbsp;the&nbsp;fixed&nbsp;callback&nbsp;is&nbsp;registered&nbsp;a<br>
+callback&nbsp;is&nbsp;invoked&nbsp;that&nbsp;the&nbsp;term&nbsp;headed&nbsp;by&nbsp;this&nbsp;function&nbsp;is&nbsp;fixed.</tt></dd></dl>
  <dl><dt><a name="-Q"><strong>Q</strong></a>(a, b, ctx=None)</dt><dd><tt>Return&nbsp;a&nbsp;Z3&nbsp;rational&nbsp;a/b.<br>
 &nbsp;<br>
 If&nbsp;`ctx=None`,&nbsp;then&nbsp;the&nbsp;global&nbsp;context&nbsp;is&nbsp;used.<br>
@@ -12525,11 +12537,14 @@ True</tt></dd></dl>
  <dl><dt><a name="-to_Ast"><strong>to_Ast</strong></a>(ptr)</dt></dl>
  <dl><dt><a name="-to_ContextObj"><strong>to_ContextObj</strong></a>(ptr)</dt></dl>
  <dl><dt><a name="-to_symbol"><strong>to_symbol</strong></a>(s, ctx=None)</dt><dd><tt>Convert&nbsp;an&nbsp;integer&nbsp;or&nbsp;string&nbsp;into&nbsp;a&nbsp;Z3&nbsp;symbol.</tt></dd></dl>
+ <dl><dt><a name="-user_prop_created"><strong>user_prop_created</strong></a>(ctx, cb, id)</dt></dl>
+ <dl><dt><a name="-user_prop_decide"><strong>user_prop_decide</strong></a>(ctx, cb, t_ref, idx_ref, phase_ref)</dt><dd><tt>#&nbsp;TODO&nbsp;The&nbsp;decision&nbsp;callback&nbsp;is&nbsp;not&nbsp;fully&nbsp;implemented.<br>
+#&nbsp;It&nbsp;needs&nbsp;to&nbsp;handle&nbsp;the&nbsp;ast*,&nbsp;unsigned*&nbsp;idx,&nbsp;and&nbsp;Z3_lbool*</tt></dd></dl>
  <dl><dt><a name="-user_prop_diseq"><strong>user_prop_diseq</strong></a>(ctx, cb, x, y)</dt></dl>
  <dl><dt><a name="-user_prop_eq"><strong>user_prop_eq</strong></a>(ctx, cb, x, y)</dt></dl>
  <dl><dt><a name="-user_prop_final"><strong>user_prop_final</strong></a>(ctx, cb)</dt></dl>
  <dl><dt><a name="-user_prop_fixed"><strong>user_prop_fixed</strong></a>(ctx, cb, id, value)</dt></dl>
- <dl><dt><a name="-user_prop_fresh"><strong>user_prop_fresh</strong></a>(ctx, new_ctx)</dt></dl>
+ <dl><dt><a name="-user_prop_fresh"><strong>user_prop_fresh</strong></a>(ctx, _new_ctx)</dt></dl>
  <dl><dt><a name="-user_prop_pop"><strong>user_prop_pop</strong></a>(ctx, cb, num_scopes)</dt></dl>
  <dl><dt><a name="-user_prop_push"><strong>user_prop_push</strong></a>(ctx, cb)</dt></dl>
  <dl><dt><a name="-z3_debug"><strong>z3_debug</strong></a>()</dt></dl>
@@ -12889,7 +12904,7 @@ True</tt></dd></dl>
 <strong>memmove</strong> = &lt;CFunctionType object&gt;<br>
 <strong>memset</strong> = &lt;CFunctionType object&gt;<br>
 <strong>pydll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
-<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7fdef4d08190&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7f83606c7190&gt;<br>
 <strong>sat</strong> = sat<br>
 <strong>unknown</strong> = unknown<br>
 <strong>unsat</strong> = unsat<br>
