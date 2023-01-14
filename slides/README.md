@@ -11,4 +11,5 @@
   * [Lecture 2](https://z3prover.github.io/slides/MOD-12-8-2015.pptx)
   * [Lecture 3](https://z3prover.github.io/slides/MOD-14-8-2015.pptx)
 * [Slides on Z3 Wiki](https://github.com/Z3Prover/z3/wiki/Slides)
-* [SAT Dagstuhl 2022, Proofs (Draft)](https://z3prover.github.io/slides/proofs.html)
+* [SAT Dagstuhl 2022, Proofs](https://z3prover.github.io/slides/proofs.html)
+* [POPL 2023 tutorial, Z3 Internals (Preliminary Draft)](https://z3prover.github.io/slides/z3internals.html)
