@@ -29,13 +29,13 @@
 </div>
 <hr width="100%">
 
-<pre><span id="VALmk_sort"><span class="keyword">val</span> mk_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+<pre><span id="VALmk_sort"><span class="keyword">val</span> mk_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a new array sort.</p>
 </div>
 </div>
 
-<pre><span id="VALis_store"><span class="keyword">val</span> is_store</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_store"><span class="keyword">val</span> is_store</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Indicates whether the term is an array store.
       It satisfies select(store(a,i,v),j) = if i = j then v else select(a,j).
@@ -43,34 +43,34 @@
 </div>
 </div>
 
-<pre><span id="VALis_select"><span class="keyword">val</span> is_select</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_select"><span class="keyword">val</span> is_select</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Indicates whether the term is an array select.</p>
 </div>
 </div>
 
-<pre><span id="VALis_constant_array"><span class="keyword">val</span> is_constant_array</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_constant_array"><span class="keyword">val</span> is_constant_array</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Indicates whether the term is a constant array.
       For example, select(const(v),i) = v holds for every v and i. The function is unary.</p>
 </div>
 </div>
 
-<pre><span id="VALis_default_array"><span class="keyword">val</span> is_default_array</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_default_array"><span class="keyword">val</span> is_default_array</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Indicates whether the term is a default array.
       For example default(const(v)) = v. The function is unary.</p>
 </div>
 </div>
 
-<pre><span id="VALis_array_map"><span class="keyword">val</span> is_array_map</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_array_map"><span class="keyword">val</span> is_array_map</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Indicates whether the term is an array map.
       It satisfies map<code class="code">f</code>(a1,..,a_n)<code class="code">i</code> = f(a1<code class="code">i</code>,...,a_n<code class="code">i</code>) for every i.</p>
 </div>
 </div>
 
-<pre><span id="VALis_as_array"><span class="keyword">val</span> is_as_array</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_as_array"><span class="keyword">val</span> is_as_array</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Indicates whether the term is an as-array term.
       An as-array term is n array value that behaves as the function graph of the
@@ -78,37 +78,37 @@
 </div>
 </div>
 
-<pre><span id="VALis_array"><span class="keyword">val</span> is_array</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_array"><span class="keyword">val</span> is_array</span> : <code class="type"><a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Indicates whether the term is of an array sort.</p>
 </div>
 </div>
 
-<pre><span id="VALget_domain"><span class="keyword">val</span> get_domain</span> : <code class="type"><a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+<pre><span id="VALget_domain"><span class="keyword">val</span> get_domain</span> : <code class="type"><a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>The domain of the array sort.</p>
 </div>
 </div>
 
-<pre><span id="VALget_range"><span class="keyword">val</span> get_range</span> : <code class="type"><a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+<pre><span id="VALget_range"><span class="keyword">val</span> get_range</span> : <code class="type"><a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>The range of the array sort.</p>
 </div>
 </div>
 
-<pre><span id="VALmk_const"><span class="keyword">val</span> mk_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -><br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<pre><span id="VALmk_const"><span class="keyword">val</span> mk_const</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt;<br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create an array constant.</p>
 </div>
 </div>
 
-<pre><span id="VALmk_const_s"><span class="keyword">val</span> mk_const_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> string -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<pre><span id="VALmk_const_s"><span class="keyword">val</span> mk_const_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; string -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create an array constant.</p>
 </div>
 </div>
 
-<pre><span id="VALmk_select"><span class="keyword">val</span> mk_select</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<pre><span id="VALmk_select"><span class="keyword">val</span> mk_select</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Array read.</p>
 
@@ -123,7 +123,7 @@
 </div>
 </div>
 
-<pre><span id="VALmk_store"><span class="keyword">val</span> mk_store</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<pre><span id="VALmk_store"><span class="keyword">val</span> mk_store</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Array update.</p>
 
@@ -142,7 +142,7 @@
 </div>
 </div>
 
-<pre><span id="VALmk_const_array"><span class="keyword">val</span> mk_const_array</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<pre><span id="VALmk_const_array"><span class="keyword">val</span> mk_const_array</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a constant array.</p>
 
@@ -153,7 +153,7 @@
 </div>
 </div>
 
-<pre><span id="VALmk_map"><span class="keyword">val</span> mk_map</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<pre><span id="VALmk_map"><span class="keyword">val</span> mk_map</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Maps f on the argument arrays.</p>
 
@@ -166,7 +166,7 @@
 </div>
 </div>
 
-<pre><span id="VALmk_term_array"><span class="keyword">val</span> mk_term_array</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<pre><span id="VALmk_term_array"><span class="keyword">val</span> mk_term_array</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Access the array default value.</p>
 
@@ -175,7 +175,7 @@
 </div>
 </div>
 
-<pre><span id="VALmk_array_ext"><span class="keyword">val</span> mk_array_ext</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -> <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<pre><span id="VALmk_array_ext"><span class="keyword">val</span> mk_array_ext</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create array extensionality index given two arrays with the same sort.</p>
 

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lower_6698',['Lower',['../class_microsoft_1_1_z3_1_1_optimize_1_1_handle.html#a887547e0432a9578e5b632c648d674d5',1,'Microsoft::Z3::Optimize::Handle']]],
-  ['lowerasvector_6699',['LowerAsVector',['../class_microsoft_1_1_z3_1_1_optimize_1_1_handle.html#a229ec60851a3026ca84de0667d9f220d',1,'Microsoft::Z3::Optimize::Handle']]]
+  ['mkdecl_7774',['MkDecl',['../class_microsoft_1_1_z3_1_1_tuple_sort.html#a4508190ebeb87f07f8a5a7d44fd81928',1,'Microsoft::Z3::TupleSort']]],
+  ['model_7775',['Model',['../class_microsoft_1_1_z3_1_1_native_solver.html#a77fb80677534145f7d1f23e346d1c51e',1,'Microsoft.Z3.NativeSolver.Model()'],['../class_microsoft_1_1_z3_1_1_optimize.html#a19d4441784b80d6be56e17fc00c09af2',1,'Microsoft.Z3.Optimize.Model()'],['../class_microsoft_1_1_z3_1_1_solver.html#a19d4441784b80d6be56e17fc00c09af2',1,'Microsoft.Z3.Solver.Model()']]]
 ];

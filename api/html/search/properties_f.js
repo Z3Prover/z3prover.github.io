@@ -1,9 +1,21 @@
 var searchData=
 [
-  ['range_6740',['Range',['../class_microsoft_1_1_z3_1_1_array_sort.html#a21d9c32f3de29d8e4ba4e57cadede1f1',1,'Microsoft.Z3.ArraySort.Range()'],['../class_microsoft_1_1_z3_1_1_func_decl.html#a21d9c32f3de29d8e4ba4e57cadede1f1',1,'Microsoft.Z3.FuncDecl.Range()']]],
-  ['rational_6741',['Rational',['../class_microsoft_1_1_z3_1_1_func_decl_1_1_parameter.html#a83eacfa32653229fb9de5d44ad0ae8b5',1,'Microsoft::Z3::FuncDecl::Parameter']]],
-  ['realsort_6742',['RealSort',['../class_microsoft_1_1_z3_1_1_context.html#a8d234cf11554e05c81e076645a8a45ec',1,'Microsoft::Z3::Context']]],
-  ['reasonunknown_6743',['ReasonUnknown',['../class_microsoft_1_1_z3_1_1_optimize.html#afe78ca657057c5c6a2472e654b71f29d',1,'Microsoft.Z3.Optimize.ReasonUnknown()'],['../class_microsoft_1_1_z3_1_1_solver.html#abd6b00571dd37bd2c5252c4e5414788e',1,'Microsoft.Z3.Solver.ReasonUnknown()']]],
-  ['recognizers_6744',['Recognizers',['../class_microsoft_1_1_z3_1_1_datatype_sort.html#aae2d5d5116df20981c007659ef08e90d',1,'Microsoft::Z3::DatatypeSort']]],
-  ['rules_6745',['Rules',['../class_microsoft_1_1_z3_1_1_fixedpoint.html#a21495691483fcd4a925d9736036c2db9',1,'Microsoft::Z3::Fixedpoint']]]
+  ['sbits_7815',['SBits',['../class_microsoft_1_1_z3_1_1_f_p_sort.html#ab1518d6ee289420757c142f25fef7d43',1,'Microsoft.Z3.FPSort.SBits()'],['../class_microsoft_1_1_z3_1_1_f_p_expr.html#ab1518d6ee289420757c142f25fef7d43',1,'Microsoft.Z3.FPExpr.SBits()']]],
+  ['sign_7816',['Sign',['../class_microsoft_1_1_z3_1_1_f_p_num.html#ad776566572df8f04b13a9e6cfdc37f2e',1,'Microsoft::Z3::FPNum']]],
+  ['signbv_7817',['SignBV',['../class_microsoft_1_1_z3_1_1_f_p_num.html#a32140e2be1d21b5276a9478d0936e62e',1,'Microsoft::Z3::FPNum']]],
+  ['significand_7818',['Significand',['../class_microsoft_1_1_z3_1_1_f_p_num.html#a79c916be55e1c8f82f007b774a3d7c97',1,'Microsoft::Z3::FPNum']]],
+  ['significandbv_7819',['SignificandBV',['../class_microsoft_1_1_z3_1_1_f_p_num.html#a81df58ac7310c37f41ccd2427fcf613a',1,'Microsoft::Z3::FPNum']]],
+  ['significanduint64_7820',['SignificandUInt64',['../class_microsoft_1_1_z3_1_1_f_p_num.html#ab537a118bc0e7a6cc6f650b6d8d8e5d0',1,'Microsoft::Z3::FPNum']]],
+  ['simplifyparameterdescriptions_7821',['SimplifyParameterDescriptions',['../class_microsoft_1_1_z3_1_1_context.html#a466b704cf267a92ad76cf0dadabd2eb1',1,'Microsoft::Z3::Context']]],
+  ['size_7822',['Size',['../class_microsoft_1_1_z3_1_1_a_s_t_vector.html#a7ca98a80f1042d79250adc873baf5bf2',1,'Microsoft.Z3.ASTVector.Size()'],['../class_microsoft_1_1_z3_1_1_bit_vec_sort.html#a7ca98a80f1042d79250adc873baf5bf2',1,'Microsoft.Z3.BitVecSort.Size()'],['../class_microsoft_1_1_z3_1_1_finite_domain_sort.html#aa5ffe09ba7983a54bc0412de1e95b76f',1,'Microsoft.Z3.FiniteDomainSort.Size()'],['../class_microsoft_1_1_z3_1_1_goal.html#a7ca98a80f1042d79250adc873baf5bf2',1,'Microsoft.Z3.Goal.Size()'],['../class_microsoft_1_1_z3_1_1_param_descrs.html#a7ca98a80f1042d79250adc873baf5bf2',1,'Microsoft.Z3.ParamDescrs.Size()'],['../class_microsoft_1_1_z3_1_1_statistics.html#a7ca98a80f1042d79250adc873baf5bf2',1,'Microsoft.Z3.Statistics.Size()']]],
+  ['solver_7823',['Solver',['../class_microsoft_1_1_z3_1_1_tactic.html#aeb21dc751c0958f6568fc31afeac9fb6',1,'Microsoft::Z3::Tactic']]],
+  ['sort_7824',['Sort',['../class_microsoft_1_1_z3_1_1_expr.html#a835edab4babf067c34fb9944ff7a9278',1,'Microsoft.Z3.Expr.Sort()'],['../class_microsoft_1_1_z3_1_1_func_decl_1_1_parameter.html#a835edab4babf067c34fb9944ff7a9278',1,'Microsoft.Z3.FuncDecl.Parameter.Sort()']]],
+  ['sortkind_7825',['SortKind',['../class_microsoft_1_1_z3_1_1_sort.html#a8404cbb6717df58172309b7263d8b920',1,'Microsoft::Z3::Sort']]],
+  ['sorts_7826',['Sorts',['../class_microsoft_1_1_z3_1_1_model.html#a8b343953e7f61a392d94cfa6940d46e3',1,'Microsoft.Z3.Model.Sorts()'],['../class_microsoft_1_1_z3_1_1_native_model.html#a440fa3cad180f0deda99d87995b7feb1',1,'Microsoft.Z3.NativeModel.Sorts()']]],
+  ['sortsize_7827',['SortSize',['../class_microsoft_1_1_z3_1_1_bit_vec_expr.html#ab8bb5174f81faca7df4241b17184c439',1,'Microsoft::Z3::BitVecExpr']]],
+  ['statistics_7828',['Statistics',['../class_microsoft_1_1_z3_1_1_fixedpoint.html#a699d6f2e6a6282d3057145a5fb97a04b',1,'Microsoft.Z3.Fixedpoint.Statistics()'],['../class_microsoft_1_1_z3_1_1_native_solver.html#ab39bd0de6f2c0a4a70375b74b204e10a',1,'Microsoft.Z3.NativeSolver.Statistics()'],['../class_microsoft_1_1_z3_1_1_optimize.html#a699d6f2e6a6282d3057145a5fb97a04b',1,'Microsoft.Z3.Optimize.Statistics()'],['../class_microsoft_1_1_z3_1_1_solver.html#a699d6f2e6a6282d3057145a5fb97a04b',1,'Microsoft.Z3.Solver.Statistics()']]],
+  ['string_7829',['String',['../class_microsoft_1_1_z3_1_1_expr.html#a885998dfc6e5d332a56835c0dd92d8fd',1,'Microsoft.Z3.Expr.String()'],['../class_microsoft_1_1_z3_1_1_string_symbol.html#a885998dfc6e5d332a56835c0dd92d8fd',1,'Microsoft.Z3.StringSymbol.String()']]],
+  ['stringsort_7830',['StringSort',['../class_microsoft_1_1_z3_1_1_context.html#abf872f68e31f721ade9fb7a08492eb92',1,'Microsoft::Z3::Context']]],
+  ['subgoals_7831',['Subgoals',['../class_microsoft_1_1_z3_1_1_apply_result.html#ae4ac3800b97d2471226b3bac3517ccc5',1,'Microsoft::Z3::ApplyResult']]],
+  ['symbol_7832',['Symbol',['../class_microsoft_1_1_z3_1_1_func_decl_1_1_parameter.html#a446239fd67fa70d2bb69d394677d9718',1,'Microsoft::Z3::FuncDecl::Parameter']]]
 ];

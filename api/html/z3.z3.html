@@ -17,7 +17,7 @@ and&nbsp;geometrical&nbsp;problems.<br>
 &nbsp;<br>
 &nbsp;<br>
 Please&nbsp;send&nbsp;feedback,&nbsp;comments&nbsp;and/or&nbsp;corrections&nbsp;on&nbsp;the&nbsp;Issue&nbsp;tracker&nbsp;for<br>
-https://github.com/Z3prover/z3.git.&nbsp;Your&nbsp;comments&nbsp;are&nbsp;very&nbsp;valuable.<br>
+<a href="https://github.com/Z3prover/z3.git">https://github.com/Z3prover/z3.git</a>.&nbsp;Your&nbsp;comments&nbsp;are&nbsp;very&nbsp;valuable.<br>
 &nbsp;<br>
 Small&nbsp;example:<br>
 &nbsp;<br>
@@ -78,6 +78,7 @@ failed:&nbsp;sort&nbsp;mismatch</tt></p>
 </font></dt><dt><font face="helvetica, arial"><a href="z3.z3.html#Context">Context</a>
 </font></dt><dt><font face="helvetica, arial"><a href="z3.z3.html#Datatype">Datatype</a>
 </font></dt><dt><font face="helvetica, arial"><a href="z3.z3.html#FuncEntry">FuncEntry</a>
+</font></dt><dt><font face="helvetica, arial"><a href="z3.z3.html#OnClause">OnClause</a>
 </font></dt><dt><font face="helvetica, arial"><a href="z3.z3.html#OptimizeObjective">OptimizeObjective</a>
 </font></dt><dt><font face="helvetica, arial"><a href="z3.z3.html#ParamDescrsRef">ParamDescrsRef</a>
 </font></dt><dt><font face="helvetica, arial"><a href="z3.z3.html#ParamsRef">ParamsRef</a>
@@ -7409,6 +7410,28 @@ Data descriptors inherited from <a href="z3.z3.html#Z3PPObject">Z3PPObject</a>:<
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="OnClause">class <strong>OnClause</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#OnClause">OnClause</a>(s,&nbsp;on_clause)<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="OnClause-__init__"><strong>__init__</strong></a>(self, s, on_clause)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#000000" face="helvetica, arial"><a name="Optimize">class <strong>Optimize</strong></a>(<a href="z3.z3.html#Z3PPObject">Z3PPObject</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
@@ -9635,6 +9658,8 @@ sat<br>
 &gt;&gt;&gt;&nbsp;s.<a href="#Solver-model">model</a>()<br>
 [a&nbsp;=&nbsp;-2]</tt></dd></dl>
 
+<dl><dt><a name="Solver-next"><strong>next</strong></a>(self, t)</dt></dl>
+
 <dl><dt><a name="Solver-non_units"><strong>non_units</strong></a>(self)</dt><dd><tt>Return&nbsp;an&nbsp;AST&nbsp;vector&nbsp;containing&nbsp;all&nbsp;atomic&nbsp;formulas&nbsp;in&nbsp;solver&nbsp;state&nbsp;that&nbsp;are&nbsp;not&nbsp;units.</tt></dd></dl>
 
 <dl><dt><a name="Solver-num_scopes"><strong>num_scopes</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;current&nbsp;number&nbsp;of&nbsp;backtracking&nbsp;points.<br>
@@ -9714,6 +9739,8 @@ unknown<br>
 &gt;&gt;&gt;&nbsp;s.<a href="#Solver-reset">reset</a>()<br>
 &gt;&gt;&gt;&nbsp;s<br>
 []</tt></dd></dl>
+
+<dl><dt><a name="Solver-root"><strong>root</strong></a>(self, t)</dt></dl>
 
 <dl><dt><a name="Solver-set"><strong>set</strong></a>(self, *args, **keys)</dt><dd><tt>Set&nbsp;a&nbsp;configuration&nbsp;option.<br>
 The&nbsp;method&nbsp;`<a href="#Solver-help">help</a>()`&nbsp;return&nbsp;a&nbsp;string&nbsp;containing&nbsp;all&nbsp;available&nbsp;options.<br>
@@ -10559,7 +10586,7 @@ If&nbsp;`ctx=None`,&nbsp;then&nbsp;the&nbsp;global&nbsp;context&nbsp;is&nbsp;use
 &gt;&gt;&gt;&nbsp;x.ebits()<br>
 8<br>
 &gt;&gt;&gt;&nbsp;<a href="#-fpMul">fpMul</a>(<a href="#-RNE">RNE</a>(),&nbsp;<a href="#-fpAdd">fpAdd</a>(<a href="#-RNE">RNE</a>(),&nbsp;x,&nbsp;y),&nbsp;z)<br>
-<a href="#-fpMul">fpMul</a>(<a href="#-RNE">RNE</a>(),&nbsp;<a href="#-fpAdd">fpAdd</a>(<a href="#-RNE">RNE</a>(),&nbsp;x,&nbsp;y),&nbsp;z)</tt></dd></dl>
+x&nbsp;+&nbsp;y&nbsp;*&nbsp;z</tt></dd></dl>
  <dl><dt><a name="-FailIf"><strong>FailIf</strong></a>(p, ctx=None)</dt><dd><tt>Return&nbsp;a&nbsp;tactic&nbsp;that&nbsp;fails&nbsp;if&nbsp;the&nbsp;probe&nbsp;`p`&nbsp;evaluates&nbsp;to&nbsp;true.<br>
 Otherwise,&nbsp;it&nbsp;returns&nbsp;the&nbsp;input&nbsp;goal&nbsp;unmodified.<br>
 &nbsp;<br>
@@ -11362,6 +11389,8 @@ proved<br>
 &gt;&gt;&gt;&nbsp;<a href="#-prove">prove</a>(<a href="#-Implies">Implies</a>(i&nbsp;!=&nbsp;j,&nbsp;s[j]&nbsp;==&nbsp;a[j]))<br>
 proved</tt></dd></dl>
  <dl><dt><a name="-Var"><strong>Var</strong></a>(idx, s)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;free&nbsp;variable.&nbsp;Free&nbsp;variables&nbsp;are&nbsp;used&nbsp;to&nbsp;create&nbsp;quantified&nbsp;formulas.<br>
+A&nbsp;free&nbsp;variable&nbsp;with&nbsp;index&nbsp;n&nbsp;is&nbsp;bound&nbsp;when&nbsp;it&nbsp;occurs&nbsp;within&nbsp;the&nbsp;scope&nbsp;of&nbsp;n+1&nbsp;quantified<br>
+declarations.<br>
 &nbsp;<br>
 &gt;&gt;&gt;&nbsp;<a href="#-Var">Var</a>(0,&nbsp;<a href="#-IntSort">IntSort</a>())<br>
 <a href="#-Var">Var</a>(0)<br>
@@ -11478,9 +11507,9 @@ True</tt></dd></dl>
 &gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-FP">FP</a>('x',&nbsp;s)<br>
 &gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;<a href="#-FP">FP</a>('y',&nbsp;s)<br>
 &gt;&gt;&gt;&nbsp;<a href="#-fpAdd">fpAdd</a>(rm,&nbsp;x,&nbsp;y)<br>
-<a href="#-fpAdd">fpAdd</a>(<a href="#-RNE">RNE</a>(),&nbsp;x,&nbsp;y)<br>
-&gt;&gt;&gt;&nbsp;<a href="#-fpAdd">fpAdd</a>(<a href="#-RTZ">RTZ</a>(),&nbsp;x,&nbsp;y)&nbsp;#&nbsp;default&nbsp;rounding&nbsp;mode&nbsp;is&nbsp;RTZ<br>
 x&nbsp;+&nbsp;y<br>
+&gt;&gt;&gt;&nbsp;<a href="#-fpAdd">fpAdd</a>(<a href="#-RTZ">RTZ</a>(),&nbsp;x,&nbsp;y)&nbsp;#&nbsp;default&nbsp;rounding&nbsp;mode&nbsp;is&nbsp;RTZ<br>
+<a href="#-fpAdd">fpAdd</a>(<a href="#-RTZ">RTZ</a>(),&nbsp;x,&nbsp;y)<br>
 &gt;&gt;&gt;&nbsp;<a href="#-fpAdd">fpAdd</a>(rm,&nbsp;x,&nbsp;y).sort()<br>
 <a href="#-FPSort">FPSort</a>(8,&nbsp;24)</tt></dd></dl>
  <dl><dt><a name="-fpBVToFP"><strong>fpBVToFP</strong></a>(v, sort, ctx=None)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression&nbsp;that&nbsp;represents&nbsp;the<br>
@@ -11499,7 +11528,7 @@ conversion&nbsp;from&nbsp;a&nbsp;bit-vector&nbsp;term&nbsp;to&nbsp;a&nbsp;floati
 &gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-FP">FP</a>('x',&nbsp;s)<br>
 &gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;<a href="#-FP">FP</a>('y',&nbsp;s)<br>
 &gt;&gt;&gt;&nbsp;<a href="#-fpDiv">fpDiv</a>(rm,&nbsp;x,&nbsp;y)<br>
-<a href="#-fpDiv">fpDiv</a>(<a href="#-RNE">RNE</a>(),&nbsp;x,&nbsp;y)<br>
+x&nbsp;/&nbsp;y<br>
 &gt;&gt;&gt;&nbsp;<a href="#-fpDiv">fpDiv</a>(rm,&nbsp;x,&nbsp;y).sort()<br>
 <a href="#-FPSort">FPSort</a>(8,&nbsp;24)</tt></dd></dl>
  <dl><dt><a name="-fpEQ"><strong>fpEQ</strong></a>(a, b, ctx=None)</dt><dd><tt>Create&nbsp;the&nbsp;Z3&nbsp;floating-point&nbsp;expression&nbsp;`<a href="#-fpEQ">fpEQ</a>(other,&nbsp;self)`.<br>
@@ -11617,7 +11646,7 @@ x&nbsp;&lt;&nbsp;y<br>
 &gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-FP">FP</a>('x',&nbsp;s)<br>
 &gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;<a href="#-FP">FP</a>('y',&nbsp;s)<br>
 &gt;&gt;&gt;&nbsp;<a href="#-fpMul">fpMul</a>(rm,&nbsp;x,&nbsp;y)<br>
-<a href="#-fpMul">fpMul</a>(<a href="#-RNE">RNE</a>(),&nbsp;x,&nbsp;y)<br>
+x&nbsp;*&nbsp;y<br>
 &gt;&gt;&gt;&nbsp;<a href="#-fpMul">fpMul</a>(rm,&nbsp;x,&nbsp;y).sort()<br>
 <a href="#-FPSort">FPSort</a>(8,&nbsp;24)</tt></dd></dl>
  <dl><dt><a name="-fpNEQ"><strong>fpNEQ</strong></a>(a, b, ctx=None)</dt><dd><tt>Create&nbsp;the&nbsp;Z3&nbsp;floating-point&nbsp;expression&nbsp;`<a href="#-Not">Not</a>(<a href="#-fpEQ">fpEQ</a>(other,&nbsp;self))`.<br>
@@ -11695,7 +11724,7 @@ conversion&nbsp;from&nbsp;a&nbsp;signed&nbsp;bit-vector&nbsp;term&nbsp;(encoding
 &gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-FP">FP</a>('x',&nbsp;s)<br>
 &gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;<a href="#-FP">FP</a>('y',&nbsp;s)<br>
 &gt;&gt;&gt;&nbsp;<a href="#-fpSub">fpSub</a>(rm,&nbsp;x,&nbsp;y)<br>
-<a href="#-fpSub">fpSub</a>(<a href="#-RNE">RNE</a>(),&nbsp;x,&nbsp;y)<br>
+x&nbsp;-&nbsp;y<br>
 &gt;&gt;&gt;&nbsp;<a href="#-fpSub">fpSub</a>(rm,&nbsp;x,&nbsp;y).sort()<br>
 <a href="#-FPSort">FPSort</a>(8,&nbsp;24)</tt></dd></dl>
  <dl><dt><a name="-fpToFP"><strong>fpToFP</strong></a>(a1, a2=None, a3=None, ctx=None)</dt><dd><tt>Create&nbsp;a&nbsp;Z3&nbsp;floating-point&nbsp;conversion&nbsp;expression&nbsp;from&nbsp;other&nbsp;term&nbsp;sorts<br>
@@ -12427,6 +12456,7 @@ True<br>
 &gt;&gt;&gt;&nbsp;<a href="#-eq">eq</a>(x,&nbsp;x2)<br>
 False</tt></dd></dl>
  <dl><dt><a name="-mk_not"><strong>mk_not</strong></a>(a)</dt></dl>
+ <dl><dt><a name="-on_clause_eh"><strong>on_clause_eh</strong></a>(ctx, p, clause)</dt></dl>
  <dl><dt><a name="-open_log"><strong>open_log</strong></a>(fname)</dt><dd><tt>Log&nbsp;interaction&nbsp;to&nbsp;a&nbsp;file.&nbsp;This&nbsp;function&nbsp;must&nbsp;be&nbsp;invoked&nbsp;immediately&nbsp;after&nbsp;init().</tt></dd></dl>
  <dl><dt><a name="-parse_smt2_file"><strong>parse_smt2_file</strong></a>(f, sorts={}, decls={}, ctx=None)</dt><dd><tt>Parse&nbsp;a&nbsp;file&nbsp;in&nbsp;SMT&nbsp;2.0&nbsp;format&nbsp;using&nbsp;the&nbsp;given&nbsp;sorts&nbsp;and&nbsp;decls.<br>
 &nbsp;<br>
@@ -12513,7 +12543,7 @@ y&nbsp;+&nbsp;1&nbsp;+&nbsp;1<br>
 &gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;<a href="#-Function">Function</a>('f',&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>())<br>
 &gt;&gt;&gt;&nbsp;<a href="#-substitute">substitute</a>(f(x)&nbsp;+&nbsp;f(y),&nbsp;(f(x),&nbsp;<a href="#-IntVal">IntVal</a>(1)),&nbsp;(f(y),&nbsp;<a href="#-IntVal">IntVal</a>(1)))<br>
 1&nbsp;+&nbsp;1</tt></dd></dl>
- <dl><dt><a name="-substitute_funs"><strong>substitute_funs</strong></a>(t, *m)</dt><dd><tt>Apply&nbsp;subistitution&nbsp;m&nbsp;on&nbsp;t,&nbsp;m&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;pairs&nbsp;of&nbsp;a&nbsp;function&nbsp;and&nbsp;expression&nbsp;(from,&nbsp;to)<br>
+ <dl><dt><a name="-substitute_funs"><strong>substitute_funs</strong></a>(t, *m)</dt><dd><tt>Apply&nbsp;substitution&nbsp;m&nbsp;on&nbsp;t,&nbsp;m&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;pairs&nbsp;of&nbsp;a&nbsp;function&nbsp;and&nbsp;expression&nbsp;(from,&nbsp;to)<br>
 Every&nbsp;occurrence&nbsp;in&nbsp;to&nbsp;of&nbsp;the&nbsp;function&nbsp;from&nbsp;is&nbsp;replaced&nbsp;with&nbsp;the&nbsp;expression&nbsp;to.<br>
 The&nbsp;expression&nbsp;to&nbsp;can&nbsp;have&nbsp;free&nbsp;variables,&nbsp;that&nbsp;refer&nbsp;to&nbsp;the&nbsp;arguments&nbsp;of&nbsp;from.<br>
 For&nbsp;examples,&nbsp;see</tt></dd></dl>
@@ -12535,6 +12565,7 @@ f(x&nbsp;+&nbsp;1,&nbsp;x)</tt></dd></dl>
 &gt;&gt;&gt;&nbsp;l.count('simplify')&nbsp;==&nbsp;1<br>
 True</tt></dd></dl>
  <dl><dt><a name="-to_Ast"><strong>to_Ast</strong></a>(ptr)</dt></dl>
+ <dl><dt><a name="-to_AstVectorObj"><strong>to_AstVectorObj</strong></a>(ptr)</dt></dl>
  <dl><dt><a name="-to_ContextObj"><strong>to_ContextObj</strong></a>(ptr)</dt></dl>
  <dl><dt><a name="-to_symbol"><strong>to_symbol</strong></a>(s, ctx=None)</dt><dd><tt>Convert&nbsp;an&nbsp;integer&nbsp;or&nbsp;string&nbsp;into&nbsp;a&nbsp;Z3&nbsp;symbol.</tt></dd></dl>
  <dl><dt><a name="-user_prop_created"><strong>user_prop_created</strong></a>(ctx, cb, id)</dt></dl>
@@ -12899,12 +12930,12 @@ True</tt></dd></dl>
 <strong>Z3_VAR_AST</strong> = 2<br>
 <strong>cdll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
 <strong>d</strong> = '/home/vsts/work/1/s/build/libz3.so'<br>
-<strong>lds</strong> = ['/home/vsts/.opam/default/bin', '/home/linuxbrew/.linuxbrew/bin', '/home/linuxbrew/.linuxbrew/sbin', '/home/vsts/.local/bin', '/opt/pipx_bin', '/home/vsts/.cargo/bin', '/home/vsts/.config/composer/vendor/bin', '/usr/local/.ghcup/bin', '/home/vsts/.dotnet/tools', '/snap/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin']<br>
-<strong>lp</strong> = '/home/vsts/.opam/default/bin:/home/linuxbrew/.li...:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'<br>
+<strong>lds</strong> = ['/home/vsts/.opam/default/bin', '/home/vsts/.local/bin', '/opt/pipx_bin', '/home/vsts/.cargo/bin', '/home/vsts/.config/composer/vendor/bin', '/usr/local/.ghcup/bin', '/home/vsts/.dotnet/tools', '/snap/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin']<br>
+<strong>lp</strong> = '/home/vsts/.opam/default/bin:/home/vsts/.local/b...:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'<br>
 <strong>memmove</strong> = &lt;CFunctionType object&gt;<br>
 <strong>memset</strong> = &lt;CFunctionType object&gt;<br>
 <strong>pydll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
-<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7f83606c7190&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7f287e6662e0&gt;<br>
 <strong>sat</strong> = sat<br>
 <strong>unknown</strong> = unknown<br>
 <strong>unsat</strong> = unsat<br>

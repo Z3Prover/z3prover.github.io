@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keys_6696',['Keys',['../class_microsoft_1_1_z3_1_1_statistics.html#a4f3c2f36394df4064da5d7fb50c7e2ae',1,'Microsoft::Z3::Statistics']]],
-  ['kind_6697',['Kind',['../class_microsoft_1_1_z3_1_1_symbol.html#aa3a10d14f10cc1db92372f2942ec1040',1,'Microsoft::Z3::Symbol']]]
+  ['lower_7772',['Lower',['../class_microsoft_1_1_z3_1_1_optimize_1_1_handle.html#a887547e0432a9578e5b632c648d674d5',1,'Microsoft::Z3::Optimize::Handle']]],
+  ['lowerasvector_7773',['LowerAsVector',['../class_microsoft_1_1_z3_1_1_optimize_1_1_handle.html#a229ec60851a3026ca84de0667d9f220d',1,'Microsoft::Z3::Optimize::Handle']]]
 ];

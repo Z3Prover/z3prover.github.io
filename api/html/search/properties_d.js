@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['objectives_6727',['Objectives',['../class_microsoft_1_1_z3_1_1_optimize.html#a84cf3c7581c785445edcac2fb5400d7c',1,'Microsoft::Z3::Optimize']]],
-  ['optimize_5fdrq_6728',['Optimize_DRQ',['../class_microsoft_1_1_z3_1_1_context.html#a50aa58dc950b5c9d4a7f23b24af23483',1,'Microsoft::Z3::Context']]]
+  ['parameterdescriptions_7801',['ParameterDescriptions',['../class_microsoft_1_1_z3_1_1_fixedpoint.html#a7ef2754d77e363e3047861f39649d515',1,'Microsoft.Z3.Fixedpoint.ParameterDescriptions()'],['../class_microsoft_1_1_z3_1_1_optimize.html#a7ef2754d77e363e3047861f39649d515',1,'Microsoft.Z3.Optimize.ParameterDescriptions()'],['../class_microsoft_1_1_z3_1_1_solver.html#a7ef2754d77e363e3047861f39649d515',1,'Microsoft.Z3.Solver.ParameterDescriptions()'],['../class_microsoft_1_1_z3_1_1_tactic.html#a7ef2754d77e363e3047861f39649d515',1,'Microsoft.Z3.Tactic.ParameterDescriptions()']]],
+  ['parameterkind_7802',['ParameterKind',['../class_microsoft_1_1_z3_1_1_func_decl_1_1_parameter.html#aadf049dae4761725bd9edb437bb20fcf',1,'Microsoft::Z3::FuncDecl::Parameter']]],
+  ['parameters_7803',['Parameters',['../class_microsoft_1_1_z3_1_1_fixedpoint.html#a664b59f7dffd0ac7893ca9b132ccde94',1,'Microsoft.Z3.Fixedpoint.Parameters()'],['../class_microsoft_1_1_z3_1_1_func_decl.html#a0afa45b5d122a6b9211c51f8f0bae4c8',1,'Microsoft.Z3.FuncDecl.Parameters()'],['../class_microsoft_1_1_z3_1_1_optimize.html#a664b59f7dffd0ac7893ca9b132ccde94',1,'Microsoft.Z3.Optimize.Parameters()'],['../class_microsoft_1_1_z3_1_1_solver.html#a664b59f7dffd0ac7893ca9b132ccde94',1,'Microsoft.Z3.Solver.Parameters()']]],
+  ['patterns_7804',['Patterns',['../class_microsoft_1_1_z3_1_1_quantifier.html#a149aa73f59f98fe909f94d235564d96c',1,'Microsoft::Z3::Quantifier']]],
+  ['precision_7805',['Precision',['../class_microsoft_1_1_z3_1_1_goal.html#ac9ee71997ba598bb443da5b39c1befc4',1,'Microsoft::Z3::Goal']]],
+  ['printmode_7806',['PrintMode',['../class_microsoft_1_1_z3_1_1_context.html#a6d87cf698c7bf215f161c15aaa53ef2d',1,'Microsoft.Z3.Context.PrintMode()'],['../class_microsoft_1_1_z3_1_1_native_context.html#a6d87cf698c7bf215f161c15aaa53ef2d',1,'Microsoft.Z3.NativeContext.PrintMode()']]],
+  ['probenames_7807',['ProbeNames',['../class_microsoft_1_1_z3_1_1_context.html#a6caf5676007ddf13a5b392a724f0e24a',1,'Microsoft::Z3::Context']]],
+  ['proof_7808',['Proof',['../class_microsoft_1_1_z3_1_1_native_solver.html#a76fb8b39f579ba28dcb123352074a760',1,'Microsoft.Z3.NativeSolver.Proof()'],['../class_microsoft_1_1_z3_1_1_solver.html#a81a15af67c88bbd60b277b23f8a7fb1f',1,'Microsoft.Z3.Solver.Proof()']]]
 ];

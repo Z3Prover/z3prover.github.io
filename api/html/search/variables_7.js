@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['help_5957',['Help',['../class_microsoft_1_1_z3_1_1_native_solver.html#a21653f2cfc732a330302490b0d729509',1,'Microsoft::Z3::NativeSolver']]]
+  ['id_7040',['id',['../classz3py_1_1_user_propagate_base.html#acf2488b95c97e0378c9bf49de3b50f28',1,'z3py::UserPropagateBase']]],
+  ['idx_7041',['idx',['../classz3py_1_1_on_clause.html#a49654e4709f40aecccada266daa32fc6',1,'z3py::OnClause']]]
 ];
