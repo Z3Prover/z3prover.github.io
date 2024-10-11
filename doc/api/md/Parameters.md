@@ -37,6 +37,8 @@ pattern inference (heuristics) for universal formulas (without annotation)
 arith | unsigned int  |  0 - do not infer patterns with arithmetic terms, 1 - use patterns with arithmetic terms if there is no other pattern, 2 - always use patterns with arithmetic terms | 1
 arith_weight | unsigned int  |  default weight for quantifiers where the only available pattern has nested arithmetic terms | 5
 block_loop_patterns | bool  |  block looping patterns during pattern inference | true
+decompose_patterns | bool  |  allow decomposition of patterns into multipatterns | true
+enabled | bool  |  enable a heuristic to infer patterns, when they are not provided | true
 max_multi_patterns | unsigned int  |  when patterns are not provided, the prover uses a heuristic to infer them, this option sets the threshold on the number of extra multi-patterns that can be created; by default, the prover creates at most one multi-pattern when there is no unary pattern | 0
 non_nested_arith_weight | unsigned int  |  default weight for quantifiers where the only available pattern has non nested arithmetic terms | 10
 pull_quantifiers | bool  |  pull nested quantifiers, if no pattern was found | true
@@ -78,6 +80,7 @@ max_num_lines | unsigned int  |  max. number of lines to be displayed in pretty 
 max_ribbon | unsigned int  |  max. ribbon (width - indentation) in pretty printer | 80
 max_width | unsigned int  |  max. width in pretty printer | 80
 min_alias_size | unsigned int  |  min. size for creating an alias for a shared term (when pretty printing SMT2 terms/formulas) | 10
+no_lets | bool  |  dont print lets in low level SMT printer | false
 pretty_proof | bool  |  use slower, but prettier, printer for proofs | false
 simplify_implies | bool  |  simplify nested implications for pretty printing | true
 single_line | bool  |  ignore line breaks when true | false
@@ -127,7 +130,7 @@ cut.redundancies | bool  |  integrate redundancy checking of cuts | true
 cut.xor | bool  |  extract xors from clauses for cut simplification | false
 ddfw.init_clause_weight | unsigned int  |  initial clause weight for DDFW local search | 8
 ddfw.reinit_base | unsigned int  |  increment basis for geometric backoff scheme of re-initialization of weights | 10000
-ddfw.restart_base | unsigned int  |  number of flips used a starting point for hessitant restart backoff | 100000
+ddfw.restart_base | unsigned int  |  number of flips used a starting point for hesitant restart backoff | 100000
 ddfw.threads | unsigned int  |  number of ddfw threads to run in parallel with sat solver | 0
 ddfw.use_reward_pct | unsigned int  |  percentage to pick highest reward variable when it has reward 0 | 15
 ddfw_search | bool  |  use ddfw local search instead of CDCL | false
@@ -166,7 +169,7 @@ lookahead.cube.psat.clause_base | double  |  clause base for PSAT cutoff | 2
 lookahead.cube.psat.trigger | double  |  trigger value to create lookahead cubes for PSAT cutoff. Used when lookahead.cube.cutoff is psat | 5
 lookahead.cube.psat.var_exp | double  |  free variable exponent for PSAT cutoff | 1
 lookahead.delta_fraction | double  |  number between 0 and 1, the smaller the more literals are selected for double lookahead | 1.0
-lookahead.double | bool  |  enable doubld lookahead | true
+lookahead.double | bool  |  enable double lookahead | true
 lookahead.global_autarky | bool  |  prefer to branch on variables that occur in clauses that are reduced | false
 lookahead.preselect | bool  |  use pre-selection of subset of variables for branching | false
 lookahead.reward | symbol  |  select lookahead heuristic: ternary, heule_schur (Heule Schur), heuleu (Heule Unit), unit, or march_cu | march_cu
@@ -182,7 +185,7 @@ pb.lemma_format | symbol  |  generate either cardinality or pb lemmas | cardinal
 pb.min_arity | unsigned int  |  minimal arity to compile pb/cardinality constraints to CNF | 9
 pb.resolve | symbol  |  resolution strategy for boolean algebra solver: cardinality, rounding | cardinality
 pb.solver | symbol  |  method for handling Pseudo-Boolean constraints: circuit (arithmetical circuit), sorting (sorting circuit), totalizer (use totalizer encoding), binary_merge, segmented, solver (use native solver) | solver
-phase | symbol  |  phase selection strategy: always_false, always_true, basic_caching, random, caching | caching
+phase | symbol  |  phase selection strategy: always_false, always_true, basic_caching, random, caching, local_search | caching
 phase.sticky | bool  |  use sticky phase caching | true
 prob_search | bool  |  use probsat local search instead of CDCL | false
 probing | bool  |  apply failed literal detection during simplification | true
@@ -222,8 +225,7 @@ search.sat.conflicts | unsigned int  |  period for solving for sat (in number of
 search.unsat.conflicts | unsigned int  |  period for solving for unsat (in number of conflicts) | 400
 simplify.delay | unsigned int  |  set initial delay of simplification by a conflict count | 0
 smt | bool  |  use the SAT solver based incremental SMT core | false
-smt.proof.check | bool  |  check SMT proof while it is created | false
-smt.proof.check_rup | bool  |  apply forward RUP proof checking | true
+smt.proof.check | bool  |  check proofs on the fly during SMT search | false
 subsumption | bool  |  eliminate subsumed clauses | true
 subsumption.limit | unsigned int  |  approx. maximum number of literals visited during subsumption (and subsumption resolution) | 100000000
 threads | unsigned int  |  number of parallel threads to use | 1
@@ -240,9 +242,11 @@ cancel_backup_file | symbol  |  file to save partial search state if search is c
 instantiations2console | bool  |  print quantifier instantiations to the console | false
 lemmas2console | bool  |  print lemmas during search | false
 proof.check | bool  |  check proof logs | true
+proof.check_rup | bool  |  check proof RUP inference in proof logs | true
 proof.log | symbol  |  log clause proof trail into a file | 
 proof.save | bool  |  save proof log into a proof object that can be extracted using (get-proof) | false
 proof.trim | bool  |  trim and save proof into a proof object that an be extracted using (get-proof) | false
+slice | bool  |  use slice solver that filters assertions to use symbols occuring in @query formulas | false
 smtlib2_log | symbol  |  file to save solver interaction | 
 timeout | unsigned int  |  timeout on the solver object; overwrites a global timeout | 4294967295
 
@@ -262,7 +266,7 @@ enable_sls | bool  |  enable SLS tuning during weighted maxsat | false
 incremental | bool  |  set incremental mode. It disables pre-processing and enables adding constraints in model event handler | false
 lns_conflicts | unsigned int  |  initial conflict count for LNS search | 1000
 maxlex.enable | bool  |  enable maxlex heuristic for lexicographic MaxSAT problems | true
-maxres.add_upper_bound_block | bool  |  restict upper bound with constraint | false
+maxres.add_upper_bound_block | bool  |  restrict upper bound with constraint | false
 maxres.hill_climb | bool  |  give preference for large weight cores | true
 maxres.max_core_size | unsigned int  |  break batch of generated cores if size reaches this number | 3
 maxres.max_correction_set_size | unsigned int  |  allow generating correction set constraints up to maximal size | 3
@@ -275,7 +279,7 @@ optsmt_engine | symbol  |  select optimization engine: 'basic', 'symba' | basic
 pb.compile_equality | bool  |  compile arithmetical equalities into pseudo-Boolean equality (instead of two inequalites) | false
 pp.neat | bool  |  use neat (as opposed to less readable, but faster) pretty printer when displaying context | true
 pp.wcnf | bool  |  print maxsat benchmark into wcnf format | false
-priority | symbol  |  select how to priortize objectives: 'lex' (lexicographic), 'pareto', 'box' | lex
+priority | symbol  |  select how to prioritize objectives: 'lex' (lexicographic), 'pareto', 'box' | lex
 rc2.totalizer | bool  |  use totalizer for rc2 encoding | true
 rlimit | unsigned int  |  resource limit (0 means no limit) | 0
 solution_prefix | symbol  |  path prefix to dump intermediary, but non-optimal, solutions | 
@@ -294,7 +298,7 @@ conquer.restart.max | unsigned int  |  maximal number of restarts during conquer
 enable | bool  |  enable parallel solver by default on selected tactics (for QF_BV) | false
 simplify.exp | double  |  restart and inprocess max is multiplied by simplify.exp ^ depth | 1
 simplify.inprocess.max | unsigned int  |  maximal number of inprocessing steps during simplification | 2
-simplify.max_conflicts | unsigned int  |  maximal number of conflicts during simplifcation phase | 4294967295
+simplify.max_conflicts | unsigned int  |  maximal number of conflicts during simplification phase | 4294967295
 simplify.restart.max | unsigned int  |  maximal number of restarts during simplification phase | 5000
 threads.max | unsigned int  |  caps maximal number of threads below the number of processors | 10000
 
@@ -317,7 +321,7 @@ real algebraic number package. Non-default parameter settings are not supported
  ----------|------|-------------|--------
 factor | bool  |  use polynomial factorization to simplify polynomials representing algebraic numbers | true
 factor_max_prime | unsigned int  |  parameter for the polynomial factorization procedure in the algebraic number module. Z3 polynomial factorization is composed of three steps: factorization in GF(p), lifting and search. This parameter limits the maximum prime number p to be used in the first step | 31
-factor_num_primes | unsigned int  |  parameter for the polynomial factorization procedure in the algebraic number module. Z3 polynomial factorization is composed of three steps: factorization in GF(p), lifting and search. The search space may be reduced by factoring the polynomial in different GF(p)'s. This parameter specify the maximum number of finite factorizations to be considered, before lifiting and searching | 1
+factor_num_primes | unsigned int  |  parameter for the polynomial factorization procedure in the algebraic number module. Z3 polynomial factorization is composed of three steps: factorization in GF(p), lifting and search. The search space may be reduced by factoring the polynomial in different GF(p)'s. This parameter specify the maximum number of finite factorizations to be considered, before lifting and searching | 1
 factor_search_size | unsigned int  |  parameter for the polynomial factorization procedure in the algebraic number module. Z3 polynomial factorization is composed of three steps: factorization in GF(p), lifting and search. This parameter can be used to limit the search space | 5000
 min_mag | unsigned int  |  Z3 represents algebraic numbers using a (square-free) polynomial p and an isolating interval (which contains one and only one root of p). This interval may be refined during the computations. This parameter specifies whether to cache the value of a refined interval or not. It says the minimal size of an interval for caching purposes is 1/2^16 | 16
 zero_accuracy | unsigned int  |  one of the most time-consuming operations in the real algebraic number module is determining the sign of a polynomial evaluated at a sample point with non-rational algebraic number values. Let k be the value of this option. If k is 0, Z3 uses precise computation. Otherwise, the result of a polynomial evaluation is considered to be 0 if Z3 can show it is inside the interval (-1/2^k, 1/2^k) | 0
@@ -361,6 +365,7 @@ nonlinear solver
 
  Parameter | Type | Description | Default
  ----------|------|-------------|--------
+cell_sample | bool  |  cell sample projection | true
 check_lemmas | bool  |  check lemmas on the fly using an independent nlsat solver | false
 factor | bool  |  factor polynomials produced during conflict resolution. | true
 inline_vars | bool  |  inline variables that can be isolated from equations (not supported in incremental mode) | false
@@ -373,7 +378,39 @@ randomize | bool  |  randomize selection of a witness in nlsat. | true
 reorder | bool  |  reorder variables. | true
 seed | unsigned int  |  random seed. | 0
 shuffle_vars | bool  |  use a random variable order. | false
+simple_check | bool  |  precheck polynomials using variables sign | false
 simplify_conflicts | bool  |  simplify conflicts using equalities before resolving them in nlsat solver. | true
+variable_ordering_strategy | unsigned int  |  Variable Ordering Strategy, 0 for none, 1 for BROWN, 2 for TRIANGULAR, 3 for ONLYPOLY | 0
+
+## sls
+
+Experimental Stochastic Local Search Solver (for QFBV only).
+
+ Parameter | Type | Description | Default
+ ----------|------|-------------|--------
+early_prune | bool  |  use early pruning for score prediction | true
+max_memory | unsigned int  |  maximum amount of memory in megabytes | 4294967295
+max_repairs | unsigned int  |  maximum number of repairs before restart | 1000
+max_restarts | unsigned int  |  maximum number of restarts | 4294967295
+paws_init | unsigned int  |  initial/minimum assertion weights | 40
+paws_sp | unsigned int  |  smooth assertion weights with probability paws_sp / 1024 | 52
+random_offset | bool  |  use random offset for candidate evaluation | true
+random_seed | unsigned int  |  random seed | 0
+rescore | bool  |  rescore/normalize top-level score every base restart interval | true
+restart_base | unsigned int  |  base restart interval given by moves per run | 100
+restart_init | bool  |  initialize to 0 or random value (= 1) after restart | false
+scale_unsat | double  |  scale score of unsat expressions by this factor | 0.5
+track_unsat | bool  |  keep a list of unsat assertions as done in SAT - currently disabled internally | false
+vns_mc | unsigned int  |  in local minima, try Monte Carlo sampling vns_mc many 2-bit-flips per bit | 0
+vns_repick | bool  |  in local minima, try picking a different assertion (only for walksat) | false
+walksat | bool  |  use walksat assertion selection (instead of gsat) | true
+walksat_repick | bool  |  repick assertion if randomizing in local minima | true
+walksat_ucb | bool  |  use bandit heuristic for walksat assertion selection (instead of random) | true
+walksat_ucb_constant | double  |  the ucb constant c in the term score + c * f(touched) | 20.0
+walksat_ucb_forget | double  |  scale touched by this factor every base restart interval | 1.0
+walksat_ucb_init | bool  |  initialize total ucb touched to formula size | false
+walksat_ucb_noise | double  |  add noise 0 &lt;= 256 * ucb_noise to ucb score for assertion selection | 0.0002
+wp | unsigned int  |  random walk with probability wp / 1024 | 100
 
 ## fp
 
@@ -516,8 +553,10 @@ arith.ignore_int | bool  |  treat integer variables as real | false
 arith.int_eq_branch | bool  |  branching using derived integer equations | false
 arith.min | bool  |  minimize cost | false
 arith.nl | bool  |  (incomplete) nonlinear arithmetic support based on Groebner basis and interval propagation, relevant only if smt.arith.solver=2 | true
-arith.nl.branching | bool  |  branching on integer variables in non linear clusters, relevant only if smt.arith.solver=2 | true
-arith.nl.delay | unsigned int  |  number of calls to final check before invoking bounded nlsat check | 500
+arith.nl.branching | bool  |  branching on integer variables in non linear clusters | true
+arith.nl.cross_nested | bool  |  enable cross-nested consistency checking | true
+arith.nl.delay | unsigned int  |  number of calls to final check before invoking bounded nlsat check | 10
+arith.nl.expensive_patching | bool  |  use the expensive of monomials | false
 arith.nl.expp | bool  |  expensive patching | false
 arith.nl.gr_q | unsigned int  |  grobner's quota | 10
 arith.nl.grobner | bool  |  run grobner's basis heuristic | true
@@ -527,13 +566,17 @@ arith.nl.grobner_expr_degree_growth | unsigned int  |  grobner's maximum expr de
 arith.nl.grobner_expr_size_growth | unsigned int  |  grobner's maximum expr size growth | 2
 arith.nl.grobner_frequency | unsigned int  |  grobner's call frequency | 4
 arith.nl.grobner_max_simplified | unsigned int  |  grobner's maximum number of simplifications | 10000
+arith.nl.grobner_row_length_limit | unsigned int  |  row is disregarded by the heuristic if its length is longer than the value | 10
 arith.nl.grobner_subs_fixed | unsigned int  |  0 - no subs, 1 - substitute, 2 - substitute fixed zeros only | 1
 arith.nl.horner | bool  |  run horner's heuristic | true
 arith.nl.horner_frequency | unsigned int  |  horner's call frequency | 4
 arith.nl.horner_row_length_limit | unsigned int  |  row is disregarded by the heuristic if its length is longer than the value | 10
 arith.nl.horner_subs_fixed | unsigned int  |  0 - no subs, 1 - substitute, 2 - substitute fixed zeros only | 2
+arith.nl.log | bool  |  Log lemmas sent to nra solver | false
 arith.nl.nra | bool  |  call nra_solver when incremental linearization does not produce a lemma, this option is ignored when arith.nl=false, relevant only if smt.arith.solver=6 | true
+arith.nl.optimize_bounds | bool  |  enable bounds optimization | true
 arith.nl.order | bool  |  run order lemmas | true
+arith.nl.propagate_linear_monomials | bool  |  propagate linear monomials | true
 arith.nl.rounds | unsigned int  |  threshold for number of (nested) final checks for non linear arithmetic, relevant only if smt.arith.solver=2 | 1024
 arith.nl.tangents | bool  |  run tangent lemmas | true
 arith.print_ext_var_names | bool  |  print external variable names | false
@@ -544,14 +587,16 @@ arith.random_initial_value | bool  |  use random initial values in the simplex-b
 arith.rep_freq | unsigned int  |  the report frequency, in how many iterations print the cost and other info | 0
 arith.simplex_strategy | unsigned int  |  simplex strategy for the solver | 0
 arith.solver | unsigned int  |  arithmetic solver: 0 - no solver, 1 - bellman-ford based solver (diff. logic only), 2 - simplex based solver, 3 - floyd-warshall based solver (diff. logic only) and no theory combination 4 - utvpi, 5 - infinitary lra, 6 - lra solver | 6
+arith.validate | bool  |  validate lemmas generated by arithmetic solver | false
 array.extensional | bool  |  extensional array theory | true
 array.weak | bool  |  weak array theory | false
 auto_config | bool  |  automatically configure solver | true
+bound_simplifier | bool  |  apply bounds simplification during pre-processing | true
 bv.delay | bool  |  delay internalize expensive bit-vector operations | false
 bv.enable_int2bv | bool  |  enable support for int2bv and bv2int operators | true
-bv.eq_axioms | bool  |  enable redundant equality axioms for bit-vectors | true
 bv.reflect | bool  |  create enode for every bit-vector term | true
 bv.size_reduce | bool  |  pre-processing; turn assertions that set the upper bits of a bit-vector to constants into a substitution that replaces the bit-vector with constant bits. Useful for minimizing circuits as many input bits to circuits are constant | false
+bv.solver | unsigned int  |  bit-vector solver engine: 0 - bit-blasting, 1 - polysat, 2 - intblast, requires sat.smt=true | 0
 bv.watch_diseq | bool  |  use watch lists instead of eager axioms for bit-vectors | false
 candidate_models | bool  |  create candidate models even when quantifier or theory reasoning is incomplete | false
 case_split | unsigned int  |  0 - case split based on variable activity, 1 - similar to 0, but delay case splits created during the search, 2 - similar to 0, but cache the relevancy, 3 - case split based on relevancy (structural splitting), 4 - case split on relevancy and activity, 5 - case split on relevancy and current goal, 6 - activity-based case split with theory-aware branching activity | 1
@@ -563,7 +608,7 @@ core.minimize | bool  |  minimize unsat core produced by SMT context | false
 core.validate | bool  |  [internal] validate unsat core produced by SMT context. This option is intended for debugging | false
 cube_depth | unsigned int  |  cube depth. | 1
 dack | unsigned int  |  0 - disable dynamic ackermannization, 1 - expand Leibniz's axiom if a congruence is the root of a conflict, 2 - expand Leibniz's axiom if a congruence is used during conflict resolution | 1
-dack.eq | bool  |  enable dynamic ackermannization for transtivity of equalities | false
+dack.eq | bool  |  enable dynamic ackermannization for transitivity of equalities | false
 dack.factor | double  |  number of instance per conflict | 0.1
 dack.gc | unsigned int  |  Dynamic ackermannization garbage collection frequency (per conflict) | 2000
 dack.gc_inv_decay | double  |  Dynamic ackermannization garbage collection decay | 0.8
@@ -602,6 +647,7 @@ qi.max_multi_patterns | unsigned int  |  specify the number of extra multi patte
 qi.profile | bool  |  profile quantifier instantiation | false
 qi.profile_freq | unsigned int  |  how frequent results are reported by qi.profile | 4294967295
 qi.quick_checker | unsigned int  |  specify quick checker mode, 0 - no quick checker, 1 - using unsat instances, 2 - using both unsat and no-sat instances | 0
+qsat_use_qel | bool  |  Use QEL for lite quantifier elimination and model-based projection in QSAT | true
 quasi_macros | bool  |  try to find universally quantified formulas that are quasi-macros | false
 random_seed | unsigned int  |  random seed for the smt solver | 0
 refine_inj_axioms | bool  |  pre-processing: refine injectivity axioms | true
@@ -614,6 +660,7 @@ seq.max_unfolding | unsigned int  |  maximal unfolding depth for checking string
 seq.min_unfolding | unsigned int  |  initial bound for strings whose lengths are bounded by iterative deepening. Set this to a higher value if there are only models with larger string lengths | 1
 seq.split_w_len | bool  |  enable splitting guided by length constraints | true
 seq.validate | bool  |  enable self-validation of theory axioms created by seq theory | false
+sls.enable | bool  |  enable sls co-processor with SMT engine | false
 solve_eqs | bool  |  pre-processing: solve equalities | true
 str.aggressive_length_testing | bool  |  prioritize testing concrete length values over generating more options | false
 str.aggressive_unroll_testing | bool  |  prioritize testing concrete regex unroll counts over generating more options | true
@@ -636,32 +683,4 @@ theory_case_split | bool  |  Allow the context to use heuristics involving theor
 threads | unsigned int  |  maximal number of parallel threads. | 1
 threads.cube_frequency | unsigned int  |  frequency for using cubing | 2
 threads.max_conflicts | unsigned int  |  maximal number of conflicts between rounds of cubing for parallel SMT | 400
-
-## sls
-
-Experimental Stochastic Local Search Solver (for QFBV only).
-
- Parameter | Type | Description | Default
- ----------|------|-------------|--------
-early_prune | bool  |  use early pruning for score prediction | true
-max_memory | unsigned int  |  maximum amount of memory in megabytes | 4294967295
-max_restarts | unsigned int  |  maximum number of restarts | 4294967295
-paws_init | unsigned int  |  initial/minimum assertion weights | 40
-paws_sp | unsigned int  |  smooth assertion weights with probability paws_sp / 1024 | 52
-random_offset | bool  |  use random offset for candidate evaluation | true
-random_seed | unsigned int  |  random seed | 0
-rescore | bool  |  rescore/normalize top-level score every base restart interval | true
-restart_base | unsigned int  |  base restart interval given by moves per run | 100
-restart_init | bool  |  initialize to 0 or random value (= 1) after restart | false
-scale_unsat | double  |  scale score of unsat expressions by this factor | 0.5
-track_unsat | bool  |  keep a list of unsat assertions as done in SAT - currently disabled internally | false
-vns_mc | unsigned int  |  in local minima, try Monte Carlo sampling vns_mc many 2-bit-flips per bit | 0
-vns_repick | bool  |  in local minima, try picking a different assertion (only for walksat) | false
-walksat | bool  |  use walksat assertion selection (instead of gsat) | true
-walksat_repick | bool  |  repick assertion if randomizing in local minima | true
-walksat_ucb | bool  |  use bandit heuristic for walksat assertion selection (instead of random) | true
-walksat_ucb_constant | double  |  the ucb constant c in the term score + c * f(touched) | 20.0
-walksat_ucb_forget | double  |  scale touched by this factor every base restart interval | 1.0
-walksat_ucb_init | bool  |  initialize total ucb touched to formula size | false
-walksat_ucb_noise | double  |  add noise 0 &lt;= 256 * ucb_noise to ucb score for assertion selection | 0.0002
-wp | unsigned int  |  random walk with probability wp / 1024 | 100
+up.persist_clauses | bool  |  replay propagated clauses below the levels they are asserted | true

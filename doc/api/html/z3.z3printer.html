@@ -23,14 +23,16 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="builtins.html">builtins</a><br>
-<a href="ctypes.html">ctypes</a><br>
-</td><td width="25%" valign=top><a href="io.html">io</a><br>
-<a href="os.html">os</a><br>
-</td><td width="25%" valign=top><a href="pkg_resources.html">pkg_resources</a><br>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="atexit.html">atexit</a><br>
+<a href="builtins.html">builtins</a><br>
+<a href="contextlib.html">contextlib</a><br>
+</td><td width="25%" valign=top><a href="ctypes.html">ctypes</a><br>
+<a href="importlib.resources.html">importlib.resources</a><br>
+<a href="io.html">io</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
 <a href="sys.html">sys</a><br>
-</td><td width="25%" valign=top><a href="z3.z3.html">z3.z3</a><br>
-</td></tr></table></td></tr></table><p>
+<a href="z3.z3.html">z3.z3</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -256,6 +258,8 @@ Data descriptors defined here:<br>
 
 <dl><dt><a name="Formatter-pp_arrow"><strong>pp_arrow</strong></a>(self)</dt></dl>
 
+<dl><dt><a name="Formatter-pp_atleast"><strong>pp_atleast</strong></a>(self, a, d, f, xs)</dt></dl>
+
 <dl><dt><a name="Formatter-pp_atmost"><strong>pp_atmost</strong></a>(self, a, d, f, xs)</dt></dl>
 
 <dl><dt><a name="Formatter-pp_bv"><strong>pp_bv</strong></a>(self, a)</dt></dl>
@@ -411,6 +415,8 @@ Methods inherited from <a href="z3.z3printer.html#Formatter">Formatter</a>:<br>
 <dl><dt><a name="HTMLFormatter-pp_algebraic"><strong>pp_algebraic</strong></a>(self, a)</dt></dl>
 
 <dl><dt><a name="HTMLFormatter-pp_app"><strong>pp_app</strong></a>(self, a, d, xs)</dt></dl>
+
+<dl><dt><a name="HTMLFormatter-pp_atleast"><strong>pp_atleast</strong></a>(self, a, d, f, xs)</dt></dl>
 
 <dl><dt><a name="HTMLFormatter-pp_atmost"><strong>pp_atmost</strong></a>(self, a, d, f, xs)</dt></dl>
 
@@ -866,6 +872,7 @@ Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance
 <strong>Z3_NO_PARSER</strong> = 5<br>
 <strong>Z3_NUMERAL_AST</strong> = 0<br>
 <strong>Z3_OK</strong> = 0<br>
+<strong>Z3_OP_ABS</strong> = 530<br>
 <strong>Z3_OP_ADD</strong> = 518<br>
 <strong>Z3_OP_AGNUM</strong> = 513<br>
 <strong>Z3_OP_AND</strong> = 261<br>
@@ -915,12 +922,12 @@ Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance
 <strong>Z3_OP_BXNOR</strong> = 1055<br>
 <strong>Z3_OP_BXOR</strong> = 1052<br>
 <strong>Z3_OP_CARRY</strong> = 1074<br>
-<strong>Z3_OP_CHAR_CONST</strong> = 1594<br>
-<strong>Z3_OP_CHAR_FROM_BV</strong> = 1598<br>
-<strong>Z3_OP_CHAR_IS_DIGIT</strong> = 1599<br>
-<strong>Z3_OP_CHAR_LE</strong> = 1595<br>
-<strong>Z3_OP_CHAR_TO_BV</strong> = 1597<br>
-<strong>Z3_OP_CHAR_TO_INT</strong> = 1596<br>
+<strong>Z3_OP_CHAR_CONST</strong> = 1598<br>
+<strong>Z3_OP_CHAR_FROM_BV</strong> = 1602<br>
+<strong>Z3_OP_CHAR_IS_DIGIT</strong> = 1603<br>
+<strong>Z3_OP_CHAR_LE</strong> = 1599<br>
+<strong>Z3_OP_CHAR_TO_BV</strong> = 1601<br>
+<strong>Z3_OP_CHAR_TO_INT</strong> = 1600<br>
 <strong>Z3_OP_CONCAT</strong> = 1056<br>
 <strong>Z3_OP_CONST_ARRAY</strong> = 770<br>
 <strong>Z3_OP_DISTINCT</strong> = 259<br>
@@ -988,7 +995,7 @@ Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance
 <strong>Z3_OP_IMPLIES</strong> = 266<br>
 <strong>Z3_OP_INT2BV</strong> = 1072<br>
 <strong>Z3_OP_INTERNAL</strong> = 45100<br>
-<strong>Z3_OP_INT_TO_STR</strong> = 1570<br>
+<strong>Z3_OP_INT_TO_STR</strong> = 1574<br>
 <strong>Z3_OP_IS_INT</strong> = 528<br>
 <strong>Z3_OP_ITE</strong> = 260<br>
 <strong>Z3_OP_LABEL</strong> = 1792<br>
@@ -1064,36 +1071,40 @@ Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance
 <strong>Z3_OP_RECURSIVE</strong> = 45101<br>
 <strong>Z3_OP_REM</strong> = 524<br>
 <strong>Z3_OP_REPEAT</strong> = 1060<br>
-<strong>Z3_OP_RE_COMPLEMENT</strong> = 1587<br>
-<strong>Z3_OP_RE_CONCAT</strong> = 1580<br>
-<strong>Z3_OP_RE_DERIVATIVE</strong> = 1593<br>
-<strong>Z3_OP_RE_DIFF</strong> = 1583<br>
-<strong>Z3_OP_RE_EMPTY_SET</strong> = 1588<br>
-<strong>Z3_OP_RE_FULL_CHAR_SET</strong> = 1590<br>
-<strong>Z3_OP_RE_FULL_SET</strong> = 1589<br>
-<strong>Z3_OP_RE_INTERSECT</strong> = 1584<br>
-<strong>Z3_OP_RE_LOOP</strong> = 1585<br>
-<strong>Z3_OP_RE_OF_PRED</strong> = 1591<br>
-<strong>Z3_OP_RE_OPTION</strong> = 1579<br>
-<strong>Z3_OP_RE_PLUS</strong> = 1577<br>
-<strong>Z3_OP_RE_POWER</strong> = 1586<br>
-<strong>Z3_OP_RE_RANGE</strong> = 1582<br>
-<strong>Z3_OP_RE_REVERSE</strong> = 1592<br>
-<strong>Z3_OP_RE_STAR</strong> = 1578<br>
-<strong>Z3_OP_RE_UNION</strong> = 1581<br>
+<strong>Z3_OP_RE_COMPLEMENT</strong> = 1591<br>
+<strong>Z3_OP_RE_CONCAT</strong> = 1584<br>
+<strong>Z3_OP_RE_DERIVATIVE</strong> = 1597<br>
+<strong>Z3_OP_RE_DIFF</strong> = 1587<br>
+<strong>Z3_OP_RE_EMPTY_SET</strong> = 1592<br>
+<strong>Z3_OP_RE_FULL_CHAR_SET</strong> = 1594<br>
+<strong>Z3_OP_RE_FULL_SET</strong> = 1593<br>
+<strong>Z3_OP_RE_INTERSECT</strong> = 1588<br>
+<strong>Z3_OP_RE_LOOP</strong> = 1589<br>
+<strong>Z3_OP_RE_OF_PRED</strong> = 1595<br>
+<strong>Z3_OP_RE_OPTION</strong> = 1583<br>
+<strong>Z3_OP_RE_PLUS</strong> = 1581<br>
+<strong>Z3_OP_RE_POWER</strong> = 1590<br>
+<strong>Z3_OP_RE_RANGE</strong> = 1586<br>
+<strong>Z3_OP_RE_REVERSE</strong> = 1596<br>
+<strong>Z3_OP_RE_STAR</strong> = 1582<br>
+<strong>Z3_OP_RE_UNION</strong> = 1585<br>
 <strong>Z3_OP_ROTATE_LEFT</strong> = 1067<br>
 <strong>Z3_OP_ROTATE_RIGHT</strong> = 1068<br>
-<strong>Z3_OP_SBV_TO_STR</strong> = 1572<br>
+<strong>Z3_OP_SBV_TO_STR</strong> = 1576<br>
 <strong>Z3_OP_SELECT</strong> = 769<br>
 <strong>Z3_OP_SEQ_AT</strong> = 1562<br>
 <strong>Z3_OP_SEQ_CONCAT</strong> = 1553<br>
 <strong>Z3_OP_SEQ_CONTAINS</strong> = 1556<br>
 <strong>Z3_OP_SEQ_EMPTY</strong> = 1552<br>
 <strong>Z3_OP_SEQ_EXTRACT</strong> = 1557<br>
+<strong>Z3_OP_SEQ_FOLDL</strong> = 1571<br>
+<strong>Z3_OP_SEQ_FOLDLI</strong> = 1572<br>
 <strong>Z3_OP_SEQ_INDEX</strong> = 1565<br>
 <strong>Z3_OP_SEQ_IN_RE</strong> = 1568<br>
 <strong>Z3_OP_SEQ_LAST_INDEX</strong> = 1566<br>
 <strong>Z3_OP_SEQ_LENGTH</strong> = 1564<br>
+<strong>Z3_OP_SEQ_MAP</strong> = 1569<br>
+<strong>Z3_OP_SEQ_MAPI</strong> = 1570<br>
 <strong>Z3_OP_SEQ_NTH</strong> = 1563<br>
 <strong>Z3_OP_SEQ_PREFIX</strong> = 1554<br>
 <strong>Z3_OP_SEQ_REPLACE</strong> = 1558<br>
@@ -1122,16 +1133,16 @@ Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance
 <strong>Z3_OP_SPECIAL_RELATION_TO</strong> = 40963<br>
 <strong>Z3_OP_SPECIAL_RELATION_TRC</strong> = 40965<br>
 <strong>Z3_OP_STORE</strong> = 768<br>
-<strong>Z3_OP_STRING_LE</strong> = 1576<br>
-<strong>Z3_OP_STRING_LT</strong> = 1575<br>
-<strong>Z3_OP_STR_FROM_CODE</strong> = 1574<br>
-<strong>Z3_OP_STR_TO_CODE</strong> = 1573<br>
-<strong>Z3_OP_STR_TO_INT</strong> = 1569<br>
+<strong>Z3_OP_STRING_LE</strong> = 1580<br>
+<strong>Z3_OP_STRING_LT</strong> = 1579<br>
+<strong>Z3_OP_STR_FROM_CODE</strong> = 1578<br>
+<strong>Z3_OP_STR_TO_CODE</strong> = 1577<br>
+<strong>Z3_OP_STR_TO_INT</strong> = 1573<br>
 <strong>Z3_OP_SUB</strong> = 519<br>
 <strong>Z3_OP_TO_INT</strong> = 527<br>
 <strong>Z3_OP_TO_REAL</strong> = 526<br>
 <strong>Z3_OP_TRUE</strong> = 256<br>
-<strong>Z3_OP_UBV_TO_STR</strong> = 1571<br>
+<strong>Z3_OP_UBV_TO_STR</strong> = 1575<br>
 <strong>Z3_OP_UGEQ</strong> = 1043<br>
 <strong>Z3_OP_UGT</strong> = 1047<br>
 <strong>Z3_OP_ULEQ</strong> = 1041<br>
@@ -1168,17 +1179,18 @@ Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance
 <strong>Z3_SORT_AST</strong> = 4<br>
 <strong>Z3_SORT_ERROR</strong> = 1<br>
 <strong>Z3_STRING_SYMBOL</strong> = 1<br>
+<strong>Z3_TYPE_VAR</strong> = 14<br>
 <strong>Z3_UNINTERPRETED_SORT</strong> = 0<br>
 <strong>Z3_UNKNOWN_AST</strong> = 1000<br>
 <strong>Z3_UNKNOWN_SORT</strong> = 1000<br>
 <strong>Z3_VAR_AST</strong> = 2<br>
 <strong>cdll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
 <strong>d</strong> = '/home/vsts/work/1/s/build/libz3.so'<br>
-<strong>lds</strong> = ['/home/vsts/.opam/default/bin', '/home/vsts/.local/bin', '/opt/pipx_bin', '/home/vsts/.cargo/bin', '/home/vsts/.config/composer/vendor/bin', '/usr/local/.ghcup/bin', '/home/vsts/.dotnet/tools', '/snap/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin']<br>
-<strong>lp</strong> = '/home/vsts/.opam/default/bin:/home/vsts/.local/b...:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'<br>
+<strong>lds</strong> = ['/home/vsts/.opam/default/bin', '/snap/bin', '/home/vsts/.local/bin', '/opt/pipx_bin', '/home/vsts/.cargo/bin', '/home/vsts/.config/composer/vendor/bin', '/usr/local/.ghcup/bin', '/home/vsts/.dotnet/tools', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin']<br>
+<strong>lp</strong> = '/home/vsts/.opam/default/bin:/snap/bin:/home/vst...:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'<br>
 <strong>memmove</strong> = &lt;CFunctionType object&gt;<br>
 <strong>memset</strong> = &lt;CFunctionType object&gt;<br>
 <strong>pydll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
-<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7f287e6662e0&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7f198ae802e0&gt;<br>
 <strong>v</strong> = 'PYTHONPATH'</td></tr></table>
 </body></html>

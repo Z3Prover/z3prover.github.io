@@ -82,140 +82,167 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <a href="_func_interp_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">package </span>com.microsoft.z3;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;@SuppressWarnings(<span class="stringliteral">&quot;unchecked&quot;</span>)</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html">   26</a></span>&#160;public class <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html">FuncInterp</a>&lt;R extends <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_sort.html">Sort</a>&gt; extends <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_z3_object.html">Z3Object</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span>Entry&lt;R <span class="keyword">extends</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_sort.html">Sort</a>&gt; extends <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_z3_object.html">Z3Object</a> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">public</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;R&gt;</a> getValue()</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;R&gt;</a>) <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr</a>.create(getContext(),</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    Native.funcEntryGetValue(getContext().nCtx(), getNativeObject()));</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> getNumArgs()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> Native.funcEntryGetNumArgs(getContext().nCtx(), getNativeObject());</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">public</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;?&gt;</a>[] getArgs()</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">int</span> n = getNumArgs();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;?&gt;</a>[] res = <span class="keyword">new</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr</a>[n];</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                res[i] = <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr</a>.create(getContext(), Native.funcEntryGetArg(</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        getContext().nCtx(), getNativeObject(), i));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        @Override</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">public</span> <a class="code" href="namespacez3py.html#ac394848495233ed81d1cacd8a4a37d15">String</a> toString()</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordtype">int</span> n = getNumArgs();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="namespacez3py.html#ac394848495233ed81d1cacd8a4a37d15">String</a> res = <span class="stringliteral">&quot;[&quot;</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;?&gt;</a>[] args = getArgs();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                res += args[i] + <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">return</span> res + getValue() + <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        Entry(<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx, <span class="keywordtype">long</span> obj) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            super(ctx, obj);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        @Override</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> incRef() {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            Native.funcEntryIncRef(getContext().nCtx(), getNativeObject());</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        @Override</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> addToReferenceQueue() {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            getContext().getFuncEntryDRQ().storeReference(getContext(), <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a18c45c8a765040da7999e551a5a13ba2">  105</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a18c45c8a765040da7999e551a5a13ba2">getNumEntries</a>()</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> Native.funcInterpGetNumEntries(getContext().nCtx(), getNativeObject());</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a6dd4384b487b6b698eba7749ab1865bb">  116</a></span>&#160;    <span class="keyword">public</span> Entry&lt;R&gt;[] <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a6dd4384b487b6b698eba7749ab1865bb">getEntries</a>()</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">int</span> n = getNumEntries();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        Entry&lt;R&gt;[] res = <span class="keyword">new</span> Entry[n];</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            res[i] = <span class="keyword">new</span> Entry&lt;&gt;(getContext(), Native.funcInterpGetEntry(getContext()</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    .nCtx(), getNativeObject(), i));</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad937e41d66c2a090e81f090ae1e0e802">  133</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;R&gt;</a> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad937e41d66c2a090e81f090ae1e0e802">getElse</a>()</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;R&gt;</a>) <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr</a>.create(getContext(),</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                Native.funcInterpGetElse(getContext().nCtx(), getNativeObject()));</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a222189223226dd5d60d8898f8c1ae578">  144</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a222189223226dd5d60d8898f8c1ae578">getArity</a>()</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">return</span> Native.funcInterpGetArity(getContext().nCtx(), getNativeObject());</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad146fa8579a5f8a876c4688cc5a68520">  152</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="namespacez3py.html#ac394848495233ed81d1cacd8a4a37d15">String</a> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a>()</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="namespacez3py.html#ac394848495233ed81d1cacd8a4a37d15">String</a> res = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        res += <span class="stringliteral">&quot;[&quot;</span>;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">for</span> (Entry&lt;R&gt; e : getEntries())</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordtype">int</span> n = e.getNumArgs();</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">if</span> (n &gt; 1)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                res += <span class="stringliteral">&quot;[&quot;</span>;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;?&gt;</a>[] args = e.<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html#ad0e567349268af1f5c9408a75444fc3e">getArgs</a>();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++)</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordflow">if</span> (i != 0)</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    res += <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                res += args[i];</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">if</span> (n &gt; 1)</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                res += <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            res += <span class="stringliteral">&quot; -&gt; &quot;</span> + e.getValue() + <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        res += <span class="stringliteral">&quot;else -&gt; &quot;</span> + getElse();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        res += <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html">FuncInterp</a>(<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx, <span class="keywordtype">long</span> obj)</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        super(ctx, obj);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    @Override</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">void</span> incRef() {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        Native.funcInterpIncRef(getContext().nCtx(), getNativeObject());</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    @Override</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">void</span> addToReferenceQueue() {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        getContext().getFuncInterpDRQ().storeReference(getContext(), <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> java.lang.ref.ReferenceQueue;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;@SuppressWarnings(<span class="stringliteral">&quot;unchecked&quot;</span>)</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html">   28</a></span>&#160;public class <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html">FuncInterp</a>&lt;R extends <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_sort.html">Sort</a>&gt; extends <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_z3_object.html">Z3Object</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span>Entry&lt;R <span class="keyword">extends</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_sort.html">Sort</a>&gt; extends <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_z3_object.html">Z3Object</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">public</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;R&gt;</a> getValue()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;R&gt;</a>) <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr</a>.create(getContext(),</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    Native.funcEntryGetValue(getContext().nCtx(), getNativeObject()));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> getNumArgs()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> Native.funcEntryGetNumArgs(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">public</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;?&gt;</a>[] getArgs()</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">int</span> n = getNumArgs();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;?&gt;</a>[] res = <span class="keyword">new</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr</a>[n];</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                res[i] = <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr</a>.create(getContext(), Native.funcEntryGetArg(</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        getContext().nCtx(), getNativeObject(), i));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        @Override</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">public</span> <a class="code" href="namespacez3py.html#ac394848495233ed81d1cacd8a4a37d15">String</a> toString()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordtype">int</span> n = getNumArgs();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="namespacez3py.html#ac394848495233ed81d1cacd8a4a37d15">String</a> res = <span class="stringliteral">&quot;[&quot;</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;?&gt;</a>[] args = getArgs();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                res += args[i] + <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> res + getValue() + <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        Entry(<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx, <span class="keywordtype">long</span> obj) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            super(ctx, obj);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        @Override</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">void</span> incRef() {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            Native.funcEntryIncRef(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        @Override</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> addToReferenceQueue() {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            getContext().getReferenceQueue().storeReference(<span class="keyword">this</span>, FuncEntryRef::new);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class </span>FuncEntryRef <span class="keyword">extends</span> Z3ReferenceQueue.Reference&lt;Entry&lt;?&gt;&gt; {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">private</span> FuncEntryRef(Entry&lt;?&gt; referent, ReferenceQueue&lt;Z3Object&gt; q) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                super(referent, q);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            @Override</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">void</span> decRef(<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx, <span class="keywordtype">long</span> z3Obj) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                Native.funcEntryDecRef(ctx.<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_context.html#a4f789d47d93c150a6e12a4d54ff1597a">nCtx</a>(), z3Obj);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a18c45c8a765040da7999e551a5a13ba2">  119</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a18c45c8a765040da7999e551a5a13ba2">getNumEntries</a>()</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> Native.funcInterpGetNumEntries(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a6dd4384b487b6b698eba7749ab1865bb">  130</a></span>&#160;    <span class="keyword">public</span> Entry&lt;R&gt;[] <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a6dd4384b487b6b698eba7749ab1865bb">getEntries</a>()</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">int</span> n = getNumEntries();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        Entry&lt;R&gt;[] res = <span class="keyword">new</span> Entry[n];</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            res[i] = <span class="keyword">new</span> Entry&lt;&gt;(getContext(), Native.funcInterpGetEntry(getContext()</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                    .nCtx(), getNativeObject(), i));</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad937e41d66c2a090e81f090ae1e0e802">  147</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;R&gt;</a> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad937e41d66c2a090e81f090ae1e0e802">getElse</a>()</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;R&gt;</a>) <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr</a>.create(getContext(),</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                Native.funcInterpGetElse(getContext().nCtx(), getNativeObject()));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a222189223226dd5d60d8898f8c1ae578">  158</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a222189223226dd5d60d8898f8c1ae578">getArity</a>()</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">return</span> Native.funcInterpGetArity(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad146fa8579a5f8a876c4688cc5a68520">  166</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="namespacez3py.html#ac394848495233ed81d1cacd8a4a37d15">String</a> <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a>()</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <a class="code" href="namespacez3py.html#ac394848495233ed81d1cacd8a4a37d15">String</a> res = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        res += <span class="stringliteral">&quot;[&quot;</span>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">for</span> (Entry&lt;R&gt; e : getEntries())</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordtype">int</span> n = e.getNumArgs();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">if</span> (n &gt; 1)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                res += <span class="stringliteral">&quot;[&quot;</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;?&gt;</a>[] args = e.<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_expr.html#ad0e567349268af1f5c9408a75444fc3e">getArgs</a>();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">if</span> (i != 0)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    res += <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                res += args[i];</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordflow">if</span> (n &gt; 1)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                res += <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            res += <span class="stringliteral">&quot; -&gt; &quot;</span> + e.getValue() + <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        res += <span class="stringliteral">&quot;else -&gt; &quot;</span> + getElse();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        res += <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html">FuncInterp</a>(<a class="code" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx, <span class="keywordtype">long</span> obj)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        super(ctx, obj);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    @Override</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">void</span> incRef() {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        Native.funcInterpIncRef(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    @Override</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordtype">void</span> addToReferenceQueue() {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        getContext().getReferenceQueue().storeReference(<span class="keyword">this</span>, FuncInterpRef::new);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class </span>FuncInterpRef <span class="keyword">extends</span> Z3ReferenceQueue.Reference&lt;FuncInterp&lt;?&gt;&gt; {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keyword">private</span> FuncInterpRef(FuncInterp&lt;?&gt; referent, ReferenceQueue&lt;Z3Object&gt; q) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            super(referent, q);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        @Override</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordtype">void</span> decRef(Context ctx, <span class="keywordtype">long</span> z3Obj) {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            Native.funcInterpDecRef(ctx.nCtx(), z3Obj);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_context_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_context.html">com.microsoft.z3.Context</a></div><div class="ttdef"><b>Definition:</b> <a href="_context_8java_source.html#l00036">Context.java:36</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_context_html_a4f789d47d93c150a6e12a4d54ff1597a"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_context.html#a4f789d47d93c150a6e12a4d54ff1597a">com.microsoft.z3.Context.nCtx</a></div><div class="ttdeci">long nCtx()</div><div class="ttdef"><b>Definition:</b> <a href="_context_8java_source.html#l04288">Context.java:4288</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_expr_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_expr.html">com.microsoft.z3.Expr&lt; R &gt;</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_expr_html_ad0e567349268af1f5c9408a75444fc3e"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_expr.html#ad0e567349268af1f5c9408a75444fc3e">com.microsoft.z3.Expr.getArgs</a></div><div class="ttdeci">Expr&lt;?&gt;[] getArgs()</div><div class="ttdef"><b>Definition:</b> <a href="_expr_8java_source.html#l00109">Expr.java:109</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html">com.microsoft.z3.FuncInterp</a></div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00026">FuncInterp.java:26</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html_a18c45c8a765040da7999e551a5a13ba2"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a18c45c8a765040da7999e551a5a13ba2">com.microsoft.z3.FuncInterp.getNumEntries</a></div><div class="ttdeci">int getNumEntries()</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00105">FuncInterp.java:105</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html_a222189223226dd5d60d8898f8c1ae578"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a222189223226dd5d60d8898f8c1ae578">com.microsoft.z3.FuncInterp.getArity</a></div><div class="ttdeci">int getArity()</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00144">FuncInterp.java:144</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html_a6dd4384b487b6b698eba7749ab1865bb"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a6dd4384b487b6b698eba7749ab1865bb">com.microsoft.z3.FuncInterp.getEntries</a></div><div class="ttdeci">Entry&lt; R &gt;[] getEntries()</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00116">FuncInterp.java:116</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html_ad146fa8579a5f8a876c4688cc5a68520"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad146fa8579a5f8a876c4688cc5a68520">com.microsoft.z3.FuncInterp.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00152">FuncInterp.java:152</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html_ad937e41d66c2a090e81f090ae1e0e802"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad937e41d66c2a090e81f090ae1e0e802">com.microsoft.z3.FuncInterp.getElse</a></div><div class="ttdeci">Expr&lt; R &gt; getElse()</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00133">FuncInterp.java:133</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html">com.microsoft.z3.FuncInterp</a></div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00028">FuncInterp.java:28</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html_a18c45c8a765040da7999e551a5a13ba2"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a18c45c8a765040da7999e551a5a13ba2">com.microsoft.z3.FuncInterp.getNumEntries</a></div><div class="ttdeci">int getNumEntries()</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00119">FuncInterp.java:119</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html_a222189223226dd5d60d8898f8c1ae578"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a222189223226dd5d60d8898f8c1ae578">com.microsoft.z3.FuncInterp.getArity</a></div><div class="ttdeci">int getArity()</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00158">FuncInterp.java:158</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html_a6dd4384b487b6b698eba7749ab1865bb"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#a6dd4384b487b6b698eba7749ab1865bb">com.microsoft.z3.FuncInterp.getEntries</a></div><div class="ttdeci">Entry&lt; R &gt;[] getEntries()</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00130">FuncInterp.java:130</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html_ad146fa8579a5f8a876c4688cc5a68520"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad146fa8579a5f8a876c4688cc5a68520">com.microsoft.z3.FuncInterp.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00166">FuncInterp.java:166</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_interp_html_ad937e41d66c2a090e81f090ae1e0e802"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_interp.html#ad937e41d66c2a090e81f090ae1e0e802">com.microsoft.z3.FuncInterp.getElse</a></div><div class="ttdeci">Expr&lt; R &gt; getElse()</div><div class="ttdef"><b>Definition:</b> <a href="_func_interp_8java_source.html#l00147">FuncInterp.java:147</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_sort_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_sort.html">com.microsoft.z3.Sort</a></div><div class="ttdef"><b>Definition:</b> <a href="_sort_8java_source.html#l00026">Sort.java:27</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_z3_object_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_z3_object.html">com.microsoft.z3.Z3Object</a></div><div class="ttdef"><b>Definition:</b> <a href="_z3_object_8java_source.html#l00024">Z3Object.java:24</a></div></div>
-<div class="ttc" id="anamespacez3py_html_ac394848495233ed81d1cacd8a4a37d15"><div class="ttname"><a href="namespacez3py.html#ac394848495233ed81d1cacd8a4a37d15">z3py.String</a></div><div class="ttdeci">def String(name, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l10928">z3py.py:10928</a></div></div>
+<div class="ttc" id="anamespacez3py_html_ac394848495233ed81d1cacd8a4a37d15"><div class="ttname"><a href="namespacez3py.html#ac394848495233ed81d1cacd8a4a37d15">z3py.String</a></div><div class="ttdeci">def String(name, ctx=None)</div><div class="ttdef"><b>Definition:</b> <a href="z3py_8py_source.html#l11061">z3py.py:11061</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 14 2023 14:44:08 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Oct 10 2024 23:21:49 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
