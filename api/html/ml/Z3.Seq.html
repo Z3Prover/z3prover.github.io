@@ -59,9 +59,21 @@
 </div>
 </div>
 
+<pre><span id="VALmk_char_sort"><span class="keyword">val</span> mk_char_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>create char sort</p>
+</div>
+</div>
+
 <pre><span id="VALis_string_sort"><span class="keyword">val</span> is_string_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>test if sort is a string sort (a sequence of 8-bit bit-vectors)</p>
+</div>
+</div>
+
+<pre><span id="VALis_char_sort"><span class="keyword">val</span> is_char_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; bool</code></pre><div class="info ">
+<div class="info-desc">
+<p>test if sort is a char sort</p>
 </div>
 </div>
 
@@ -145,7 +157,7 @@
 
 <pre><span id="VALmk_seq_nth"><span class="keyword">val</span> mk_seq_nth</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
-<p><code class="code">mk_seq_nth ctx s index</code> retrieves from <code class="code">s</code> the element at position <code class="code">index</code>. 
+<p><code class="code">mk_seq_nth ctx s index</code> retrieves from <code class="code">s</code> the element at position <code class="code">index</code>.
       The function is under-specified if the index is out of bounds.</p>
 </div>
 </div>
@@ -183,6 +195,30 @@
 <pre><span id="VALmk_int_to_str"><span class="keyword">val</span> mk_int_to_str</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>convert an integer expression to a string</p>
+</div>
+</div>
+
+<pre><span id="VALmk_string_to_code"><span class="keyword">val</span> mk_string_to_code</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_string_to_code ctx s</code> convert a unit length string <code class="code">s</code> to integer code</p>
+</div>
+</div>
+
+<pre><span id="VALmk_string_from_code"><span class="keyword">val</span> mk_string_from_code</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_string_from_code ctx c</code> convert code <code class="code">c</code> to a string</p>
+</div>
+</div>
+
+<pre><span id="VALmk_ubv_to_str"><span class="keyword">val</span> mk_ubv_to_str</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_ubv_to_str ctx ubv</code> convert a unsigned bitvector <code class="code">ubv</code> to a string</p>
+</div>
+</div>
+
+<pre><span id="VALmk_sbv_to_str"><span class="keyword">val</span> mk_sbv_to_str</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_sbv_to_str ctx sbv</code> convert a signed bitvector <code class="code">sbv</code> to a string</p>
 </div>
 </div>
 
@@ -261,6 +297,42 @@
 <pre><span id="VALmk_re_full"><span class="keyword">val</span> mk_re_full</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>the regular expression that accepts all sequences</p>
+</div>
+</div>
+
+<pre><span id="VALmk_char"><span class="keyword">val</span> mk_char</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; int -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_char ctx i</code> converts an integer to a character</p>
+</div>
+</div>
+
+<pre><span id="VALmk_char_le"><span class="keyword">val</span> mk_char_le</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_char_le ctx lc rc</code> compares two characters</p>
+</div>
+</div>
+
+<pre><span id="VALmk_char_to_int"><span class="keyword">val</span> mk_char_to_int</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_char_to_int ctx c</code> converts the character <code class="code">c</code> to an integer</p>
+</div>
+</div>
+
+<pre><span id="VALmk_char_to_bv"><span class="keyword">val</span> mk_char_to_bv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_char_to_bv ctx c</code> converts the character <code class="code">c</code> to a bitvector</p>
+</div>
+</div>
+
+<pre><span id="VALmk_char_from_bv"><span class="keyword">val</span> mk_char_from_bv</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_char_from_bv ctx bv</code> converts the bitvector <code class="code">bv</code> to a character</p>
+</div>
+</div>
+
+<pre><span id="VALmk_char_is_digit"><span class="keyword">val</span> mk_char_is_digit</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_char_is_digit ctx c</code> checks if the character <code class="code">c</code> is a digit</p>
 </div>
 </div>
 </body></html>

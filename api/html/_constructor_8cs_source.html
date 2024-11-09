@@ -154,40 +154,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        ~<a class="code" href="class_microsoft_1_1_z3_1_1_constructor.html">Constructor</a>()</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            Native.Z3_del_constructor(<a class="code" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>.nCtx, NativeObject);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }        </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">        #region Internal</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keyword">private</span> uint n = 0;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">internal</span> Constructor(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a> ctx, Symbol name, Symbol recognizer, Symbol[] fieldNames,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                             Sort[] sorts, uint[] sortRefs)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            : base(ctx)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            Debug.Assert(ctx != <span class="keyword">null</span>);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            Debug.Assert(name != <span class="keyword">null</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            Debug.Assert(recognizer != <span class="keyword">null</span>);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            n = AST.ArrayLength(fieldNames);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">if</span> (n != AST.ArrayLength(sorts))</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> Z3Exception(<span class="stringliteral">&quot;Number of field names does not match number of sorts&quot;</span>);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (sortRefs != <span class="keyword">null</span> &amp;&amp; sortRefs.Length != n)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> Z3Exception(<span class="stringliteral">&quot;Number of field names does not match number of sort refs&quot;</span>);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">if</span> (sortRefs == <span class="keyword">null</span>) sortRefs = <span class="keyword">new</span> uint[n];</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            NativeObject = Native.Z3_mk_constructor(ctx.nCtx, name.NativeObject, recognizer.NativeObject,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                                    n,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                                    Symbol.ArrayToNative(fieldNames),</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                    Sort.ArrayToNative(sorts),</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                                    sortRefs);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>.nCtx != IntPtr.Zero) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;               lock (<a class="code" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>) </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;               { </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                   <span class="keywordflow">if</span> (<a class="code" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>.nCtx != IntPtr.Zero) </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                       Native.Z3_del_constructor(<a class="code" href="class_microsoft_1_1_z3_1_1_context.html">Context</a>.nCtx, NativeObject);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;               }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }        </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">        #region Internal</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">private</span> uint n = 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">internal</span> Constructor(<a class="code" href="class_microsoft_1_1_z3_1_1_z3_object.html#acf606a89a6d7474fa0ef78c69da736c7">Context</a> ctx, Symbol name, Symbol recognizer, Symbol[] fieldNames,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                             Sort[] sorts, uint[] sortRefs)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            : base(ctx)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            Debug.Assert(ctx != <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            Debug.Assert(name != <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            Debug.Assert(recognizer != <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            n = AST.ArrayLength(fieldNames);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">if</span> (n != AST.ArrayLength(sorts))</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> Z3Exception(<span class="stringliteral">&quot;Number of field names does not match number of sorts&quot;</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">if</span> (sortRefs != <span class="keyword">null</span> &amp;&amp; sortRefs.Length != n)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> Z3Exception(<span class="stringliteral">&quot;Number of field names does not match number of sort refs&quot;</span>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">if</span> (sortRefs == <span class="keyword">null</span>) sortRefs = <span class="keyword">new</span> uint[n];</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">        #endregion</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            NativeObject = Native.Z3_mk_constructor(ctx.nCtx, name.NativeObject, recognizer.NativeObject,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                                    n,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                                    Symbol.ArrayToNative(fieldNames),</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                                    Sort.ArrayToNative(sorts),</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                                    sortRefs);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">        #endregion</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_constructor_html"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_constructor.html">Microsoft.Z3.Constructor</a></div><div class="ttdoc">Constructors are used for datatype sorts.</div><div class="ttdef"><b>Definition:</b> <a href="_constructor_8cs_source.html#l00028">Constructor.cs:29</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_constructor_html_a0981e95b2c8f6fad193166e699bc8fb8"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_constructor.html#a0981e95b2c8f6fad193166e699bc8fb8">Microsoft.Z3.Constructor.AccessorDecls</a></div><div class="ttdeci">FuncDecl[] AccessorDecls</div><div class="ttdoc">The function declarations of the accessors</div><div class="ttdef"><b>Definition:</b> <a href="_constructor_8cs_source.html#l00074">Constructor.cs:75</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_z3_1_1_constructor_html_a19369180363c5a6b3ef1c29eda34eed3"><div class="ttname"><a href="class_microsoft_1_1_z3_1_1_constructor.html#a19369180363c5a6b3ef1c29eda34eed3">Microsoft.Z3.Constructor.NumFields</a></div><div class="ttdeci">uint NumFields</div><div class="ttdoc">The number of fields of the constructor.</div><div class="ttdef"><b>Definition:</b> <a href="_constructor_8cs_source.html#l00033">Constructor.cs:34</a></div></div>
@@ -201,7 +207,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 14 2023 14:44:08 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Oct 10 2024 23:21:49 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

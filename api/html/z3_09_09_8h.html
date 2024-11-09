@@ -145,6 +145,9 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1stats.html">stats</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1parameter.html">parameter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">class for auxiliary parameters associated with <a class="el" href="classz3_1_1func__decl.html" title="Function declaration (aka function definition). It is the signature of interpreted and uninterpreted ...">func_decl</a> The class is initialized with a <a class="el" href="classz3_1_1func__decl.html" title="Function declaration (aka function definition). It is the signature of interpreted and uninterpreted ...">func_decl</a> or application expression and an index The accessor get_expr, get_sort, ... is available depending on the value of <a class="el" href="classz3_1_1parameter.html#aa4c4178adbbce852827e9c75cd37fec6">kind()</a>. The caller is responsible to check that the kind of the parameter aligns with the call (get_expr etc).  <a href="classz3_1_1parameter.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1solver.html">solver</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structz3_1_1solver_1_1simple.html">solver::simple</a></td></tr>
@@ -160,6 +163,8 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1apply__result.html">apply_result</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1tactic.html">tactic</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1simplifier.html">simplifier</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3_1_1probe.html">probe</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,8 +212,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a583d3a20afff58d734987c2e47daeb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e18b9d8883cbc3394d698671752e2cd"><td class="memItemLeft" align="right" valign="top">typedef ast_vector_tpl&lt; func_decl &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a1e18b9d8883cbc3394d698671752e2cd">func_decl_vector</a></td></tr>
 <tr class="separator:a1e18b9d8883cbc3394d698671752e2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7afea4df4a6ecef1de5b82bd7fac269"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; void(expr const  &amp;proof, expr_vector const  &amp;clause)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#ad7afea4df4a6ecef1de5b82bd7fac269">on_clause_eh_t</a></td></tr>
-<tr class="separator:ad7afea4df4a6ecef1de5b82bd7fac269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a232a1439eb62e424c5e1738771c732b6"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; void(expr const  &amp;proof, std::vector&lt; unsigned &gt; const  &amp;deps, expr_vector const  &amp;clause)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a232a1439eb62e424c5e1738771c732b6">on_clause_eh_t</a></td></tr>
+<tr class="separator:a232a1439eb62e424c5e1738771c732b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -630,6 +635,14 @@ Functions</h2></td></tr>
 <tr class="separator:a71051fa19613d0c931b2c257dbff2be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a0c729d388ee5c3f1a86631006619dd"><td class="memItemLeft" align="right" valign="top">expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a9a0c729d388ee5c3f1a86631006619dd">concat</a> (expr_vector const &amp;args)</td></tr>
 <tr class="separator:a9a0c729d388ee5c3f1a86631006619dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae554ccdbcdc73f33800b7cd2c58d0f06"><td class="memItemLeft" align="right" valign="top">expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#ae554ccdbcdc73f33800b7cd2c58d0f06">map</a> (expr const &amp;f, expr const &amp;list)</td></tr>
+<tr class="separator:ae554ccdbcdc73f33800b7cd2c58d0f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a450396195a15095ae8008a97637a689e"><td class="memItemLeft" align="right" valign="top">expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a450396195a15095ae8008a97637a689e">mapi</a> (expr const &amp;f, expr const &amp;i, expr const &amp;list)</td></tr>
+<tr class="separator:a450396195a15095ae8008a97637a689e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac38bb6b55a1e780b0299e09b9433dd5f"><td class="memItemLeft" align="right" valign="top">expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#ac38bb6b55a1e780b0299e09b9433dd5f">foldl</a> (expr const &amp;f, expr const &amp;a, expr const &amp;list)</td></tr>
+<tr class="separator:ac38bb6b55a1e780b0299e09b9433dd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54f36128fc90d1457f71b7d134a4c786"><td class="memItemLeft" align="right" valign="top">expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a54f36128fc90d1457f71b7d134a4c786">foldli</a> (expr const &amp;f, expr const &amp;i, expr const &amp;a, expr const &amp;list)</td></tr>
+<tr class="separator:a54f36128fc90d1457f71b7d134a4c786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70aadc8428be4e5aa87d53be27755980"><td class="memItemLeft" align="right" valign="top">expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a70aadc8428be4e5aa87d53be27755980">mk_or</a> (expr_vector const &amp;args)</td></tr>
 <tr class="separator:a70aadc8428be4e5aa87d53be27755980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04de7b562379739f7589399d13e1bd97"><td class="memItemLeft" align="right" valign="top">expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a04de7b562379739f7589399d13e1bd97">mk_and</a> (expr_vector const &amp;args)</td></tr>
@@ -662,6 +675,10 @@ Functions</h2></td></tr>
 <tr class="separator:a93679c78621ea34143552b2a3f28200a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b97ee77ae20d040b8b658f325dc2c74"><td class="memItemLeft" align="right" valign="top">tactic&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a7b97ee77ae20d040b8b658f325dc2c74">par_and_then</a> (tactic const &amp;t1, tactic const &amp;t2)</td></tr>
 <tr class="separator:a7b97ee77ae20d040b8b658f325dc2c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01d3dd342b1f8c1583e97b35c490bc8a"><td class="memItemLeft" align="right" valign="top">simplifier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a01d3dd342b1f8c1583e97b35c490bc8a">operator&amp;</a> (simplifier const &amp;t1, simplifier const &amp;t2)</td></tr>
+<tr class="separator:a01d3dd342b1f8c1583e97b35c490bc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c85a3b1960188b12abc3f25576d30fa"><td class="memItemLeft" align="right" valign="top">simplifier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a8c85a3b1960188b12abc3f25576d30fa">with</a> (simplifier const &amp;t, params const &amp;p)</td></tr>
+<tr class="separator:a8c85a3b1960188b12abc3f25576d30fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28aa5e8e1c7ab657b430cbcb2ba52c0e"><td class="memItemLeft" align="right" valign="top">probe&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a28aa5e8e1c7ab657b430cbcb2ba52c0e">operator&lt;=</a> (probe const &amp;p1, probe const &amp;p2)</td></tr>
 <tr class="separator:a28aa5e8e1c7ab657b430cbcb2ba52c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1336997bcdadab2c705b61366b7c57e2"><td class="memItemLeft" align="right" valign="top">probe&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacez3.html#a1336997bcdadab2c705b61366b7c57e2">operator&lt;=</a> (probe const &amp;p1, double p2)</td></tr>
@@ -841,9 +858,9 @@ Functions</h2></td></tr>
 <div class="line">    Z3_ast r = binop(a.ctx(), a, b);                    \</div>
 <div class="line">    a.check_error();                                    \</div>
 <div class="line">    return expr(a.ctx(), r);                            \</div>
-<div class="ttc" id="anamespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00467">z3++.h:467</a></div></div>
+<div class="ttc" id="anamespacez3_html_a0820b0813d23b9e309017cee843c8213"><div class="ttname"><a href="namespacez3.html#a0820b0813d23b9e309017cee843c8213">z3::check_context</a></div><div class="ttdeci">void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition:</b> <a href="z3_09_09_8h_source.html#l00478">z3++.h:478</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l01608">1608</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l01622">1622</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
 </div>
 </div>
@@ -877,7 +894,7 @@ Functions</h2></td></tr>
 <div class="line">    return expr(a.ctx(), r);                    \</div>
 <div class="ttc" id="anamespace_microsoft_1_1_z3_html_aafac3844267f1923d666ee3c38f7d3c5"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Microsoft.Z3.Z3_ast</a></div><div class="ttdeci">System.IntPtr Z3_ast</div><div class="ttdef"><b>Definition:</b> <a href="_native_context_8cs_source.html#l00028">NativeContext.cs:28</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l01655">1655</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l01669">1669</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
 </div>
 </div>
@@ -910,7 +927,7 @@ Functions</h2></td></tr>
 <div class="line">    _arg.check_error();                         \</div>
 <div class="line">    return expr(_arg.ctx(), r);</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03831">3831</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03997">3997</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
 </div>
 </div>
@@ -950,7 +967,7 @@ Functions</h2></td></tr>
 <div class="line">    _arg1.check_error();                        \</div>
 <div class="line">    return expr(_arg1.ctx(), r);</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03836">3836</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04002">4002</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
 </div>
 </div>
@@ -970,14 +987,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00102">102</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l00103">103</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 14 2023 14:44:08 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Oct 10 2024 23:21:49 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

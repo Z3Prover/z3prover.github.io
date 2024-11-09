@@ -129,9 +129,9 @@
 <p>Assert a constraint (c) into the solver, and track it (in the unsat) core
       using the Boolean constant p.</p>
 
-<p>This API is an alternative to <a href="Z3.Solver.html#VALcheck"><code class="code">Solver.check</code></a> with assumptions for extracting unsat cores. 
-      Both APIs can be used in the same solver. The unsat core will contain a combination  
-      of the Boolean variables provided using <a href="Z3.Solver.html#VALassert_and_track"><code class="code">Solver.assert_and_track</code></a> and the Boolean literals 
+<p>This API is an alternative to <a href="Z3.Solver.html#VALcheck"><code class="code">Solver.check</code></a> with assumptions for extracting unsat cores.
+      Both APIs can be used in the same solver. The unsat core will contain a combination
+      of the Boolean variables provided using <a href="Z3.Solver.html#VALassert_and_track"><code class="code">Solver.assert_and_track</code></a> and the Boolean literals
       provided using <a href="Z3.Solver.html#VALcheck"><code class="code">Solver.check</code></a> with assumptions.</p>
 </div>
 </div>
@@ -230,6 +230,12 @@
 </div>
 </div>
 
+<pre><span id="VALadd_simplifier"><span class="keyword">val</span> add_simplifier</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt;<br>       <a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.Simplifier.html#TYPEsimplifier">Simplifier.simplifier</a> -&gt; <a href="Z3.Solver.html#TYPEsolver">solver</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create a solver with simplifying pre-processing *</p>
+</div>
+</div>
+
 <pre><span id="VALtranslate"><span class="keyword">val</span> translate</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Solver.html#TYPEsolver">solver</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a clone of the current solver with respect to a context.</p>
@@ -239,6 +245,18 @@
 <pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>A string representation of the solver.</p>
+</div>
+</div>
+
+<pre><span id="VALinterrupt"><span class="keyword">val</span> interrupt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Solver local interrupt.</p>
+
+<p>Normally you should use Z3_interrupt to cancel solvers because only
+      one solver is enabled concurrently per context.
+      However, per GitHub issue #1006, there are use cases where
+      it is more convenient to cancel a specific solver. Solvers
+      that are not selected for interrupts are left alone.</p>
 </div>
 </div>
 </body></html>

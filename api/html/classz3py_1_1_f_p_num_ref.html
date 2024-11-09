@@ -249,7 +249,7 @@ False
 &gt;&gt;&gt; x.sign()
 True
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09736">9736</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09869">9869</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aed8194b891258fc0b90afdc8ca371eaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed8194b891258fc0b90afdc8ca371eaa">&#9670;&nbsp;</a></span>as_string()</h2>
@@ -269,15 +269,15 @@ True
 <pre class="fragment">Return a Z3 floating point expression as a Python string.</pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_f_p_ref.html#aed8194b891258fc0b90afdc8ca371eaa">FPRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09867">9867</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09867"></a><span class="lineno"> 9867</span>&#160;    <span class="keyword">def </span>as_string(self):</div>
-<div class="line"><a name="l09868"></a><span class="lineno"> 9868</span>&#160;        s = <a class="code" href="group__capi.html#gae0ffdaa5b0d9c2deb3bbb8d78ac9f4c9">Z3_get_numeral_string</a>(self.ctx.ref(), self.as_ast())</div>
-<div class="line"><a name="l09869"></a><span class="lineno"> 9869</span>&#160;        <span class="keywordflow">return</span> (<span class="stringliteral">&quot;FPVal(%s, %s)&quot;</span> % (s, self.sort()))</div>
-<div class="line"><a name="l09870"></a><span class="lineno"> 9870</span>&#160; </div>
-<div class="line"><a name="l09871"></a><span class="lineno"> 9871</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l10000">10000</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l10000"></a><span class="lineno">10000</span>&#160;    <span class="keyword">def </span>as_string(self):</div>
+<div class="line"><a name="l10001"></a><span class="lineno">10001</span>&#160;        s = <a class="code" href="group__capi.html#gae0ffdaa5b0d9c2deb3bbb8d78ac9f4c9">Z3_get_numeral_string</a>(self.ctx.ref(), self.as_ast())</div>
+<div class="line"><a name="l10002"></a><span class="lineno">10002</span>&#160;        <span class="keywordflow">return</span> (<span class="stringliteral">&quot;FPVal(%s, %s)&quot;</span> % (s, self.sort()))</div>
+<div class="line"><a name="l10003"></a><span class="lineno">10003</span>&#160; </div>
+<div class="line"><a name="l10004"></a><span class="lineno">10004</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_gae0ffdaa5b0d9c2deb3bbb8d78ac9f4c9"><div class="ttname"><a href="group__capi.html#gae0ffdaa5b0d9c2deb3bbb8d78ac9f4c9">Z3_get_numeral_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_get_numeral_string(Z3_context c, Z3_ast a)</div><div class="ttdoc">Return numeral value, as a decimal string of a numeric constant term.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02962">IntNumRef.as_long()</a>, <a class="el" href="z3py_8py_source.html#l03903">BitVecNumRef.as_long()</a>, and <a class="el" href="z3py_8py_source.html#l07763">FiniteDomainNumRef.as_long()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l03012">IntNumRef.as_long()</a>, <a class="el" href="z3py_8py_source.html#l03949">BitVecNumRef.as_long()</a>, and <a class="el" href="z3py_8py_source.html#l07830">FiniteDomainNumRef.as_long()</a>.</p>
 
 </div>
 </div>
@@ -307,10 +307,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09800">9800</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09800"></a><span class="lineno"> 9800</span>&#160;    <span class="keyword">def </span>exponent(self, biased=True):</div>
-<div class="line"><a name="l09801"></a><span class="lineno"> 9801</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga5c95478d520fd9aaea714d36a9f3b2d0">Z3_fpa_get_numeral_exponent_string</a>(self.ctx.ref(), self.as_ast(), biased)</div>
-<div class="line"><a name="l09802"></a><span class="lineno"> 9802</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09933">9933</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09933"></a><span class="lineno"> 9933</span>&#160;    <span class="keyword">def </span>exponent(self, biased=True):</div>
+<div class="line"><a name="l09934"></a><span class="lineno"> 9934</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga5c95478d520fd9aaea714d36a9f3b2d0">Z3_fpa_get_numeral_exponent_string</a>(self.ctx.ref(), self.as_ast(), biased)</div>
+<div class="line"><a name="l09935"></a><span class="lineno"> 9935</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_ga5c95478d520fd9aaea714d36a9f3b2d0"><div class="ttname"><a href="group__capi.html#ga5c95478d520fd9aaea714d36a9f3b2d0">Z3_fpa_get_numeral_exponent_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_fpa_get_numeral_exponent_string(Z3_context c, Z3_ast t, bool biased)</div><div class="ttdoc">Return the exponent value of a floating-point numeral as a string.</div></div>
 </div><!-- fragment -->
 </div>
@@ -341,10 +341,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09821">9821</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09821"></a><span class="lineno"> 9821</span>&#160;    <span class="keyword">def </span>exponent_as_bv(self, biased=True):</div>
-<div class="line"><a name="l09822"></a><span class="lineno"> 9822</span>&#160;        <span class="keywordflow">return</span> BitVecNumRef(<a class="code" href="group__capi.html#gaae2050aa4b0540e32c08ff6fb5b3cfe7">Z3_fpa_get_numeral_exponent_bv</a>(self.ctx.ref(), self.as_ast(), biased), self.ctx)</div>
-<div class="line"><a name="l09823"></a><span class="lineno"> 9823</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09954">9954</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09954"></a><span class="lineno"> 9954</span>&#160;    <span class="keyword">def </span>exponent_as_bv(self, biased=True):</div>
+<div class="line"><a name="l09955"></a><span class="lineno"> 9955</span>&#160;        <span class="keywordflow">return</span> BitVecNumRef(<a class="code" href="group__capi.html#gaae2050aa4b0540e32c08ff6fb5b3cfe7">Z3_fpa_get_numeral_exponent_bv</a>(self.ctx.ref(), self.as_ast(), biased), self.ctx)</div>
+<div class="line"><a name="l09956"></a><span class="lineno"> 9956</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_gaae2050aa4b0540e32c08ff6fb5b3cfe7"><div class="ttname"><a href="group__capi.html#gaae2050aa4b0540e32c08ff6fb5b3cfe7">Z3_fpa_get_numeral_exponent_bv</a></div><div class="ttdeci">Z3_ast Z3_API Z3_fpa_get_numeral_exponent_bv(Z3_context c, Z3_ast t, bool biased)</div><div class="ttdoc">Retrieves the exponent of a floating-point literal as a bit-vector expression.</div></div>
 </div><!-- fragment -->
 </div>
@@ -375,13 +375,13 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09810">9810</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09810"></a><span class="lineno"> 9810</span>&#160;    <span class="keyword">def </span>exponent_as_long(self, biased=True):</div>
-<div class="line"><a name="l09811"></a><span class="lineno"> 9811</span>&#160;        ptr = (ctypes.c_longlong * 1)()</div>
-<div class="line"><a name="l09812"></a><span class="lineno"> 9812</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> <a class="code" href="group__capi.html#ga4341689927e3154ff9f31b29fc20d3aa">Z3_fpa_get_numeral_exponent_int64</a>(self.ctx.ref(), self.as_ast(), ptr, biased):</div>
-<div class="line"><a name="l09813"></a><span class="lineno"> 9813</span>&#160;            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;error retrieving the exponent of a numeral.&quot;</span>)</div>
-<div class="line"><a name="l09814"></a><span class="lineno"> 9814</span>&#160;        <span class="keywordflow">return</span> ptr[0]</div>
-<div class="line"><a name="l09815"></a><span class="lineno"> 9815</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09943">9943</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09943"></a><span class="lineno"> 9943</span>&#160;    <span class="keyword">def </span>exponent_as_long(self, biased=True):</div>
+<div class="line"><a name="l09944"></a><span class="lineno"> 9944</span>&#160;        ptr = (ctypes.c_longlong * 1)()</div>
+<div class="line"><a name="l09945"></a><span class="lineno"> 9945</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> <a class="code" href="group__capi.html#ga4341689927e3154ff9f31b29fc20d3aa">Z3_fpa_get_numeral_exponent_int64</a>(self.ctx.ref(), self.as_ast(), ptr, biased):</div>
+<div class="line"><a name="l09946"></a><span class="lineno"> 9946</span>&#160;            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;error retrieving the exponent of a numeral.&quot;</span>)</div>
+<div class="line"><a name="l09947"></a><span class="lineno"> 9947</span>&#160;        <span class="keywordflow">return</span> ptr[0]</div>
+<div class="line"><a name="l09948"></a><span class="lineno"> 9948</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_ga4341689927e3154ff9f31b29fc20d3aa"><div class="ttname"><a href="group__capi.html#ga4341689927e3154ff9f31b29fc20d3aa">Z3_fpa_get_numeral_exponent_int64</a></div><div class="ttdeci">bool Z3_API Z3_fpa_get_numeral_exponent_int64(Z3_context c, Z3_ast t, int64_t *n, bool biased)</div><div class="ttdoc">Return the exponent value of a floating-point numeral as a signed 64-bit integer.</div></div>
 </div><!-- fragment -->
 </div>
@@ -402,10 +402,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09831">9831</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09831"></a><span class="lineno"> 9831</span>&#160;    <span class="keyword">def </span>isInf(self):</div>
-<div class="line"><a name="l09832"></a><span class="lineno"> 9832</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gafd974e4558f78d6defe9a9674db41829">Z3_fpa_is_numeral_inf</a>(self.ctx.ref(), self.as_ast())</div>
-<div class="line"><a name="l09833"></a><span class="lineno"> 9833</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09964">9964</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09964"></a><span class="lineno"> 9964</span>&#160;    <span class="keyword">def </span>isInf(self):</div>
+<div class="line"><a name="l09965"></a><span class="lineno"> 9965</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gafd974e4558f78d6defe9a9674db41829">Z3_fpa_is_numeral_inf</a>(self.ctx.ref(), self.as_ast())</div>
+<div class="line"><a name="l09966"></a><span class="lineno"> 9966</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_gafd974e4558f78d6defe9a9674db41829"><div class="ttname"><a href="group__capi.html#gafd974e4558f78d6defe9a9674db41829">Z3_fpa_is_numeral_inf</a></div><div class="ttdeci">bool Z3_API Z3_fpa_is_numeral_inf(Z3_context c, Z3_ast t)</div><div class="ttdoc">Checks whether a given floating-point numeral is a +oo or -oo.</div></div>
 </div><!-- fragment -->
 </div>
@@ -426,10 +426,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09826">9826</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09826"></a><span class="lineno"> 9826</span>&#160;    <span class="keyword">def </span>isNaN(self):</div>
-<div class="line"><a name="l09827"></a><span class="lineno"> 9827</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga46641f14abc804ccf835a767c6a9bc1e">Z3_fpa_is_numeral_nan</a>(self.ctx.ref(), self.as_ast())</div>
-<div class="line"><a name="l09828"></a><span class="lineno"> 9828</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09959">9959</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09959"></a><span class="lineno"> 9959</span>&#160;    <span class="keyword">def </span>isNaN(self):</div>
+<div class="line"><a name="l09960"></a><span class="lineno"> 9960</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga46641f14abc804ccf835a767c6a9bc1e">Z3_fpa_is_numeral_nan</a>(self.ctx.ref(), self.as_ast())</div>
+<div class="line"><a name="l09961"></a><span class="lineno"> 9961</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_ga46641f14abc804ccf835a767c6a9bc1e"><div class="ttname"><a href="group__capi.html#ga46641f14abc804ccf835a767c6a9bc1e">Z3_fpa_is_numeral_nan</a></div><div class="ttdeci">bool Z3_API Z3_fpa_is_numeral_nan(Z3_context c, Z3_ast t)</div><div class="ttdoc">Checks whether a given floating-point numeral is a NaN.</div></div>
 </div><!-- fragment -->
 </div>
@@ -450,10 +450,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09856">9856</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09856"></a><span class="lineno"> 9856</span>&#160;    <span class="keyword">def </span>isNegative(self):</div>
-<div class="line"><a name="l09857"></a><span class="lineno"> 9857</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga822a5f9da562695cd72cefff4646e3fa">Z3_fpa_is_numeral_negative</a>(self.ctx.ref(), self.as_ast())</div>
-<div class="line"><a name="l09858"></a><span class="lineno"> 9858</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09989">9989</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09989"></a><span class="lineno"> 9989</span>&#160;    <span class="keyword">def </span>isNegative(self):</div>
+<div class="line"><a name="l09990"></a><span class="lineno"> 9990</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga822a5f9da562695cd72cefff4646e3fa">Z3_fpa_is_numeral_negative</a>(self.ctx.ref(), self.as_ast())</div>
+<div class="line"><a name="l09991"></a><span class="lineno"> 9991</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_ga822a5f9da562695cd72cefff4646e3fa"><div class="ttname"><a href="group__capi.html#ga822a5f9da562695cd72cefff4646e3fa">Z3_fpa_is_numeral_negative</a></div><div class="ttdeci">bool Z3_API Z3_fpa_is_numeral_negative(Z3_context c, Z3_ast t)</div><div class="ttdoc">Checks whether a given floating-point numeral is negative.</div></div>
 </div><!-- fragment -->
 </div>
@@ -474,10 +474,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09841">9841</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09841"></a><span class="lineno"> 9841</span>&#160;    <span class="keyword">def </span>isNormal(self):</div>
-<div class="line"><a name="l09842"></a><span class="lineno"> 9842</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gae8923d618cc063d90278687ead78d65b">Z3_fpa_is_numeral_normal</a>(self.ctx.ref(), self.as_ast())</div>
-<div class="line"><a name="l09843"></a><span class="lineno"> 9843</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09974">9974</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09974"></a><span class="lineno"> 9974</span>&#160;    <span class="keyword">def </span>isNormal(self):</div>
+<div class="line"><a name="l09975"></a><span class="lineno"> 9975</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gae8923d618cc063d90278687ead78d65b">Z3_fpa_is_numeral_normal</a>(self.ctx.ref(), self.as_ast())</div>
+<div class="line"><a name="l09976"></a><span class="lineno"> 9976</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_gae8923d618cc063d90278687ead78d65b"><div class="ttname"><a href="group__capi.html#gae8923d618cc063d90278687ead78d65b">Z3_fpa_is_numeral_normal</a></div><div class="ttdeci">bool Z3_API Z3_fpa_is_numeral_normal(Z3_context c, Z3_ast t)</div><div class="ttdoc">Checks whether a given floating-point numeral is normal.</div></div>
 </div><!-- fragment -->
 </div>
@@ -498,10 +498,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09851">9851</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09851"></a><span class="lineno"> 9851</span>&#160;    <span class="keyword">def </span>isPositive(self):</div>
-<div class="line"><a name="l09852"></a><span class="lineno"> 9852</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga3f968763ff280dc6474d54b37bdeb47e">Z3_fpa_is_numeral_positive</a>(self.ctx.ref(), self.as_ast())</div>
-<div class="line"><a name="l09853"></a><span class="lineno"> 9853</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09984">9984</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09984"></a><span class="lineno"> 9984</span>&#160;    <span class="keyword">def </span>isPositive(self):</div>
+<div class="line"><a name="l09985"></a><span class="lineno"> 9985</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga3f968763ff280dc6474d54b37bdeb47e">Z3_fpa_is_numeral_positive</a>(self.ctx.ref(), self.as_ast())</div>
+<div class="line"><a name="l09986"></a><span class="lineno"> 9986</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_ga3f968763ff280dc6474d54b37bdeb47e"><div class="ttname"><a href="group__capi.html#ga3f968763ff280dc6474d54b37bdeb47e">Z3_fpa_is_numeral_positive</a></div><div class="ttdeci">bool Z3_API Z3_fpa_is_numeral_positive(Z3_context c, Z3_ast t)</div><div class="ttdoc">Checks whether a given floating-point numeral is positive.</div></div>
 </div><!-- fragment -->
 </div>
@@ -522,10 +522,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09846">9846</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09846"></a><span class="lineno"> 9846</span>&#160;    <span class="keyword">def </span>isSubnormal(self):</div>
-<div class="line"><a name="l09847"></a><span class="lineno"> 9847</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga647fdae7ac71d9d862746bc7e35aa80d">Z3_fpa_is_numeral_subnormal</a>(self.ctx.ref(), self.as_ast())</div>
-<div class="line"><a name="l09848"></a><span class="lineno"> 9848</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09979">9979</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09979"></a><span class="lineno"> 9979</span>&#160;    <span class="keyword">def </span>isSubnormal(self):</div>
+<div class="line"><a name="l09980"></a><span class="lineno"> 9980</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#ga647fdae7ac71d9d862746bc7e35aa80d">Z3_fpa_is_numeral_subnormal</a>(self.ctx.ref(), self.as_ast())</div>
+<div class="line"><a name="l09981"></a><span class="lineno"> 9981</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_ga647fdae7ac71d9d862746bc7e35aa80d"><div class="ttname"><a href="group__capi.html#ga647fdae7ac71d9d862746bc7e35aa80d">Z3_fpa_is_numeral_subnormal</a></div><div class="ttdeci">bool Z3_API Z3_fpa_is_numeral_subnormal(Z3_context c, Z3_ast t)</div><div class="ttdoc">Checks whether a given floating-point numeral is subnormal.</div></div>
 </div><!-- fragment -->
 </div>
@@ -546,10 +546,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09836">9836</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09836"></a><span class="lineno"> 9836</span>&#160;    <span class="keyword">def </span>isZero(self):</div>
-<div class="line"><a name="l09837"></a><span class="lineno"> 9837</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gafec99bdb0e2c5d7c581a937da3198945">Z3_fpa_is_numeral_zero</a>(self.ctx.ref(), self.as_ast())</div>
-<div class="line"><a name="l09838"></a><span class="lineno"> 9838</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09969">9969</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09969"></a><span class="lineno"> 9969</span>&#160;    <span class="keyword">def </span>isZero(self):</div>
+<div class="line"><a name="l09970"></a><span class="lineno"> 9970</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gafec99bdb0e2c5d7c581a937da3198945">Z3_fpa_is_numeral_zero</a>(self.ctx.ref(), self.as_ast())</div>
+<div class="line"><a name="l09971"></a><span class="lineno"> 9971</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_gafec99bdb0e2c5d7c581a937da3198945"><div class="ttname"><a href="group__capi.html#gafec99bdb0e2c5d7c581a937da3198945">Z3_fpa_is_numeral_zero</a></div><div class="ttdeci">bool Z3_API Z3_fpa_is_numeral_zero(Z3_context c, Z3_ast t)</div><div class="ttdoc">Checks whether a given floating-point numeral is +zero or -zero.</div></div>
 </div><!-- fragment -->
 </div>
@@ -570,14 +570,14 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09747">9747</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09747"></a><span class="lineno"> 9747</span>&#160;    <span class="keyword">def </span>sign(self):</div>
-<div class="line"><a name="l09748"></a><span class="lineno"> 9748</span>&#160;        num = (ctypes.c_int)()</div>
-<div class="line"><a name="l09749"></a><span class="lineno"> 9749</span>&#160;        nsign = <a class="code" href="group__capi.html#ga2da01f7502d6b2c78f3f3eeeff542fc4">Z3_fpa_get_numeral_sign</a>(self.ctx.ref(), self.as_ast(), byref(num))</div>
-<div class="line"><a name="l09750"></a><span class="lineno"> 9750</span>&#160;        <span class="keywordflow">if</span> nsign <span class="keywordflow">is</span> <span class="keyword">False</span>:</div>
-<div class="line"><a name="l09751"></a><span class="lineno"> 9751</span>&#160;            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;error retrieving the sign of a numeral.&quot;</span>)</div>
-<div class="line"><a name="l09752"></a><span class="lineno"> 9752</span>&#160;        <span class="keywordflow">return</span> num.value != 0</div>
-<div class="line"><a name="l09753"></a><span class="lineno"> 9753</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09880">9880</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09880"></a><span class="lineno"> 9880</span>&#160;    <span class="keyword">def </span>sign(self):</div>
+<div class="line"><a name="l09881"></a><span class="lineno"> 9881</span>&#160;        num = (ctypes.c_int)()</div>
+<div class="line"><a name="l09882"></a><span class="lineno"> 9882</span>&#160;        nsign = <a class="code" href="group__capi.html#ga2da01f7502d6b2c78f3f3eeeff542fc4">Z3_fpa_get_numeral_sign</a>(self.ctx.ref(), self.as_ast(), byref(num))</div>
+<div class="line"><a name="l09883"></a><span class="lineno"> 9883</span>&#160;        <span class="keywordflow">if</span> nsign <span class="keywordflow">is</span> <span class="keyword">False</span>:</div>
+<div class="line"><a name="l09884"></a><span class="lineno"> 9884</span>&#160;            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;error retrieving the sign of a numeral.&quot;</span>)</div>
+<div class="line"><a name="l09885"></a><span class="lineno"> 9885</span>&#160;        <span class="keywordflow">return</span> num.value != 0</div>
+<div class="line"><a name="l09886"></a><span class="lineno"> 9886</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_ga2da01f7502d6b2c78f3f3eeeff542fc4"><div class="ttname"><a href="group__capi.html#ga2da01f7502d6b2c78f3f3eeeff542fc4">Z3_fpa_get_numeral_sign</a></div><div class="ttdeci">bool Z3_API Z3_fpa_get_numeral_sign(Z3_context c, Z3_ast t, int *sgn)</div><div class="ttdoc">Retrieves the sign of a floating-point literal.</div></div>
 </div><!-- fragment -->
 </div>
@@ -598,10 +598,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09759">9759</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09759"></a><span class="lineno"> 9759</span>&#160;    <span class="keyword">def </span>sign_as_bv(self):</div>
-<div class="line"><a name="l09760"></a><span class="lineno"> 9760</span>&#160;        <span class="keywordflow">return</span> BitVecNumRef(<a class="code" href="group__capi.html#gae2792f7be7277962bbd7555c0092c0ca">Z3_fpa_get_numeral_sign_bv</a>(self.ctx.ref(), self.as_ast()), self.ctx)</div>
-<div class="line"><a name="l09761"></a><span class="lineno"> 9761</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09892">9892</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09892"></a><span class="lineno"> 9892</span>&#160;    <span class="keyword">def </span>sign_as_bv(self):</div>
+<div class="line"><a name="l09893"></a><span class="lineno"> 9893</span>&#160;        <span class="keywordflow">return</span> BitVecNumRef(<a class="code" href="group__capi.html#gae2792f7be7277962bbd7555c0092c0ca">Z3_fpa_get_numeral_sign_bv</a>(self.ctx.ref(), self.as_ast()), self.ctx)</div>
+<div class="line"><a name="l09894"></a><span class="lineno"> 9894</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_gae2792f7be7277962bbd7555c0092c0ca"><div class="ttname"><a href="group__capi.html#gae2792f7be7277962bbd7555c0092c0ca">Z3_fpa_get_numeral_sign_bv</a></div><div class="ttdeci">Z3_ast Z3_API Z3_fpa_get_numeral_sign_bv(Z3_context c, Z3_ast t)</div><div class="ttdoc">Retrieves the sign of a floating-point literal as a bit-vector expression.</div></div>
 </div><!-- fragment -->
 </div>
@@ -622,10 +622,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09769">9769</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09769"></a><span class="lineno"> 9769</span>&#160;    <span class="keyword">def </span>significand(self):</div>
-<div class="line"><a name="l09770"></a><span class="lineno"> 9770</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gade125cb2db3c3adeb1391cfdef610db9">Z3_fpa_get_numeral_significand_string</a>(self.ctx.ref(), self.as_ast())</div>
-<div class="line"><a name="l09771"></a><span class="lineno"> 9771</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09902">9902</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09902"></a><span class="lineno"> 9902</span>&#160;    <span class="keyword">def </span>significand(self):</div>
+<div class="line"><a name="l09903"></a><span class="lineno"> 9903</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="group__capi.html#gade125cb2db3c3adeb1391cfdef610db9">Z3_fpa_get_numeral_significand_string</a>(self.ctx.ref(), self.as_ast())</div>
+<div class="line"><a name="l09904"></a><span class="lineno"> 9904</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_gade125cb2db3c3adeb1391cfdef610db9"><div class="ttname"><a href="group__capi.html#gade125cb2db3c3adeb1391cfdef610db9">Z3_fpa_get_numeral_significand_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_fpa_get_numeral_significand_string(Z3_context c, Z3_ast t)</div><div class="ttdoc">Return the significand value of a floating-point numeral as a string.</div></div>
 </div><!-- fragment -->
 </div>
@@ -646,10 +646,10 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09790">9790</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09790"></a><span class="lineno"> 9790</span>&#160;    <span class="keyword">def </span>significand_as_bv(self):</div>
-<div class="line"><a name="l09791"></a><span class="lineno"> 9791</span>&#160;        <span class="keywordflow">return</span> BitVecNumRef(<a class="code" href="group__capi.html#ga86ab7d6bd739f405f6f10b259998cced">Z3_fpa_get_numeral_significand_bv</a>(self.ctx.ref(), self.as_ast()), self.ctx)</div>
-<div class="line"><a name="l09792"></a><span class="lineno"> 9792</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09923">9923</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09923"></a><span class="lineno"> 9923</span>&#160;    <span class="keyword">def </span>significand_as_bv(self):</div>
+<div class="line"><a name="l09924"></a><span class="lineno"> 9924</span>&#160;        <span class="keywordflow">return</span> BitVecNumRef(<a class="code" href="group__capi.html#ga86ab7d6bd739f405f6f10b259998cced">Z3_fpa_get_numeral_significand_bv</a>(self.ctx.ref(), self.as_ast()), self.ctx)</div>
+<div class="line"><a name="l09925"></a><span class="lineno"> 9925</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_ga86ab7d6bd739f405f6f10b259998cced"><div class="ttname"><a href="group__capi.html#ga86ab7d6bd739f405f6f10b259998cced">Z3_fpa_get_numeral_significand_bv</a></div><div class="ttdeci">Z3_ast Z3_API Z3_fpa_get_numeral_significand_bv(Z3_context c, Z3_ast t)</div><div class="ttdoc">Retrieves the significand of a floating-point literal as a bit-vector expression.</div></div>
 </div><!-- fragment -->
 </div>
@@ -670,13 +670,13 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09779">9779</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><a name="l09779"></a><span class="lineno"> 9779</span>&#160;    <span class="keyword">def </span>significand_as_long(self):</div>
-<div class="line"><a name="l09780"></a><span class="lineno"> 9780</span>&#160;        ptr = (ctypes.c_ulonglong * 1)()</div>
-<div class="line"><a name="l09781"></a><span class="lineno"> 9781</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> <a class="code" href="group__capi.html#ga527cc3bcddb9bbac32322917d91ee7ad">Z3_fpa_get_numeral_significand_uint64</a>(self.ctx.ref(), self.as_ast(), ptr):</div>
-<div class="line"><a name="l09782"></a><span class="lineno"> 9782</span>&#160;            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;error retrieving the significand of a numeral.&quot;</span>)</div>
-<div class="line"><a name="l09783"></a><span class="lineno"> 9783</span>&#160;        <span class="keywordflow">return</span> ptr[0]</div>
-<div class="line"><a name="l09784"></a><span class="lineno"> 9784</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l09912">9912</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><a name="l09912"></a><span class="lineno"> 9912</span>&#160;    <span class="keyword">def </span>significand_as_long(self):</div>
+<div class="line"><a name="l09913"></a><span class="lineno"> 9913</span>&#160;        ptr = (ctypes.c_ulonglong * 1)()</div>
+<div class="line"><a name="l09914"></a><span class="lineno"> 9914</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> <a class="code" href="group__capi.html#ga527cc3bcddb9bbac32322917d91ee7ad">Z3_fpa_get_numeral_significand_uint64</a>(self.ctx.ref(), self.as_ast(), ptr):</div>
+<div class="line"><a name="l09915"></a><span class="lineno"> 9915</span>&#160;            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;error retrieving the significand of a numeral.&quot;</span>)</div>
+<div class="line"><a name="l09916"></a><span class="lineno"> 9916</span>&#160;        <span class="keywordflow">return</span> ptr[0]</div>
+<div class="line"><a name="l09917"></a><span class="lineno"> 9917</span>&#160; </div>
 <div class="ttc" id="agroup__capi_html_ga527cc3bcddb9bbac32322917d91ee7ad"><div class="ttname"><a href="group__capi.html#ga527cc3bcddb9bbac32322917d91ee7ad">Z3_fpa_get_numeral_significand_uint64</a></div><div class="ttdeci">bool Z3_API Z3_fpa_get_numeral_significand_uint64(Z3_context c, Z3_ast t, uint64_t *n)</div><div class="ttdoc">Return the significand value of a floating-point numeral as a uint64.</div></div>
 </div><!-- fragment -->
 </div>
@@ -684,7 +684,7 @@ True
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 14 2023 14:44:10 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Oct 10 2024 23:21:52 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -87,7 +87,7 @@
 
 <pre><span id="VALcheck"><span class="keyword">val</span> check</span> : <code class="type"><a href="Z3.Optimize.html#TYPEoptimize">optimize</a> -&gt; <a href="Z3.Solver.html#TYPEstatus">Solver.status</a></code></pre><div class="info ">
 <div class="info-desc">
-<p>Checks whether the assertions in the context are satisfiable and solves objectives.</p>
+<p>Check consistency and produce optimal values.</p>
 </div>
 </div>
 
@@ -144,15 +144,15 @@
 <pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type"><a href="Z3.Optimize.html#TYPEoptimize">optimize</a> -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Parse an SMT-LIB2 file with assertions, soft constraints and optimization
-      objectives. Add the parsed constraints and objectives to the optimization 
+      objectives. Add the parsed constraints and objectives to the optimization
       context.</p>
 </div>
 </div>
 
 <pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type"><a href="Z3.Optimize.html#TYPEoptimize">optimize</a> -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
-<p>Parse an SMT-LIB2 string with assertions, soft constraints and optimization 
-      objectives. Add the parsed constraints and objectives to the optimization 
+<p>Parse an SMT-LIB2 string with assertions, soft constraints and optimization
+      objectives. Add the parsed constraints and objectives to the optimization
       context.</p>
 </div>
 </div>
@@ -165,11 +165,11 @@
 
 <pre><span id="VALget_objectives"><span class="keyword">val</span> get_objectives</span> : <code class="type"><a href="Z3.Optimize.html#TYPEoptimize">optimize</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
 <div class="info-desc">
-<p>Return objectives on the optimization context. If the objective function 
-      is a max-sat objective it is returned as a Pseudo-Boolean (minimization) 
-      sum of the form (+ (if f1 w1 0) (if f2 w2 0) ...). If the objective 
-      function is entered as a maximization objective, then return the 
-      corresponding minimization objective. In this way the resulting 
+<p>Return objectives on the optimization context. If the objective function
+      is a max-sat objective it is returned as a Pseudo-Boolean (minimization)
+      sum of the form (+ (if f1 w1 0) (if f2 w2 0) ...). If the objective
+      function is entered as a maximization objective, then return the
+      corresponding minimization objective. In this way the resulting
       objective function is always returned as a minimization objective.</p>
 </div>
 </div>
