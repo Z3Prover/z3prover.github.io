@@ -16,4 +16,4 @@
 * [SAT Dagstuhl 2022, Proofs](https://z3prover.github.io/slides/proofs.html)
 * [POPL 2023 tutorial, Z3 Internals](https://z3prover.github.io/slides/z3internals.pptx)
 * [AVM 2025 tutorial, Arithmetic in Z3](https://z3prover.github.io/slides/avm.html)
-* [Guest Lectures, Wien October 2025](https://z3prover.github.io/slides/guest-lectures-wien-2025/README.md)
+* [Guest Lectures, Wien October 2025](https://z3prover.github.io/slides/guest-lectures-wien-2025/)

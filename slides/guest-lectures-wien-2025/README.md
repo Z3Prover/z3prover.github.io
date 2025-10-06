@@ -1,6 +1,6 @@
 # Guest Lecture material at TU Wien October 2025
 
-[Lecture Overview](https://z3prover.github.io/slides/guest-lectures-wien-2025/lecturs.html)
+[Lecture Overview](https://z3prover.github.io/slides/guest-lectures-wien-2025/lectures.html)
 
 * [Lecture 1 - introduction to SMT](https://z3prover.github.io/slides/guest-lectures-wien-2025/lecture1-z3intro.pptx)
 * [Lecture 2 - SMT search](https://z3prover.github.io/slides/guest-lectures-wien-2025/lecture2-cdclt.pptx)
