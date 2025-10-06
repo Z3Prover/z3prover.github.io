@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="Madoko, version 1.2.3" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <meta name="author" content="Nikolaj Bj&#248,rner" />
+  <title>Internals of SMT with Z3</title>
+  <style type="text/css"  class="link">
+  /*# sourceURL=madoko.css */
+  
+  .madoko .toc>.tocblock .tocblock .tocblock {
+    margin-left: 2.25em;
+  }
+  .madoko .toc>.tocblock .tocblock {
+    margin-left: 1.5em;
+  }
+  .madoko .toc-contents>.tocblock>.tocitem {
+    font-weight: bold;
+  }
+  .madoko .toc {
+    margin-top: 1em;
+  }
+  .madoko p.para-continue {
+    margin-bottom: 0pt;
+  }
+  .madoko .para-block+p {
+    margin-top: 0pt;
+  }
+  .madoko ul.para-block, .madoko ol.para-block {
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+  }
+  .madoko ul.para-end, .madoko ol.para-end {
+    margin-bottom: 1em;
+  }
+  .madoko dl {
+    margin-left: 0em;
+  }
+  .madoko blockquote {
+    font-style: italic;
+  }
+  .madoko a.localref {
+    text-decoration: none;
+  }
+  .madoko a.localref:hover {
+    text-decoration: underline;
+  }
+  .madoko .footnotes {
+    font-size: smaller;
+    margin-top: 2em;
+  }
+  .madoko .footnotes hr {
+    width: 50%;
+    text-align: left;
+  }
+  .madoko .footnote {
+    margin-left: 1em;
+  }
+  .madoko .footnote-before {
+    margin-left: -1em;
+    width: 1em;
+    display: inline-block;
+  }
+  .madoko .align-center, .madoko .align-center>p {
+    text-align: center !important;
+  }
+  .madoko .align-center pre {
+    text-align: left;
+  }
+  .madoko .align-center>* {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-left, .madoko .align-left>p {
+    text-align: left !important;
+  }
+  .madoko .align-left>* {
+    margin-left: 0pt !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-right, .madoko .align-right>p {
+    text-align: right !important;
+  }
+  .madoko .align-right>* {
+    margin-left: auto !important;
+    margin-right: 0pt !important;
+  }
+  .madoko .align-center>table,
+  .madoko .align-left>table,
+  .madoko .align-right>table {
+    text-align: left !important;
+  }
+  .madoko .equation-before {
+    float: right;
+  }
+  .madoko .bibitem {
+    font-size: smaller;
+  }
+  .madoko .bibsearch {
+    font-size: x-small;
+    text-decoration:none;
+    color: black;
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  .madoko .block, .madoko .figure, .madoko .bibitem, .madoko .equation, .madoko div.math {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .figure {
+    padding: 0.5em;
+    margin-left: 0pt;
+    margin-right: 0pt;
+  }
+  .madoko .hidden {
+    display: none;
+  }
+  .madoko .invisible {
+    visibility: hidden;
+  }
+  .madoko.preview .invisible {
+    visibility: visible;
+    opacity: 0.5;
+  }
+  .madoko code.code, .madoko span.code {
+    white-space: pre-wrap;
+  }
+  .madoko hr, hr.madoko {
+    border: none;
+    border-bottom: black solid 1px;
+    margin-bottom: 0.5ex;
+  }
+  .madoko .framed>*:first-child {
+    margin-top: 0pt;
+  }
+  .madoko .framed>*:last-child {
+    margin-bottom: 0pt;
+  }
+  .madoko ul.list-style-type-dash {
+      list-style-type: none !important;
+  }
+  .madoko ul.list-style-type-dash > li:before {
+      content: "\2013";
+      position: absolute;
+      margin-left: -1em;
+  }
+  .madoko table.madoko {
+    border-collapse: collapse;
+  }
+  .madoko td, .madoko th {
+    padding: 0ex 0.5ex;
+    margin: 0pt;
+    vertical-align: top;
+  }
+  .madoko .cell-border-left {
+    border-left: 1px solid black;
+  }
+  .madoko .cell-border-right {
+    border-right: 1px solid black;
+  }
+  .madoko thead>tr:first-child>.cell-line,
+  .madoko tbody:first-child>tr:first-child>.cell-line {
+    border-top: 1px solid black;
+    border-bottom: none;
+  }
+  .madoko .cell-line, .madoko .cell-double-line {
+    border-bottom: 1px solid black;
+    border-top: none;
+  }
+  .madoko .cell-double-line {
+    border-top: 1px solid black;
+    padding-top: 1.5px !important;
+  }
+  .madoko .input-mathpre .MathJax_Display {
+    text-align: left !important;
+  }
+  .madoko div.input-mathpre {
+    text-align: left;
+    margin-top: 1.5ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .math-rendering {
+    text-align: left;
+    white-space: pre;
+    color: gray;
+  }
+  .madoko .mathdisplay {
+    text-align: center;
+  }
+  .madoko span.math-rendering {
+    display:inline-block;
+    width:8em;
+    overflow-x:auto;
+    font-size:70%;
+  }
+  .madoko span.math-rendering::-webkit-scrollbar {
+    width:4px;
+  }
+  .madoko .pretty table {
+    border-collapse: collapse;
+  }
+  .madoko .pretty td {
+    padding: 0em;
+  }
+  .madoko .pretty td.empty {
+    min-width: 1.5ex;
+  }
+  .madoko .pretty td.expander {
+    width: 100em;
+  }
+  body.madoko, .madoko .serif {
+    font-family: Cambria,"Times New Roman","Liberation Serif","Times",serif;
+  }
+  .madoko .sans-serif {
+    font-family: "Calibri", "Optima", sans-serif;
+  }
+  .madoko .symbol {
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  body.madoko {
+    -webkit-text-size-adjust: 100%;       
+    text-rendering: optimizeLegibility;
+  }
+  body.madoko {
+    max-width: 88ex; 
+    margin: 1em auto;
+    padding: 0em 2em;
+  }
+  body.preview.madoko {
+    padding: 0em 1em;
+  }
+  .madoko p {
+    text-align: justify;
+  }
+  .madoko h1, .madoko h2, .madoko h3, .madoko h4 {
+    margin-top: 1.22em;
+    margin-bottom: 1ex;
+  }
+  .madoko h1+p, .madoko h2+p, .madoko h3+p, .madoko h4+p, .madoko h5+p  {
+    margin-top: 1ex;
+  }
+  .madoko h5, .madoko h6 {
+    margin-top: 1ex;
+    font-size: 1em;
+  }
+  .madoko h5 {
+    margin-bottom: 0.5ex;
+  }
+  .madoko h5 + p {
+    margin-top: 0.5ex;
+  }
+  .madoko h6 {
+    margin-bottom: 0pt;
+  }
+  .madoko h6 + p {
+    margin-top: 0pt;
+  }
+  .madoko pre, .madoko code, .madoko kbd, .madoko samp, .madoko tt,
+  .madoko .monospace, .madoko .token-indent, .madoko .reveal pre, .madoko .reveal code, .madoko .email {
+    font-family: Consolas,"Andale Mono WT","Andale Mono",Lucida Console,Monaco,monospace,monospace;
+    font-size: 0.85em;
+  }
+  .madoko pre code, .madoko .token-indent {
+    font-size: 0.95em;
+  }
+  .madoko pre code {
+    font-family: inherit !important;
+  }
+  .madoko ol.linenums li {
+    background-color: white;
+    list-style-type: decimal;
+  }
+  .madoko .remote {
+    background-color: #F0FFF0;
+  }
+  .madoko .remote + * {
+    margin-top: 0pt;
+  }
+  @media print {
+    body.madoko {
+      font-size: 10pt;
+    }
+    @page {
+      margin: 1in 1.5in;
+    }
+  }
+  @media only screen and (max-device-width:1024px) {
+    body.madoko {
+      padding: 0em 0.5em;
+    }
+    .madoko li {
+      text-align: left;
+    }
+  }
+  
+    </style>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/reveal.js/2.6.2/css/reveal.min.css"  class="link">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/reveal.js/2.6.2/css/theme/solarized.css"  class="link">
+  <script src="https://cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/head.min.js"  class="script preview"></script>
+  <script src="https://cdn.jsdelivr.net/reveal.js/2.6.2/js/reveal.js"  class="script preview"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/2.6.2/css/theme/solarized.css" id="theme">    
+      <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/html5shiv.js"></script>
+      <![endif]-->
+      <style>
+      body.madoko {
+        margin: 0pt;
+        padding: 0pt;
+        max-width: 100%;      
+      }
+      .madoko .reveal h1 {
+          font-size: 3.7em;
+      }
+      .madoko .reveal h2 {
+          font-size: 2.1em;
+      }
+      .reveal .authorblock .author {
+          font-size: 120%;
+          margin-bottom: 1ex;
+      }        
+      .reveal table {
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .reveal pre table {
+        margin-left: 0pt;
+      }
+      .madoko .reveal pre.pretty {
+        padding-top: 0pt;
+        padding-bottom: 0pt;
+      }
+      .reveal li p {
+          text-align: left;
+      }
+      .reveal h2 {
+          margin-bottom: 0.7em;
+      }
+      .reveal section ul,
+      .reveal section ol {
+          margin-top: 0.35em;
+          margin-bottom: 0.35em;
+      }
+      .reveal section img.math-display {
+          padding: 1em;
+          box-shadow: none;
+          border: none;
+      }
+      .reveal section img.math-inline {
+          margin: 0pt;
+          padding: 0pt;
+          background-color: none;
+          box-shadow: none;
+          border: none;
+      }
+      .reveal section img {
+          box-shadow: none;
+          border: none;
+      }
+      .madoko .reveal pre {
+          border: 1px solid black;
+          word-wrap: normal;
+          background-color: white;
+          font-size: 0.7em;
+          padding: 0.7em;
+          line-height: 100%;
+          width: 100%;
+      }      
+      .reveal pre code, .reveal code {
+          padding: 0pt;
+      }
+      .reveal nav.toc {
+          line-height: 1em;
+          font-size: 60%;
+          overflow-y: auto;
+      }    
+      .reveal .tocitem {
+          text-align: left;
+      }
+      .reveal .toc>.tocblock .tocblock {
+          margin-left: 0.5em;
+      }   
+      .reveal .toc>.tocblock .tocblock .tocblock {
+          margin-left: 1em;
+      }
+      .reveal .bibliography {
+        height: 18em;
+        overflow-y: auto;
+        font-size: 0.8em;
+        line-height: 1.25;
+      }
+      .reveal section[data-smaller=""],
+      .reveal section[data-smaller="true"] {
+        font-size: 80%;
+        width: 110%;
+      }
+      .reveal .slides>section[data-smaller=""],
+      .reveal .slides>section[data-smaller="true"] {
+        left: -55%;
+      }
+      .reveal .details {
+        display: none;
+      }
+      .reveal[data-details=""] .details,
+      .reveal[data-details="true"] .details {
+        display: initial;
+      }
+      /* Display in the preview window */
+      html, body.madoko.preview, body.madoko.preview-full, .body.madoko {
+        height  : 100% !important;
+        width   : auto!important;
+        padding : 0pt !important;
+        margin  : 0pt !important;
+      }
+      body.madoko.preview, body.madoko.preview-full, .preview .body.madoko {
+        overflow: hidden !important;
+      }
+      body.preview .reveal .slides .fragment {
+        visibility: visible;
+        opacity: 0.5;
+      }
+      body.preview .reveal .slides .fragment.visible {
+        opacity: 1.0;
+      }
+      .preview .reveal div.notes,
+      .preview .reveal aside.notes {
+        display  : block;
+        position : absolute;
+        width    : 30%;
+        left     : 70%;
+        top      : -15%;
+        font-size: 50%;
+        border   : 1px solid black;
+        border-radius   : 10px;
+        background-color: white;
+      }
+      /* 'static' display in the preview window, unused for now */
+      body.preview.static div.reveal, 
+      body.preview.static div.ticreveal .slides, 
+      body.preview.static div.reveal section {
+        display: block !important;
+        position: relative !important;
+        width: auto !important;      
+      }
+      body.preview.static div.reveal section {
+        border: solid 1px black;
+        padding: 1em !important;
+        margin-top: 1em;
+        min-height: 15em;
+        top: 0pt;
+      }
+      body.madoko.preview.static section {
+        font-size: 75%;
+      }
+      body.madoko.preview.static {
+        padding: 0em 1em !important;
+      }
+      body.madoko.preview.static .reveal pre {
+        width: 95%;
+      }    
+      body.preview .reveal[data-details="false"] .details {
+        display: initial;
+        color: gray;
+      }
+      body.preview .reveal[data-long="false"] section[data-long] {
+        border-left: 2px black solid;
+      }
+      </style>
+      <script>    
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      window.revealConfig = {
+          controls: true,
+          progress: true,
+          history: true,
+          center: /^\s*(true|1)\s*$/i.test("true"),
+          slideNumber: /^\s*(true|1)\s*$/i.test("true"),
+          dependencies: [
+            { src: 'https://cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'https://cdn.jsdelivr.net/reveal.js/2.6.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: 'https://cdn.jsdelivr.net/reveal.js/2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          ],
+      };
+      function revealAddFragments() {
+        [].forEach.call(document.querySelectorAll( ".fragmented" ), function(elem0) {
+          var elem = (/^H\d$/.test(elem0.nodeName) ? elem0.parentNode : elem0);
+          [].forEach.call(elem.children, function(item) {
+            if (item==elem0) return;
+            if (item && !/\bfragment(ed)?\b/.test(item.className) && item.nodeType===1) {
+              item.className = item.className + " fragment";
+            }
+          });
+        });
+      }
+      function revealQuotedList(listType) {
+        //compatibility with Rmarkdown slides
+        [].forEach.call( document.querySelectorAll("blockquote>" + listType), function(ul) {
+          if (!/\bfragmented\b/.test(ul.className)) {
+            ul.className = ul.className + " fragmented";
+          }        
+          var quote = ul.parentNode;
+          if (quote.childElementCount===1) {
+            quote.parentNode.replaceChild(ul,quote);
+          }
+        });
+      }
+      function revealBuildToFragmented() {
+        [].forEach.call(document.querySelectorAll( ".build" ), function(elem) {
+          if (elem && !/\bfragmented\b/.test(elem.className) && elem.nodeType===1) {
+            elem.className = elem.className + " fragmented";
+          }
+        });
+      }
+      function revealDivNotesToAside() {
+        [].forEach.call(document.querySelectorAll("div.notes"), function(elem) {
+          var aside = document.createElement("ASIDE");
+          if (elem.id) aside.id = elem.id;
+          aside.className = elem.className;
+          [].forEach.call(elem.attributes, function(attr) {
+            aside.setAttribute( attr.name, attr.value );
+          });
+          aside.innerHTML = elem.innerHTML;
+          elem.parentNode.replaceChild(aside,elem);
+        });
+      }
+      function revealDataQuery() {
+        var reveal = document.querySelector(".reveal");
+        if (!reveal) return;
+        window.location.search.replace(/\bdata-(\w+)(?:=(\w+))?\b/g, function(matched,key,value) {
+          reveal.setAttribute("data-" + key, (value ? value : ""));
+          return matched;
+        });
+      }
+      function revealRemoveLong() {
+        // remove parts for 'long' presentation
+        if (/\bpreview(?![\w\-])/.test(document.body.className)) return;
+        var reveal = document.querySelector(".reveal");
+        if (!reveal) return;
+        var value = reveal.hasAttribute("data-long") ? reveal.getAttribute("data-long") : null;
+        if (value==null || value=="false" || value=="0") {
+          [].forEach.call( document.querySelectorAll("section[data-long]"), function(elem) {
+            elem.parentNode.removeChild(elem);
+          });
+        }
+      }
+      revealConfig.onLoad = function() {
+        revealConfig.getEmbeddedImages();
+        revealDataQuery();
+        revealRemoveLong();
+        revealQuotedList("ul");
+        revealQuotedList("ol");
+        revealBuildToFragmented();
+        revealDivNotesToAside();
+        revealAddFragments();
+      };
+      document.addEventListener("load",revealConfig.onLoad);    
+      document.addEventListener("DOMContentLoaded", function() {
+        if (typeof Reveal !== "undefined" && !Reveal.isReady()) {
+          revealConfig.onLoad();
+          Reveal.initialize(revealConfig);
+        }
+      });    
+      // add support for printing:
+      // use  ?print-pdf to get a pdf-printable version (in Chrome)
+      // use  ?print-paper to get a paper-printable version.
+      revealConfig.initPrint = function() {
+        var cssLink = null;
+        var bodyClass = null;
+        var cap = window.location.search.match(/\bprint-(\w+)\b/);
+        if (cap) {
+          bodyClass = cap[0];
+          cssLink = "https://cdn.jsdelivr.net/reveal.js/2.6.2/css/print/" + cap[1] + ".css";
+        }
+        if (cssLink) {
+          var link  = document.createElement( "link" );
+          link.rel  = "stylesheet";
+          link.type = "text/css";
+          link.href = cssLink;
+          var head = document.getElementsByTagName( 'head' )[0];
+          if (head) head.appendChild( link );
+        }
+        if (bodyClass) {
+          document.body.className = document.body.className + " " + bodyClass;
+        }
+      };
+      revealConfig.getEmbeddedImages = function() {
+        var images = {};
+        [].forEach.call( document.querySelectorAll("img[data-linkid]"), function(img) {
+          var linkid = img.getAttribute("data-linkid");
+          if (linkid) images["/" + linkid] = img.src;
+          var path = img.getAttribute("data-path");
+          if (path) images["/" + path] = img.src;
+        });     
+        [].forEach.call( document.querySelectorAll("section"), function(slide) {
+          var attrName = "data-background";
+          var image = slide.getAttribute(attrName);
+          if (!image) {
+            attrName = "data-background-image";
+            image = slide.getAttribute(attrName);
+          }
+          if (!image) return;
+          var cap = /^\s*!?\[([^\]]+)\]\s*$/.exec(image);
+          var href = images["/" + (cap ? cap[1] : image)];
+          if (!href) return;
+          if (attrName==="data-background" && /^data:/.test(href)) href = "url(" + href + ")";
+          slide.setAttribute(attrName, href);
+        });
+      };    
+      </script>
+  <style>
+    .reveal p, .reveal li, .reveal .bibitem, .reveal dd, .reveal dt {
+          text-align: left !important;
+          data-transition: none 
+        }
+  </style>
+  </head>
+<body class="madoko">
+
+<div class="body madoko" style="line-adjust:0">
+<div class="reveal" data-long="false" data-details="false" data-line="28" style="line-adjust:0">
+<div class="slides" data-line="28" style="line-adjust:0">
+
+<div class="mathdefs input-mathdefs" data-line="29"></div><style>
+.invariant {
+  font-style: oblique;
+  before: "[Invariant ]{.invariant-before}"
+}
+</style>
+
+
+
+<section class="titleblock align-center para-block" data-line="75" style="text-align:center;line-adjust:0">
+<div class="titleheader align-center" data-line="75" style="text-align:center;line-adjust:0">
+<h1 class="title para-block" data-line="75" style="font-weight:bold;margin-bottom:0.5ex;font-size:3em;line-adjust:0"><span data-line="75"></span>Internals of SMT with Z3</h1>
+<h2 class="subtitle para-block" data-line="78" style="margin-bottom:0.5ex;font-size:1.8em;line-adjust:0"><span data-line="78"></span>TU Wien Guest Lectures, October 2025, 
+                Laura Kovacs limited production</h2></div>
+<div class="authors align-center" data-line="83" style="text-align:center;width:80%;line-adjust:0"><table class="authorrow columns block" data-line="83" style="margin-top:2ex;width:100%;line-adjust:0">
+<tbody><tr><td class="author column" data-line="83" style="text-align:center;font-size:x-large;line-adjust:0">
+<div class="authorname" data-line="83" style="font-size:1.4em;line-adjust:0"><span data-line="83"></span>Nikolaj Bj&#248;rner</div>
+<div class="authoraddress" data-line="86" style="line-adjust:0"><span data-line="86"></span>Microsoft Research</div>
+<div class="authoremail email" data-line="89" style="line-adjust:0"><span data-line="89"></span>nbjorner@microsoft.com</div></td></tr></tbody></table></div></section>
+<section id="sec-lectures" class="section section1" data-section-depth="1" data-line="77"><h2 id="heading-sec-lectures" class="h1" data-heading-depth="1" style="display:block">Lectures</h2>
+<ol class="ol compact" data-line="79">
+<li class="li ol-li compact-li" data-line="79"><span data-line="79"></span>Introduction to SMT/Z3
+</li>
+<li class="li ol-li compact-li" data-line="80"><span data-line="80"></span>Fundamental Search Algorithms<span data-line="80"></span> <span data-line="80"></span>- CDCL, CDCL(T), PDR, Saturation
+</li>
+<li class="li ol-li compact-li" data-line="81"><span data-line="81"></span>Core Theories: EUF, Characters, Finite Sets
+</li>
+<li class="li ol-li compact-li" data-line="82"><span data-line="82"></span>Core Theories: Arrays, Datatypes
+</li>
+<li class="li ol-li compact-li" data-line="83"><span data-line="83"></span>Core Theories: Arithmetic
+</li>
+<li class="li ol-li compact-li" data-line="84"><span data-line="84"></span>Programming Z3
+</li>
+<li class="li ol-li compact-li" data-line="85"><span data-line="85"></span>Theory Combination
+</li>
+<li class="li ol-li compact-li" data-line="86"><span data-line="86"></span>Quantifiers for theories
+</li>
+<li class="li ol-li compact-li" data-line="87"><span data-line="87"></span>Optimization Modulo Theories
+</li>
+<li class="li ol-li compact-li" data-line="88"><span data-line="88"></span>Topics. co-engines, local search, nlsat, mcsat, saturation
+</li></ol>
+</section>
+<section id="sec-live-development-of-a-new-solver-in-z3" class="section section1" data-section-depth="1" data-line="90"><h2 id="heading-sec-live-development-of-a-new-solver-in-z3" class="h1" data-heading-depth="1" style="display:block">Live development of a new solver in z3</h2>
+<ul class="ul list-star compact" data-line="92">
+<li class="li ul-li list-star-li compact-li" data-line="92"><span data-line="92"></span>The theory of finite sets, with cardinality constraints
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="93"><span data-line="93"></span>Well-known decision procedures, BAPA (Boolean Algebras and Presburger Arithmetic)
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="94"><span data-line="94"></span>Partially by using arrays, but not for finite sets
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="95"><span data-line="95"></span>It will provide a tour of several aspects of supporting a theory:
+
+<ul class="ul list-star compact" data-line="96">
+<li class="li ul-li list-star-li compact-li" data-line="96"><span data-line="96"></span>Define signature
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="97"><span data-line="97"></span>Rewriting simplification
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="98"><span data-line="98"></span>Global pre-processing simplification
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="99"><span data-line="99"></span>Axiom schemas
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="100"><span data-line="100"></span>Theory Solver
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="101"><span data-line="101"></span>Non-disjoint theory combinations, conservative extensions from decidable base theories
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="102"><span data-line="102"></span>Quantifier satisfiability and elimination
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="103"><span data-line="103"></span>Surfacing API 
+</li></ul></li></ul>
+</section>
+<section id="sec-lecture-1" class="section section1" data-section-depth="1" data-line="105"><h2 id="heading-sec-lecture-1" class="h1" data-heading-depth="1" style="display:block">Lecture 1</h2>
+<ul class="ul list-star compact" data-line="107">
+<li class="li ul-li list-star-li compact-li" data-line="107"><span data-line="107"></span>What is Satisfiability Modulo Theories, SMT?
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="108"><span data-line="108"></span>What are SMT solvers good for?
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="109"><span data-line="109"></span>Fundamental SMT algorithms and heuristics.
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="110"><span data-line="110"></span>Coding SMT solvers.
+</li></ul>
+</section>
+<section id="sec-lecture-2---fundamental-search" class="section section1" data-section-depth="1" data-line="112"><h2 id="heading-sec-lecture-2---fundamental-search" class="h1" data-heading-depth="1" style="display:block">Lecture 2 - Fundamental Search</h2>
+<ul class="ul list-star compact" data-line="114">
+<li class="li ul-li list-star-li compact-li" data-line="114"><span data-line="114"></span>CDCL(T)<span data-line="114"></span> <span data-line="114"></span>- Conflict Driven Clause Learning<span data-line="114"></span> <span data-line="114"></span>- a core engine for SMT.
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="115"><span data-line="115"></span>PDR (Property Driven Reachability)
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="116"><span data-line="116"></span>Horn Saturation
+</li></ul>
+</section>
+<section id="sec-lecture-3-4---theory-solvers" class="section section1" data-section-depth="1" data-line="118"><h2 id="heading-sec-lecture-3-4---theory-solvers" class="h1" data-heading-depth="1" style="display:block">Lecture 3-4 - Theory Solvers</h2>
+<ul class="ul list-star compact" data-line="120">
+<li class="li ul-li list-star-li compact-li" data-line="120"><span data-line="120"></span>Congruence Closure
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="121"><span data-line="121"></span>Arrays
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="122"><span data-line="122"></span>Datatypes
+</li></ul>
+</section>
+<section id="sec-lecture-4-5---arithmetic-theory-solving" class="section section1" data-section-depth="1" data-line="124"><h2 id="heading-sec-lecture-4-5---arithmetic-theory-solving" class="h1" data-heading-depth="1" style="display:block">Lecture 4-5 - Arithmetic Theory Solving</h2>
+<ul class="ul list-star compact" data-line="126">
+<li class="li ul-li list-star-li compact-li" data-line="126"><span data-line="126"></span>Linear Real, Integer Arithmetic
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="127"><span data-line="127"></span>Non-linear Real, Integer Arithmetic
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="128"><span data-line="128"></span>Special Arithmetic Theories
+</li></ul>
+</section>
+<section id="sec-lecture-6---programming-with-z3" class="section section1" data-section-depth="1" data-line="130"><h2 id="heading-sec-lecture-6---programming-with-z3" class="h1" data-heading-depth="1" style="display:block">Lecture 6 - Programming with Z3</h2>
+<ul class="ul list-star compact" data-line="132">
+<li class="li ul-li list-star-li compact-li" data-line="132"><span data-line="132"></span>Solver state management
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="133"><span data-line="133"></span>API functionality
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="134"><span data-line="134"></span>Encoding into Z3
+</li></ul>
+</section>
+<section id="sec-lecture-7---combining-decision-procedures" class="section section1" data-section-depth="1" data-line="136"><h2 id="heading-sec-lecture-7---combining-decision-procedures" class="h1" data-heading-depth="1" style="display:block">Lecture 7 - Combining Decision Procedures</h2>
+<ul class="ul list-star compact" data-line="138">
+<li class="li ul-li list-star-li compact-li" data-line="138"><span data-line="138"></span>Theory combination history
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="139"><span data-line="139"></span>Model-based theory combination
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="140"><span data-line="140"></span>Refined notions of theory combinations
+</li></ul>
+</section>
+<section id="sec-lecture-8---quantifiers" class="section section1" data-section-depth="1" data-line="142"><h2 id="heading-sec-lecture-8---quantifiers" class="h1" data-heading-depth="1" style="display:block">Lecture 8 - Quantifiers</h2>
+<ul class="ul list-star compact" data-line="144">
+<li class="li ul-li list-star-li compact-li" data-line="144"><span data-line="144"></span>E-matching
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="145"><span data-line="145"></span>Model-based Quantifier Instantiation
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="146"><span data-line="146"></span>QSAT
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="147"><span data-line="147"></span>Constrained Horn Clauses using SPACER
+</li></ul>
+</section>
+<section id="sec-lecture-9---optimization-modulo-theories" class="section section1" data-section-depth="1" data-line="149"><h2 id="heading-sec-lecture-9---optimization-modulo-theories" class="h1" data-heading-depth="1" style="display:block">Lecture 9 - Optimization Modulo Theories</h2>
+<ul class="ul list-star compact" data-line="151">
+<li class="li ul-li list-star-li compact-li" data-line="151"><span data-line="151"></span>Optimization domains: integers, bit-vectors and Pseudo-Booleans
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="152"><span data-line="152"></span>MaxSAT with cores, correction sets, and branch and bound
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="153"><span data-line="153"></span>Pseudo-Boolean constraints
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="154"><span data-line="154"></span>Lex and Box objectives
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="155"><span data-line="155"></span>Optimization using User Propagators
+</li></ul>
+</section>
+<section id="sec-lecture-10---topics" class="section section1" data-section-depth="1" data-line="157"><h2 id="heading-sec-lecture-10---topics" class="h1" data-heading-depth="1" style="display:block">Lecture 10 - Topics</h2>
+<ul class="ul list-star compact" data-line="159">
+<li class="li ul-li list-star-li compact-li" data-line="159"><span data-line="159"></span>Co-engines: local search, nlsat, mcsat, saturation
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="160"><span data-line="160"></span>Incremental pre-processing 
+</li></ul></section></div></div><span data-line=""></span></div>
+</body>
+<script>
+    // initialize printing
+    revealConfig.initPrint();
+    // initialize background embedded images
+    revealConfig.getEmbeddedImages();
+    </script>
+</html>
