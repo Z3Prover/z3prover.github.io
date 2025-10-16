@@ -1,13 +1,10 @@
 # Project ideas 
 
-
-
 ## Certification
 
 
 
 Certify clausal proofs produced by theory\_finite\_set. 
-
 
 
 * Whenever the theory creates a clause it has an option to supply additional parameters that can be used as proof hints.
@@ -44,6 +41,4 @@ Certifying unsat is possible using only properties that $\subseteq$ is a partial
 ## Multi-sets
 
 
-
-## 
 
