@@ -42,11 +42,14 @@ This project is to invent and develop a satisfiability checker for Boolean latti
 
 Boolean lattice constraints are of the form:
 
-```
+$$
+s \neq t
+$$
+
 $$
 s \subseteq t, s \subset t, s = t, s \neq t, s \not\subseteq t, s \not\subset t.
 $$
-```
+
 
 
 The initial property of Boolean lattices is that every pair $s, t$ have a least upper bound and greatest lower bound (lattice property), 
@@ -55,11 +58,11 @@ and the de Morgan rules for set operations. The refutation checker can check for
 
 For example
 
-```
+
 $$
 (s_1 \subseteq t_1 \vee s_1 \subseteq u_1) \wedge t_1 \subseteq s_2 \wedge u_1 \subseteq s_2 \wedge \ldots u_{n-1} \subseteq s_n \wedge s_1 \not\subseteq s_n
 $$
-```
+
 
 is unsat. 
 
