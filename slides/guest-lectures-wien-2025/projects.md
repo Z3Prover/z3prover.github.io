@@ -97,3 +97,17 @@ The task is to create finite_set_solver in the new core that replicates the func
 developed during class. The project presents an opportunity to read the solver concepts "by using your fingers".
 
 * The new core also has better native support for built-in proof checking. It follows a plugin model for theory solvers to define certifiers. For example EUF is checked by a small module that understands union find, and replays congruence closure based on [proof hints](https://github.com/Z3Prover/z3/blob/62ee7ccf65d51c304553def478731aa17b848169/src/sat/smt/euf_proof_checker.cpp#L65).
+
+## Solver tuning
+
+The base implementation defers most axiom instantiation to a final check state.
+It is possible instantiate axioms on the fly when literals are asserted
+and when equalities are merged. There are several parts to solver tuning:
+
+* Move membership axiom instantiation to callbacks assign_eh and new_eq_eh instead of in final_check_eh. 
+* Index into axioms that have not yet been instantiated using a literal watch scheme. Then during internalization if fresh literals have become internalized and during propagation check watch literals if they have been assigned.
+* Index into the m_lemmas trail for asserted and non-asserted axioms.
+Say, use an set (indexed_uint_set) to track non-asserted axioms. So instead of having to iterate over all axioms iterate over the tracking set. The tracking set has to be updated both when a new axiom is created (and the trail has to undo adding the index of the axiom to the set) and when a axiom gets instantiatied.
+
+
+I will probably get to do several of such tunings in the coming days, but it can also be a basis for participation. 
