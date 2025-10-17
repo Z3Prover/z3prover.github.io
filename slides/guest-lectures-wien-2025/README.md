@@ -17,5 +17,5 @@
 
 
 
-[Project ideas](https://z3prover.github.io/slides/guest-lectures-wien-2025/projects.md)
+[Project ideas](https://z3prover.github.io/slides/guest-lectures-wien-2025/projects)
 
