@@ -43,10 +43,6 @@ This project is to invent and develop a satisfiability checker for Boolean latti
 Boolean lattice constraints are of the form:
 
 $$
-s \neq t
-$$
-
-$$
 s \subseteq t, s \subset t, s = t, s \neq t, s \not\subseteq t, s \not\subset t.
 $$
 
