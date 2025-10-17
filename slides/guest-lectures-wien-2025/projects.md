@@ -42,10 +42,11 @@ This project is to invent and develop a satisfiability checker for Boolean latti
 
 Boolean lattice constraints are of the form:
 
+```
 $$
 s \subseteq t, s \subset t, s = t, s \neq t, s \not\subseteq t, s \not\subset t.
 $$
-
+```
 
 
 The initial property of Boolean lattices is that every pair $s, t$ have a least upper bound and greatest lower bound (lattice property), 
@@ -54,9 +55,12 @@ and the de Morgan rules for set operations. The refutation checker can check for
 
 For example
 
+```
 $$
 (s_1 \subseteq t_1 \vee s_1 \subseteq u_1) \wedge t_1 \subseteq s_2 \wedge u_1 \subseteq s_2 \wedge \ldots u_{n-1} \subseteq s_n \wedge s_1 \not\subseteq s_n
 $$
+```
+
 is unsat. 
 
 Certifying unsat is possible using only properties that $\subseteq$ is a partial order.
@@ -88,3 +92,5 @@ SMT core. The _new_ core is not used by default because many tools are based on 
 and furthermore the new core could use tuning. Nevertheless it can be more efficient that the legacy core.
 The task is to create finite_set_solver in the new core that replicates the functionality of the solver
 developed during class. The project presents an opportunity to read the solver concepts "by using your fingers".
+
+* The new core also has better native support for built-in proof checking. It follows a plugin model for theory solvers to define certifiers. For example EUF is checked by a small module that understands union find, and replays congruence closure based on [proof hints](https://github.com/Z3Prover/z3/blob/62ee7ccf65d51c304553def478731aa17b848169/src/sat/smt/euf_proof_checker.cpp#L65).
