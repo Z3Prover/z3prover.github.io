@@ -16,6 +16,7 @@ The idea is to run z3 to generate clausal proofs and validate theory axioms from
 
 An example Python script that logs and prints proofs:
 
+
 ```
 from z3 import *
 
@@ -29,11 +30,37 @@ OnClause(s, on_clause)
 print(s.check())
 
 ```
+It prints:
+```
+asserted(s == set.union(t, u)) [] [s == set.union(t, u)]
+asserted(set.in(x, t)) [] [set.in(x, t)]
+asserted(Not(set.in(x, s))) [] [Not(set.in(x, s))]
+finite-set(in-union) [] [Not(set.in(x, t)), set.in(x, set.union(t, u))]
+```
 
+where f-proof.smt2 contains 
+```
+
+(declare-const s (FiniteSet Int))
+(declare-const t (FiniteSet Int))
+(declare-const u (FiniteSet Int))
+(declare-const x Int)
+
+(assert (= s (set.union t u)))
+(assert (set.in x t))
+(assert (not (set.in x s)))
+(check-sat)
+```
+
+In other words, the parameter _p_ contains a proof hint.
+
+## Add (a model-based) fuzzer to theory_finite_set.
+
+Apply methodology of Fazekas and Biere and others to add a model-based fuzzer
+for the theory solver.
 
 
 ## Add a Boolean Lattice Refutation Checker
-
 
 
 Constraints that involve equations between sets can sometimes be decided faster than the default complete decision procedure.
@@ -96,14 +123,30 @@ developed during class. The project presents an opportunity to read the solver c
 
 ## Solver tuning
 
-The base implementation defers most axiom instantiation to a final check state.
-It is possible instantiate axioms on the fly when literals are asserted
-and when equalities are merged. There are several parts to solver tuning:
+The solver for the theory of arrays uses a set of pruning techniques
+to avoid redundant axiom instantiations. The finite set solver uses
+a queue of axioms and prioritiezed conflicts and unit propagations.
+It has place-holders for setting weights of theory axioms.
+How do the approaches compare? Can we learn from one approach
+that the other does not address?
 
-* Move membership axiom instantiation to callbacks assign_eh and new_eq_eh instead of in final_check_eh. 
-* Index into axioms that have not yet been instantiated using a literal watch scheme. Then during internalization if fresh literals have become internalized and during propagation check watch literals if they have been assigned.
-* Index into the m_lemmas trail for asserted and non-asserted axioms.
-Say, use an set (indexed_uint_set) to track non-asserted axioms. So instead of having to iterate over all axioms iterate over the tracking set. The tracking set has to be updated both when a new axiom is created (and the trail has to undo adding the index of the axiom to the set) and when a axiom gets instantiatied.
+Implementation wise, there are several places that can be tuned.
+It is better to vet areas for improvement with benchmarks.
+
+## Finite Sets and local search
+
+Supposed you are given a conjunction of finite set constraints.
+Define a local search repair algorithm for finite sets.
+A repair step can be to add or remove elements from a current
+assignment to set variables. Constraints are evaluated based
+on the assignment to each set variable.
+
+Z3 contains local search plugins for several theories in the ast/sls directory.
 
 
-I will probably get to do several of such tunings in the coming days, but it can also be a basis for participation. 
+## Quantifier solving for finite sets
+
+We already know that weak monadic second-order logic is decidable.
+So we can solve quantified formulas over finite sets in many cases.
+Can you establish quantifier elimination or satisfiabilty modulo
+quantifiers directly (and for additional operators)?
