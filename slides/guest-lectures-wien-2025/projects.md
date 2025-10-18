@@ -60,7 +60,7 @@ Apply methodology of Fazekas and Biere and others to add a model-based fuzzer
 for the theory solver.
 
 
-## Add a Boolean Lattice Refutation Checker
+## Add a Boolean Lattice Refutation Solver
 
 
 Constraints that involve equations between sets can sometimes be decided faster than the default complete decision procedure.
