@@ -156,3 +156,12 @@ We already know that weak monadic second-order logic is decidable.
 So we can solve quantified formulas over finite sets in many cases.
 Can you establish quantifier elimination or satisfiabilty modulo
 quantifiers directly (and for additional operators)?
+
+There is quantifier solving for Arrays in Z3.
+It is documented in an FMCAD paper with Arie Gurfinkel et al.
+Use this as a starting point.
+
+## Experimental benchmarking
+
+* Curate and collect benchmarks for finite set SMT problems.
+* Set up evaluation framework and benchmark.
