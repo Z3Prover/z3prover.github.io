@@ -125,13 +125,19 @@ developed during class. The project presents an opportunity to read the solver c
 
 The solver for the theory of arrays uses a set of pruning techniques
 to avoid redundant axiom instantiations. The finite set solver uses
-a queue of axioms and prioritiezed conflicts and unit propagations.
+a queue of axioms and prioritized conflicts and unit propagations.
 It has place-holders for setting weights of theory axioms.
 How do the approaches compare? Can we learn from one approach
 that the other does not address?
 
 Implementation wise, there are several places that can be tuned.
 It is better to vet areas for improvement with benchmarks.
+
+## But there is a problem
+
+Examine correctness/incorrectness of saturation over sets when the base sort is finite.
+Are extensionality axioms sufficient to guarantee completeness for sets over finite base sorts?
+
 
 ## Finite Sets and local search
 
