@@ -13,7 +13,7 @@
   * [Solving Ranges](https://z3prover.github.io/slides/guest-lectures-wien-2025/ranges.html)
 * [Lecture 7 - Combining Theory Solvers](https://z3prover.github.io/slides/guest-lectures-wien-2025/lecture7-combining.html)
 * [Lecture 8 - Quantifiers](https://z3prover.github.io/slides/guest-lectures-wien-2025/lecture8-quantifiers.html)
-* Lecture 9 - Optimization Modulo Theories
+* [Lecture 9 - Optimization Modulo Theories](https://z3prover.github.io/slides/guest-lectures-wien-2025/SCSS-2014.pptx)
 * [Lecture 10 - Topics in SMT](https://z3prover.github.io/slides/guest-lectures-wien-2025/lecture10-topics.html)
 
 
