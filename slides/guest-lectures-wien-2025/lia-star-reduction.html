@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="Madoko, version 1.2.3" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <meta name="author" content="Nikolaj Bj&#248,rner" />
+  <title>Reductions to LIA*</title>
+  <style type="text/css"  class="link">
+  /*# sourceURL=madoko.css */
+  
+  .madoko .toc>.tocblock .tocblock .tocblock {
+    margin-left: 2.25em;
+  }
+  .madoko .toc>.tocblock .tocblock {
+    margin-left: 1.5em;
+  }
+  .madoko .toc-contents>.tocblock>.tocitem {
+    font-weight: bold;
+  }
+  .madoko .toc {
+    margin-top: 1em;
+  }
+  .madoko p.para-continue {
+    margin-bottom: 0pt;
+  }
+  .madoko .para-block+p {
+    margin-top: 0pt;
+  }
+  .madoko ul.para-block, .madoko ol.para-block {
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+  }
+  .madoko ul.para-end, .madoko ol.para-end {
+    margin-bottom: 1em;
+  }
+  .madoko dl {
+    margin-left: 0em;
+  }
+  .madoko blockquote {
+    font-style: italic;
+  }
+  .madoko a.localref {
+    text-decoration: none;
+  }
+  .madoko a.localref:hover {
+    text-decoration: underline;
+  }
+  .madoko .footnotes {
+    font-size: smaller;
+    margin-top: 2em;
+  }
+  .madoko .footnotes hr {
+    width: 50%;
+    text-align: left;
+  }
+  .madoko .footnote {
+    margin-left: 1em;
+  }
+  .madoko .footnote-before {
+    margin-left: -1em;
+    width: 1em;
+    display: inline-block;
+  }
+  .madoko .align-center, .madoko .align-center>p {
+    text-align: center !important;
+  }
+  .madoko .align-center pre {
+    text-align: left;
+  }
+  .madoko .align-center>* {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-left, .madoko .align-left>p {
+    text-align: left !important;
+  }
+  .madoko .align-left>* {
+    margin-left: 0pt !important;
+    margin-right: auto !important;
+  }
+  .madoko .align-right, .madoko .align-right>p {
+    text-align: right !important;
+  }
+  .madoko .align-right>* {
+    margin-left: auto !important;
+    margin-right: 0pt !important;
+  }
+  .madoko .align-center>table,
+  .madoko .align-left>table,
+  .madoko .align-right>table {
+    text-align: left !important;
+  }
+  .madoko .equation-before {
+    float: right;
+  }
+  .madoko .bibitem {
+    font-size: smaller;
+  }
+  .madoko .bibsearch {
+    font-size: x-small;
+    text-decoration:none;
+    color: black;
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  .madoko .block, .madoko .figure, .madoko .bibitem, .madoko .equation, .madoko div.math {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .figure {
+    padding: 0.5em;
+    margin-left: 0pt;
+    margin-right: 0pt;
+  }
+  .madoko .hidden {
+    display: none;
+  }
+  .madoko .invisible {
+    visibility: hidden;
+  }
+  .madoko.preview .invisible {
+    visibility: visible;
+    opacity: 0.5;
+  }
+  .madoko code.code, .madoko span.code {
+    white-space: pre-wrap;
+  }
+  .madoko hr, hr.madoko {
+    border: none;
+    border-bottom: black solid 1px;
+    margin-bottom: 0.5ex;
+  }
+  .madoko .framed>*:first-child {
+    margin-top: 0pt;
+  }
+  .madoko .framed>*:last-child {
+    margin-bottom: 0pt;
+  }
+  .madoko ul.list-style-type-dash {
+      list-style-type: none !important;
+  }
+  .madoko ul.list-style-type-dash > li:before {
+      content: "\2013";
+      position: absolute;
+      margin-left: -1em;
+  }
+  .madoko table.madoko {
+    border-collapse: collapse;
+  }
+  .madoko td, .madoko th {
+    padding: 0ex 0.5ex;
+    margin: 0pt;
+    vertical-align: top;
+  }
+  .madoko .cell-border-left {
+    border-left: 1px solid black;
+  }
+  .madoko .cell-border-right {
+    border-right: 1px solid black;
+  }
+  .madoko thead>tr:first-child>.cell-line,
+  .madoko tbody:first-child>tr:first-child>.cell-line {
+    border-top: 1px solid black;
+    border-bottom: none;
+  }
+  .madoko .cell-line, .madoko .cell-double-line {
+    border-bottom: 1px solid black;
+    border-top: none;
+  }
+  .madoko .cell-double-line {
+    border-top: 1px solid black;
+    padding-top: 1.5px !important;
+  }
+  .madoko .input-mathpre .MathJax_Display {
+    text-align: left !important;
+  }
+  .madoko div.input-mathpre {
+    text-align: left;
+    margin-top: 1.5ex;
+    margin-bottom: 1ex;
+  }
+  .madoko .math-rendering {
+    text-align: left;
+    white-space: pre;
+    color: gray;
+  }
+  .madoko .mathdisplay {
+    text-align: center;
+  }
+  .madoko span.math-rendering {
+    display:inline-block;
+    width:8em;
+    overflow-x:auto;
+    font-size:70%;
+  }
+  .madoko span.math-rendering::-webkit-scrollbar {
+    width:4px;
+  }
+  .madoko .pretty table {
+    border-collapse: collapse;
+  }
+  .madoko .pretty td {
+    padding: 0em;
+  }
+  .madoko .pretty td.empty {
+    min-width: 1.5ex;
+  }
+  .madoko .pretty td.expander {
+    width: 100em;
+  }
+  body.madoko, .madoko .serif {
+    font-family: Cambria,"Times New Roman","Liberation Serif","Times",serif;
+  }
+  .madoko .sans-serif {
+    font-family: "Calibri", "Optima", sans-serif;
+  }
+  .madoko .symbol {
+    font-family: "Segoe UI Symbol", Symbola, serif;
+  }
+  body.madoko {
+    -webkit-text-size-adjust: 100%;       
+    text-rendering: optimizeLegibility;
+  }
+  body.madoko {
+    max-width: 88ex; 
+    margin: 1em auto;
+    padding: 0em 2em;
+  }
+  body.preview.madoko {
+    padding: 0em 1em;
+  }
+  .madoko p {
+    text-align: justify;
+  }
+  .madoko h1, .madoko h2, .madoko h3, .madoko h4 {
+    margin-top: 1.22em;
+    margin-bottom: 1ex;
+  }
+  .madoko h1+p, .madoko h2+p, .madoko h3+p, .madoko h4+p, .madoko h5+p  {
+    margin-top: 1ex;
+  }
+  .madoko h5, .madoko h6 {
+    margin-top: 1ex;
+    font-size: 1em;
+  }
+  .madoko h5 {
+    margin-bottom: 0.5ex;
+  }
+  .madoko h5 + p {
+    margin-top: 0.5ex;
+  }
+  .madoko h6 {
+    margin-bottom: 0pt;
+  }
+  .madoko h6 + p {
+    margin-top: 0pt;
+  }
+  .madoko pre, .madoko code, .madoko kbd, .madoko samp, .madoko tt,
+  .madoko .monospace, .madoko .token-indent, .madoko .reveal pre, .madoko .reveal code, .madoko .email {
+    font-family: Consolas,"Andale Mono WT","Andale Mono",Lucida Console,Monaco,monospace,monospace;
+    font-size: 0.85em;
+  }
+  .madoko pre code, .madoko .token-indent {
+    font-size: 0.95em;
+  }
+  .madoko pre code {
+    font-family: inherit !important;
+  }
+  .madoko ol.linenums li {
+    background-color: white;
+    list-style-type: decimal;
+  }
+  .madoko .remote {
+    background-color: #F0FFF0;
+  }
+  .madoko .remote + * {
+    margin-top: 0pt;
+  }
+  @media print {
+    body.madoko {
+      font-size: 10pt;
+    }
+    @page {
+      margin: 1in 1.5in;
+    }
+  }
+  @media only screen and (max-device-width:1024px) {
+    body.madoko {
+      padding: 0em 0.5em;
+    }
+    .madoko li {
+      text-align: left;
+    }
+  }
+  
+    </style>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/reveal.js/2.6.2/css/reveal.min.css"  class="link">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/reveal.js/2.6.2/css/theme/solarized.css"  class="link">
+  <script src="https://cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/head.min.js"  class="script preview"></script>
+  <script src="https://cdn.jsdelivr.net/reveal.js/2.6.2/js/reveal.js"  class="script preview"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/2.6.2/css/theme/solarized.css" id="theme">    
+      <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/html5shiv.js"></script>
+      <![endif]-->
+      <style>
+      body.madoko {
+        margin: 0pt;
+        padding: 0pt;
+        max-width: 100%;      
+      }
+      .madoko .reveal h1 {
+          font-size: 3.7em;
+      }
+      .madoko .reveal h2 {
+          font-size: 2.1em;
+      }
+      .reveal .authorblock .author {
+          font-size: 120%;
+          margin-bottom: 1ex;
+      }        
+      .reveal table {
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .reveal pre table {
+        margin-left: 0pt;
+      }
+      .madoko .reveal pre.pretty {
+        padding-top: 0pt;
+        padding-bottom: 0pt;
+      }
+      .reveal li p {
+          text-align: left;
+      }
+      .reveal h2 {
+          margin-bottom: 0.7em;
+      }
+      .reveal section ul,
+      .reveal section ol {
+          margin-top: 0.35em;
+          margin-bottom: 0.35em;
+      }
+      .reveal section img.math-display {
+          padding: 1em;
+          box-shadow: none;
+          border: none;
+      }
+      .reveal section img.math-inline {
+          margin: 0pt;
+          padding: 0pt;
+          background-color: none;
+          box-shadow: none;
+          border: none;
+      }
+      .reveal section img {
+          box-shadow: none;
+          border: none;
+      }
+      .madoko .reveal pre {
+          border: 1px solid black;
+          word-wrap: normal;
+          background-color: white;
+          font-size: 0.7em;
+          padding: 0.7em;
+          line-height: 100%;
+          width: 100%;
+      }      
+      .reveal pre code, .reveal code {
+          padding: 0pt;
+      }
+      .reveal nav.toc {
+          line-height: 1em;
+          font-size: 60%;
+          overflow-y: auto;
+      }    
+      .reveal .tocitem {
+          text-align: left;
+      }
+      .reveal .toc>.tocblock .tocblock {
+          margin-left: 0.5em;
+      }   
+      .reveal .toc>.tocblock .tocblock .tocblock {
+          margin-left: 1em;
+      }
+      .reveal .bibliography {
+        height: 18em;
+        overflow-y: auto;
+        font-size: 0.8em;
+        line-height: 1.25;
+      }
+      .reveal section[data-smaller=""],
+      .reveal section[data-smaller="true"] {
+        font-size: 80%;
+        width: 110%;
+      }
+      .reveal .slides>section[data-smaller=""],
+      .reveal .slides>section[data-smaller="true"] {
+        left: -55%;
+      }
+      .reveal .details {
+        display: none;
+      }
+      .reveal[data-details=""] .details,
+      .reveal[data-details="true"] .details {
+        display: initial;
+      }
+      /* Display in the preview window */
+      html, body.madoko.preview, body.madoko.preview-full, .body.madoko {
+        height  : 100% !important;
+        width   : auto!important;
+        padding : 0pt !important;
+        margin  : 0pt !important;
+      }
+      body.madoko.preview, body.madoko.preview-full, .preview .body.madoko {
+        overflow: hidden !important;
+      }
+      body.preview .reveal .slides .fragment {
+        visibility: visible;
+        opacity: 0.5;
+      }
+      body.preview .reveal .slides .fragment.visible {
+        opacity: 1.0;
+      }
+      .preview .reveal div.notes,
+      .preview .reveal aside.notes {
+        display  : block;
+        position : absolute;
+        width    : 30%;
+        left     : 70%;
+        top      : -15%;
+        font-size: 50%;
+        border   : 1px solid black;
+        border-radius   : 10px;
+        background-color: white;
+      }
+      /* 'static' display in the preview window, unused for now */
+      body.preview.static div.reveal, 
+      body.preview.static div.ticreveal .slides, 
+      body.preview.static div.reveal section {
+        display: block !important;
+        position: relative !important;
+        width: auto !important;      
+      }
+      body.preview.static div.reveal section {
+        border: solid 1px black;
+        padding: 1em !important;
+        margin-top: 1em;
+        min-height: 15em;
+        top: 0pt;
+      }
+      body.madoko.preview.static section {
+        font-size: 75%;
+      }
+      body.madoko.preview.static {
+        padding: 0em 1em !important;
+      }
+      body.madoko.preview.static .reveal pre {
+        width: 95%;
+      }    
+      body.preview .reveal[data-details="false"] .details {
+        display: initial;
+        color: gray;
+      }
+      body.preview .reveal[data-long="false"] section[data-long] {
+        border-left: 2px black solid;
+      }
+      </style>
+      <script>    
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      window.revealConfig = {
+          controls: true,
+          progress: true,
+          history: true,
+          center: /^\s*(true|1)\s*$/i.test("true"),
+          slideNumber: /^\s*(true|1)\s*$/i.test("true"),
+          dependencies: [
+            { src: 'https://cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'https://cdn.jsdelivr.net/reveal.js/2.6.2/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: 'https://cdn.jsdelivr.net/reveal.js/2.6.2/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          ],
+      };
+      function revealAddFragments() {
+        [].forEach.call(document.querySelectorAll( ".fragmented" ), function(elem0) {
+          var elem = (/^H\d$/.test(elem0.nodeName) ? elem0.parentNode : elem0);
+          [].forEach.call(elem.children, function(item) {
+            if (item==elem0) return;
+            if (item && !/\bfragment(ed)?\b/.test(item.className) && item.nodeType===1) {
+              item.className = item.className + " fragment";
+            }
+          });
+        });
+      }
+      function revealQuotedList(listType) {
+        //compatibility with Rmarkdown slides
+        [].forEach.call( document.querySelectorAll("blockquote>" + listType), function(ul) {
+          if (!/\bfragmented\b/.test(ul.className)) {
+            ul.className = ul.className + " fragmented";
+          }        
+          var quote = ul.parentNode;
+          if (quote.childElementCount===1) {
+            quote.parentNode.replaceChild(ul,quote);
+          }
+        });
+      }
+      function revealBuildToFragmented() {
+        [].forEach.call(document.querySelectorAll( ".build" ), function(elem) {
+          if (elem && !/\bfragmented\b/.test(elem.className) && elem.nodeType===1) {
+            elem.className = elem.className + " fragmented";
+          }
+        });
+      }
+      function revealDivNotesToAside() {
+        [].forEach.call(document.querySelectorAll("div.notes"), function(elem) {
+          var aside = document.createElement("ASIDE");
+          if (elem.id) aside.id = elem.id;
+          aside.className = elem.className;
+          [].forEach.call(elem.attributes, function(attr) {
+            aside.setAttribute( attr.name, attr.value );
+          });
+          aside.innerHTML = elem.innerHTML;
+          elem.parentNode.replaceChild(aside,elem);
+        });
+      }
+      function revealDataQuery() {
+        var reveal = document.querySelector(".reveal");
+        if (!reveal) return;
+        window.location.search.replace(/\bdata-(\w+)(?:=(\w+))?\b/g, function(matched,key,value) {
+          reveal.setAttribute("data-" + key, (value ? value : ""));
+          return matched;
+        });
+      }
+      function revealRemoveLong() {
+        // remove parts for 'long' presentation
+        if (/\bpreview(?![\w\-])/.test(document.body.className)) return;
+        var reveal = document.querySelector(".reveal");
+        if (!reveal) return;
+        var value = reveal.hasAttribute("data-long") ? reveal.getAttribute("data-long") : null;
+        if (value==null || value=="false" || value=="0") {
+          [].forEach.call( document.querySelectorAll("section[data-long]"), function(elem) {
+            elem.parentNode.removeChild(elem);
+          });
+        }
+      }
+      revealConfig.onLoad = function() {
+        revealConfig.getEmbeddedImages();
+        revealDataQuery();
+        revealRemoveLong();
+        revealQuotedList("ul");
+        revealQuotedList("ol");
+        revealBuildToFragmented();
+        revealDivNotesToAside();
+        revealAddFragments();
+      };
+      document.addEventListener("load",revealConfig.onLoad);    
+      document.addEventListener("DOMContentLoaded", function() {
+        if (typeof Reveal !== "undefined" && !Reveal.isReady()) {
+          revealConfig.onLoad();
+          Reveal.initialize(revealConfig);
+        }
+      });    
+      // add support for printing:
+      // use  ?print-pdf to get a pdf-printable version (in Chrome)
+      // use  ?print-paper to get a paper-printable version.
+      revealConfig.initPrint = function() {
+        var cssLink = null;
+        var bodyClass = null;
+        var cap = window.location.search.match(/\bprint-(\w+)\b/);
+        if (cap) {
+          bodyClass = cap[0];
+          cssLink = "https://cdn.jsdelivr.net/reveal.js/2.6.2/css/print/" + cap[1] + ".css";
+        }
+        if (cssLink) {
+          var link  = document.createElement( "link" );
+          link.rel  = "stylesheet";
+          link.type = "text/css";
+          link.href = cssLink;
+          var head = document.getElementsByTagName( 'head' )[0];
+          if (head) head.appendChild( link );
+        }
+        if (bodyClass) {
+          document.body.className = document.body.className + " " + bodyClass;
+        }
+      };
+      revealConfig.getEmbeddedImages = function() {
+        var images = {};
+        [].forEach.call( document.querySelectorAll("img[data-linkid]"), function(img) {
+          var linkid = img.getAttribute("data-linkid");
+          if (linkid) images["/" + linkid] = img.src;
+          var path = img.getAttribute("data-path");
+          if (path) images["/" + path] = img.src;
+        });     
+        [].forEach.call( document.querySelectorAll("section"), function(slide) {
+          var attrName = "data-background";
+          var image = slide.getAttribute(attrName);
+          if (!image) {
+            attrName = "data-background-image";
+            image = slide.getAttribute(attrName);
+          }
+          if (!image) return;
+          var cap = /^\s*!?\[([^\]]+)\]\s*$/.exec(image);
+          var href = images["/" + (cap ? cap[1] : image)];
+          if (!href) return;
+          if (attrName==="data-background" && /^data:/.test(href)) href = "url(" + href + ")";
+          slide.setAttribute(attrName, href);
+        });
+      };    
+      </script>
+  <style>
+    .reveal p, .reveal li, .reveal .bibitem, .reveal dd, .reveal dt {
+          text-align: left !important;
+        }
+  </style>
+  </head>
+<body class="madoko">
+
+<div class="body madoko" style="line-adjust:0">
+<div class="reveal" data-long="false" data-details="false" data-line="26" style="line-adjust:0">
+<div class="slides" data-line="26" style="line-adjust:0">
+
+<div class="mathdefs input-mathdefs" data-line="27"></div>
+<section class="titleblock align-center para-block" data-line="57" style="text-align:center;line-adjust:0">
+<div class="titleheader align-center" data-line="57" style="text-align:center;line-adjust:0">
+<h1 class="title para-block" data-line="57" style="font-weight:bold;margin-bottom:0.5ex;font-size:3em;line-adjust:0"><span data-line="57"></span>Reductions to LIA*</h1>
+<h2 class="subtitle para-block" data-line="60" style="margin-bottom:0.5ex;font-size:1.8em;line-adjust:0"><span data-line="60"></span>TU Wien Guest Lectures October 2025</h2></div>
+<div class="authors align-center" data-line="65" style="text-align:center;width:80%;line-adjust:0"><table class="authorrow columns block" data-line="65" style="margin-top:2ex;width:100%;line-adjust:0">
+<tbody><tr><td class="author column" data-line="65" style="text-align:center;font-size:x-large;line-adjust:0">
+<div class="authorname" data-line="65" style="font-size:1.4em;line-adjust:0"><span data-line="65"></span>Nikolaj Bj&#248;rner</div>
+<div class="authoraddress" data-line="68" style="line-adjust:0"><span data-line="68"></span>Microsoft Research</div>
+<div class="authoremail email" data-line="71" style="line-adjust:0"><span data-line="71"></span>nbjorner@microsoft.com</div></td></tr></tbody></table></div></section>
+<section id="sec-example-formula" class="section section1" data-section-depth="1" data-transition="none" data-line="59"><h2 id="heading-sec-example-formula" class="h1" data-heading-depth="1" style="display:block">Example formula</h2>
+<div class="mathpre para-block input-mathpre" data-line="61"><svg  class="mathpre math-display math-render-svg math" style="vertical-align:-0.0210em;height:1.0879em;width:16.5799em" viewBox='95.11 56.057 157.904 10.361'><desc>\[\begin{mdmathpre}%mdk
+\mdmathindent{2}\mathid{s}~\subseteq \mathid{t}~\wedge |\mathid{s}|~=~1~\wedge |\mathid{t}~\setminus \mathid{s}|~\neq |\mathid{t}|~-~1
+\end{mdmathpre}%mdk
+\]</desc><g id='math-4e0541'><use x='95.309' y='63.728' xlink:href='#g1-115'/><use x='105.182' y='63.728' xlink:href='#g2-18'/><use x='115.698' y='63.728' xlink:href='#g1-116'/><use x='124.38' y='63.728' xlink:href='#g2-94'/><use x='133.236' y='63.728' xlink:href='#g2-106'/><use x='136.003' y='63.728' xlink:href='#g1-115'/><use x='140.895' y='63.728' xlink:href='#g2-106'/><use x='148.643' y='63.728' xlink:href='#g4-61'/><use x='161.373' y='63.728' xlink:href='#g4-49'/><use x='170.782' y='63.728' xlink:href='#g2-94'/><use x='179.638' y='63.728' xlink:href='#g2-106'/><use x='182.405' y='63.728' xlink:href='#g1-116'/><use x='191.088' y='63.728' xlink:href='#g2-110'/><use x='198.283' y='63.728' xlink:href='#g1-115'/><use x='203.175' y='63.728' xlink:href='#g2-106'/><use x='210.923' y='63.728' xlink:href='#g2-54'/><use x='210.923' y='63.728' xlink:href='#g4-61'/><use x='221.439' y='63.728' xlink:href='#g2-106'/><use x='224.207' y='63.728' xlink:href='#g1-116'/><use x='228.461' y='63.728' xlink:href='#g2-106'/><use x='235.657' y='63.728' xlink:href='#g2-0'/><use x='247.833' y='63.728' xlink:href='#g4-49'/></g></svg></div>
+<p class="p noindent para-continued" data-line="65"><span data-line="65"></span>See<span data-line="65"></span>&nbsp;<span class="citations" style="target-element:bibitem">(<a href="#piskack08" title="Decision Procedures for Multisets with Cardinality Constraints
+Piskac and Kuncak, 2008" class="bibref localref" style="target-element:bibitem"><span class="cite-authors">Piskac and Kuncak</span></a>,&nbsp;<a href="#piskack08" title="Decision Procedures for Multisets with Cardinality Constraints
+Piskac and Kuncak, 2008" class="bibref localref" style="target-element:bibitem"><span class="cite-year">2008</span></a>)</span><span data-line="65"></span>
+</p></section>
+<section id="sec-step-1---rewrite-with-summations" class="section section1" data-section-depth="1" data-line="67"><h2 id="heading-sec-step-1---rewrite-with-summations" class="h1" data-heading-depth="1" style="display:block">Step 1 - rewrite with summations</h2>
+<div class="mathpre para-block input-mathpre" data-line="69"><svg  class="mathpre math-display math-render-svg math" style="vertical-align:-0.0210em;height:1.0879em;width:16.5799em" viewBox='95.11 56.057 157.904 10.361'><desc>\[\begin{mdmathpre}%mdk
+\mdmathindent{2}\mathid{s}~\subseteq \mathid{t}~\wedge |\mathid{s}|~=~1~\wedge |\mathid{t}~\setminus \mathid{s}|~\neq |\mathid{t}|~-~1
+\end{mdmathpre}%mdk
+\]</desc><g id='math-4e0541'><use x='95.309' y='63.728' xlink:href='#g1-115'/><use x='105.182' y='63.728' xlink:href='#g2-18'/><use x='115.698' y='63.728' xlink:href='#g1-116'/><use x='124.38' y='63.728' xlink:href='#g2-94'/><use x='133.236' y='63.728' xlink:href='#g2-106'/><use x='136.003' y='63.728' xlink:href='#g1-115'/><use x='140.895' y='63.728' xlink:href='#g2-106'/><use x='148.643' y='63.728' xlink:href='#g4-61'/><use x='161.373' y='63.728' xlink:href='#g4-49'/><use x='170.782' y='63.728' xlink:href='#g2-94'/><use x='179.638' y='63.728' xlink:href='#g2-106'/><use x='182.405' y='63.728' xlink:href='#g1-116'/><use x='191.088' y='63.728' xlink:href='#g2-110'/><use x='198.283' y='63.728' xlink:href='#g1-115'/><use x='203.175' y='63.728' xlink:href='#g2-106'/><use x='210.923' y='63.728' xlink:href='#g2-54'/><use x='210.923' y='63.728' xlink:href='#g4-61'/><use x='221.439' y='63.728' xlink:href='#g2-106'/><use x='224.207' y='63.728' xlink:href='#g1-116'/><use x='228.461' y='63.728' xlink:href='#g2-106'/><use x='235.657' y='63.728' xlink:href='#g2-0'/><use x='247.833' y='63.728' xlink:href='#g4-49'/></g></svg></div>
+<p class="p noindent para-continued para-continue" data-line="73"><span data-line="73"></span>To 
+</p>
+<div class="mathpre para-block input-mathpre" data-line="75"><svg  class="mathpre math-display math-render-svg math" style="vertical-align:-0.0210em;height:3.5986em;width:21.3764em" viewBox='34.67 53.567 203.585 34.272'><desc>\[\begin{mdmathpre}%mdk
+\mdmathindent{9}&amp;~~(\sum (\mathid{e}~\in \mathid{s}~\wedge \mathid{e}~\not \in \mathid{t}))~=~0\\
+\wedge &amp;~~(\sum \mathid{e}~\in \mathid{s})~=~1~~~~~~~\\
+\wedge &amp;~~(\sum (\mathid{e}~\in \mathid{t}~\wedge \mathid{e}~\not \in \mathid{s}))~\neq (\sum \mathid{e}~\in \mathid{t})~-~1
+\end{mdmathpre}%mdk
+\]</desc><g id='math-b77146'><use x='69.184' y='61.238' xlink:href='#g4-40'/><use x='73.059' y='53.766' xlink:href='#g5-80'/><use x='83.575' y='61.238' xlink:href='#g4-40'/><use x='87.449' y='61.238' xlink:href='#g1-101'/><use x='97.762' y='61.238' xlink:href='#g2-50'/><use x='107.171' y='61.238' xlink:href='#g1-115'/><use x='116.49' y='61.238' xlink:href='#g2-94'/><use x='125.345' y='61.238' xlink:href='#g1-101'/><use x='135.658' y='61.238' xlink:href='#g2-54'/><use x='135.658' y='61.238' xlink:href='#g2-50'/><use x='145.067' y='61.238' xlink:href='#g1-116'/><use x='149.322' y='61.238' xlink:href='#g4-41'/><use x='153.196' y='61.238' xlink:href='#g4-41'/><use x='162.052' y='61.238' xlink:href='#g4-61'/><use x='174.782' y='61.238' xlink:href='#g4-48'/><use x='34.869' y='73.193' xlink:href='#g2-94'/><use x='69.184' y='73.193' xlink:href='#g4-40'/><use x='73.059' y='65.721' xlink:href='#g5-80'/><use x='85.235' y='73.193' xlink:href='#g1-101'/><use x='95.548' y='73.193' xlink:href='#g2-50'/><use x='104.957' y='73.193' xlink:href='#g1-115'/><use x='109.848' y='73.193' xlink:href='#g4-41'/><use x='118.704' y='73.193' xlink:href='#g4-61'/><use x='131.434' y='73.193' xlink:href='#g4-49'/><use x='34.869' y='85.148' xlink:href='#g2-94'/><use x='69.184' y='85.148' xlink:href='#g4-40'/><use x='73.059' y='77.676' xlink:href='#g5-80'/><use x='83.575' y='85.148' xlink:href='#g4-40'/><use x='87.449' y='85.148' xlink:href='#g1-101'/><use x='97.762' y='85.148' xlink:href='#g2-50'/><use x='107.171' y='85.148' xlink:href='#g1-116'/><use x='115.853' y='85.148' xlink:href='#g2-94'/><use x='124.709' y='85.148' xlink:href='#g1-101'/><use x='135.022' y='85.148' xlink:href='#g2-54'/><use x='135.022' y='85.148' xlink:href='#g2-50'/><use x='144.431' y='85.148' xlink:href='#g1-115'/><use x='149.322' y='85.148' xlink:href='#g4-41'/><use x='153.196' y='85.148' xlink:href='#g4-41'/><use x='162.052' y='85.148' xlink:href='#g2-54'/><use x='162.052' y='85.148' xlink:href='#g4-61'/><use x='172.568' y='85.148' xlink:href='#g4-40'/><use x='176.442' y='77.676' xlink:href='#g5-80'/><use x='188.619' y='85.148' xlink:href='#g1-101'/><use x='198.932' y='85.148' xlink:href='#g2-50'/><use x='208.341' y='85.148' xlink:href='#g1-116'/><use x='212.595' y='85.148' xlink:href='#g4-41'/><use x='220.898' y='85.148' xlink:href='#g2-0'/><use x='233.074' y='85.148' xlink:href='#g4-49'/></g></svg></div></section>
+<section id="sec-step-2---introduce-auxiliary-variables" class="section section1" data-section-depth="1" data-line="81"><h2 id="heading-sec-step-2---introduce-auxiliary-variables" class="h1" data-heading-depth="1" style="display:block">Step 2 - Introduce auxiliary variables</h2>
+<div class="mathpre para-block input-mathpre" data-line="83"><svg  class="mathpre math-display math-render-svg math" style="vertical-align:-0.0210em;height:1.0879em;width:16.5799em" viewBox='95.11 56.057 157.904 10.361'><desc>\[\begin{mdmathpre}%mdk
+\mdmathindent{2}\mathid{s}~\subseteq \mathid{t}~\wedge |\mathid{s}|~=~1~\wedge |\mathid{t}~\setminus \mathid{s}|~\neq |\mathid{t}|~-~1
+\end{mdmathpre}%mdk
+\]</desc><g id='math-4e0541'><use x='95.309' y='63.728' xlink:href='#g1-115'/><use x='105.182' y='63.728' xlink:href='#g2-18'/><use x='115.698' y='63.728' xlink:href='#g1-116'/><use x='124.38' y='63.728' xlink:href='#g2-94'/><use x='133.236' y='63.728' xlink:href='#g2-106'/><use x='136.003' y='63.728' xlink:href='#g1-115'/><use x='140.895' y='63.728' xlink:href='#g2-106'/><use x='148.643' y='63.728' xlink:href='#g4-61'/><use x='161.373' y='63.728' xlink:href='#g4-49'/><use x='170.782' y='63.728' xlink:href='#g2-94'/><use x='179.638' y='63.728' xlink:href='#g2-106'/><use x='182.405' y='63.728' xlink:href='#g1-116'/><use x='191.088' y='63.728' xlink:href='#g2-110'/><use x='198.283' y='63.728' xlink:href='#g1-115'/><use x='203.175' y='63.728' xlink:href='#g2-106'/><use x='210.923' y='63.728' xlink:href='#g2-54'/><use x='210.923' y='63.728' xlink:href='#g4-61'/><use x='221.439' y='63.728' xlink:href='#g2-106'/><use x='224.207' y='63.728' xlink:href='#g1-116'/><use x='228.461' y='63.728' xlink:href='#g2-106'/><use x='235.657' y='63.728' xlink:href='#g2-0'/><use x='247.833' y='63.728' xlink:href='#g4-49'/></g></svg></div>
+<div class="mathpre para-block input-mathpre" data-line="87"><svg  class="mathpre math-display math-render-svg math" style="vertical-align:-0.0210em;height:4.8538em;width:19.1885em" viewBox='34.67 65.522 182.748 46.227'><desc>\[\begin{mdmathpre}%mdk
+\mdmathindent{9}\\
+\mdmathindent{7}&amp;~~(\sum (\mathid{e}~\in \mathid{s}~\wedge \mathid{e}~\not \in \mathid{t}))~=~0~\\
+\wedge &amp;~~(\sum \mathid{e}~\in \mathid{s})~=~1~~~~~~~\\
+\mdmathindent{1}\wedge &amp;~~(\sum (\mathid{e}~\in \mathid{u})~\neq (\sum \mathid{e}~\in \mathid{t})~-~1\\
+\mdmathindent{1}\wedge &amp;~~(\sum \mathid{e}~\in \mathid{u}~\not\leftrightarrow \mathid{e}~\in \mathid{t}~\wedge \mathid{e}~\not \in \mathid{s})~=~0
+\end{mdmathpre}%mdk
+\]</desc><g id='math-46396e'><use x='69.184' y='73.193' xlink:href='#g4-40'/><use x='73.059' y='65.721' xlink:href='#g5-80'/><use x='83.575' y='73.193' xlink:href='#g4-40'/><use x='87.449' y='73.193' xlink:href='#g1-101'/><use x='97.762' y='73.193' xlink:href='#g2-50'/><use x='107.171' y='73.193' xlink:href='#g1-115'/><use x='116.49' y='73.193' xlink:href='#g2-94'/><use x='125.345' y='73.193' xlink:href='#g1-101'/><use x='135.658' y='73.193' xlink:href='#g2-54'/><use x='135.658' y='73.193' xlink:href='#g2-50'/><use x='145.067' y='73.193' xlink:href='#g1-116'/><use x='149.322' y='73.193' xlink:href='#g4-41'/><use x='153.196' y='73.193' xlink:href='#g4-41'/><use x='162.052' y='73.193' xlink:href='#g4-61'/><use x='174.782' y='73.193' xlink:href='#g4-48'/><use x='34.869' y='85.148' xlink:href='#g2-94'/><use x='69.184' y='85.148' xlink:href='#g4-40'/><use x='73.059' y='77.676' xlink:href='#g5-80'/><use x='85.235' y='85.148' xlink:href='#g1-101'/><use x='95.548' y='85.148' xlink:href='#g2-50'/><use x='104.957' y='85.148' xlink:href='#g1-115'/><use x='109.848' y='85.148' xlink:href='#g4-41'/><use x='118.704' y='85.148' xlink:href='#g4-61'/><use x='131.434' y='85.148' xlink:href='#g4-49'/><use x='38.19' y='97.103' xlink:href='#g2-94'/><use x='69.184' y='97.103' xlink:href='#g4-40'/><use x='73.059' y='89.631' xlink:href='#g5-80'/><use x='83.575' y='97.103' xlink:href='#g4-40'/><use x='87.449' y='97.103' xlink:href='#g1-101'/><use x='97.762' y='97.103' xlink:href='#g2-50'/><use x='107.171' y='97.103' xlink:href='#g1-117'/><use x='113.282' y='97.103' xlink:href='#g4-41'/><use x='122.137' y='97.103' xlink:href='#g2-54'/><use x='122.137' y='97.103' xlink:href='#g4-61'/><use x='132.653' y='97.103' xlink:href='#g4-40'/><use x='136.528' y='89.631' xlink:href='#g5-80'/><use x='148.704' y='97.103' xlink:href='#g1-101'/><use x='159.017' y='97.103' xlink:href='#g2-50'/><use x='168.426' y='97.103' xlink:href='#g1-116'/><use x='172.681' y='97.103' xlink:href='#g4-41'/><use x='180.983' y='97.103' xlink:href='#g2-0'/><use x='193.159' y='97.103' xlink:href='#g4-49'/><use x='38.19' y='109.058' xlink:href='#g2-94'/><use x='69.184' y='109.058' xlink:href='#g4-40'/><use x='73.059' y='101.586' xlink:href='#g5-80'/><use x='85.235' y='109.058' xlink:href='#g1-101'/><use x='95.548' y='109.058' xlink:href='#g2-50'/><use x='104.957' y='109.058' xlink:href='#g1-117'/><use x='116.049' y='109.058' xlink:href='#g2-54'/><use x='116.049' y='109.058' xlink:href='#g2-36'/><use x='128.779' y='109.058' xlink:href='#g1-101'/><use x='139.091' y='109.058' xlink:href='#g2-50'/><use x='148.501' y='109.058' xlink:href='#g1-116'/><use x='157.183' y='109.058' xlink:href='#g2-94'/><use x='166.039' y='109.058' xlink:href='#g1-101'/><use x='176.351' y='109.058' xlink:href='#g2-54'/><use x='176.351' y='109.058' xlink:href='#g2-50'/><use x='185.76' y='109.058' xlink:href='#g1-115'/><use x='190.652' y='109.058' xlink:href='#g4-41'/><use x='199.507' y='109.058' xlink:href='#g4-61'/><use x='212.237' y='109.058' xlink:href='#g4-48'/></g></svg></div></section>
+<section id="sec-step-3---combine-summations" class="section section1" data-section-depth="1" data-line="96"><h2 id="heading-sec-step-3---combine-summations" class="h1" data-heading-depth="1" style="display:block">Step 3 - Combine summations</h2>
+<div class="mathpre para-block input-mathpre" data-line="98"><svg  class="mathpre math-display math-render-svg math" style="vertical-align:-0.0210em;height:4.7957em;width:33.7373em" viewBox='91.789 54.12 321.308 45.673'><desc>\[\begin{mdmathpre}%mdk
+\mdmathindent{8}&amp;~\mathid{k}_\mathid{s}~=~1~\\
+\mdmathindent{1}\wedge &amp;~\mathid{k}_\mathid{u}~\neq \mathid{k}_\mathid{t}~-~1~\\
+\mdmathindent{1}\wedge &amp;~(\mathid{k}_\mathid{s},~\mathid{k}_\mathid{t},~\mathid{k}_\mathid{u})~\in \sum (\mathid{e}~\in \mathid{s},~\mathid{e}~\in \mathid{t},~\mathid{e}~\in \mathid{u})~&amp;~\mid (\mathid{e}~\not \in \mathid{s}~\vee \mathid{e}~\in \mathid{t})~\\
+\mdmathindent{8}&amp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&amp;~\wedge   (\mathid{e}~\in \mathid{u}~\leftrightarrow \mathid{e}\in \mathid{t}~\wedge \mathid{e}~\not\in \mathid{s})
+\end{mdmathpre}%mdk
+\]</desc><g id='math-4af285'><use x='117.448' y='61.238' xlink:href='#g1-107'/><use x='122.031' y='62.732' xlink:href='#g0-115'/><use x='131.443' y='61.238' xlink:href='#g4-61'/><use x='144.173' y='61.238' xlink:href='#g4-49'/><use x='91.988' y='73.193' xlink:href='#g2-94'/><use x='117.448' y='73.193' xlink:href='#g1-107'/><use x='122.031' y='74.687' xlink:href='#g0-117'/><use x='132.521' y='73.193' xlink:href='#g2-54'/><use x='132.521' y='73.193' xlink:href='#g4-61'/><use x='143.038' y='73.193' xlink:href='#g1-107'/><use x='147.62' y='74.687' xlink:href='#g0-116'/><use x='155.967' y='73.193' xlink:href='#g2-0'/><use x='168.144' y='73.193' xlink:href='#g4-49'/><use x='91.988' y='85.148' xlink:href='#g2-94'/><use x='117.448' y='85.148' xlink:href='#g4-40'/><use x='121.322' y='85.148' xlink:href='#g1-107'/><use x='125.905' y='86.643' xlink:href='#g0-115'/><use x='130.336' y='85.148' xlink:href='#g3-59'/><use x='136.978' y='85.148' xlink:href='#g1-107'/><use x='141.561' y='86.643' xlink:href='#g0-116'/><use x='145.48' y='85.148' xlink:href='#g3-59'/><use x='152.122' y='85.148' xlink:href='#g1-107'/><use x='156.704' y='86.643' xlink:href='#g0-117'/><use x='162.214' y='85.148' xlink:href='#g4-41'/><use x='171.07' y='85.148' xlink:href='#g2-50'/><use x='180.479' y='77.676' xlink:href='#g5-80'/><use x='190.995' y='85.148' xlink:href='#g4-40'/><use x='194.869' y='85.148' xlink:href='#g1-101'/><use x='205.182' y='85.148' xlink:href='#g2-50'/><use x='214.591' y='85.148' xlink:href='#g1-115'/><use x='219.482' y='85.148' xlink:href='#g3-59'/><use x='226.124' y='85.148' xlink:href='#g1-101'/><use x='236.437' y='85.148' xlink:href='#g2-50'/><use x='245.846' y='85.148' xlink:href='#g1-116'/><use x='250.101' y='85.148' xlink:href='#g3-59'/><use x='256.742' y='85.148' xlink:href='#g1-101'/><use x='267.055' y='85.148' xlink:href='#g2-50'/><use x='276.464' y='85.148' xlink:href='#g1-117'/><use x='282.575' y='85.148' xlink:href='#g4-41'/><use x='293.644' y='85.148' xlink:href='#g2-106'/><use x='299.179' y='85.148' xlink:href='#g4-40'/><use x='303.053' y='85.148' xlink:href='#g1-101'/><use x='313.366' y='85.148' xlink:href='#g2-54'/><use x='313.366' y='85.148' xlink:href='#g2-50'/><use x='322.775' y='85.148' xlink:href='#g1-115'/><use x='332.094' y='85.148' xlink:href='#g2-95'/><use x='340.95' y='85.148' xlink:href='#g1-101'/><use x='351.262' y='85.148' xlink:href='#g2-50'/><use x='360.671' y='85.148' xlink:href='#g1-116'/><use x='364.926' y='85.148' xlink:href='#g4-41'/><use x='293.091' y='97.103' xlink:href='#g2-94'/><use x='301.946' y='97.103' xlink:href='#g4-40'/><use x='305.821' y='97.103' xlink:href='#g1-101'/><use x='316.133' y='97.103' xlink:href='#g2-50'/><use x='325.542' y='97.103' xlink:href='#g1-117'/><use x='336.635' y='97.103' xlink:href='#g2-36'/><use x='349.365' y='97.103' xlink:href='#g1-101'/><use x='357.463' y='97.103' xlink:href='#g2-50'/><use x='366.872' y='97.103' xlink:href='#g1-116'/><use x='375.555' y='97.103' xlink:href='#g2-94'/><use x='384.411' y='97.103' xlink:href='#g1-101'/><use x='394.723' y='97.103' xlink:href='#g2-54'/><use x='394.723' y='97.103' xlink:href='#g2-50'/><use x='404.132' y='97.103' xlink:href='#g1-115'/><use x='409.024' y='97.103' xlink:href='#g4-41'/></g></svg></div>
+<ul class="ul list-star compact" data-line="105">
+<li class="li ul-li list-star-li compact-li" data-line="105"><span data-line="105"></span>Cardinality constraints added to LIA formula
+</li>
+<li class="li ul-li list-star-li compact-li" data-line="106"><span data-line="106"></span>Set constraints are under summations
+</li></ul>
+</section>
+<section id="sec-bibliography" class="section section1" data-section-depth="1" data-line="109"><h2 id="heading-sec-bibliography" class="h1" data-heading-depth="1" style="display:block">Bibliography</h2>
+<div class="bibl" data-line="111;out/lia-star-reduction-bib.bbl.mdk:1" style="bbl-file:out/lia-star-reduction-bib.bbl.mdk">
+<div class="bibliography bib-numeric" data-hanging-indent="0" data-cite-style="numeric:&#39;[&#39;,&#39;]&#39;,&#39;, &#39;" data-style="madoko-numeric" data-line="111;out/lia-star-reduction-bib.bbl.mdk:2" style="bibstyle:madoko-numeric">
+<div id="piskack08" class="bibitem" data-cite-year="2008" data-cite-authors="Piskac and Kuncak" data-cite-authors-long="Piskac and Kuncak" data-cite-label="1" data-line="refs.bib:1" style="text-indent:-1em;margin-left:1em;searchterm:Decision%20Procedures%20for%20Multisets%20with%20Cardinality%20Constraints%20Piskac%20and%20Kuncak%2C%202008;spellcheck:false;bibitem-label:\5C [1\5C ]"><span class="bibitem-before" style="display:none">[1]</span>Ruzica Piskac, and Viktor Kuncak. &#8220;Decision Procedures for Multisets with Cardinality Constraints.&#8221; In <em class="em-low1">Verification, Model Checking, and Abstract Interpretation, 9th International
+&#160; Conference, VMCAI 2008, San Francisco, USA, January 7-9, 2008, Proceedings</em>, edited by Francesco Logozzo, Doron A.&#160;Peled, and Lenore D.&#160;Zuck, 4905:218–232. Lecture Notes in Computer Science. Springer. 2008. doi:<a href="https://dx.doi.org/10.1007/978-3-540-78163-9\_20" class="bib-doi" style="font-size:smaller">10.1007/978-3-540-78163-9_20</a>.&nbsp;<a href="http://www.bing.com/search?q=Decision%20Procedures%20for%20Multisets%20with%20Cardinality%20Constraints%20Piskac%20and%20Kuncak%2C%202008" class="bibsearch">&#128270;</a></div></div></div></section></div></div><span data-line=""></span></div>
+<svg id='math-svg-paths' style='display:none' version='1.1' viewBox='0 0 0 0' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+<defs>
+<path id='g1-115' d='M2.461-1.963C2.899-1.863 3.347-1.763 3.347-1.225C3.347-.907 3.078-.11 2.052-.11C1.833-.11 1.255-.159 1.096-.667C1.604-.717 1.604-1.136 1.604-1.156C1.604-1.345 1.474-1.474 1.265-1.474C1.036-1.474 .757-1.305 .757-.857C.757-.249 1.335 .11 2.042 .11C3.537 .11 3.915-1.106 3.915-1.564C3.915-2.431 3.138-2.61 2.73-2.7C2.451-2.76 2.092-2.839 2.092-3.268C2.092-3.507 2.301-4.184 3.098-4.184C3.367-4.184 3.736-4.085 3.846-3.696C3.527-3.656 3.447-3.387 3.447-3.288C3.447-3.178 3.507-3.009 3.746-3.009C3.915-3.009 4.174-3.128 4.174-3.557C4.174-4.015 3.766-4.403 3.108-4.403C1.943-4.403 1.534-3.447 1.534-2.929C1.534-2.162 2.182-2.022 2.461-1.963Z'/>
+<path id='g1-116' d='M2.59-3.985H3.437C3.606-3.985 3.716-3.985 3.716-4.174C3.716-4.294 3.626-4.294 3.467-4.294H2.67L3.039-5.768C3.078-5.908 3.078-5.928 3.078-5.978C3.078-6.187 2.909-6.237 2.809-6.237C2.56-6.237 2.461-6.027 2.421-5.878L2.032-4.294H1.186C1.016-4.294 .907-4.294 .907-4.105C.907-3.985 .996-3.985 1.156-3.985H1.953L1.235-1.126C1.225-1.086 1.186-.927 1.186-.787C1.186-.289 1.514 .11 2.032 .11C3.039 .11 3.547-1.375 3.547-1.425C3.547-1.524 3.467-1.524 3.397-1.524C3.278-1.524 3.278-1.514 3.198-1.335C3.019-.857 2.62-.11 2.052-.11C1.783-.11 1.783-.359 1.783-.518C1.783-.588 1.783-.747 1.853-1.026L2.59-3.985Z'/>
+<path id='g2-0' d='M6.565-2.291C6.735-2.291 6.914-2.291 6.914-2.491S6.735-2.69 6.565-2.69H1.176C1.006-2.69 .827-2.69 .827-2.491S1.006-2.291 1.176-2.291H6.565Z'/>
+<path id='g2-18' d='M6.565-5.938C6.735-5.938 6.914-5.938 6.914-6.137S6.735-6.336 6.565-6.336H3.885C2.172-6.336 .827-5.031 .827-3.457C.827-1.853 2.202-.568 3.885-.568H6.565C6.735-.568 6.914-.568 6.914-.767S6.735-.966 6.565-.966H3.905C2.331-.966 1.225-2.132 1.225-3.447C1.225-4.802 2.361-5.938 3.905-5.938H6.565ZM1.375 .966C1.205 .966 1.026 .966 1.026 1.166S1.205 1.365 1.375 1.365H6.565C6.735 1.365 6.914 1.365 6.914 1.166S6.735 .966 6.565 .966H1.375Z'/>
+<path id='g2-54' d='M6.276-6.745C6.356-6.884 6.356-6.904 6.356-6.934C6.356-7.004 6.296-7.133 6.157-7.133C6.037-7.133 6.007-7.073 5.938-6.934L1.465 1.763C1.385 1.903 1.385 1.923 1.385 1.953C1.385 2.032 1.455 2.152 1.584 2.152C1.704 2.152 1.733 2.092 1.803 1.953L6.276-6.745Z'/>
+<path id='g2-94' d='M3.547-5.748C3.467-5.918 3.407-5.958 3.318-5.958C3.188-5.958 3.158-5.888 3.098-5.748L.618-.179C.558-.05 .548-.03 .548 .02C.548 .13 .638 .219 .747 .219C.817 .219 .897 .199 .976 .01L3.318-5.27L5.659 .01C5.748 .219 5.848 .219 5.888 .219C5.998 .219 6.087 .13 6.087 .02C6.087 0 6.087-.02 6.027-.139L3.547-5.748Z'/>
+<path id='g2-106' d='M1.584-7.113C1.584-7.293 1.584-7.472 1.385-7.472S1.186-7.293 1.186-7.113V2.132C1.186 2.311 1.186 2.491 1.385 2.491S1.584 2.311 1.584 2.132V-7.113Z'/>
+<path id='g2-110' d='M3.995 2.252C4.045 2.391 4.095 2.491 4.224 2.491C4.334 2.491 4.423 2.401 4.423 2.291C4.423 2.271 4.423 2.252 4.374 2.132L.966-7.233C.907-7.402 .877-7.472 .747-7.472C.638-7.472 .548-7.382 .548-7.273C.548-7.253 .548-7.233 .598-7.113L3.995 2.252Z'/>
+<path id='g4-49' d='M2.929-6.376C2.929-6.615 2.929-6.635 2.7-6.635C2.082-5.998 1.205-5.998 .887-5.998V-5.689C1.086-5.689 1.674-5.689 2.192-5.948V-.787C2.192-.428 2.162-.309 1.265-.309H.946V0C1.295-.03 2.162-.03 2.56-.03S3.826-.03 4.174 0V-.309H3.856C2.959-.309 2.929-.418 2.929-.787V-6.376Z'/>
+<path id='g4-61' d='M6.844-3.258C6.994-3.258 7.183-3.258 7.183-3.457S6.994-3.656 6.854-3.656H.887C.747-3.656 .558-3.656 .558-3.457S.747-3.258 .897-3.258H6.844ZM6.854-1.325C6.994-1.325 7.183-1.325 7.183-1.524S6.994-1.724 6.844-1.724H.897C.747-1.724 .558-1.724 .558-1.524S.747-1.325 .887-1.325H6.854Z'/>
+<path id='g4-40' d='M3.298 2.391C3.298 2.361 3.298 2.341 3.128 2.172C1.883 .917 1.564-.966 1.564-2.491C1.564-4.224 1.943-5.958 3.168-7.203C3.298-7.323 3.298-7.342 3.298-7.372C3.298-7.442 3.258-7.472 3.198-7.472C3.098-7.472 2.202-6.795 1.614-5.529C1.106-4.433 .986-3.328 .986-2.491C.986-1.714 1.096-.508 1.644 .618C2.242 1.843 3.098 2.491 3.198 2.491C3.258 2.491 3.298 2.461 3.298 2.391Z'/>
+<path id='g4-41' d='M2.879-2.491C2.879-3.268 2.77-4.473 2.222-5.599C1.624-6.824 .767-7.472 .667-7.472C.608-7.472 .568-7.432 .568-7.372C.568-7.342 .568-7.323 .757-7.143C1.733-6.157 2.301-4.573 2.301-2.491C2.301-.787 1.933 .966 .697 2.222C.568 2.341 .568 2.361 .568 2.391C.568 2.451 .608 2.491 .667 2.491C.767 2.491 1.664 1.813 2.252 .548C2.76-.548 2.879-1.654 2.879-2.491Z'/>
+<path id='g4-48' d='M4.583-3.188C4.583-3.985 4.533-4.782 4.184-5.519C3.726-6.476 2.909-6.635 2.491-6.635C1.893-6.635 1.166-6.376 .757-5.45C.438-4.762 .389-3.985 .389-3.188C.389-2.441 .428-1.544 .837-.787C1.265 .02 1.993 .219 2.481 .219C3.019 .219 3.776 .01 4.214-.936C4.533-1.624 4.583-2.401 4.583-3.188ZM2.481 0C2.092 0 1.504-.249 1.325-1.205C1.215-1.803 1.215-2.72 1.215-3.308C1.215-3.945 1.215-4.603 1.295-5.141C1.484-6.326 2.232-6.416 2.481-6.416C2.809-6.416 3.467-6.237 3.656-5.25C3.756-4.692 3.756-3.935 3.756-3.308C3.756-2.56 3.756-1.883 3.646-1.245C3.497-.299 2.929 0 2.481 0Z'/>
+<path id='g2-50' d='M5.46-2.291C5.629-2.291 5.808-2.291 5.808-2.491S5.629-2.69 5.46-2.69H1.235C1.355-4.025 2.501-4.981 3.905-4.981H5.46C5.629-4.981 5.808-4.981 5.808-5.181S5.629-5.38 5.46-5.38H3.885C2.182-5.38 .827-4.085 .827-2.491S2.182 .399 3.885 .399H5.46C5.629 .399 5.808 .399 5.808 .199S5.629 0 5.46 0H3.905C2.501 0 1.355-.956 1.235-2.291H5.46Z'/>
+<path id='g1-101' d='M2.381-2.301C2.68-2.301 3.347-2.331 3.826-2.521C4.613-2.839 4.613-3.487 4.613-3.557C4.613-4.015 4.244-4.403 3.606-4.403C2.56-4.403 1.136-3.397 1.136-1.634C1.136-.737 1.614 .11 2.56 .11C3.836 .11 4.663-.887 4.663-1.036C4.663-1.086 4.583-1.196 4.503-1.196C4.463-1.196 4.453-1.186 4.374-1.086C3.636-.149 2.75-.11 2.58-.11C1.933-.11 1.823-.817 1.823-1.205C1.823-1.584 1.923-2.032 1.993-2.301H2.381ZM2.052-2.521C2.481-4.154 3.507-4.184 3.606-4.184C4.005-4.184 4.234-3.915 4.234-3.577C4.234-2.521 2.59-2.521 2.262-2.521H2.052Z'/>
+<path id='g5-80' d='M4.194 5.32L.658 9.694C.578 9.793 .568 9.813 .568 9.853C.568 9.963 .658 9.963 .837 9.963H9.096L9.953 7.482H9.704C9.455 8.229 8.787 8.837 7.94 9.126C7.781 9.176 7.093 9.415 5.629 9.415H1.395L4.852 5.141C4.922 5.051 4.941 5.021 4.941 4.981S4.932 4.932 4.872 4.842L1.634 .399H5.579C6.715 .399 9.006 .468 9.704 2.331H9.953L9.096 0H.837C.568 0 .558 .01 .558 .319L4.194 5.32Z'/>
+<path id='g2-36' d='M1.644-2.69C2.192-3.108 2.461-3.517 2.54-3.646C2.989-4.334 3.068-4.961 3.068-4.971C3.068-5.091 2.949-5.091 2.869-5.091C2.7-5.091 2.69-5.071 2.65-4.892C2.421-3.915 1.833-3.088 .707-2.62C.598-2.58 .558-2.56 .558-2.491S.608-2.401 .707-2.361C1.743-1.933 2.411-1.156 2.66-.04C2.69 .08 2.7 .11 2.869 .11C2.949 .11 3.068 .11 3.068-.01C3.068-.03 2.979-.658 2.56-1.325C2.361-1.624 2.072-1.973 1.644-2.291H8.309C7.761-1.873 7.492-1.465 7.412-1.335C6.964-.648 6.884-.02 6.884-.01C6.884 .11 7.004 .11 7.083 .11C7.253 .11 7.263 .09 7.303-.09C7.532-1.066 8.12-1.903 9.245-2.361C9.365-2.401 9.395-2.421 9.395-2.491S9.335-2.59 9.315-2.6C8.877-2.77 7.671-3.268 7.293-4.941C7.263-5.061 7.253-5.091 7.083-5.091C7.004-5.091 6.884-5.091 6.884-4.971C6.884-4.951 6.974-4.324 7.392-3.656C7.592-3.357 7.88-3.009 8.309-2.69H1.644Z'/>
+<path id='g1-117' d='M5.111-3.895C5.131-3.955 5.141-4.005 5.141-4.035C5.141-4.144 5.061-4.294 4.862-4.294C4.563-4.294 4.493-4.005 4.473-3.925L3.746-1.016C3.696-.837 3.696-.817 3.606-.687C3.417-.408 3.128-.11 2.69-.11C2.242-.11 2.152-.548 2.152-.877C2.152-1.484 2.481-2.381 2.73-3.059C2.809-3.268 2.859-3.407 2.859-3.597C2.859-4.095 2.531-4.403 2.102-4.403C1.176-4.403 .827-2.929 .827-2.869C.827-2.77 .927-2.77 .976-2.77C1.106-2.77 1.116-2.79 1.156-2.929C1.235-3.238 1.504-4.184 2.082-4.184C2.192-4.184 2.301-4.154 2.301-3.895C2.301-3.656 2.202-3.387 2.062-2.999C1.803-2.301 1.544-1.564 1.544-1.046C1.544-.179 2.122 .11 2.66 .11C3.188 .11 3.527-.189 3.766-.488C3.945 .05 4.374 .11 4.563 .11C4.932 .11 5.141-.139 5.29-.448C5.469-.827 5.589-1.405 5.589-1.425C5.589-1.524 5.509-1.524 5.44-1.524C5.32-1.524 5.31-1.514 5.25-1.295C5.111-.737 4.922-.11 4.583-.11C4.324-.11 4.324-.379 4.324-.518C4.324-.588 4.324-.747 4.394-1.026L5.111-3.895Z'/>
+<path id='g1-107' d='M3.019-6.665C3.029-6.695 3.049-6.775 3.049-6.795C3.049-6.884 2.989-6.914 2.909-6.914C2.879-6.914 2.78-6.904 2.75-6.894L1.763-6.814C1.644-6.804 1.534-6.795 1.534-6.605C1.534-6.496 1.634-6.496 1.773-6.496C2.252-6.496 2.271-6.426 2.271-6.326C2.271-6.296 2.242-6.167 2.242-6.157L.767-.279C.757-.259 .747-.169 .747-.149C.747-.04 .837 .11 1.026 .11C1.325 .11 1.395-.169 1.415-.259L1.923-2.281C2.291-2.232 2.929-2.022 2.929-1.445C2.929-1.375 2.929-1.335 2.899-1.196C2.859-1.026 2.859-.956 2.859-.857C2.859-.139 3.328 .11 3.696 .11C4.134 .11 4.354-.219 4.463-.408C4.682-.787 4.822-1.395 4.822-1.425C4.822-1.524 4.742-1.524 4.672-1.524C4.553-1.524 4.543-1.514 4.483-1.295C4.354-.787 4.164-.11 3.726-.11C3.457-.11 3.437-.339 3.437-.538C3.437-.767 3.507-1.046 3.517-1.096C3.567-1.305 3.567-1.315 3.567-1.445C3.567-2.122 2.869-2.391 2.242-2.481C2.471-2.62 2.68-2.829 2.949-3.138C3.467-3.726 3.856-4.184 4.354-4.184C4.543-4.184 4.613-4.075 4.623-4.065C4.204-3.995 4.154-3.646 4.154-3.567C4.154-3.437 4.244-3.248 4.503-3.248C4.722-3.248 5.001-3.427 5.001-3.806C5.001-4.065 4.822-4.403 4.374-4.403C3.846-4.403 3.417-3.985 3.078-3.587C2.511-2.929 2.351-2.77 2.002-2.6L3.019-6.665Z'/>
+<path id='g0-115' d='M2.992-2.594C2.957-2.58 2.776-2.483 2.776-2.301C2.776-2.211 2.824-2.092 2.999-2.092C3.082-2.092 3.306-2.134 3.306-2.469C3.306-2.915 2.831-3.075 2.427-3.075C1.43-3.075 1.2-2.322 1.2-2.05C1.2-1.485 1.75-1.381 2.008-1.332C2.336-1.269 2.727-1.2 2.727-.844C2.727-.656 2.552-.126 1.716-.126C1.499-.126 1.095-.167 .948-.467C1.193-.53 1.234-.732 1.234-.809C1.234-.941 1.137-1.039 .99-1.039C.802-1.039 .628-.9 .628-.607C.628-.188 1.06 .07 1.702 .07C2.894 .07 3.166-.774 3.166-1.088C3.166-1.297 3.075-1.492 2.908-1.639C2.706-1.806 2.532-1.841 2.155-1.911C1.946-1.953 1.639-2.008 1.639-2.294C1.639-2.42 1.757-2.88 2.42-2.88C2.58-2.88 2.88-2.845 2.992-2.594Z'/>
+<path id='g0-116' d='M2.022-2.755H2.713C2.838-2.755 2.922-2.755 2.922-2.908C2.922-3.006 2.838-3.006 2.727-3.006H2.085L2.336-4.01C2.364-4.108 2.364-4.122 2.364-4.149C2.364-4.275 2.267-4.359 2.141-4.359C1.904-4.359 1.848-4.129 1.834-4.066L1.569-3.006H.879C.753-3.006 .669-3.006 .669-2.852C.669-2.755 .753-2.755 .865-2.755H1.506L1.025-.823C.99-.683 .99-.635 .99-.586C.99-.153 1.332 .07 1.695 .07C2.448 .07 2.894-.893 2.894-1.004C2.894-1.088 2.803-1.088 2.755-1.088C2.643-1.088 2.636-1.074 2.594-.976C2.267-.237 1.904-.126 1.716-.126C1.478-.126 1.478-.384 1.478-.453C1.478-.572 1.513-.718 1.52-.739L2.022-2.755Z'/>
+<path id='g0-117' d='M4.052-2.713C4.066-2.776 4.073-2.783 4.073-2.797C4.073-2.901 3.996-3.006 3.85-3.006C3.626-3.006 3.557-2.803 3.536-2.706L3.082-.879C3.034-.676 2.706-.126 2.218-.126C1.897-.126 1.757-.363 1.757-.69C1.757-1.088 1.981-1.667 2.169-2.148C2.218-2.28 2.246-2.357 2.246-2.49C2.246-2.838 1.967-3.075 1.625-3.075C.934-3.075 .614-2.127 .614-2.008C.614-1.918 .704-1.918 .76-1.918C.844-1.918 .886-1.918 .907-2.008C1.123-2.769 1.437-2.88 1.604-2.88C1.723-2.88 1.778-2.803 1.778-2.65C1.778-2.49 1.73-2.378 1.604-2.043C1.353-1.388 1.269-1.067 1.269-.795C1.269-.098 1.799 .07 2.19 .07C2.622 .07 2.866-.167 3.068-.37C3.18-.028 3.515 .07 3.724 .07C3.94 .07 4.122-.035 4.275-.286C4.442-.558 4.54-.976 4.54-.997C4.54-1.088 4.449-1.088 4.394-1.088C4.268-1.088 4.261-1.074 4.219-.9C4.122-.537 4.003-.126 3.745-.126C3.55-.126 3.522-.335 3.522-.453S3.522-.586 3.564-.746L4.052-2.713Z'/>
+<path id='g2-95' d='M6.017-5.559C6.077-5.689 6.087-5.709 6.087-5.758C6.087-5.868 5.998-5.958 5.888-5.958C5.788-5.958 5.729-5.888 5.659-5.738L3.318-.468L.976-5.748C.897-5.938 .817-5.958 .747-5.958C.638-5.958 .548-5.868 .548-5.758C.548-5.738 .548-5.719 .608-5.599L3.088 .01C3.168 .179 3.228 .219 3.318 .219C3.447 .219 3.477 .149 3.537 .01L6.017-5.559Z'/>
+<path id='g3-59' d='M2.022-.01C2.022-.667 1.773-1.056 1.385-1.056C1.056-1.056 .857-.807 .857-.528C.857-.259 1.056 0 1.385 0C1.504 0 1.634-.04 1.733-.13C1.763-.149 1.773-.159 1.783-.159S1.803-.149 1.803-.01C1.803 .727 1.455 1.325 1.126 1.654C1.016 1.763 1.016 1.783 1.016 1.813C1.016 1.883 1.066 1.923 1.116 1.923C1.225 1.923 2.022 1.156 2.022-.01Z'/>
+</defs>
+</svg>
+
+</body>
+<script>
+    // initialize printing
+    revealConfig.initPrint();
+    // initialize background embedded images
+    revealConfig.getEmbeddedImages();
+    </script>
+</html>
