@@ -54,10 +54,25 @@ where f-proof.smt2 contains
 
 In other words, the parameter _p_ contains a proof hint.
 
+The project can consider several levels of effort and difficulty:
+
+* For every proof rule that uses an annotation that is supported write python (or other language supported by the API) code that matches the rule application.
+* Use uninterpreted functions: translate theorems over finite sets to use uninterpreted functions. Axiomatize the theory using first-order axioms and validate the lemmas using Z3's quantifier instantiation engine (or Vampire or ..).
+* Use uninterpreted functions and instantiate theory axioms directly. Use ground reasoning to validate theory lemmas.
+* Develop a theory of finite sets using an interactive theory prover and derive a proof checker by either replaying the theory lemmas using the interactive theorem prover's automation or extract a certified checker that checks axiom instantiations.
+* Develop a proof checker methodology for the inference rules used for set.size. In this case, the theory solver uses global reasoning to construct semi-linear sets for set.size expressions. It is much less direct to develop a proof checker for set.size reasoning, let alone a methodology. A successful project can develop the methodology alone.
+
+
 ## Add (a model-based) fuzzer to theory_finite_set.
 
-Apply methodology of Fazekas and Biere and others to add a model-based fuzzer
+Apply model-based fuzzers
 for the theory solver.
+
+* [Model-Based testing for SMT solvers](https://boolector.github.io/papers/NiemetzPreinerBiere-SMT17.pdf)
+
+* [Model-Based Testing for Verification Back-Ends](https://www.semanticscholar.org/paper/Model-Based-Testing-for-Verification-Back-Ends-Artho-Biere/9bc19a853b5886ef22a956ed35d03abfa996fba0)
+
+* Katalin has also used and developed Model-Based fuzzers.
 
 
 ## Add a Boolean Lattice Refutation Solver
@@ -91,6 +106,15 @@ is unsat.
 
 Certifying unsat is possible using only properties that $\subseteq$ is a partial order.
 
+### Using small models
+
+You can also consider that the theory has a small model property: Set constraints are satisfiable if and only if they are satisfiable in a _small_ model.
+
+* Given a bound $N$ on model size allocate $N$ bits for each set variable and check satisfiability of the Boolean encoding of the set constraints. For example, if $s \subseteq t$
+ is asserted and $bv_s, bv_t$ are two bit-vectors of length $N$, then the bit-vector constraint $bv_t \& \~ bv_s = 0$ encodes the subset relation.
+ 
+* Considering that the bound on the _small_ model may not be that small, does it make sense to add bits on demand?
+
 ## Completness for finite sets with select and ranges.
 
 This project is pen/paper as opposed to coding.
@@ -106,9 +130,13 @@ mistaes that can be made at the coding level.
 Integrate a LIA* solver directly with z3.
 The python prototype from 2020 does not work with updates to z3.
 
+This is not an easy project. The working version [theory_finite_set_size.cpp](https://github.com/Z3Prover/z3/blob/finite-sets/src/smt/theory_finite_set_size.cpp) contains a base implementation for checking set.size constraints. It suggests to use a different method than a general LIA* solver. One strategy is to extract conflicts by quering the arithmetic solver with a partially instantiated semi-linear set solution for cardinalities. These conflicts can prune the search space for propositional models of the solver that produces basis vectors.
+
 ## Multi-sets and Cardinality constraints.
 Multi-set reasoning can handle cardinality constraints as an alternative to Venn-diagram decomposition.
 The project is to integrate enough of LIA* and multi-set reasoning to support cardinality constraints.
+This one is even tougher than the previous project idea. It appears not suitable for a 50 hour project, but if this is something for you, it is definitely fun.
+
 
 ## Port the theory_finite_set to the "new" SMT core.
 
@@ -165,3 +193,17 @@ Use this as a starting point.
 
 * Curate and collect benchmarks for finite set SMT problems.
 * Set up evaluation framework and benchmark.
+
+## Quantifier solving for UFLIA
+
+Z3 falls back to Model-based quantifier instantiation for UFLIA/UFLRA
+The base solver for MBQI understands very little LIA. It is therefore unable to solve LIA formulas.
+The QSAT procedure understands only LIA. It uses model-based projection (Cooper's method/Omega test)
+to partially eliminate variables. It is possible to do better. The solver core enabled by setting sat.smt=true
+uses a modification of MBQI that understands some amount of quantifier projection. It can solve problems
+not in scope of basic MBQI and not in scope of QSAT.
+
+A primary objective of this project is to understand the design space of solving UFLIA/UFLRA.
+
+* What is state-of-the-art for solving UFLIA/UFLRA compared between solvers?
+* What methods are essential for solving harder benchmarks?
