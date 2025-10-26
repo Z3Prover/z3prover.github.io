@@ -115,14 +115,32 @@ You can also consider that the theory has a small model property: Set constraint
  
 * Considering that the bound on the _small_ model may not be that small, does it make sense to add bits on demand?
 
-## Completness for finite sets with select and ranges.
+## Completness for finite sets with filter and ranges.
 
 This project is pen/paper as opposed to coding.
 
-The combination of select (filter) and ranges wasn't considered and the model construction we pursue here
+The combination of filter and ranges wasn't considered and the model construction we pursue here
 is not used in the reference literature on sets with range constructs. A rigorous pen/paper proof for
 what are the sufficient set of instantations and model construction can be highly valuable weeding out
 mistaes that can be made at the coding level.
+
+## Model-checker for conclusive answers for incomplete domains
+
+There are several combinations of features that the solver (implementation) is unlikely to be complete for:
+
+* set.range and set.size
+* set.filter and set.size
+* set.map
+* set.range and set.filter
+
+The base-line implementation (should) give up if there is a combination of operators that are not handled.
+We would like to produce a conclusive SAT answer if the solver was able to produce a model.
+Similarly, if the current state is satisfiable, there is no need for the solver to apply useless inferences.
+
+Model construction produces an interpretation for every set variable. It is invoked if the state is satisfiable.
+Nothing prevents us from invoking model construction even if we don't know whether the state is satisfiable.
+We can use a candidate model for set variables and check if it satisfies all constraints (equalities, diseqalities,
+does not create new equalities over shared variables, and values for set.size).
 
 
 ## LIA*
