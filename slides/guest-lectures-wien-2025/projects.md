@@ -14,31 +14,10 @@ The idea is to run z3 to generate clausal proofs and validate theory axioms from
  
 * The OnClause functionality can be used to monitor theory axioms created during search. You can validate theory axioms from the finite\_set theory.
 
-An example Python script that logs and prints proofs:
+### An example Python script that logs and prints proofs.
 
+Assume a file f-proof.smt2 with the contents:
 
-```
-from z3 import *
-
-s = SimpleSolver()
-s.from_file("../f-proof.smt2")
-
-def on_clause(p, deps, clause):
-    print(p, deps, clause)
-
-OnClause(s, on_clause)
-print(s.check())
-
-```
-It prints:
-```
-asserted(s == set.union(t, u)) [] [s == set.union(t, u)]
-asserted(set.in(x, t)) [] [set.in(x, t)]
-asserted(Not(set.in(x, s))) [] [Not(set.in(x, s))]
-finite-set(in-union) [] [Not(set.in(x, t)), set.in(x, set.union(t, u))]
-```
-
-where f-proof.smt2 contains 
 ```
 
 (declare-const s (FiniteSet Int))
@@ -52,7 +31,39 @@ where f-proof.smt2 contains
 (check-sat)
 ```
 
+We use the following script to run the solver and extract theory axioms (they are called th-lemmas, but oh well).
+
+```
+from z3 import *
+
+enable_trace("finite_set")
+set_option(proof=True)
+s = SimpleSolver()
+s.from_file("../f-proof.smt2")
+
+def on_clause(p, deps, clause):
+    print(p.params(), p, deps, clause)
+
+OnClause(s, on_clause)
+print(s.check())
+
+```
+
+
+It prints:
+
+```
+[] asserted(s == set.union(t, u)) [] [s == set.union(t, u)]
+[] asserted(set.in(x, t)) [] [set.in(x, t)]
+[] asserted(Not(set.in(x, s))) [] [Not(set.in(x, s))]
+['finite_set', 'in-union', x, set.union(t, u)] th-lemma(hypothesis(set.in(x, t)),
+         set.in(x, set.union(t, u))) [] [Not(set.in(x, t)), set.in(x, set.union(t, u))]
+unsat
+```
+
+
 In other words, the parameter _p_ contains a proof hint.
+The proof hints are recorded in parameters of _p_.
 
 The project can consider several levels of effort and difficulty:
 
@@ -60,7 +71,12 @@ The project can consider several levels of effort and difficulty:
 * Use uninterpreted functions: translate theorems over finite sets to use uninterpreted functions. Axiomatize the theory using first-order axioms and validate the lemmas using Z3's quantifier instantiation engine (or Vampire or ..).
 * Use uninterpreted functions and instantiate theory axioms directly. Use ground reasoning to validate theory lemmas.
 * Develop a theory of finite sets using an interactive theory prover and derive a proof checker by either replaying the theory lemmas using the interactive theorem prover's automation or extract a certified checker that checks axiom instantiations.
-* Develop a proof checker methodology for the inference rules used for set.size. In this case, the theory solver uses global reasoning to construct semi-linear sets for set.size expressions. It is much less direct to develop a proof checker for set.size reasoning, let alone a methodology. A successful project can develop the methodology alone.
+* Develop a proof checker methodology for the inference rules used for set.size. In this case, the theory solver uses global reasoning to construct semi-linear sets for set.size expressions. It is much less direct to develop a methodolgy, let alone proof checker for set.size reasoning. A successful project can develop the methodology alone.
+
+## Experimental benchmarking
+
+* Curate and collect benchmarks for finite set SMT problems.
+* Set up evaluation framework and benchmark.
 
 
 ## Add (a model-based) fuzzer to theory_finite_set.
@@ -115,7 +131,7 @@ You can also consider that the theory has a small model property: Set constraint
  
 * Considering that the bound on the _small_ model may not be that small, does it make sense to add bits on demand?
 
-## Completness for finite sets with filter and ranges.
+## Completeness for finite sets with filter and ranges.
 
 This project is pen/paper as opposed to coding.
 
@@ -124,6 +140,16 @@ is not used in the reference literature on sets with range constructs. A rigorou
 what are the sufficient set of instantations and model construction can be highly valuable weeding out
 mistaes that can be made at the coding level.
 
+## Other functions?
+
+Should the theory for finite sets support other operators?
+
+* What happens if we introduce the powerset operator: FiniteSet(s) -> FiniteSet(FiniteSet(s))
+  * Note that there is prior studies on powersets. Calogero Zarba studied several extensions.
+* A choice function: set.choose: ('a -> bool) -> FiniteSet('a) -> 'a
+  * with the assumption that _(set.choose p s)_ function selects an element of s that satisfies p, and if no element of _s_ satisfies _p_, then the result is arbitrary (but the same given _p_ and _s_)
+* Barvinok's theorem is considerd for counting solutions to LIA. If we have a set of tuples of integers and want to count their size, can we replace the semi-linear set construction?
+  
 ## Model-checker for conclusive answers for incomplete domains
 
 There are several combinations of features that the solver (implementation) is unlikely to be complete for:
@@ -179,7 +205,14 @@ that the other does not address?
 Implementation wise, there are several places that can be tuned.
 It is better to vet areas for improvement with benchmarks.
 
-## But there is a problem
+* What is good strategy for instantiating set axioms that are not unit propagating?
+* Avoid instantiating extensionality axioms if we know that new_diseq_eh(v1, v2) gets called on two sets that can never be equal.
+* Revise unit propagations. Rules such as {x} = {y} propagates x = y can be included. What else can be unit propagated?
+* Handling set.size is prone to numerious optimizations
+* Should the solver perform lookahead on non-propagating set axioms to prune branches?
+  * The array solver in SMTInterpol does not instantiate array axioms in the way z3 does. It detects conflicts by examining the E-graph and store equalities. The conflicts are equalities between existing terms. Can delayed axiom instantiation effectively remove fresh terms? 
+
+## Actually there is a problem
 
 Examine correctness/incorrectness of saturation over sets when the base sort is finite.
 Are extensionality axioms sufficient to guarantee completeness for sets over finite base sorts?
@@ -206,11 +239,6 @@ quantifiers directly (and for additional operators)?
 There is quantifier solving for Arrays in Z3.
 It is documented in an FMCAD paper with Arie Gurfinkel et al.
 Use this as a starting point.
-
-## Experimental benchmarking
-
-* Curate and collect benchmarks for finite set SMT problems.
-* Set up evaluation framework and benchmark.
 
 ## Quantifier solving for UFLIA
 
