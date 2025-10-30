@@ -168,13 +168,30 @@ Nothing prevents us from invoking model construction even if we don't know wheth
 We can use a candidate model for set variables and check if it satisfies all constraints (equalities, diseqalities,
 does not create new equalities over shared variables, and values for set.size).
 
+## Set Cardinalities without LIA*
+
+The working version [theory_finite_set_size.cpp](https://github.com/Z3Prover/z3/blob/finite-sets/src/smt/theory_finite_set_size.cpp) contains a base implementation for checking set.size constraints. It suggests to use a different method than a general LIA* solver. One strategy is to extract conflicts by quering the arithmetic solver with a partially instantiated semi-linear set solution for cardinalities. These conflicts can prune the search space for propositional models of the solver that produces basis vectors.
+
+For this purpose the branch contains a bridge with the arithmetic solver to query satisfiability modulo a set of arithmetic equalities.
+The equalities would come from the constraints $|s_i| - sum_j slack_ij = 0$ corresponding to the current linear solution enumerated by the
+Boolean solver. If the the current linear solutions for set constraints are infeasible with the existing arithmetic constraints,
+then an unsatisfiable core provides information about a subset of the linear constraints and a subset of the arithmetic assertions that are relevant.
+The solver can search for new slack variable combinations that relax at least one of the linear constraints in the core until there is a feasible
+assignment with respect to this core. It also offers an opportunity for early termination if there is no extension of the current Boolean models
+that relax the linear solutions in the core.
+
+The project falls into the following portions:
+
+1. Formalize the idea sketched in this description (there is an elaboration in the [source files](https://github.com/Z3Prover/z3/blob/6fa12312b3b0822fd88dc452a332c31153bd69f4/src/smt/theory_finite_set_size.cpp#L278) but not what can be said to be a rigorous and transparent argument.
+2. Establish benchmarks for cardinality constraints
+3. Implement (unless I have already provided one at time of the project start), test and benchmark the approach. 
 
 ## LIA*
 
 Integrate a LIA* solver directly with z3.
 The python prototype from 2020 does not work with updates to z3.
 
-This is not an easy project. The working version [theory_finite_set_size.cpp](https://github.com/Z3Prover/z3/blob/finite-sets/src/smt/theory_finite_set_size.cpp) contains a base implementation for checking set.size constraints. It suggests to use a different method than a general LIA* solver. One strategy is to extract conflicts by quering the arithmetic solver with a partially instantiated semi-linear set solution for cardinalities. These conflicts can prune the search space for propositional models of the solver that produces basis vectors.
+This is not an easy project.
 
 ## Multi-sets and Cardinality constraints.
 Multi-set reasoning can handle cardinality constraints as an alternative to Venn-diagram decomposition.
