@@ -182,7 +182,7 @@ that relax the linear solutions in the core.
 
 The project falls into the following portions:
 
-1. Formalize the idea sketched in this description (there is an elaboration in the [source files](https://github.com/Z3Prover/z3/blob/6fa12312b3b0822fd88dc452a332c31153bd69f4/src/smt/theory_finite_set_size.cpp#L278) but not what can be said to be a rigorous and transparent argument.
+1. Formalize the idea sketched in this description (there is an elaboration in the [source files](https://github.com/Z3Prover/z3/blob/6fa12312b3b0822fd88dc452a332c31153bd69f4/src/smt/theory_finite_set_size.cpp#L278) but not what can be said to be a rigorous and transparent argument. What if the sketched approach is bogus?
 2. Establish benchmarks for cardinality constraints
 3. Implement (unless I have already provided one at time of the project start), test and benchmark the approach. 
 
