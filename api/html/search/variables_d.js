@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['params_7276',['params',['../classz3py_1_1_params_ref.html#a41000f175dc0115080e2a682cc06dbe9',1,'z3py::ParamsRef']]],
-  ['pctx_7277',['pctx',['../classz3py_1_1_parser_context.html#a627fc9ad007af5c6bd790b7498d6c632',1,'z3py::ParserContext']]],
-  ['probe_7278',['probe',['../classz3py_1_1_probe.html#af8a62f5d3e2aa49d97071e07ee564422',1,'z3py::Probe']]]
+  ['on_5fclause_0',['on_clause',['../classz3py_1_1_on_clause.html#a14af3026b4951c03225830ddf3130de9',1,'z3py::OnClause']]],
+  ['optimize_1',['optimize',['../classz3py_1_1_optimize.html#ae74666b606d67dce2faa5321c58ca69b',1,'z3py::Optimize']]],
+  ['owner_2',['owner',['../classz3py_1_1_context.html#aee6e0cd65a787643e49e447538a62770',1,'z3py::Context']]]
 ];

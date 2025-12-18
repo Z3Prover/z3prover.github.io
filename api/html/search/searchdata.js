@@ -5,15 +5,15 @@ var indexSectionsWithContent =
   2: "cmz",
   3: "abcdefgilmnopqrstuvwz",
   4: "_abcdefghiklmnopqrstuvwxz~",
-  5: "abcdefgiklmnoprstuvz",
+  5: "_abcdefgiklmnoprstuvz",
   6: "aefosuvz",
   7: "crsz",
   8: "rsuz",
   9: "abcdefhiklmnoprstuvw",
   10: "abcdefimnoprstuwx",
   11: "_mz",
-  12: "c",
-  13: "a"
+  12: "ac",
+  13: "aept"
 };
 
 var indexSectionNames =

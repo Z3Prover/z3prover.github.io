@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['key_7266',['Key',['../class_microsoft_1_1_z3_1_1_statistics_1_1_entry.html#a4206d56ea01160ee4be15e14afcde2da',1,'Microsoft::Z3::Statistics::Entry']]]
+  ['id_0',['id',['../classz3py_1_1_user_propagate_base.html#acf2488b95c97e0378c9bf49de3b50f28',1,'z3py::UserPropagateBase']]],
+  ['idx_1',['idx',['../classz3py_1_1_on_clause.html#a49654e4709f40aecccada266daa32fc6',1,'z3py::OnClause']]]
 ];

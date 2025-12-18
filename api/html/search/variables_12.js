@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['vars_7295',['vars',['../classz3py_1_1_fixedpoint.html#a34afa21b3f4aa9ee760d8638def79157',1,'z3py::Fixedpoint']]],
-  ['vector_7296',['vector',['../classz3py_1_1_ast_vector.html#a7ea82552101f041fad7635b3ed036a84',1,'z3py::AstVector']]]
+  ['unknown_0',['unknown',['../enumcom_1_1microsoft_1_1z3_1_1_status.html#ab6aedfcb4a10d1a01e272f492e2c2765',1,'com.microsoft.z3.Status.UNKNOWN'],['../namespacez3py.html#ac4bf32b8437be41aff6333570bb45edd',1,'z3py.unknown']]],
+  ['unsat_1',['unsat',['../namespacez3py.html#a936489f1b08ae5cdaa7182d5ada98add',1,'z3py']]],
+  ['unsatisfiable_2',['UNSATISFIABLE',['../enumcom_1_1microsoft_1_1z3_1_1_status.html#a503f627ca50472d0effdaa61e38be091',1,'com::microsoft::z3::Status']]],
+  ['updates_3',['Updates',['../class_microsoft_1_1_z3_1_1_native_model_1_1_array_value.html#ac35f18064f77153a1908cd4715f3caaf',1,'Microsoft::Z3::NativeModel::ArrayValue']]]
 ];

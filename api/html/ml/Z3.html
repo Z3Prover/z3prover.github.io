@@ -1,8 +1,8 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="style.css" type="text/css">
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link rel="next" href="Z3enums.html">
@@ -80,9 +80,10 @@
 <li>timeout (unsigned)         default timeout (in milliseconds) used for solvers</li>
 <li>well_sorted_check          type checker</li>
 <li>auto_config                use heuristics to automatically select solver and configure it</li>
-<li>model                      model generation for solvers, this parameter can be overwritten when creating a solver</li>
-<li>model_validate             validate models produced by solvers</li>
-<li>unsat_core                 unsat-core generation for solvers, this parameter can be overwritten when creating a solver</li>
+<li>model  (Boolean)           model generation for solvers, this parameter can be overwritten when creating a solver</li>
+<li>model_validate  (Boolean)  validate models produced by solvers</li>
+<li>unsat_core  (Boolean)      unsat-core generation for solvers, this parameter can be overwritten when creating a solver</li>
+<li>encoding                   the string encoding used internally (must be either "unicode" - 18 bit, "bmp" - 16 bit or "ascii" - 8 bit)</li>
 </ul>
 </div>
 </div>
@@ -278,6 +279,8 @@
     For example:
     (set_global_param "pp.decimal" "true")
     will set the parameter "decimal" in the module "pp" to true.</p>
+
+<p>Legal parameters are provided by running "z3 -p" or by consulting https://microsoft.github.io/z3guide/programming/Parameters.</p>
 </div>
 </div>
 

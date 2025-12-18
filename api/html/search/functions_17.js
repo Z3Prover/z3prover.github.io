@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xnor_6440',['xnor',['../namespacez3.html#af58eac1239f4ea8dfdf0a5a27763c0e4',1,'z3']]],
-  ['xor_6441',['Xor',['../namespacez3py.html#a2c61c680934248373aa85683200a5d91',1,'z3py']]]
+  ['xnor_0',['xnor',['../namespacez3.html#a610a76e709e6b05ba9536ca055c218a7',1,'z3']]],
+  ['xor_1',['Xor',['../namespacez3py.html#ac7b9853b72b12eb5079f3c18ae1eef88',1,'z3py']]]
 ];
