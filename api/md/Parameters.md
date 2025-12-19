@@ -1,3 +1,8 @@
+---
+layout: default
+title: Z3 Options
+---
+
 Z3 Options
 
 ## Global Parameters
