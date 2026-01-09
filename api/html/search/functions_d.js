@@ -6,7 +6,7 @@ var searchData=
   ['nctx_3',['nCtx',['../classcom_1_1microsoft_1_1z3_1_1_context.html#a4f789d47d93c150a6e12a4d54ff1597a',1,'com::microsoft::z3::Context']]],
   ['next_4',['next',['../classz3py_1_1_solver.html#a1a4fc62cebb99c4fe7376ca337f5ab4d',1,'z3py::Solver']]],
   ['next_5fsplit_5',['next_split',['../classz3py_1_1_user_propagate_base.html#adc66fe001eec4b5614544106e4ba5322',1,'z3py.UserPropagateBase.next_split()'],['../classz3_1_1user__propagator__base.html#af550a2b2e2299cfadc3c358e14f8a0fc',1,'z3::user_propagator_base::next_split()']]],
-  ['nextsplit_6',['nextsplit',['../classcom_1_1microsoft_1_1z3_1_1_user_propagator_base.html#ae68855d33b1c51c749c7496cd3cd6497',1,'com.microsoft.z3.UserPropagatorBase.nextSplit()'],['../class_microsoft_1_1_z3_1_1_user_propagator.html#ac47e8cb2a6fd78a5c40e7e656d36f28a',1,'Microsoft.Z3.UserPropagator.NextSplit()']]],
+  ['nextsplit_6',['nextsplit',['../class_microsoft_1_1_z3_1_1_user_propagator.html#ac47e8cb2a6fd78a5c40e7e656d36f28a',1,'Microsoft.Z3.UserPropagator.NextSplit()'],['../classcom_1_1microsoft_1_1z3_1_1_user_propagator_base.html#ae68855d33b1c51c749c7496cd3cd6497',1,'com.microsoft.z3.UserPropagatorBase.nextSplit()']]],
   ['no_5fpattern_7',['no_pattern',['../classz3py_1_1_quantifier_ref.html#a3808ee00b0d4f5ecf0ed79cef39887ee',1,'z3py::QuantifierRef']]],
   ['non_5funits_8',['non_units',['../classz3py_1_1_solver.html#a21c498a17d15a3b25c95a808dfc73027',1,'z3py.Solver.non_units()'],['../classz3_1_1solver.html#a18f6146d21060d1c7ca7972590cf44c7',1,'z3::solver::non_units()']]],
   ['nor_9',['nor',['../namespacez3.html#a45cef15a6d1bab30100d04fbd580541b',1,'z3']]],

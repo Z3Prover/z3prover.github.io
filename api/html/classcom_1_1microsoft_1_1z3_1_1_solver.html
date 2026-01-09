@@ -146,6 +146,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a365a70d6276d0625e4700eecaeeec5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67543122aef3409e6568cf49aa7efb66" id="r_a67543122aef3409e6568cf49aa7efb66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_bool_expr.html">BoolExpr</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a67543122aef3409e6568cf49aa7efb66">getUnsatCore</a> ()</td></tr>
 <tr class="separator:a67543122aef3409e6568cf49aa7efb66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7827147257cba3561b73f0e893897bc0" id="r_a7827147257cba3561b73f0e893897bc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_bool_expr.html">BoolExpr</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a7827147257cba3561b73f0e893897bc0">getUnits</a> ()</td></tr>
+<tr class="separator:a7827147257cba3561b73f0e893897bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8db5e60792569ceac03a07e46da5f3d" id="r_ad8db5e60792569ceac03a07e46da5f3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_bool_expr.html">BoolExpr</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad8db5e60792569ceac03a07e46da5f3d">getNonUnits</a> ()</td></tr>
+<tr class="separator:ad8db5e60792569ceac03a07e46da5f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae372569be89fefdf9acc524e7e820255" id="r_ae372569be89fefdf9acc524e7e820255"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_bool_expr.html">BoolExpr</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ae372569be89fefdf9acc524e7e820255">getTrail</a> ()</td></tr>
+<tr class="separator:ae372569be89fefdf9acc524e7e820255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea51f78eb769aae6a9f3a73e4547f95d" id="r_aea51f78eb769aae6a9f3a73e4547f95d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#aea51f78eb769aae6a9f3a73e4547f95d">getReasonUnknown</a> ()</td></tr>
 <tr class="separator:aea51f78eb769aae6a9f3a73e4547f95d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f4086956a17bb24964a5b0d53ff65f6" id="r_a2f4086956a17bb24964a5b0d53ff65f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_solver.html">Solver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a2f4086956a17bb24964a5b0d53ff65f6">translate</a> (<a class="el" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx)</td></tr>
@@ -631,6 +637,45 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ad8db5e60792569ceac03a07e46da5f3d" name="ad8db5e60792569ceac03a07e46da5f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8db5e60792569ceac03a07e46da5f3d">&#9670;&#160;</a></span>getNonUnits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_bool_expr.html">BoolExpr</a>[] getNonUnits </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve non-unit atomic formulas in the solver state. Remarks: This retrieves atomic formulas that are not units after a <code class="JavaDocCode">check</code> call.</p>
+<dl class="section return"><dt>Returns</dt><dd>An array of Boolean expressions representing the non-unit formulas </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Z3Exception</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00362">362</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  363</span>    {</div>
+<div class="line"><span class="lineno">  364</span>        ASTVector nonUnits = <span class="keyword">new</span> ASTVector(getContext(), Native.solverGetNonUnits(getContext().nCtx(), getNativeObject()));</div>
+<div class="line"><span class="lineno">  365</span>        <span class="keywordflow">return</span> nonUnits.ToBoolExprArray();</div>
+<div class="line"><span class="lineno">  366</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="adce5b3e380b90cb780fdde14b8792c25" name="adce5b3e380b90cb780fdde14b8792c25"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adce5b3e380b90cb780fdde14b8792c25">&#9670;&#160;</a></span>getNumAssertions()</h2>
 
@@ -807,11 +852,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>A brief justification of why the last call to <code class="JavaDocCode">Check</code> returned <code class="JavaDocCode">UNKNOWN</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00345">345</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  346</span>    {</div>
-<div class="line"><span class="lineno">  347</span>        <span class="keywordflow">return</span> Native.solverGetReasonUnknown(getContext().nCtx(),</div>
-<div class="line"><span class="lineno">  348</span>                getNativeObject());</div>
-<div class="line"><span class="lineno">  349</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00387">387</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  388</span>    {</div>
+<div class="line"><span class="lineno">  389</span>        <span class="keywordflow">return</span> Native.solverGetReasonUnknown(getContext().nCtx(),</div>
+<div class="line"><span class="lineno">  390</span>                getNativeObject());</div>
+<div class="line"><span class="lineno">  391</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -845,11 +890,89 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00364">364</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  365</span>    {</div>
-<div class="line"><span class="lineno">  366</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> Statistics(getContext(), Native.solverGetStatistics(</div>
-<div class="line"><span class="lineno">  367</span>                getContext().nCtx(), getNativeObject()));</div>
-<div class="line"><span class="lineno">  368</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00406">406</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  407</span>    {</div>
+<div class="line"><span class="lineno">  408</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> Statistics(getContext(), Native.solverGetStatistics(</div>
+<div class="line"><span class="lineno">  409</span>                getContext().nCtx(), getNativeObject()));</div>
+<div class="line"><span class="lineno">  410</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae372569be89fefdf9acc524e7e820255" name="ae372569be89fefdf9acc524e7e820255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae372569be89fefdf9acc524e7e820255">&#9670;&#160;</a></span>getTrail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_bool_expr.html">BoolExpr</a>[] getTrail </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the solver decision trail. Remarks: This retrieves the trail of decisions made by the solver after a <code class="JavaDocCode">check</code> call. The trail represents the sequence of Boolean literals (decisions and propagations) in the order they were assigned.</p>
+<dl class="section return"><dt>Returns</dt><dd>An array of Boolean expressions representing the decision trail </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Z3Exception</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00377">377</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  378</span>    {</div>
+<div class="line"><span class="lineno">  379</span>        ASTVector trail = <span class="keyword">new</span> ASTVector(getContext(), Native.solverGetTrail(getContext().nCtx(), getNativeObject()));</div>
+<div class="line"><span class="lineno">  380</span>        <span class="keywordflow">return</span> trail.ToBoolExprArray();</div>
+<div class="line"><span class="lineno">  381</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7827147257cba3561b73f0e893897bc0" name="a7827147257cba3561b73f0e893897bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7827147257cba3561b73f0e893897bc0">&#9670;&#160;</a></span>getUnits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_bool_expr.html">BoolExpr</a>[] getUnits </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve currently inferred units. Remarks: This retrieves the set of literals that the solver has inferred at the current decision level after a <code class="JavaDocCode">check</code> call.</p>
+<dl class="section return"><dt>Returns</dt><dd>An array of Boolean expressions representing the inferred units </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Z3Exception</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00349">349</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  350</span>    {</div>
+<div class="line"><span class="lineno">  351</span>        ASTVector units = <span class="keyword">new</span> ASTVector(getContext(), Native.solverGetUnits(getContext().nCtx(), getNativeObject()));</div>
+<div class="line"><span class="lineno">  352</span>        <span class="keywordflow">return</span> units.ToBoolExprArray();</div>
+<div class="line"><span class="lineno">  353</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1119,11 +1242,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>A string representation of the solver. </p>
 
-<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00374">374</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  375</span>    {</div>
-<div class="line"><span class="lineno">  376</span>        <span class="keywordflow">return</span> Native</div>
-<div class="line"><span class="lineno">  377</span>                .solverToString(getContext().nCtx(), getNativeObject());</div>
-<div class="line"><span class="lineno">  378</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00416">416</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  417</span>    {</div>
+<div class="line"><span class="lineno">  418</span>        <span class="keywordflow">return</span> Native</div>
+<div class="line"><span class="lineno">  419</span>                .solverToString(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><span class="lineno">  420</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1152,10 +1275,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Create a clone of the current solver with respect to<code class="JavaDocCode">ctx</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00354">354</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  355</span>    {</div>
-<div class="line"><span class="lineno">  356</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> Solver(ctx, Native.solverTranslate(getContext().nCtx(), getNativeObject(), ctx.nCtx()));</div>
-<div class="line"><span class="lineno">  357</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_solver_8java_source.html#l00396">396</a> of file <a class="el" href="_solver_8java_source.html">Solver.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  397</span>    {</div>
+<div class="line"><span class="lineno">  398</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> Solver(ctx, Native.solverTranslate(getContext().nCtx(), getNativeObject(), ctx.nCtx()));</div>
+<div class="line"><span class="lineno">  399</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l00447">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05947">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06142">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06487">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06853">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05950">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06145">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06490">FuncInterp.__deepcopy__()</a>, and <a class="el" href="z3py_8py_source.html#l06856">ModelRef.__deepcopy__()</a>.</p>
 
@@ -1164,7 +1287,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 9 2026 04:51:20 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Jan 9 2026 17:49:21 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

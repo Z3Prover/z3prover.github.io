@@ -304,78 +304,102 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    }</div>
 </div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
-<div class="foldopen" id="foldopen00345" data-start="{" data-end="}">
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#aea51f78eb769aae6a9f3a73e4547f95d">  345</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#aea51f78eb769aae6a9f3a73e4547f95d">getReasonUnknown</a>()</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    {</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        <span class="keywordflow">return</span> Native.solverGetReasonUnknown(getContext().nCtx(),</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                getNativeObject());</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    }</div>
+<div class="foldopen" id="foldopen00349" data-start="{" data-end="}">
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a7827147257cba3561b73f0e893897bc0">  349</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_bool_expr.html">BoolExpr</a>[] <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a7827147257cba3561b73f0e893897bc0">getUnits</a>()</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    {</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html">ASTVector</a> units = <span class="keyword">new</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html">ASTVector</a>(getContext(), Native.solverGetUnits(getContext().nCtx(), getNativeObject()));</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        <span class="keywordflow">return</span> units.<a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html#a3d38b40ec2a73cb01fa5c4e80de6ee50">ToBoolExprArray</a>();</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    }</div>
 </div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
-<div class="foldopen" id="foldopen00354" data-start="{" data-end="}">
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a2f4086956a17bb24964a5b0d53ff65f6">  354</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_solver.html">Solver</a> <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a2f4086956a17bb24964a5b0d53ff65f6">translate</a>(<a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx) </div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    {</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_solver.html">Solver</a>(ctx, Native.solverTranslate(getContext().nCtx(), getNativeObject(), ctx.<a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_context.html#a4f789d47d93c150a6e12a4d54ff1597a">nCtx</a>()));</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    }</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span> </div>
+<div class="foldopen" id="foldopen00362" data-start="{" data-end="}">
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad8db5e60792569ceac03a07e46da5f3d">  362</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_bool_expr.html">BoolExpr</a>[] <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad8db5e60792569ceac03a07e46da5f3d">getNonUnits</a>()</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    {</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html">ASTVector</a> nonUnits = <span class="keyword">new</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html">ASTVector</a>(getContext(), Native.solverGetNonUnits(getContext().nCtx(), getNativeObject()));</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        <span class="keywordflow">return</span> nonUnits.<a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html#a3d38b40ec2a73cb01fa5c4e80de6ee50">ToBoolExprArray</a>();</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    }</div>
 </div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
-<div class="foldopen" id="foldopen00364" data-start="{" data-end="}">
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#af8ec440c88d2910dfab13b940fcdd7e0">  364</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_statistics.html">Statistics</a> <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#af8ec440c88d2910dfab13b940fcdd7e0">getStatistics</a>()</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    {</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_statistics.html">Statistics</a>(getContext(), Native.solverGetStatistics(</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                getContext().nCtx(), getNativeObject()));</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    }</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="foldopen" id="foldopen00377" data-start="{" data-end="}">
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ae372569be89fefdf9acc524e7e820255">  377</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_bool_expr.html">BoolExpr</a>[] <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ae372569be89fefdf9acc524e7e820255">getTrail</a>()</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>    {</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>        <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html">ASTVector</a> trail = <span class="keyword">new</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html">ASTVector</a>(getContext(), Native.solverGetTrail(getContext().nCtx(), getNativeObject()));</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        <span class="keywordflow">return</span> trail.<a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html#a3d38b40ec2a73cb01fa5c4e80de6ee50">ToBoolExprArray</a>();</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>    }</div>
 </div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span> </div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>    @Override</div>
-<div class="foldopen" id="foldopen00374" data-start="{" data-end="}">
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad146fa8579a5f8a876c4688cc5a68520">  374</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a>()</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    {</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>        <span class="keywordflow">return</span> Native</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>                .solverToString(getContext().nCtx(), getNativeObject());</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>    }</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span> </div>
+<div class="foldopen" id="foldopen00387" data-start="{" data-end="}">
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#aea51f78eb769aae6a9f3a73e4547f95d">  387</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#aea51f78eb769aae6a9f3a73e4547f95d">getReasonUnknown</a>()</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    {</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        <span class="keywordflow">return</span> Native.solverGetReasonUnknown(getContext().nCtx(),</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                getNativeObject());</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    }</div>
 </div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    <span class="keyword">private</span> <a class="code hl_class" href="enumcom_1_1microsoft_1_1z3_1_1_status.html">Status</a> lboolToStatus(<a class="code hl_enumeration" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a> r) </div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    {</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        <span class="keywordflow">switch</span> (r)</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        {</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__capi.html#gga6c2de6ea89b244e37c3ffb17a9ea2a89a49e51eb02c28801719ea866fb4b08f64">Z3_L_TRUE</a>:</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="enumcom_1_1microsoft_1_1z3_1_1_status.html">Status</a>.<a class="code hl_variable" href="enumcom_1_1microsoft_1_1z3_1_1_status.html#a03ce059e9e1d3b623e69b7f36e5ad4db">SATISFIABLE</a>;</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__capi.html#gga6c2de6ea89b244e37c3ffb17a9ea2a89a84a8e525044a54b688a285934b6056ba">Z3_L_FALSE</a>:</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="enumcom_1_1microsoft_1_1z3_1_1_status.html">Status</a>.<a class="code hl_variable" href="enumcom_1_1microsoft_1_1z3_1_1_status.html#a503f627ca50472d0effdaa61e38be091">UNSATISFIABLE</a>;</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="enumcom_1_1microsoft_1_1z3_1_1_status.html">Status</a>.<a class="code hl_variable" href="enumcom_1_1microsoft_1_1z3_1_1_status.html#ab6aedfcb4a10d1a01e272f492e2c2765">UNKNOWN</a>;</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>        }</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    }</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span> </div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>    Solver(Context ctx, <span class="keywordtype">long</span> obj)</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
+<div class="foldopen" id="foldopen00396" data-start="{" data-end="}">
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a2f4086956a17bb24964a5b0d53ff65f6">  396</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_solver.html">Solver</a> <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a2f4086956a17bb24964a5b0d53ff65f6">translate</a>(<a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx) </div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>    {</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        super(ctx, obj);</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_solver.html">Solver</a>(ctx, Native.solverTranslate(getContext().nCtx(), getNativeObject(), ctx.<a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_context.html#a4f789d47d93c150a6e12a4d54ff1597a">nCtx</a>()));</div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>    }</div>
+</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> </div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    @Override</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>    <span class="keywordtype">void</span> incRef() {</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>        Native.solverIncRef(getContext().nCtx(), getNativeObject());</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>    }</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span> </div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>    @Override</div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="keywordtype">void</span> addToReferenceQueue() {</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        getContext().getReferenceQueue().storeReference(<span class="keyword">this</span>, SolverRef::new);</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    }</div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class </span>SolverRef <span class="keyword">extends</span> Z3ReferenceQueue.Reference&lt;Solver&gt; {</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>        <span class="keyword">private</span> SolverRef(Solver referent, ReferenceQueue&lt;Z3Object&gt; q) {</div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>            super(referent, q);</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>        }</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span> </div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        @Override</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>        <span class="keywordtype">void</span> decRef(Context ctx, <span class="keywordtype">long</span> z3Obj) {</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>            Native.solverDecRef(ctx.nCtx(), z3Obj);</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        }</div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    }</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>}</div>
+<div class="foldopen" id="foldopen00406" data-start="{" data-end="}">
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#af8ec440c88d2910dfab13b940fcdd7e0">  406</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_statistics.html">Statistics</a> <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#af8ec440c88d2910dfab13b940fcdd7e0">getStatistics</a>()</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    {</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_statistics.html">Statistics</a>(getContext(), Native.solverGetStatistics(</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>                getContext().nCtx(), getNativeObject()));</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>    }</div>
+</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span> </div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    @Override</div>
+<div class="foldopen" id="foldopen00416" data-start="{" data-end="}">
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad146fa8579a5f8a876c4688cc5a68520">  416</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a>()</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    {</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>        <span class="keywordflow">return</span> Native</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>                .solverToString(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    }</div>
+</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    <span class="keyword">private</span> <a class="code hl_class" href="enumcom_1_1microsoft_1_1z3_1_1_status.html">Status</a> lboolToStatus(<a class="code hl_enumeration" href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a> r) </div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    {</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        <span class="keywordflow">switch</span> (r)</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>        {</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__capi.html#gga6c2de6ea89b244e37c3ffb17a9ea2a89a49e51eb02c28801719ea866fb4b08f64">Z3_L_TRUE</a>:</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="enumcom_1_1microsoft_1_1z3_1_1_status.html">Status</a>.<a class="code hl_variable" href="enumcom_1_1microsoft_1_1z3_1_1_status.html#a03ce059e9e1d3b623e69b7f36e5ad4db">SATISFIABLE</a>;</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__capi.html#gga6c2de6ea89b244e37c3ffb17a9ea2a89a84a8e525044a54b688a285934b6056ba">Z3_L_FALSE</a>:</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="enumcom_1_1microsoft_1_1z3_1_1_status.html">Status</a>.<a class="code hl_variable" href="enumcom_1_1microsoft_1_1z3_1_1_status.html#a503f627ca50472d0effdaa61e38be091">UNSATISFIABLE</a>;</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>            <span class="keywordflow">return</span> <a class="code hl_class" href="enumcom_1_1microsoft_1_1z3_1_1_status.html">Status</a>.<a class="code hl_variable" href="enumcom_1_1microsoft_1_1z3_1_1_status.html#ab6aedfcb4a10d1a01e272f492e2c2765">UNKNOWN</a>;</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        }</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>    }</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span> </div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    Solver(Context ctx, <span class="keywordtype">long</span> obj)</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    {</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>        super(ctx, obj);</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>    }</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    @Override</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>    <span class="keywordtype">void</span> incRef() {</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>        Native.solverIncRef(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>    }</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span> </div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    @Override</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    <span class="keywordtype">void</span> addToReferenceQueue() {</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>        getContext().getReferenceQueue().storeReference(<span class="keyword">this</span>, SolverRef::new);</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    }</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span> </div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class </span>SolverRef <span class="keyword">extends</span> Z3ReferenceQueue.Reference&lt;Solver&gt; {</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span> </div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>        <span class="keyword">private</span> SolverRef(Solver referent, ReferenceQueue&lt;Z3Object&gt; q) {</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>            super(referent, q);</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>        }</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span> </div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>        @Override</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>        <span class="keywordtype">void</span> decRef(Context ctx, <span class="keywordtype">long</span> z3Obj) {</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>            Native.solverDecRef(ctx.nCtx(), z3Obj);</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>        }</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    }</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>}</div>
 </div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_a_s_t_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_a_s_t.html">com.microsoft.z3.AST</a></div><div class="ttdef"><b>Definition</b> <a href="_a_s_t_8java_source.html#l00027">AST.java:28</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_a_s_t_vector_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html">com.microsoft.z3.ASTVector</a></div><div class="ttdef"><b>Definition</b> <a href="_a_s_t_vector_8java_source.html#l00025">ASTVector.java:25</a></div></div>
@@ -391,7 +415,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_param_descrs_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_param_descrs.html">com.microsoft.z3.ParamDescrs</a></div><div class="ttdef"><b>Definition</b> <a href="_param_descrs_8java_source.html#l00027">ParamDescrs.java:27</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_params_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_params.html">com.microsoft.z3.Params</a></div><div class="ttdef"><b>Definition</b> <a href="_params_8java_source.html#l00026">Params.java:26</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html">com.microsoft.z3.Solver</a></div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00030">Solver.java:30</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a2f4086956a17bb24964a5b0d53ff65f6"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a2f4086956a17bb24964a5b0d53ff65f6">com.microsoft.z3.Solver.translate</a></div><div class="ttdeci">Solver translate(Context ctx)</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00354">Solver.java:354</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a2f4086956a17bb24964a5b0d53ff65f6"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a2f4086956a17bb24964a5b0d53ff65f6">com.microsoft.z3.Solver.translate</a></div><div class="ttdeci">Solver translate(Context ctx)</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00396">Solver.java:396</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a312e7f6c761a199c1369fbe651e084f0"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a312e7f6c761a199c1369fbe651e084f0">com.microsoft.z3.Solver.pop</a></div><div class="ttdeci">void pop()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00086">Solver.java:86</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a314ca776b40e254e1d67725a767774b4"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a314ca776b40e254e1d67725a767774b4">com.microsoft.z3.Solver.getConsequences</a></div><div class="ttdeci">Status getConsequences(Expr&lt; BoolSort &gt;[] assumptions, Expr&lt;?&gt;[] variables, List&lt; Expr&lt; BoolSort &gt; &gt; consequences)</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00274">Solver.java:274</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a321e7703e91d7dfe4417adb60366eb41"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a321e7703e91d7dfe4417adb60366eb41">com.microsoft.z3.Solver.getParameterDescriptions</a></div><div class="ttdeci">ParamDescrs getParameterDescriptions()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00056">Solver.java:56</a></div></div>
@@ -402,20 +426,23 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a654548f58856ce951ee1e976a852f53c"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a654548f58856ce951ee1e976a852f53c">com.microsoft.z3.Solver.setParameters</a></div><div class="ttdeci">void setParameters(Params value)</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00044">Solver.java:44</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a67543122aef3409e6568cf49aa7efb66"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a67543122aef3409e6568cf49aa7efb66">com.microsoft.z3.Solver.getUnsatCore</a></div><div class="ttdeci">BoolExpr[] getUnsatCore()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00334">Solver.java:334</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a7392c1d894ee6e8e1010e21edf3e1502"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a7392c1d894ee6e8e1010e21edf3e1502">com.microsoft.z3.Solver.getHelp</a></div><div class="ttdeci">String getHelp()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00034">Solver.java:34</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a7827147257cba3561b73f0e893897bc0"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a7827147257cba3561b73f0e893897bc0">com.microsoft.z3.Solver.getUnits</a></div><div class="ttdeci">BoolExpr[] getUnits()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00349">Solver.java:349</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a90a5d09b372ff559243f5e3a2e529ea7"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a90a5d09b372ff559243f5e3a2e529ea7">com.microsoft.z3.Solver.getModel</a></div><div class="ttdeci">Model getModel()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00296">Solver.java:296</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_a98b45e0a7ed122b6710df00209b67827"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#a98b45e0a7ed122b6710df00209b67827">com.microsoft.z3.Solver.push</a></div><div class="ttdeci">void push()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00077">Solver.java:77</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_aaf97c574d156949d6a7f19e8ff796322"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#aaf97c574d156949d6a7f19e8ff796322">com.microsoft.z3.Solver.getAssertions</a></div><div class="ttdeci">BoolExpr[] getAssertions()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00222">Solver.java:222</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_abdc8a74fc497518fa52ee16a6e379358"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#abdc8a74fc497518fa52ee16a6e379358">com.microsoft.z3.Solver.getNumScopes</a></div><div class="ttdeci">int getNumScopes()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00067">Solver.java:67</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_ac8eafc455097e7469f9a33bd1a936c42"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ac8eafc455097e7469f9a33bd1a936c42">com.microsoft.z3.Solver.fromString</a></div><div class="ttdeci">void fromString(String str)</div><div class="ttdoc">Load solver assertions from a string.</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00200">Solver.java:200</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_ad146fa8579a5f8a876c4688cc5a68520"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad146fa8579a5f8a876c4688cc5a68520">com.microsoft.z3.Solver.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00374">Solver.java:374</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_ad146fa8579a5f8a876c4688cc5a68520"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad146fa8579a5f8a876c4688cc5a68520">com.microsoft.z3.Solver.toString</a></div><div class="ttdeci">String toString()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00416">Solver.java:416</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_ad20897c5c8bd47f5d4005989bead0e55"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad20897c5c8bd47f5d4005989bead0e55">com.microsoft.z3.Solver.reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00108">Solver.java:108</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_ad8db5e60792569ceac03a07e46da5f3d"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ad8db5e60792569ceac03a07e46da5f3d">com.microsoft.z3.Solver.getNonUnits</a></div><div class="ttdeci">BoolExpr[] getNonUnits()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00362">Solver.java:362</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_adce5b3e380b90cb780fdde14b8792c25"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#adce5b3e380b90cb780fdde14b8792c25">com.microsoft.z3.Solver.getNumAssertions</a></div><div class="ttdeci">int getNumAssertions()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00211">Solver.java:211</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_ae10916c4cde3f36ebfa4ea00a5551b54"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ae10916c4cde3f36ebfa4ea00a5551b54">com.microsoft.z3.Solver.add</a></div><div class="ttdeci">void add(Expr&lt; BoolSort &gt;... constraints)</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00128">Solver.java:128</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_ae372569be89fefdf9acc524e7e820255"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ae372569be89fefdf9acc524e7e820255">com.microsoft.z3.Solver.getTrail</a></div><div class="ttdeci">BoolExpr[] getTrail()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00377">Solver.java:377</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_ae692b3a009c75076842064acd32c2fa0"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#ae692b3a009c75076842064acd32c2fa0">com.microsoft.z3.Solver.fromFile</a></div><div class="ttdeci">void fromFile(String file)</div><div class="ttdoc">Load solver assertions from a file.</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00192">Solver.java:192</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_aea51f78eb769aae6a9f3a73e4547f95d"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#aea51f78eb769aae6a9f3a73e4547f95d">com.microsoft.z3.Solver.getReasonUnknown</a></div><div class="ttdeci">String getReasonUnknown()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00345">Solver.java:345</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_aea51f78eb769aae6a9f3a73e4547f95d"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#aea51f78eb769aae6a9f3a73e4547f95d">com.microsoft.z3.Solver.getReasonUnknown</a></div><div class="ttdeci">String getReasonUnknown()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00387">Solver.java:387</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_aebc9afd317d656680550a13818e71917"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#aebc9afd317d656680550a13818e71917">com.microsoft.z3.Solver.interrupt</a></div><div class="ttdeci">void interrupt()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00118">Solver.java:118</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_af44c42b8759526e50dc11274b50329d3"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#af44c42b8759526e50dc11274b50329d3">com.microsoft.z3.Solver.assertAndTrack</a></div><div class="ttdeci">void assertAndTrack(Expr&lt; BoolSort &gt;[] constraints, Expr&lt; BoolSort &gt;[] ps)</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00153">Solver.java:153</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_af8ec440c88d2910dfab13b940fcdd7e0"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#af8ec440c88d2910dfab13b940fcdd7e0">com.microsoft.z3.Solver.getStatistics</a></div><div class="ttdeci">Statistics getStatistics()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00364">Solver.java:364</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_solver_html_af8ec440c88d2910dfab13b940fcdd7e0"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_solver.html#af8ec440c88d2910dfab13b940fcdd7e0">com.microsoft.z3.Solver.getStatistics</a></div><div class="ttdeci">Statistics getStatistics()</div><div class="ttdef"><b>Definition</b> <a href="_solver_8java_source.html#l00406">Solver.java:406</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_statistics_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_statistics.html">com.microsoft.z3.Statistics</a></div><div class="ttdef"><b>Definition</b> <a href="_statistics_8java_source.html#l00025">Statistics.java:25</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_z3_exception_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_z3_exception.html">com.microsoft.z3.Z3Exception</a></div><div class="ttdef"><b>Definition</b> <a href="_z3_exception_8java_source.html#l00025">Z3Exception.java:26</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_z3_object_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_z3_object.html">com.microsoft.z3.Z3Object</a></div><div class="ttdef"><b>Definition</b> <a href="_z3_object_8java_source.html#l00024">Z3Object.java:24</a></div></div>
@@ -431,7 +458,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 9 2026 04:51:19 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Jan 9 2026 17:49:20 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
