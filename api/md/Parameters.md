@@ -280,7 +280,7 @@ maxres.max_num_cores | unsigned int  |  maximal number of cores per round | 200
 maxres.maximize_assignment | bool  |  find an MSS/MCS to improve current assignment | false
 maxres.pivot_on_correction_set | bool  |  reduce soft constraints if the current correction set is smaller than current core | true
 maxres.wmax | bool  |  use weighted theory solver to constrain upper bounds | false
-maxsat_engine | symbol  |  select engine for maxsat: 'core_maxsat', 'wmax', 'maxres', 'pd-maxres', 'maxres-bin', 'rc2' | maxres
+maxsat_engine | symbol  |  select engine for maxsat: 'core_maxsat', 'wmax', 'maxres', 'maxresw', 'pd-maxres', 'maxres-bin', 'rc2' | maxres
 optsmt_engine | symbol  |  select optimization engine: 'basic', 'symba' | basic
 pb.compile_equality | bool  |  compile arithmetical equalities into pseudo-Boolean equality (instead of two inequalites) | false
 pp.neat | bool  |  use neat (as opposed to less readable, but faster) pretty printer when displaying context | true
@@ -554,6 +554,14 @@ xform.subsumption_checker | bool  |  Enable subsumption checker (no support for 
 xform.tail_simplifier_pve | bool  |  propagate_variable_equivalences | true
 xform.transform_arrays | bool  |  Rewrites arrays equalities and applies select over store | false
 xform.unfold_rules | unsigned int  |  unfold rules statically using iterative squaring | 0
+
+## smt_parallel
+
+Experimental parameters for parallel solving
+
+ Parameter | Type | Description | Default
+ ----------|------|-------------|--------
+inprocessing | bool  |  integrate in-processing as a heuristic simplification | true
 
 ## smt
 

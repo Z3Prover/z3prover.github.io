@@ -5,7 +5,7 @@ var searchData=
   ['lambda_2ejava_2',['Lambda.java',['../_lambda_8java.html',1,'']]],
   ['last_5findexof_3',['last_indexof',['../namespacez3.html#a5d44a5efd37ed200b7f35652d3a9f82e',1,'z3']]],
   ['lastindexof_4',['LastIndexOf',['../namespacez3py.html#a7c31c7de557186e2974baa7de65dbc36',1,'z3py']]],
-  ['le_5',['le',['../class_microsoft_1_1_z3_1_1_context.html#a87e54fb3f601a3fc10bf9152c39bcfa6',1,'Microsoft.Z3.Context.Le()'],['../classcom_1_1microsoft_1_1z3_1_1_context.html#a20bf35990a118a78a0c58601daa8df38',1,'com.microsoft.z3.Context.le()']]],
+  ['le_5',['le',['../classcom_1_1microsoft_1_1z3_1_1_context.html#a20bf35990a118a78a0c58601daa8df38',1,'com.microsoft.z3.Context.le()'],['../class_microsoft_1_1_z3_1_1_context.html#a87e54fb3f601a3fc10bf9152c39bcfa6',1,'Microsoft.Z3.Context.Le()']]],
   ['length_6',['length',['../classz3_1_1expr.html#a6cfca6cde63ebe1bc52d51ca5845356b',1,'z3::expr::length()'],['../namespacez3py.html#a42cfcfa84256882c377528c5d24a38ec',1,'z3py.Length()']]],
   ['lhs_7',['LHS',['../class_microsoft_1_1_z3_1_1_equality_pairs.html#a1aa102c0fd2346e5a4a966cf4703d5da',1,'Microsoft::Z3::EqualityPairs']]],
   ['linear_5forder_8',['linear_order',['../namespacez3.html#a876823ac83f6b3051f1cf8237bd48075',1,'z3']]],
@@ -19,9 +19,9 @@ var searchData=
   ['log_2ecs_16',['Log.cs',['../_log_8cs.html',1,'']]],
   ['log_2ejava_17',['Log.java',['../_log_8java.html',1,'']]],
   ['loop_18',['loop',['../namespacez3py.html#ab9513e494b0f46ffe975f8a8e3f0ccb2',1,'z3py.Loop()'],['../classz3_1_1expr.html#a0d20b73eb6343d1b66e89342607723e2',1,'z3::expr::loop(unsigned lo, unsigned hi)'],['../classz3_1_1expr.html#aa12bad2ee8d30c8efb0ac12a359223f0',1,'z3::expr::loop(unsigned lo)']]],
-  ['lower_19',['lower',['../classz3_1_1optimize.html#a24fbd214027e17718c2a0e59d484fe37',1,'z3::optimize::lower()'],['../classz3py_1_1_optimize.html#aeeea891119852a3790fa0ed397b33096',1,'z3py.Optimize.lower()'],['../classz3py_1_1_optimize_objective.html#ad5661ca0bc1fc24ac46a75d362243e7b',1,'z3py.OptimizeObjective.lower()'],['../class_microsoft_1_1_z3_1_1_optimize_1_1_handle.html#a887547e0432a9578e5b632c648d674d5',1,'Microsoft.Z3.Optimize.Handle.Lower']]],
+  ['lower_19',['lower',['../class_microsoft_1_1_z3_1_1_optimize_1_1_handle.html#a887547e0432a9578e5b632c648d674d5',1,'Microsoft.Z3.Optimize.Handle.Lower'],['../classz3_1_1optimize.html#a24fbd214027e17718c2a0e59d484fe37',1,'z3::optimize::lower()'],['../classz3py_1_1_optimize.html#aeeea891119852a3790fa0ed397b33096',1,'z3py.Optimize.lower()'],['../classz3py_1_1_optimize_objective.html#ad5661ca0bc1fc24ac46a75d362243e7b',1,'z3py.OptimizeObjective.lower()']]],
   ['lower_5fvalues_20',['lower_values',['../classz3py_1_1_optimize.html#a85a39aaa448ee170bd9c9bdaf48b5a0a',1,'z3py.Optimize.lower_values()'],['../classz3py_1_1_optimize_objective.html#a8bc6280712607c4e94d1e7e0f042678b',1,'z3py.OptimizeObjective.lower_values()']]],
   ['lowerasvector_21',['LowerAsVector',['../class_microsoft_1_1_z3_1_1_optimize_1_1_handle.html#a229ec60851a3026ca84de0667d9f220d',1,'Microsoft::Z3::Optimize::Handle']]],
   ['lshr_22',['lshr',['../namespacez3py.html#ad40c83efbedd24a74e29256d87f709a1',1,'z3py.LShR()'],['../namespacez3.html#a4fa16fbbb5e27c2f5ea291f77a42610e',1,'z3::lshr(expr const &amp;a, expr const &amp;b)'],['../namespacez3.html#a73c8692c8a53d4cd2c671a5f6064e03e',1,'z3::lshr(expr const &amp;a, int b)'],['../namespacez3.html#a294455ffd101da49d40dc73fc53ebf30',1,'z3::lshr(int a, expr const &amp;b)']]],
-  ['lt_23',['lt',['../classcom_1_1microsoft_1_1z3_1_1_context.html#ad8309da0e442a04c12372a61449c4cc5',1,'com.microsoft.z3.Context.lt()'],['../class_microsoft_1_1_z3_1_1_context.html#a628fbb806984497bb8789575af60f04e',1,'Microsoft.Z3.Context.Lt()']]]
+  ['lt_23',['lt',['../class_microsoft_1_1_z3_1_1_context.html#a628fbb806984497bb8789575af60f04e',1,'Microsoft.Z3.Context.Lt()'],['../classcom_1_1microsoft_1_1z3_1_1_context.html#ad8309da0e442a04c12372a61449c4cc5',1,'com.microsoft.z3.Context.lt()']]]
 ];

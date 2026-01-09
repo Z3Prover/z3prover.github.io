@@ -22,7 +22,7 @@ var searchData=
   ['num_5fparameters_19',['num_parameters',['../classz3_1_1func__decl.html#ae451a108255298617334cb19fb1468cb',1,'z3::func_decl']]],
   ['num_5fpatterns_20',['num_patterns',['../classz3py_1_1_quantifier_ref.html#a5ac6c28d346461eacde35a408c5ceaa1',1,'z3py::QuantifierRef']]],
   ['num_5fscopes_21',['num_scopes',['../classz3py_1_1_solver.html#a1026441a06eae3780a84ed6476e080fd',1,'z3py::Solver']]],
-  ['num_5fsorts_22',['num_sorts',['../classz3py_1_1_model_ref.html#a40fdd62167ff76f08a951c229a0e4725',1,'z3py::ModelRef']]],
+  ['num_5fsorts_22',['num_sorts',['../classz3py_1_1_model_ref.html#a40fdd62167ff76f08a951c229a0e4725',1,'z3py.ModelRef.num_sorts()'],['../classz3_1_1model.html#a9892b08a3c02f00b59c8d66e5d298e92',1,'z3::model::num_sorts()']]],
   ['num_5fval_23',['num_val',['../classz3_1_1context.html#a1cfaa0b71706c9c81d2c7ddf8f3e6b60',1,'z3::context']]],
   ['num_5fvars_24',['num_vars',['../classz3py_1_1_quantifier_ref.html#ad0c30e55103168fbd3b9ee1fb192230b',1,'z3py::QuantifierRef']]],
   ['numerator_25',['numerator',['../classz3py_1_1_rat_num_ref.html#a62b4bbe65502fddd0894dec906ef135b',1,'z3py.RatNumRef.numerator()'],['../classz3_1_1expr.html#a048638f56b446d984ec496a761e043df',1,'z3::expr::numerator()']]],

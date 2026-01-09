@@ -9,5 +9,6 @@ var searchData=
   ['this_5bgoal_20g_5d_6',['this[goal g]',['../class_microsoft_1_1_z3_1_1_probe.html#a15d69e94669071567cc9bf2c63bdc0f5',1,'Microsoft.Z3.Probe.this[Goal g]'],['../class_microsoft_1_1_z3_1_1_tactic.html#ab85d9ef6e0572d9c1e8224ee5ab015eb',1,'Microsoft.Z3.Tactic.this[Goal g]']]],
   ['this_5bienumerable_3c_20expr_20_3e_20index_5d_7',['this[IEnumerable&lt; Expr &gt; index]',['../class_microsoft_1_1_z3_1_1_array_expr.html#a45f00121e46d24a6dc191c15d9d44d1e',1,'Microsoft::Z3::ArrayExpr']]],
   ['this_5bstring_20key_5d_8',['this[string key]',['../class_microsoft_1_1_z3_1_1_statistics.html#acb283b8ac219253d47a018ad26ecc961',1,'Microsoft::Z3::Statistics']]],
-  ['this_5buint_20i_5d_9',['this[uint i]',['../class_microsoft_1_1_z3_1_1_a_s_t_vector.html#a436840313424572aaf69f0ab113b4915',1,'Microsoft::Z3::ASTVector']]]
+  ['this_5buint_20i_5d_9',['this[uint i]',['../class_microsoft_1_1_z3_1_1_a_s_t_vector.html#a436840313424572aaf69f0ab113b4915',1,'Microsoft::Z3::ASTVector']]],
+  ['trail_10',['trail',['../class_microsoft_1_1_z3_1_1_native_solver.html#aec3dc0d54c803e078ebaa1a40993ea65',1,'Microsoft.Z3.NativeSolver.Trail'],['../class_microsoft_1_1_z3_1_1_solver.html#ad694bbf2994a854757ae57dbabd092d7',1,'Microsoft.Z3.Solver.Trail']]]
 ];

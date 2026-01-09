@@ -68,6 +68,6 @@ var searchData=
   ['optimizeobjective_65',['OptimizeObjective',['../classz3py_1_1_optimize_objective.html',1,'z3py']]],
   ['option_66',['option',['../namespacez3py.html#a24529bb2e06cc5bb3c5e16185920031a',1,'z3py.Option()'],['../namespacez3.html#af30604d694598ec88b94bff113e3edc9',1,'z3::option()']]],
   ['or_67',['or',['../classcom_1_1microsoft_1_1z3_1_1_context.html#a35c50bb9c6790abeb42bedf29f17b598',1,'com.microsoft.z3.Context.or()'],['../class_microsoft_1_1_z3_1_1_context.html#a5995fc0a54ac2b5a6d3403e5e29f27a3',1,'Microsoft.Z3.Context.Or()'],['../namespacez3py.html#a739631f0cb0800cadd694a1af542d29f',1,'z3py.Or()']]],
-  ['orelse_68',['orelse',['../classcom_1_1microsoft_1_1z3_1_1_context.html#af0af9e03443649b515ed55e803bee4a7',1,'com.microsoft.z3.Context.orElse()'],['../class_microsoft_1_1_z3_1_1_context.html#abee3d38c629c3c893c68f69a8b9f8be8',1,'Microsoft.Z3.Context.OrElse()'],['../namespacez3py.html#a6901f28460aa84e7b52647fad23f23a6',1,'z3py.OrElse()']]],
+  ['orelse_68',['orelse',['../class_microsoft_1_1_z3_1_1_context.html#abee3d38c629c3c893c68f69a8b9f8be8',1,'Microsoft.Z3.Context.OrElse()'],['../classcom_1_1microsoft_1_1z3_1_1_context.html#af0af9e03443649b515ed55e803bee4a7',1,'com.microsoft.z3.Context.orElse()'],['../namespacez3py.html#a6901f28460aa84e7b52647fad23f23a6',1,'z3py.OrElse()']]],
   ['owner_69',['owner',['../classz3py_1_1_context.html#aee6e0cd65a787643e49e447538a62770',1,'z3py::Context']]]
 ];

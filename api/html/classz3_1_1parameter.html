@@ -117,7 +117,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>class for auxiliary parameters associated with <a class="el" href="classz3_1_1func__decl.html" title="Function declaration (aka function definition). It is the signature of interpreted and uninterpreted ...">func_decl</a> The class is initialized with a <a class="el" href="classz3_1_1func__decl.html" title="Function declaration (aka function definition). It is the signature of interpreted and uninterpreted ...">func_decl</a> or application expression and an index The accessor get_expr, get_sort, ... is available depending on the value of <a class="el" href="classz3_1_1parameter.html#aa4c4178adbbce852827e9c75cd37fec6">kind()</a>. The caller is responsible to check that the kind of the parameter aligns with the call (get_expr etc). </p>
 <p>Parameters are available on some declarations to contain additional information that is not passed as arguments when a function is applied to arguments. For example, bit-vector extraction has two integer parameters. Array map has a function parameter. </p>
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02758">2758</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02781">2781</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae1c6042c1340249cc4ed5f9de5b67e51" name="ae1c6042c1340249cc4ed5f9de5b67e51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1c6042c1340249cc4ed5f9de5b67e51">&#9670;&#160;</a></span>parameter() <span class="overload">[1/2]</span></h2>
@@ -153,12 +153,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02765">2765</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2765</span>                                                    : m_decl(d), m_index(idx) { </div>
-<div class="line"><span class="lineno"> 2766</span>            <span class="keywordflow">if</span> (ctx().enable_exceptions() &amp;&amp; idx &gt;= d.num_parameters())</div>
-<div class="line"><span class="lineno"> 2767</span>                <a class="code hl_define" href="z3_09_09_8h.html#a4e66c7092099c57ea85a5a36976b0793">Z3_THROW</a>(exception(<span class="stringliteral">&quot;parameter index is out of bounds&quot;</span>));</div>
-<div class="line"><span class="lineno"> 2768</span>            m_kind = <a class="code hl_function" href="group__capi.html#ga06f2bce829343dcecd4dd368b371eb70">Z3_get_decl_parameter_kind</a>(ctx(), d, idx); </div>
-<div class="line"><span class="lineno"> 2769</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02788">2788</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2788</span>                                                    : m_decl(d), m_index(idx) { </div>
+<div class="line"><span class="lineno"> 2789</span>            <span class="keywordflow">if</span> (ctx().enable_exceptions() &amp;&amp; idx &gt;= d.num_parameters())</div>
+<div class="line"><span class="lineno"> 2790</span>                <a class="code hl_define" href="z3_09_09_8h.html#a4e66c7092099c57ea85a5a36976b0793">Z3_THROW</a>(exception(<span class="stringliteral">&quot;parameter index is out of bounds&quot;</span>));</div>
+<div class="line"><span class="lineno"> 2791</span>            m_kind = <a class="code hl_function" href="group__capi.html#ga06f2bce829343dcecd4dd368b371eb70">Z3_get_decl_parameter_kind</a>(ctx(), d, idx); </div>
+<div class="line"><span class="lineno"> 2792</span>        }</div>
 <div class="ttc" id="agroup__capi_html_ga06f2bce829343dcecd4dd368b371eb70"><div class="ttname"><a href="group__capi.html#ga06f2bce829343dcecd4dd368b371eb70">Z3_get_decl_parameter_kind</a></div><div class="ttdeci">Z3_parameter_kind Z3_API Z3_get_decl_parameter_kind(Z3_context c, Z3_func_decl d, unsigned idx)</div><div class="ttdoc">Return the parameter type associated with a declaration.</div></div>
 <div class="ttc" id="az3_09_09_8h_html_a4e66c7092099c57ea85a5a36976b0793"><div class="ttname"><a href="z3_09_09_8h.html#a4e66c7092099c57ea85a5a36976b0793">Z3_THROW</a></div><div class="ttdeci">#define Z3_THROW(x)</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00103">z3++.h:103</a></div></div>
 </div><!-- fragment -->
@@ -198,12 +198,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02770">2770</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2770</span>                                               : m_decl(e.decl()), m_index(idx) {</div>
-<div class="line"><span class="lineno"> 2771</span>            <span class="keywordflow">if</span> (ctx().enable_exceptions() &amp;&amp; idx &gt;= m_decl.<a class="code hl_function" href="classz3_1_1func__decl.html#ae451a108255298617334cb19fb1468cb">num_parameters</a>())</div>
-<div class="line"><span class="lineno"> 2772</span>                <a class="code hl_define" href="z3_09_09_8h.html#a4e66c7092099c57ea85a5a36976b0793">Z3_THROW</a>(exception(<span class="stringliteral">&quot;parameter index is out of bounds&quot;</span>));</div>
-<div class="line"><span class="lineno"> 2773</span>            m_kind = <a class="code hl_function" href="group__capi.html#ga06f2bce829343dcecd4dd368b371eb70">Z3_get_decl_parameter_kind</a>(ctx(), m_decl, idx);</div>
-<div class="line"><span class="lineno"> 2774</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02793">2793</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2793</span>                                               : m_decl(e.decl()), m_index(idx) {</div>
+<div class="line"><span class="lineno"> 2794</span>            <span class="keywordflow">if</span> (ctx().enable_exceptions() &amp;&amp; idx &gt;= m_decl.<a class="code hl_function" href="classz3_1_1func__decl.html#ae451a108255298617334cb19fb1468cb">num_parameters</a>())</div>
+<div class="line"><span class="lineno"> 2795</span>                <a class="code hl_define" href="z3_09_09_8h.html#a4e66c7092099c57ea85a5a36976b0793">Z3_THROW</a>(exception(<span class="stringliteral">&quot;parameter index is out of bounds&quot;</span>));</div>
+<div class="line"><span class="lineno"> 2796</span>            m_kind = <a class="code hl_function" href="group__capi.html#ga06f2bce829343dcecd4dd368b371eb70">Z3_get_decl_parameter_kind</a>(ctx(), m_decl, idx);</div>
+<div class="line"><span class="lineno"> 2797</span>        }</div>
 <div class="ttc" id="aclassz3_1_1func__decl_html_ae451a108255298617334cb19fb1468cb"><div class="ttname"><a href="classz3_1_1func__decl.html#ae451a108255298617334cb19fb1468cb">z3::func_decl::num_parameters</a></div><div class="ttdeci">unsigned num_parameters() const</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00793">z3++.h:793</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -232,8 +232,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02778">2778</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2778</span>{ <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#a720e261ccfd9cbeb4c440df80a5b16cd">Z3_func_decl</a> f = <a class="code hl_function" href="group__capi.html#ga10d88e23a6554e819fede71b4aad2c6b">Z3_get_decl_func_decl_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> func_decl(ctx(), f); }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02801">2801</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2801</span>{ <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#a720e261ccfd9cbeb4c440df80a5b16cd">Z3_func_decl</a> f = <a class="code hl_function" href="group__capi.html#ga10d88e23a6554e819fede71b4aad2c6b">Z3_get_decl_func_decl_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> func_decl(ctx(), f); }</div>
 <div class="ttc" id="agroup__capi_html_ga10d88e23a6554e819fede71b4aad2c6b"><div class="ttname"><a href="group__capi.html#ga10d88e23a6554e819fede71b4aad2c6b">Z3_get_decl_func_decl_parameter</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_get_decl_func_decl_parameter(Z3_context c, Z3_func_decl d, unsigned idx)</div><div class="ttdoc">Return the expression value associated with an expression parameter.</div></div>
 <div class="ttc" id="anamespace_microsoft_1_1_z3_html_a720e261ccfd9cbeb4c440df80a5b16cd"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#a720e261ccfd9cbeb4c440df80a5b16cd">Microsoft.Z3.Z3_func_decl</a></div><div class="ttdeci">System.IntPtr Z3_func_decl</div><div class="ttdef"><b>Definition</b> <a href="_native_context_8cs_source.html#l00030">NativeContext.cs:30</a></div></div>
 </div><!-- fragment -->
@@ -262,8 +262,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02781">2781</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2781</span>{ <span class="keywordtype">double</span> d = <a class="code hl_function" href="group__capi.html#gab4042d69088567b1a0445029f1b2da19">Z3_get_decl_double_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> d; }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02804">2804</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2804</span>{ <span class="keywordtype">double</span> d = <a class="code hl_function" href="group__capi.html#gab4042d69088567b1a0445029f1b2da19">Z3_get_decl_double_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> d; }</div>
 <div class="ttc" id="agroup__capi_html_gab4042d69088567b1a0445029f1b2da19"><div class="ttname"><a href="group__capi.html#gab4042d69088567b1a0445029f1b2da19">Z3_get_decl_double_parameter</a></div><div class="ttdeci">double Z3_API Z3_get_decl_double_parameter(Z3_context c, Z3_func_decl d, unsigned idx)</div><div class="ttdoc">Return the double value associated with an double parameter.</div></div>
 </div><!-- fragment -->
 </div>
@@ -291,8 +291,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02776">2776</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2776</span>{ <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> a = <a class="code hl_function" href="group__capi.html#gad3d8dc2c5458cca2f476ab599bdb10ff">Z3_get_decl_ast_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> expr(ctx(), a); }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02799">2799</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2799</span>{ <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> a = <a class="code hl_function" href="group__capi.html#gad3d8dc2c5458cca2f476ab599bdb10ff">Z3_get_decl_ast_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> expr(ctx(), a); }</div>
 <div class="ttc" id="agroup__capi_html_gad3d8dc2c5458cca2f476ab599bdb10ff"><div class="ttname"><a href="group__capi.html#gad3d8dc2c5458cca2f476ab599bdb10ff">Z3_get_decl_ast_parameter</a></div><div class="ttdeci">Z3_ast Z3_API Z3_get_decl_ast_parameter(Z3_context c, Z3_func_decl d, unsigned idx)</div><div class="ttdoc">Return the expression value associated with an expression parameter.</div></div>
 <div class="ttc" id="anamespace_microsoft_1_1_z3_html_aafac3844267f1923d666ee3c38f7d3c5"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Microsoft.Z3.Z3_ast</a></div><div class="ttdeci">System.IntPtr Z3_ast</div><div class="ttdef"><b>Definition</b> <a href="_native_context_8cs_source.html#l00028">NativeContext.cs:28</a></div></div>
 </div><!-- fragment -->
@@ -321,8 +321,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02782">2782</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2782</span>{ <span class="keywordtype">int</span> i = <a class="code hl_function" href="group__capi.html#ga6b1ec0b378372e8c5fb1b9c5eeba7d05">Z3_get_decl_int_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> i; }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02805">2805</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2805</span>{ <span class="keywordtype">int</span> i = <a class="code hl_function" href="group__capi.html#ga6b1ec0b378372e8c5fb1b9c5eeba7d05">Z3_get_decl_int_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> i; }</div>
 <div class="ttc" id="agroup__capi_html_ga6b1ec0b378372e8c5fb1b9c5eeba7d05"><div class="ttname"><a href="group__capi.html#ga6b1ec0b378372e8c5fb1b9c5eeba7d05">Z3_get_decl_int_parameter</a></div><div class="ttdeci">int Z3_API Z3_get_decl_int_parameter(Z3_context c, Z3_func_decl d, unsigned idx)</div><div class="ttdoc">Return the integer value associated with an integer parameter.</div></div>
 </div><!-- fragment -->
 </div>
@@ -350,8 +350,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02780">2780</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2780</span>{ <a class="code hl_typedef" href="group__capi.html#ga49f047b93b0282e686956678da5b86b1">Z3_string</a> s = <a class="code hl_function" href="group__capi.html#gaba656524866676feef894c59d24bfb6c">Z3_get_decl_rational_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> s; }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02803">2803</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2803</span>{ <a class="code hl_typedef" href="group__capi.html#ga49f047b93b0282e686956678da5b86b1">Z3_string</a> s = <a class="code hl_function" href="group__capi.html#gaba656524866676feef894c59d24bfb6c">Z3_get_decl_rational_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> s; }</div>
 <div class="ttc" id="agroup__capi_html_ga49f047b93b0282e686956678da5b86b1"><div class="ttname"><a href="group__capi.html#ga49f047b93b0282e686956678da5b86b1">Z3_string</a></div><div class="ttdeci">const char * Z3_string</div><div class="ttdoc">Z3 string type. It is just an alias for const char *.</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l00050">z3_api.h:50</a></div></div>
 <div class="ttc" id="agroup__capi_html_gaba656524866676feef894c59d24bfb6c"><div class="ttname"><a href="group__capi.html#gaba656524866676feef894c59d24bfb6c">Z3_get_decl_rational_parameter</a></div><div class="ttdeci">Z3_string Z3_API Z3_get_decl_rational_parameter(Z3_context c, Z3_func_decl d, unsigned idx)</div><div class="ttdoc">Return the rational value, as a string, associated with a rational parameter.</div></div>
 </div><!-- fragment -->
@@ -380,8 +380,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02777">2777</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2777</span>{ <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#ad38b64a05ac85e29a6eb4c6a95b3e59e">Z3_sort</a> s = <a class="code hl_function" href="group__capi.html#gac8f8de55126572987019526a0f6f091a">Z3_get_decl_sort_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> sort(ctx(), s); }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02800">2800</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2800</span>{ <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#ad38b64a05ac85e29a6eb4c6a95b3e59e">Z3_sort</a> s = <a class="code hl_function" href="group__capi.html#gac8f8de55126572987019526a0f6f091a">Z3_get_decl_sort_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> sort(ctx(), s); }</div>
 <div class="ttc" id="agroup__capi_html_gac8f8de55126572987019526a0f6f091a"><div class="ttname"><a href="group__capi.html#gac8f8de55126572987019526a0f6f091a">Z3_get_decl_sort_parameter</a></div><div class="ttdeci">Z3_sort Z3_API Z3_get_decl_sort_parameter(Z3_context c, Z3_func_decl d, unsigned idx)</div><div class="ttdoc">Return the sort value associated with a sort parameter.</div></div>
 <div class="ttc" id="anamespace_microsoft_1_1_z3_html_ad38b64a05ac85e29a6eb4c6a95b3e59e"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#ad38b64a05ac85e29a6eb4c6a95b3e59e">Microsoft.Z3.Z3_sort</a></div><div class="ttdeci">System.IntPtr Z3_sort</div><div class="ttdef"><b>Definition</b> <a href="_native_context_8cs_source.html#l00033">NativeContext.cs:33</a></div></div>
 </div><!-- fragment -->
@@ -412,8 +412,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02779">2779</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2779</span>{ <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#ae1d4de54642419cc601015dd6a84a83b">Z3_symbol</a> s = <a class="code hl_function" href="group__capi.html#ga2bd8f3c6ea3b81a0f95c680921faf8b1">Z3_get_decl_symbol_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> symbol(ctx(), s); }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02802">2802</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2802</span>{ <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#ae1d4de54642419cc601015dd6a84a83b">Z3_symbol</a> s = <a class="code hl_function" href="group__capi.html#ga2bd8f3c6ea3b81a0f95c680921faf8b1">Z3_get_decl_symbol_parameter</a>(ctx(), m_decl, m_index); check_error(); <span class="keywordflow">return</span> symbol(ctx(), s); }</div>
 <div class="ttc" id="agroup__capi_html_ga2bd8f3c6ea3b81a0f95c680921faf8b1"><div class="ttname"><a href="group__capi.html#ga2bd8f3c6ea3b81a0f95c680921faf8b1">Z3_get_decl_symbol_parameter</a></div><div class="ttdeci">Z3_symbol Z3_API Z3_get_decl_symbol_parameter(Z3_context c, Z3_func_decl d, unsigned idx)</div><div class="ttdoc">Return the double value associated with an double parameter.</div></div>
 <div class="ttc" id="anamespace_microsoft_1_1_z3_html_ae1d4de54642419cc601015dd6a84a83b"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#ae1d4de54642419cc601015dd6a84a83b">Microsoft.Z3.Z3_symbol</a></div><div class="ttdeci">System.IntPtr Z3_symbol</div><div class="ttdef"><b>Definition</b> <a href="_native_context_8cs_source.html#l00035">NativeContext.cs:35</a></div></div>
 </div><!-- fragment -->
@@ -442,8 +442,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02775">2775</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2775</span>{ <span class="keywordflow">return</span> m_kind; }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l02798">2798</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2798</span>{ <span class="keywordflow">return</span> m_kind; }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02407">ArithSortRef::is_int()</a>, and <a class="el" href="z3py_8py_source.html#l02393">ArithSortRef::is_real()</a>.</p>
 
@@ -452,7 +452,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Dec 20 2025 19:33:22 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Jan 9 2026 04:51:20 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
