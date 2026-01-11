@@ -73,7 +73,7 @@ var searchData=
   ['z3_5fcontext_70',['Z3_context',['../namespace_microsoft_1_1_z3.html#a4fb3eea3361754f290cdc459711c85f0',1,'Microsoft::Z3']]],
   ['z3_5fdatatype_5fsort_71',['Z3_DATATYPE_SORT',['../group__capi.html#gga4cd6ad05aba48f4b679f0c13310ed2a4a622816d18b4c8bae853a8990de37f67c',1,'z3_api.h']]],
   ['z3_5fdatatype_5fupdate_5ffield_72',['Z3_datatype_update_field',['../group__capi.html#ga48c25f01b168f1ff99d51cb2b364da5f',1,'z3_api.h']]],
-  ['z3_5fdebug_73',['z3_debug',['../namespacez3py.html#ad0ee248cf3a119c1c70fa1c2ffc31ac7',1,'z3py.z3_debug()'],['../namespacez3py.html#ae524c4f490a2de230a8266652dedd7b4',1,'z3py.Z3_DEBUG']]],
+  ['z3_5fdebug_73',['z3_debug',['../namespacez3py.html#ae524c4f490a2de230a8266652dedd7b4',1,'z3py.Z3_DEBUG'],['../namespacez3py.html#ad0ee248cf3a119c1c70fa1c2ffc31ac7',1,'z3py.z3_debug()']]],
   ['z3_5fdec_5fref_74',['Z3_dec_ref',['../group__capi.html#gaab788610635fb1c9244b101556b0ee14',1,'z3_api.h']]],
   ['z3_5fdec_5fref_5ferror_75',['Z3_DEC_REF_ERROR',['../group__capi.html#ggaa9f9e7b1b5b81381fab96debbaaa638fa11357386fa58720d218c027212717a39',1,'z3_api.h']]],
   ['z3_5fdecl_5fkind_76',['Z3_decl_kind',['../group__capi.html#ga1fe4399e5468621e2a799a680c6667cd',1,'z3_api.h']]],

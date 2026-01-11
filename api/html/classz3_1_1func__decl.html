@@ -294,24 +294,24 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04301">4301</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4301</span>                                                 {</div>
-<div class="line"><span class="lineno"> 4302</span>        sort s = <a class="code hl_function" href="classz3_1_1func__decl.html#a6ebb7dcc87b352afcba05ecc4dd6cb81">range</a>();</div>
-<div class="line"><span class="lineno"> 4303</span>        assert(s.is_datatype());</div>
-<div class="line"><span class="lineno"> 4304</span>        <span class="keywordtype">unsigned</span> n = <a class="code hl_function" href="group__capi.html#ga655a30b499ea4c4d098f697f847331bb">Z3_get_datatype_sort_num_constructors</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s);</div>
-<div class="line"><span class="lineno"> 4305</span>        <span class="keywordtype">unsigned</span> idx = 0;</div>
-<div class="line"><span class="lineno"> 4306</span>        <span class="keywordflow">for</span> (; idx &lt; n; ++idx) {</div>
-<div class="line"><span class="lineno"> 4307</span>            <a class="code hl_function" href="classz3_1_1func__decl.html#aaa6db6d157d62713318034a87998e742">func_decl</a> f(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), <a class="code hl_function" href="group__capi.html#ga6b7db7830f1e98554b7179522f8c42c4">Z3_get_datatype_sort_constructor</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s, idx));</div>
-<div class="line"><span class="lineno"> 4308</span>            <span class="keywordflow">if</span> (<span class="keywordtype">id</span>() == f.id())</div>
-<div class="line"><span class="lineno"> 4309</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno"> 4310</span>        }</div>
-<div class="line"><span class="lineno"> 4311</span>        assert(idx &lt; n);</div>
-<div class="line"><span class="lineno"> 4312</span>        n = <a class="code hl_function" href="classz3_1_1func__decl.html#aee4d64fa3964d26da195947cb36ea2b7">arity</a>();</div>
-<div class="line"><span class="lineno"> 4313</span>        <a class="code hl_typedef" href="namespacez3.html#a1e18b9d8883cbc3394d698671752e2cd">func_decl_vector</a> as(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>());</div>
-<div class="line"><span class="lineno"> 4314</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; ++i) </div>
-<div class="line"><span class="lineno"> 4315</span>            as.push_back(<a class="code hl_function" href="classz3_1_1func__decl.html#aaa6db6d157d62713318034a87998e742">func_decl</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), <a class="code hl_function" href="group__capi.html#gafadf6fcb83ba59ebbb229565a6a8a792">Z3_get_datatype_sort_constructor_accessor</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s, idx, i)));</div>
-<div class="line"><span class="lineno"> 4316</span>        <span class="keywordflow">return</span> as;</div>
-<div class="line"><span class="lineno"> 4317</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04314">4314</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4314</span>                                                 {</div>
+<div class="line"><span class="lineno"> 4315</span>        sort s = <a class="code hl_function" href="classz3_1_1func__decl.html#a6ebb7dcc87b352afcba05ecc4dd6cb81">range</a>();</div>
+<div class="line"><span class="lineno"> 4316</span>        assert(s.is_datatype());</div>
+<div class="line"><span class="lineno"> 4317</span>        <span class="keywordtype">unsigned</span> n = <a class="code hl_function" href="group__capi.html#ga655a30b499ea4c4d098f697f847331bb">Z3_get_datatype_sort_num_constructors</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s);</div>
+<div class="line"><span class="lineno"> 4318</span>        <span class="keywordtype">unsigned</span> idx = 0;</div>
+<div class="line"><span class="lineno"> 4319</span>        <span class="keywordflow">for</span> (; idx &lt; n; ++idx) {</div>
+<div class="line"><span class="lineno"> 4320</span>            <a class="code hl_function" href="classz3_1_1func__decl.html#aaa6db6d157d62713318034a87998e742">func_decl</a> f(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), <a class="code hl_function" href="group__capi.html#ga6b7db7830f1e98554b7179522f8c42c4">Z3_get_datatype_sort_constructor</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s, idx));</div>
+<div class="line"><span class="lineno"> 4321</span>            <span class="keywordflow">if</span> (<span class="keywordtype">id</span>() == f.id())</div>
+<div class="line"><span class="lineno"> 4322</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno"> 4323</span>        }</div>
+<div class="line"><span class="lineno"> 4324</span>        assert(idx &lt; n);</div>
+<div class="line"><span class="lineno"> 4325</span>        n = <a class="code hl_function" href="classz3_1_1func__decl.html#aee4d64fa3964d26da195947cb36ea2b7">arity</a>();</div>
+<div class="line"><span class="lineno"> 4326</span>        <a class="code hl_typedef" href="namespacez3.html#a1e18b9d8883cbc3394d698671752e2cd">func_decl_vector</a> as(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>());</div>
+<div class="line"><span class="lineno"> 4327</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; ++i) </div>
+<div class="line"><span class="lineno"> 4328</span>            as.push_back(<a class="code hl_function" href="classz3_1_1func__decl.html#aaa6db6d157d62713318034a87998e742">func_decl</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), <a class="code hl_function" href="group__capi.html#gafadf6fcb83ba59ebbb229565a6a8a792">Z3_get_datatype_sort_constructor_accessor</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s, idx, i)));</div>
+<div class="line"><span class="lineno"> 4329</span>        <span class="keywordflow">return</span> as;</div>
+<div class="line"><span class="lineno"> 4330</span>    }</div>
 <div class="ttc" id="aclassz3_1_1func__decl_html_a6ebb7dcc87b352afcba05ecc4dd6cb81"><div class="ttname"><a href="classz3_1_1func__decl.html#a6ebb7dcc87b352afcba05ecc4dd6cb81">z3::func_decl::range</a></div><div class="ttdeci">sort range() const</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00790">z3++.h:790</a></div></div>
 <div class="ttc" id="aclassz3_1_1func__decl_html_aaa6db6d157d62713318034a87998e742"><div class="ttname"><a href="classz3_1_1func__decl.html#aaa6db6d157d62713318034a87998e742">z3::func_decl::func_decl</a></div><div class="ttdeci">func_decl(context &amp;c)</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00779">z3++.h:779</a></div></div>
 <div class="ttc" id="aclassz3_1_1func__decl_html_aee4d64fa3964d26da195947cb36ea2b7"><div class="ttname"><a href="classz3_1_1func__decl.html#aee4d64fa3964d26da195947cb36ea2b7">z3::func_decl::arity</a></div><div class="ttdeci">unsigned arity() const</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00788">z3++.h:788</a></div></div>
@@ -350,7 +350,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  788</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga203f32e3b904955f703f61f91a8626a4">Z3_get_arity</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>); }</div>
 <div class="ttc" id="agroup__capi_html_ga203f32e3b904955f703f61f91a8626a4"><div class="ttname"><a href="group__capi.html#ga203f32e3b904955f703f61f91a8626a4">Z3_get_arity</a></div><div class="ttdeci">unsigned Z3_API Z3_get_arity(Z3_context c, Z3_func_decl d)</div><div class="ttdoc">Alias for Z3_get_domain_size.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04301">func_decl::accessors()</a>, <a class="el" href="z3_09_09_8h_source.html#l03501">fixedpoint::add_fact()</a>, <a class="el" href="z3_09_09_8h_source.html#l00789">func_decl::domain()</a>, and <a class="el" href="z3_09_09_8h_source.html#l00800">func_decl::is_const()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04314">func_decl::accessors()</a>, <a class="el" href="z3_09_09_8h_source.html#l03501">fixedpoint::add_fact()</a>, <a class="el" href="z3_09_09_8h_source.html#l00789">func_decl::domain()</a>, and <a class="el" href="z3_09_09_8h_source.html#l00800">func_decl::is_const()</a>.</p>
 
 </div>
 </div>
@@ -448,7 +448,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  786</span>{ <span class="keywordtype">unsigned</span> r = <a class="code hl_function" href="group__capi.html#gad25ad0051b0398333dbca2dc68fabbcd">Z3_get_func_decl_id</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>); <a class="code hl_function" href="classz3_1_1object.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>(); <span class="keywordflow">return</span> r; }</div>
 <div class="ttc" id="agroup__capi_html_gad25ad0051b0398333dbca2dc68fabbcd"><div class="ttname"><a href="group__capi.html#gad25ad0051b0398333dbca2dc68fabbcd">Z3_get_func_decl_id</a></div><div class="ttdeci">unsigned Z3_API Z3_get_func_decl_id(Z3_context c, Z3_func_decl f)</div><div class="ttdoc">Return a unique identifier for f.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04301">func_decl::accessors()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04314">func_decl::accessors()</a>.</p>
 
 </div>
 </div>
@@ -1099,7 +1099,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  790</span>{ <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#ad38b64a05ac85e29a6eb4c6a95b3e59e">Z3_sort</a> r = <a class="code hl_function" href="group__capi.html#ga913ecf28cd4bddc8255f77f80b6aafe9">Z3_get_range</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>); <a class="code hl_function" href="classz3_1_1object.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>(); <span class="keywordflow">return</span> sort(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r); }</div>
 <div class="ttc" id="agroup__capi_html_ga913ecf28cd4bddc8255f77f80b6aafe9"><div class="ttname"><a href="group__capi.html#ga913ecf28cd4bddc8255f77f80b6aafe9">Z3_get_range</a></div><div class="ttdeci">Z3_sort Z3_API Z3_get_range(Z3_context c, Z3_func_decl d)</div><div class="ttdoc">Return the range of the given declaration.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04301">func_decl::accessors()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04314">func_decl::accessors()</a>.</p>
 
 </div>
 </div>
@@ -1138,7 +1138,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 9 2026 17:49:21 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Jan 11 2026 05:03:25 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
