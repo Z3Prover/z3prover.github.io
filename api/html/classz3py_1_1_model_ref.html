@@ -159,7 +159,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Model/Solution of a satisfiability problem (aka system of constraints).</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06514">6514</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06558">6558</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa1756102172c41a2c2b3b05ac69cb929" name="aa1756102172c41a2c2b3b05ac69cb929"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1756102172c41a2c2b3b05ac69cb929">&#9670;&#160;</a></span>__init__()</h2>
@@ -193,13 +193,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06517">6517</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6517</span>    <span class="keyword">def </span>__init__(self, m, ctx):</div>
-<div class="line"><span class="lineno"> 6518</span>        <span class="keyword">assert</span> ctx <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno"> 6519</span>        self.model = m</div>
-<div class="line"><span class="lineno"> 6520</span>        self.ctx = ctx</div>
-<div class="line"><span class="lineno"> 6521</span>        <a class="code hl_function" href="group__capi.html#gada5c667b1654f6dc382ad36edb079548">Z3_model_inc_ref</a>(self.ctx.ref(), self.model)</div>
-<div class="line"><span class="lineno"> 6522</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06561">6561</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6561</span>    <span class="keyword">def </span>__init__(self, m, ctx):</div>
+<div class="line"><span class="lineno"> 6562</span>        <span class="keyword">assert</span> ctx <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno"> 6563</span>        self.model = m</div>
+<div class="line"><span class="lineno"> 6564</span>        self.ctx = ctx</div>
+<div class="line"><span class="lineno"> 6565</span>        <a class="code hl_function" href="group__capi.html#gada5c667b1654f6dc382ad36edb079548">Z3_model_inc_ref</a>(self.ctx.ref(), self.model)</div>
+<div class="line"><span class="lineno"> 6566</span> </div>
 <div class="ttc" id="agroup__capi_html_gada5c667b1654f6dc382ad36edb079548"><div class="ttname"><a href="group__capi.html#gada5c667b1654f6dc382ad36edb079548">Z3_model_inc_ref</a></div><div class="ttdeci">void Z3_API Z3_model_inc_ref(Z3_context c, Z3_model m)</div><div class="ttdoc">Increment the reference counter of the given model.</div></div>
 </div><!-- fragment -->
 </div>
@@ -220,11 +220,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06523">6523</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6523</span>    <span class="keyword">def </span>__del__(self):</div>
-<div class="line"><span class="lineno"> 6524</span>        <span class="keywordflow">if</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_model_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 6525</span>            <a class="code hl_function" href="group__capi.html#ga5ff7387b02b5caa99aecd61b67a69cb4">Z3_model_dec_ref</a>(self.ctx.ref(), self.model)</div>
-<div class="line"><span class="lineno"> 6526</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06567">6567</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6567</span>    <span class="keyword">def </span>__del__(self):</div>
+<div class="line"><span class="lineno"> 6568</span>        <span class="keywordflow">if</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_model_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 6569</span>            <a class="code hl_function" href="group__capi.html#ga5ff7387b02b5caa99aecd61b67a69cb4">Z3_model_dec_ref</a>(self.ctx.ref(), self.model)</div>
+<div class="line"><span class="lineno"> 6570</span> </div>
 <div class="ttc" id="agroup__capi_html_ga5ff7387b02b5caa99aecd61b67a69cb4"><div class="ttname"><a href="group__capi.html#ga5ff7387b02b5caa99aecd61b67a69cb4">Z3_model_dec_ref</a></div><div class="ttdeci">void Z3_API Z3_model_dec_ref(Z3_context c, Z3_model m)</div><div class="ttdoc">Decrement the reference counter of the given model.</div></div>
 </div><!-- fragment -->
 </div>
@@ -246,10 +246,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06853">6853</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6853</span>    <span class="keyword">def </span>__copy__(self):</div>
-<div class="line"><span class="lineno"> 6854</span>        <span class="keywordflow">return</span> self.translate(self.ctx)</div>
-<div class="line"><span class="lineno"> 6855</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06897">6897</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6897</span>    <span class="keyword">def </span>__copy__(self):</div>
+<div class="line"><span class="lineno"> 6898</span>        <span class="keywordflow">return</span> self.translate(self.ctx)</div>
+<div class="line"><span class="lineno"> 6899</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -279,11 +279,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06856">6856</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6856</span>    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
-<div class="line"><span class="lineno"> 6857</span>        <span class="keywordflow">return</span> self.translate(self.ctx)</div>
-<div class="line"><span class="lineno"> 6858</span> </div>
-<div class="line"><span class="lineno"> 6859</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06900">6900</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6900</span>    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
+<div class="line"><span class="lineno"> 6901</span>        <span class="keywordflow">return</span> self.translate(self.ctx)</div>
+<div class="line"><span class="lineno"> 6902</span> </div>
+<div class="line"><span class="lineno"> 6903</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -338,52 +338,52 @@ f
 x -&gt; 1
 f -&gt; [else -&gt; 0]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06735">6735</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6735</span>    <span class="keyword">def </span>__getitem__(self, idx):</div>
-<div class="line"><span class="lineno"> 6736</span>        <span class="stringliteral">&quot;&quot;&quot;If `idx` is an integer, then the declaration at position `idx` in the model `self` is returned.</span></div>
-<div class="line"><span class="lineno"> 6737</span><span class="stringliteral">        If `idx` is a declaration, then the actual interpretation is returned.</span></div>
-<div class="line"><span class="lineno"> 6738</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 6739</span><span class="stringliteral">        The elements can be retrieved using position or the actual declaration.</span></div>
-<div class="line"><span class="lineno"> 6740</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 6741</span><span class="stringliteral">        &gt;&gt;&gt; f = Function(&#39;f&#39;, IntSort(), IntSort())</span></div>
-<div class="line"><span class="lineno"> 6742</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 6743</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 6744</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, x &lt; 2, f(x) == 0)</span></div>
-<div class="line"><span class="lineno"> 6745</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 6746</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 6747</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
-<div class="line"><span class="lineno"> 6748</span><span class="stringliteral">        &gt;&gt;&gt; len(m)</span></div>
-<div class="line"><span class="lineno"> 6749</span><span class="stringliteral">        2</span></div>
-<div class="line"><span class="lineno"> 6750</span><span class="stringliteral">        &gt;&gt;&gt; m[0]</span></div>
-<div class="line"><span class="lineno"> 6751</span><span class="stringliteral">        x</span></div>
-<div class="line"><span class="lineno"> 6752</span><span class="stringliteral">        &gt;&gt;&gt; m[1]</span></div>
-<div class="line"><span class="lineno"> 6753</span><span class="stringliteral">        f</span></div>
-<div class="line"><span class="lineno"> 6754</span><span class="stringliteral">        &gt;&gt;&gt; m[x]</span></div>
-<div class="line"><span class="lineno"> 6755</span><span class="stringliteral">        1</span></div>
-<div class="line"><span class="lineno"> 6756</span><span class="stringliteral">        &gt;&gt;&gt; m[f]</span></div>
-<div class="line"><span class="lineno"> 6757</span><span class="stringliteral">        [else -&gt; 0]</span></div>
-<div class="line"><span class="lineno"> 6758</span><span class="stringliteral">        &gt;&gt;&gt; for d in m: print(&quot;%s -&gt; %s&quot; % (d, m[d]))</span></div>
-<div class="line"><span class="lineno"> 6759</span><span class="stringliteral">        x -&gt; 1</span></div>
-<div class="line"><span class="lineno"> 6760</span><span class="stringliteral">        f -&gt; [else -&gt; 0]</span></div>
-<div class="line"><span class="lineno"> 6761</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6762</span>        <span class="keywordflow">if</span> _is_int(idx):</div>
-<div class="line"><span class="lineno"> 6763</span>            <span class="keywordflow">if</span> idx &gt;= len(self):</div>
-<div class="line"><span class="lineno"> 6764</span>                <span class="keywordflow">raise</span> IndexError</div>
-<div class="line"><span class="lineno"> 6765</span>            num_consts = <a class="code hl_function" href="group__capi.html#ga3ff26c1c0f55d17ebf2c152a74eac743">Z3_model_get_num_consts</a>(self.ctx.ref(), self.model)</div>
-<div class="line"><span class="lineno"> 6766</span>            <span class="keywordflow">if</span> (idx &lt; num_consts):</div>
-<div class="line"><span class="lineno"> 6767</span>                <span class="keywordflow">return</span> FuncDeclRef(<a class="code hl_function" href="group__capi.html#ga8e70ac56fe6748301b7776191395184a">Z3_model_get_const_decl</a>(self.ctx.ref(), self.model, idx), self.ctx)</div>
-<div class="line"><span class="lineno"> 6768</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 6769</span>                <span class="keywordflow">return</span> FuncDeclRef(<a class="code hl_function" href="group__capi.html#ga2a1a4524289574ae34ce2eecdade84d7">Z3_model_get_func_decl</a>(self.ctx.ref(), self.model, idx - num_consts), self.ctx)</div>
-<div class="line"><span class="lineno"> 6770</span>        <span class="keywordflow">if</span> isinstance(idx, FuncDeclRef):</div>
-<div class="line"><span class="lineno"> 6771</span>            <span class="keywordflow">return</span> self.get_interp(idx)</div>
-<div class="line"><span class="lineno"> 6772</span>        <span class="keywordflow">if</span> is_const(idx):</div>
-<div class="line"><span class="lineno"> 6773</span>            <span class="keywordflow">return</span> self.get_interp(idx.decl())</div>
-<div class="line"><span class="lineno"> 6774</span>        <span class="keywordflow">if</span> isinstance(idx, SortRef):</div>
-<div class="line"><span class="lineno"> 6775</span>            <span class="keywordflow">return</span> self.get_universe(idx)</div>
-<div class="line"><span class="lineno"> 6776</span>        <span class="keywordflow">if</span> z3_debug():</div>
-<div class="line"><span class="lineno"> 6777</span>            _z3_assert(<span class="keyword">False</span>, <span class="stringliteral">&quot;Integer, Z3 declaration, or Z3 constant expected&quot;</span>)</div>
-<div class="line"><span class="lineno"> 6778</span>        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno"> 6779</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06779">6779</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6779</span>    <span class="keyword">def </span>__getitem__(self, idx):</div>
+<div class="line"><span class="lineno"> 6780</span>        <span class="stringliteral">&quot;&quot;&quot;If `idx` is an integer, then the declaration at position `idx` in the model `self` is returned.</span></div>
+<div class="line"><span class="lineno"> 6781</span><span class="stringliteral">        If `idx` is a declaration, then the actual interpretation is returned.</span></div>
+<div class="line"><span class="lineno"> 6782</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6783</span><span class="stringliteral">        The elements can be retrieved using position or the actual declaration.</span></div>
+<div class="line"><span class="lineno"> 6784</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6785</span><span class="stringliteral">        &gt;&gt;&gt; f = Function(&#39;f&#39;, IntSort(), IntSort())</span></div>
+<div class="line"><span class="lineno"> 6786</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 6787</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 6788</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, x &lt; 2, f(x) == 0)</span></div>
+<div class="line"><span class="lineno"> 6789</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 6790</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 6791</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
+<div class="line"><span class="lineno"> 6792</span><span class="stringliteral">        &gt;&gt;&gt; len(m)</span></div>
+<div class="line"><span class="lineno"> 6793</span><span class="stringliteral">        2</span></div>
+<div class="line"><span class="lineno"> 6794</span><span class="stringliteral">        &gt;&gt;&gt; m[0]</span></div>
+<div class="line"><span class="lineno"> 6795</span><span class="stringliteral">        x</span></div>
+<div class="line"><span class="lineno"> 6796</span><span class="stringliteral">        &gt;&gt;&gt; m[1]</span></div>
+<div class="line"><span class="lineno"> 6797</span><span class="stringliteral">        f</span></div>
+<div class="line"><span class="lineno"> 6798</span><span class="stringliteral">        &gt;&gt;&gt; m[x]</span></div>
+<div class="line"><span class="lineno"> 6799</span><span class="stringliteral">        1</span></div>
+<div class="line"><span class="lineno"> 6800</span><span class="stringliteral">        &gt;&gt;&gt; m[f]</span></div>
+<div class="line"><span class="lineno"> 6801</span><span class="stringliteral">        [else -&gt; 0]</span></div>
+<div class="line"><span class="lineno"> 6802</span><span class="stringliteral">        &gt;&gt;&gt; for d in m: print(&quot;%s -&gt; %s&quot; % (d, m[d]))</span></div>
+<div class="line"><span class="lineno"> 6803</span><span class="stringliteral">        x -&gt; 1</span></div>
+<div class="line"><span class="lineno"> 6804</span><span class="stringliteral">        f -&gt; [else -&gt; 0]</span></div>
+<div class="line"><span class="lineno"> 6805</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6806</span>        <span class="keywordflow">if</span> _is_int(idx):</div>
+<div class="line"><span class="lineno"> 6807</span>            <span class="keywordflow">if</span> idx &gt;= len(self):</div>
+<div class="line"><span class="lineno"> 6808</span>                <span class="keywordflow">raise</span> IndexError</div>
+<div class="line"><span class="lineno"> 6809</span>            num_consts = <a class="code hl_function" href="group__capi.html#ga3ff26c1c0f55d17ebf2c152a74eac743">Z3_model_get_num_consts</a>(self.ctx.ref(), self.model)</div>
+<div class="line"><span class="lineno"> 6810</span>            <span class="keywordflow">if</span> (idx &lt; num_consts):</div>
+<div class="line"><span class="lineno"> 6811</span>                <span class="keywordflow">return</span> FuncDeclRef(<a class="code hl_function" href="group__capi.html#ga8e70ac56fe6748301b7776191395184a">Z3_model_get_const_decl</a>(self.ctx.ref(), self.model, idx), self.ctx)</div>
+<div class="line"><span class="lineno"> 6812</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 6813</span>                <span class="keywordflow">return</span> FuncDeclRef(<a class="code hl_function" href="group__capi.html#ga2a1a4524289574ae34ce2eecdade84d7">Z3_model_get_func_decl</a>(self.ctx.ref(), self.model, idx - num_consts), self.ctx)</div>
+<div class="line"><span class="lineno"> 6814</span>        <span class="keywordflow">if</span> isinstance(idx, FuncDeclRef):</div>
+<div class="line"><span class="lineno"> 6815</span>            <span class="keywordflow">return</span> self.get_interp(idx)</div>
+<div class="line"><span class="lineno"> 6816</span>        <span class="keywordflow">if</span> is_const(idx):</div>
+<div class="line"><span class="lineno"> 6817</span>            <span class="keywordflow">return</span> self.get_interp(idx.decl())</div>
+<div class="line"><span class="lineno"> 6818</span>        <span class="keywordflow">if</span> isinstance(idx, SortRef):</div>
+<div class="line"><span class="lineno"> 6819</span>            <span class="keywordflow">return</span> self.get_universe(idx)</div>
+<div class="line"><span class="lineno"> 6820</span>        <span class="keywordflow">if</span> z3_debug():</div>
+<div class="line"><span class="lineno"> 6821</span>            _z3_assert(<span class="keyword">False</span>, <span class="stringliteral">&quot;Integer, Z3 declaration, or Z3 constant expected&quot;</span>)</div>
+<div class="line"><span class="lineno"> 6822</span>        <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno"> 6823</span> </div>
 <div class="ttc" id="agroup__capi_html_ga2a1a4524289574ae34ce2eecdade84d7"><div class="ttname"><a href="group__capi.html#ga2a1a4524289574ae34ce2eecdade84d7">Z3_model_get_func_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_model_get_func_decl(Z3_context c, Z3_model m, unsigned i)</div><div class="ttdoc">Return the declaration of the i-th function in the given model.</div></div>
 <div class="ttc" id="agroup__capi_html_ga3ff26c1c0f55d17ebf2c152a74eac743"><div class="ttname"><a href="group__capi.html#ga3ff26c1c0f55d17ebf2c152a74eac743">Z3_model_get_num_consts</a></div><div class="ttdeci">unsigned Z3_API Z3_model_get_num_consts(Z3_context c, Z3_model m)</div><div class="ttdoc">Return the number of constants assigned by the given model.</div></div>
 <div class="ttc" id="agroup__capi_html_ga8e70ac56fe6748301b7776191395184a"><div class="ttname"><a href="group__capi.html#ga8e70ac56fe6748301b7776191395184a">Z3_model_get_const_decl</a></div><div class="ttdeci">Z3_func_decl Z3_API Z3_model_get_const_decl(Z3_context c, Z3_model m, unsigned i)</div><div class="ttdoc">Return the i-th constant in the given model.</div></div>
@@ -417,27 +417,27 @@ sat
 &gt;&gt;&gt; len(m)
 2
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06591">6591</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6591</span>    <span class="keyword">def </span>__len__(self):</div>
-<div class="line"><span class="lineno"> 6592</span>        <span class="stringliteral">&quot;&quot;&quot;Return the number of constant and function declarations in the model `self`.</span></div>
-<div class="line"><span class="lineno"> 6593</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 6594</span><span class="stringliteral">        &gt;&gt;&gt; f = Function(&#39;f&#39;, IntSort(), IntSort())</span></div>
-<div class="line"><span class="lineno"> 6595</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 6596</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 6597</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, f(x) != x)</span></div>
-<div class="line"><span class="lineno"> 6598</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 6599</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 6600</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
-<div class="line"><span class="lineno"> 6601</span><span class="stringliteral">        &gt;&gt;&gt; len(m)</span></div>
-<div class="line"><span class="lineno"> 6602</span><span class="stringliteral">        2</span></div>
-<div class="line"><span class="lineno"> 6603</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6604</span>        num_consts = int(<a class="code hl_function" href="group__capi.html#ga3ff26c1c0f55d17ebf2c152a74eac743">Z3_model_get_num_consts</a>(self.ctx.ref(), self.model))</div>
-<div class="line"><span class="lineno"> 6605</span>        num_funcs = int(<a class="code hl_function" href="group__capi.html#gaab062a06c0789b432885f4813dd9633b">Z3_model_get_num_funcs</a>(self.ctx.ref(), self.model))</div>
-<div class="line"><span class="lineno"> 6606</span>        <span class="keywordflow">return</span> num_consts + num_funcs</div>
-<div class="line"><span class="lineno"> 6607</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06635">6635</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6635</span>    <span class="keyword">def </span>__len__(self):</div>
+<div class="line"><span class="lineno"> 6636</span>        <span class="stringliteral">&quot;&quot;&quot;Return the number of constant and function declarations in the model `self`.</span></div>
+<div class="line"><span class="lineno"> 6637</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6638</span><span class="stringliteral">        &gt;&gt;&gt; f = Function(&#39;f&#39;, IntSort(), IntSort())</span></div>
+<div class="line"><span class="lineno"> 6639</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 6640</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 6641</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, f(x) != x)</span></div>
+<div class="line"><span class="lineno"> 6642</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 6643</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 6644</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
+<div class="line"><span class="lineno"> 6645</span><span class="stringliteral">        &gt;&gt;&gt; len(m)</span></div>
+<div class="line"><span class="lineno"> 6646</span><span class="stringliteral">        2</span></div>
+<div class="line"><span class="lineno"> 6647</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6648</span>        num_consts = int(<a class="code hl_function" href="group__capi.html#ga3ff26c1c0f55d17ebf2c152a74eac743">Z3_model_get_num_consts</a>(self.ctx.ref(), self.model))</div>
+<div class="line"><span class="lineno"> 6649</span>        num_funcs = int(<a class="code hl_function" href="group__capi.html#gaab062a06c0789b432885f4813dd9633b">Z3_model_get_num_funcs</a>(self.ctx.ref(), self.model))</div>
+<div class="line"><span class="lineno"> 6650</span>        <span class="keywordflow">return</span> num_consts + num_funcs</div>
+<div class="line"><span class="lineno"> 6651</span> </div>
 <div class="ttc" id="agroup__capi_html_gaab062a06c0789b432885f4813dd9633b"><div class="ttname"><a href="group__capi.html#gaab062a06c0789b432885f4813dd9633b">Z3_model_get_num_funcs</a></div><div class="ttdeci">unsigned Z3_API Z3_model_get_num_funcs(Z3_context c, Z3_model m)</div><div class="ttdoc">Return the number of function interpretations in the given model.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06033">AstVector.__getitem__()</a>, and <a class="el" href="z3py_8py_source.html#l06062">AstVector.__setitem__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06077">AstVector.__getitem__()</a>, and <a class="el" href="z3py_8py_source.html#l06106">AstVector.__setitem__()</a>.</p>
 
 </div>
 </div>
@@ -457,10 +457,10 @@ sat
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06527">6527</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6527</span>    <span class="keyword">def </span>__repr__(self):</div>
-<div class="line"><span class="lineno"> 6528</span>        <span class="keywordflow">return</span> obj_to_string(self)</div>
-<div class="line"><span class="lineno"> 6529</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06571">6571</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6571</span>    <span class="keyword">def </span>__repr__(self):</div>
+<div class="line"><span class="lineno"> 6572</span>        <span class="keywordflow">return</span> obj_to_string(self)</div>
+<div class="line"><span class="lineno"> 6573</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -490,26 +490,26 @@ sat
 &gt;&gt;&gt; m.decls()
 [x, f]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06780">6780</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6780</span>    <span class="keyword">def </span>decls(self):</div>
-<div class="line"><span class="lineno"> 6781</span>        <span class="stringliteral">&quot;&quot;&quot;Return a list with all symbols that have an interpretation in the model `self`.</span></div>
-<div class="line"><span class="lineno"> 6782</span><span class="stringliteral">        &gt;&gt;&gt; f = Function(&#39;f&#39;, IntSort(), IntSort())</span></div>
-<div class="line"><span class="lineno"> 6783</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 6784</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 6785</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, x &lt; 2, f(x) == 0)</span></div>
-<div class="line"><span class="lineno"> 6786</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 6787</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 6788</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
-<div class="line"><span class="lineno"> 6789</span><span class="stringliteral">        &gt;&gt;&gt; m.decls()</span></div>
-<div class="line"><span class="lineno"> 6790</span><span class="stringliteral">        [x, f]</span></div>
-<div class="line"><span class="lineno"> 6791</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6792</span>        r = []</div>
-<div class="line"><span class="lineno"> 6793</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(<a class="code hl_function" href="group__capi.html#ga3ff26c1c0f55d17ebf2c152a74eac743">Z3_model_get_num_consts</a>(self.ctx.ref(), self.model)):</div>
-<div class="line"><span class="lineno"> 6794</span>            r.append(FuncDeclRef(<a class="code hl_function" href="group__capi.html#ga8e70ac56fe6748301b7776191395184a">Z3_model_get_const_decl</a>(self.ctx.ref(), self.model, i), self.ctx))</div>
-<div class="line"><span class="lineno"> 6795</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(<a class="code hl_function" href="group__capi.html#gaab062a06c0789b432885f4813dd9633b">Z3_model_get_num_funcs</a>(self.ctx.ref(), self.model)):</div>
-<div class="line"><span class="lineno"> 6796</span>            r.append(FuncDeclRef(<a class="code hl_function" href="group__capi.html#ga2a1a4524289574ae34ce2eecdade84d7">Z3_model_get_func_decl</a>(self.ctx.ref(), self.model, i), self.ctx))</div>
-<div class="line"><span class="lineno"> 6797</span>        <span class="keywordflow">return</span> r</div>
-<div class="line"><span class="lineno"> 6798</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06824">6824</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6824</span>    <span class="keyword">def </span>decls(self):</div>
+<div class="line"><span class="lineno"> 6825</span>        <span class="stringliteral">&quot;&quot;&quot;Return a list with all symbols that have an interpretation in the model `self`.</span></div>
+<div class="line"><span class="lineno"> 6826</span><span class="stringliteral">        &gt;&gt;&gt; f = Function(&#39;f&#39;, IntSort(), IntSort())</span></div>
+<div class="line"><span class="lineno"> 6827</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 6828</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 6829</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, x &lt; 2, f(x) == 0)</span></div>
+<div class="line"><span class="lineno"> 6830</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 6831</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 6832</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
+<div class="line"><span class="lineno"> 6833</span><span class="stringliteral">        &gt;&gt;&gt; m.decls()</span></div>
+<div class="line"><span class="lineno"> 6834</span><span class="stringliteral">        [x, f]</span></div>
+<div class="line"><span class="lineno"> 6835</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6836</span>        r = []</div>
+<div class="line"><span class="lineno"> 6837</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(<a class="code hl_function" href="group__capi.html#ga3ff26c1c0f55d17ebf2c152a74eac743">Z3_model_get_num_consts</a>(self.ctx.ref(), self.model)):</div>
+<div class="line"><span class="lineno"> 6838</span>            r.append(FuncDeclRef(<a class="code hl_function" href="group__capi.html#ga8e70ac56fe6748301b7776191395184a">Z3_model_get_const_decl</a>(self.ctx.ref(), self.model, i), self.ctx))</div>
+<div class="line"><span class="lineno"> 6839</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(<a class="code hl_function" href="group__capi.html#gaab062a06c0789b432885f4813dd9633b">Z3_model_get_num_funcs</a>(self.ctx.ref(), self.model)):</div>
+<div class="line"><span class="lineno"> 6840</span>            r.append(FuncDeclRef(<a class="code hl_function" href="group__capi.html#ga2a1a4524289574ae34ce2eecdade84d7">Z3_model_get_func_decl</a>(self.ctx.ref(), self.model, i), self.ctx))</div>
+<div class="line"><span class="lineno"> 6841</span>        <span class="keywordflow">return</span> r</div>
+<div class="line"><span class="lineno"> 6842</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -569,41 +569,41 @@ y
 &gt;&gt;&gt; m.eval(y + x)
 1
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06534">6534</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6534</span>    <span class="keyword">def </span>eval(self, t, model_completion=False):</div>
-<div class="line"><span class="lineno"> 6535</span>        <span class="stringliteral">&quot;&quot;&quot;Evaluate the expression `t` in the model `self`.</span></div>
-<div class="line"><span class="lineno"> 6536</span><span class="stringliteral">        If `model_completion` is enabled, then a default interpretation is automatically added</span></div>
-<div class="line"><span class="lineno"> 6537</span><span class="stringliteral">        for symbols that do not have an interpretation in the model `self`.</span></div>
-<div class="line"><span class="lineno"> 6538</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 6539</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 6540</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 6541</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, x &lt; 2)</span></div>
-<div class="line"><span class="lineno"> 6542</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 6543</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 6544</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
-<div class="line"><span class="lineno"> 6545</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(x + 1)</span></div>
-<div class="line"><span class="lineno"> 6546</span><span class="stringliteral">        2</span></div>
-<div class="line"><span class="lineno"> 6547</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(x == 1)</span></div>
-<div class="line"><span class="lineno"> 6548</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 6549</span><span class="stringliteral">        &gt;&gt;&gt; y = Int(&#39;y&#39;)</span></div>
-<div class="line"><span class="lineno"> 6550</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(y + x)</span></div>
-<div class="line"><span class="lineno"> 6551</span><span class="stringliteral">        1 + y</span></div>
-<div class="line"><span class="lineno"> 6552</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(y)</span></div>
-<div class="line"><span class="lineno"> 6553</span><span class="stringliteral">        y</span></div>
-<div class="line"><span class="lineno"> 6554</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(y, model_completion=True)</span></div>
-<div class="line"><span class="lineno"> 6555</span><span class="stringliteral">        0</span></div>
-<div class="line"><span class="lineno"> 6556</span><span class="stringliteral">        &gt;&gt;&gt; # Now, m contains an interpretation for y</span></div>
-<div class="line"><span class="lineno"> 6557</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(y + x)</span></div>
-<div class="line"><span class="lineno"> 6558</span><span class="stringliteral">        1</span></div>
-<div class="line"><span class="lineno"> 6559</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6560</span>        r = (Ast * 1)()</div>
-<div class="line"><span class="lineno"> 6561</span>        <span class="keywordflow">if</span> <a class="code hl_function" href="group__capi.html#gaa5dea7e5fd3fc8be460a7f9dc0692533">Z3_model_eval</a>(self.ctx.ref(), self.model, t.as_ast(), model_completion, r):</div>
-<div class="line"><span class="lineno"> 6562</span>            <span class="keywordflow">return</span> _to_expr_ref(r[0], self.ctx)</div>
-<div class="line"><span class="lineno"> 6563</span>        <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;failed to evaluate expression in the model&quot;</span>)</div>
-<div class="line"><span class="lineno"> 6564</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06578">6578</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6578</span>    <span class="keyword">def </span>eval(self, t, model_completion=False):</div>
+<div class="line"><span class="lineno"> 6579</span>        <span class="stringliteral">&quot;&quot;&quot;Evaluate the expression `t` in the model `self`.</span></div>
+<div class="line"><span class="lineno"> 6580</span><span class="stringliteral">        If `model_completion` is enabled, then a default interpretation is automatically added</span></div>
+<div class="line"><span class="lineno"> 6581</span><span class="stringliteral">        for symbols that do not have an interpretation in the model `self`.</span></div>
+<div class="line"><span class="lineno"> 6582</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6583</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 6584</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 6585</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, x &lt; 2)</span></div>
+<div class="line"><span class="lineno"> 6586</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 6587</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 6588</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
+<div class="line"><span class="lineno"> 6589</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(x + 1)</span></div>
+<div class="line"><span class="lineno"> 6590</span><span class="stringliteral">        2</span></div>
+<div class="line"><span class="lineno"> 6591</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(x == 1)</span></div>
+<div class="line"><span class="lineno"> 6592</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 6593</span><span class="stringliteral">        &gt;&gt;&gt; y = Int(&#39;y&#39;)</span></div>
+<div class="line"><span class="lineno"> 6594</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(y + x)</span></div>
+<div class="line"><span class="lineno"> 6595</span><span class="stringliteral">        1 + y</span></div>
+<div class="line"><span class="lineno"> 6596</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(y)</span></div>
+<div class="line"><span class="lineno"> 6597</span><span class="stringliteral">        y</span></div>
+<div class="line"><span class="lineno"> 6598</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(y, model_completion=True)</span></div>
+<div class="line"><span class="lineno"> 6599</span><span class="stringliteral">        0</span></div>
+<div class="line"><span class="lineno"> 6600</span><span class="stringliteral">        &gt;&gt;&gt; # Now, m contains an interpretation for y</span></div>
+<div class="line"><span class="lineno"> 6601</span><span class="stringliteral">        &gt;&gt;&gt; m.eval(y + x)</span></div>
+<div class="line"><span class="lineno"> 6602</span><span class="stringliteral">        1</span></div>
+<div class="line"><span class="lineno"> 6603</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6604</span>        r = (Ast * 1)()</div>
+<div class="line"><span class="lineno"> 6605</span>        <span class="keywordflow">if</span> <a class="code hl_function" href="group__capi.html#gaa5dea7e5fd3fc8be460a7f9dc0692533">Z3_model_eval</a>(self.ctx.ref(), self.model, t.as_ast(), model_completion, r):</div>
+<div class="line"><span class="lineno"> 6606</span>            <span class="keywordflow">return</span> _to_expr_ref(r[0], self.ctx)</div>
+<div class="line"><span class="lineno"> 6607</span>        <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;failed to evaluate expression in the model&quot;</span>)</div>
+<div class="line"><span class="lineno"> 6608</span> </div>
 <div class="ttc" id="agroup__capi_html_gaa5dea7e5fd3fc8be460a7f9dc0692533"><div class="ttname"><a href="group__capi.html#gaa5dea7e5fd3fc8be460a7f9dc0692533">Z3_model_eval</a></div><div class="ttdeci">bool Z3_API Z3_model_eval(Z3_context c, Z3_model m, Z3_ast t, bool model_completion, Z3_ast *v)</div><div class="ttdoc">Evaluate the AST node t in the given model. Return true if succeeded, and store the result in v.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06565">ModelRef.evaluate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06609">ModelRef.evaluate()</a>.</p>
 
 </div>
 </div>
@@ -661,33 +661,33 @@ y
 &gt;&gt;&gt; m.evaluate(y + x)
 1
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06565">6565</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6565</span>    <span class="keyword">def </span>evaluate(self, t, model_completion=False):</div>
-<div class="line"><span class="lineno"> 6566</span>        <span class="stringliteral">&quot;&quot;&quot;Alias for `eval`.</span></div>
-<div class="line"><span class="lineno"> 6567</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 6568</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 6569</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 6570</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, x &lt; 2)</span></div>
-<div class="line"><span class="lineno"> 6571</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 6572</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 6573</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
-<div class="line"><span class="lineno"> 6574</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(x + 1)</span></div>
-<div class="line"><span class="lineno"> 6575</span><span class="stringliteral">        2</span></div>
-<div class="line"><span class="lineno"> 6576</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(x == 1)</span></div>
-<div class="line"><span class="lineno"> 6577</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 6578</span><span class="stringliteral">        &gt;&gt;&gt; y = Int(&#39;y&#39;)</span></div>
-<div class="line"><span class="lineno"> 6579</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(y + x)</span></div>
-<div class="line"><span class="lineno"> 6580</span><span class="stringliteral">        1 + y</span></div>
-<div class="line"><span class="lineno"> 6581</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(y)</span></div>
-<div class="line"><span class="lineno"> 6582</span><span class="stringliteral">        y</span></div>
-<div class="line"><span class="lineno"> 6583</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(y, model_completion=True)</span></div>
-<div class="line"><span class="lineno"> 6584</span><span class="stringliteral">        0</span></div>
-<div class="line"><span class="lineno"> 6585</span><span class="stringliteral">        &gt;&gt;&gt; # Now, m contains an interpretation for y</span></div>
-<div class="line"><span class="lineno"> 6586</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(y + x)</span></div>
-<div class="line"><span class="lineno"> 6587</span><span class="stringliteral">        1</span></div>
-<div class="line"><span class="lineno"> 6588</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6589</span>        <span class="keywordflow">return</span> self.eval(t, model_completion)</div>
-<div class="line"><span class="lineno"> 6590</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06609">6609</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6609</span>    <span class="keyword">def </span>evaluate(self, t, model_completion=False):</div>
+<div class="line"><span class="lineno"> 6610</span>        <span class="stringliteral">&quot;&quot;&quot;Alias for `eval`.</span></div>
+<div class="line"><span class="lineno"> 6611</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6612</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 6613</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 6614</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, x &lt; 2)</span></div>
+<div class="line"><span class="lineno"> 6615</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 6616</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 6617</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
+<div class="line"><span class="lineno"> 6618</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(x + 1)</span></div>
+<div class="line"><span class="lineno"> 6619</span><span class="stringliteral">        2</span></div>
+<div class="line"><span class="lineno"> 6620</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(x == 1)</span></div>
+<div class="line"><span class="lineno"> 6621</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 6622</span><span class="stringliteral">        &gt;&gt;&gt; y = Int(&#39;y&#39;)</span></div>
+<div class="line"><span class="lineno"> 6623</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(y + x)</span></div>
+<div class="line"><span class="lineno"> 6624</span><span class="stringliteral">        1 + y</span></div>
+<div class="line"><span class="lineno"> 6625</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(y)</span></div>
+<div class="line"><span class="lineno"> 6626</span><span class="stringliteral">        y</span></div>
+<div class="line"><span class="lineno"> 6627</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(y, model_completion=True)</span></div>
+<div class="line"><span class="lineno"> 6628</span><span class="stringliteral">        0</span></div>
+<div class="line"><span class="lineno"> 6629</span><span class="stringliteral">        &gt;&gt;&gt; # Now, m contains an interpretation for y</span></div>
+<div class="line"><span class="lineno"> 6630</span><span class="stringliteral">        &gt;&gt;&gt; m.evaluate(y + x)</span></div>
+<div class="line"><span class="lineno"> 6631</span><span class="stringliteral">        1</span></div>
+<div class="line"><span class="lineno"> 6632</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6633</span>        <span class="keywordflow">return</span> self.eval(t, model_completion)</div>
+<div class="line"><span class="lineno"> 6634</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -730,63 +730,63 @@ sat
 &gt;&gt;&gt; m[f]
 [else -&gt; 0]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06608">6608</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6608</span>    <span class="keyword">def </span>get_interp(self, decl):</div>
-<div class="line"><span class="lineno"> 6609</span>        <span class="stringliteral">&quot;&quot;&quot;Return the interpretation for a given declaration or constant.</span></div>
-<div class="line"><span class="lineno"> 6610</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 6611</span><span class="stringliteral">        &gt;&gt;&gt; f = Function(&#39;f&#39;, IntSort(), IntSort())</span></div>
-<div class="line"><span class="lineno"> 6612</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 6613</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 6614</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, x &lt; 2, f(x) == 0)</span></div>
-<div class="line"><span class="lineno"> 6615</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 6616</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 6617</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
-<div class="line"><span class="lineno"> 6618</span><span class="stringliteral">        &gt;&gt;&gt; m[x]</span></div>
-<div class="line"><span class="lineno"> 6619</span><span class="stringliteral">        1</span></div>
-<div class="line"><span class="lineno"> 6620</span><span class="stringliteral">        &gt;&gt;&gt; m[f]</span></div>
-<div class="line"><span class="lineno"> 6621</span><span class="stringliteral">        [else -&gt; 0]</span></div>
-<div class="line"><span class="lineno"> 6622</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6623</span>        <span class="keywordflow">if</span> z3_debug():</div>
-<div class="line"><span class="lineno"> 6624</span>            _z3_assert(isinstance(decl, FuncDeclRef) <span class="keywordflow">or</span> is_const(decl), <span class="stringliteral">&quot;Z3 declaration expected&quot;</span>)</div>
-<div class="line"><span class="lineno"> 6625</span>        <span class="keywordflow">if</span> is_const(decl):</div>
-<div class="line"><span class="lineno"> 6626</span>            decl = decl.decl()</div>
-<div class="line"><span class="lineno"> 6627</span>        <span class="keywordflow">try</span>:</div>
-<div class="line"><span class="lineno"> 6628</span>            <span class="keywordflow">if</span> decl.arity() == 0:</div>
-<div class="line"><span class="lineno"> 6629</span>                _r = <a class="code hl_function" href="group__capi.html#ga01bc2993f3eb358f7bd3b2d2d4cf5e51">Z3_model_get_const_interp</a>(self.ctx.ref(), self.model, decl.ast)</div>
-<div class="line"><span class="lineno"> 6630</span>                <span class="keywordflow">if</span> _r.value <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 6631</span>                    <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno"> 6632</span>                r = _to_expr_ref(_r, self.ctx)</div>
-<div class="line"><span class="lineno"> 6633</span>                <span class="keywordflow">if</span> is_as_array(r):</div>
-<div class="line"><span class="lineno"> 6634</span>                    fi = self.get_interp(get_as_array_func(r))</div>
-<div class="line"><span class="lineno"> 6635</span>                    <span class="keywordflow">if</span> fi <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 6636</span>                        <span class="keywordflow">return</span> fi                    </div>
-<div class="line"><span class="lineno"> 6637</span>                    e = fi.else_value()</div>
-<div class="line"><span class="lineno"> 6638</span>                    <span class="keywordflow">if</span> e <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 6639</span>                        <span class="keywordflow">return</span> fi</div>
-<div class="line"><span class="lineno"> 6640</span>                    <span class="keywordflow">if</span> fi.arity() != 1:</div>
-<div class="line"><span class="lineno"> 6641</span>                        <span class="keywordflow">return</span> fi</div>
-<div class="line"><span class="lineno"> 6642</span>                    srt = decl.range()</div>
-<div class="line"><span class="lineno"> 6643</span>                    dom =  srt.domain()</div>
-<div class="line"><span class="lineno"> 6644</span>                    e = K(dom, e)</div>
-<div class="line"><span class="lineno"> 6645</span>                    i = 0</div>
-<div class="line"><span class="lineno"> 6646</span>                    sz = fi.num_entries()</div>
-<div class="line"><span class="lineno"> 6647</span>                    n = fi.arity()</div>
-<div class="line"><span class="lineno"> 6648</span>                    <span class="keywordflow">while</span> i &lt; sz:</div>
-<div class="line"><span class="lineno"> 6649</span>                        fe = fi.entry(i)</div>
-<div class="line"><span class="lineno"> 6650</span>                        e = Store(e, fe.arg_value(0), fe.value())</div>
-<div class="line"><span class="lineno"> 6651</span>                        i += 1</div>
-<div class="line"><span class="lineno"> 6652</span>                    <span class="keywordflow">return</span> e</div>
-<div class="line"><span class="lineno"> 6653</span>                <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 6654</span>                    <span class="keywordflow">return</span> r</div>
-<div class="line"><span class="lineno"> 6655</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 6656</span>                <span class="keywordflow">return</span> FuncInterp(<a class="code hl_function" href="group__capi.html#gaf5e9adb229e98b29cbeb7cebf41433a3">Z3_model_get_func_interp</a>(self.ctx.ref(), self.model, decl.ast), self.ctx)</div>
-<div class="line"><span class="lineno"> 6657</span>        <span class="keywordflow">except</span> Z3Exception:</div>
-<div class="line"><span class="lineno"> 6658</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno"> 6659</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06652">6652</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6652</span>    <span class="keyword">def </span>get_interp(self, decl):</div>
+<div class="line"><span class="lineno"> 6653</span>        <span class="stringliteral">&quot;&quot;&quot;Return the interpretation for a given declaration or constant.</span></div>
+<div class="line"><span class="lineno"> 6654</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6655</span><span class="stringliteral">        &gt;&gt;&gt; f = Function(&#39;f&#39;, IntSort(), IntSort())</span></div>
+<div class="line"><span class="lineno"> 6656</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 6657</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 6658</span><span class="stringliteral">        &gt;&gt;&gt; s.add(x &gt; 0, x &lt; 2, f(x) == 0)</span></div>
+<div class="line"><span class="lineno"> 6659</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 6660</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 6661</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
+<div class="line"><span class="lineno"> 6662</span><span class="stringliteral">        &gt;&gt;&gt; m[x]</span></div>
+<div class="line"><span class="lineno"> 6663</span><span class="stringliteral">        1</span></div>
+<div class="line"><span class="lineno"> 6664</span><span class="stringliteral">        &gt;&gt;&gt; m[f]</span></div>
+<div class="line"><span class="lineno"> 6665</span><span class="stringliteral">        [else -&gt; 0]</span></div>
+<div class="line"><span class="lineno"> 6666</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6667</span>        <span class="keywordflow">if</span> z3_debug():</div>
+<div class="line"><span class="lineno"> 6668</span>            _z3_assert(isinstance(decl, FuncDeclRef) <span class="keywordflow">or</span> is_const(decl), <span class="stringliteral">&quot;Z3 declaration expected&quot;</span>)</div>
+<div class="line"><span class="lineno"> 6669</span>        <span class="keywordflow">if</span> is_const(decl):</div>
+<div class="line"><span class="lineno"> 6670</span>            decl = decl.decl()</div>
+<div class="line"><span class="lineno"> 6671</span>        <span class="keywordflow">try</span>:</div>
+<div class="line"><span class="lineno"> 6672</span>            <span class="keywordflow">if</span> decl.arity() == 0:</div>
+<div class="line"><span class="lineno"> 6673</span>                _r = <a class="code hl_function" href="group__capi.html#ga01bc2993f3eb358f7bd3b2d2d4cf5e51">Z3_model_get_const_interp</a>(self.ctx.ref(), self.model, decl.ast)</div>
+<div class="line"><span class="lineno"> 6674</span>                <span class="keywordflow">if</span> _r.value <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 6675</span>                    <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno"> 6676</span>                r = _to_expr_ref(_r, self.ctx)</div>
+<div class="line"><span class="lineno"> 6677</span>                <span class="keywordflow">if</span> is_as_array(r):</div>
+<div class="line"><span class="lineno"> 6678</span>                    fi = self.get_interp(get_as_array_func(r))</div>
+<div class="line"><span class="lineno"> 6679</span>                    <span class="keywordflow">if</span> fi <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 6680</span>                        <span class="keywordflow">return</span> fi                    </div>
+<div class="line"><span class="lineno"> 6681</span>                    e = fi.else_value()</div>
+<div class="line"><span class="lineno"> 6682</span>                    <span class="keywordflow">if</span> e <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 6683</span>                        <span class="keywordflow">return</span> fi</div>
+<div class="line"><span class="lineno"> 6684</span>                    <span class="keywordflow">if</span> fi.arity() != 1:</div>
+<div class="line"><span class="lineno"> 6685</span>                        <span class="keywordflow">return</span> fi</div>
+<div class="line"><span class="lineno"> 6686</span>                    srt = decl.range()</div>
+<div class="line"><span class="lineno"> 6687</span>                    dom =  srt.domain()</div>
+<div class="line"><span class="lineno"> 6688</span>                    e = K(dom, e)</div>
+<div class="line"><span class="lineno"> 6689</span>                    i = 0</div>
+<div class="line"><span class="lineno"> 6690</span>                    sz = fi.num_entries()</div>
+<div class="line"><span class="lineno"> 6691</span>                    n = fi.arity()</div>
+<div class="line"><span class="lineno"> 6692</span>                    <span class="keywordflow">while</span> i &lt; sz:</div>
+<div class="line"><span class="lineno"> 6693</span>                        fe = fi.entry(i)</div>
+<div class="line"><span class="lineno"> 6694</span>                        e = Store(e, fe.arg_value(0), fe.value())</div>
+<div class="line"><span class="lineno"> 6695</span>                        i += 1</div>
+<div class="line"><span class="lineno"> 6696</span>                    <span class="keywordflow">return</span> e</div>
+<div class="line"><span class="lineno"> 6697</span>                <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 6698</span>                    <span class="keywordflow">return</span> r</div>
+<div class="line"><span class="lineno"> 6699</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 6700</span>                <span class="keywordflow">return</span> FuncInterp(<a class="code hl_function" href="group__capi.html#gaf5e9adb229e98b29cbeb7cebf41433a3">Z3_model_get_func_interp</a>(self.ctx.ref(), self.model, decl.ast), self.ctx)</div>
+<div class="line"><span class="lineno"> 6701</span>        <span class="keywordflow">except</span> Z3Exception:</div>
+<div class="line"><span class="lineno"> 6702</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno"> 6703</span> </div>
 <div class="ttc" id="agroup__capi_html_ga01bc2993f3eb358f7bd3b2d2d4cf5e51"><div class="ttname"><a href="group__capi.html#ga01bc2993f3eb358f7bd3b2d2d4cf5e51">Z3_model_get_const_interp</a></div><div class="ttdeci">Z3_ast Z3_API Z3_model_get_const_interp(Z3_context c, Z3_model m, Z3_func_decl a)</div><div class="ttdoc">Return the interpretation (i.e., assignment) of constant a in the model m. Return NULL,...</div></div>
 <div class="ttc" id="agroup__capi_html_gaf5e9adb229e98b29cbeb7cebf41433a3"><div class="ttname"><a href="group__capi.html#gaf5e9adb229e98b29cbeb7cebf41433a3">Z3_model_get_func_interp</a></div><div class="ttdeci">Z3_func_interp Z3_API Z3_model_get_func_interp(Z3_context c, Z3_model m, Z3_func_decl f)</div><div class="ttdoc">Return the interpretation of the function f in the model m. Return NULL, if the model does not assign...</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06735">ModelRef.__getitem__()</a>, and <a class="el" href="z3py_8py_source.html#l06608">ModelRef.get_interp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06779">ModelRef.__getitem__()</a>, and <a class="el" href="z3py_8py_source.html#l06652">ModelRef.get_interp()</a>.</p>
 
 </div>
 </div>
@@ -833,33 +833,33 @@ A
 &gt;&gt;&gt; m.get_sort(1)
 B
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06675">6675</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6675</span>    <span class="keyword">def </span>get_sort(self, idx):</div>
-<div class="line"><span class="lineno"> 6676</span>        <span class="stringliteral">&quot;&quot;&quot;Return the uninterpreted sort at position `idx` &lt; self.num_sorts().</span></div>
-<div class="line"><span class="lineno"> 6677</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 6678</span><span class="stringliteral">        &gt;&gt;&gt; A = DeclareSort(&#39;A&#39;)</span></div>
-<div class="line"><span class="lineno"> 6679</span><span class="stringliteral">        &gt;&gt;&gt; B = DeclareSort(&#39;B&#39;)</span></div>
-<div class="line"><span class="lineno"> 6680</span><span class="stringliteral">        &gt;&gt;&gt; a1, a2 = Consts(&#39;a1 a2&#39;, A)</span></div>
-<div class="line"><span class="lineno"> 6681</span><span class="stringliteral">        &gt;&gt;&gt; b1, b2 = Consts(&#39;b1 b2&#39;, B)</span></div>
-<div class="line"><span class="lineno"> 6682</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 6683</span><span class="stringliteral">        &gt;&gt;&gt; s.add(a1 != a2, b1 != b2)</span></div>
-<div class="line"><span class="lineno"> 6684</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 6685</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 6686</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
-<div class="line"><span class="lineno"> 6687</span><span class="stringliteral">        &gt;&gt;&gt; m.num_sorts()</span></div>
-<div class="line"><span class="lineno"> 6688</span><span class="stringliteral">        2</span></div>
-<div class="line"><span class="lineno"> 6689</span><span class="stringliteral">        &gt;&gt;&gt; m.get_sort(0)</span></div>
-<div class="line"><span class="lineno"> 6690</span><span class="stringliteral">        A</span></div>
-<div class="line"><span class="lineno"> 6691</span><span class="stringliteral">        &gt;&gt;&gt; m.get_sort(1)</span></div>
-<div class="line"><span class="lineno"> 6692</span><span class="stringliteral">        B</span></div>
-<div class="line"><span class="lineno"> 6693</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6694</span>        <span class="keywordflow">if</span> idx &gt;= self.num_sorts():</div>
-<div class="line"><span class="lineno"> 6695</span>            <span class="keywordflow">raise</span> IndexError</div>
-<div class="line"><span class="lineno"> 6696</span>        <span class="keywordflow">return</span> _to_sort_ref(<a class="code hl_function" href="group__capi.html#ga66bf09e2d4ea41991705c132aae99c3e">Z3_model_get_sort</a>(self.ctx.ref(), self.model, idx), self.ctx)</div>
-<div class="line"><span class="lineno"> 6697</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06719">6719</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6719</span>    <span class="keyword">def </span>get_sort(self, idx):</div>
+<div class="line"><span class="lineno"> 6720</span>        <span class="stringliteral">&quot;&quot;&quot;Return the uninterpreted sort at position `idx` &lt; self.num_sorts().</span></div>
+<div class="line"><span class="lineno"> 6721</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6722</span><span class="stringliteral">        &gt;&gt;&gt; A = DeclareSort(&#39;A&#39;)</span></div>
+<div class="line"><span class="lineno"> 6723</span><span class="stringliteral">        &gt;&gt;&gt; B = DeclareSort(&#39;B&#39;)</span></div>
+<div class="line"><span class="lineno"> 6724</span><span class="stringliteral">        &gt;&gt;&gt; a1, a2 = Consts(&#39;a1 a2&#39;, A)</span></div>
+<div class="line"><span class="lineno"> 6725</span><span class="stringliteral">        &gt;&gt;&gt; b1, b2 = Consts(&#39;b1 b2&#39;, B)</span></div>
+<div class="line"><span class="lineno"> 6726</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 6727</span><span class="stringliteral">        &gt;&gt;&gt; s.add(a1 != a2, b1 != b2)</span></div>
+<div class="line"><span class="lineno"> 6728</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 6729</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 6730</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
+<div class="line"><span class="lineno"> 6731</span><span class="stringliteral">        &gt;&gt;&gt; m.num_sorts()</span></div>
+<div class="line"><span class="lineno"> 6732</span><span class="stringliteral">        2</span></div>
+<div class="line"><span class="lineno"> 6733</span><span class="stringliteral">        &gt;&gt;&gt; m.get_sort(0)</span></div>
+<div class="line"><span class="lineno"> 6734</span><span class="stringliteral">        A</span></div>
+<div class="line"><span class="lineno"> 6735</span><span class="stringliteral">        &gt;&gt;&gt; m.get_sort(1)</span></div>
+<div class="line"><span class="lineno"> 6736</span><span class="stringliteral">        B</span></div>
+<div class="line"><span class="lineno"> 6737</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6738</span>        <span class="keywordflow">if</span> idx &gt;= self.num_sorts():</div>
+<div class="line"><span class="lineno"> 6739</span>            <span class="keywordflow">raise</span> IndexError</div>
+<div class="line"><span class="lineno"> 6740</span>        <span class="keywordflow">return</span> _to_sort_ref(<a class="code hl_function" href="group__capi.html#ga66bf09e2d4ea41991705c132aae99c3e">Z3_model_get_sort</a>(self.ctx.ref(), self.model, idx), self.ctx)</div>
+<div class="line"><span class="lineno"> 6741</span> </div>
 <div class="ttc" id="agroup__capi_html_ga66bf09e2d4ea41991705c132aae99c3e"><div class="ttname"><a href="group__capi.html#ga66bf09e2d4ea41991705c132aae99c3e">Z3_model_get_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_model_get_sort(Z3_context c, Z3_model m, unsigned i)</div><div class="ttdoc">Return a uninterpreted sort that m assigns an interpretation.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06698">ModelRef.sorts()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06742">ModelRef.sorts()</a>.</p>
 
 </div>
 </div>
@@ -900,30 +900,30 @@ sat
 &gt;&gt;&gt; m.get_universe(A)
 [A!val!1, A!val!0]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06715">6715</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6715</span>    <span class="keyword">def </span>get_universe(self, s):</div>
-<div class="line"><span class="lineno"> 6716</span>        <span class="stringliteral">&quot;&quot;&quot;Return the interpretation for the uninterpreted sort `s` in the model `self`.</span></div>
-<div class="line"><span class="lineno"> 6717</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 6718</span><span class="stringliteral">        &gt;&gt;&gt; A = DeclareSort(&#39;A&#39;)</span></div>
-<div class="line"><span class="lineno"> 6719</span><span class="stringliteral">        &gt;&gt;&gt; a, b = Consts(&#39;a b&#39;, A)</span></div>
-<div class="line"><span class="lineno"> 6720</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 6721</span><span class="stringliteral">        &gt;&gt;&gt; s.add(a != b)</span></div>
-<div class="line"><span class="lineno"> 6722</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 6723</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 6724</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
-<div class="line"><span class="lineno"> 6725</span><span class="stringliteral">        &gt;&gt;&gt; m.get_universe(A)</span></div>
-<div class="line"><span class="lineno"> 6726</span><span class="stringliteral">        [A!val!1, A!val!0]</span></div>
-<div class="line"><span class="lineno"> 6727</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6728</span>        <span class="keywordflow">if</span> z3_debug():</div>
-<div class="line"><span class="lineno"> 6729</span>            _z3_assert(isinstance(s, SortRef), <span class="stringliteral">&quot;Z3 sort expected&quot;</span>)</div>
-<div class="line"><span class="lineno"> 6730</span>        <span class="keywordflow">try</span>:</div>
-<div class="line"><span class="lineno"> 6731</span>            <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga91cdccbcc0a37d2fc7ccb18eff055f90">Z3_model_get_sort_universe</a>(self.ctx.ref(), self.model, s.ast), self.ctx)</div>
-<div class="line"><span class="lineno"> 6732</span>        <span class="keywordflow">except</span> Z3Exception:</div>
-<div class="line"><span class="lineno"> 6733</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno"> 6734</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06759">6759</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6759</span>    <span class="keyword">def </span>get_universe(self, s):</div>
+<div class="line"><span class="lineno"> 6760</span>        <span class="stringliteral">&quot;&quot;&quot;Return the interpretation for the uninterpreted sort `s` in the model `self`.</span></div>
+<div class="line"><span class="lineno"> 6761</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6762</span><span class="stringliteral">        &gt;&gt;&gt; A = DeclareSort(&#39;A&#39;)</span></div>
+<div class="line"><span class="lineno"> 6763</span><span class="stringliteral">        &gt;&gt;&gt; a, b = Consts(&#39;a b&#39;, A)</span></div>
+<div class="line"><span class="lineno"> 6764</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 6765</span><span class="stringliteral">        &gt;&gt;&gt; s.add(a != b)</span></div>
+<div class="line"><span class="lineno"> 6766</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 6767</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 6768</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
+<div class="line"><span class="lineno"> 6769</span><span class="stringliteral">        &gt;&gt;&gt; m.get_universe(A)</span></div>
+<div class="line"><span class="lineno"> 6770</span><span class="stringliteral">        [A!val!1, A!val!0]</span></div>
+<div class="line"><span class="lineno"> 6771</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6772</span>        <span class="keywordflow">if</span> z3_debug():</div>
+<div class="line"><span class="lineno"> 6773</span>            _z3_assert(isinstance(s, SortRef), <span class="stringliteral">&quot;Z3 sort expected&quot;</span>)</div>
+<div class="line"><span class="lineno"> 6774</span>        <span class="keywordflow">try</span>:</div>
+<div class="line"><span class="lineno"> 6775</span>            <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga91cdccbcc0a37d2fc7ccb18eff055f90">Z3_model_get_sort_universe</a>(self.ctx.ref(), self.model, s.ast), self.ctx)</div>
+<div class="line"><span class="lineno"> 6776</span>        <span class="keywordflow">except</span> Z3Exception:</div>
+<div class="line"><span class="lineno"> 6777</span>            <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno"> 6778</span> </div>
 <div class="ttc" id="agroup__capi_html_ga91cdccbcc0a37d2fc7ccb18eff055f90"><div class="ttname"><a href="group__capi.html#ga91cdccbcc0a37d2fc7ccb18eff055f90">Z3_model_get_sort_universe</a></div><div class="ttdeci">Z3_ast_vector Z3_API Z3_model_get_sort_universe(Z3_context c, Z3_model m, Z3_sort s)</div><div class="ttdoc">Return the finite set of distinct values that represent the interpretation for sort s.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06735">ModelRef.__getitem__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06779">ModelRef.__getitem__()</a>.</p>
 
 </div>
 </div>
@@ -954,25 +954,25 @@ sat
 &gt;&gt;&gt; m.num_sorts()
 1
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06660">6660</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6660</span>    <span class="keyword">def </span>num_sorts(self):</div>
-<div class="line"><span class="lineno"> 6661</span>        <span class="stringliteral">&quot;&quot;&quot;Return the number of uninterpreted sorts that contain an interpretation in the model `self`.</span></div>
-<div class="line"><span class="lineno"> 6662</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 6663</span><span class="stringliteral">        &gt;&gt;&gt; A = DeclareSort(&#39;A&#39;)</span></div>
-<div class="line"><span class="lineno"> 6664</span><span class="stringliteral">        &gt;&gt;&gt; a, b = Consts(&#39;a b&#39;, A)</span></div>
-<div class="line"><span class="lineno"> 6665</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 6666</span><span class="stringliteral">        &gt;&gt;&gt; s.add(a != b)</span></div>
-<div class="line"><span class="lineno"> 6667</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 6668</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 6669</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
-<div class="line"><span class="lineno"> 6670</span><span class="stringliteral">        &gt;&gt;&gt; m.num_sorts()</span></div>
-<div class="line"><span class="lineno"> 6671</span><span class="stringliteral">        1</span></div>
-<div class="line"><span class="lineno"> 6672</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6673</span>        <span class="keywordflow">return</span> int(<a class="code hl_function" href="group__capi.html#ga49a87cb20a83255e8db0147d4d1944c6">Z3_model_get_num_sorts</a>(self.ctx.ref(), self.model))</div>
-<div class="line"><span class="lineno"> 6674</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06704">6704</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6704</span>    <span class="keyword">def </span>num_sorts(self):</div>
+<div class="line"><span class="lineno"> 6705</span>        <span class="stringliteral">&quot;&quot;&quot;Return the number of uninterpreted sorts that contain an interpretation in the model `self`.</span></div>
+<div class="line"><span class="lineno"> 6706</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6707</span><span class="stringliteral">        &gt;&gt;&gt; A = DeclareSort(&#39;A&#39;)</span></div>
+<div class="line"><span class="lineno"> 6708</span><span class="stringliteral">        &gt;&gt;&gt; a, b = Consts(&#39;a b&#39;, A)</span></div>
+<div class="line"><span class="lineno"> 6709</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 6710</span><span class="stringliteral">        &gt;&gt;&gt; s.add(a != b)</span></div>
+<div class="line"><span class="lineno"> 6711</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 6712</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 6713</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
+<div class="line"><span class="lineno"> 6714</span><span class="stringliteral">        &gt;&gt;&gt; m.num_sorts()</span></div>
+<div class="line"><span class="lineno"> 6715</span><span class="stringliteral">        1</span></div>
+<div class="line"><span class="lineno"> 6716</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6717</span>        <span class="keywordflow">return</span> int(<a class="code hl_function" href="group__capi.html#ga49a87cb20a83255e8db0147d4d1944c6">Z3_model_get_num_sorts</a>(self.ctx.ref(), self.model))</div>
+<div class="line"><span class="lineno"> 6718</span> </div>
 <div class="ttc" id="agroup__capi_html_ga49a87cb20a83255e8db0147d4d1944c6"><div class="ttname"><a href="group__capi.html#ga49a87cb20a83255e8db0147d4d1944c6">Z3_model_get_num_sorts</a></div><div class="ttdeci">unsigned Z3_API Z3_model_get_num_sorts(Z3_context c, Z3_model m)</div><div class="ttdoc">Return the number of uninterpreted sorts that m assigns an interpretation to.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06675">ModelRef.get_sort()</a>, and <a class="el" href="z3py_8py_source.html#l06698">ModelRef.sorts()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06719">ModelRef.get_sort()</a>, and <a class="el" href="z3py_8py_source.html#l06742">ModelRef.sorts()</a>.</p>
 
 </div>
 </div>
@@ -1012,19 +1012,19 @@ Assume that the model satisfies fml. Then compute a projection fml_p, such
 that vars do not occur free in fml_p, fml_p is true in the model and
 fml_p =&gt; exists vars . fml
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06829">6829</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6829</span>    <span class="keyword">def </span>project(self, vars, fml):</div>
-<div class="line"><span class="lineno"> 6830</span>        <span class="stringliteral">&quot;&quot;&quot;Perform model-based projection on fml with respect to vars.</span></div>
-<div class="line"><span class="lineno"> 6831</span><span class="stringliteral">        Assume that the model satisfies fml. Then compute a projection fml_p, such</span></div>
-<div class="line"><span class="lineno"> 6832</span><span class="stringliteral">        that vars do not occur free in fml_p, fml_p is true in the model and</span></div>
-<div class="line"><span class="lineno"> 6833</span><span class="stringliteral">        fml_p =&gt; exists vars . fml</span></div>
-<div class="line"><span class="lineno"> 6834</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6835</span>        ctx = self.ctx.ref()</div>
-<div class="line"><span class="lineno"> 6836</span>        _vars = (Ast * len(vars))()</div>
-<div class="line"><span class="lineno"> 6837</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(vars)):</div>
-<div class="line"><span class="lineno"> 6838</span>            _vars[i] = vars[i].as_ast()</div>
-<div class="line"><span class="lineno"> 6839</span>        <span class="keywordflow">return</span> _to_expr_ref(Z3_qe_model_project(ctx, self.model, len(vars), _vars, fml.ast), self.ctx)</div>
-<div class="line"><span class="lineno"> 6840</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06873">6873</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6873</span>    <span class="keyword">def </span>project(self, vars, fml):</div>
+<div class="line"><span class="lineno"> 6874</span>        <span class="stringliteral">&quot;&quot;&quot;Perform model-based projection on fml with respect to vars.</span></div>
+<div class="line"><span class="lineno"> 6875</span><span class="stringliteral">        Assume that the model satisfies fml. Then compute a projection fml_p, such</span></div>
+<div class="line"><span class="lineno"> 6876</span><span class="stringliteral">        that vars do not occur free in fml_p, fml_p is true in the model and</span></div>
+<div class="line"><span class="lineno"> 6877</span><span class="stringliteral">        fml_p =&gt; exists vars . fml</span></div>
+<div class="line"><span class="lineno"> 6878</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6879</span>        ctx = self.ctx.ref()</div>
+<div class="line"><span class="lineno"> 6880</span>        _vars = (Ast * len(vars))()</div>
+<div class="line"><span class="lineno"> 6881</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(vars)):</div>
+<div class="line"><span class="lineno"> 6882</span>            _vars[i] = vars[i].as_ast()</div>
+<div class="line"><span class="lineno"> 6883</span>        <span class="keywordflow">return</span> _to_expr_ref(Z3_qe_model_project(ctx, self.model, len(vars), _vars, fml.ast), self.ctx)</div>
+<div class="line"><span class="lineno"> 6884</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1060,19 +1060,19 @@ fml_p =&gt; exists vars . fml
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Perform model-based projection, but also include realizer terms for the projected variables</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06841">6841</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6841</span>    <span class="keyword">def </span>project_with_witness(self, vars, fml):</div>
-<div class="line"><span class="lineno"> 6842</span>        <span class="stringliteral">&quot;&quot;&quot;Perform model-based projection, but also include realizer terms for the projected variables&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6843</span>        ctx = self.ctx.ref()</div>
-<div class="line"><span class="lineno"> 6844</span>        _vars = (Ast * len(vars))()</div>
-<div class="line"><span class="lineno"> 6845</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(vars)):</div>
-<div class="line"><span class="lineno"> 6846</span>            _vars[i] = vars[i].as_ast()</div>
-<div class="line"><span class="lineno"> 6847</span>        defs = AstMap()</div>
-<div class="line"><span class="lineno"> 6848</span>        result = Z3_qe_model_project_with_witness(ctx, self.model, len(vars), _vars, fml.ast, defs.map)</div>
-<div class="line"><span class="lineno"> 6849</span>        result = _to_expr_ref(result, self.ctx)</div>
-<div class="line"><span class="lineno"> 6850</span>        <span class="keywordflow">return</span> result, defs</div>
-<div class="line"><span class="lineno"> 6851</span> </div>
-<div class="line"><span class="lineno"> 6852</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06885">6885</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6885</span>    <span class="keyword">def </span>project_with_witness(self, vars, fml):</div>
+<div class="line"><span class="lineno"> 6886</span>        <span class="stringliteral">&quot;&quot;&quot;Perform model-based projection, but also include realizer terms for the projected variables&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6887</span>        ctx = self.ctx.ref()</div>
+<div class="line"><span class="lineno"> 6888</span>        _vars = (Ast * len(vars))()</div>
+<div class="line"><span class="lineno"> 6889</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(vars)):</div>
+<div class="line"><span class="lineno"> 6890</span>            _vars[i] = vars[i].as_ast()</div>
+<div class="line"><span class="lineno"> 6891</span>        defs = AstMap()</div>
+<div class="line"><span class="lineno"> 6892</span>        result = Z3_qe_model_project_with_witness(ctx, self.model, len(vars), _vars, fml.ast, defs.map)</div>
+<div class="line"><span class="lineno"> 6893</span>        result = _to_expr_ref(result, self.ctx)</div>
+<div class="line"><span class="lineno"> 6894</span>        <span class="keywordflow">return</span> result, defs</div>
+<div class="line"><span class="lineno"> 6895</span> </div>
+<div class="line"><span class="lineno"> 6896</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1092,11 +1092,11 @@ fml_p =&gt; exists vars . fml
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a textual representation of the s-expression representing the model.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06530">6530</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6530</span>    <span class="keyword">def </span>sexpr(self):</div>
-<div class="line"><span class="lineno"> 6531</span>        <span class="stringliteral">&quot;&quot;&quot;Return a textual representation of the s-expression representing the model.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6532</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga763e521a284971875f562cebc0c24e3e">Z3_model_to_string</a>(self.ctx.ref(), self.model)</div>
-<div class="line"><span class="lineno"> 6533</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06574">6574</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6574</span>    <span class="keyword">def </span>sexpr(self):</div>
+<div class="line"><span class="lineno"> 6575</span>        <span class="stringliteral">&quot;&quot;&quot;Return a textual representation of the s-expression representing the model.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6576</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga763e521a284971875f562cebc0c24e3e">Z3_model_to_string</a>(self.ctx.ref(), self.model)</div>
+<div class="line"><span class="lineno"> 6577</span> </div>
 <div class="ttc" id="agroup__capi_html_ga763e521a284971875f562cebc0c24e3e"><div class="ttname"><a href="group__capi.html#ga763e521a284971875f562cebc0c24e3e">Z3_model_to_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_model_to_string(Z3_context c, Z3_model m)</div><div class="ttdoc">Convert the given model into a string.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1130,24 +1130,24 @@ sat
 &gt;&gt;&gt; m.sorts()
 [A, B]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06698">6698</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6698</span>    <span class="keyword">def </span>sorts(self):</div>
-<div class="line"><span class="lineno"> 6699</span>        <span class="stringliteral">&quot;&quot;&quot;Return all uninterpreted sorts that have an interpretation in the model `self`.</span></div>
-<div class="line"><span class="lineno"> 6700</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 6701</span><span class="stringliteral">        &gt;&gt;&gt; A = DeclareSort(&#39;A&#39;)</span></div>
-<div class="line"><span class="lineno"> 6702</span><span class="stringliteral">        &gt;&gt;&gt; B = DeclareSort(&#39;B&#39;)</span></div>
-<div class="line"><span class="lineno"> 6703</span><span class="stringliteral">        &gt;&gt;&gt; a1, a2 = Consts(&#39;a1 a2&#39;, A)</span></div>
-<div class="line"><span class="lineno"> 6704</span><span class="stringliteral">        &gt;&gt;&gt; b1, b2 = Consts(&#39;b1 b2&#39;, B)</span></div>
-<div class="line"><span class="lineno"> 6705</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 6706</span><span class="stringliteral">        &gt;&gt;&gt; s.add(a1 != a2, b1 != b2)</span></div>
-<div class="line"><span class="lineno"> 6707</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 6708</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 6709</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
-<div class="line"><span class="lineno"> 6710</span><span class="stringliteral">        &gt;&gt;&gt; m.sorts()</span></div>
-<div class="line"><span class="lineno"> 6711</span><span class="stringliteral">        [A, B]</span></div>
-<div class="line"><span class="lineno"> 6712</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6713</span>        <span class="keywordflow">return</span> [self.get_sort(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(self.num_sorts())]</div>
-<div class="line"><span class="lineno"> 6714</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06742">6742</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6742</span>    <span class="keyword">def </span>sorts(self):</div>
+<div class="line"><span class="lineno"> 6743</span>        <span class="stringliteral">&quot;&quot;&quot;Return all uninterpreted sorts that have an interpretation in the model `self`.</span></div>
+<div class="line"><span class="lineno"> 6744</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6745</span><span class="stringliteral">        &gt;&gt;&gt; A = DeclareSort(&#39;A&#39;)</span></div>
+<div class="line"><span class="lineno"> 6746</span><span class="stringliteral">        &gt;&gt;&gt; B = DeclareSort(&#39;B&#39;)</span></div>
+<div class="line"><span class="lineno"> 6747</span><span class="stringliteral">        &gt;&gt;&gt; a1, a2 = Consts(&#39;a1 a2&#39;, A)</span></div>
+<div class="line"><span class="lineno"> 6748</span><span class="stringliteral">        &gt;&gt;&gt; b1, b2 = Consts(&#39;b1 b2&#39;, B)</span></div>
+<div class="line"><span class="lineno"> 6749</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 6750</span><span class="stringliteral">        &gt;&gt;&gt; s.add(a1 != a2, b1 != b2)</span></div>
+<div class="line"><span class="lineno"> 6751</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 6752</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 6753</span><span class="stringliteral">        &gt;&gt;&gt; m = s.model()</span></div>
+<div class="line"><span class="lineno"> 6754</span><span class="stringliteral">        &gt;&gt;&gt; m.sorts()</span></div>
+<div class="line"><span class="lineno"> 6755</span><span class="stringliteral">        [A, B]</span></div>
+<div class="line"><span class="lineno"> 6756</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6757</span>        <span class="keywordflow">return</span> [self.get_sort(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(self.num_sorts())]</div>
+<div class="line"><span class="lineno"> 6758</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1178,18 +1178,18 @@ sat
 </div><div class="memdoc">
 <pre class="fragment">Translate `self` to the context `target`. That is, return a copy of `self` in the context `target`.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06821">6821</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6821</span>    <span class="keyword">def </span>translate(self, target):</div>
-<div class="line"><span class="lineno"> 6822</span>        <span class="stringliteral">&quot;&quot;&quot;Translate `self` to the context `target`. That is, return a copy of `self` in the context `target`.</span></div>
-<div class="line"><span class="lineno"> 6823</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6824</span>        <span class="keywordflow">if</span> z3_debug():</div>
-<div class="line"><span class="lineno"> 6825</span>            _z3_assert(isinstance(target, Context), <span class="stringliteral">&quot;argument must be a Z3 context&quot;</span>)</div>
-<div class="line"><span class="lineno"> 6826</span>        model = <a class="code hl_function" href="group__capi.html#ga9fdab09e5f1c24143b6b26e9a94f0323">Z3_model_translate</a>(self.ctx.ref(), self.model, target.ref())</div>
-<div class="line"><span class="lineno"> 6827</span>        <span class="keywordflow">return</span> ModelRef(model, target)</div>
-<div class="line"><span class="lineno"> 6828</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06865">6865</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6865</span>    <span class="keyword">def </span>translate(self, target):</div>
+<div class="line"><span class="lineno"> 6866</span>        <span class="stringliteral">&quot;&quot;&quot;Translate `self` to the context `target`. That is, return a copy of `self` in the context `target`.</span></div>
+<div class="line"><span class="lineno"> 6867</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6868</span>        <span class="keywordflow">if</span> z3_debug():</div>
+<div class="line"><span class="lineno"> 6869</span>            _z3_assert(isinstance(target, Context), <span class="stringliteral">&quot;argument must be a Z3 context&quot;</span>)</div>
+<div class="line"><span class="lineno"> 6870</span>        model = <a class="code hl_function" href="group__capi.html#ga9fdab09e5f1c24143b6b26e9a94f0323">Z3_model_translate</a>(self.ctx.ref(), self.model, target.ref())</div>
+<div class="line"><span class="lineno"> 6871</span>        <span class="keywordflow">return</span> ModelRef(model, target)</div>
+<div class="line"><span class="lineno"> 6872</span> </div>
 <div class="ttc" id="agroup__capi_html_ga9fdab09e5f1c24143b6b26e9a94f0323"><div class="ttname"><a href="group__capi.html#ga9fdab09e5f1c24143b6b26e9a94f0323">Z3_model_translate</a></div><div class="ttdeci">Z3_model Z3_API Z3_model_translate(Z3_context c, Z3_model m, Z3_context dst)</div><div class="ttdoc">translate model from context c to context dst.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l00447">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05947">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06142">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06487">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06853">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05950">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06145">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06490">FuncInterp.__deepcopy__()</a>, and <a class="el" href="z3py_8py_source.html#l06856">ModelRef.__deepcopy__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l00467">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05991">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06186">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06531">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06897">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05994">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06189">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06534">FuncInterp.__deepcopy__()</a>, and <a class="el" href="z3py_8py_source.html#l06900">ModelRef.__deepcopy__()</a>.</p>
 
 </div>
 </div>
@@ -1225,29 +1225,29 @@ sat
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Update the interpretation of a constant</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06799">6799</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 6799</span>    <span class="keyword">def </span>update_value(self, x, value):</div>
-<div class="line"><span class="lineno"> 6800</span>        <span class="stringliteral">&quot;&quot;&quot;Update the interpretation of a constant&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 6801</span>        <span class="keywordflow">if</span> is_expr(x):</div>
-<div class="line"><span class="lineno"> 6802</span>            x = x.decl()</div>
-<div class="line"><span class="lineno"> 6803</span>        <span class="keywordflow">if</span> is_func_decl(x) <span class="keywordflow">and</span> x.arity() != 0 <span class="keywordflow">and</span> isinstance(value, FuncInterp):</div>
-<div class="line"><span class="lineno"> 6804</span>            fi1 = value.f</div>
-<div class="line"><span class="lineno"> 6805</span>            fi2 = <a class="code hl_function" href="group__capi.html#ga1f30176bce864257bebb1fb30a103779">Z3_add_func_interp</a>(x.ctx_ref(), self.model, x.ast, value.else_value().ast);</div>
-<div class="line"><span class="lineno"> 6806</span>            fi2 = FuncInterp(fi2, x.ctx)</div>
-<div class="line"><span class="lineno"> 6807</span>            <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(value.num_entries()):</div>
-<div class="line"><span class="lineno"> 6808</span>                e = value.entry(i)</div>
-<div class="line"><span class="lineno"> 6809</span>                n = <a class="code hl_function" href="group__capi.html#ga2aec4267d57993f97266f6d0cf415b4b">Z3_func_entry_get_num_args</a>(x.ctx_ref(), e.entry)</div>
-<div class="line"><span class="lineno"> 6810</span>                v = AstVector()</div>
-<div class="line"><span class="lineno"> 6811</span>                <span class="keywordflow">for</span> j <span class="keywordflow">in</span> range(n):</div>
-<div class="line"><span class="lineno"> 6812</span>                    v.push(e.arg_value(j))                    </div>
-<div class="line"><span class="lineno"> 6813</span>                val = <a class="code hl_function" href="group__capi.html#ga3162ed8bb3df75405dae0cb3d16ed112">Z3_func_entry_get_value</a>(x.ctx_ref(), e.entry)</div>
-<div class="line"><span class="lineno"> 6814</span>                <a class="code hl_function" href="group__capi.html#gae5045207f686e147ecc4f404e8c201eb">Z3_func_interp_add_entry</a>(x.ctx_ref(), fi2.f, v.vector, val)</div>
-<div class="line"><span class="lineno"> 6815</span>            <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno"> 6816</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> is_func_decl(x) <span class="keywordflow">or</span> x.arity() != 0:</div>
-<div class="line"><span class="lineno"> 6817</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Expecting 0-ary function or constant expression&quot;</span>)</div>
-<div class="line"><span class="lineno"> 6818</span>        value = _py2expr(value)</div>
-<div class="line"><span class="lineno"> 6819</span>        <a class="code hl_function" href="group__capi.html#ga73b1de0ec17bb4f2e47d256a7628925c">Z3_add_const_interp</a>(x.ctx_ref(), self.model, x.ast, value.ast)</div>
-<div class="line"><span class="lineno"> 6820</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06843">6843</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6843</span>    <span class="keyword">def </span>update_value(self, x, value):</div>
+<div class="line"><span class="lineno"> 6844</span>        <span class="stringliteral">&quot;&quot;&quot;Update the interpretation of a constant&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6845</span>        <span class="keywordflow">if</span> is_expr(x):</div>
+<div class="line"><span class="lineno"> 6846</span>            x = x.decl()</div>
+<div class="line"><span class="lineno"> 6847</span>        <span class="keywordflow">if</span> is_func_decl(x) <span class="keywordflow">and</span> x.arity() != 0 <span class="keywordflow">and</span> isinstance(value, FuncInterp):</div>
+<div class="line"><span class="lineno"> 6848</span>            fi1 = value.f</div>
+<div class="line"><span class="lineno"> 6849</span>            fi2 = <a class="code hl_function" href="group__capi.html#ga1f30176bce864257bebb1fb30a103779">Z3_add_func_interp</a>(x.ctx_ref(), self.model, x.ast, value.else_value().ast);</div>
+<div class="line"><span class="lineno"> 6850</span>            fi2 = FuncInterp(fi2, x.ctx)</div>
+<div class="line"><span class="lineno"> 6851</span>            <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(value.num_entries()):</div>
+<div class="line"><span class="lineno"> 6852</span>                e = value.entry(i)</div>
+<div class="line"><span class="lineno"> 6853</span>                n = <a class="code hl_function" href="group__capi.html#ga2aec4267d57993f97266f6d0cf415b4b">Z3_func_entry_get_num_args</a>(x.ctx_ref(), e.entry)</div>
+<div class="line"><span class="lineno"> 6854</span>                v = AstVector()</div>
+<div class="line"><span class="lineno"> 6855</span>                <span class="keywordflow">for</span> j <span class="keywordflow">in</span> range(n):</div>
+<div class="line"><span class="lineno"> 6856</span>                    v.push(e.arg_value(j))                    </div>
+<div class="line"><span class="lineno"> 6857</span>                val = <a class="code hl_function" href="group__capi.html#ga3162ed8bb3df75405dae0cb3d16ed112">Z3_func_entry_get_value</a>(x.ctx_ref(), e.entry)</div>
+<div class="line"><span class="lineno"> 6858</span>                <a class="code hl_function" href="group__capi.html#gae5045207f686e147ecc4f404e8c201eb">Z3_func_interp_add_entry</a>(x.ctx_ref(), fi2.f, v.vector, val)</div>
+<div class="line"><span class="lineno"> 6859</span>            <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno"> 6860</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> is_func_decl(x) <span class="keywordflow">or</span> x.arity() != 0:</div>
+<div class="line"><span class="lineno"> 6861</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Expecting 0-ary function or constant expression&quot;</span>)</div>
+<div class="line"><span class="lineno"> 6862</span>        value = _py2expr(value)</div>
+<div class="line"><span class="lineno"> 6863</span>        <a class="code hl_function" href="group__capi.html#ga73b1de0ec17bb4f2e47d256a7628925c">Z3_add_const_interp</a>(x.ctx_ref(), self.model, x.ast, value.ast)</div>
+<div class="line"><span class="lineno"> 6864</span> </div>
 <div class="ttc" id="agroup__capi_html_ga1f30176bce864257bebb1fb30a103779"><div class="ttname"><a href="group__capi.html#ga1f30176bce864257bebb1fb30a103779">Z3_add_func_interp</a></div><div class="ttdeci">Z3_func_interp Z3_API Z3_add_func_interp(Z3_context c, Z3_model m, Z3_func_decl f, Z3_ast default_value)</div><div class="ttdoc">Create a fresh func_interp object, add it to a model for a specified function. It has reference count...</div></div>
 <div class="ttc" id="agroup__capi_html_ga2aec4267d57993f97266f6d0cf415b4b"><div class="ttname"><a href="group__capi.html#ga2aec4267d57993f97266f6d0cf415b4b">Z3_func_entry_get_num_args</a></div><div class="ttdeci">unsigned Z3_API Z3_func_entry_get_num_args(Z3_context c, Z3_func_entry e)</div><div class="ttdoc">Return the number of arguments in a Z3_func_entry object.</div></div>
 <div class="ttc" id="agroup__capi_html_ga3162ed8bb3df75405dae0cb3d16ed112"><div class="ttname"><a href="group__capi.html#ga3162ed8bb3df75405dae0cb3d16ed112">Z3_func_entry_get_value</a></div><div class="ttdeci">Z3_ast Z3_API Z3_func_entry_get_value(Z3_context c, Z3_func_entry e)</div><div class="ttdoc">Return the value of this point.</div></div>
@@ -1269,9 +1269,9 @@ sat
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06520">6520</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06564">6564</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02520">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03618">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03710">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00859">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06196">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00447">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05947">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06142">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06487">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06853">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00365">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05205">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05581">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05646">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05950">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06145">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06176">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06295">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06490">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06856">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06894">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00360">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05268">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05280">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05584">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05649">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05712">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06016">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06179">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06298">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06405">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06523">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06897">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07090">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02619">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03787">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01041">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02753">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l03917">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06033">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06735">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06933">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06209">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02740">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03901">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03776">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02714">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l03869">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06020">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06183">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06591">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06919">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l03963">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02727">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l03885">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02667">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l03830">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01630">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02543">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03641">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01062">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02694">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03765">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03687">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02591">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02533">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03631">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03723">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02646">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03810">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l05605">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l05684">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06236">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06901">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l03991">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02682">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l03851">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02558">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03654">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03700">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02605">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l03977">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l03933">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02581">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03677">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03746">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06062">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06220">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02568">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03664">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03733">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l05444">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01121">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06320">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l06448">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l05973">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07246">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l05836">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07190">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02208">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l07276">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l05884">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00410">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01083">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l06780">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04728">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03115">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l05716">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l05920">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00796">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04667">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l06409">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l06462">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06239">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l06534">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l05808">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l05673">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l06608">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l06969">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l05668">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l05663">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l06675">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06715">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l05734">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06268">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l06957">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07305">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00622">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02202">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06302">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l06432">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07158">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l06660">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00831">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02180">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03224">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07136">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l05752">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l06829">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06841">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07114">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06078">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02163">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00808">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04672">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05416">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06253">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07176">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06090">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07101">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l05588">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l05916">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06151">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06530">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l05653">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l05782">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02158">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06126">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00431">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l05924">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l06821">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l05608">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06351">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02231">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02247">QuantifierRef.var_sort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02564">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03662">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03754">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00879">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06240">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00467">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05991">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06186">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06531">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06897">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00385">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05249">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05625">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05690">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05994">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06189">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06220">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06339">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06534">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06900">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06938">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00380">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05312">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05324">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05628">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05693">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05756">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06060">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06223">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06342">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06449">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06567">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06941">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07134">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02663">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03831">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01061">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02797">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l03961">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06077">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06779">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06977">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06253">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02784">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03945">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03820">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02758">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l03913">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06064">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06227">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06635">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06963">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04007">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02771">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l03929">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02711">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l03874">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01674">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02587">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03685">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01082">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02738">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03809">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03731">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02635">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02577">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03675">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03767">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02690">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03854">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l05649">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l05728">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06280">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06945">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l04035">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02726">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l03895">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02602">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03698">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03744">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02649">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l04021">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l03977">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02625">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03721">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03790">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06106">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06264">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02612">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03708">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03777">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l05488">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01141">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06364">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l06492">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l06017">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07290">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l05880">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07234">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02252">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l07320">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l05928">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00430">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01103">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l06824">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04772">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03159">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l05760">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l05964">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00816">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04711">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l06453">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l06506">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06283">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l06578">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l05852">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l05717">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l06652">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l07013">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l05712">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l05707">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l06719">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06759">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l05778">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06312">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l07001">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07349">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00642">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02246">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06346">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l06476">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07202">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l06704">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00851">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02224">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03268">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07180">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l05796">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l06873">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06885">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07158">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06122">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02207">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00828">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04716">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05460">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06297">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07220">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06134">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07145">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l05632">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l05960">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06195">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06574">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l05697">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l05826">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02202">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06170">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00451">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l05968">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l06865">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l01177">ExprRef.update()</a>, <a class="el" href="z3py_8py_source.html#l05652">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06395">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02275">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02291">QuantifierRef.var_sort()</a>.</p>
 
 </div>
 </div>
@@ -1287,16 +1287,16 @@ sat
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06519">6519</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06563">6563</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06523">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06735">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06591">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06780">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l06534">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l06608">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l06675">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06715">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l06660">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l06829">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06841">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l06530">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06821">ModelRef.translate()</a>, and <a class="el" href="z3py_8py_source.html#l06799">ModelRef.update_value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06567">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06779">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06635">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06824">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l06578">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l06652">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l06719">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06759">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l06704">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l06873">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06885">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l06574">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06865">ModelRef.translate()</a>, and <a class="el" href="z3py_8py_source.html#l06843">ModelRef.update_value()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2026 05:03:26 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jan 12 2026 05:53:39 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

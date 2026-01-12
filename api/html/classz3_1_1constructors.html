@@ -110,7 +110,7 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03617">3617</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03670">3670</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a367827e46d1d369a5df631d602fab01a" name="a367827e46d1d369a5df631d602fab01a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a367827e46d1d369a5df631d602fab01a">&#9670;&#160;</a></span>constructors()</h2>
@@ -136,10 +136,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03623">3623</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3623</span>: ctx(ctx) {}</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03676">3676</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3676</span>: ctx(ctx) {}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05205">Datatype::__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05241">Datatype::__repr__()</a>, and <a class="el" href="z3py_8py_source.html#l05210">Datatype::declare_core()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05249">Datatype::__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05285">Datatype::__repr__()</a>, and <a class="el" href="z3py_8py_source.html#l05254">Datatype::declare_core()</a>.</p>
 
 </div>
 </div>
@@ -166,11 +166,11 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03625">3625</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3625</span>                        {</div>
-<div class="line"><span class="lineno"> 3626</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> con : cons)</div>
-<div class="line"><span class="lineno"> 3627</span>                <a class="code hl_function" href="group__capi.html#ga391c6d98bbea740c15a7a1f061d3213c">Z3_del_constructor</a>(ctx, con);           </div>
-<div class="line"><span class="lineno"> 3628</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03678">3678</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3678</span>                        {</div>
+<div class="line"><span class="lineno"> 3679</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> con : cons)</div>
+<div class="line"><span class="lineno"> 3680</span>                <a class="code hl_function" href="group__capi.html#ga391c6d98bbea740c15a7a1f061d3213c">Z3_del_constructor</a>(ctx, con);           </div>
+<div class="line"><span class="lineno"> 3681</span>        }</div>
 <div class="ttc" id="agroup__capi_html_ga391c6d98bbea740c15a7a1f061d3213c"><div class="ttname"><a href="group__capi.html#ga391c6d98bbea740c15a7a1f061d3213c">Z3_del_constructor</a></div><div class="ttdeci">void Z3_API Z3_del_constructor(Z3_context c, Z3_constructor constr)</div><div class="ttdoc">Reclaim memory allocated to constructor.</div></div>
 </div><!-- fragment -->
 </div>
@@ -228,18 +228,18 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03630">3630</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3630</span>                                                                                                             {</div>
-<div class="line"><span class="lineno"> 3631</span>            array&lt;unsigned&gt; sort_refs(n);</div>
-<div class="line"><span class="lineno"> 3632</span>            array&lt;Z3_sort&gt; sorts(n);</div>
-<div class="line"><span class="lineno"> 3633</span>            array&lt;Z3_symbol&gt; _names(n);            </div>
-<div class="line"><span class="lineno"> 3634</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; ++i) sorts[i] = fields[i], _names[i] = names[i];</div>
-<div class="line"><span class="lineno"> 3635</span>            cons.push_back(<a class="code hl_function" href="group__capi.html#gaf0052b4fe43f6b470b3f6bea7b69a3df">Z3_mk_constructor</a>(ctx, name, rec, n, _names.ptr(), sorts.ptr(), sort_refs.ptr()));</div>
-<div class="line"><span class="lineno"> 3636</span>            num_fields.push_back(n);</div>
-<div class="line"><span class="lineno"> 3637</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03683">3683</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3683</span>                                                                                                             {</div>
+<div class="line"><span class="lineno"> 3684</span>            array&lt;unsigned&gt; sort_refs(n);</div>
+<div class="line"><span class="lineno"> 3685</span>            array&lt;Z3_sort&gt; sorts(n);</div>
+<div class="line"><span class="lineno"> 3686</span>            array&lt;Z3_symbol&gt; _names(n);            </div>
+<div class="line"><span class="lineno"> 3687</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; ++i) sorts[i] = fields[i], _names[i] = names[i];</div>
+<div class="line"><span class="lineno"> 3688</span>            cons.push_back(<a class="code hl_function" href="group__capi.html#gaf0052b4fe43f6b470b3f6bea7b69a3df">Z3_mk_constructor</a>(ctx, name, rec, n, _names.ptr(), sorts.ptr(), sort_refs.ptr()));</div>
+<div class="line"><span class="lineno"> 3689</span>            num_fields.push_back(n);</div>
+<div class="line"><span class="lineno"> 3690</span>        }</div>
 <div class="ttc" id="agroup__capi_html_gaf0052b4fe43f6b470b3f6bea7b69a3df"><div class="ttname"><a href="group__capi.html#gaf0052b4fe43f6b470b3f6bea7b69a3df">Z3_mk_constructor</a></div><div class="ttdeci">Z3_constructor Z3_API Z3_mk_constructor(Z3_context c, Z3_symbol name, Z3_symbol recognizer, unsigned num_fields, Z3_symbol const field_names[], Z3_sort const sorts[], unsigned sort_refs[])</div><div class="ttdoc">Create a constructor.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07220">Solver::__iadd__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07264">Solver::__iadd__()</a>.</p>
 
 </div>
 </div>
@@ -267,8 +267,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03639">3639</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3639</span>{ <span class="keywordflow">return</span> cons[i]; }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03692">3692</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3692</span>{ <span class="keywordflow">return</span> cons[i]; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -318,24 +318,24 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03643">3643</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3643</span>                                                                                                {</div>
-<div class="line"><span class="lineno"> 3644</span>            <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#a720e261ccfd9cbeb4c440df80a5b16cd">Z3_func_decl</a> _constructor;</div>
-<div class="line"><span class="lineno"> 3645</span>            <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#a720e261ccfd9cbeb4c440df80a5b16cd">Z3_func_decl</a> _test;</div>
-<div class="line"><span class="lineno"> 3646</span>            array&lt;Z3_func_decl&gt; accessors(num_fields[i]);</div>
-<div class="line"><span class="lineno"> 3647</span>            accs.resize(0);</div>
-<div class="line"><span class="lineno"> 3648</span>            <a class="code hl_function" href="group__capi.html#ga0e23263005fd53c67d4cd88324aa8154">Z3_query_constructor</a>(ctx,</div>
-<div class="line"><span class="lineno"> 3649</span>                                 cons[i],</div>
-<div class="line"><span class="lineno"> 3650</span>                                 num_fields[i],</div>
-<div class="line"><span class="lineno"> 3651</span>                                 &amp;_constructor,</div>
-<div class="line"><span class="lineno"> 3652</span>                                 &amp;_test,</div>
-<div class="line"><span class="lineno"> 3653</span>                                 accessors.ptr());</div>
-<div class="line"><span class="lineno"> 3654</span>            constructor = func_decl(ctx, _constructor);</div>
-<div class="line"><span class="lineno"> 3655</span> </div>
-<div class="line"><span class="lineno"> 3656</span>            test = func_decl(ctx, _test);</div>
-<div class="line"><span class="lineno"> 3657</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> j = 0; j &lt; num_fields[i]; ++j)</div>
-<div class="line"><span class="lineno"> 3658</span>                accs.push_back(func_decl(ctx, accessors[j]));</div>
-<div class="line"><span class="lineno"> 3659</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03696">3696</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3696</span>                                                                                                {</div>
+<div class="line"><span class="lineno"> 3697</span>            <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#a720e261ccfd9cbeb4c440df80a5b16cd">Z3_func_decl</a> _constructor;</div>
+<div class="line"><span class="lineno"> 3698</span>            <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#a720e261ccfd9cbeb4c440df80a5b16cd">Z3_func_decl</a> _test;</div>
+<div class="line"><span class="lineno"> 3699</span>            array&lt;Z3_func_decl&gt; accessors(num_fields[i]);</div>
+<div class="line"><span class="lineno"> 3700</span>            accs.resize(0);</div>
+<div class="line"><span class="lineno"> 3701</span>            <a class="code hl_function" href="group__capi.html#ga0e23263005fd53c67d4cd88324aa8154">Z3_query_constructor</a>(ctx,</div>
+<div class="line"><span class="lineno"> 3702</span>                                 cons[i],</div>
+<div class="line"><span class="lineno"> 3703</span>                                 num_fields[i],</div>
+<div class="line"><span class="lineno"> 3704</span>                                 &amp;_constructor,</div>
+<div class="line"><span class="lineno"> 3705</span>                                 &amp;_test,</div>
+<div class="line"><span class="lineno"> 3706</span>                                 accessors.ptr());</div>
+<div class="line"><span class="lineno"> 3707</span>            constructor = func_decl(ctx, _constructor);</div>
+<div class="line"><span class="lineno"> 3708</span> </div>
+<div class="line"><span class="lineno"> 3709</span>            test = func_decl(ctx, _test);</div>
+<div class="line"><span class="lineno"> 3710</span>            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> j = 0; j &lt; num_fields[i]; ++j)</div>
+<div class="line"><span class="lineno"> 3711</span>                accs.push_back(func_decl(ctx, accessors[j]));</div>
+<div class="line"><span class="lineno"> 3712</span>        }</div>
 <div class="ttc" id="agroup__capi_html_ga0e23263005fd53c67d4cd88324aa8154"><div class="ttname"><a href="group__capi.html#ga0e23263005fd53c67d4cd88324aa8154">Z3_query_constructor</a></div><div class="ttdeci">void Z3_API Z3_query_constructor(Z3_context c, Z3_constructor constr, unsigned num_fields, Z3_func_decl *constructor, Z3_func_decl *tester, Z3_func_decl accessors[])</div><div class="ttdoc">Query constructor for declared functions.</div></div>
 <div class="ttc" id="anamespace_microsoft_1_1_z3_html_a720e261ccfd9cbeb4c440df80a5b16cd"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#a720e261ccfd9cbeb4c440df80a5b16cd">Microsoft.Z3.Z3_func_decl</a></div><div class="ttdeci">System.IntPtr Z3_func_decl</div><div class="ttdef"><b>Definition</b> <a href="_native_context_8cs_source.html#l00030">NativeContext.cs:30</a></div></div>
 </div><!-- fragment -->
@@ -364,10 +364,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03641">3641</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3641</span>{ <span class="keywordflow">return</span> (<span class="keywordtype">unsigned</span>)cons.size(); }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03694">3694</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3694</span>{ <span class="keywordflow">return</span> (<span class="keywordtype">unsigned</span>)cons.size(); }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05658">ParamDescrsRef::__len__()</a>, <a class="el" href="z3py_8py_source.html#l05795">Goal::__len__()</a>, <a class="el" href="z3py_8py_source.html#l04020">BitVecNumRef::as_signed_long()</a>, and <a class="el" href="z3py_8py_source.html#l03561">BitVecSortRef::subsort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05702">ParamDescrsRef::__len__()</a>, <a class="el" href="z3py_8py_source.html#l05839">Goal::__len__()</a>, <a class="el" href="z3py_8py_source.html#l04064">BitVecNumRef::as_signed_long()</a>, and <a class="el" href="z3py_8py_source.html#l03605">BitVecSortRef::subsort()</a>.</p>
 
 </div>
 </div>
@@ -392,14 +392,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03618">3618</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03671">3671</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2026 05:03:25 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jan 12 2026 05:53:39 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -170,7 +170,7 @@ Goals are processed using Tactics. A Tactic transforms a goal into a set of subg
 A goal has a solution if one of its subgoals has a solution.
 A goal is unsatisfiable if all subgoals are unsatisfiable.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05694">5694</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05738">5738</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acf9804d61ab74dbb7208d0c0c3e3c219" name="acf9804d61ab74dbb7208d0c0c3e3c219"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf9804d61ab74dbb7208d0c0c3e3c219">&#9670;&#160;</a></span>__init__()</h2>
@@ -222,17 +222,17 @@ A goal is unsatisfiable if all subgoals are unsatisfiable.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05702">5702</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5702</span>    <span class="keyword">def </span>__init__(self, models=True, unsat_cores=False, proofs=False, ctx=None, goal=None):</div>
-<div class="line"><span class="lineno"> 5703</span>        <span class="keywordflow">if</span> z3_debug():</div>
-<div class="line"><span class="lineno"> 5704</span>            _z3_assert(goal <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> ctx <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>,</div>
-<div class="line"><span class="lineno"> 5705</span>                       <span class="stringliteral">&quot;If goal is different from None, then ctx must be also different from None&quot;</span>)</div>
-<div class="line"><span class="lineno"> 5706</span>        self.ctx = _get_ctx(ctx)</div>
-<div class="line"><span class="lineno"> 5707</span>        self.goal = goal</div>
-<div class="line"><span class="lineno"> 5708</span>        <span class="keywordflow">if</span> self.goal <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 5709</span>            self.goal = <a class="code hl_function" href="group__capi.html#gab3eb10026ef80c2cf03faf594a459e7e">Z3_mk_goal</a>(self.ctx.ref(), models, unsat_cores, proofs)</div>
-<div class="line"><span class="lineno"> 5710</span>        <a class="code hl_function" href="group__capi.html#ga63a581c33213fb14efe9e6175c74546b">Z3_goal_inc_ref</a>(self.ctx.ref(), self.goal)</div>
-<div class="line"><span class="lineno"> 5711</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05746">5746</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5746</span>    <span class="keyword">def </span>__init__(self, models=True, unsat_cores=False, proofs=False, ctx=None, goal=None):</div>
+<div class="line"><span class="lineno"> 5747</span>        <span class="keywordflow">if</span> z3_debug():</div>
+<div class="line"><span class="lineno"> 5748</span>            _z3_assert(goal <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> ctx <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>,</div>
+<div class="line"><span class="lineno"> 5749</span>                       <span class="stringliteral">&quot;If goal is different from None, then ctx must be also different from None&quot;</span>)</div>
+<div class="line"><span class="lineno"> 5750</span>        self.ctx = _get_ctx(ctx)</div>
+<div class="line"><span class="lineno"> 5751</span>        self.goal = goal</div>
+<div class="line"><span class="lineno"> 5752</span>        <span class="keywordflow">if</span> self.goal <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 5753</span>            self.goal = <a class="code hl_function" href="group__capi.html#gab3eb10026ef80c2cf03faf594a459e7e">Z3_mk_goal</a>(self.ctx.ref(), models, unsat_cores, proofs)</div>
+<div class="line"><span class="lineno"> 5754</span>        <a class="code hl_function" href="group__capi.html#ga63a581c33213fb14efe9e6175c74546b">Z3_goal_inc_ref</a>(self.ctx.ref(), self.goal)</div>
+<div class="line"><span class="lineno"> 5755</span> </div>
 <div class="ttc" id="agroup__capi_html_ga63a581c33213fb14efe9e6175c74546b"><div class="ttname"><a href="group__capi.html#ga63a581c33213fb14efe9e6175c74546b">Z3_goal_inc_ref</a></div><div class="ttdeci">void Z3_API Z3_goal_inc_ref(Z3_context c, Z3_goal g)</div><div class="ttdoc">Increment the reference counter of the given goal.</div></div>
 <div class="ttc" id="agroup__capi_html_gab3eb10026ef80c2cf03faf594a459e7e"><div class="ttname"><a href="group__capi.html#gab3eb10026ef80c2cf03faf594a459e7e">Z3_mk_goal</a></div><div class="ttdeci">Z3_goal Z3_API Z3_mk_goal(Z3_context c, bool models, bool unsat_cores, bool proofs)</div><div class="ttdoc">Create a goal (aka problem). A goal is essentially a set of formulas, that can be solved and/or trans...</div></div>
 </div><!-- fragment -->
@@ -254,11 +254,11 @@ A goal is unsatisfiable if all subgoals are unsatisfiable.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05712">5712</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5712</span>    <span class="keyword">def </span>__del__(self):</div>
-<div class="line"><span class="lineno"> 5713</span>        <span class="keywordflow">if</span> self.goal <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_goal_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 5714</span>            <a class="code hl_function" href="group__capi.html#gad65f4f9f7035b6eef161ee93bb694e52">Z3_goal_dec_ref</a>(self.ctx.ref(), self.goal)</div>
-<div class="line"><span class="lineno"> 5715</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05756">5756</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5756</span>    <span class="keyword">def </span>__del__(self):</div>
+<div class="line"><span class="lineno"> 5757</span>        <span class="keywordflow">if</span> self.goal <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_goal_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 5758</span>            <a class="code hl_function" href="group__capi.html#gad65f4f9f7035b6eef161ee93bb694e52">Z3_goal_dec_ref</a>(self.ctx.ref(), self.goal)</div>
+<div class="line"><span class="lineno"> 5759</span> </div>
 <div class="ttc" id="agroup__capi_html_gad65f4f9f7035b6eef161ee93bb694e52"><div class="ttname"><a href="group__capi.html#gad65f4f9f7035b6eef161ee93bb694e52">Z3_goal_dec_ref</a></div><div class="ttdeci">void Z3_API Z3_goal_dec_ref(Z3_context c, Z3_goal g)</div><div class="ttdoc">Decrement the reference counter of the given goal.</div></div>
 </div><!-- fragment -->
 </div>
@@ -280,10 +280,10 @@ A goal is unsatisfiable if all subgoals are unsatisfiable.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05947">5947</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5947</span>    <span class="keyword">def </span>__copy__(self):</div>
-<div class="line"><span class="lineno"> 5948</span>        <span class="keywordflow">return</span> self.translate(self.ctx)</div>
-<div class="line"><span class="lineno"> 5949</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05991">5991</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5991</span>    <span class="keyword">def </span>__copy__(self):</div>
+<div class="line"><span class="lineno"> 5992</span>        <span class="keywordflow">return</span> self.translate(self.ctx)</div>
+<div class="line"><span class="lineno"> 5993</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -313,10 +313,10 @@ A goal is unsatisfiable if all subgoals are unsatisfiable.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05950">5950</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5950</span>    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
-<div class="line"><span class="lineno"> 5951</span>        <span class="keywordflow">return</span> self.translate(self.ctx)</div>
-<div class="line"><span class="lineno"> 5952</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05994">5994</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5994</span>    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
+<div class="line"><span class="lineno"> 5995</span>        <span class="keywordflow">return</span> self.translate(self.ctx)</div>
+<div class="line"><span class="lineno"> 5996</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -355,22 +355,22 @@ x == 0
 &gt;&gt;&gt; g[1]
 y &gt; x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05821">5821</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5821</span>    <span class="keyword">def </span>__getitem__(self, arg):</div>
-<div class="line"><span class="lineno"> 5822</span>        <span class="stringliteral">&quot;&quot;&quot;Return a constraint in the goal `self`.</span></div>
-<div class="line"><span class="lineno"> 5823</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5824</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5825</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
-<div class="line"><span class="lineno"> 5826</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, y &gt; x)</span></div>
-<div class="line"><span class="lineno"> 5827</span><span class="stringliteral">        &gt;&gt;&gt; g[0]</span></div>
-<div class="line"><span class="lineno"> 5828</span><span class="stringliteral">        x == 0</span></div>
-<div class="line"><span class="lineno"> 5829</span><span class="stringliteral">        &gt;&gt;&gt; g[1]</span></div>
-<div class="line"><span class="lineno"> 5830</span><span class="stringliteral">        y &gt; x</span></div>
-<div class="line"><span class="lineno"> 5831</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5832</span>        <span class="keywordflow">if</span> arg &gt;= len(self):</div>
-<div class="line"><span class="lineno"> 5833</span>            <span class="keywordflow">raise</span> IndexError</div>
-<div class="line"><span class="lineno"> 5834</span>        <span class="keywordflow">return</span> self.get(arg)</div>
-<div class="line"><span class="lineno"> 5835</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05865">5865</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5865</span>    <span class="keyword">def </span>__getitem__(self, arg):</div>
+<div class="line"><span class="lineno"> 5866</span>        <span class="stringliteral">&quot;&quot;&quot;Return a constraint in the goal `self`.</span></div>
+<div class="line"><span class="lineno"> 5867</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5868</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5869</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
+<div class="line"><span class="lineno"> 5870</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, y &gt; x)</span></div>
+<div class="line"><span class="lineno"> 5871</span><span class="stringliteral">        &gt;&gt;&gt; g[0]</span></div>
+<div class="line"><span class="lineno"> 5872</span><span class="stringliteral">        x == 0</span></div>
+<div class="line"><span class="lineno"> 5873</span><span class="stringliteral">        &gt;&gt;&gt; g[1]</span></div>
+<div class="line"><span class="lineno"> 5874</span><span class="stringliteral">        y &gt; x</span></div>
+<div class="line"><span class="lineno"> 5875</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5876</span>        <span class="keywordflow">if</span> arg &gt;= len(self):</div>
+<div class="line"><span class="lineno"> 5877</span>            <span class="keywordflow">raise</span> IndexError</div>
+<div class="line"><span class="lineno"> 5878</span>        <span class="keywordflow">return</span> self.get(arg)</div>
+<div class="line"><span class="lineno"> 5879</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -399,22 +399,22 @@ y &gt; x
 &gt;&gt;&gt; len(g)
 2
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05795">5795</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5795</span>    <span class="keyword">def </span>__len__(self):</div>
-<div class="line"><span class="lineno"> 5796</span>        <span class="stringliteral">&quot;&quot;&quot;Return the number of constraints in the goal `self`.</span></div>
-<div class="line"><span class="lineno"> 5797</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5798</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5799</span><span class="stringliteral">        &gt;&gt;&gt; len(g)</span></div>
-<div class="line"><span class="lineno"> 5800</span><span class="stringliteral">        0</span></div>
-<div class="line"><span class="lineno"> 5801</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
-<div class="line"><span class="lineno"> 5802</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, y &gt; x)</span></div>
-<div class="line"><span class="lineno"> 5803</span><span class="stringliteral">        &gt;&gt;&gt; len(g)</span></div>
-<div class="line"><span class="lineno"> 5804</span><span class="stringliteral">        2</span></div>
-<div class="line"><span class="lineno"> 5805</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5806</span>        <span class="keywordflow">return</span> self.size()</div>
-<div class="line"><span class="lineno"> 5807</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05839">5839</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5839</span>    <span class="keyword">def </span>__len__(self):</div>
+<div class="line"><span class="lineno"> 5840</span>        <span class="stringliteral">&quot;&quot;&quot;Return the number of constraints in the goal `self`.</span></div>
+<div class="line"><span class="lineno"> 5841</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5842</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5843</span><span class="stringliteral">        &gt;&gt;&gt; len(g)</span></div>
+<div class="line"><span class="lineno"> 5844</span><span class="stringliteral">        0</span></div>
+<div class="line"><span class="lineno"> 5845</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
+<div class="line"><span class="lineno"> 5846</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, y &gt; x)</span></div>
+<div class="line"><span class="lineno"> 5847</span><span class="stringliteral">        &gt;&gt;&gt; len(g)</span></div>
+<div class="line"><span class="lineno"> 5848</span><span class="stringliteral">        2</span></div>
+<div class="line"><span class="lineno"> 5849</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5850</span>        <span class="keywordflow">return</span> self.size()</div>
+<div class="line"><span class="lineno"> 5851</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06033">AstVector.__getitem__()</a>, and <a class="el" href="z3py_8py_source.html#l06062">AstVector.__setitem__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06077">AstVector.__getitem__()</a>, and <a class="el" href="z3py_8py_source.html#l06106">AstVector.__setitem__()</a>.</p>
 
 </div>
 </div>
@@ -434,10 +434,10 @@ y &gt; x
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05913">5913</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5913</span>    <span class="keyword">def </span>__repr__(self):</div>
-<div class="line"><span class="lineno"> 5914</span>        <span class="keywordflow">return</span> obj_to_string(self)</div>
-<div class="line"><span class="lineno"> 5915</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05957">5957</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5957</span>    <span class="keyword">def </span>__repr__(self):</div>
+<div class="line"><span class="lineno"> 5958</span>        <span class="keywordflow">return</span> obj_to_string(self)</div>
+<div class="line"><span class="lineno"> 5959</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -474,20 +474,20 @@ y &gt; x
 &gt;&gt;&gt; g
 [x &gt; 0, x &lt; 2]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05873">5873</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5873</span>    <span class="keyword">def </span>add(self, *args):</div>
-<div class="line"><span class="lineno"> 5874</span>        <span class="stringliteral">&quot;&quot;&quot;Add constraints.</span></div>
-<div class="line"><span class="lineno"> 5875</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5876</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 5877</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5878</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0, x &lt; 2)</span></div>
-<div class="line"><span class="lineno"> 5879</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
-<div class="line"><span class="lineno"> 5880</span><span class="stringliteral">        [x &gt; 0, x &lt; 2]</span></div>
-<div class="line"><span class="lineno"> 5881</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5882</span>        self.assert_exprs(*args)</div>
-<div class="line"><span class="lineno"> 5883</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05917">5917</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5917</span>    <span class="keyword">def </span>add(self, *args):</div>
+<div class="line"><span class="lineno"> 5918</span>        <span class="stringliteral">&quot;&quot;&quot;Add constraints.</span></div>
+<div class="line"><span class="lineno"> 5919</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5920</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 5921</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5922</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 0, x &lt; 2)</span></div>
+<div class="line"><span class="lineno"> 5923</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
+<div class="line"><span class="lineno"> 5924</span><span class="stringliteral">        [x &gt; 0, x &lt; 2]</span></div>
+<div class="line"><span class="lineno"> 5925</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5926</span>        self.assert_exprs(*args)</div>
+<div class="line"><span class="lineno"> 5927</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07220">Solver.__iadd__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07264">Solver.__iadd__()</a>.</p>
 
 </div>
 </div>
@@ -524,18 +524,18 @@ y &gt; x
 &gt;&gt;&gt; g
 [x &gt; 0, x &lt; 2]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05851">5851</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5851</span>    <span class="keyword">def </span>append(self, *args):</div>
-<div class="line"><span class="lineno"> 5852</span>        <span class="stringliteral">&quot;&quot;&quot;Add constraints.</span></div>
-<div class="line"><span class="lineno"> 5853</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5854</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 5855</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5856</span><span class="stringliteral">        &gt;&gt;&gt; g.append(x &gt; 0, x &lt; 2)</span></div>
-<div class="line"><span class="lineno"> 5857</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
-<div class="line"><span class="lineno"> 5858</span><span class="stringliteral">        [x &gt; 0, x &lt; 2]</span></div>
-<div class="line"><span class="lineno"> 5859</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5860</span>        self.assert_exprs(*args)</div>
-<div class="line"><span class="lineno"> 5861</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05895">5895</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5895</span>    <span class="keyword">def </span>append(self, *args):</div>
+<div class="line"><span class="lineno"> 5896</span>        <span class="stringliteral">&quot;&quot;&quot;Add constraints.</span></div>
+<div class="line"><span class="lineno"> 5897</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5898</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 5899</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5900</span><span class="stringliteral">        &gt;&gt;&gt; g.append(x &gt; 0, x &lt; 2)</span></div>
+<div class="line"><span class="lineno"> 5901</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
+<div class="line"><span class="lineno"> 5902</span><span class="stringliteral">        [x &gt; 0, x &lt; 2]</span></div>
+<div class="line"><span class="lineno"> 5903</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5904</span>        self.assert_exprs(*args)</div>
+<div class="line"><span class="lineno"> 5905</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -567,29 +567,29 @@ x &gt; 1
 &gt;&gt;&gt; g.as_expr()
 And(x &gt; 1, x &lt; 10)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05973">5973</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5973</span>    <span class="keyword">def </span>as_expr(self):</div>
-<div class="line"><span class="lineno"> 5974</span>        <span class="stringliteral">&quot;&quot;&quot;Return goal `self` as a single Z3 expression.</span></div>
-<div class="line"><span class="lineno"> 5975</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5976</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 5977</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5978</span><span class="stringliteral">        &gt;&gt;&gt; g.as_expr()</span></div>
-<div class="line"><span class="lineno"> 5979</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 5980</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 1)</span></div>
-<div class="line"><span class="lineno"> 5981</span><span class="stringliteral">        &gt;&gt;&gt; g.as_expr()</span></div>
-<div class="line"><span class="lineno"> 5982</span><span class="stringliteral">        x &gt; 1</span></div>
-<div class="line"><span class="lineno"> 5983</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
-<div class="line"><span class="lineno"> 5984</span><span class="stringliteral">        &gt;&gt;&gt; g.as_expr()</span></div>
-<div class="line"><span class="lineno"> 5985</span><span class="stringliteral">        And(x &gt; 1, x &lt; 10)</span></div>
-<div class="line"><span class="lineno"> 5986</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5987</span>        sz = len(self)</div>
-<div class="line"><span class="lineno"> 5988</span>        <span class="keywordflow">if</span> sz == 0:</div>
-<div class="line"><span class="lineno"> 5989</span>            <span class="keywordflow">return</span> BoolVal(<span class="keyword">True</span>, self.ctx)</div>
-<div class="line"><span class="lineno"> 5990</span>        <span class="keywordflow">elif</span> sz == 1:</div>
-<div class="line"><span class="lineno"> 5991</span>            <span class="keywordflow">return</span> self.get(0)</div>
-<div class="line"><span class="lineno"> 5992</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 5993</span>            <span class="keywordflow">return</span> And([self.get(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(self))], self.ctx)</div>
-<div class="line"><span class="lineno"> 5994</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l06017">6017</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 6017</span>    <span class="keyword">def </span>as_expr(self):</div>
+<div class="line"><span class="lineno"> 6018</span>        <span class="stringliteral">&quot;&quot;&quot;Return goal `self` as a single Z3 expression.</span></div>
+<div class="line"><span class="lineno"> 6019</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6020</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 6021</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 6022</span><span class="stringliteral">        &gt;&gt;&gt; g.as_expr()</span></div>
+<div class="line"><span class="lineno"> 6023</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 6024</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 1)</span></div>
+<div class="line"><span class="lineno"> 6025</span><span class="stringliteral">        &gt;&gt;&gt; g.as_expr()</span></div>
+<div class="line"><span class="lineno"> 6026</span><span class="stringliteral">        x &gt; 1</span></div>
+<div class="line"><span class="lineno"> 6027</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x &lt; 10)</span></div>
+<div class="line"><span class="lineno"> 6028</span><span class="stringliteral">        &gt;&gt;&gt; g.as_expr()</span></div>
+<div class="line"><span class="lineno"> 6029</span><span class="stringliteral">        And(x &gt; 1, x &lt; 10)</span></div>
+<div class="line"><span class="lineno"> 6030</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6031</span>        sz = len(self)</div>
+<div class="line"><span class="lineno"> 6032</span>        <span class="keywordflow">if</span> sz == 0:</div>
+<div class="line"><span class="lineno"> 6033</span>            <span class="keywordflow">return</span> BoolVal(<span class="keyword">True</span>, self.ctx)</div>
+<div class="line"><span class="lineno"> 6034</span>        <span class="keywordflow">elif</span> sz == 1:</div>
+<div class="line"><span class="lineno"> 6035</span>            <span class="keywordflow">return</span> self.get(0)</div>
+<div class="line"><span class="lineno"> 6036</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 6037</span>            <span class="keywordflow">return</span> And([self.get(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(self))], self.ctx)</div>
+<div class="line"><span class="lineno"> 6038</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -626,25 +626,25 @@ And(x &gt; 1, x &lt; 10)
 &gt;&gt;&gt; g
 [x &gt; 0, x &lt; 2]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05836">5836</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5836</span>    <span class="keyword">def </span>assert_exprs(self, *args):</div>
-<div class="line"><span class="lineno"> 5837</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints into the goal.</span></div>
-<div class="line"><span class="lineno"> 5838</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5839</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 5840</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5841</span><span class="stringliteral">        &gt;&gt;&gt; g.assert_exprs(x &gt; 0, x &lt; 2)</span></div>
-<div class="line"><span class="lineno"> 5842</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
-<div class="line"><span class="lineno"> 5843</span><span class="stringliteral">        [x &gt; 0, x &lt; 2]</span></div>
-<div class="line"><span class="lineno"> 5844</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5845</span>        args = _get_args(args)</div>
-<div class="line"><span class="lineno"> 5846</span>        s = BoolSort(self.ctx)</div>
-<div class="line"><span class="lineno"> 5847</span>        <span class="keywordflow">for</span> arg <span class="keywordflow">in</span> args:</div>
-<div class="line"><span class="lineno"> 5848</span>            arg = s.cast(arg)</div>
-<div class="line"><span class="lineno"> 5849</span>            <a class="code hl_function" href="group__capi.html#ga3052a11993ce35250f108c365bc09ff7">Z3_goal_assert</a>(self.ctx.ref(), self.goal, arg.as_ast())</div>
-<div class="line"><span class="lineno"> 5850</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05880">5880</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5880</span>    <span class="keyword">def </span>assert_exprs(self, *args):</div>
+<div class="line"><span class="lineno"> 5881</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints into the goal.</span></div>
+<div class="line"><span class="lineno"> 5882</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5883</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 5884</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5885</span><span class="stringliteral">        &gt;&gt;&gt; g.assert_exprs(x &gt; 0, x &lt; 2)</span></div>
+<div class="line"><span class="lineno"> 5886</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
+<div class="line"><span class="lineno"> 5887</span><span class="stringliteral">        [x &gt; 0, x &lt; 2]</span></div>
+<div class="line"><span class="lineno"> 5888</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5889</span>        args = _get_args(args)</div>
+<div class="line"><span class="lineno"> 5890</span>        s = BoolSort(self.ctx)</div>
+<div class="line"><span class="lineno"> 5891</span>        <span class="keywordflow">for</span> arg <span class="keywordflow">in</span> args:</div>
+<div class="line"><span class="lineno"> 5892</span>            arg = s.cast(arg)</div>
+<div class="line"><span class="lineno"> 5893</span>            <a class="code hl_function" href="group__capi.html#ga3052a11993ce35250f108c365bc09ff7">Z3_goal_assert</a>(self.ctx.ref(), self.goal, arg.as_ast())</div>
+<div class="line"><span class="lineno"> 5894</span> </div>
 <div class="ttc" id="agroup__capi_html_ga3052a11993ce35250f108c365bc09ff7"><div class="ttname"><a href="group__capi.html#ga3052a11993ce35250f108c365bc09ff7">Z3_goal_assert</a></div><div class="ttdeci">void Z3_API Z3_goal_assert(Z3_context c, Z3_goal g, Z3_ast a)</div><div class="ttdoc">Add a new formula a to the given goal. The formula is split according to the following procedure that...</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05873">Goal.add()</a>, <a class="el" href="z3py_8py_source.html#l07209">Solver.add()</a>, <a class="el" href="z3py_8py_source.html#l05851">Goal.append()</a>, <a class="el" href="z3py_8py_source.html#l07224">Solver.append()</a>, <a class="el" href="z3py_8py_source.html#l05862">Goal.insert()</a>, and <a class="el" href="z3py_8py_source.html#l07235">Solver.insert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05917">Goal.add()</a>, <a class="el" href="z3py_8py_source.html#l07253">Solver.add()</a>, <a class="el" href="z3py_8py_source.html#l05895">Goal.append()</a>, <a class="el" href="z3py_8py_source.html#l07268">Solver.append()</a>, <a class="el" href="z3py_8py_source.html#l05906">Goal.insert()</a>, and <a class="el" href="z3py_8py_source.html#l07279">Solver.insert()</a>.</p>
 
 </div>
 </div>
@@ -697,36 +697,36 @@ sat
 &gt;&gt;&gt; r[1].convert_model(s.model())
 [b = 0, a = 1]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05884">5884</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5884</span>    <span class="keyword">def </span>convert_model(self, model):</div>
-<div class="line"><span class="lineno"> 5885</span>        <span class="stringliteral">&quot;&quot;&quot;Retrieve model from a satisfiable goal</span></div>
-<div class="line"><span class="lineno"> 5886</span><span class="stringliteral">        &gt;&gt;&gt; a, b = Ints(&#39;a b&#39;)</span></div>
-<div class="line"><span class="lineno"> 5887</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5888</span><span class="stringliteral">        &gt;&gt;&gt; g.add(Or(a == 0, a == 1), Or(b == 0, b == 1), a &gt; b)</span></div>
-<div class="line"><span class="lineno"> 5889</span><span class="stringliteral">        &gt;&gt;&gt; t = Then(Tactic(&#39;split-clause&#39;), Tactic(&#39;solve-eqs&#39;))</span></div>
-<div class="line"><span class="lineno"> 5890</span><span class="stringliteral">        &gt;&gt;&gt; r = t(g)</span></div>
-<div class="line"><span class="lineno"> 5891</span><span class="stringliteral">        &gt;&gt;&gt; r[0]</span></div>
-<div class="line"><span class="lineno"> 5892</span><span class="stringliteral">        [Or(b == 0, b == 1), Not(0 &lt;= b)]</span></div>
-<div class="line"><span class="lineno"> 5893</span><span class="stringliteral">        &gt;&gt;&gt; r[1]</span></div>
-<div class="line"><span class="lineno"> 5894</span><span class="stringliteral">        [Or(b == 0, b == 1), Not(1 &lt;= b)]</span></div>
-<div class="line"><span class="lineno"> 5895</span><span class="stringliteral">        &gt;&gt;&gt; # Remark: the subgoal r[0] is unsatisfiable</span></div>
-<div class="line"><span class="lineno"> 5896</span><span class="stringliteral">        &gt;&gt;&gt; # Creating a solver for solving the second subgoal</span></div>
-<div class="line"><span class="lineno"> 5897</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
-<div class="line"><span class="lineno"> 5898</span><span class="stringliteral">        &gt;&gt;&gt; s.add(r[1])</span></div>
-<div class="line"><span class="lineno"> 5899</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
-<div class="line"><span class="lineno"> 5900</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 5901</span><span class="stringliteral">        &gt;&gt;&gt; s.model()</span></div>
-<div class="line"><span class="lineno"> 5902</span><span class="stringliteral">        [b = 0]</span></div>
-<div class="line"><span class="lineno"> 5903</span><span class="stringliteral">        &gt;&gt;&gt; # Model s.model() does not assign a value to `a`</span></div>
-<div class="line"><span class="lineno"> 5904</span><span class="stringliteral">        &gt;&gt;&gt; # It is a model for subgoal `r[1]`, but not for goal `g`</span></div>
-<div class="line"><span class="lineno"> 5905</span><span class="stringliteral">        &gt;&gt;&gt; # The method convert_model creates a model for `g` from a model for `r[1]`.</span></div>
-<div class="line"><span class="lineno"> 5906</span><span class="stringliteral">        &gt;&gt;&gt; r[1].convert_model(s.model())</span></div>
-<div class="line"><span class="lineno"> 5907</span><span class="stringliteral">        [b = 0, a = 1]</span></div>
-<div class="line"><span class="lineno"> 5908</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5909</span>        <span class="keywordflow">if</span> z3_debug():</div>
-<div class="line"><span class="lineno"> 5910</span>            _z3_assert(isinstance(model, ModelRef), <span class="stringliteral">&quot;Z3 Model expected&quot;</span>)</div>
-<div class="line"><span class="lineno"> 5911</span>        <span class="keywordflow">return</span> ModelRef(<a class="code hl_function" href="group__capi.html#ga384b88e0b7906eeba35ccba52302dbf2">Z3_goal_convert_model</a>(self.ctx.ref(), self.goal, model.model), self.ctx)</div>
-<div class="line"><span class="lineno"> 5912</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05928">5928</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5928</span>    <span class="keyword">def </span>convert_model(self, model):</div>
+<div class="line"><span class="lineno"> 5929</span>        <span class="stringliteral">&quot;&quot;&quot;Retrieve model from a satisfiable goal</span></div>
+<div class="line"><span class="lineno"> 5930</span><span class="stringliteral">        &gt;&gt;&gt; a, b = Ints(&#39;a b&#39;)</span></div>
+<div class="line"><span class="lineno"> 5931</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5932</span><span class="stringliteral">        &gt;&gt;&gt; g.add(Or(a == 0, a == 1), Or(b == 0, b == 1), a &gt; b)</span></div>
+<div class="line"><span class="lineno"> 5933</span><span class="stringliteral">        &gt;&gt;&gt; t = Then(Tactic(&#39;split-clause&#39;), Tactic(&#39;solve-eqs&#39;))</span></div>
+<div class="line"><span class="lineno"> 5934</span><span class="stringliteral">        &gt;&gt;&gt; r = t(g)</span></div>
+<div class="line"><span class="lineno"> 5935</span><span class="stringliteral">        &gt;&gt;&gt; r[0]</span></div>
+<div class="line"><span class="lineno"> 5936</span><span class="stringliteral">        [Or(b == 0, b == 1), Not(0 &lt;= b)]</span></div>
+<div class="line"><span class="lineno"> 5937</span><span class="stringliteral">        &gt;&gt;&gt; r[1]</span></div>
+<div class="line"><span class="lineno"> 5938</span><span class="stringliteral">        [Or(b == 0, b == 1), Not(1 &lt;= b)]</span></div>
+<div class="line"><span class="lineno"> 5939</span><span class="stringliteral">        &gt;&gt;&gt; # Remark: the subgoal r[0] is unsatisfiable</span></div>
+<div class="line"><span class="lineno"> 5940</span><span class="stringliteral">        &gt;&gt;&gt; # Creating a solver for solving the second subgoal</span></div>
+<div class="line"><span class="lineno"> 5941</span><span class="stringliteral">        &gt;&gt;&gt; s = Solver()</span></div>
+<div class="line"><span class="lineno"> 5942</span><span class="stringliteral">        &gt;&gt;&gt; s.add(r[1])</span></div>
+<div class="line"><span class="lineno"> 5943</span><span class="stringliteral">        &gt;&gt;&gt; s.check()</span></div>
+<div class="line"><span class="lineno"> 5944</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 5945</span><span class="stringliteral">        &gt;&gt;&gt; s.model()</span></div>
+<div class="line"><span class="lineno"> 5946</span><span class="stringliteral">        [b = 0]</span></div>
+<div class="line"><span class="lineno"> 5947</span><span class="stringliteral">        &gt;&gt;&gt; # Model s.model() does not assign a value to `a`</span></div>
+<div class="line"><span class="lineno"> 5948</span><span class="stringliteral">        &gt;&gt;&gt; # It is a model for subgoal `r[1]`, but not for goal `g`</span></div>
+<div class="line"><span class="lineno"> 5949</span><span class="stringliteral">        &gt;&gt;&gt; # The method convert_model creates a model for `g` from a model for `r[1]`.</span></div>
+<div class="line"><span class="lineno"> 5950</span><span class="stringliteral">        &gt;&gt;&gt; r[1].convert_model(s.model())</span></div>
+<div class="line"><span class="lineno"> 5951</span><span class="stringliteral">        [b = 0, a = 1]</span></div>
+<div class="line"><span class="lineno"> 5952</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5953</span>        <span class="keywordflow">if</span> z3_debug():</div>
+<div class="line"><span class="lineno"> 5954</span>            _z3_assert(isinstance(model, ModelRef), <span class="stringliteral">&quot;Z3 Model expected&quot;</span>)</div>
+<div class="line"><span class="lineno"> 5955</span>        <span class="keywordflow">return</span> ModelRef(<a class="code hl_function" href="group__capi.html#ga384b88e0b7906eeba35ccba52302dbf2">Z3_goal_convert_model</a>(self.ctx.ref(), self.goal, model.model), self.ctx)</div>
+<div class="line"><span class="lineno"> 5956</span> </div>
 <div class="ttc" id="agroup__capi_html_ga384b88e0b7906eeba35ccba52302dbf2"><div class="ttname"><a href="group__capi.html#ga384b88e0b7906eeba35ccba52302dbf2">Z3_goal_convert_model</a></div><div class="ttdeci">Z3_model Z3_API Z3_goal_convert_model(Z3_context c, Z3_goal g, Z3_model m)</div><div class="ttdoc">Convert a model of the formulas of a goal to a model of an original goal. The model may be null,...</div></div>
 </div><!-- fragment -->
 </div>
@@ -761,25 +761,25 @@ The depth corresponds to the number of tactics applied to `self`.
 &gt;&gt;&gt; r[0].depth()
 2
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05716">5716</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5716</span>    <span class="keyword">def </span>depth(self):</div>
-<div class="line"><span class="lineno"> 5717</span>        <span class="stringliteral">&quot;&quot;&quot;Return the depth of the goal `self`.</span></div>
-<div class="line"><span class="lineno"> 5718</span><span class="stringliteral">        The depth corresponds to the number of tactics applied to `self`.</span></div>
-<div class="line"><span class="lineno"> 5719</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5720</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
-<div class="line"><span class="lineno"> 5721</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5722</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, y &gt;= x + 1)</span></div>
-<div class="line"><span class="lineno"> 5723</span><span class="stringliteral">        &gt;&gt;&gt; g.depth()</span></div>
-<div class="line"><span class="lineno"> 5724</span><span class="stringliteral">        0</span></div>
-<div class="line"><span class="lineno"> 5725</span><span class="stringliteral">        &gt;&gt;&gt; r = Then(&#39;simplify&#39;, &#39;solve-eqs&#39;)(g)</span></div>
-<div class="line"><span class="lineno"> 5726</span><span class="stringliteral">        &gt;&gt;&gt; # r has 1 subgoal</span></div>
-<div class="line"><span class="lineno"> 5727</span><span class="stringliteral">        &gt;&gt;&gt; len(r)</span></div>
-<div class="line"><span class="lineno"> 5728</span><span class="stringliteral">        1</span></div>
-<div class="line"><span class="lineno"> 5729</span><span class="stringliteral">        &gt;&gt;&gt; r[0].depth()</span></div>
-<div class="line"><span class="lineno"> 5730</span><span class="stringliteral">        2</span></div>
-<div class="line"><span class="lineno"> 5731</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5732</span>        <span class="keywordflow">return</span> int(<a class="code hl_function" href="group__capi.html#ga7d50ed3535aa2c577589827a807d0d6d">Z3_goal_depth</a>(self.ctx.ref(), self.goal))</div>
-<div class="line"><span class="lineno"> 5733</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05760">5760</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5760</span>    <span class="keyword">def </span>depth(self):</div>
+<div class="line"><span class="lineno"> 5761</span>        <span class="stringliteral">&quot;&quot;&quot;Return the depth of the goal `self`.</span></div>
+<div class="line"><span class="lineno"> 5762</span><span class="stringliteral">        The depth corresponds to the number of tactics applied to `self`.</span></div>
+<div class="line"><span class="lineno"> 5763</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5764</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
+<div class="line"><span class="lineno"> 5765</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5766</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, y &gt;= x + 1)</span></div>
+<div class="line"><span class="lineno"> 5767</span><span class="stringliteral">        &gt;&gt;&gt; g.depth()</span></div>
+<div class="line"><span class="lineno"> 5768</span><span class="stringliteral">        0</span></div>
+<div class="line"><span class="lineno"> 5769</span><span class="stringliteral">        &gt;&gt;&gt; r = Then(&#39;simplify&#39;, &#39;solve-eqs&#39;)(g)</span></div>
+<div class="line"><span class="lineno"> 5770</span><span class="stringliteral">        &gt;&gt;&gt; # r has 1 subgoal</span></div>
+<div class="line"><span class="lineno"> 5771</span><span class="stringliteral">        &gt;&gt;&gt; len(r)</span></div>
+<div class="line"><span class="lineno"> 5772</span><span class="stringliteral">        1</span></div>
+<div class="line"><span class="lineno"> 5773</span><span class="stringliteral">        &gt;&gt;&gt; r[0].depth()</span></div>
+<div class="line"><span class="lineno"> 5774</span><span class="stringliteral">        2</span></div>
+<div class="line"><span class="lineno"> 5775</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5776</span>        <span class="keywordflow">return</span> int(<a class="code hl_function" href="group__capi.html#ga7d50ed3535aa2c577589827a807d0d6d">Z3_goal_depth</a>(self.ctx.ref(), self.goal))</div>
+<div class="line"><span class="lineno"> 5777</span> </div>
 <div class="ttc" id="agroup__capi_html_ga7d50ed3535aa2c577589827a807d0d6d"><div class="ttname"><a href="group__capi.html#ga7d50ed3535aa2c577589827a807d0d6d">Z3_goal_depth</a></div><div class="ttdeci">unsigned Z3_API Z3_goal_depth(Z3_context c, Z3_goal g)</div><div class="ttdoc">Return the depth of the given goal. It tracks how many transformations were applied to it.</div></div>
 </div><!-- fragment -->
 </div>
@@ -810,11 +810,11 @@ The depth corresponds to the number of tactics applied to `self`.
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a textual representation of the goal in DIMACS format.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05920">5920</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5920</span>    <span class="keyword">def </span>dimacs(self, include_names=True):</div>
-<div class="line"><span class="lineno"> 5921</span>        <span class="stringliteral">&quot;&quot;&quot;Return a textual representation of the goal in DIMACS format.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5922</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga7add5ddaa6b33579a3c70a5be903b940">Z3_goal_to_dimacs_string</a>(self.ctx.ref(), self.goal, include_names)</div>
-<div class="line"><span class="lineno"> 5923</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05964">5964</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5964</span>    <span class="keyword">def </span>dimacs(self, include_names=True):</div>
+<div class="line"><span class="lineno"> 5965</span>        <span class="stringliteral">&quot;&quot;&quot;Return a textual representation of the goal in DIMACS format.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5966</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga7add5ddaa6b33579a3c70a5be903b940">Z3_goal_to_dimacs_string</a>(self.ctx.ref(), self.goal, include_names)</div>
+<div class="line"><span class="lineno"> 5967</span> </div>
 <div class="ttc" id="agroup__capi_html_ga7add5ddaa6b33579a3c70a5be903b940"><div class="ttname"><a href="group__capi.html#ga7add5ddaa6b33579a3c70a5be903b940">Z3_goal_to_dimacs_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_goal_to_dimacs_string(Z3_context c, Z3_goal g, bool include_names)</div><div class="ttdoc">Convert a goal into a DIMACS formatted string. The goal must be in CNF. You can convert a goal to CNF...</div></div>
 </div><!-- fragment -->
 </div>
@@ -854,23 +854,23 @@ x == 0
 &gt;&gt;&gt; g.get(1)
 y &gt; x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05808">5808</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5808</span>    <span class="keyword">def </span>get(self, i):</div>
-<div class="line"><span class="lineno"> 5809</span>        <span class="stringliteral">&quot;&quot;&quot;Return a constraint in the goal `self`.</span></div>
-<div class="line"><span class="lineno"> 5810</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5811</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5812</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
-<div class="line"><span class="lineno"> 5813</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, y &gt; x)</span></div>
-<div class="line"><span class="lineno"> 5814</span><span class="stringliteral">        &gt;&gt;&gt; g.get(0)</span></div>
-<div class="line"><span class="lineno"> 5815</span><span class="stringliteral">        x == 0</span></div>
-<div class="line"><span class="lineno"> 5816</span><span class="stringliteral">        &gt;&gt;&gt; g.get(1)</span></div>
-<div class="line"><span class="lineno"> 5817</span><span class="stringliteral">        y &gt; x</span></div>
-<div class="line"><span class="lineno"> 5818</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5819</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#gaec43d4d20ed7e7bf4c7a57d37dc3bfc6">Z3_goal_formula</a>(self.ctx.ref(), self.goal, i), self.ctx)</div>
-<div class="line"><span class="lineno"> 5820</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05852">5852</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5852</span>    <span class="keyword">def </span>get(self, i):</div>
+<div class="line"><span class="lineno"> 5853</span>        <span class="stringliteral">&quot;&quot;&quot;Return a constraint in the goal `self`.</span></div>
+<div class="line"><span class="lineno"> 5854</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5855</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5856</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
+<div class="line"><span class="lineno"> 5857</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, y &gt; x)</span></div>
+<div class="line"><span class="lineno"> 5858</span><span class="stringliteral">        &gt;&gt;&gt; g.get(0)</span></div>
+<div class="line"><span class="lineno"> 5859</span><span class="stringliteral">        x == 0</span></div>
+<div class="line"><span class="lineno"> 5860</span><span class="stringliteral">        &gt;&gt;&gt; g.get(1)</span></div>
+<div class="line"><span class="lineno"> 5861</span><span class="stringliteral">        y &gt; x</span></div>
+<div class="line"><span class="lineno"> 5862</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5863</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#gaec43d4d20ed7e7bf4c7a57d37dc3bfc6">Z3_goal_formula</a>(self.ctx.ref(), self.goal, i), self.ctx)</div>
+<div class="line"><span class="lineno"> 5864</span> </div>
 <div class="ttc" id="agroup__capi_html_gaec43d4d20ed7e7bf4c7a57d37dc3bfc6"><div class="ttname"><a href="group__capi.html#gaec43d4d20ed7e7bf4c7a57d37dc3bfc6">Z3_goal_formula</a></div><div class="ttdeci">Z3_ast Z3_API Z3_goal_formula(Z3_context c, Z3_goal g, unsigned idx)</div><div class="ttdoc">Return a formula from the given goal.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05821">Goal.__getitem__()</a>, and <a class="el" href="z3py_8py_source.html#l05973">Goal.as_expr()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05865">Goal.__getitem__()</a>, and <a class="el" href="z3py_8py_source.html#l06017">Goal.as_expr()</a>.</p>
 
 </div>
 </div>
@@ -904,25 +904,25 @@ False
 &gt;&gt;&gt; g2.inconsistent()
 True
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05734">5734</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5734</span>    <span class="keyword">def </span>inconsistent(self):</div>
-<div class="line"><span class="lineno"> 5735</span>        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` contains the `False` constraints.</span></div>
-<div class="line"><span class="lineno"> 5736</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5737</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
-<div class="line"><span class="lineno"> 5738</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5739</span><span class="stringliteral">        &gt;&gt;&gt; g.inconsistent()</span></div>
-<div class="line"><span class="lineno"> 5740</span><span class="stringliteral">        False</span></div>
-<div class="line"><span class="lineno"> 5741</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, x == 1)</span></div>
-<div class="line"><span class="lineno"> 5742</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
-<div class="line"><span class="lineno"> 5743</span><span class="stringliteral">        [x == 0, x == 1]</span></div>
-<div class="line"><span class="lineno"> 5744</span><span class="stringliteral">        &gt;&gt;&gt; g.inconsistent()</span></div>
-<div class="line"><span class="lineno"> 5745</span><span class="stringliteral">        False</span></div>
-<div class="line"><span class="lineno"> 5746</span><span class="stringliteral">        &gt;&gt;&gt; g2 = Tactic(&#39;propagate-values&#39;)(g)[0]</span></div>
-<div class="line"><span class="lineno"> 5747</span><span class="stringliteral">        &gt;&gt;&gt; g2.inconsistent()</span></div>
-<div class="line"><span class="lineno"> 5748</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 5749</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5750</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga2750c0f621284534a0b9782499352521">Z3_goal_inconsistent</a>(self.ctx.ref(), self.goal)</div>
-<div class="line"><span class="lineno"> 5751</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05778">5778</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5778</span>    <span class="keyword">def </span>inconsistent(self):</div>
+<div class="line"><span class="lineno"> 5779</span>        <span class="stringliteral">&quot;&quot;&quot;Return `True` if `self` contains the `False` constraints.</span></div>
+<div class="line"><span class="lineno"> 5780</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5781</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
+<div class="line"><span class="lineno"> 5782</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5783</span><span class="stringliteral">        &gt;&gt;&gt; g.inconsistent()</span></div>
+<div class="line"><span class="lineno"> 5784</span><span class="stringliteral">        False</span></div>
+<div class="line"><span class="lineno"> 5785</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, x == 1)</span></div>
+<div class="line"><span class="lineno"> 5786</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
+<div class="line"><span class="lineno"> 5787</span><span class="stringliteral">        [x == 0, x == 1]</span></div>
+<div class="line"><span class="lineno"> 5788</span><span class="stringliteral">        &gt;&gt;&gt; g.inconsistent()</span></div>
+<div class="line"><span class="lineno"> 5789</span><span class="stringliteral">        False</span></div>
+<div class="line"><span class="lineno"> 5790</span><span class="stringliteral">        &gt;&gt;&gt; g2 = Tactic(&#39;propagate-values&#39;)(g)[0]</span></div>
+<div class="line"><span class="lineno"> 5791</span><span class="stringliteral">        &gt;&gt;&gt; g2.inconsistent()</span></div>
+<div class="line"><span class="lineno"> 5792</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 5793</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5794</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga2750c0f621284534a0b9782499352521">Z3_goal_inconsistent</a>(self.ctx.ref(), self.goal)</div>
+<div class="line"><span class="lineno"> 5795</span> </div>
 <div class="ttc" id="agroup__capi_html_ga2750c0f621284534a0b9782499352521"><div class="ttname"><a href="group__capi.html#ga2750c0f621284534a0b9782499352521">Z3_goal_inconsistent</a></div><div class="ttdeci">bool Z3_API Z3_goal_inconsistent(Z3_context c, Z3_goal g)</div><div class="ttdoc">Return true if the given goal contains the formula false.</div></div>
 </div><!-- fragment -->
 </div>
@@ -960,18 +960,18 @@ True
 &gt;&gt;&gt; g
 [x &gt; 0, x &lt; 2]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05862">5862</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5862</span>    <span class="keyword">def </span>insert(self, *args):</div>
-<div class="line"><span class="lineno"> 5863</span>        <span class="stringliteral">&quot;&quot;&quot;Add constraints.</span></div>
-<div class="line"><span class="lineno"> 5864</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5865</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 5866</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5867</span><span class="stringliteral">        &gt;&gt;&gt; g.insert(x &gt; 0, x &lt; 2)</span></div>
-<div class="line"><span class="lineno"> 5868</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
-<div class="line"><span class="lineno"> 5869</span><span class="stringliteral">        [x &gt; 0, x &lt; 2]</span></div>
-<div class="line"><span class="lineno"> 5870</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5871</span>        self.assert_exprs(*args)</div>
-<div class="line"><span class="lineno"> 5872</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05906">5906</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5906</span>    <span class="keyword">def </span>insert(self, *args):</div>
+<div class="line"><span class="lineno"> 5907</span>        <span class="stringliteral">&quot;&quot;&quot;Add constraints.</span></div>
+<div class="line"><span class="lineno"> 5908</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5909</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 5910</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5911</span><span class="stringliteral">        &gt;&gt;&gt; g.insert(x &gt; 0, x &lt; 2)</span></div>
+<div class="line"><span class="lineno"> 5912</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
+<div class="line"><span class="lineno"> 5913</span><span class="stringliteral">        [x &gt; 0, x &lt; 2]</span></div>
+<div class="line"><span class="lineno"> 5914</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5915</span>        self.assert_exprs(*args)</div>
+<div class="line"><span class="lineno"> 5916</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1008,31 +1008,31 @@ False
 &gt;&gt;&gt; g2.prec() == Z3_GOAL_UNDER
 True
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05752">5752</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5752</span>    <span class="keyword">def </span>prec(self):</div>
-<div class="line"><span class="lineno"> 5753</span>        <span class="stringliteral">&quot;&quot;&quot;Return the precision (under-approximation, over-approximation, or precise) of the goal `self`.</span></div>
-<div class="line"><span class="lineno"> 5754</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5755</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5756</span><span class="stringliteral">        &gt;&gt;&gt; g.prec() == Z3_GOAL_PRECISE</span></div>
-<div class="line"><span class="lineno"> 5757</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 5758</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
-<div class="line"><span class="lineno"> 5759</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == y + 1)</span></div>
-<div class="line"><span class="lineno"> 5760</span><span class="stringliteral">        &gt;&gt;&gt; g.prec() == Z3_GOAL_PRECISE</span></div>
-<div class="line"><span class="lineno"> 5761</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 5762</span><span class="stringliteral">        &gt;&gt;&gt; t  = With(Tactic(&#39;add-bounds&#39;), add_bound_lower=0, add_bound_upper=10)</span></div>
-<div class="line"><span class="lineno"> 5763</span><span class="stringliteral">        &gt;&gt;&gt; g2 = t(g)[0]</span></div>
-<div class="line"><span class="lineno"> 5764</span><span class="stringliteral">        &gt;&gt;&gt; g2</span></div>
-<div class="line"><span class="lineno"> 5765</span><span class="stringliteral">        [x == y + 1, x &lt;= 10, x &gt;= 0, y &lt;= 10, y &gt;= 0]</span></div>
-<div class="line"><span class="lineno"> 5766</span><span class="stringliteral">        &gt;&gt;&gt; g2.prec() == Z3_GOAL_PRECISE</span></div>
-<div class="line"><span class="lineno"> 5767</span><span class="stringliteral">        False</span></div>
-<div class="line"><span class="lineno"> 5768</span><span class="stringliteral">        &gt;&gt;&gt; g2.prec() == Z3_GOAL_UNDER</span></div>
-<div class="line"><span class="lineno"> 5769</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 5770</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5771</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gab29dbf26b18f05ffb04771969d4c8d2b">Z3_goal_precision</a>(self.ctx.ref(), self.goal)</div>
-<div class="line"><span class="lineno"> 5772</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05796">5796</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5796</span>    <span class="keyword">def </span>prec(self):</div>
+<div class="line"><span class="lineno"> 5797</span>        <span class="stringliteral">&quot;&quot;&quot;Return the precision (under-approximation, over-approximation, or precise) of the goal `self`.</span></div>
+<div class="line"><span class="lineno"> 5798</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5799</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5800</span><span class="stringliteral">        &gt;&gt;&gt; g.prec() == Z3_GOAL_PRECISE</span></div>
+<div class="line"><span class="lineno"> 5801</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 5802</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
+<div class="line"><span class="lineno"> 5803</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == y + 1)</span></div>
+<div class="line"><span class="lineno"> 5804</span><span class="stringliteral">        &gt;&gt;&gt; g.prec() == Z3_GOAL_PRECISE</span></div>
+<div class="line"><span class="lineno"> 5805</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 5806</span><span class="stringliteral">        &gt;&gt;&gt; t  = With(Tactic(&#39;add-bounds&#39;), add_bound_lower=0, add_bound_upper=10)</span></div>
+<div class="line"><span class="lineno"> 5807</span><span class="stringliteral">        &gt;&gt;&gt; g2 = t(g)[0]</span></div>
+<div class="line"><span class="lineno"> 5808</span><span class="stringliteral">        &gt;&gt;&gt; g2</span></div>
+<div class="line"><span class="lineno"> 5809</span><span class="stringliteral">        [x == y + 1, x &lt;= 10, x &gt;= 0, y &lt;= 10, y &gt;= 0]</span></div>
+<div class="line"><span class="lineno"> 5810</span><span class="stringliteral">        &gt;&gt;&gt; g2.prec() == Z3_GOAL_PRECISE</span></div>
+<div class="line"><span class="lineno"> 5811</span><span class="stringliteral">        False</span></div>
+<div class="line"><span class="lineno"> 5812</span><span class="stringliteral">        &gt;&gt;&gt; g2.prec() == Z3_GOAL_UNDER</span></div>
+<div class="line"><span class="lineno"> 5813</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 5814</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5815</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gab29dbf26b18f05ffb04771969d4c8d2b">Z3_goal_precision</a>(self.ctx.ref(), self.goal)</div>
+<div class="line"><span class="lineno"> 5816</span> </div>
 <div class="ttc" id="agroup__capi_html_gab29dbf26b18f05ffb04771969d4c8d2b"><div class="ttname"><a href="group__capi.html#gab29dbf26b18f05ffb04771969d4c8d2b">Z3_goal_precision</a></div><div class="ttdeci">Z3_goal_prec Z3_API Z3_goal_precision(Z3_context c, Z3_goal g)</div><div class="ttdoc">Return the &quot;precision&quot; of the given goal. Goals can be transformed using over and under approximation...</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05773">Goal.precision()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05817">Goal.precision()</a>.</p>
 
 </div>
 </div>
@@ -1057,16 +1057,16 @@ True
 &gt;&gt;&gt; g.precision() == Z3_GOAL_PRECISE
 True
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05773">5773</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5773</span>    <span class="keyword">def </span>precision(self):</div>
-<div class="line"><span class="lineno"> 5774</span>        <span class="stringliteral">&quot;&quot;&quot;Alias for `prec()`.</span></div>
-<div class="line"><span class="lineno"> 5775</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5776</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5777</span><span class="stringliteral">        &gt;&gt;&gt; g.precision() == Z3_GOAL_PRECISE</span></div>
-<div class="line"><span class="lineno"> 5778</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 5779</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5780</span>        <span class="keywordflow">return</span> self.prec()</div>
-<div class="line"><span class="lineno"> 5781</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05817">5817</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5817</span>    <span class="keyword">def </span>precision(self):</div>
+<div class="line"><span class="lineno"> 5818</span>        <span class="stringliteral">&quot;&quot;&quot;Alias for `prec()`.</span></div>
+<div class="line"><span class="lineno"> 5819</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5820</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5821</span><span class="stringliteral">        &gt;&gt;&gt; g.precision() == Z3_GOAL_PRECISE</span></div>
+<div class="line"><span class="lineno"> 5822</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 5823</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5824</span>        <span class="keywordflow">return</span> self.prec()</div>
+<div class="line"><span class="lineno"> 5825</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1086,11 +1086,11 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a textual representation of the s-expression representing the goal.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05916">5916</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5916</span>    <span class="keyword">def </span>sexpr(self):</div>
-<div class="line"><span class="lineno"> 5917</span>        <span class="stringliteral">&quot;&quot;&quot;Return a textual representation of the s-expression representing the goal.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5918</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gaf0b556e79b16a9d40523a37575687bfc">Z3_goal_to_string</a>(self.ctx.ref(), self.goal)</div>
-<div class="line"><span class="lineno"> 5919</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05960">5960</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5960</span>    <span class="keyword">def </span>sexpr(self):</div>
+<div class="line"><span class="lineno"> 5961</span>        <span class="stringliteral">&quot;&quot;&quot;Return a textual representation of the s-expression representing the goal.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5962</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gaf0b556e79b16a9d40523a37575687bfc">Z3_goal_to_string</a>(self.ctx.ref(), self.goal)</div>
+<div class="line"><span class="lineno"> 5963</span> </div>
 <div class="ttc" id="agroup__capi_html_gaf0b556e79b16a9d40523a37575687bfc"><div class="ttname"><a href="group__capi.html#gaf0b556e79b16a9d40523a37575687bfc">Z3_goal_to_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_goal_to_string(Z3_context c, Z3_goal g)</div><div class="ttdoc">Convert a goal into a string.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1142,27 +1142,27 @@ This method is essentially invoking the simplify tactic.
 &gt;&gt;&gt; g
 [x + 1 &gt;= 2]
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05953">5953</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5953</span>    <span class="keyword">def </span>simplify(self, *arguments, **keywords):</div>
-<div class="line"><span class="lineno"> 5954</span>        <span class="stringliteral">&quot;&quot;&quot;Return a new simplified goal.</span></div>
-<div class="line"><span class="lineno"> 5955</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5956</span><span class="stringliteral">        This method is essentially invoking the simplify tactic.</span></div>
-<div class="line"><span class="lineno"> 5957</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5958</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5959</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 5960</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x + 1 &gt;= 2)</span></div>
-<div class="line"><span class="lineno"> 5961</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
-<div class="line"><span class="lineno"> 5962</span><span class="stringliteral">        [x + 1 &gt;= 2]</span></div>
-<div class="line"><span class="lineno"> 5963</span><span class="stringliteral">        &gt;&gt;&gt; g2 = g.simplify()</span></div>
-<div class="line"><span class="lineno"> 5964</span><span class="stringliteral">        &gt;&gt;&gt; g2</span></div>
-<div class="line"><span class="lineno"> 5965</span><span class="stringliteral">        [x &gt;= 1]</span></div>
-<div class="line"><span class="lineno"> 5966</span><span class="stringliteral">        &gt;&gt;&gt; # g was not modified</span></div>
-<div class="line"><span class="lineno"> 5967</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
-<div class="line"><span class="lineno"> 5968</span><span class="stringliteral">        [x + 1 &gt;= 2]</span></div>
-<div class="line"><span class="lineno"> 5969</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5970</span>        t = Tactic(<span class="stringliteral">&quot;simplify&quot;</span>)</div>
-<div class="line"><span class="lineno"> 5971</span>        <span class="keywordflow">return</span> t.apply(self, *arguments, **keywords)[0]</div>
-<div class="line"><span class="lineno"> 5972</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05997">5997</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5997</span>    <span class="keyword">def </span>simplify(self, *arguments, **keywords):</div>
+<div class="line"><span class="lineno"> 5998</span>        <span class="stringliteral">&quot;&quot;&quot;Return a new simplified goal.</span></div>
+<div class="line"><span class="lineno"> 5999</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6000</span><span class="stringliteral">        This method is essentially invoking the simplify tactic.</span></div>
+<div class="line"><span class="lineno"> 6001</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 6002</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 6003</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 6004</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x + 1 &gt;= 2)</span></div>
+<div class="line"><span class="lineno"> 6005</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
+<div class="line"><span class="lineno"> 6006</span><span class="stringliteral">        [x + 1 &gt;= 2]</span></div>
+<div class="line"><span class="lineno"> 6007</span><span class="stringliteral">        &gt;&gt;&gt; g2 = g.simplify()</span></div>
+<div class="line"><span class="lineno"> 6008</span><span class="stringliteral">        &gt;&gt;&gt; g2</span></div>
+<div class="line"><span class="lineno"> 6009</span><span class="stringliteral">        [x &gt;= 1]</span></div>
+<div class="line"><span class="lineno"> 6010</span><span class="stringliteral">        &gt;&gt;&gt; # g was not modified</span></div>
+<div class="line"><span class="lineno"> 6011</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
+<div class="line"><span class="lineno"> 6012</span><span class="stringliteral">        [x + 1 &gt;= 2]</span></div>
+<div class="line"><span class="lineno"> 6013</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 6014</span>        t = Tactic(<span class="stringliteral">&quot;simplify&quot;</span>)</div>
+<div class="line"><span class="lineno"> 6015</span>        <span class="keywordflow">return</span> t.apply(self, *arguments, **keywords)[0]</div>
+<div class="line"><span class="lineno"> 6016</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1191,23 +1191,23 @@ This method is essentially invoking the simplify tactic.
 &gt;&gt;&gt; g.size()
 2
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05782">5782</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5782</span>    <span class="keyword">def </span>size(self):</div>
-<div class="line"><span class="lineno"> 5783</span>        <span class="stringliteral">&quot;&quot;&quot;Return the number of constraints in the goal `self`.</span></div>
-<div class="line"><span class="lineno"> 5784</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5785</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5786</span><span class="stringliteral">        &gt;&gt;&gt; g.size()</span></div>
-<div class="line"><span class="lineno"> 5787</span><span class="stringliteral">        0</span></div>
-<div class="line"><span class="lineno"> 5788</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
-<div class="line"><span class="lineno"> 5789</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, y &gt; x)</span></div>
-<div class="line"><span class="lineno"> 5790</span><span class="stringliteral">        &gt;&gt;&gt; g.size()</span></div>
-<div class="line"><span class="lineno"> 5791</span><span class="stringliteral">        2</span></div>
-<div class="line"><span class="lineno"> 5792</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5793</span>        <span class="keywordflow">return</span> int(<a class="code hl_function" href="group__capi.html#ga5badc99b0a1e154ef3cef17ff35fd021">Z3_goal_size</a>(self.ctx.ref(), self.goal))</div>
-<div class="line"><span class="lineno"> 5794</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05826">5826</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5826</span>    <span class="keyword">def </span>size(self):</div>
+<div class="line"><span class="lineno"> 5827</span>        <span class="stringliteral">&quot;&quot;&quot;Return the number of constraints in the goal `self`.</span></div>
+<div class="line"><span class="lineno"> 5828</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5829</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5830</span><span class="stringliteral">        &gt;&gt;&gt; g.size()</span></div>
+<div class="line"><span class="lineno"> 5831</span><span class="stringliteral">        0</span></div>
+<div class="line"><span class="lineno"> 5832</span><span class="stringliteral">        &gt;&gt;&gt; x, y = Ints(&#39;x y&#39;)</span></div>
+<div class="line"><span class="lineno"> 5833</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x == 0, y &gt; x)</span></div>
+<div class="line"><span class="lineno"> 5834</span><span class="stringliteral">        &gt;&gt;&gt; g.size()</span></div>
+<div class="line"><span class="lineno"> 5835</span><span class="stringliteral">        2</span></div>
+<div class="line"><span class="lineno"> 5836</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5837</span>        <span class="keywordflow">return</span> int(<a class="code hl_function" href="group__capi.html#ga5badc99b0a1e154ef3cef17ff35fd021">Z3_goal_size</a>(self.ctx.ref(), self.goal))</div>
+<div class="line"><span class="lineno"> 5838</span> </div>
 <div class="ttc" id="agroup__capi_html_ga5badc99b0a1e154ef3cef17ff35fd021"><div class="ttname"><a href="group__capi.html#ga5badc99b0a1e154ef3cef17ff35fd021">Z3_goal_size</a></div><div class="ttdeci">unsigned Z3_API Z3_goal_size(Z3_context c, Z3_goal g)</div><div class="ttdoc">Return the number of formulas in the given goal.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05658">ParamDescrsRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l05795">Goal.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04020">BitVecNumRef.as_signed_long()</a>, and <a class="el" href="z3py_8py_source.html#l03561">BitVecSortRef.subsort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05702">ParamDescrsRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l05839">Goal.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04064">BitVecNumRef.as_signed_long()</a>, and <a class="el" href="z3py_8py_source.html#l03605">BitVecSortRef.subsort()</a>.</p>
 
 </div>
 </div>
@@ -1254,33 +1254,33 @@ True
 &gt;&gt;&gt; g2.ctx == main_ctx()
 False
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05924">5924</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 5924</span>    <span class="keyword">def </span>translate(self, target):</div>
-<div class="line"><span class="lineno"> 5925</span>        <span class="stringliteral">&quot;&quot;&quot;Copy goal `self` to context `target`.</span></div>
-<div class="line"><span class="lineno"> 5926</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 5927</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 5928</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
-<div class="line"><span class="lineno"> 5929</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 10)</span></div>
-<div class="line"><span class="lineno"> 5930</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
-<div class="line"><span class="lineno"> 5931</span><span class="stringliteral">        [x &gt; 10]</span></div>
-<div class="line"><span class="lineno"> 5932</span><span class="stringliteral">        &gt;&gt;&gt; c2 = Context()</span></div>
-<div class="line"><span class="lineno"> 5933</span><span class="stringliteral">        &gt;&gt;&gt; g2 = g.translate(c2)</span></div>
-<div class="line"><span class="lineno"> 5934</span><span class="stringliteral">        &gt;&gt;&gt; g2</span></div>
-<div class="line"><span class="lineno"> 5935</span><span class="stringliteral">        [x &gt; 10]</span></div>
-<div class="line"><span class="lineno"> 5936</span><span class="stringliteral">        &gt;&gt;&gt; g.ctx == main_ctx()</span></div>
-<div class="line"><span class="lineno"> 5937</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 5938</span><span class="stringliteral">        &gt;&gt;&gt; g2.ctx == c2</span></div>
-<div class="line"><span class="lineno"> 5939</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 5940</span><span class="stringliteral">        &gt;&gt;&gt; g2.ctx == main_ctx()</span></div>
-<div class="line"><span class="lineno"> 5941</span><span class="stringliteral">        False</span></div>
-<div class="line"><span class="lineno"> 5942</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 5943</span>        <span class="keywordflow">if</span> z3_debug():</div>
-<div class="line"><span class="lineno"> 5944</span>            _z3_assert(isinstance(target, Context), <span class="stringliteral">&quot;target must be a context&quot;</span>)</div>
-<div class="line"><span class="lineno"> 5945</span>        <span class="keywordflow">return</span> Goal(goal=<a class="code hl_function" href="group__capi.html#ga4df97794429e74d60cc087ae6df44fda">Z3_goal_translate</a>(self.ctx.ref(), self.goal, target.ref()), ctx=target)</div>
-<div class="line"><span class="lineno"> 5946</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05968">5968</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 5968</span>    <span class="keyword">def </span>translate(self, target):</div>
+<div class="line"><span class="lineno"> 5969</span>        <span class="stringliteral">&quot;&quot;&quot;Copy goal `self` to context `target`.</span></div>
+<div class="line"><span class="lineno"> 5970</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 5971</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 5972</span><span class="stringliteral">        &gt;&gt;&gt; g = Goal()</span></div>
+<div class="line"><span class="lineno"> 5973</span><span class="stringliteral">        &gt;&gt;&gt; g.add(x &gt; 10)</span></div>
+<div class="line"><span class="lineno"> 5974</span><span class="stringliteral">        &gt;&gt;&gt; g</span></div>
+<div class="line"><span class="lineno"> 5975</span><span class="stringliteral">        [x &gt; 10]</span></div>
+<div class="line"><span class="lineno"> 5976</span><span class="stringliteral">        &gt;&gt;&gt; c2 = Context()</span></div>
+<div class="line"><span class="lineno"> 5977</span><span class="stringliteral">        &gt;&gt;&gt; g2 = g.translate(c2)</span></div>
+<div class="line"><span class="lineno"> 5978</span><span class="stringliteral">        &gt;&gt;&gt; g2</span></div>
+<div class="line"><span class="lineno"> 5979</span><span class="stringliteral">        [x &gt; 10]</span></div>
+<div class="line"><span class="lineno"> 5980</span><span class="stringliteral">        &gt;&gt;&gt; g.ctx == main_ctx()</span></div>
+<div class="line"><span class="lineno"> 5981</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 5982</span><span class="stringliteral">        &gt;&gt;&gt; g2.ctx == c2</span></div>
+<div class="line"><span class="lineno"> 5983</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 5984</span><span class="stringliteral">        &gt;&gt;&gt; g2.ctx == main_ctx()</span></div>
+<div class="line"><span class="lineno"> 5985</span><span class="stringliteral">        False</span></div>
+<div class="line"><span class="lineno"> 5986</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 5987</span>        <span class="keywordflow">if</span> z3_debug():</div>
+<div class="line"><span class="lineno"> 5988</span>            _z3_assert(isinstance(target, Context), <span class="stringliteral">&quot;target must be a context&quot;</span>)</div>
+<div class="line"><span class="lineno"> 5989</span>        <span class="keywordflow">return</span> Goal(goal=<a class="code hl_function" href="group__capi.html#ga4df97794429e74d60cc087ae6df44fda">Z3_goal_translate</a>(self.ctx.ref(), self.goal, target.ref()), ctx=target)</div>
+<div class="line"><span class="lineno"> 5990</span> </div>
 <div class="ttc" id="agroup__capi_html_ga4df97794429e74d60cc087ae6df44fda"><div class="ttname"><a href="group__capi.html#ga4df97794429e74d60cc087ae6df44fda">Z3_goal_translate</a></div><div class="ttdeci">Z3_goal Z3_API Z3_goal_translate(Z3_context source, Z3_goal g, Z3_context target)</div><div class="ttdoc">Copy a goal g from the context source to the context target.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l00447">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05947">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06142">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06487">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06853">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05950">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06145">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06490">FuncInterp.__deepcopy__()</a>, and <a class="el" href="z3py_8py_source.html#l06856">ModelRef.__deepcopy__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l00467">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05991">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06186">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06531">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06897">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05994">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06189">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06534">FuncInterp.__deepcopy__()</a>, and <a class="el" href="z3py_8py_source.html#l06900">ModelRef.__deepcopy__()</a>.</p>
 
 </div>
 </div>
@@ -1297,9 +1297,9 @@ False
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05706">5706</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05750">5750</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02520">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03618">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03710">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00859">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06196">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00447">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05947">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06142">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06487">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06853">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00365">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05205">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05581">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05646">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05950">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06145">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06176">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06295">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06490">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06856">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06894">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00360">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05268">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05280">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05584">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05649">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05712">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06016">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06179">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06298">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06405">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06523">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06897">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07090">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02619">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03787">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01041">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02753">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l03917">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06033">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06735">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06933">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06209">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02740">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03901">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03776">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02714">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l03869">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06020">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06183">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06591">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06919">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l03963">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02727">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l03885">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02667">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l03830">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01630">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02543">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03641">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01062">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02694">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03765">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03687">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02591">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02533">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03631">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03723">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02646">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03810">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l05605">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l05684">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06236">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06901">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l03991">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02682">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l03851">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02558">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03654">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03700">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02605">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l03977">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l03933">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02581">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03677">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03746">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06062">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06220">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02568">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03664">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03733">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l05444">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01121">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06320">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l06448">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l05973">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07246">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l05836">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07190">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02208">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l07276">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l05884">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00410">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01083">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l06780">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04728">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03115">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l05716">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l05920">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00796">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04667">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l06409">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l06462">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06239">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l06534">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l05808">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l05673">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l06608">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l06969">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l05668">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l05663">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l06675">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06715">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l05734">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06268">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l06957">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07305">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00622">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02202">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06302">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l06432">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07158">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l06660">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00831">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02180">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03224">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07136">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l05752">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l06829">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06841">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07114">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06078">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02163">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00808">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04672">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05416">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06253">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07176">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06090">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07101">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l05588">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l05916">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06151">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06530">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l05653">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l05782">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02158">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06126">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00431">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l05924">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l06821">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l05608">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06351">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02231">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02247">QuantifierRef.var_sort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02564">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03662">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03754">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00879">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06240">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00467">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05991">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06186">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06531">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06897">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00385">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05249">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05625">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05690">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05994">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06189">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06220">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06339">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06534">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06900">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06938">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00380">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05312">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05324">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05628">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05693">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05756">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06060">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06223">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06342">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06449">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06567">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06941">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07134">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02663">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03831">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01061">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02797">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l03961">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06077">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06779">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06977">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06253">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02784">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03945">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03820">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02758">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l03913">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06064">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06227">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06635">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06963">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04007">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02771">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l03929">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02711">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l03874">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01674">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02587">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03685">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01082">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02738">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03809">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03731">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02635">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02577">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03675">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03767">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02690">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03854">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l05649">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l05728">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06280">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06945">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l04035">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02726">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l03895">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02602">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03698">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03744">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02649">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l04021">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l03977">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02625">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03721">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03790">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06106">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06264">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02612">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03708">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03777">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l05488">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01141">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06364">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l06492">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l06017">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07290">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l05880">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07234">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02252">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l07320">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l05928">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00430">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01103">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l06824">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04772">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03159">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l05760">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l05964">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00816">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04711">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l06453">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l06506">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06283">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l06578">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l05852">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l05717">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l06652">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l07013">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l05712">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l05707">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l06719">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06759">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l05778">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06312">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l07001">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07349">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00642">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02246">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06346">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l06476">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07202">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l06704">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00851">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02224">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03268">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07180">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l05796">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l06873">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06885">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07158">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06122">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02207">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00828">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04716">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05460">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06297">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07220">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06134">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07145">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l05632">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l05960">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06195">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06574">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l05697">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l05826">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02202">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06170">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00451">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l05968">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l06865">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l01177">ExprRef.update()</a>, <a class="el" href="z3py_8py_source.html#l05652">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06395">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02275">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02291">QuantifierRef.var_sort()</a>.</p>
 
 </div>
 </div>
@@ -1315,16 +1315,16 @@ False
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05707">5707</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l05751">5751</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05712">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05836">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l05884">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l05716">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l05920">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l05808">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l05734">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l05752">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l05916">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l05782">Goal.size()</a>, and <a class="el" href="z3py_8py_source.html#l05924">Goal.translate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05756">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05880">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l05928">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l05760">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l05964">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l05852">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l05778">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l05796">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l05960">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l05826">Goal.size()</a>, and <a class="el" href="z3py_8py_source.html#l05968">Goal.translate()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2026 05:03:26 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jan 12 2026 05:53:39 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

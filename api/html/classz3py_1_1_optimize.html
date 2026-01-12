@@ -193,7 +193,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Optimize API provides methods for solving using objective functions and weighted soft constraints</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08080">8080</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08124">8124</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7b3162e414171460eedf189b4fd4d839" name="a7b3162e414171460eedf189b4fd4d839"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7b3162e414171460eedf189b4fd4d839">&#9670;&#160;</a></span>__init__()</h2>
@@ -227,16 +227,16 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08083">8083</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8083</span>    <span class="keyword">def </span>__init__(self, optimize=None, ctx=None):</div>
-<div class="line"><span class="lineno"> 8084</span>        self.ctx = _get_ctx(ctx)</div>
-<div class="line"><span class="lineno"> 8085</span>        <span class="keywordflow">if</span> optimize <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 8086</span>            self.optimize = <a class="code hl_function" href="group__capi.html#gaa4ed75043b03c5faefb5569a99dbb343">Z3_mk_optimize</a>(self.ctx.ref())</div>
-<div class="line"><span class="lineno"> 8087</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8088</span>            self.optimize = optimize</div>
-<div class="line"><span class="lineno"> 8089</span>        self._on_models_id = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno"> 8090</span>        <a class="code hl_function" href="group__capi.html#ga5f10383ba8f662caee0258da9b2493a3">Z3_optimize_inc_ref</a>(self.ctx.ref(), self.optimize)</div>
-<div class="line"><span class="lineno"> 8091</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08127">8127</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8127</span>    <span class="keyword">def </span>__init__(self, optimize=None, ctx=None):</div>
+<div class="line"><span class="lineno"> 8128</span>        self.ctx = _get_ctx(ctx)</div>
+<div class="line"><span class="lineno"> 8129</span>        <span class="keywordflow">if</span> optimize <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 8130</span>            self.optimize = <a class="code hl_function" href="group__capi.html#gaa4ed75043b03c5faefb5569a99dbb343">Z3_mk_optimize</a>(self.ctx.ref())</div>
+<div class="line"><span class="lineno"> 8131</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8132</span>            self.optimize = optimize</div>
+<div class="line"><span class="lineno"> 8133</span>        self._on_models_id = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno"> 8134</span>        <a class="code hl_function" href="group__capi.html#ga5f10383ba8f662caee0258da9b2493a3">Z3_optimize_inc_ref</a>(self.ctx.ref(), self.optimize)</div>
+<div class="line"><span class="lineno"> 8135</span> </div>
 <div class="ttc" id="agroup__capi_html_ga5f10383ba8f662caee0258da9b2493a3"><div class="ttname"><a href="group__capi.html#ga5f10383ba8f662caee0258da9b2493a3">Z3_optimize_inc_ref</a></div><div class="ttdeci">void Z3_API Z3_optimize_inc_ref(Z3_context c, Z3_optimize d)</div><div class="ttdoc">Increment the reference counter of the given optimize context.</div></div>
 <div class="ttc" id="agroup__capi_html_gaa4ed75043b03c5faefb5569a99dbb343"><div class="ttname"><a href="group__capi.html#gaa4ed75043b03c5faefb5569a99dbb343">Z3_mk_optimize</a></div><div class="ttdeci">Z3_optimize Z3_API Z3_mk_optimize(Z3_context c)</div><div class="ttdoc">Create a new optimize context.</div></div>
 </div><!-- fragment -->
@@ -258,13 +258,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08095">8095</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8095</span>    <span class="keyword">def </span>__del__(self):</div>
-<div class="line"><span class="lineno"> 8096</span>        <span class="keywordflow">if</span> self.optimize <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_optimize_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 8097</span>            <a class="code hl_function" href="group__capi.html#gaacba01b492a07858d7a7314c9a5f9a17">Z3_optimize_dec_ref</a>(self.ctx.ref(), self.optimize)</div>
-<div class="line"><span class="lineno"> 8098</span>        <span class="keywordflow">if</span> self._on_models_id <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 8099</span>            del _on_models[self._on_models_id]</div>
-<div class="line"><span class="lineno"> 8100</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08139">8139</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8139</span>    <span class="keyword">def </span>__del__(self):</div>
+<div class="line"><span class="lineno"> 8140</span>        <span class="keywordflow">if</span> self.optimize <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_optimize_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 8141</span>            <a class="code hl_function" href="group__capi.html#gaacba01b492a07858d7a7314c9a5f9a17">Z3_optimize_dec_ref</a>(self.ctx.ref(), self.optimize)</div>
+<div class="line"><span class="lineno"> 8142</span>        <span class="keywordflow">if</span> self._on_models_id <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 8143</span>            del _on_models[self._on_models_id]</div>
+<div class="line"><span class="lineno"> 8144</span> </div>
 <div class="ttc" id="agroup__capi_html_gaacba01b492a07858d7a7314c9a5f9a17"><div class="ttname"><a href="group__capi.html#gaacba01b492a07858d7a7314c9a5f9a17">Z3_optimize_dec_ref</a></div><div class="ttdeci">void Z3_API Z3_optimize_dec_ref(Z3_context c, Z3_optimize d)</div><div class="ttdoc">Decrement the reference counter of the given optimize context.</div></div>
 </div><!-- fragment -->
 </div>
@@ -296,10 +296,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08092">8092</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8092</span>    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
-<div class="line"><span class="lineno"> 8093</span>        <span class="keywordflow">return</span> Optimize(self.optimize, self.ctx)</div>
-<div class="line"><span class="lineno"> 8094</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08136">8136</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8136</span>    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
+<div class="line"><span class="lineno"> 8137</span>        <span class="keywordflow">return</span> Optimize(self.optimize, self.ctx)</div>
+<div class="line"><span class="lineno"> 8138</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -319,11 +319,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08101">8101</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8101</span>    <span class="keyword">def </span>__enter__(self):</div>
-<div class="line"><span class="lineno"> 8102</span>        self.push()</div>
-<div class="line"><span class="lineno"> 8103</span>        <span class="keywordflow">return</span> self</div>
-<div class="line"><span class="lineno"> 8104</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08145">8145</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8145</span>    <span class="keyword">def </span>__enter__(self):</div>
+<div class="line"><span class="lineno"> 8146</span>        self.push()</div>
+<div class="line"><span class="lineno"> 8147</span>        <span class="keywordflow">return</span> self</div>
+<div class="line"><span class="lineno"> 8148</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -353,10 +353,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08105">8105</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8105</span>    <span class="keyword">def </span>__exit__(self, *exc_info):</div>
-<div class="line"><span class="lineno"> 8106</span>        self.pop()</div>
-<div class="line"><span class="lineno"> 8107</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08149">8149</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8149</span>    <span class="keyword">def </span>__exit__(self, *exc_info):</div>
+<div class="line"><span class="lineno"> 8150</span>        self.pop()</div>
+<div class="line"><span class="lineno"> 8151</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -386,11 +386,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08139">8139</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8139</span>    <span class="keyword">def </span>__iadd__(self, fml):</div>
-<div class="line"><span class="lineno"> 8140</span>        self.add(fml)</div>
-<div class="line"><span class="lineno"> 8141</span>        <span class="keywordflow">return</span> self</div>
-<div class="line"><span class="lineno"> 8142</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08183">8183</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8183</span>    <span class="keyword">def </span>__iadd__(self, fml):</div>
+<div class="line"><span class="lineno"> 8184</span>        self.add(fml)</div>
+<div class="line"><span class="lineno"> 8185</span>        <span class="keywordflow">return</span> self</div>
+<div class="line"><span class="lineno"> 8186</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -410,11 +410,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a formatted string with all added rules and constraints.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08286">8286</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8286</span>    <span class="keyword">def </span>__repr__(self):</div>
-<div class="line"><span class="lineno"> 8287</span>        <span class="stringliteral">&quot;&quot;&quot;Return a formatted string with all added rules and constraints.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8288</span>        <span class="keywordflow">return</span> self.sexpr()</div>
-<div class="line"><span class="lineno"> 8289</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08330">8330</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8330</span>    <span class="keyword">def </span>__repr__(self):</div>
+<div class="line"><span class="lineno"> 8331</span>        <span class="stringliteral">&quot;&quot;&quot;Return a formatted string with all added rules and constraints.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8332</span>        <span class="keywordflow">return</span> self.sexpr()</div>
+<div class="line"><span class="lineno"> 8333</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -444,13 +444,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Assert constraints as background axioms for the optimize solver. Alias for assert_expr.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08135">8135</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8135</span>    <span class="keyword">def </span>add(self, *args):</div>
-<div class="line"><span class="lineno"> 8136</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the optimize solver. Alias for assert_expr.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8137</span>        self.assert_exprs(*args)</div>
-<div class="line"><span class="lineno"> 8138</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08179">8179</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8179</span>    <span class="keyword">def </span>add(self, *args):</div>
+<div class="line"><span class="lineno"> 8180</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the optimize solver. Alias for assert_expr.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8181</span>        self.assert_exprs(*args)</div>
+<div class="line"><span class="lineno"> 8182</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07220">Solver.__iadd__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07264">Solver.__iadd__()</a>.</p>
 
 </div>
 </div>
@@ -497,31 +497,31 @@ Additional Inherited Members</h2></td></tr>
    Soft constraints are grouped by identifiers. Soft constraints that are
    added without identifiers are grouped by default.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08172">8172</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8172</span>    <span class="keyword">def </span>add_soft(self, arg, weight=&quot;1&quot;, id=None):</div>
-<div class="line"><span class="lineno"> 8173</span>        <span class="stringliteral">&quot;&quot;&quot;Add soft constraint with optional weight and optional identifier.</span></div>
-<div class="line"><span class="lineno"> 8174</span><span class="stringliteral">           If no weight is supplied, then the penalty for violating the soft constraint</span></div>
-<div class="line"><span class="lineno"> 8175</span><span class="stringliteral">           is 1.</span></div>
-<div class="line"><span class="lineno"> 8176</span><span class="stringliteral">           Soft constraints are grouped by identifiers. Soft constraints that are</span></div>
-<div class="line"><span class="lineno"> 8177</span><span class="stringliteral">           added without identifiers are grouped by default.</span></div>
-<div class="line"><span class="lineno"> 8178</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8179</span>        <span class="keywordflow">if</span> _is_int(weight):</div>
-<div class="line"><span class="lineno"> 8180</span>            weight = <span class="stringliteral">&quot;%d&quot;</span> % weight</div>
-<div class="line"><span class="lineno"> 8181</span>        <span class="keywordflow">elif</span> isinstance(weight, float):</div>
-<div class="line"><span class="lineno"> 8182</span>            weight = <span class="stringliteral">&quot;%f&quot;</span> % weight</div>
-<div class="line"><span class="lineno"> 8183</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(weight, str):</div>
-<div class="line"><span class="lineno"> 8184</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;weight should be a string or an integer&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8185</span>        <span class="keywordflow">if</span> id <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 8186</span>            id = <span class="stringliteral">&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8187</span>        id = to_symbol(id, self.ctx)</div>
-<div class="line"><span class="lineno"> 8188</span> </div>
-<div class="line"><span class="lineno"> 8189</span>        <span class="keyword">def </span>asoft(a):</div>
-<div class="line"><span class="lineno"> 8190</span>            v = <a class="code hl_function" href="group__capi.html#ga4fec5d5997cd90dcc01cd3cddae73915">Z3_optimize_assert_soft</a>(self.ctx.ref(), self.optimize, a.as_ast(), weight, id)</div>
-<div class="line"><span class="lineno"> 8191</span>            <span class="keywordflow">return</span> OptimizeObjective(self, v, <span class="keyword">False</span>)</div>
-<div class="line"><span class="lineno"> 8192</span>        <span class="keywordflow">if</span> sys.version_info.major &gt;= 3 <span class="keywordflow">and</span> isinstance(arg, Iterable):</div>
-<div class="line"><span class="lineno"> 8193</span>            <span class="keywordflow">return</span> [asoft(a) <span class="keywordflow">for</span> a <span class="keywordflow">in</span> arg]</div>
-<div class="line"><span class="lineno"> 8194</span>        <span class="keywordflow">return</span> asoft(arg)</div>
-<div class="line"><span class="lineno"> 8195</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08216">8216</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8216</span>    <span class="keyword">def </span>add_soft(self, arg, weight=&quot;1&quot;, id=None):</div>
+<div class="line"><span class="lineno"> 8217</span>        <span class="stringliteral">&quot;&quot;&quot;Add soft constraint with optional weight and optional identifier.</span></div>
+<div class="line"><span class="lineno"> 8218</span><span class="stringliteral">           If no weight is supplied, then the penalty for violating the soft constraint</span></div>
+<div class="line"><span class="lineno"> 8219</span><span class="stringliteral">           is 1.</span></div>
+<div class="line"><span class="lineno"> 8220</span><span class="stringliteral">           Soft constraints are grouped by identifiers. Soft constraints that are</span></div>
+<div class="line"><span class="lineno"> 8221</span><span class="stringliteral">           added without identifiers are grouped by default.</span></div>
+<div class="line"><span class="lineno"> 8222</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8223</span>        <span class="keywordflow">if</span> _is_int(weight):</div>
+<div class="line"><span class="lineno"> 8224</span>            weight = <span class="stringliteral">&quot;%d&quot;</span> % weight</div>
+<div class="line"><span class="lineno"> 8225</span>        <span class="keywordflow">elif</span> isinstance(weight, float):</div>
+<div class="line"><span class="lineno"> 8226</span>            weight = <span class="stringliteral">&quot;%f&quot;</span> % weight</div>
+<div class="line"><span class="lineno"> 8227</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(weight, str):</div>
+<div class="line"><span class="lineno"> 8228</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;weight should be a string or an integer&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8229</span>        <span class="keywordflow">if</span> id <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 8230</span>            id = <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8231</span>        id = to_symbol(id, self.ctx)</div>
+<div class="line"><span class="lineno"> 8232</span> </div>
+<div class="line"><span class="lineno"> 8233</span>        <span class="keyword">def </span>asoft(a):</div>
+<div class="line"><span class="lineno"> 8234</span>            v = <a class="code hl_function" href="group__capi.html#ga4fec5d5997cd90dcc01cd3cddae73915">Z3_optimize_assert_soft</a>(self.ctx.ref(), self.optimize, a.as_ast(), weight, id)</div>
+<div class="line"><span class="lineno"> 8235</span>            <span class="keywordflow">return</span> OptimizeObjective(self, v, <span class="keyword">False</span>)</div>
+<div class="line"><span class="lineno"> 8236</span>        <span class="keywordflow">if</span> sys.version_info.major &gt;= 3 <span class="keywordflow">and</span> isinstance(arg, Iterable):</div>
+<div class="line"><span class="lineno"> 8237</span>            <span class="keywordflow">return</span> [asoft(a) <span class="keywordflow">for</span> a <span class="keywordflow">in</span> arg]</div>
+<div class="line"><span class="lineno"> 8238</span>        <span class="keywordflow">return</span> asoft(arg)</div>
+<div class="line"><span class="lineno"> 8239</span> </div>
 <div class="ttc" id="agroup__capi_html_ga4fec5d5997cd90dcc01cd3cddae73915"><div class="ttname"><a href="group__capi.html#ga4fec5d5997cd90dcc01cd3cddae73915">Z3_optimize_assert_soft</a></div><div class="ttdeci">unsigned Z3_API Z3_optimize_assert_soft(Z3_context c, Z3_optimize o, Z3_ast a, Z3_string weight, Z3_symbol id)</div><div class="ttdoc">Assert soft constraint to the optimization context.</div></div>
 </div><!-- fragment -->
 </div>
@@ -579,36 +579,36 @@ False
 &gt;&gt;&gt; p3 in c
 True
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08143">8143</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8143</span>    <span class="keyword">def </span>assert_and_track(self, a, p):</div>
-<div class="line"><span class="lineno"> 8144</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraint `a` and track it in the unsat core using the Boolean constant `p`.</span></div>
-<div class="line"><span class="lineno"> 8145</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 8146</span><span class="stringliteral">        If `p` is a string, it will be automatically converted into a Boolean constant.</span></div>
-<div class="line"><span class="lineno"> 8147</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 8148</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
-<div class="line"><span class="lineno"> 8149</span><span class="stringliteral">        &gt;&gt;&gt; p3 = Bool(&#39;p3&#39;)</span></div>
-<div class="line"><span class="lineno"> 8150</span><span class="stringliteral">        &gt;&gt;&gt; s = Optimize()</span></div>
-<div class="line"><span class="lineno"> 8151</span><span class="stringliteral">        &gt;&gt;&gt; s.assert_and_track(x &gt; 0,  &#39;p1&#39;)</span></div>
-<div class="line"><span class="lineno"> 8152</span><span class="stringliteral">        &gt;&gt;&gt; s.assert_and_track(x != 1, &#39;p2&#39;)</span></div>
-<div class="line"><span class="lineno"> 8153</span><span class="stringliteral">        &gt;&gt;&gt; s.assert_and_track(x &lt; 0,  p3)</span></div>
-<div class="line"><span class="lineno"> 8154</span><span class="stringliteral">        &gt;&gt;&gt; print(s.check())</span></div>
-<div class="line"><span class="lineno"> 8155</span><span class="stringliteral">        unsat</span></div>
-<div class="line"><span class="lineno"> 8156</span><span class="stringliteral">        &gt;&gt;&gt; c = s.unsat_core()</span></div>
-<div class="line"><span class="lineno"> 8157</span><span class="stringliteral">        &gt;&gt;&gt; len(c)</span></div>
-<div class="line"><span class="lineno"> 8158</span><span class="stringliteral">        2</span></div>
-<div class="line"><span class="lineno"> 8159</span><span class="stringliteral">        &gt;&gt;&gt; Bool(&#39;p1&#39;) in c</span></div>
-<div class="line"><span class="lineno"> 8160</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 8161</span><span class="stringliteral">        &gt;&gt;&gt; Bool(&#39;p2&#39;) in c</span></div>
-<div class="line"><span class="lineno"> 8162</span><span class="stringliteral">        False</span></div>
-<div class="line"><span class="lineno"> 8163</span><span class="stringliteral">        &gt;&gt;&gt; p3 in c</span></div>
-<div class="line"><span class="lineno"> 8164</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 8165</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8166</span>        <span class="keywordflow">if</span> isinstance(p, str):</div>
-<div class="line"><span class="lineno"> 8167</span>            p = Bool(p, self.ctx)</div>
-<div class="line"><span class="lineno"> 8168</span>        _z3_assert(isinstance(a, BoolRef), <span class="stringliteral">&quot;Boolean expression expected&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8169</span>        _z3_assert(isinstance(p, BoolRef) <span class="keywordflow">and</span> is_const(p), <span class="stringliteral">&quot;Boolean expression expected&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8170</span>        <a class="code hl_function" href="group__capi.html#ga4f756c5c7df8ccc87b45b33582094d5d">Z3_optimize_assert_and_track</a>(self.ctx.ref(), self.optimize, a.as_ast(), p.as_ast())</div>
-<div class="line"><span class="lineno"> 8171</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08187">8187</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8187</span>    <span class="keyword">def </span>assert_and_track(self, a, p):</div>
+<div class="line"><span class="lineno"> 8188</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraint `a` and track it in the unsat core using the Boolean constant `p`.</span></div>
+<div class="line"><span class="lineno"> 8189</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 8190</span><span class="stringliteral">        If `p` is a string, it will be automatically converted into a Boolean constant.</span></div>
+<div class="line"><span class="lineno"> 8191</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 8192</span><span class="stringliteral">        &gt;&gt;&gt; x = Int(&#39;x&#39;)</span></div>
+<div class="line"><span class="lineno"> 8193</span><span class="stringliteral">        &gt;&gt;&gt; p3 = Bool(&#39;p3&#39;)</span></div>
+<div class="line"><span class="lineno"> 8194</span><span class="stringliteral">        &gt;&gt;&gt; s = Optimize()</span></div>
+<div class="line"><span class="lineno"> 8195</span><span class="stringliteral">        &gt;&gt;&gt; s.assert_and_track(x &gt; 0,  &#39;p1&#39;)</span></div>
+<div class="line"><span class="lineno"> 8196</span><span class="stringliteral">        &gt;&gt;&gt; s.assert_and_track(x != 1, &#39;p2&#39;)</span></div>
+<div class="line"><span class="lineno"> 8197</span><span class="stringliteral">        &gt;&gt;&gt; s.assert_and_track(x &lt; 0,  p3)</span></div>
+<div class="line"><span class="lineno"> 8198</span><span class="stringliteral">        &gt;&gt;&gt; print(s.check())</span></div>
+<div class="line"><span class="lineno"> 8199</span><span class="stringliteral">        unsat</span></div>
+<div class="line"><span class="lineno"> 8200</span><span class="stringliteral">        &gt;&gt;&gt; c = s.unsat_core()</span></div>
+<div class="line"><span class="lineno"> 8201</span><span class="stringliteral">        &gt;&gt;&gt; len(c)</span></div>
+<div class="line"><span class="lineno"> 8202</span><span class="stringliteral">        2</span></div>
+<div class="line"><span class="lineno"> 8203</span><span class="stringliteral">        &gt;&gt;&gt; Bool(&#39;p1&#39;) in c</span></div>
+<div class="line"><span class="lineno"> 8204</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 8205</span><span class="stringliteral">        &gt;&gt;&gt; Bool(&#39;p2&#39;) in c</span></div>
+<div class="line"><span class="lineno"> 8206</span><span class="stringliteral">        False</span></div>
+<div class="line"><span class="lineno"> 8207</span><span class="stringliteral">        &gt;&gt;&gt; p3 in c</span></div>
+<div class="line"><span class="lineno"> 8208</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 8209</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8210</span>        <span class="keywordflow">if</span> isinstance(p, str):</div>
+<div class="line"><span class="lineno"> 8211</span>            p = Bool(p, self.ctx)</div>
+<div class="line"><span class="lineno"> 8212</span>        _z3_assert(isinstance(a, BoolRef), <span class="stringliteral">&quot;Boolean expression expected&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8213</span>        _z3_assert(isinstance(p, BoolRef) <span class="keywordflow">and</span> is_const(p), <span class="stringliteral">&quot;Boolean expression expected&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8214</span>        <a class="code hl_function" href="group__capi.html#ga4f756c5c7df8ccc87b45b33582094d5d">Z3_optimize_assert_and_track</a>(self.ctx.ref(), self.optimize, a.as_ast(), p.as_ast())</div>
+<div class="line"><span class="lineno"> 8215</span> </div>
 <div class="ttc" id="agroup__capi_html_ga4f756c5c7df8ccc87b45b33582094d5d"><div class="ttname"><a href="group__capi.html#ga4f756c5c7df8ccc87b45b33582094d5d">Z3_optimize_assert_and_track</a></div><div class="ttdeci">void Z3_API Z3_optimize_assert_and_track(Z3_context c, Z3_optimize o, Z3_ast a, Z3_ast t)</div><div class="ttdoc">Assert tracked hard constraint to the optimization context.</div></div>
 </div><!-- fragment -->
 </div>
@@ -639,22 +639,22 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Assert constraints as background axioms for the optimize solver.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08123">8123</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8123</span>    <span class="keyword">def </span>assert_exprs(self, *args):</div>
-<div class="line"><span class="lineno"> 8124</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the optimize solver.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8125</span>        args = _get_args(args)</div>
-<div class="line"><span class="lineno"> 8126</span>        s = BoolSort(self.ctx)</div>
-<div class="line"><span class="lineno"> 8127</span>        <span class="keywordflow">for</span> arg <span class="keywordflow">in</span> args:</div>
-<div class="line"><span class="lineno"> 8128</span>            <span class="keywordflow">if</span> isinstance(arg, Goal) <span class="keywordflow">or</span> isinstance(arg, AstVector):</div>
-<div class="line"><span class="lineno"> 8129</span>                <span class="keywordflow">for</span> f <span class="keywordflow">in</span> arg:</div>
-<div class="line"><span class="lineno"> 8130</span>                    <a class="code hl_function" href="group__capi.html#ga91750e236dc58e1183e06744bffd0dc5">Z3_optimize_assert</a>(self.ctx.ref(), self.optimize, f.as_ast())</div>
-<div class="line"><span class="lineno"> 8131</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8132</span>                arg = s.cast(arg)</div>
-<div class="line"><span class="lineno"> 8133</span>                <a class="code hl_function" href="group__capi.html#ga91750e236dc58e1183e06744bffd0dc5">Z3_optimize_assert</a>(self.ctx.ref(), self.optimize, arg.as_ast())</div>
-<div class="line"><span class="lineno"> 8134</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08167">8167</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8167</span>    <span class="keyword">def </span>assert_exprs(self, *args):</div>
+<div class="line"><span class="lineno"> 8168</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the optimize solver.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8169</span>        args = _get_args(args)</div>
+<div class="line"><span class="lineno"> 8170</span>        s = BoolSort(self.ctx)</div>
+<div class="line"><span class="lineno"> 8171</span>        <span class="keywordflow">for</span> arg <span class="keywordflow">in</span> args:</div>
+<div class="line"><span class="lineno"> 8172</span>            <span class="keywordflow">if</span> isinstance(arg, Goal) <span class="keywordflow">or</span> isinstance(arg, AstVector):</div>
+<div class="line"><span class="lineno"> 8173</span>                <span class="keywordflow">for</span> f <span class="keywordflow">in</span> arg:</div>
+<div class="line"><span class="lineno"> 8174</span>                    <a class="code hl_function" href="group__capi.html#ga91750e236dc58e1183e06744bffd0dc5">Z3_optimize_assert</a>(self.ctx.ref(), self.optimize, f.as_ast())</div>
+<div class="line"><span class="lineno"> 8175</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8176</span>                arg = s.cast(arg)</div>
+<div class="line"><span class="lineno"> 8177</span>                <a class="code hl_function" href="group__capi.html#ga91750e236dc58e1183e06744bffd0dc5">Z3_optimize_assert</a>(self.ctx.ref(), self.optimize, arg.as_ast())</div>
+<div class="line"><span class="lineno"> 8178</span> </div>
 <div class="ttc" id="agroup__capi_html_ga91750e236dc58e1183e06744bffd0dc5"><div class="ttname"><a href="group__capi.html#ga91750e236dc58e1183e06744bffd0dc5">Z3_optimize_assert</a></div><div class="ttdeci">void Z3_API Z3_optimize_assert(Z3_context c, Z3_optimize o, Z3_ast a)</div><div class="ttdoc">Assert hard constraint to the optimization context.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05873">Goal.add()</a>, <a class="el" href="z3py_8py_source.html#l07209">Solver.add()</a>, <a class="el" href="z3py_8py_source.html#l05851">Goal.append()</a>, <a class="el" href="z3py_8py_source.html#l07224">Solver.append()</a>, <a class="el" href="z3py_8py_source.html#l05862">Goal.insert()</a>, and <a class="el" href="z3py_8py_source.html#l07235">Solver.insert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05917">Goal.add()</a>, <a class="el" href="z3py_8py_source.html#l07253">Solver.add()</a>, <a class="el" href="z3py_8py_source.html#l05895">Goal.append()</a>, <a class="el" href="z3py_8py_source.html#l07268">Solver.append()</a>, <a class="el" href="z3py_8py_source.html#l05906">Goal.insert()</a>, and <a class="el" href="z3py_8py_source.html#l07279">Solver.insert()</a>.</p>
 
 </div>
 </div>
@@ -674,11 +674,11 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return an AST vector containing all added constraints.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08278">8278</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8278</span>    <span class="keyword">def </span>assertions(self):</div>
-<div class="line"><span class="lineno"> 8279</span>        <span class="stringliteral">&quot;&quot;&quot;Return an AST vector containing all added constraints.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8280</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga013b4a1a6876407542e9d16262d4c049">Z3_optimize_get_assertions</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
-<div class="line"><span class="lineno"> 8281</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08322">8322</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8322</span>    <span class="keyword">def </span>assertions(self):</div>
+<div class="line"><span class="lineno"> 8323</span>        <span class="stringliteral">&quot;&quot;&quot;Return an AST vector containing all added constraints.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8324</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga013b4a1a6876407542e9d16262d4c049">Z3_optimize_get_assertions</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
+<div class="line"><span class="lineno"> 8325</span> </div>
 <div class="ttc" id="agroup__capi_html_ga013b4a1a6876407542e9d16262d4c049"><div class="ttname"><a href="group__capi.html#ga013b4a1a6876407542e9d16262d4c049">Z3_optimize_get_assertions</a></div><div class="ttdeci">Z3_ast_vector Z3_API Z3_optimize_get_assertions(Z3_context c, Z3_optimize o)</div><div class="ttdoc">Return the set of asserted formulas on the optimization context.</div></div>
 </div><!-- fragment -->
 </div>
@@ -709,16 +709,16 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Check consistency and produce optimal values.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08227">8227</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8227</span>    <span class="keyword">def </span>check(self, *assumptions):</div>
-<div class="line"><span class="lineno"> 8228</span>        <span class="stringliteral">&quot;&quot;&quot;Check consistency and produce optimal values.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8229</span>        assumptions = _get_args(assumptions)</div>
-<div class="line"><span class="lineno"> 8230</span>        num = len(assumptions)</div>
-<div class="line"><span class="lineno"> 8231</span>        _assumptions = (Ast * num)()</div>
-<div class="line"><span class="lineno"> 8232</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(num):</div>
-<div class="line"><span class="lineno"> 8233</span>            _assumptions[i] = assumptions[i].as_ast()</div>
-<div class="line"><span class="lineno"> 8234</span>        <span class="keywordflow">return</span> CheckSatResult(<a class="code hl_function" href="group__capi.html#gaed1981126d60ea3f2e80b61bcd013270">Z3_optimize_check</a>(self.ctx.ref(), self.optimize, num, _assumptions))</div>
-<div class="line"><span class="lineno"> 8235</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08271">8271</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8271</span>    <span class="keyword">def </span>check(self, *assumptions):</div>
+<div class="line"><span class="lineno"> 8272</span>        <span class="stringliteral">&quot;&quot;&quot;Check consistency and produce optimal values.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8273</span>        assumptions = _get_args(assumptions)</div>
+<div class="line"><span class="lineno"> 8274</span>        num = len(assumptions)</div>
+<div class="line"><span class="lineno"> 8275</span>        _assumptions = (Ast * num)()</div>
+<div class="line"><span class="lineno"> 8276</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(num):</div>
+<div class="line"><span class="lineno"> 8277</span>            _assumptions[i] = assumptions[i].as_ast()</div>
+<div class="line"><span class="lineno"> 8278</span>        <span class="keywordflow">return</span> CheckSatResult(<a class="code hl_function" href="group__capi.html#gaed1981126d60ea3f2e80b61bcd013270">Z3_optimize_check</a>(self.ctx.ref(), self.optimize, num, _assumptions))</div>
+<div class="line"><span class="lineno"> 8279</span> </div>
 <div class="ttc" id="agroup__capi_html_gaed1981126d60ea3f2e80b61bcd013270"><div class="ttname"><a href="group__capi.html#gaed1981126d60ea3f2e80b61bcd013270">Z3_optimize_check</a></div><div class="ttdeci">Z3_lbool Z3_API Z3_optimize_check(Z3_context c, Z3_optimize o, unsigned num_assumptions, Z3_ast const assumptions[])</div><div class="ttdoc">Check consistency and produce optimal values.</div></div>
 </div><!-- fragment -->
 </div>
@@ -749,11 +749,11 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Parse assertions and objectives from a file</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08270">8270</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8270</span>    <span class="keyword">def </span>from_file(self, filename):</div>
-<div class="line"><span class="lineno"> 8271</span>        <span class="stringliteral">&quot;&quot;&quot;Parse assertions and objectives from a file&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8272</span>        <a class="code hl_function" href="group__capi.html#ga2308d5c8a2d23dcf838957b1b3a7de0e">Z3_optimize_from_file</a>(self.ctx.ref(), self.optimize, filename)</div>
-<div class="line"><span class="lineno"> 8273</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08314">8314</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8314</span>    <span class="keyword">def </span>from_file(self, filename):</div>
+<div class="line"><span class="lineno"> 8315</span>        <span class="stringliteral">&quot;&quot;&quot;Parse assertions and objectives from a file&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8316</span>        <a class="code hl_function" href="group__capi.html#ga2308d5c8a2d23dcf838957b1b3a7de0e">Z3_optimize_from_file</a>(self.ctx.ref(), self.optimize, filename)</div>
+<div class="line"><span class="lineno"> 8317</span> </div>
 <div class="ttc" id="agroup__capi_html_ga2308d5c8a2d23dcf838957b1b3a7de0e"><div class="ttname"><a href="group__capi.html#ga2308d5c8a2d23dcf838957b1b3a7de0e">Z3_optimize_from_file</a></div><div class="ttdeci">void Z3_API Z3_optimize_from_file(Z3_context c, Z3_optimize o, Z3_string s)</div><div class="ttdoc">Parse an SMT-LIB2 file with assertions, soft constraints and optimization objectives....</div></div>
 </div><!-- fragment -->
 </div>
@@ -784,11 +784,11 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Parse assertions and objectives from a string</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08274">8274</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8274</span>    <span class="keyword">def </span>from_string(self, s):</div>
-<div class="line"><span class="lineno"> 8275</span>        <span class="stringliteral">&quot;&quot;&quot;Parse assertions and objectives from a string&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8276</span>        <a class="code hl_function" href="group__capi.html#gadde4c86439cb73e8357fb4edaa313c20">Z3_optimize_from_string</a>(self.ctx.ref(), self.optimize, s)</div>
-<div class="line"><span class="lineno"> 8277</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08318">8318</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8318</span>    <span class="keyword">def </span>from_string(self, s):</div>
+<div class="line"><span class="lineno"> 8319</span>        <span class="stringliteral">&quot;&quot;&quot;Parse assertions and objectives from a string&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8320</span>        <a class="code hl_function" href="group__capi.html#gadde4c86439cb73e8357fb4edaa313c20">Z3_optimize_from_string</a>(self.ctx.ref(), self.optimize, s)</div>
+<div class="line"><span class="lineno"> 8321</span> </div>
 <div class="ttc" id="agroup__capi_html_gadde4c86439cb73e8357fb4edaa313c20"><div class="ttname"><a href="group__capi.html#gadde4c86439cb73e8357fb4edaa313c20">Z3_optimize_from_string</a></div><div class="ttdeci">void Z3_API Z3_optimize_from_string(Z3_context c, Z3_optimize o, Z3_string s)</div><div class="ttdoc">Parse an SMT-LIB2 string with assertions, soft constraints and optimization objectives....</div></div>
 </div><!-- fragment -->
 </div>
@@ -809,11 +809,11 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Display a string describing all available options.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08115">8115</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8115</span>    <span class="keyword">def </span>help(self):</div>
-<div class="line"><span class="lineno"> 8116</span>        <span class="stringliteral">&quot;&quot;&quot;Display a string describing all available options.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8117</span>        print(<a class="code hl_function" href="group__capi.html#gab574d64f78498309a912261e3d894eee">Z3_optimize_get_help</a>(self.ctx.ref(), self.optimize))</div>
-<div class="line"><span class="lineno"> 8118</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08159">8159</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8159</span>    <span class="keyword">def </span>help(self):</div>
+<div class="line"><span class="lineno"> 8160</span>        <span class="stringliteral">&quot;&quot;&quot;Display a string describing all available options.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8161</span>        print(<a class="code hl_function" href="group__capi.html#gab574d64f78498309a912261e3d894eee">Z3_optimize_get_help</a>(self.ctx.ref(), self.optimize))</div>
+<div class="line"><span class="lineno"> 8162</span> </div>
 <div class="ttc" id="agroup__capi_html_gab574d64f78498309a912261e3d894eee"><div class="ttname"><a href="group__capi.html#gab574d64f78498309a912261e3d894eee">Z3_optimize_get_help</a></div><div class="ttdeci">Z3_string Z3_API Z3_optimize_get_help(Z3_context c, Z3_optimize t)</div><div class="ttdoc">Return a string containing a description of parameters accepted by optimize.</div></div>
 </div><!-- fragment -->
 </div>
@@ -844,12 +844,12 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08250">8250</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8250</span>    <span class="keyword">def </span>lower(self, obj):</div>
-<div class="line"><span class="lineno"> 8251</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(obj, OptimizeObjective):</div>
-<div class="line"><span class="lineno"> 8252</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Expecting objective handle returned by maximize/minimize&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8253</span>        <span class="keywordflow">return</span> obj.lower()</div>
-<div class="line"><span class="lineno"> 8254</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08294">8294</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8294</span>    <span class="keyword">def </span>lower(self, obj):</div>
+<div class="line"><span class="lineno"> 8295</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(obj, OptimizeObjective):</div>
+<div class="line"><span class="lineno"> 8296</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Expecting objective handle returned by maximize/minimize&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8297</span>        <span class="keywordflow">return</span> obj.lower()</div>
+<div class="line"><span class="lineno"> 8298</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -879,12 +879,12 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08260">8260</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8260</span>    <span class="keyword">def </span>lower_values(self, obj):</div>
-<div class="line"><span class="lineno"> 8261</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(obj, OptimizeObjective):</div>
-<div class="line"><span class="lineno"> 8262</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Expecting objective handle returned by maximize/minimize&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8263</span>        <span class="keywordflow">return</span> obj.lower_values()</div>
-<div class="line"><span class="lineno"> 8264</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08304">8304</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8304</span>    <span class="keyword">def </span>lower_values(self, obj):</div>
+<div class="line"><span class="lineno"> 8305</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(obj, OptimizeObjective):</div>
+<div class="line"><span class="lineno"> 8306</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Expecting objective handle returned by maximize/minimize&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8307</span>        <span class="keywordflow">return</span> obj.lower_values()</div>
+<div class="line"><span class="lineno"> 8308</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -914,15 +914,15 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Add objective function to maximize.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08203">8203</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8203</span>    <span class="keyword">def </span>maximize(self, arg):</div>
-<div class="line"><span class="lineno"> 8204</span>        <span class="stringliteral">&quot;&quot;&quot;Add objective function to maximize.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8205</span>        <span class="keywordflow">return</span> OptimizeObjective(</div>
-<div class="line"><span class="lineno"> 8206</span>            self,</div>
-<div class="line"><span class="lineno"> 8207</span>            <a class="code hl_function" href="group__capi.html#gac17300d834d2c999f1381bc37241f58f">Z3_optimize_maximize</a>(self.ctx.ref(), self.optimize, arg.as_ast()),</div>
-<div class="line"><span class="lineno"> 8208</span>            is_max=<span class="keyword">True</span>,</div>
-<div class="line"><span class="lineno"> 8209</span>        )</div>
-<div class="line"><span class="lineno"> 8210</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08247">8247</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8247</span>    <span class="keyword">def </span>maximize(self, arg):</div>
+<div class="line"><span class="lineno"> 8248</span>        <span class="stringliteral">&quot;&quot;&quot;Add objective function to maximize.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8249</span>        <span class="keywordflow">return</span> OptimizeObjective(</div>
+<div class="line"><span class="lineno"> 8250</span>            self,</div>
+<div class="line"><span class="lineno"> 8251</span>            <a class="code hl_function" href="group__capi.html#gac17300d834d2c999f1381bc37241f58f">Z3_optimize_maximize</a>(self.ctx.ref(), self.optimize, arg.as_ast()),</div>
+<div class="line"><span class="lineno"> 8252</span>            is_max=<span class="keyword">True</span>,</div>
+<div class="line"><span class="lineno"> 8253</span>        )</div>
+<div class="line"><span class="lineno"> 8254</span> </div>
 <div class="ttc" id="agroup__capi_html_gac17300d834d2c999f1381bc37241f58f"><div class="ttname"><a href="group__capi.html#gac17300d834d2c999f1381bc37241f58f">Z3_optimize_maximize</a></div><div class="ttdeci">unsigned Z3_API Z3_optimize_maximize(Z3_context c, Z3_optimize o, Z3_ast t)</div><div class="ttdoc">Add a maximization constraint.</div></div>
 </div><!-- fragment -->
 </div>
@@ -953,15 +953,15 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Add objective function to minimize.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08211">8211</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8211</span>    <span class="keyword">def </span>minimize(self, arg):</div>
-<div class="line"><span class="lineno"> 8212</span>        <span class="stringliteral">&quot;&quot;&quot;Add objective function to minimize.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8213</span>        <span class="keywordflow">return</span> OptimizeObjective(</div>
-<div class="line"><span class="lineno"> 8214</span>            self,</div>
-<div class="line"><span class="lineno"> 8215</span>            <a class="code hl_function" href="group__capi.html#gabada3dea18a1fb666fc1d528e73e1031">Z3_optimize_minimize</a>(self.ctx.ref(), self.optimize, arg.as_ast()),</div>
-<div class="line"><span class="lineno"> 8216</span>            is_max=<span class="keyword">False</span>,</div>
-<div class="line"><span class="lineno"> 8217</span>        )</div>
-<div class="line"><span class="lineno"> 8218</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08255">8255</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8255</span>    <span class="keyword">def </span>minimize(self, arg):</div>
+<div class="line"><span class="lineno"> 8256</span>        <span class="stringliteral">&quot;&quot;&quot;Add objective function to minimize.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8257</span>        <span class="keywordflow">return</span> OptimizeObjective(</div>
+<div class="line"><span class="lineno"> 8258</span>            self,</div>
+<div class="line"><span class="lineno"> 8259</span>            <a class="code hl_function" href="group__capi.html#gabada3dea18a1fb666fc1d528e73e1031">Z3_optimize_minimize</a>(self.ctx.ref(), self.optimize, arg.as_ast()),</div>
+<div class="line"><span class="lineno"> 8260</span>            is_max=<span class="keyword">False</span>,</div>
+<div class="line"><span class="lineno"> 8261</span>        )</div>
+<div class="line"><span class="lineno"> 8262</span> </div>
 <div class="ttc" id="agroup__capi_html_gabada3dea18a1fb666fc1d528e73e1031"><div class="ttname"><a href="group__capi.html#gabada3dea18a1fb666fc1d528e73e1031">Z3_optimize_minimize</a></div><div class="ttdeci">unsigned Z3_API Z3_optimize_minimize(Z3_context c, Z3_optimize o, Z3_ast t)</div><div class="ttdoc">Add a minimization constraint.</div></div>
 </div><!-- fragment -->
 </div>
@@ -982,17 +982,17 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a model for the last check().</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08240">8240</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8240</span>    <span class="keyword">def </span>model(self):</div>
-<div class="line"><span class="lineno"> 8241</span>        <span class="stringliteral">&quot;&quot;&quot;Return a model for the last check().&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8242</span>        <span class="keywordflow">try</span>:</div>
-<div class="line"><span class="lineno"> 8243</span>            <span class="keywordflow">return</span> ModelRef(<a class="code hl_function" href="group__capi.html#ga1ce97b3d756d59f5f971a64601338e2b">Z3_optimize_get_model</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
-<div class="line"><span class="lineno"> 8244</span>        <span class="keywordflow">except</span> Z3Exception:</div>
-<div class="line"><span class="lineno"> 8245</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;model is not available&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8246</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08284">8284</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8284</span>    <span class="keyword">def </span>model(self):</div>
+<div class="line"><span class="lineno"> 8285</span>        <span class="stringliteral">&quot;&quot;&quot;Return a model for the last check().&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8286</span>        <span class="keywordflow">try</span>:</div>
+<div class="line"><span class="lineno"> 8287</span>            <span class="keywordflow">return</span> ModelRef(<a class="code hl_function" href="group__capi.html#ga1ce97b3d756d59f5f971a64601338e2b">Z3_optimize_get_model</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
+<div class="line"><span class="lineno"> 8288</span>        <span class="keywordflow">except</span> Z3Exception:</div>
+<div class="line"><span class="lineno"> 8289</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;model is not available&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8290</span> </div>
 <div class="ttc" id="agroup__capi_html_ga1ce97b3d756d59f5f971a64601338e2b"><div class="ttname"><a href="group__capi.html#ga1ce97b3d756d59f5f971a64601338e2b">Z3_optimize_get_model</a></div><div class="ttdeci">Z3_model Z3_API Z3_optimize_get_model(Z3_context c, Z3_optimize o)</div><div class="ttdoc">Retrieve the model for the last Z3_optimize_check.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06523">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06735">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06591">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06780">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l06534">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l06608">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l06675">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06715">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l06660">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l06829">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06841">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l06530">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06821">ModelRef.translate()</a>, and <a class="el" href="z3py_8py_source.html#l06799">ModelRef.update_value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06567">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06779">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06635">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06824">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l06578">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l06652">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l06719">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06759">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l06704">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l06873">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06885">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l06574">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06865">ModelRef.translate()</a>, and <a class="el" href="z3py_8py_source.html#l06843">ModelRef.update_value()</a>.</p>
 
 </div>
 </div>
@@ -1012,11 +1012,11 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">returns set of objective functions</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08282">8282</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8282</span>    <span class="keyword">def </span>objectives(self):</div>
-<div class="line"><span class="lineno"> 8283</span>        <span class="stringliteral">&quot;&quot;&quot;returns set of objective functions&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8284</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga82ce0c3b7121c85f2cca8cc4b0c1f1c0">Z3_optimize_get_objectives</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
-<div class="line"><span class="lineno"> 8285</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08326">8326</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8326</span>    <span class="keyword">def </span>objectives(self):</div>
+<div class="line"><span class="lineno"> 8327</span>        <span class="stringliteral">&quot;&quot;&quot;returns set of objective functions&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8328</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga82ce0c3b7121c85f2cca8cc4b0c1f1c0">Z3_optimize_get_objectives</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
+<div class="line"><span class="lineno"> 8329</span> </div>
 <div class="ttc" id="agroup__capi_html_ga82ce0c3b7121c85f2cca8cc4b0c1f1c0"><div class="ttname"><a href="group__capi.html#ga82ce0c3b7121c85f2cca8cc4b0c1f1c0">Z3_optimize_get_objectives</a></div><div class="ttdeci">Z3_ast_vector Z3_API Z3_optimize_get_objectives(Z3_context c, Z3_optimize o)</div><div class="ttdoc">Return objectives on the optimization context. If the objective function is a max-sat objective it is...</div></div>
 </div><!-- fragment -->
 </div>
@@ -1037,11 +1037,11 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return the parameter description set.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08119">8119</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8119</span>    <span class="keyword">def </span>param_descrs(self):</div>
-<div class="line"><span class="lineno"> 8120</span>        <span class="stringliteral">&quot;&quot;&quot;Return the parameter description set.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8121</span>        <span class="keywordflow">return</span> ParamDescrsRef(<a class="code hl_function" href="group__capi.html#ga5e9ff7b2ddeccd512090e9e197e2e623">Z3_optimize_get_param_descrs</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
-<div class="line"><span class="lineno"> 8122</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08163">8163</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8163</span>    <span class="keyword">def </span>param_descrs(self):</div>
+<div class="line"><span class="lineno"> 8164</span>        <span class="stringliteral">&quot;&quot;&quot;Return the parameter description set.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8165</span>        <span class="keywordflow">return</span> ParamDescrsRef(<a class="code hl_function" href="group__capi.html#ga5e9ff7b2ddeccd512090e9e197e2e623">Z3_optimize_get_param_descrs</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
+<div class="line"><span class="lineno"> 8166</span> </div>
 <div class="ttc" id="agroup__capi_html_ga5e9ff7b2ddeccd512090e9e197e2e623"><div class="ttname"><a href="group__capi.html#ga5e9ff7b2ddeccd512090e9e197e2e623">Z3_optimize_get_param_descrs</a></div><div class="ttdeci">Z3_param_descrs Z3_API Z3_optimize_get_param_descrs(Z3_context c, Z3_optimize o)</div><div class="ttdoc">Return the parameter description set for the given optimize object.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1062,14 +1062,14 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">restore to previously created backtracking point</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08223">8223</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8223</span>    <span class="keyword">def </span>pop(self):</div>
-<div class="line"><span class="lineno"> 8224</span>        <span class="stringliteral">&quot;&quot;&quot;restore to previously created backtracking point&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8225</span>        <a class="code hl_function" href="group__capi.html#ga336b7ffc808fb2ce68458ef56d3c60e7">Z3_optimize_pop</a>(self.ctx.ref(), self.optimize)</div>
-<div class="line"><span class="lineno"> 8226</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08267">8267</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8267</span>    <span class="keyword">def </span>pop(self):</div>
+<div class="line"><span class="lineno"> 8268</span>        <span class="stringliteral">&quot;&quot;&quot;restore to previously created backtracking point&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8269</span>        <a class="code hl_function" href="group__capi.html#ga336b7ffc808fb2ce68458ef56d3c60e7">Z3_optimize_pop</a>(self.ctx.ref(), self.optimize)</div>
+<div class="line"><span class="lineno"> 8270</span> </div>
 <div class="ttc" id="agroup__capi_html_ga336b7ffc808fb2ce68458ef56d3c60e7"><div class="ttname"><a href="group__capi.html#ga336b7ffc808fb2ce68458ef56d3c60e7">Z3_optimize_pop</a></div><div class="ttdeci">void Z3_API Z3_optimize_pop(Z3_context c, Z3_optimize d)</div><div class="ttdoc">Backtrack one level.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07098">Solver.__exit__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07142">Solver.__exit__()</a>.</p>
 
 </div>
 </div>
@@ -1089,14 +1089,14 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">create a backtracking point for added rules, facts and assertions</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08219">8219</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8219</span>    <span class="keyword">def </span>push(self):</div>
-<div class="line"><span class="lineno"> 8220</span>        <span class="stringliteral">&quot;&quot;&quot;create a backtracking point for added rules, facts and assertions&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8221</span>        <a class="code hl_function" href="group__capi.html#ga6f729a0d478c58cc4f56a64f7958ec54">Z3_optimize_push</a>(self.ctx.ref(), self.optimize)</div>
-<div class="line"><span class="lineno"> 8222</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08263">8263</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8263</span>    <span class="keyword">def </span>push(self):</div>
+<div class="line"><span class="lineno"> 8264</span>        <span class="stringliteral">&quot;&quot;&quot;create a backtracking point for added rules, facts and assertions&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8265</span>        <a class="code hl_function" href="group__capi.html#ga6f729a0d478c58cc4f56a64f7958ec54">Z3_optimize_push</a>(self.ctx.ref(), self.optimize)</div>
+<div class="line"><span class="lineno"> 8266</span> </div>
 <div class="ttc" id="agroup__capi_html_ga6f729a0d478c58cc4f56a64f7958ec54"><div class="ttname"><a href="group__capi.html#ga6f729a0d478c58cc4f56a64f7958ec54">Z3_optimize_push</a></div><div class="ttdeci">void Z3_API Z3_optimize_push(Z3_context c, Z3_optimize d)</div><div class="ttdoc">Create a backtracking point.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07094">Solver.__enter__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07138">Solver.__enter__()</a>.</p>
 
 </div>
 </div>
@@ -1116,11 +1116,11 @@ True
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a string that describes why the last `check()` returned `unknown`.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08236">8236</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8236</span>    <span class="keyword">def </span>reason_unknown(self):</div>
-<div class="line"><span class="lineno"> 8237</span>        <span class="stringliteral">&quot;&quot;&quot;Return a string that describes why the last `check()` returned `unknown`.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8238</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gad3750cc2373040d6ece4facc0570582e">Z3_optimize_get_reason_unknown</a>(self.ctx.ref(), self.optimize)</div>
-<div class="line"><span class="lineno"> 8239</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08280">8280</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8280</span>    <span class="keyword">def </span>reason_unknown(self):</div>
+<div class="line"><span class="lineno"> 8281</span>        <span class="stringliteral">&quot;&quot;&quot;Return a string that describes why the last `check()` returned `unknown`.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8282</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gad3750cc2373040d6ece4facc0570582e">Z3_optimize_get_reason_unknown</a>(self.ctx.ref(), self.optimize)</div>
+<div class="line"><span class="lineno"> 8283</span> </div>
 <div class="ttc" id="agroup__capi_html_gad3750cc2373040d6ece4facc0570582e"><div class="ttname"><a href="group__capi.html#gad3750cc2373040d6ece4facc0570582e">Z3_optimize_get_reason_unknown</a></div><div class="ttdeci">Z3_string Z3_API Z3_optimize_get_reason_unknown(Z3_context c, Z3_optimize d)</div><div class="ttdoc">Retrieve a string that describes the last status returned by Z3_optimize_check.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1159,14 +1159,14 @@ True
 <pre class="fragment">Set a configuration option.
 The method `help()` return a string containing all available options.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08108">8108</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8108</span>    <span class="keyword">def </span>set(self, *args, **keys):</div>
-<div class="line"><span class="lineno"> 8109</span>        <span class="stringliteral">&quot;&quot;&quot;Set a configuration option.</span></div>
-<div class="line"><span class="lineno"> 8110</span><span class="stringliteral">        The method `help()` return a string containing all available options.</span></div>
-<div class="line"><span class="lineno"> 8111</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8112</span>        p = args2params(args, keys, self.ctx)</div>
-<div class="line"><span class="lineno"> 8113</span>        <a class="code hl_function" href="group__capi.html#ga68f46ada83492500761659274169bc4a">Z3_optimize_set_params</a>(self.ctx.ref(), self.optimize, p.params)</div>
-<div class="line"><span class="lineno"> 8114</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08152">8152</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8152</span>    <span class="keyword">def </span>set(self, *args, **keys):</div>
+<div class="line"><span class="lineno"> 8153</span>        <span class="stringliteral">&quot;&quot;&quot;Set a configuration option.</span></div>
+<div class="line"><span class="lineno"> 8154</span><span class="stringliteral">        The method `help()` return a string containing all available options.</span></div>
+<div class="line"><span class="lineno"> 8155</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8156</span>        p = args2params(args, keys, self.ctx)</div>
+<div class="line"><span class="lineno"> 8157</span>        <a class="code hl_function" href="group__capi.html#ga68f46ada83492500761659274169bc4a">Z3_optimize_set_params</a>(self.ctx.ref(), self.optimize, p.params)</div>
+<div class="line"><span class="lineno"> 8158</span> </div>
 <div class="ttc" id="agroup__capi_html_ga68f46ada83492500761659274169bc4a"><div class="ttname"><a href="group__capi.html#ga68f46ada83492500761659274169bc4a">Z3_optimize_set_params</a></div><div class="ttdeci">void Z3_API Z3_optimize_set_params(Z3_context c, Z3_optimize o, Z3_params p)</div><div class="ttdoc">Set parameters on optimization context.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1204,14 +1204,14 @@ The method `help()` return a string containing all available options.
 </div><div class="memdoc">
 <pre class="fragment">initialize the solver's state by setting the initial value of var to value
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08196">8196</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8196</span>    <span class="keyword">def </span>set_initial_value(self, var, value):</div>
-<div class="line"><span class="lineno"> 8197</span>        <span class="stringliteral">&quot;&quot;&quot;initialize the solver&#39;s state by setting the initial value of var to value</span></div>
-<div class="line"><span class="lineno"> 8198</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8199</span>        s = var.sort()</div>
-<div class="line"><span class="lineno"> 8200</span>        value = s.cast(value)</div>
-<div class="line"><span class="lineno"> 8201</span>        <a class="code hl_function" href="group__capi.html#ga0e553b8177d67fc88f1cad8a9888141f">Z3_optimize_set_initial_value</a>(self.ctx.ref(), self.optimize, var.ast, value.ast)</div>
-<div class="line"><span class="lineno"> 8202</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08240">8240</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8240</span>    <span class="keyword">def </span>set_initial_value(self, var, value):</div>
+<div class="line"><span class="lineno"> 8241</span>        <span class="stringliteral">&quot;&quot;&quot;initialize the solver&#39;s state by setting the initial value of var to value</span></div>
+<div class="line"><span class="lineno"> 8242</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8243</span>        s = var.sort()</div>
+<div class="line"><span class="lineno"> 8244</span>        value = s.cast(value)</div>
+<div class="line"><span class="lineno"> 8245</span>        <a class="code hl_function" href="group__capi.html#ga0e553b8177d67fc88f1cad8a9888141f">Z3_optimize_set_initial_value</a>(self.ctx.ref(), self.optimize, var.ast, value.ast)</div>
+<div class="line"><span class="lineno"> 8246</span> </div>
 <div class="ttc" id="agroup__capi_html_ga0e553b8177d67fc88f1cad8a9888141f"><div class="ttname"><a href="group__capi.html#ga0e553b8177d67fc88f1cad8a9888141f">Z3_optimize_set_initial_value</a></div><div class="ttdeci">void Z3_API Z3_optimize_set_initial_value(Z3_context c, Z3_optimize o, Z3_ast v, Z3_ast val)</div><div class="ttdoc">provide an initialization hint to the solver. The initialization hint is used to calibrate an initial...</div></div>
 </div><!-- fragment -->
 </div>
@@ -1246,22 +1246,22 @@ objective values. The callback takes a model as argument.
 The life-time of the model is limited to the callback so the
 model has to be (deep) copied if it is to be used after the callback
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08301">8301</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8301</span>    <span class="keyword">def </span>set_on_model(self, on_model):</div>
-<div class="line"><span class="lineno"> 8302</span>        <span class="stringliteral">&quot;&quot;&quot;Register a callback that is invoked with every incremental improvement to</span></div>
-<div class="line"><span class="lineno"> 8303</span><span class="stringliteral">        objective values. The callback takes a model as argument.</span></div>
-<div class="line"><span class="lineno"> 8304</span><span class="stringliteral">        The life-time of the model is limited to the callback so the</span></div>
-<div class="line"><span class="lineno"> 8305</span><span class="stringliteral">        model has to be (deep) copied if it is to be used after the callback</span></div>
-<div class="line"><span class="lineno"> 8306</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8307</span>        id = len(_on_models) + 41</div>
-<div class="line"><span class="lineno"> 8308</span>        mdl = Model(self.ctx)</div>
-<div class="line"><span class="lineno"> 8309</span>        _on_models[id] = (on_model, mdl)</div>
-<div class="line"><span class="lineno"> 8310</span>        self._on_models_id = id</div>
-<div class="line"><span class="lineno"> 8311</span>        <a class="code hl_function" href="group__capi.html#gae862b0b792bef26a12f8fbe6ac0126d5">Z3_optimize_register_model_eh</a>(</div>
-<div class="line"><span class="lineno"> 8312</span>            self.ctx.ref(), self.optimize, mdl.model, ctypes.c_void_p(id), _on_model_eh,</div>
-<div class="line"><span class="lineno"> 8313</span>        )</div>
-<div class="line"><span class="lineno"> 8314</span> </div>
-<div class="line"><span class="lineno"> 8315</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08345">8345</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8345</span>    <span class="keyword">def </span>set_on_model(self, on_model):</div>
+<div class="line"><span class="lineno"> 8346</span>        <span class="stringliteral">&quot;&quot;&quot;Register a callback that is invoked with every incremental improvement to</span></div>
+<div class="line"><span class="lineno"> 8347</span><span class="stringliteral">        objective values. The callback takes a model as argument.</span></div>
+<div class="line"><span class="lineno"> 8348</span><span class="stringliteral">        The life-time of the model is limited to the callback so the</span></div>
+<div class="line"><span class="lineno"> 8349</span><span class="stringliteral">        model has to be (deep) copied if it is to be used after the callback</span></div>
+<div class="line"><span class="lineno"> 8350</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8351</span>        id = len(_on_models) + 41</div>
+<div class="line"><span class="lineno"> 8352</span>        mdl = Model(self.ctx)</div>
+<div class="line"><span class="lineno"> 8353</span>        _on_models[id] = (on_model, mdl)</div>
+<div class="line"><span class="lineno"> 8354</span>        self._on_models_id = id</div>
+<div class="line"><span class="lineno"> 8355</span>        <a class="code hl_function" href="group__capi.html#gae862b0b792bef26a12f8fbe6ac0126d5">Z3_optimize_register_model_eh</a>(</div>
+<div class="line"><span class="lineno"> 8356</span>            self.ctx.ref(), self.optimize, mdl.model, ctypes.c_void_p(id), _on_model_eh,</div>
+<div class="line"><span class="lineno"> 8357</span>        )</div>
+<div class="line"><span class="lineno"> 8358</span> </div>
+<div class="line"><span class="lineno"> 8359</span> </div>
 <div class="ttc" id="agroup__capi_html_gae862b0b792bef26a12f8fbe6ac0126d5"><div class="ttname"><a href="group__capi.html#gae862b0b792bef26a12f8fbe6ac0126d5">Z3_optimize_register_model_eh</a></div><div class="ttdeci">void Z3_API Z3_optimize_register_model_eh(Z3_context c, Z3_optimize o, Z3_model m, void *ctx, Z3_model_eh model_eh)</div><div class="ttdoc">register a model event handler for new models.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1284,13 +1284,13 @@ model has to be (deep) copied if it is to be used after the callback
 <pre class="fragment">Return a formatted string (in Lisp-like format) with all added constraints.
 We say the string is in s-expression format.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08290">8290</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8290</span>    <span class="keyword">def </span>sexpr(self):</div>
-<div class="line"><span class="lineno"> 8291</span>        <span class="stringliteral">&quot;&quot;&quot;Return a formatted string (in Lisp-like format) with all added constraints.</span></div>
-<div class="line"><span class="lineno"> 8292</span><span class="stringliteral">        We say the string is in s-expression format.</span></div>
-<div class="line"><span class="lineno"> 8293</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8294</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga944276e33c5211f8b102942aea85be58">Z3_optimize_to_string</a>(self.ctx.ref(), self.optimize)</div>
-<div class="line"><span class="lineno"> 8295</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08334">8334</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8334</span>    <span class="keyword">def </span>sexpr(self):</div>
+<div class="line"><span class="lineno"> 8335</span>        <span class="stringliteral">&quot;&quot;&quot;Return a formatted string (in Lisp-like format) with all added constraints.</span></div>
+<div class="line"><span class="lineno"> 8336</span><span class="stringliteral">        We say the string is in s-expression format.</span></div>
+<div class="line"><span class="lineno"> 8337</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8338</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga944276e33c5211f8b102942aea85be58">Z3_optimize_to_string</a>(self.ctx.ref(), self.optimize)</div>
+<div class="line"><span class="lineno"> 8339</span> </div>
 <div class="ttc" id="agroup__capi_html_ga944276e33c5211f8b102942aea85be58"><div class="ttname"><a href="group__capi.html#ga944276e33c5211f8b102942aea85be58">Z3_optimize_to_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_optimize_to_string(Z3_context c, Z3_optimize o)</div><div class="ttdoc">Print the current context as a string.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1312,12 +1312,12 @@ We say the string is in s-expression format.
 </div><div class="memdoc">
 <pre class="fragment">Return statistics for the last check`.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08296">8296</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8296</span>    <span class="keyword">def </span>statistics(self):</div>
-<div class="line"><span class="lineno"> 8297</span>        <span class="stringliteral">&quot;&quot;&quot;Return statistics for the last check`.</span></div>
-<div class="line"><span class="lineno"> 8298</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8299</span>        <span class="keywordflow">return</span> Statistics(<a class="code hl_function" href="group__capi.html#gab7dc6b90e98faa1d719ff15988f42472">Z3_optimize_get_statistics</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
-<div class="line"><span class="lineno"> 8300</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08340">8340</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8340</span>    <span class="keyword">def </span>statistics(self):</div>
+<div class="line"><span class="lineno"> 8341</span>        <span class="stringliteral">&quot;&quot;&quot;Return statistics for the last check`.</span></div>
+<div class="line"><span class="lineno"> 8342</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8343</span>        <span class="keywordflow">return</span> Statistics(<a class="code hl_function" href="group__capi.html#gab7dc6b90e98faa1d719ff15988f42472">Z3_optimize_get_statistics</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
+<div class="line"><span class="lineno"> 8344</span> </div>
 <div class="ttc" id="agroup__capi_html_gab7dc6b90e98faa1d719ff15988f42472"><div class="ttname"><a href="group__capi.html#gab7dc6b90e98faa1d719ff15988f42472">Z3_optimize_get_statistics</a></div><div class="ttdeci">Z3_stats Z3_API Z3_optimize_get_statistics(Z3_context c, Z3_optimize d)</div><div class="ttdoc">Retrieve statistics information from the last call to Z3_optimize_check.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1338,10 +1338,10 @@ We say the string is in s-expression format.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08247">8247</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8247</span>    <span class="keyword">def </span>unsat_core(self):</div>
-<div class="line"><span class="lineno"> 8248</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga0c1510a2c73ff776c809aca4637ab79f">Z3_optimize_get_unsat_core</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
-<div class="line"><span class="lineno"> 8249</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08291">8291</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8291</span>    <span class="keyword">def </span>unsat_core(self):</div>
+<div class="line"><span class="lineno"> 8292</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga0c1510a2c73ff776c809aca4637ab79f">Z3_optimize_get_unsat_core</a>(self.ctx.ref(), self.optimize), self.ctx)</div>
+<div class="line"><span class="lineno"> 8293</span> </div>
 <div class="ttc" id="agroup__capi_html_ga0c1510a2c73ff776c809aca4637ab79f"><div class="ttname"><a href="group__capi.html#ga0c1510a2c73ff776c809aca4637ab79f">Z3_optimize_get_unsat_core</a></div><div class="ttdeci">Z3_ast_vector Z3_API Z3_optimize_get_unsat_core(Z3_context c, Z3_optimize o)</div><div class="ttdoc">Retrieve the unsat core for the last Z3_optimize_check The unsat core is a subset of the assumptions ...</div></div>
 </div><!-- fragment -->
 </div>
@@ -1372,12 +1372,12 @@ We say the string is in s-expression format.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08255">8255</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8255</span>    <span class="keyword">def </span>upper(self, obj):</div>
-<div class="line"><span class="lineno"> 8256</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(obj, OptimizeObjective):</div>
-<div class="line"><span class="lineno"> 8257</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Expecting objective handle returned by maximize/minimize&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8258</span>        <span class="keywordflow">return</span> obj.upper()</div>
-<div class="line"><span class="lineno"> 8259</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08299">8299</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8299</span>    <span class="keyword">def </span>upper(self, obj):</div>
+<div class="line"><span class="lineno"> 8300</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(obj, OptimizeObjective):</div>
+<div class="line"><span class="lineno"> 8301</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Expecting objective handle returned by maximize/minimize&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8302</span>        <span class="keywordflow">return</span> obj.upper()</div>
+<div class="line"><span class="lineno"> 8303</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1407,12 +1407,12 @@ We say the string is in s-expression format.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08265">8265</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8265</span>    <span class="keyword">def </span>upper_values(self, obj):</div>
-<div class="line"><span class="lineno"> 8266</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(obj, OptimizeObjective):</div>
-<div class="line"><span class="lineno"> 8267</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Expecting objective handle returned by maximize/minimize&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8268</span>        <span class="keywordflow">return</span> obj.upper_values()</div>
-<div class="line"><span class="lineno"> 8269</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08309">8309</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8309</span>    <span class="keyword">def </span>upper_values(self, obj):</div>
+<div class="line"><span class="lineno"> 8310</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(obj, OptimizeObjective):</div>
+<div class="line"><span class="lineno"> 8311</span>            <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;Expecting objective handle returned by maximize/minimize&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8312</span>        <span class="keywordflow">return</span> obj.upper_values()</div>
+<div class="line"><span class="lineno"> 8313</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1437,7 +1437,7 @@ We say the string is in s-expression format.
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08089">8089</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08133">8133</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
 </div>
 </div>
@@ -1453,9 +1453,9 @@ We say the string is in s-expression format.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08084">8084</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08128">8128</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02520">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03618">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03710">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00859">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06196">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00447">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05947">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06142">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06487">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06853">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00365">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05205">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05581">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05646">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05950">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06145">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06176">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06295">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06490">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06856">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06894">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00360">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05268">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05280">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05584">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05649">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05712">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06016">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06179">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06298">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06405">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06523">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06897">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07090">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02619">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03787">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01041">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02753">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l03917">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06033">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06735">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06933">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06209">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02740">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03901">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03776">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02714">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l03869">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06020">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06183">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06591">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06919">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l03963">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02727">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l03885">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02667">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l03830">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01630">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02543">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03641">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01062">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02694">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03765">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03687">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02591">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02533">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03631">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03723">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02646">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03810">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l05605">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l05684">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06236">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06901">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l03991">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02682">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l03851">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02558">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03654">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03700">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02605">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l03977">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l03933">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02581">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03677">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03746">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06062">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06220">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02568">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03664">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03733">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l05444">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01121">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06320">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l06448">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l05973">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07246">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l05836">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07190">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02208">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l07276">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l05884">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00410">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01083">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l06780">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04728">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03115">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l05716">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l05920">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00796">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04667">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l06409">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l06462">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06239">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l06534">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l05808">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l05673">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l06608">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l06969">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l05668">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l05663">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l06675">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06715">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l05734">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06268">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l06957">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07305">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00622">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02202">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06302">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l06432">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07158">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l06660">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00831">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02180">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03224">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07136">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l05752">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l06829">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06841">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07114">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06078">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02163">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00808">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04672">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05416">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06253">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07176">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06090">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07101">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l05588">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l05916">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06151">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06530">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l05653">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l05782">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02158">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06126">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00431">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l05924">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l06821">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l05608">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06351">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02231">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02247">QuantifierRef.var_sort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02564">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03662">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03754">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00879">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06240">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00467">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l05991">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06186">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06531">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06897">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00385">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05249">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05625">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05690">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05994">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06189">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06220">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06339">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06534">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06900">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06938">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00380">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05312">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05324">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05628">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05693">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05756">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06060">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06223">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06342">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06449">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06567">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06941">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07134">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02663">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03831">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01061">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02797">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l03961">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06077">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06779">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06977">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06253">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02784">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03945">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03820">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02758">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l03913">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06064">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06227">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06635">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06963">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04007">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02771">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l03929">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02711">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l03874">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01674">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02587">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03685">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01082">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02738">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03809">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03731">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02635">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02577">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03675">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03767">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02690">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03854">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l05649">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l05728">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06280">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06945">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l04035">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02726">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l03895">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02602">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03698">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03744">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02649">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l04021">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l03977">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02625">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03721">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03790">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06106">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06264">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02612">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03708">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03777">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l05488">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01141">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06364">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l06492">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l06017">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07290">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l05880">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07234">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02252">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l07320">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l05928">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00430">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01103">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l06824">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04772">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03159">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l05760">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l05964">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00816">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04711">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l06453">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l06506">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06283">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l06578">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l05852">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l05717">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l06652">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l07013">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l05712">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l05707">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l06719">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06759">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l05778">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06312">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l07001">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07349">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00642">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02246">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06346">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l06476">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07202">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l06704">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00851">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02224">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03268">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07180">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l05796">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l06873">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06885">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07158">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06122">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02207">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00828">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04716">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05460">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06297">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07220">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06134">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07145">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l05632">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l05960">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06195">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06574">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l05697">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l05826">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02202">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06170">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00451">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l05968">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l06865">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l01177">ExprRef.update()</a>, <a class="el" href="z3py_8py_source.html#l05652">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06395">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02275">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02291">QuantifierRef.var_sort()</a>.</p>
 
 </div>
 </div>
@@ -1471,14 +1471,14 @@ We say the string is in s-expression format.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08086">8086</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08130">8130</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2026 05:03:26 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jan 12 2026 05:53:39 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

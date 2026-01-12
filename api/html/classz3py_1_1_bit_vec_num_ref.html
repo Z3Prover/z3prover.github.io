@@ -203,6 +203,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abc3bae69bbbf1acf3a988425467cc373 inherit pub_methods_classz3py_1_1_expr_ref"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a526c2d1f88304b598ef6ce9395be5d65 inherit pub_methods_classz3py_1_1_expr_ref" id="r_a526c2d1f88304b598ef6ce9395be5d65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_expr_ref.html#a526c2d1f88304b598ef6ce9395be5d65">children</a> (self)</td></tr>
 <tr class="separator:a526c2d1f88304b598ef6ce9395be5d65 inherit pub_methods_classz3py_1_1_expr_ref"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0243f1409f7de5c06066ab2010ffee9d inherit pub_methods_classz3py_1_1_expr_ref" id="r_a0243f1409f7de5c06066ab2010ffee9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_expr_ref.html#a0243f1409f7de5c06066ab2010ffee9d">update</a> (self, *args)</td></tr>
+<tr class="separator:a0243f1409f7de5c06066ab2010ffee9d inherit pub_methods_classz3py_1_1_expr_ref"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa64481a3696517070dd6746887ae73eb inherit pub_methods_classz3py_1_1_expr_ref" id="r_aa64481a3696517070dd6746887ae73eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_expr_ref.html#aa64481a3696517070dd6746887ae73eb">from_string</a> (self, s)</td></tr>
 <tr class="separator:aa64481a3696517070dd6746887ae73eb inherit pub_methods_classz3py_1_1_expr_ref"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a551cf073c4b00d3b81294a0e2b3bbed3 inherit pub_methods_classz3py_1_1_expr_ref" id="r_a551cf073c4b00d3b81294a0e2b3bbed3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_expr_ref.html#a551cf073c4b00d3b81294a0e2b3bbed3">serialize</a> (self)</td></tr>
@@ -259,7 +261,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Bit-vector values.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04006">4006</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04050">4050</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1f47e265b4856d7f7d7227398e00fd84" name="a1f47e265b4856d7f7d7227398e00fd84"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f47e265b4856d7f7d7227398e00fd84">&#9670;&#160;</a></span>as_binary_string()</h2>
@@ -277,10 +279,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04046">4046</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4046</span>    <span class="keyword">def </span>as_binary_string(self):</div>
-<div class="line"><span class="lineno"> 4047</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gae959d9267eb1567887e5ed665a947d5a">Z3_get_numeral_binary_string</a>(self.ctx_ref(), self.as_ast())</div>
-<div class="line"><span class="lineno"> 4048</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04090">4090</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4090</span>    <span class="keyword">def </span>as_binary_string(self):</div>
+<div class="line"><span class="lineno"> 4091</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gae959d9267eb1567887e5ed665a947d5a">Z3_get_numeral_binary_string</a>(self.ctx_ref(), self.as_ast())</div>
+<div class="line"><span class="lineno"> 4092</span> </div>
 <div class="ttc" id="agroup__capi_html_gae959d9267eb1567887e5ed665a947d5a"><div class="ttname"><a href="group__capi.html#gae959d9267eb1567887e5ed665a947d5a">Z3_get_numeral_binary_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_get_numeral_binary_string(Z3_context c, Z3_ast a)</div><div class="ttdoc">Return numeral value, as a binary string of a numeric constant term.</div></div>
 </div><!-- fragment -->
 </div>
@@ -308,20 +310,20 @@ Additional Inherited Members</h2></td></tr>
 &gt;&gt;&gt; print("0x%.8x" % v.as_long())
 0x0badc0de
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04009">4009</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4009</span>    <span class="keyword">def </span>as_long(self):</div>
-<div class="line"><span class="lineno"> 4010</span>        <span class="stringliteral">&quot;&quot;&quot;Return a Z3 bit-vector numeral as a Python long (bignum) numeral.</span></div>
-<div class="line"><span class="lineno"> 4011</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 4012</span><span class="stringliteral">        &gt;&gt;&gt; v = BitVecVal(0xbadc0de, 32)</span></div>
-<div class="line"><span class="lineno"> 4013</span><span class="stringliteral">        &gt;&gt;&gt; v</span></div>
-<div class="line"><span class="lineno"> 4014</span><span class="stringliteral">        195936478</span></div>
-<div class="line"><span class="lineno"> 4015</span><span class="stringliteral">        &gt;&gt;&gt; print(&quot;0x%.8x&quot; % v.as_long())</span></div>
-<div class="line"><span class="lineno"> 4016</span><span class="stringliteral">        0x0badc0de</span></div>
-<div class="line"><span class="lineno"> 4017</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 4018</span>        <span class="keywordflow">return</span> int(self.as_string())</div>
-<div class="line"><span class="lineno"> 4019</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04053">4053</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4053</span>    <span class="keyword">def </span>as_long(self):</div>
+<div class="line"><span class="lineno"> 4054</span>        <span class="stringliteral">&quot;&quot;&quot;Return a Z3 bit-vector numeral as a Python long (bignum) numeral.</span></div>
+<div class="line"><span class="lineno"> 4055</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 4056</span><span class="stringliteral">        &gt;&gt;&gt; v = BitVecVal(0xbadc0de, 32)</span></div>
+<div class="line"><span class="lineno"> 4057</span><span class="stringliteral">        &gt;&gt;&gt; v</span></div>
+<div class="line"><span class="lineno"> 4058</span><span class="stringliteral">        195936478</span></div>
+<div class="line"><span class="lineno"> 4059</span><span class="stringliteral">        &gt;&gt;&gt; print(&quot;0x%.8x&quot; % v.as_long())</span></div>
+<div class="line"><span class="lineno"> 4060</span><span class="stringliteral">        0x0badc0de</span></div>
+<div class="line"><span class="lineno"> 4061</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 4062</span>        <span class="keywordflow">return</span> int(self.as_string())</div>
+<div class="line"><span class="lineno"> 4063</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l04020">BitVecNumRef.as_signed_long()</a>, <a class="el" href="z3py_8py_source.html#l03093">IntNumRef.py_value()</a>, and <a class="el" href="z3py_8py_source.html#l04049">BitVecNumRef.py_value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l04064">BitVecNumRef.as_signed_long()</a>, <a class="el" href="z3py_8py_source.html#l03137">IntNumRef.py_value()</a>, and <a class="el" href="z3py_8py_source.html#l04093">BitVecNumRef.py_value()</a>.</p>
 
 </div>
 </div>
@@ -354,30 +356,30 @@ The most significant bit is assumed to be the sign.
 &gt;&gt;&gt; BitVecVal(2**64 - 1, 64).as_signed_long()
 -1
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04020">4020</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4020</span>    <span class="keyword">def </span>as_signed_long(self):</div>
-<div class="line"><span class="lineno"> 4021</span>        <span class="stringliteral">&quot;&quot;&quot;Return a Z3 bit-vector numeral as a Python long (bignum) numeral.</span></div>
-<div class="line"><span class="lineno"> 4022</span><span class="stringliteral">        The most significant bit is assumed to be the sign.</span></div>
-<div class="line"><span class="lineno"> 4023</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 4024</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(4, 3).as_signed_long()</span></div>
-<div class="line"><span class="lineno"> 4025</span><span class="stringliteral">        -4</span></div>
-<div class="line"><span class="lineno"> 4026</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(7, 3).as_signed_long()</span></div>
-<div class="line"><span class="lineno"> 4027</span><span class="stringliteral">        -1</span></div>
-<div class="line"><span class="lineno"> 4028</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(3, 3).as_signed_long()</span></div>
-<div class="line"><span class="lineno"> 4029</span><span class="stringliteral">        3</span></div>
-<div class="line"><span class="lineno"> 4030</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(2**32 - 1, 32).as_signed_long()</span></div>
-<div class="line"><span class="lineno"> 4031</span><span class="stringliteral">        -1</span></div>
-<div class="line"><span class="lineno"> 4032</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(2**64 - 1, 64).as_signed_long()</span></div>
-<div class="line"><span class="lineno"> 4033</span><span class="stringliteral">        -1</span></div>
-<div class="line"><span class="lineno"> 4034</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 4035</span>        sz = self.size()</div>
-<div class="line"><span class="lineno"> 4036</span>        val = self.as_long()</div>
-<div class="line"><span class="lineno"> 4037</span>        <span class="keywordflow">if</span> val &gt;= 2**(sz - 1):</div>
-<div class="line"><span class="lineno"> 4038</span>            val = val - 2**sz</div>
-<div class="line"><span class="lineno"> 4039</span>        <span class="keywordflow">if</span> val &lt; -2**(sz - 1):</div>
-<div class="line"><span class="lineno"> 4040</span>            val = val + 2**sz</div>
-<div class="line"><span class="lineno"> 4041</span>        <span class="keywordflow">return</span> int(val)</div>
-<div class="line"><span class="lineno"> 4042</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04064">4064</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4064</span>    <span class="keyword">def </span>as_signed_long(self):</div>
+<div class="line"><span class="lineno"> 4065</span>        <span class="stringliteral">&quot;&quot;&quot;Return a Z3 bit-vector numeral as a Python long (bignum) numeral.</span></div>
+<div class="line"><span class="lineno"> 4066</span><span class="stringliteral">        The most significant bit is assumed to be the sign.</span></div>
+<div class="line"><span class="lineno"> 4067</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 4068</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(4, 3).as_signed_long()</span></div>
+<div class="line"><span class="lineno"> 4069</span><span class="stringliteral">        -4</span></div>
+<div class="line"><span class="lineno"> 4070</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(7, 3).as_signed_long()</span></div>
+<div class="line"><span class="lineno"> 4071</span><span class="stringliteral">        -1</span></div>
+<div class="line"><span class="lineno"> 4072</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(3, 3).as_signed_long()</span></div>
+<div class="line"><span class="lineno"> 4073</span><span class="stringliteral">        3</span></div>
+<div class="line"><span class="lineno"> 4074</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(2**32 - 1, 32).as_signed_long()</span></div>
+<div class="line"><span class="lineno"> 4075</span><span class="stringliteral">        -1</span></div>
+<div class="line"><span class="lineno"> 4076</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(2**64 - 1, 64).as_signed_long()</span></div>
+<div class="line"><span class="lineno"> 4077</span><span class="stringliteral">        -1</span></div>
+<div class="line"><span class="lineno"> 4078</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 4079</span>        sz = self.size()</div>
+<div class="line"><span class="lineno"> 4080</span>        val = self.as_long()</div>
+<div class="line"><span class="lineno"> 4081</span>        <span class="keywordflow">if</span> val &gt;= 2**(sz - 1):</div>
+<div class="line"><span class="lineno"> 4082</span>            val = val - 2**sz</div>
+<div class="line"><span class="lineno"> 4083</span>        <span class="keywordflow">if</span> val &lt; -2**(sz - 1):</div>
+<div class="line"><span class="lineno"> 4084</span>            val = val + 2**sz</div>
+<div class="line"><span class="lineno"> 4085</span>        <span class="keywordflow">return</span> int(val)</div>
+<div class="line"><span class="lineno"> 4086</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -397,13 +399,13 @@ The most significant bit is assumed to be the sign.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04043">4043</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4043</span>    <span class="keyword">def </span>as_string(self):</div>
-<div class="line"><span class="lineno"> 4044</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gae0ffdaa5b0d9c2deb3bbb8d78ac9f4c9">Z3_get_numeral_string</a>(self.ctx_ref(), self.as_ast())</div>
-<div class="line"><span class="lineno"> 4045</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04087">4087</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4087</span>    <span class="keyword">def </span>as_string(self):</div>
+<div class="line"><span class="lineno"> 4088</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gae0ffdaa5b0d9c2deb3bbb8d78ac9f4c9">Z3_get_numeral_string</a>(self.ctx_ref(), self.as_ast())</div>
+<div class="line"><span class="lineno"> 4089</span> </div>
 <div class="ttc" id="agroup__capi_html_gae0ffdaa5b0d9c2deb3bbb8d78ac9f4c9"><div class="ttname"><a href="group__capi.html#gae0ffdaa5b0d9c2deb3bbb8d78ac9f4c9">Z3_get_numeral_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_get_numeral_string(Z3_context c, Z3_ast a)</div><div class="ttdoc">Return numeral value, as a decimal string of a numeric constant term.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l03064">IntNumRef.as_long()</a>, and <a class="el" href="z3py_8py_source.html#l04009">BitVecNumRef.as_long()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l03108">IntNumRef.as_long()</a>, and <a class="el" href="z3py_8py_source.html#l04053">BitVecNumRef.as_long()</a>.</p>
 
 </div>
 </div>
@@ -425,20 +427,20 @@ The most significant bit is assumed to be the sign.
 <pre class="fragment">Return the Python value of a Z3 bit-vector numeral.</pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_ast_ref.html#a5d193971f7205a50fdaf86ef82a2286b">AstRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04049">4049</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4049</span>    <span class="keyword">def </span>py_value(self):</div>
-<div class="line"><span class="lineno"> 4050</span>        <span class="stringliteral">&quot;&quot;&quot;Return the Python value of a Z3 bit-vector numeral.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 4051</span>        <span class="keywordflow">return</span> self.as_long()</div>
-<div class="line"><span class="lineno"> 4052</span> </div>
-<div class="line"><span class="lineno"> 4053</span> </div>
-<div class="line"><span class="lineno"> 4054</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04093">4093</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4093</span>    <span class="keyword">def </span>py_value(self):</div>
+<div class="line"><span class="lineno"> 4094</span>        <span class="stringliteral">&quot;&quot;&quot;Return the Python value of a Z3 bit-vector numeral.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 4095</span>        <span class="keywordflow">return</span> self.as_long()</div>
+<div class="line"><span class="lineno"> 4096</span> </div>
+<div class="line"><span class="lineno"> 4097</span> </div>
+<div class="line"><span class="lineno"> 4098</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2026 05:03:26 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jan 12 2026 05:53:39 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
