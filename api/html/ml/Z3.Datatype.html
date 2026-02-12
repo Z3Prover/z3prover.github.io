@@ -76,6 +76,20 @@
 </div>
 </div>
 
+<pre><span id="VALmk_polymorphic_sort"><span class="keyword">val</span> mk_polymorphic_sort</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt;<br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> -&gt;<br>       <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list -&gt; <a href="Z3.Datatype.Constructor.html#TYPEconstructor">Constructor.constructor</a> list -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create a new polymorphic datatype sort with type parameters.
+      Type parameters should be created using Sort.mk_type_variable.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_polymorphic_sort_s"><span class="keyword">val</span> mk_polymorphic_sort_s</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt;<br>       string -&gt;<br>       <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list -&gt; <a href="Z3.Datatype.Constructor.html#TYPEconstructor">Constructor.constructor</a> list -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Create a new polymorphic datatype sort with type parameters.
+      Type parameters should be created using Sort.mk_type_variable.</p>
+</div>
+</div>
+
 <pre><span id="VALmk_sorts"><span class="keyword">val</span> mk_sorts</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt;<br>       <a href="Z3.Symbol.html#TYPEsymbol">Symbol.symbol</a> list -&gt;<br>       <a href="Z3.Datatype.Constructor.html#TYPEconstructor">Constructor.constructor</a> list list -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Create mutually recursive datatypes.</p>
@@ -109,6 +123,15 @@
 <pre><span id="VALget_accessors"><span class="keyword">val</span> get_accessors</span> : <code class="type"><a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> list list</code></pre><div class="info ">
 <div class="info-desc">
 <p>The constructor accessors.</p>
+</div>
+</div>
+
+<pre><span id="VALupdate_field"><span class="keyword">val</span> update_field</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt;<br>       <a href="Z3.FuncDecl.html#TYPEfunc_decl">FuncDecl.func_decl</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Update a datatype field at expression <code class="code">t</code> with value <code class="code">v</code>.
+      The function performs a record update at <code class="code">t</code>. The field
+      that is passed in as argument is updated with value <code class="code">v</code>,
+      the remaining fields of <code class="code">t</code> are unchanged.</p>
 </div>
 </div>
 </body></html>

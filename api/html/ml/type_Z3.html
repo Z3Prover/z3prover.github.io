@@ -102,6 +102,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_string&nbsp;:&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mk_uninterpreted&nbsp;:&nbsp;<span class="constructor">Z3</span>.context&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Symbol</span>.symbol&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mk_uninterpreted_s&nbsp;:&nbsp;<span class="constructor">Z3</span>.context&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mk_type_variable&nbsp;:&nbsp;<span class="constructor">Z3</span>.context&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Symbol</span>.symbol&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mk_type_variable_s&nbsp;:&nbsp;<span class="constructor">Z3</span>.context&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
 &nbsp;&nbsp;<span class="keyword">and</span>&nbsp;<span class="constructor">FuncDecl</span>&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
@@ -492,6 +494,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mk_sort_s&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.context&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Datatype</span>.<span class="constructor">Constructor</span>.constructor&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mk_polymorphic_sort&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.context&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Symbol</span>.symbol&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Datatype</span>.<span class="constructor">Constructor</span>.constructor&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mk_polymorphic_sort_s&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.context&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Datatype</span>.<span class="constructor">Constructor</span>.constructor&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mk_sorts&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.context&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Symbol</span>.symbol&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
@@ -504,6 +516,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_constructors&nbsp;:&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">FuncDecl</span>.func_decl&nbsp;list<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_recognizers&nbsp;:&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">FuncDecl</span>.func_decl&nbsp;list<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_accessors&nbsp;:&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Sort</span>.sort&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">FuncDecl</span>.func_decl&nbsp;list&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;update_field&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.context&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Z3</span>.<span class="constructor">FuncDecl</span>.func_decl&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Expr</span>.expr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Expr</span>.expr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Z3</span>.<span class="constructor">Expr</span>.expr<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
 &nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Enumeration</span>&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>

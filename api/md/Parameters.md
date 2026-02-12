@@ -372,7 +372,7 @@ nonlinear solver
  Parameter | Type | Description | Default
  ----------|------|-------------|--------
 add_all_coeffs | bool  |  add all polynomial coefficients during projection. | false
-cell_sample | bool  |  cell sample projection | true
+canonicalize | bool  |  canonicalize polynomials. | true
 check_lemmas | bool  |  check lemmas on the fly using an independent nlsat solver | false
 dump_mathematica | bool  |  display lemmas as matematica | false
 factor | bool  |  factor polynomials produced during conflict resolution. | true
@@ -381,6 +381,8 @@ known_sat_assignment_file_name | string  |  the file name of a known solution: u
 lazy | unsigned int  |  how lazy the solver is. | 0
 log_lemma_smtrat | bool  |  log lemmas to be readable by smtrat | false
 log_lemmas | bool  |  display lemmas as self-contained SMT formulas | false
+lws | bool  |  apply levelwise. | true
+lws_spt_threshold | unsigned int  |  minimum both-side polynomial count to apply spanning tree optimization; &lt; 2 disables spanning tree | 2
 max_conflicts | unsigned int  |  maximum number of conflicts. | 4294967295
 max_memory | unsigned int  |  maximum amount of memory in megabytes | 4294967295
 minimize_conflicts | bool  |  minimize conflicts | false
@@ -561,7 +563,8 @@ Experimental parameters for parallel solving
 
  Parameter | Type | Description | Default
  ----------|------|-------------|--------
-inprocessing | bool  |  integrate in-processing as a heuristic simplification | true
+inprocessing | bool  |  integrate in-processing as a heuristic simplification | false
+sls | bool  |  add sls-tactic as a separate worker thread outside the search tree parallelism | false
 
 ## smt
 

@@ -18,9 +18,10 @@ var searchData=
   ['_7eparam_5fdescrs_15',['~param_descrs',['../classz3_1_1param__descrs.html#ab82d2ec276cfd9eb3795c3a0c931599c',1,'z3::param_descrs']]],
   ['_7eparams_16',['~params',['../classz3_1_1params.html#a6e641f4be004b699f1d4b8fb98030653',1,'z3::params']]],
   ['_7eprobe_17',['~probe',['../classz3_1_1probe.html#a97a26bf547d636d0d6ce9c3fd86127b7',1,'z3::probe']]],
-  ['_7esimplifier_18',['~simplifier',['../classz3_1_1simplifier.html#a1499b4a5d4a9fd17c4354c37148c4126',1,'z3::simplifier']]],
-  ['_7esolver_19',['~solver',['../classz3_1_1solver.html#a9e9d6de80f20595786f3e25fe73f07f1',1,'z3::solver']]],
-  ['_7estats_20',['~stats',['../classz3_1_1stats.html#a46c5cbd324987a36647061881cb478a3',1,'z3::stats']]],
-  ['_7etactic_21',['~tactic',['../classz3_1_1tactic.html#ac5cdfc4cc00657dd32b0ed35f828c9f9',1,'z3::tactic']]],
-  ['_7euser_5fpropagator_5fbase_22',['~user_propagator_base',['../classz3_1_1user__propagator__base.html#a2ba090c81391b34db9709a3f20c9b5ae',1,'z3::user_propagator_base']]]
+  ['_7ercf_5fnum_18',['~rcf_num',['../classz3_1_1rcf__num.html#a463580a1712ac8c200225b37ad92e4a8',1,'z3::rcf_num']]],
+  ['_7esimplifier_19',['~simplifier',['../classz3_1_1simplifier.html#a1499b4a5d4a9fd17c4354c37148c4126',1,'z3::simplifier']]],
+  ['_7esolver_20',['~solver',['../classz3_1_1solver.html#a9e9d6de80f20595786f3e25fe73f07f1',1,'z3::solver']]],
+  ['_7estats_21',['~stats',['../classz3_1_1stats.html#a46c5cbd324987a36647061881cb478a3',1,'z3::stats']]],
+  ['_7etactic_22',['~tactic',['../classz3_1_1tactic.html#ac5cdfc4cc00657dd32b0ed35f828c9f9',1,'z3::tactic']]],
+  ['_7euser_5fpropagator_5fbase_23',['~user_propagator_base',['../classz3_1_1user__propagator__base.html#a2ba090c81391b34db9709a3f20c9b5ae',1,'z3::user_propagator_base']]]
 ];

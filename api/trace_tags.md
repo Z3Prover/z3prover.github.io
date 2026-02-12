@@ -478,6 +478,8 @@ This document contains the trace tags and their descriptions used in Z3.
 | Global | list | list |
 | Global | literal_occ | literal occ |
 | Global | lp_core | lp core |
+| Global | lws | levelwise |
+| Global | lws_norm | levelwise normalize |
 | Global | macro_bug | macro bug |
 | Global | macro_finder | macro finder |
 | Global | macro_insert | macro insert |
