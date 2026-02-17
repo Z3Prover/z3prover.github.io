@@ -108,7 +108,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11805">11805</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11842">11842</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abdd362d5f799ad16b5d6700efe590290" name="abdd362d5f799ad16b5d6700efe590290"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdd362d5f799ad16b5d6700efe590290">&#9670;&#160;</a></span>__init__()</h2>
@@ -126,11 +126,11 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11806">11806</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11806</span>    <span class="keyword">def </span>__init__(self):</div>
-<div class="line"><span class="lineno">11807</span>        self.bases = {}</div>
-<div class="line"><span class="lineno">11808</span>        self.lock = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno">11809</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11843">11843</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11843</span>    <span class="keyword">def </span>__init__(self):</div>
+<div class="line"><span class="lineno">11844</span>        self.bases = {}</div>
+<div class="line"><span class="lineno">11845</span>        self.lock = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno">11846</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -161,17 +161,17 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11815">11815</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11815</span>    <span class="keyword">def </span>get(self, ctx):</div>
-<div class="line"><span class="lineno">11816</span>        <span class="keywordflow">if</span> self.lock:</div>
-<div class="line"><span class="lineno">11817</span>            <span class="keyword">with</span> self.lock:</div>
-<div class="line"><span class="lineno">11818</span>                r = self.bases[ctx]</div>
-<div class="line"><span class="lineno">11819</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">11820</span>            r = self.bases[ctx]            </div>
-<div class="line"><span class="lineno">11821</span>        <span class="keywordflow">return</span> r</div>
-<div class="line"><span class="lineno">11822</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11852">11852</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11852</span>    <span class="keyword">def </span>get(self, ctx):</div>
+<div class="line"><span class="lineno">11853</span>        <span class="keywordflow">if</span> self.lock:</div>
+<div class="line"><span class="lineno">11854</span>            <span class="keyword">with</span> self.lock:</div>
+<div class="line"><span class="lineno">11855</span>                r = self.bases[ctx]</div>
+<div class="line"><span class="lineno">11856</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">11857</span>            r = self.bases[ctx]            </div>
+<div class="line"><span class="lineno">11858</span>        <span class="keywordflow">return</span> r</div>
+<div class="line"><span class="lineno">11859</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05890">Goal.__getitem__()</a>, and <a class="el" href="z3py_8py_source.html#l06044">Goal.as_expr()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05901">Goal.__getitem__()</a>, and <a class="el" href="z3py_8py_source.html#l06055">Goal.as_expr()</a>.</p>
 
 </div>
 </div>
@@ -201,18 +201,18 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11830">11830</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11830</span>    <span class="keyword">def </span>insert(self, r):</div>
-<div class="line"><span class="lineno">11831</span>        <span class="keywordflow">if</span> self.lock:</div>
-<div class="line"><span class="lineno">11832</span>            <span class="keyword">with</span> self.lock:</div>
-<div class="line"><span class="lineno">11833</span>                id = len(self.bases) + 3</div>
-<div class="line"><span class="lineno">11834</span>                self.bases[id] = r</div>
-<div class="line"><span class="lineno">11835</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">11836</span>            id = len(self.bases) + 3</div>
-<div class="line"><span class="lineno">11837</span>            self.bases[id] = r</div>
-<div class="line"><span class="lineno">11838</span>        <span class="keywordflow">return</span> id</div>
-<div class="line"><span class="lineno">11839</span> </div>
-<div class="line"><span class="lineno">11840</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11867">11867</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11867</span>    <span class="keyword">def </span>insert(self, r):</div>
+<div class="line"><span class="lineno">11868</span>        <span class="keywordflow">if</span> self.lock:</div>
+<div class="line"><span class="lineno">11869</span>            <span class="keyword">with</span> self.lock:</div>
+<div class="line"><span class="lineno">11870</span>                id = len(self.bases) + 3</div>
+<div class="line"><span class="lineno">11871</span>                self.bases[id] = r</div>
+<div class="line"><span class="lineno">11872</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">11873</span>            id = len(self.bases) + 3</div>
+<div class="line"><span class="lineno">11874</span>            self.bases[id] = r</div>
+<div class="line"><span class="lineno">11875</span>        <span class="keywordflow">return</span> id</div>
+<div class="line"><span class="lineno">11876</span> </div>
+<div class="line"><span class="lineno">11877</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -248,14 +248,14 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11823">11823</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11823</span>    <span class="keyword">def </span>set(self, ctx, r):</div>
-<div class="line"><span class="lineno">11824</span>        <span class="keywordflow">if</span> self.lock:</div>
-<div class="line"><span class="lineno">11825</span>            <span class="keyword">with</span> self.lock:</div>
-<div class="line"><span class="lineno">11826</span>                self.bases[ctx] = r</div>
-<div class="line"><span class="lineno">11827</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">11828</span>            self.bases[ctx] = r</div>
-<div class="line"><span class="lineno">11829</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11860">11860</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11860</span>    <span class="keyword">def </span>set(self, ctx, r):</div>
+<div class="line"><span class="lineno">11861</span>        <span class="keywordflow">if</span> self.lock:</div>
+<div class="line"><span class="lineno">11862</span>            <span class="keyword">with</span> self.lock:</div>
+<div class="line"><span class="lineno">11863</span>                self.bases[ctx] = r</div>
+<div class="line"><span class="lineno">11864</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">11865</span>            self.bases[ctx] = r</div>
+<div class="line"><span class="lineno">11866</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -275,12 +275,12 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11810">11810</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11810</span>    <span class="keyword">def </span>set_threaded(self):</div>
-<div class="line"><span class="lineno">11811</span>        <span class="keywordflow">if</span> self.lock <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno">11812</span>            <span class="keyword">import</span> threading</div>
-<div class="line"><span class="lineno">11813</span>            self.lock = threading.Lock()</div>
-<div class="line"><span class="lineno">11814</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11847">11847</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11847</span>    <span class="keyword">def </span>set_threaded(self):</div>
+<div class="line"><span class="lineno">11848</span>        <span class="keywordflow">if</span> self.lock <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno">11849</span>            <span class="keyword">import</span> threading</div>
+<div class="line"><span class="lineno">11850</span>            self.lock = threading.Lock()</div>
+<div class="line"><span class="lineno">11851</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -297,7 +297,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11807">11807</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11844">11844</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
 </div>
 </div>
@@ -313,14 +313,14 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11808">11808</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11845">11845</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 12 2026 21:48:36 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Feb 17 2026 23:54:52 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
