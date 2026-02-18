@@ -255,7 +255,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Bit-vector expressions.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03647">3647</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03649">3649</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5851436f4e012e6c18660c3326e3ae7d" name="a5851436f4e012e6c18660c3326e3ae7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5851436f4e012e6c18660c3326e3ae7d">&#9670;&#160;</a></span>__add__()</h2>
@@ -291,20 +291,20 @@ x + y
 &gt;&gt;&gt; (x + y).sort()
 BitVec(32)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03672">3672</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3672</span>    <span class="keyword">def </span>__add__(self, other):</div>
-<div class="line"><span class="lineno"> 3673</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `self + other`.</span></div>
-<div class="line"><span class="lineno"> 3674</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3675</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3676</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3677</span><span class="stringliteral">        &gt;&gt;&gt; x + y</span></div>
-<div class="line"><span class="lineno"> 3678</span><span class="stringliteral">        x + y</span></div>
-<div class="line"><span class="lineno"> 3679</span><span class="stringliteral">        &gt;&gt;&gt; (x + y).sort()</span></div>
-<div class="line"><span class="lineno"> 3680</span><span class="stringliteral">        BitVec(32)</span></div>
-<div class="line"><span class="lineno"> 3681</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3682</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3683</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga73fc54343ff1a090672dfc47dee0bcfe">Z3_mk_bvadd</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3684</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03674">3674</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3674</span>    <span class="keyword">def </span>__add__(self, other):</div>
+<div class="line"><span class="lineno"> 3675</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `self + other`.</span></div>
+<div class="line"><span class="lineno"> 3676</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3677</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3678</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3679</span><span class="stringliteral">        &gt;&gt;&gt; x + y</span></div>
+<div class="line"><span class="lineno"> 3680</span><span class="stringliteral">        x + y</span></div>
+<div class="line"><span class="lineno"> 3681</span><span class="stringliteral">        &gt;&gt;&gt; (x + y).sort()</span></div>
+<div class="line"><span class="lineno"> 3682</span><span class="stringliteral">        BitVec(32)</span></div>
+<div class="line"><span class="lineno"> 3683</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3684</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3685</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga73fc54343ff1a090672dfc47dee0bcfe">Z3_mk_bvadd</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3686</span> </div>
 <div class="ttc" id="agroup__capi_html_ga73fc54343ff1a090672dfc47dee0bcfe"><div class="ttname"><a href="group__capi.html#ga73fc54343ff1a090672dfc47dee0bcfe">Z3_mk_bvadd</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvadd(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Standard two's complement addition.</div></div>
 </div><!-- fragment -->
 </div>
@@ -343,20 +343,20 @@ x &amp; y
 &gt;&gt;&gt; (x &amp; y).sort()
 BitVec(32)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03764">3764</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3764</span>    <span class="keyword">def </span>__and__(self, other):</div>
-<div class="line"><span class="lineno"> 3765</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-and `self &amp; other`.</span></div>
-<div class="line"><span class="lineno"> 3766</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3767</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3768</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3769</span><span class="stringliteral">        &gt;&gt;&gt; x &amp; y</span></div>
-<div class="line"><span class="lineno"> 3770</span><span class="stringliteral">        x &amp; y</span></div>
-<div class="line"><span class="lineno"> 3771</span><span class="stringliteral">        &gt;&gt;&gt; (x &amp; y).sort()</span></div>
-<div class="line"><span class="lineno"> 3772</span><span class="stringliteral">        BitVec(32)</span></div>
-<div class="line"><span class="lineno"> 3773</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3774</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3775</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga9a7ec64d796e6cd1a23f67bec2a0d11c">Z3_mk_bvand</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3776</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03766">3766</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3766</span>    <span class="keyword">def </span>__and__(self, other):</div>
+<div class="line"><span class="lineno"> 3767</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-and `self &amp; other`.</span></div>
+<div class="line"><span class="lineno"> 3768</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3769</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3770</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3771</span><span class="stringliteral">        &gt;&gt;&gt; x &amp; y</span></div>
+<div class="line"><span class="lineno"> 3772</span><span class="stringliteral">        x &amp; y</span></div>
+<div class="line"><span class="lineno"> 3773</span><span class="stringliteral">        &gt;&gt;&gt; (x &amp; y).sort()</span></div>
+<div class="line"><span class="lineno"> 3774</span><span class="stringliteral">        BitVec(32)</span></div>
+<div class="line"><span class="lineno"> 3775</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3776</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3777</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga9a7ec64d796e6cd1a23f67bec2a0d11c">Z3_mk_bvand</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3778</span> </div>
 <div class="ttc" id="agroup__capi_html_ga9a7ec64d796e6cd1a23f67bec2a0d11c"><div class="ttname"><a href="group__capi.html#ga9a7ec64d796e6cd1a23f67bec2a0d11c">Z3_mk_bvand</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvand(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Bitwise and.</div></div>
 </div><!-- fragment -->
 </div>
@@ -401,29 +401,29 @@ BitVec(32)
 &gt;&gt;&gt; UDiv(x, y).sexpr()
 '(bvudiv x y)'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03841">3841</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3841</span>    <span class="keyword">def </span>__div__(self, other):</div>
-<div class="line"><span class="lineno"> 3842</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) division `self / other`.</span></div>
-<div class="line"><span class="lineno"> 3843</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3844</span><span class="stringliteral">        Use the function UDiv() for unsigned division.</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03843">3843</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3843</span>    <span class="keyword">def </span>__div__(self, other):</div>
+<div class="line"><span class="lineno"> 3844</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) division `self / other`.</span></div>
 <div class="line"><span class="lineno"> 3845</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3846</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3847</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3848</span><span class="stringliteral">        &gt;&gt;&gt; x / y</span></div>
-<div class="line"><span class="lineno"> 3849</span><span class="stringliteral">        x/y</span></div>
-<div class="line"><span class="lineno"> 3850</span><span class="stringliteral">        &gt;&gt;&gt; (x / y).sort()</span></div>
-<div class="line"><span class="lineno"> 3851</span><span class="stringliteral">        BitVec(32)</span></div>
-<div class="line"><span class="lineno"> 3852</span><span class="stringliteral">        &gt;&gt;&gt; (x / y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3853</span><span class="stringliteral">        &#39;(bvsdiv x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3854</span><span class="stringliteral">        &gt;&gt;&gt; UDiv(x, y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3855</span><span class="stringliteral">        &#39;(bvudiv x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3856</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3857</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3858</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#gad333ccb0a4d530a0c2c9dbdde28c0ed8">Z3_mk_bvsdiv</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3859</span> </div>
+<div class="line"><span class="lineno"> 3846</span><span class="stringliteral">        Use the function UDiv() for unsigned division.</span></div>
+<div class="line"><span class="lineno"> 3847</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3848</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3849</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3850</span><span class="stringliteral">        &gt;&gt;&gt; x / y</span></div>
+<div class="line"><span class="lineno"> 3851</span><span class="stringliteral">        x/y</span></div>
+<div class="line"><span class="lineno"> 3852</span><span class="stringliteral">        &gt;&gt;&gt; (x / y).sort()</span></div>
+<div class="line"><span class="lineno"> 3853</span><span class="stringliteral">        BitVec(32)</span></div>
+<div class="line"><span class="lineno"> 3854</span><span class="stringliteral">        &gt;&gt;&gt; (x / y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3855</span><span class="stringliteral">        &#39;(bvsdiv x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3856</span><span class="stringliteral">        &gt;&gt;&gt; UDiv(x, y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3857</span><span class="stringliteral">        &#39;(bvudiv x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3858</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3859</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3860</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#gad333ccb0a4d530a0c2c9dbdde28c0ed8">Z3_mk_bvsdiv</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3861</span> </div>
 <div class="ttc" id="agroup__capi_html_gad333ccb0a4d530a0c2c9dbdde28c0ed8"><div class="ttname"><a href="group__capi.html#gad333ccb0a4d530a0c2c9dbdde28c0ed8">Z3_mk_bvsdiv</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvsdiv(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Two's complement signed division.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02683">ArithRef.__truediv__()</a>, and <a class="el" href="z3py_8py_source.html#l03860">BitVecRef.__truediv__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02683">ArithRef.__truediv__()</a>, and <a class="el" href="z3py_8py_source.html#l03862">BitVecRef.__truediv__()</a>.</p>
 
 </div>
 </div>
@@ -464,23 +464,23 @@ x &gt;= y
 &gt;&gt;&gt; UGE(x, y).sexpr()
 '(bvuge x y)'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03971">3971</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3971</span>    <span class="keyword">def </span>__ge__(self, other):</div>
-<div class="line"><span class="lineno"> 3972</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) `other &gt;= self`.</span></div>
-<div class="line"><span class="lineno"> 3973</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3974</span><span class="stringliteral">        Use the function UGE() for unsigned greater than or equal to.</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03973">3973</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3973</span>    <span class="keyword">def </span>__ge__(self, other):</div>
+<div class="line"><span class="lineno"> 3974</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) `other &gt;= self`.</span></div>
 <div class="line"><span class="lineno"> 3975</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3976</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3977</span><span class="stringliteral">        &gt;&gt;&gt; x &gt;= y</span></div>
-<div class="line"><span class="lineno"> 3978</span><span class="stringliteral">        x &gt;= y</span></div>
-<div class="line"><span class="lineno"> 3979</span><span class="stringliteral">        &gt;&gt;&gt; (x &gt;= y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3980</span><span class="stringliteral">        &#39;(bvsge x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3981</span><span class="stringliteral">        &gt;&gt;&gt; UGE(x, y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3982</span><span class="stringliteral">        &#39;(bvuge x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3983</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3984</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3985</span>        <span class="keywordflow">return</span> BoolRef(<a class="code hl_function" href="group__capi.html#ga0a257a061dcb4529d1879dc4017b4594">Z3_mk_bvsge</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3986</span> </div>
+<div class="line"><span class="lineno"> 3976</span><span class="stringliteral">        Use the function UGE() for unsigned greater than or equal to.</span></div>
+<div class="line"><span class="lineno"> 3977</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3978</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3979</span><span class="stringliteral">        &gt;&gt;&gt; x &gt;= y</span></div>
+<div class="line"><span class="lineno"> 3980</span><span class="stringliteral">        x &gt;= y</span></div>
+<div class="line"><span class="lineno"> 3981</span><span class="stringliteral">        &gt;&gt;&gt; (x &gt;= y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3982</span><span class="stringliteral">        &#39;(bvsge x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3983</span><span class="stringliteral">        &gt;&gt;&gt; UGE(x, y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3984</span><span class="stringliteral">        &#39;(bvuge x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3985</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3986</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3987</span>        <span class="keywordflow">return</span> BoolRef(<a class="code hl_function" href="group__capi.html#ga0a257a061dcb4529d1879dc4017b4594">Z3_mk_bvsge</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3988</span> </div>
 <div class="ttc" id="agroup__capi_html_ga0a257a061dcb4529d1879dc4017b4594"><div class="ttname"><a href="group__capi.html#ga0a257a061dcb4529d1879dc4017b4594">Z3_mk_bvsge</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvsge(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Two's complement signed greater than or equal to.</div></div>
 </div><!-- fragment -->
 </div>
@@ -522,23 +522,23 @@ x &gt; y
 &gt;&gt;&gt; UGT(x, y).sexpr()
 '(bvugt x y)'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03955">3955</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3955</span>    <span class="keyword">def </span>__gt__(self, other):</div>
-<div class="line"><span class="lineno"> 3956</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) `other &gt; self`.</span></div>
-<div class="line"><span class="lineno"> 3957</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3958</span><span class="stringliteral">        Use the function UGT() for unsigned greater than.</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03957">3957</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3957</span>    <span class="keyword">def </span>__gt__(self, other):</div>
+<div class="line"><span class="lineno"> 3958</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) `other &gt; self`.</span></div>
 <div class="line"><span class="lineno"> 3959</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3960</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3961</span><span class="stringliteral">        &gt;&gt;&gt; x &gt; y</span></div>
-<div class="line"><span class="lineno"> 3962</span><span class="stringliteral">        x &gt; y</span></div>
-<div class="line"><span class="lineno"> 3963</span><span class="stringliteral">        &gt;&gt;&gt; (x &gt; y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3964</span><span class="stringliteral">        &#39;(bvsgt x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3965</span><span class="stringliteral">        &gt;&gt;&gt; UGT(x, y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3966</span><span class="stringliteral">        &#39;(bvugt x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3967</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3968</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3969</span>        <span class="keywordflow">return</span> BoolRef(<a class="code hl_function" href="group__capi.html#ga39639f113a1de8743d7f00ff39054d71">Z3_mk_bvsgt</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3970</span> </div>
+<div class="line"><span class="lineno"> 3960</span><span class="stringliteral">        Use the function UGT() for unsigned greater than.</span></div>
+<div class="line"><span class="lineno"> 3961</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3962</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3963</span><span class="stringliteral">        &gt;&gt;&gt; x &gt; y</span></div>
+<div class="line"><span class="lineno"> 3964</span><span class="stringliteral">        x &gt; y</span></div>
+<div class="line"><span class="lineno"> 3965</span><span class="stringliteral">        &gt;&gt;&gt; (x &gt; y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3966</span><span class="stringliteral">        &#39;(bvsgt x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3967</span><span class="stringliteral">        &gt;&gt;&gt; UGT(x, y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3968</span><span class="stringliteral">        &#39;(bvugt x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3969</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3970</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3971</span>        <span class="keywordflow">return</span> BoolRef(<a class="code hl_function" href="group__capi.html#ga39639f113a1de8743d7f00ff39054d71">Z3_mk_bvsgt</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3972</span> </div>
 <div class="ttc" id="agroup__capi_html_ga39639f113a1de8743d7f00ff39054d71"><div class="ttname"><a href="group__capi.html#ga39639f113a1de8743d7f00ff39054d71">Z3_mk_bvsgt</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvsgt(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Two's complement signed greater than.</div></div>
 </div><!-- fragment -->
 </div>
@@ -566,18 +566,18 @@ x &gt; y
 &gt;&gt;&gt; simplify(~(~x))
 x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03830">3830</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3830</span>    <span class="keyword">def </span>__invert__(self):</div>
-<div class="line"><span class="lineno"> 3831</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-not `~self`.</span></div>
-<div class="line"><span class="lineno"> 3832</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3833</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3834</span><span class="stringliteral">        &gt;&gt;&gt; ~x</span></div>
-<div class="line"><span class="lineno"> 3835</span><span class="stringliteral">        ~x</span></div>
-<div class="line"><span class="lineno"> 3836</span><span class="stringliteral">        &gt;&gt;&gt; simplify(~(~x))</span></div>
-<div class="line"><span class="lineno"> 3837</span><span class="stringliteral">        x</span></div>
-<div class="line"><span class="lineno"> 3838</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3839</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga8129e810ff64af5fdb102a887c2f4b38">Z3_mk_bvnot</a>(self.ctx_ref(), self.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3840</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03832">3832</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3832</span>    <span class="keyword">def </span>__invert__(self):</div>
+<div class="line"><span class="lineno"> 3833</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-not `~self`.</span></div>
+<div class="line"><span class="lineno"> 3834</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3835</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3836</span><span class="stringliteral">        &gt;&gt;&gt; ~x</span></div>
+<div class="line"><span class="lineno"> 3837</span><span class="stringliteral">        ~x</span></div>
+<div class="line"><span class="lineno"> 3838</span><span class="stringliteral">        &gt;&gt;&gt; simplify(~(~x))</span></div>
+<div class="line"><span class="lineno"> 3839</span><span class="stringliteral">        x</span></div>
+<div class="line"><span class="lineno"> 3840</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3841</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga8129e810ff64af5fdb102a887c2f4b38">Z3_mk_bvnot</a>(self.ctx_ref(), self.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3842</span> </div>
 <div class="ttc" id="agroup__capi_html_ga8129e810ff64af5fdb102a887c2f4b38"><div class="ttname"><a href="group__capi.html#ga8129e810ff64af5fdb102a887c2f4b38">Z3_mk_bvnot</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvnot(Z3_context c, Z3_ast t1)</div><div class="ttdoc">Bitwise negation.</div></div>
 </div><!-- fragment -->
 </div>
@@ -619,23 +619,23 @@ x &lt;= y
 &gt;&gt;&gt; ULE(x, y).sexpr()
 '(bvule x y)'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03923">3923</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3923</span>    <span class="keyword">def </span>__le__(self, other):</div>
-<div class="line"><span class="lineno"> 3924</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) `other &lt;= self`.</span></div>
-<div class="line"><span class="lineno"> 3925</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3926</span><span class="stringliteral">        Use the function ULE() for unsigned less than or equal to.</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03925">3925</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3925</span>    <span class="keyword">def </span>__le__(self, other):</div>
+<div class="line"><span class="lineno"> 3926</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) `other &lt;= self`.</span></div>
 <div class="line"><span class="lineno"> 3927</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3928</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3929</span><span class="stringliteral">        &gt;&gt;&gt; x &lt;= y</span></div>
-<div class="line"><span class="lineno"> 3930</span><span class="stringliteral">        x &lt;= y</span></div>
-<div class="line"><span class="lineno"> 3931</span><span class="stringliteral">        &gt;&gt;&gt; (x &lt;= y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3932</span><span class="stringliteral">        &#39;(bvsle x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3933</span><span class="stringliteral">        &gt;&gt;&gt; ULE(x, y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3934</span><span class="stringliteral">        &#39;(bvule x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3935</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3936</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3937</span>        <span class="keywordflow">return</span> BoolRef(<a class="code hl_function" href="group__capi.html#ga0e1c086630fa0d795aa0e38c328d7f16">Z3_mk_bvsle</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3938</span> </div>
+<div class="line"><span class="lineno"> 3928</span><span class="stringliteral">        Use the function ULE() for unsigned less than or equal to.</span></div>
+<div class="line"><span class="lineno"> 3929</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3930</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3931</span><span class="stringliteral">        &gt;&gt;&gt; x &lt;= y</span></div>
+<div class="line"><span class="lineno"> 3932</span><span class="stringliteral">        x &lt;= y</span></div>
+<div class="line"><span class="lineno"> 3933</span><span class="stringliteral">        &gt;&gt;&gt; (x &lt;= y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3934</span><span class="stringliteral">        &#39;(bvsle x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3935</span><span class="stringliteral">        &gt;&gt;&gt; ULE(x, y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3936</span><span class="stringliteral">        &#39;(bvule x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3937</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3938</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3939</span>        <span class="keywordflow">return</span> BoolRef(<a class="code hl_function" href="group__capi.html#ga0e1c086630fa0d795aa0e38c328d7f16">Z3_mk_bvsle</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3940</span> </div>
 <div class="ttc" id="agroup__capi_html_ga0e1c086630fa0d795aa0e38c328d7f16"><div class="ttname"><a href="group__capi.html#ga0e1c086630fa0d795aa0e38c328d7f16">Z3_mk_bvsle</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvsle(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Two's complement signed less than or equal to.</div></div>
 </div><!-- fragment -->
 </div>
@@ -675,21 +675,21 @@ x &lt;&lt; y
 &gt;&gt;&gt; simplify(BitVecVal(2, 3) &lt;&lt; 1)
 4
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04017">4017</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4017</span>    <span class="keyword">def </span>__lshift__(self, other):</div>
-<div class="line"><span class="lineno"> 4018</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression left shift `self &lt;&lt; other`</span></div>
-<div class="line"><span class="lineno"> 4019</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 4020</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 4021</span><span class="stringliteral">        &gt;&gt;&gt; x &lt;&lt; y</span></div>
-<div class="line"><span class="lineno"> 4022</span><span class="stringliteral">        x &lt;&lt; y</span></div>
-<div class="line"><span class="lineno"> 4023</span><span class="stringliteral">        &gt;&gt;&gt; (x &lt;&lt; y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 4024</span><span class="stringliteral">        &#39;(bvshl x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 4025</span><span class="stringliteral">        &gt;&gt;&gt; simplify(BitVecVal(2, 3) &lt;&lt; 1)</span></div>
-<div class="line"><span class="lineno"> 4026</span><span class="stringliteral">        4</span></div>
-<div class="line"><span class="lineno"> 4027</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 4028</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 4029</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga52edec6af12ed7ea486a78384a3e0411">Z3_mk_bvshl</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 4030</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04019">4019</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4019</span>    <span class="keyword">def </span>__lshift__(self, other):</div>
+<div class="line"><span class="lineno"> 4020</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression left shift `self &lt;&lt; other`</span></div>
+<div class="line"><span class="lineno"> 4021</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 4022</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 4023</span><span class="stringliteral">        &gt;&gt;&gt; x &lt;&lt; y</span></div>
+<div class="line"><span class="lineno"> 4024</span><span class="stringliteral">        x &lt;&lt; y</span></div>
+<div class="line"><span class="lineno"> 4025</span><span class="stringliteral">        &gt;&gt;&gt; (x &lt;&lt; y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 4026</span><span class="stringliteral">        &#39;(bvshl x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 4027</span><span class="stringliteral">        &gt;&gt;&gt; simplify(BitVecVal(2, 3) &lt;&lt; 1)</span></div>
+<div class="line"><span class="lineno"> 4028</span><span class="stringliteral">        4</span></div>
+<div class="line"><span class="lineno"> 4029</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 4030</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 4031</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga52edec6af12ed7ea486a78384a3e0411">Z3_mk_bvshl</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 4032</span> </div>
 <div class="ttc" id="agroup__capi_html_ga52edec6af12ed7ea486a78384a3e0411"><div class="ttname"><a href="group__capi.html#ga52edec6af12ed7ea486a78384a3e0411">Z3_mk_bvshl</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvshl(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Shift left.</div></div>
 </div><!-- fragment -->
 </div>
@@ -731,23 +731,23 @@ x &lt; y
 &gt;&gt;&gt; ULT(x, y).sexpr()
 '(bvult x y)'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03939">3939</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3939</span>    <span class="keyword">def </span>__lt__(self, other):</div>
-<div class="line"><span class="lineno"> 3940</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) `other &lt; self`.</span></div>
-<div class="line"><span class="lineno"> 3941</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3942</span><span class="stringliteral">        Use the function ULT() for unsigned less than.</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03941">3941</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3941</span>    <span class="keyword">def </span>__lt__(self, other):</div>
+<div class="line"><span class="lineno"> 3942</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) `other &lt; self`.</span></div>
 <div class="line"><span class="lineno"> 3943</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3944</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3945</span><span class="stringliteral">        &gt;&gt;&gt; x &lt; y</span></div>
-<div class="line"><span class="lineno"> 3946</span><span class="stringliteral">        x &lt; y</span></div>
-<div class="line"><span class="lineno"> 3947</span><span class="stringliteral">        &gt;&gt;&gt; (x &lt; y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3948</span><span class="stringliteral">        &#39;(bvslt x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3949</span><span class="stringliteral">        &gt;&gt;&gt; ULT(x, y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3950</span><span class="stringliteral">        &#39;(bvult x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3951</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3952</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3953</span>        <span class="keywordflow">return</span> BoolRef(<a class="code hl_function" href="group__capi.html#ga29c3679444c635356733578b9aa854aa">Z3_mk_bvslt</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3954</span> </div>
+<div class="line"><span class="lineno"> 3944</span><span class="stringliteral">        Use the function ULT() for unsigned less than.</span></div>
+<div class="line"><span class="lineno"> 3945</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3946</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3947</span><span class="stringliteral">        &gt;&gt;&gt; x &lt; y</span></div>
+<div class="line"><span class="lineno"> 3948</span><span class="stringliteral">        x &lt; y</span></div>
+<div class="line"><span class="lineno"> 3949</span><span class="stringliteral">        &gt;&gt;&gt; (x &lt; y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3950</span><span class="stringliteral">        &#39;(bvslt x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3951</span><span class="stringliteral">        &gt;&gt;&gt; ULT(x, y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3952</span><span class="stringliteral">        &#39;(bvult x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3953</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3954</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3955</span>        <span class="keywordflow">return</span> BoolRef(<a class="code hl_function" href="group__capi.html#ga29c3679444c635356733578b9aa854aa">Z3_mk_bvslt</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3956</span> </div>
 <div class="ttc" id="agroup__capi_html_ga29c3679444c635356733578b9aa854aa"><div class="ttname"><a href="group__capi.html#ga29c3679444c635356733578b9aa854aa">Z3_mk_bvslt</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvslt(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Two's complement signed less than.</div></div>
 </div><!-- fragment -->
 </div>
@@ -794,28 +794,28 @@ BitVec(32)
 &gt;&gt;&gt; SRem(x, y).sexpr()
 '(bvsrem x y)'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03884">3884</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3884</span>    <span class="keyword">def </span>__mod__(self, other):</div>
-<div class="line"><span class="lineno"> 3885</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) mod `self % other`.</span></div>
-<div class="line"><span class="lineno"> 3886</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3887</span><span class="stringliteral">        Use the function URem() for unsigned remainder, and SRem() for signed remainder.</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03886">3886</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3886</span>    <span class="keyword">def </span>__mod__(self, other):</div>
+<div class="line"><span class="lineno"> 3887</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) mod `self % other`.</span></div>
 <div class="line"><span class="lineno"> 3888</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3889</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3890</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3891</span><span class="stringliteral">        &gt;&gt;&gt; x % y</span></div>
-<div class="line"><span class="lineno"> 3892</span><span class="stringliteral">        x%y</span></div>
-<div class="line"><span class="lineno"> 3893</span><span class="stringliteral">        &gt;&gt;&gt; (x % y).sort()</span></div>
-<div class="line"><span class="lineno"> 3894</span><span class="stringliteral">        BitVec(32)</span></div>
-<div class="line"><span class="lineno"> 3895</span><span class="stringliteral">        &gt;&gt;&gt; (x % y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3896</span><span class="stringliteral">        &#39;(bvsmod x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3897</span><span class="stringliteral">        &gt;&gt;&gt; URem(x, y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3898</span><span class="stringliteral">        &#39;(bvurem x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3899</span><span class="stringliteral">        &gt;&gt;&gt; SRem(x, y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3900</span><span class="stringliteral">        &#39;(bvsrem x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3901</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3902</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3903</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga9f99e96fc60cb67789fab87be0ba5919">Z3_mk_bvsmod</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3904</span> </div>
+<div class="line"><span class="lineno"> 3889</span><span class="stringliteral">        Use the function URem() for unsigned remainder, and SRem() for signed remainder.</span></div>
+<div class="line"><span class="lineno"> 3890</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3891</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3892</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3893</span><span class="stringliteral">        &gt;&gt;&gt; x % y</span></div>
+<div class="line"><span class="lineno"> 3894</span><span class="stringliteral">        x%y</span></div>
+<div class="line"><span class="lineno"> 3895</span><span class="stringliteral">        &gt;&gt;&gt; (x % y).sort()</span></div>
+<div class="line"><span class="lineno"> 3896</span><span class="stringliteral">        BitVec(32)</span></div>
+<div class="line"><span class="lineno"> 3897</span><span class="stringliteral">        &gt;&gt;&gt; (x % y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3898</span><span class="stringliteral">        &#39;(bvsmod x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3899</span><span class="stringliteral">        &gt;&gt;&gt; URem(x, y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3900</span><span class="stringliteral">        &#39;(bvurem x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3901</span><span class="stringliteral">        &gt;&gt;&gt; SRem(x, y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3902</span><span class="stringliteral">        &#39;(bvsrem x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3903</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3904</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3905</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga9f99e96fc60cb67789fab87be0ba5919">Z3_mk_bvsmod</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3906</span> </div>
 <div class="ttc" id="agroup__capi_html_ga9f99e96fc60cb67789fab87be0ba5919"><div class="ttname"><a href="group__capi.html#ga9f99e96fc60cb67789fab87be0ba5919">Z3_mk_bvsmod</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvsmod(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Two's complement signed remainder (sign follows divisor).</div></div>
 </div><!-- fragment -->
 </div>
@@ -854,20 +854,20 @@ x*y
 &gt;&gt;&gt; (x * y).sort()
 BitVec(32)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03695">3695</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3695</span>    <span class="keyword">def </span>__mul__(self, other):</div>
-<div class="line"><span class="lineno"> 3696</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `self * other`.</span></div>
-<div class="line"><span class="lineno"> 3697</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3698</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3699</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3700</span><span class="stringliteral">        &gt;&gt;&gt; x * y</span></div>
-<div class="line"><span class="lineno"> 3701</span><span class="stringliteral">        x*y</span></div>
-<div class="line"><span class="lineno"> 3702</span><span class="stringliteral">        &gt;&gt;&gt; (x * y).sort()</span></div>
-<div class="line"><span class="lineno"> 3703</span><span class="stringliteral">        BitVec(32)</span></div>
-<div class="line"><span class="lineno"> 3704</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3705</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3706</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga36198069d6139ddacccd0d8550819282">Z3_mk_bvmul</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3707</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03697">3697</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3697</span>    <span class="keyword">def </span>__mul__(self, other):</div>
+<div class="line"><span class="lineno"> 3698</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `self * other`.</span></div>
+<div class="line"><span class="lineno"> 3699</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3700</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3701</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3702</span><span class="stringliteral">        &gt;&gt;&gt; x * y</span></div>
+<div class="line"><span class="lineno"> 3703</span><span class="stringliteral">        x*y</span></div>
+<div class="line"><span class="lineno"> 3704</span><span class="stringliteral">        &gt;&gt;&gt; (x * y).sort()</span></div>
+<div class="line"><span class="lineno"> 3705</span><span class="stringliteral">        BitVec(32)</span></div>
+<div class="line"><span class="lineno"> 3706</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3707</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3708</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga36198069d6139ddacccd0d8550819282">Z3_mk_bvmul</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3709</span> </div>
 <div class="ttc" id="agroup__capi_html_ga36198069d6139ddacccd0d8550819282"><div class="ttname"><a href="group__capi.html#ga36198069d6139ddacccd0d8550819282">Z3_mk_bvmul</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvmul(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Standard two's complement multiplication.</div></div>
 </div><!-- fragment -->
 </div>
@@ -895,18 +895,18 @@ BitVec(32)
 &gt;&gt;&gt; simplify(-(-x))
 x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03819">3819</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3819</span>    <span class="keyword">def </span>__neg__(self):</div>
-<div class="line"><span class="lineno"> 3820</span>        <span class="stringliteral">&quot;&quot;&quot;Return an expression representing `-self`.</span></div>
-<div class="line"><span class="lineno"> 3821</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3822</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3823</span><span class="stringliteral">        &gt;&gt;&gt; -x</span></div>
-<div class="line"><span class="lineno"> 3824</span><span class="stringliteral">        -x</span></div>
-<div class="line"><span class="lineno"> 3825</span><span class="stringliteral">        &gt;&gt;&gt; simplify(-(-x))</span></div>
-<div class="line"><span class="lineno"> 3826</span><span class="stringliteral">        x</span></div>
-<div class="line"><span class="lineno"> 3827</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3828</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#gacdedeac87f7a4205d1923ad2802c5398">Z3_mk_bvneg</a>(self.ctx_ref(), self.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3829</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03821">3821</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3821</span>    <span class="keyword">def </span>__neg__(self):</div>
+<div class="line"><span class="lineno"> 3822</span>        <span class="stringliteral">&quot;&quot;&quot;Return an expression representing `-self`.</span></div>
+<div class="line"><span class="lineno"> 3823</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3824</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3825</span><span class="stringliteral">        &gt;&gt;&gt; -x</span></div>
+<div class="line"><span class="lineno"> 3826</span><span class="stringliteral">        -x</span></div>
+<div class="line"><span class="lineno"> 3827</span><span class="stringliteral">        &gt;&gt;&gt; simplify(-(-x))</span></div>
+<div class="line"><span class="lineno"> 3828</span><span class="stringliteral">        x</span></div>
+<div class="line"><span class="lineno"> 3829</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3830</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#gacdedeac87f7a4205d1923ad2802c5398">Z3_mk_bvneg</a>(self.ctx_ref(), self.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3831</span> </div>
 <div class="ttc" id="agroup__capi_html_gacdedeac87f7a4205d1923ad2802c5398"><div class="ttname"><a href="group__capi.html#gacdedeac87f7a4205d1923ad2802c5398">Z3_mk_bvneg</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvneg(Z3_context c, Z3_ast t1)</div><div class="ttdoc">Standard two's complement unary minus.</div></div>
 </div><!-- fragment -->
 </div>
@@ -945,20 +945,20 @@ x | y
 &gt;&gt;&gt; (x | y).sort()
 BitVec(32)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03741">3741</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3741</span>    <span class="keyword">def </span>__or__(self, other):</div>
-<div class="line"><span class="lineno"> 3742</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-or `self | other`.</span></div>
-<div class="line"><span class="lineno"> 3743</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3744</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3745</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3746</span><span class="stringliteral">        &gt;&gt;&gt; x | y</span></div>
-<div class="line"><span class="lineno"> 3747</span><span class="stringliteral">        x | y</span></div>
-<div class="line"><span class="lineno"> 3748</span><span class="stringliteral">        &gt;&gt;&gt; (x | y).sort()</span></div>
-<div class="line"><span class="lineno"> 3749</span><span class="stringliteral">        BitVec(32)</span></div>
-<div class="line"><span class="lineno"> 3750</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3751</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3752</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga69a08735781d410fe2b94aba39b5d277">Z3_mk_bvor</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3753</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03743">3743</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3743</span>    <span class="keyword">def </span>__or__(self, other):</div>
+<div class="line"><span class="lineno"> 3744</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-or `self | other`.</span></div>
+<div class="line"><span class="lineno"> 3745</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3746</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3747</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3748</span><span class="stringliteral">        &gt;&gt;&gt; x | y</span></div>
+<div class="line"><span class="lineno"> 3749</span><span class="stringliteral">        x | y</span></div>
+<div class="line"><span class="lineno"> 3750</span><span class="stringliteral">        &gt;&gt;&gt; (x | y).sort()</span></div>
+<div class="line"><span class="lineno"> 3751</span><span class="stringliteral">        BitVec(32)</span></div>
+<div class="line"><span class="lineno"> 3752</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3753</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3754</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga69a08735781d410fe2b94aba39b5d277">Z3_mk_bvor</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3755</span> </div>
 <div class="ttc" id="agroup__capi_html_ga69a08735781d410fe2b94aba39b5d277"><div class="ttname"><a href="group__capi.html#ga69a08735781d410fe2b94aba39b5d277">Z3_mk_bvor</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvor(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Bitwise or.</div></div>
 </div><!-- fragment -->
 </div>
@@ -984,16 +984,16 @@ BitVec(32)
 &gt;&gt;&gt; +x
 x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03810">3810</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3810</span>    <span class="keyword">def </span>__pos__(self):</div>
-<div class="line"><span class="lineno"> 3811</span>        <span class="stringliteral">&quot;&quot;&quot;Return `self`.</span></div>
-<div class="line"><span class="lineno"> 3812</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3813</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3814</span><span class="stringliteral">        &gt;&gt;&gt; +x</span></div>
-<div class="line"><span class="lineno"> 3815</span><span class="stringliteral">        x</span></div>
-<div class="line"><span class="lineno"> 3816</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3817</span>        <span class="keywordflow">return</span> self</div>
-<div class="line"><span class="lineno"> 3818</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03812">3812</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3812</span>    <span class="keyword">def </span>__pos__(self):</div>
+<div class="line"><span class="lineno"> 3813</span>        <span class="stringliteral">&quot;&quot;&quot;Return `self`.</span></div>
+<div class="line"><span class="lineno"> 3814</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3815</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3816</span><span class="stringliteral">        &gt;&gt;&gt; +x</span></div>
+<div class="line"><span class="lineno"> 3817</span><span class="stringliteral">        x</span></div>
+<div class="line"><span class="lineno"> 3818</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3819</span>        <span class="keywordflow">return</span> self</div>
+<div class="line"><span class="lineno"> 3820</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1028,17 +1028,17 @@ x
 &gt;&gt;&gt; 10 + x
 10 + x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03685">3685</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3685</span>    <span class="keyword">def </span>__radd__(self, other):</div>
-<div class="line"><span class="lineno"> 3686</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `other + self`.</span></div>
-<div class="line"><span class="lineno"> 3687</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3688</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3689</span><span class="stringliteral">        &gt;&gt;&gt; 10 + x</span></div>
-<div class="line"><span class="lineno"> 3690</span><span class="stringliteral">        10 + x</span></div>
-<div class="line"><span class="lineno"> 3691</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3692</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3693</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga73fc54343ff1a090672dfc47dee0bcfe">Z3_mk_bvadd</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3694</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03687">3687</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3687</span>    <span class="keyword">def </span>__radd__(self, other):</div>
+<div class="line"><span class="lineno"> 3688</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `other + self`.</span></div>
+<div class="line"><span class="lineno"> 3689</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3690</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3691</span><span class="stringliteral">        &gt;&gt;&gt; 10 + x</span></div>
+<div class="line"><span class="lineno"> 3692</span><span class="stringliteral">        10 + x</span></div>
+<div class="line"><span class="lineno"> 3693</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3694</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3695</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga73fc54343ff1a090672dfc47dee0bcfe">Z3_mk_bvadd</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3696</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1073,17 +1073,17 @@ x
 &gt;&gt;&gt; 10 &amp; x
 10 &amp; x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03777">3777</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3777</span>    <span class="keyword">def </span>__rand__(self, other):</div>
-<div class="line"><span class="lineno"> 3778</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-or `other &amp; self`.</span></div>
-<div class="line"><span class="lineno"> 3779</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3780</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3781</span><span class="stringliteral">        &gt;&gt;&gt; 10 &amp; x</span></div>
-<div class="line"><span class="lineno"> 3782</span><span class="stringliteral">        10 &amp; x</span></div>
-<div class="line"><span class="lineno"> 3783</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3784</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3785</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga9a7ec64d796e6cd1a23f67bec2a0d11c">Z3_mk_bvand</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3786</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03779">3779</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3779</span>    <span class="keyword">def </span>__rand__(self, other):</div>
+<div class="line"><span class="lineno"> 3780</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-or `other &amp; self`.</span></div>
+<div class="line"><span class="lineno"> 3781</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3782</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3783</span><span class="stringliteral">        &gt;&gt;&gt; 10 &amp; x</span></div>
+<div class="line"><span class="lineno"> 3784</span><span class="stringliteral">        10 &amp; x</span></div>
+<div class="line"><span class="lineno"> 3785</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3786</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3787</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga9a7ec64d796e6cd1a23f67bec2a0d11c">Z3_mk_bvand</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3788</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1124,25 +1124,25 @@ Use the function UDiv() for unsigned division.
 &gt;&gt;&gt; UDiv(10, x).sexpr()
 '(bvudiv #x0000000a x)'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03864">3864</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3864</span>    <span class="keyword">def </span>__rdiv__(self, other):</div>
-<div class="line"><span class="lineno"> 3865</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) division `other / self`.</span></div>
-<div class="line"><span class="lineno"> 3866</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3867</span><span class="stringliteral">        Use the function UDiv() for unsigned division.</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03866">3866</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3866</span>    <span class="keyword">def </span>__rdiv__(self, other):</div>
+<div class="line"><span class="lineno"> 3867</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) division `other / self`.</span></div>
 <div class="line"><span class="lineno"> 3868</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3869</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3870</span><span class="stringliteral">        &gt;&gt;&gt; 10 / x</span></div>
-<div class="line"><span class="lineno"> 3871</span><span class="stringliteral">        10/x</span></div>
-<div class="line"><span class="lineno"> 3872</span><span class="stringliteral">        &gt;&gt;&gt; (10 / x).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3873</span><span class="stringliteral">        &#39;(bvsdiv #x0000000a x)&#39;</span></div>
-<div class="line"><span class="lineno"> 3874</span><span class="stringliteral">        &gt;&gt;&gt; UDiv(10, x).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3875</span><span class="stringliteral">        &#39;(bvudiv #x0000000a x)&#39;</span></div>
-<div class="line"><span class="lineno"> 3876</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3877</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3878</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#gad333ccb0a4d530a0c2c9dbdde28c0ed8">Z3_mk_bvsdiv</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3879</span> </div>
+<div class="line"><span class="lineno"> 3869</span><span class="stringliteral">        Use the function UDiv() for unsigned division.</span></div>
+<div class="line"><span class="lineno"> 3870</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3871</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3872</span><span class="stringliteral">        &gt;&gt;&gt; 10 / x</span></div>
+<div class="line"><span class="lineno"> 3873</span><span class="stringliteral">        10/x</span></div>
+<div class="line"><span class="lineno"> 3874</span><span class="stringliteral">        &gt;&gt;&gt; (10 / x).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3875</span><span class="stringliteral">        &#39;(bvsdiv #x0000000a x)&#39;</span></div>
+<div class="line"><span class="lineno"> 3876</span><span class="stringliteral">        &gt;&gt;&gt; UDiv(10, x).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3877</span><span class="stringliteral">        &#39;(bvudiv #x0000000a x)&#39;</span></div>
+<div class="line"><span class="lineno"> 3878</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3879</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3880</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#gad333ccb0a4d530a0c2c9dbdde28c0ed8">Z3_mk_bvsdiv</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3881</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02704">ArithRef.__rtruediv__()</a>, and <a class="el" href="z3py_8py_source.html#l03880">BitVecRef.__rtruediv__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02704">ArithRef.__rtruediv__()</a>, and <a class="el" href="z3py_8py_source.html#l03882">BitVecRef.__rtruediv__()</a>.</p>
 
 </div>
 </div>
@@ -1181,22 +1181,22 @@ Use the function LShR() for the right logical shift
 &gt;&gt;&gt; (10 &lt;&lt; x).sexpr()
 '(bvshl #x0000000a x)'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04045">4045</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4045</span>    <span class="keyword">def </span>__rlshift__(self, other):</div>
-<div class="line"><span class="lineno"> 4046</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression left shift `other &lt;&lt; self`.</span></div>
-<div class="line"><span class="lineno"> 4047</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 4048</span><span class="stringliteral">        Use the function LShR() for the right logical shift</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04047">4047</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4047</span>    <span class="keyword">def </span>__rlshift__(self, other):</div>
+<div class="line"><span class="lineno"> 4048</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression left shift `other &lt;&lt; self`.</span></div>
 <div class="line"><span class="lineno"> 4049</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 4050</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 4051</span><span class="stringliteral">        &gt;&gt;&gt; 10 &lt;&lt; x</span></div>
-<div class="line"><span class="lineno"> 4052</span><span class="stringliteral">        10 &lt;&lt; x</span></div>
-<div class="line"><span class="lineno"> 4053</span><span class="stringliteral">        &gt;&gt;&gt; (10 &lt;&lt; x).sexpr()</span></div>
-<div class="line"><span class="lineno"> 4054</span><span class="stringliteral">        &#39;(bvshl #x0000000a x)&#39;</span></div>
-<div class="line"><span class="lineno"> 4055</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 4056</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 4057</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga52edec6af12ed7ea486a78384a3e0411">Z3_mk_bvshl</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 4058</span> </div>
-<div class="line"><span class="lineno"> 4059</span> </div>
+<div class="line"><span class="lineno"> 4050</span><span class="stringliteral">        Use the function LShR() for the right logical shift</span></div>
+<div class="line"><span class="lineno"> 4051</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 4052</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 4053</span><span class="stringliteral">        &gt;&gt;&gt; 10 &lt;&lt; x</span></div>
+<div class="line"><span class="lineno"> 4054</span><span class="stringliteral">        10 &lt;&lt; x</span></div>
+<div class="line"><span class="lineno"> 4055</span><span class="stringliteral">        &gt;&gt;&gt; (10 &lt;&lt; x).sexpr()</span></div>
+<div class="line"><span class="lineno"> 4056</span><span class="stringliteral">        &#39;(bvshl #x0000000a x)&#39;</span></div>
+<div class="line"><span class="lineno"> 4057</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 4058</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 4059</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga52edec6af12ed7ea486a78384a3e0411">Z3_mk_bvshl</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 4060</span> </div>
+<div class="line"><span class="lineno"> 4061</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1239,25 +1239,25 @@ Use the function URem() for unsigned remainder, and SRem() for signed remainder.
 &gt;&gt;&gt; SRem(10, x).sexpr()
 '(bvsrem #x0000000a x)'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03905">3905</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3905</span>    <span class="keyword">def </span>__rmod__(self, other):</div>
-<div class="line"><span class="lineno"> 3906</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) mod `other % self`.</span></div>
-<div class="line"><span class="lineno"> 3907</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3908</span><span class="stringliteral">        Use the function URem() for unsigned remainder, and SRem() for signed remainder.</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03907">3907</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3907</span>    <span class="keyword">def </span>__rmod__(self, other):</div>
+<div class="line"><span class="lineno"> 3908</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) mod `other % self`.</span></div>
 <div class="line"><span class="lineno"> 3909</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3910</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3911</span><span class="stringliteral">        &gt;&gt;&gt; 10 % x</span></div>
-<div class="line"><span class="lineno"> 3912</span><span class="stringliteral">        10%x</span></div>
-<div class="line"><span class="lineno"> 3913</span><span class="stringliteral">        &gt;&gt;&gt; (10 % x).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3914</span><span class="stringliteral">        &#39;(bvsmod #x0000000a x)&#39;</span></div>
-<div class="line"><span class="lineno"> 3915</span><span class="stringliteral">        &gt;&gt;&gt; URem(10, x).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3916</span><span class="stringliteral">        &#39;(bvurem #x0000000a x)&#39;</span></div>
-<div class="line"><span class="lineno"> 3917</span><span class="stringliteral">        &gt;&gt;&gt; SRem(10, x).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3918</span><span class="stringliteral">        &#39;(bvsrem #x0000000a x)&#39;</span></div>
-<div class="line"><span class="lineno"> 3919</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3920</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3921</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga9f99e96fc60cb67789fab87be0ba5919">Z3_mk_bvsmod</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3922</span> </div>
+<div class="line"><span class="lineno"> 3910</span><span class="stringliteral">        Use the function URem() for unsigned remainder, and SRem() for signed remainder.</span></div>
+<div class="line"><span class="lineno"> 3911</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3912</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3913</span><span class="stringliteral">        &gt;&gt;&gt; 10 % x</span></div>
+<div class="line"><span class="lineno"> 3914</span><span class="stringliteral">        10%x</span></div>
+<div class="line"><span class="lineno"> 3915</span><span class="stringliteral">        &gt;&gt;&gt; (10 % x).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3916</span><span class="stringliteral">        &#39;(bvsmod #x0000000a x)&#39;</span></div>
+<div class="line"><span class="lineno"> 3917</span><span class="stringliteral">        &gt;&gt;&gt; URem(10, x).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3918</span><span class="stringliteral">        &#39;(bvurem #x0000000a x)&#39;</span></div>
+<div class="line"><span class="lineno"> 3919</span><span class="stringliteral">        &gt;&gt;&gt; SRem(10, x).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3920</span><span class="stringliteral">        &#39;(bvsrem #x0000000a x)&#39;</span></div>
+<div class="line"><span class="lineno"> 3921</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3922</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3923</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga9f99e96fc60cb67789fab87be0ba5919">Z3_mk_bvsmod</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3924</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1292,17 +1292,17 @@ Use the function URem() for unsigned remainder, and SRem() for signed remainder.
 &gt;&gt;&gt; 10 * x
 10*x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03708">3708</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3708</span>    <span class="keyword">def </span>__rmul__(self, other):</div>
-<div class="line"><span class="lineno"> 3709</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `other * self`.</span></div>
-<div class="line"><span class="lineno"> 3710</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3711</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3712</span><span class="stringliteral">        &gt;&gt;&gt; 10 * x</span></div>
-<div class="line"><span class="lineno"> 3713</span><span class="stringliteral">        10*x</span></div>
-<div class="line"><span class="lineno"> 3714</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3715</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3716</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga36198069d6139ddacccd0d8550819282">Z3_mk_bvmul</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3717</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03710">3710</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3710</span>    <span class="keyword">def </span>__rmul__(self, other):</div>
+<div class="line"><span class="lineno"> 3711</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `other * self`.</span></div>
+<div class="line"><span class="lineno"> 3712</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3713</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3714</span><span class="stringliteral">        &gt;&gt;&gt; 10 * x</span></div>
+<div class="line"><span class="lineno"> 3715</span><span class="stringliteral">        10*x</span></div>
+<div class="line"><span class="lineno"> 3716</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3717</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3718</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga36198069d6139ddacccd0d8550819282">Z3_mk_bvmul</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3719</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1337,17 +1337,17 @@ Use the function URem() for unsigned remainder, and SRem() for signed remainder.
 &gt;&gt;&gt; 10 | x
 10 | x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03754">3754</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3754</span>    <span class="keyword">def </span>__ror__(self, other):</div>
-<div class="line"><span class="lineno"> 3755</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-or `other | self`.</span></div>
-<div class="line"><span class="lineno"> 3756</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3757</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3758</span><span class="stringliteral">        &gt;&gt;&gt; 10 | x</span></div>
-<div class="line"><span class="lineno"> 3759</span><span class="stringliteral">        10 | x</span></div>
-<div class="line"><span class="lineno"> 3760</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3761</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3762</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga69a08735781d410fe2b94aba39b5d277">Z3_mk_bvor</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3763</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03756">3756</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3756</span>    <span class="keyword">def </span>__ror__(self, other):</div>
+<div class="line"><span class="lineno"> 3757</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-or `other | self`.</span></div>
+<div class="line"><span class="lineno"> 3758</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3759</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3760</span><span class="stringliteral">        &gt;&gt;&gt; 10 | x</span></div>
+<div class="line"><span class="lineno"> 3761</span><span class="stringliteral">        10 | x</span></div>
+<div class="line"><span class="lineno"> 3762</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3763</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3764</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga69a08735781d410fe2b94aba39b5d277">Z3_mk_bvor</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3765</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1386,21 +1386,21 @@ Use the function LShR() for the right logical shift
 &gt;&gt;&gt; (10 &gt;&gt; x).sexpr()
 '(bvashr #x0000000a x)'
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04031">4031</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4031</span>    <span class="keyword">def </span>__rrshift__(self, other):</div>
-<div class="line"><span class="lineno"> 4032</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (arithmetical) right shift `other` &gt;&gt; `self`.</span></div>
-<div class="line"><span class="lineno"> 4033</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 4034</span><span class="stringliteral">        Use the function LShR() for the right logical shift</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l04033">4033</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4033</span>    <span class="keyword">def </span>__rrshift__(self, other):</div>
+<div class="line"><span class="lineno"> 4034</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (arithmetical) right shift `other` &gt;&gt; `self`.</span></div>
 <div class="line"><span class="lineno"> 4035</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 4036</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 4037</span><span class="stringliteral">        &gt;&gt;&gt; 10 &gt;&gt; x</span></div>
-<div class="line"><span class="lineno"> 4038</span><span class="stringliteral">        10 &gt;&gt; x</span></div>
-<div class="line"><span class="lineno"> 4039</span><span class="stringliteral">        &gt;&gt;&gt; (10 &gt;&gt; x).sexpr()</span></div>
-<div class="line"><span class="lineno"> 4040</span><span class="stringliteral">        &#39;(bvashr #x0000000a x)&#39;</span></div>
-<div class="line"><span class="lineno"> 4041</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 4042</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 4043</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga6745e41baf8f3a0523a4e70f85176753">Z3_mk_bvashr</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 4044</span> </div>
+<div class="line"><span class="lineno"> 4036</span><span class="stringliteral">        Use the function LShR() for the right logical shift</span></div>
+<div class="line"><span class="lineno"> 4037</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 4038</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 4039</span><span class="stringliteral">        &gt;&gt;&gt; 10 &gt;&gt; x</span></div>
+<div class="line"><span class="lineno"> 4040</span><span class="stringliteral">        10 &gt;&gt; x</span></div>
+<div class="line"><span class="lineno"> 4041</span><span class="stringliteral">        &gt;&gt;&gt; (10 &gt;&gt; x).sexpr()</span></div>
+<div class="line"><span class="lineno"> 4042</span><span class="stringliteral">        &#39;(bvashr #x0000000a x)&#39;</span></div>
+<div class="line"><span class="lineno"> 4043</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 4044</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 4045</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga6745e41baf8f3a0523a4e70f85176753">Z3_mk_bvashr</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 4046</span> </div>
 <div class="ttc" id="agroup__capi_html_ga6745e41baf8f3a0523a4e70f85176753"><div class="ttname"><a href="group__capi.html#ga6745e41baf8f3a0523a4e70f85176753">Z3_mk_bvashr</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvashr(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Arithmetic shift right.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1456,37 +1456,37 @@ x &gt;&gt; y
 &gt;&gt;&gt; simplify(LShR(BitVecVal(2, 3), 1))
 1
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03987">3987</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3987</span>    <span class="keyword">def </span>__rshift__(self, other):</div>
-<div class="line"><span class="lineno"> 3988</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (arithmetical) right shift `self &gt;&gt; other`</span></div>
-<div class="line"><span class="lineno"> 3989</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3990</span><span class="stringliteral">        Use the function LShR() for the right logical shift</span></div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03989">3989</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3989</span>    <span class="keyword">def </span>__rshift__(self, other):</div>
+<div class="line"><span class="lineno"> 3990</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (arithmetical) right shift `self &gt;&gt; other`</span></div>
 <div class="line"><span class="lineno"> 3991</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3992</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3993</span><span class="stringliteral">        &gt;&gt;&gt; x &gt;&gt; y</span></div>
-<div class="line"><span class="lineno"> 3994</span><span class="stringliteral">        x &gt;&gt; y</span></div>
-<div class="line"><span class="lineno"> 3995</span><span class="stringliteral">        &gt;&gt;&gt; (x &gt;&gt; y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3996</span><span class="stringliteral">        &#39;(bvashr x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3997</span><span class="stringliteral">        &gt;&gt;&gt; LShR(x, y).sexpr()</span></div>
-<div class="line"><span class="lineno"> 3998</span><span class="stringliteral">        &#39;(bvlshr x y)&#39;</span></div>
-<div class="line"><span class="lineno"> 3999</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(4, 3)</span></div>
-<div class="line"><span class="lineno"> 4000</span><span class="stringliteral">        4</span></div>
-<div class="line"><span class="lineno"> 4001</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(4, 3).as_signed_long()</span></div>
-<div class="line"><span class="lineno"> 4002</span><span class="stringliteral">        -4</span></div>
-<div class="line"><span class="lineno"> 4003</span><span class="stringliteral">        &gt;&gt;&gt; simplify(BitVecVal(4, 3) &gt;&gt; 1).as_signed_long()</span></div>
-<div class="line"><span class="lineno"> 4004</span><span class="stringliteral">        -2</span></div>
-<div class="line"><span class="lineno"> 4005</span><span class="stringliteral">        &gt;&gt;&gt; simplify(BitVecVal(4, 3) &gt;&gt; 1)</span></div>
-<div class="line"><span class="lineno"> 4006</span><span class="stringliteral">        6</span></div>
-<div class="line"><span class="lineno"> 4007</span><span class="stringliteral">        &gt;&gt;&gt; simplify(LShR(BitVecVal(4, 3), 1))</span></div>
-<div class="line"><span class="lineno"> 4008</span><span class="stringliteral">        2</span></div>
-<div class="line"><span class="lineno"> 4009</span><span class="stringliteral">        &gt;&gt;&gt; simplify(BitVecVal(2, 3) &gt;&gt; 1)</span></div>
-<div class="line"><span class="lineno"> 4010</span><span class="stringliteral">        1</span></div>
-<div class="line"><span class="lineno"> 4011</span><span class="stringliteral">        &gt;&gt;&gt; simplify(LShR(BitVecVal(2, 3), 1))</span></div>
+<div class="line"><span class="lineno"> 3992</span><span class="stringliteral">        Use the function LShR() for the right logical shift</span></div>
+<div class="line"><span class="lineno"> 3993</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3994</span><span class="stringliteral">        &gt;&gt;&gt; x, y = BitVecs(&#39;x y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3995</span><span class="stringliteral">        &gt;&gt;&gt; x &gt;&gt; y</span></div>
+<div class="line"><span class="lineno"> 3996</span><span class="stringliteral">        x &gt;&gt; y</span></div>
+<div class="line"><span class="lineno"> 3997</span><span class="stringliteral">        &gt;&gt;&gt; (x &gt;&gt; y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 3998</span><span class="stringliteral">        &#39;(bvashr x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 3999</span><span class="stringliteral">        &gt;&gt;&gt; LShR(x, y).sexpr()</span></div>
+<div class="line"><span class="lineno"> 4000</span><span class="stringliteral">        &#39;(bvlshr x y)&#39;</span></div>
+<div class="line"><span class="lineno"> 4001</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(4, 3)</span></div>
+<div class="line"><span class="lineno"> 4002</span><span class="stringliteral">        4</span></div>
+<div class="line"><span class="lineno"> 4003</span><span class="stringliteral">        &gt;&gt;&gt; BitVecVal(4, 3).as_signed_long()</span></div>
+<div class="line"><span class="lineno"> 4004</span><span class="stringliteral">        -4</span></div>
+<div class="line"><span class="lineno"> 4005</span><span class="stringliteral">        &gt;&gt;&gt; simplify(BitVecVal(4, 3) &gt;&gt; 1).as_signed_long()</span></div>
+<div class="line"><span class="lineno"> 4006</span><span class="stringliteral">        -2</span></div>
+<div class="line"><span class="lineno"> 4007</span><span class="stringliteral">        &gt;&gt;&gt; simplify(BitVecVal(4, 3) &gt;&gt; 1)</span></div>
+<div class="line"><span class="lineno"> 4008</span><span class="stringliteral">        6</span></div>
+<div class="line"><span class="lineno"> 4009</span><span class="stringliteral">        &gt;&gt;&gt; simplify(LShR(BitVecVal(4, 3), 1))</span></div>
+<div class="line"><span class="lineno"> 4010</span><span class="stringliteral">        2</span></div>
+<div class="line"><span class="lineno"> 4011</span><span class="stringliteral">        &gt;&gt;&gt; simplify(BitVecVal(2, 3) &gt;&gt; 1)</span></div>
 <div class="line"><span class="lineno"> 4012</span><span class="stringliteral">        1</span></div>
-<div class="line"><span class="lineno"> 4013</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 4014</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 4015</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga6745e41baf8f3a0523a4e70f85176753">Z3_mk_bvashr</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 4016</span> </div>
+<div class="line"><span class="lineno"> 4013</span><span class="stringliteral">        &gt;&gt;&gt; simplify(LShR(BitVecVal(2, 3), 1))</span></div>
+<div class="line"><span class="lineno"> 4014</span><span class="stringliteral">        1</span></div>
+<div class="line"><span class="lineno"> 4015</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 4016</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 4017</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga6745e41baf8f3a0523a4e70f85176753">Z3_mk_bvashr</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 4018</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1521,17 +1521,17 @@ x &gt;&gt; y
 &gt;&gt;&gt; 10 - x
 10 - x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03731">3731</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3731</span>    <span class="keyword">def </span>__rsub__(self, other):</div>
-<div class="line"><span class="lineno"> 3732</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `other - self`.</span></div>
-<div class="line"><span class="lineno"> 3733</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3734</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3735</span><span class="stringliteral">        &gt;&gt;&gt; 10 - x</span></div>
-<div class="line"><span class="lineno"> 3736</span><span class="stringliteral">        10 - x</span></div>
-<div class="line"><span class="lineno"> 3737</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3738</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3739</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga82bf5bde094821b86f7594356385d727">Z3_mk_bvsub</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3740</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03733">3733</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3733</span>    <span class="keyword">def </span>__rsub__(self, other):</div>
+<div class="line"><span class="lineno"> 3734</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `other - self`.</span></div>
+<div class="line"><span class="lineno"> 3735</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3736</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3737</span><span class="stringliteral">        &gt;&gt;&gt; 10 - x</span></div>
+<div class="line"><span class="lineno"> 3738</span><span class="stringliteral">        10 - x</span></div>
+<div class="line"><span class="lineno"> 3739</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3740</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3741</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga82bf5bde094821b86f7594356385d727">Z3_mk_bvsub</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3742</span> </div>
 <div class="ttc" id="agroup__capi_html_ga82bf5bde094821b86f7594356385d727"><div class="ttname"><a href="group__capi.html#ga82bf5bde094821b86f7594356385d727">Z3_mk_bvsub</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvsub(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Standard two's complement subtraction.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1562,11 +1562,11 @@ x &gt;&gt; y
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Create the Z3 expression (signed) division `other / self`.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03880">3880</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3880</span>    <span class="keyword">def </span>__rtruediv__(self, other):</div>
-<div class="line"><span class="lineno"> 3881</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) division `other / self`.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3882</span>        <span class="keywordflow">return</span> self.__rdiv__(other)</div>
-<div class="line"><span class="lineno"> 3883</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03882">3882</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3882</span>    <span class="keyword">def </span>__rtruediv__(self, other):</div>
+<div class="line"><span class="lineno"> 3883</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) division `other / self`.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3884</span>        <span class="keywordflow">return</span> self.__rdiv__(other)</div>
+<div class="line"><span class="lineno"> 3885</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1601,17 +1601,17 @@ x &gt;&gt; y
 &gt;&gt;&gt; 10 ^ x
 10 ^ x
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03800">3800</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3800</span>    <span class="keyword">def </span>__rxor__(self, other):</div>
-<div class="line"><span class="lineno"> 3801</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-xor `other ^ self`.</span></div>
-<div class="line"><span class="lineno"> 3802</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3803</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3804</span><span class="stringliteral">        &gt;&gt;&gt; 10 ^ x</span></div>
-<div class="line"><span class="lineno"> 3805</span><span class="stringliteral">        10 ^ x</span></div>
-<div class="line"><span class="lineno"> 3806</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3807</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3808</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga207f35a12b90215a8f09c87bc4a09926">Z3_mk_bvxor</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3809</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03802">3802</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3802</span>    <span class="keyword">def </span>__rxor__(self, other):</div>
+<div class="line"><span class="lineno"> 3803</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-xor `other ^ self`.</span></div>
+<div class="line"><span class="lineno"> 3804</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3805</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3806</span><span class="stringliteral">        &gt;&gt;&gt; 10 ^ x</span></div>
+<div class="line"><span class="lineno"> 3807</span><span class="stringliteral">        10 ^ x</span></div>
+<div class="line"><span class="lineno"> 3808</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3809</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3810</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga207f35a12b90215a8f09c87bc4a09926">Z3_mk_bvxor</a>(self.ctx_ref(), b.as_ast(), a.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3811</span> </div>
 <div class="ttc" id="agroup__capi_html_ga207f35a12b90215a8f09c87bc4a09926"><div class="ttname"><a href="group__capi.html#ga207f35a12b90215a8f09c87bc4a09926">Z3_mk_bvxor</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_bvxor(Z3_context c, Z3_ast t1, Z3_ast t2)</div><div class="ttdoc">Bitwise exclusive-or.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1650,20 +1650,20 @@ x - y
 &gt;&gt;&gt; (x - y).sort()
 BitVec(32)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03718">3718</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3718</span>    <span class="keyword">def </span>__sub__(self, other):</div>
-<div class="line"><span class="lineno"> 3719</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `self - other`.</span></div>
-<div class="line"><span class="lineno"> 3720</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3721</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3722</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3723</span><span class="stringliteral">        &gt;&gt;&gt; x - y</span></div>
-<div class="line"><span class="lineno"> 3724</span><span class="stringliteral">        x - y</span></div>
-<div class="line"><span class="lineno"> 3725</span><span class="stringliteral">        &gt;&gt;&gt; (x - y).sort()</span></div>
-<div class="line"><span class="lineno"> 3726</span><span class="stringliteral">        BitVec(32)</span></div>
-<div class="line"><span class="lineno"> 3727</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3728</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3729</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga82bf5bde094821b86f7594356385d727">Z3_mk_bvsub</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3730</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03720">3720</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3720</span>    <span class="keyword">def </span>__sub__(self, other):</div>
+<div class="line"><span class="lineno"> 3721</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression `self - other`.</span></div>
+<div class="line"><span class="lineno"> 3722</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3723</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3724</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3725</span><span class="stringliteral">        &gt;&gt;&gt; x - y</span></div>
+<div class="line"><span class="lineno"> 3726</span><span class="stringliteral">        x - y</span></div>
+<div class="line"><span class="lineno"> 3727</span><span class="stringliteral">        &gt;&gt;&gt; (x - y).sort()</span></div>
+<div class="line"><span class="lineno"> 3728</span><span class="stringliteral">        BitVec(32)</span></div>
+<div class="line"><span class="lineno"> 3729</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3730</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3731</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga82bf5bde094821b86f7594356385d727">Z3_mk_bvsub</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3732</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1693,11 +1693,11 @@ BitVec(32)
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Create the Z3 expression (signed) division `self / other`.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03860">3860</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3860</span>    <span class="keyword">def </span>__truediv__(self, other):</div>
-<div class="line"><span class="lineno"> 3861</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) division `self / other`.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3862</span>        <span class="keywordflow">return</span> self.__div__(other)</div>
-<div class="line"><span class="lineno"> 3863</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03862">3862</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3862</span>    <span class="keyword">def </span>__truediv__(self, other):</div>
+<div class="line"><span class="lineno"> 3863</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression (signed) division `self / other`.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3864</span>        <span class="keywordflow">return</span> self.__div__(other)</div>
+<div class="line"><span class="lineno"> 3865</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1735,20 +1735,20 @@ x ^ y
 &gt;&gt;&gt; (x ^ y).sort()
 BitVec(32)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03787">3787</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3787</span>    <span class="keyword">def </span>__xor__(self, other):</div>
-<div class="line"><span class="lineno"> 3788</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-xor `self ^ other`.</span></div>
-<div class="line"><span class="lineno"> 3789</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3790</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3791</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3792</span><span class="stringliteral">        &gt;&gt;&gt; x ^ y</span></div>
-<div class="line"><span class="lineno"> 3793</span><span class="stringliteral">        x ^ y</span></div>
-<div class="line"><span class="lineno"> 3794</span><span class="stringliteral">        &gt;&gt;&gt; (x ^ y).sort()</span></div>
-<div class="line"><span class="lineno"> 3795</span><span class="stringliteral">        BitVec(32)</span></div>
-<div class="line"><span class="lineno"> 3796</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3797</span>        a, b = _coerce_exprs(self, other)</div>
-<div class="line"><span class="lineno"> 3798</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga207f35a12b90215a8f09c87bc4a09926">Z3_mk_bvxor</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3799</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03789">3789</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3789</span>    <span class="keyword">def </span>__xor__(self, other):</div>
+<div class="line"><span class="lineno"> 3790</span>        <span class="stringliteral">&quot;&quot;&quot;Create the Z3 expression bitwise-xor `self ^ other`.</span></div>
+<div class="line"><span class="lineno"> 3791</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3792</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3793</span><span class="stringliteral">        &gt;&gt;&gt; y = BitVec(&#39;y&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3794</span><span class="stringliteral">        &gt;&gt;&gt; x ^ y</span></div>
+<div class="line"><span class="lineno"> 3795</span><span class="stringliteral">        x ^ y</span></div>
+<div class="line"><span class="lineno"> 3796</span><span class="stringliteral">        &gt;&gt;&gt; (x ^ y).sort()</span></div>
+<div class="line"><span class="lineno"> 3797</span><span class="stringliteral">        BitVec(32)</span></div>
+<div class="line"><span class="lineno"> 3798</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3799</span>        a, b = _coerce_exprs(self, other)</div>
+<div class="line"><span class="lineno"> 3800</span>        <span class="keywordflow">return</span> BitVecRef(<a class="code hl_function" href="group__capi.html#ga207f35a12b90215a8f09c87bc4a09926">Z3_mk_bvxor</a>(self.ctx_ref(), a.as_ast(), b.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3801</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1775,20 +1775,20 @@ BitVec(32)
 &gt;&gt;&gt; Concat(x, x).size()
 64
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03661">3661</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3661</span>    <span class="keyword">def </span>size(self):</div>
-<div class="line"><span class="lineno"> 3662</span>        <span class="stringliteral">&quot;&quot;&quot;Return the number of bits of the bit-vector expression `self`.</span></div>
-<div class="line"><span class="lineno"> 3663</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3664</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3665</span><span class="stringliteral">        &gt;&gt;&gt; (x + 1).size()</span></div>
-<div class="line"><span class="lineno"> 3666</span><span class="stringliteral">        32</span></div>
-<div class="line"><span class="lineno"> 3667</span><span class="stringliteral">        &gt;&gt;&gt; Concat(x, x).size()</span></div>
-<div class="line"><span class="lineno"> 3668</span><span class="stringliteral">        64</span></div>
-<div class="line"><span class="lineno"> 3669</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3670</span>        <span class="keywordflow">return</span> self.sort().size()</div>
-<div class="line"><span class="lineno"> 3671</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03663">3663</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3663</span>    <span class="keyword">def </span>size(self):</div>
+<div class="line"><span class="lineno"> 3664</span>        <span class="stringliteral">&quot;&quot;&quot;Return the number of bits of the bit-vector expression `self`.</span></div>
+<div class="line"><span class="lineno"> 3665</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3666</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3667</span><span class="stringliteral">        &gt;&gt;&gt; (x + 1).size()</span></div>
+<div class="line"><span class="lineno"> 3668</span><span class="stringliteral">        32</span></div>
+<div class="line"><span class="lineno"> 3669</span><span class="stringliteral">        &gt;&gt;&gt; Concat(x, x).size()</span></div>
+<div class="line"><span class="lineno"> 3670</span><span class="stringliteral">        64</span></div>
+<div class="line"><span class="lineno"> 3671</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3672</span>        <span class="keywordflow">return</span> self.sort().size()</div>
+<div class="line"><span class="lineno"> 3673</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05738">ParamDescrsRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l05875">Goal.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04074">BitVecNumRef.as_signed_long()</a>, <a class="el" href="z3py_8py_source.html#l03661">BitVecRef.size()</a>, and <a class="el" href="z3py_8py_source.html#l03615">BitVecSortRef.subsort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l05740">ParamDescrsRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l05877">Goal.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04076">BitVecNumRef.as_signed_long()</a>, <a class="el" href="z3py_8py_source.html#l03663">BitVecRef.size()</a>, and <a class="el" href="z3py_8py_source.html#l03617">BitVecSortRef.subsort()</a>.</p>
 
 </div>
 </div>
@@ -1817,21 +1817,21 @@ True
 </pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_expr_ref.html#ac25660990ac36d2051c6fba5cc46c1be">ExprRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03650">3650</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3650</span>    <span class="keyword">def </span>sort(self):</div>
-<div class="line"><span class="lineno"> 3651</span>        <span class="stringliteral">&quot;&quot;&quot;Return the sort of the bit-vector expression `self`.</span></div>
-<div class="line"><span class="lineno"> 3652</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno"> 3653</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
-<div class="line"><span class="lineno"> 3654</span><span class="stringliteral">        &gt;&gt;&gt; x.sort()</span></div>
-<div class="line"><span class="lineno"> 3655</span><span class="stringliteral">        BitVec(32)</span></div>
-<div class="line"><span class="lineno"> 3656</span><span class="stringliteral">        &gt;&gt;&gt; x.sort() == BitVecSort(32)</span></div>
-<div class="line"><span class="lineno"> 3657</span><span class="stringliteral">        True</span></div>
-<div class="line"><span class="lineno"> 3658</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 3659</span>        <span class="keywordflow">return</span> BitVecSortRef(<a class="code hl_function" href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a>(self.ctx_ref(), self.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno"> 3660</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03652">3652</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3652</span>    <span class="keyword">def </span>sort(self):</div>
+<div class="line"><span class="lineno"> 3653</span>        <span class="stringliteral">&quot;&quot;&quot;Return the sort of the bit-vector expression `self`.</span></div>
+<div class="line"><span class="lineno"> 3654</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno"> 3655</span><span class="stringliteral">        &gt;&gt;&gt; x = BitVec(&#39;x&#39;, 32)</span></div>
+<div class="line"><span class="lineno"> 3656</span><span class="stringliteral">        &gt;&gt;&gt; x.sort()</span></div>
+<div class="line"><span class="lineno"> 3657</span><span class="stringliteral">        BitVec(32)</span></div>
+<div class="line"><span class="lineno"> 3658</span><span class="stringliteral">        &gt;&gt;&gt; x.sort() == BitVecSort(32)</span></div>
+<div class="line"><span class="lineno"> 3659</span><span class="stringliteral">        True</span></div>
+<div class="line"><span class="lineno"> 3660</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 3661</span>        <span class="keywordflow">return</span> BitVecSortRef(<a class="code hl_function" href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a>(self.ctx_ref(), self.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno"> 3662</span> </div>
 <div class="ttc" id="agroup__capi_html_gafa9565c0deefe46f8e2de14dc6b8b6a3"><div class="ttname"><a href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_get_sort(Z3_context c, Z3_ast a)</div><div class="ttdoc">Return the sort of an AST node.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l04748">ArrayRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04757">ArrayRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l02536">ArithRef.is_int()</a>, <a class="el" href="z3py_8py_source.html#l02550">ArithRef.is_real()</a>, <a class="el" href="z3py_8py_source.html#l04761">ArrayRef.range()</a>, <a class="el" href="z3py_8py_source.html#l03661">BitVecRef.size()</a>, and <a class="el" href="z3py_8py_source.html#l01047">ExprRef.sort_kind()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l04750">ArrayRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04759">ArrayRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l02536">ArithRef.is_int()</a>, <a class="el" href="z3py_8py_source.html#l02550">ArithRef.is_real()</a>, <a class="el" href="z3py_8py_source.html#l04763">ArrayRef.range()</a>, <a class="el" href="z3py_8py_source.html#l03663">BitVecRef.size()</a>, and <a class="el" href="z3py_8py_source.html#l01047">ExprRef.sort_kind()</a>.</p>
 
 </div>
 </div>
@@ -1848,16 +1848,16 @@ True
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03659">3659</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l03661">3661</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02561">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03672">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03764">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00876">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06280">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00464">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06029">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06226">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06571">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06939">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00382">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05259">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05661">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05726">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06032">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06229">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06260">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06379">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06574">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06942">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06980">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00377">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05322">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05334">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05664">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05729">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05792">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06098">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06263">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06382">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06489">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06607">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06983">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07176">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02660">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03841">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01058">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02794">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l03971">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06115">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06819">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l07019">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06293">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02781">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03955">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03830">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02755">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l03923">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06102">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06267">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06675">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l07005">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04017">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02768">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l03939">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02708">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l03884">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01671">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02584">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03695">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01079">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02735">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03819">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03741">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02632">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02574">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03685">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03777">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02687">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03864">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l05685">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l05764">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06320">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06987">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l04045">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02723">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l03905">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02599">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03708">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03754">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02646">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l04031">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l03987">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02622">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03731">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03800">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06144">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06304">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02609">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03718">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03787">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l05498">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01138">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06404">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l06532">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l06055">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07332">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l05918">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07276">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02249">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l07362">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l05966">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00427">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01100">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l06866">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04782">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03167">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l05796">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l06002">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00813">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04721">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l06493">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l06546">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06323">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l06618">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l05888">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l05753">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l06692">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l07055">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l05748">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l05743">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l06759">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06799">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l05814">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06352">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l07043">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07391">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00639">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02243">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06386">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l06516">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07244">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l06744">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00848">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02221">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03276">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07222">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l05832">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l06915">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06927">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07200">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06162">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02204">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00825">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04726">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05470">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06337">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07262">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06174">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07187">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l05668">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l05998">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06235">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06614">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l05733">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l05862">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02199">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06210">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00448">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l06006">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l06907">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l01174">ExprRef.update()</a>, <a class="el" href="z3py_8py_source.html#l05539">DatatypeRef.update_field()</a>, <a class="el" href="z3py_8py_source.html#l05688">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06435">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02272">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02288">QuantifierRef.var_sort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02561">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03674">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03766">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00876">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06282">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00464">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06031">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06228">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06573">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06941">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00382">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05261">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05663">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05728">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06034">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06231">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06262">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06381">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06576">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06944">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06982">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00377">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05324">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05336">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05666">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05731">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05794">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06100">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06265">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06384">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06491">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06609">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06985">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07178">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02660">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03843">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01058">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02794">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l03973">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06117">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06821">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l07021">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06295">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02781">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03957">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03832">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02755">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l03925">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06104">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06269">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06677">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l07007">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04019">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02768">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l03941">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02708">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l03886">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01671">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02584">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03697">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01079">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02735">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03821">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03743">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02632">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02574">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03687">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03779">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02687">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03866">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l05687">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l05766">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06322">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06989">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l04047">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02723">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l03907">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02599">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03710">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03756">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02646">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l04033">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l03989">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02622">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03733">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03802">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06146">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06306">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02609">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03720">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03789">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l05500">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01138">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06406">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l06534">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l06057">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07334">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l05920">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07278">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02249">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l07364">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l05968">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00427">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01100">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l06868">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04784">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03167">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l05798">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l06004">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00813">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04723">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l06495">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l06548">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06325">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l06620">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l05890">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l05755">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l06694">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l07057">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l05750">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l05745">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l06761">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l06801">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l05816">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06354">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l07045">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07393">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00639">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02243">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06388">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l06518">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07246">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l06746">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00848">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02221">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03276">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07224">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l05834">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l06917">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l06929">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07202">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06164">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02204">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00825">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04728">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05472">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06339">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07264">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06176">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07189">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l05670">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l06000">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06237">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06616">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l05735">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l05864">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02199">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06212">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00448">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l06008">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l06909">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l01174">ExprRef.update()</a>, <a class="el" href="z3py_8py_source.html#l05541">DatatypeRef.update_field()</a>, <a class="el" href="z3py_8py_source.html#l05690">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06437">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02272">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02288">QuantifierRef.var_sort()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 18 2026 17:12:33 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Feb 18 2026 20:31:18 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
