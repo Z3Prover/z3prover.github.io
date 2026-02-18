@@ -5,5 +5,6 @@ var searchData=
   ['listsort_2ecs_2',['ListSort.cs',['../_list_sort_8cs.html',1,'']]],
   ['listsort_2ejava_3',['ListSort.java',['../_list_sort_8java.html',1,'']]],
   ['log_2ecs_4',['Log.cs',['../_log_8cs.html',1,'']]],
-  ['log_2ejava_5',['Log.java',['../_log_8java.html',1,'']]]
+  ['log_2ego_5',['log.go',['../log_8go.html',1,'']]],
+  ['log_2ejava_6',['Log.java',['../_log_8java.html',1,'']]]
 ];

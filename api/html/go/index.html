@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Z3 Go API Documentation</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 40px; }
+h1 { color: #333; }
+ul { list-style-type: none; padding: 0; }
+li { margin: 10px 0; }
+a { color: #0066cc; text-decoration: none; font-size: 18px; }
+a:hover { text-decoration: underline; }
+.description { color: #666; margin-left: 20px; }
+</style>
+</head>
+<body>
+<h1>Z3 Go API Documentation</h1>
+<p>Go bindings for the Z3 Theorem Prover.</p>
+<h2>Package: github.com/Z3Prover/z3/src/api/go</h2>
+<ul>
+<li><a href="README.html">README - Getting Started</a></li>
+<li><a href="#core">z3.go</a> - Core types (Context, Config, Symbol, Sort, Expr, FuncDecl)</li>
+<li><a href="#solver">solver.go</a> - Solver and Model API</li>
+<li><a href="#tactic">tactic.go</a> - Tactics, Goals, Probes, and Parameters</li>
+<li><a href="#bitvec">bitvec.go</a> - Bit-vector operations</li>
+<li><a href="#fp">fp.go</a> - Floating-point operations</li>
+<li><a href="#seq">seq.go</a> - Sequences, strings, and regular expressions</li>
+<li><a href="#datatype">datatype.go</a> - Algebraic datatypes, tuples, enumerations</li>
+<li><a href="#optimize">optimize.go</a> - Optimization with maximize/minimize objectives</li>
+</ul>
+<h2>Usage</h2>
+<pre>
+import "github.com/Z3Prover/z3/src/api/go"
+
+ctx := z3.NewContext()
+solver := ctx.NewSolver()
+x := ctx.MkIntConst("x")
+solver.Assert(ctx.MkGt(x, ctx.MkInt(0, ctx.MkIntSort())))
+if solver.Check() == z3.Satisfiable {
+    fmt.Println("sat")
+}
+</pre>
+<h2>Installation</h2>
+<p>See <a href="README.html">README</a> for build instructions.</p>
+<p>Go back to <a href="../index.html">main API documentation</a>.</p>
+</body>
+</html>
