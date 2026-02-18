@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>optimize.go - Z3 Go API</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #2d3748; color: white; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .nav { background: #edf2f7; padding: 1rem; margin-bottom: 2rem; border-radius: 4px; }
+        .nav a { color: #2b6cb0; text-decoration: none; margin-right: 1rem; }
+        .nav a:hover { text-decoration: underline; }
+        h2 { color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { color: #2d3748; margin-top: 1.5rem; }
+        .type-section, .function-section { margin: 1.5rem 0; }
+        .api-item { background: #f7fafc; padding: 1rem; margin: 1rem 0; border-left: 4px solid #4299e1; border-radius: 4px; }
+        .api-item h4 { margin: 0 0 0.5rem 0; color: #2b6cb0; font-family: monospace; }
+        .signature { background: #2d3748; color: #e2e8f0; padding: 0.75rem; border-radius: 4px; font-family: monospace; overflow-x: auto; margin: 0.5rem 0; }
+        .comment { color: #4a5568; margin: 0.5rem 0; }
+        code { background: #e2e8f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .method-list { margin-left: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>optimize.go</h1>
+        <p>Optimization with maximize/minimize objectives</p>
+    </header>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+            <a href="godoc.md">Complete API Reference (markdown)</a>
+            <a href="README.md">README</a>
+            <a href="../index.html">All Languages</a>
+        </div>
+        <h2>Types</h2>
+        <div class="type-section">
+            <h3>type Context</h3>
+            <p class="comment">Context methods (receiver omitted for clarity)</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>NewOptimize</h4>
+                    <div class="signature">func (c *Context) NewOptimize() *Optimize</div>
+                    <p class="comment">NewOptimize creates a new optimization context.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Optimize</h3>
+            <p class="comment">Optimize represents a Z3 optimization context for solving optimization problems. Unlike Solver which only checks satisfiability, Optimize can find optimal solutions with respect to objective functions.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>Assert</h4>
+                    <div class="signature">func (o *Optimize) Assert(constraint *Expr)</div>
+                    <p class="comment">Assert adds a constraint to the optimizer.</p>
+                </div>
+                <div class="api-item">
+                    <h4>AssertAndTrack</h4>
+                    <div class="signature">func (o *Optimize) AssertAndTrack(constraint, track *Expr)</div>
+                    <p class="comment">AssertAndTrack adds a constraint with a tracking literal for unsat core extraction.</p>
+                </div>
+                <div class="api-item">
+                    <h4>AssertSoft</h4>
+                    <div class="signature">func (o *Optimize) AssertSoft(constraint *Expr, weight string, group string) uint</div>
+                    <p class="comment">AssertSoft adds a soft constraint with a weight. Soft constraints are used for MaxSMT problems. Returns a handle to the objective.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Assertions</h4>
+                    <div class="signature">func (o *Optimize) Assertions() []*Expr</div>
+                    <p class="comment">Assertions returns the assertions in the optimizer.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Check</h4>
+                    <div class="signature">func (o *Optimize) Check(assumptions ...*Expr) Status</div>
+                    <p class="comment">Check checks the satisfiability of the constraints and optimizes objectives.</p>
+                </div>
+                <div class="api-item">
+                    <h4>FromFile</h4>
+                    <div class="signature">func (o *Optimize) FromFile(filename string)</div>
+                    <p class="comment">FromFile parses an SMT-LIB2 file with optimization objectives and constraints.</p>
+                </div>
+                <div class="api-item">
+                    <h4>FromString</h4>
+                    <div class="signature">func (o *Optimize) FromString(s string)</div>
+                    <p class="comment">FromString parses an SMT-LIB2 string with optimization objectives and constraints.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetHelp</h4>
+                    <div class="signature">func (o *Optimize) GetHelp() string</div>
+                    <p class="comment">GetHelp returns help information for the optimizer.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetLower</h4>
+                    <div class="signature">func (o *Optimize) GetLower(index uint) *Expr</div>
+                    <p class="comment">GetLower retrieves a lower bound for the objective at the given index.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetLowerAsVector</h4>
+                    <div class="signature">func (o *Optimize) GetLowerAsVector(index uint) []*Expr</div>
+                    <p class="comment">GetLowerAsVector retrieves a lower bound as a vector (inf, value, eps). The objective value is unbounded if inf is non-zero, otherwise it's represented as value + eps * EPSILON.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetUpper</h4>
+                    <div class="signature">func (o *Optimize) GetUpper(index uint) *Expr</div>
+                    <p class="comment">GetUpper retrieves an upper bound for the objective at the given index.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetUpperAsVector</h4>
+                    <div class="signature">func (o *Optimize) GetUpperAsVector(index uint) []*Expr</div>
+                    <p class="comment">GetUpperAsVector retrieves an upper bound as a vector (inf, value, eps). The objective value is unbounded if inf is non-zero, otherwise it's represented as value + eps * EPSILON.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Maximize</h4>
+                    <div class="signature">func (o *Optimize) Maximize(expr *Expr) uint</div>
+                    <p class="comment">Maximize adds a maximization objective. Returns a handle to the objective that can be used to retrieve bounds.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Minimize</h4>
+                    <div class="signature">func (o *Optimize) Minimize(expr *Expr) uint</div>
+                    <p class="comment">Minimize adds a minimization objective. Returns a handle to the objective that can be used to retrieve bounds.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Model</h4>
+                    <div class="signature">func (o *Optimize) Model() *Model</div>
+                    <p class="comment">Model returns the model if the constraints are satisfiable.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Objectives</h4>
+                    <div class="signature">func (o *Optimize) Objectives() []*Expr</div>
+                    <p class="comment">Objectives returns the objectives in the optimizer.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Pop</h4>
+                    <div class="signature">func (o *Optimize) Pop()</div>
+                    <p class="comment">Pop removes a backtracking point.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Push</h4>
+                    <div class="signature">func (o *Optimize) Push()</div>
+                    <p class="comment">Push creates a backtracking point.</p>
+                </div>
+                <div class="api-item">
+                    <h4>ReasonUnknown</h4>
+                    <div class="signature">func (o *Optimize) ReasonUnknown() string</div>
+                    <p class="comment">ReasonUnknown returns the reason why the result is unknown.</p>
+                </div>
+                <div class="api-item">
+                    <h4>SetParams</h4>
+                    <div class="signature">func (o *Optimize) SetParams(params *Params)</div>
+                    <p class="comment">SetParams sets parameters for the optimizer.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (o *Optimize) String() string</div>
+                    <p class="comment">String returns the string representation of the optimize context.</p>
+                </div>
+                <div class="api-item">
+                    <h4>UnsatCore</h4>
+                    <div class="signature">func (o *Optimize) UnsatCore() []*Expr</div>
+                    <p class="comment">UnsatCore returns the unsat core if the constraints are unsatisfiable.</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav" style="margin-top: 3rem;">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

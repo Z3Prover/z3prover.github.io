@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>datatype.go - Z3 Go API</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #2d3748; color: white; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .nav { background: #edf2f7; padding: 1rem; margin-bottom: 2rem; border-radius: 4px; }
+        .nav a { color: #2b6cb0; text-decoration: none; margin-right: 1rem; }
+        .nav a:hover { text-decoration: underline; }
+        h2 { color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { color: #2d3748; margin-top: 1.5rem; }
+        .type-section, .function-section { margin: 1.5rem 0; }
+        .api-item { background: #f7fafc; padding: 1rem; margin: 1rem 0; border-left: 4px solid #4299e1; border-radius: 4px; }
+        .api-item h4 { margin: 0 0 0.5rem 0; color: #2b6cb0; font-family: monospace; }
+        .signature { background: #2d3748; color: #e2e8f0; padding: 0.75rem; border-radius: 4px; font-family: monospace; overflow-x: auto; margin: 0.5rem 0; }
+        .comment { color: #4a5568; margin: 0.5rem 0; }
+        code { background: #e2e8f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .method-list { margin-left: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>datatype.go</h1>
+        <p>Algebraic datatypes, tuples, and enumerations</p>
+    </header>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+            <a href="godoc.md">Complete API Reference (markdown)</a>
+            <a href="README.md">README</a>
+            <a href="../index.html">All Languages</a>
+        </div>
+        <h2>Types</h2>
+        <div class="type-section">
+            <h3>type Constructor</h3>
+            <p class="comment">Constructor represents a datatype constructor.</p>
+        </div>
+        <div class="type-section">
+            <h3>type ConstructorList</h3>
+            <p class="comment">ConstructorList represents a list of datatype constructors.</p>
+        </div>
+        <div class="type-section">
+            <h3>type Context</h3>
+            <p class="comment">Context methods (receiver omitted for clarity)</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>GetDatatypeSortConstructor</h4>
+                    <div class="signature">func (c *Context) GetDatatypeSortConstructor(sort *Sort, i uint) *FuncDecl</div>
+                    <p class="comment">GetDatatypeSortConstructor returns the i-th constructor of a datatype sort.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetDatatypeSortConstructorAccessor</h4>
+                    <div class="signature">func (c *Context) GetDatatypeSortConstructorAccessor(sort *Sort, constructorIdx, accessorIdx uint) *FuncDecl</div>
+                    <p class="comment">GetDatatypeSortConstructorAccessor returns the accessor for the i-th field of the j-th constructor.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetDatatypeSortNumConstructors</h4>
+                    <div class="signature">func (c *Context) GetDatatypeSortNumConstructors(sort *Sort) uint</div>
+                    <p class="comment">GetDatatypeSortNumConstructors returns the number of constructors in a datatype sort.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetDatatypeSortRecognizer</h4>
+                    <div class="signature">func (c *Context) GetDatatypeSortRecognizer(sort *Sort, i uint) *FuncDecl</div>
+                    <p class="comment">GetDatatypeSortRecognizer returns the i-th recognizer of a datatype sort.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkConstructor</h4>
+                    <div class="signature">func (c *Context) MkConstructor(name, recognizer string, fieldNames []string, fieldSorts []*Sort, fieldSortRefs []uint) *Constructor</div>
+                    <p class="comment">MkConstructor creates a constructor for a datatype. name is the constructor name, recognizer is the recognizer name, fieldNames are the names of the fields, and fieldSorts are the sorts of the fields. fieldSortRefs can be 0 for non-recursive fields or the datatype index for recursive fields.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkConstructorList</h4>
+                    <div class="signature">func (c *Context) MkConstructorList(constructors []*Constructor) *ConstructorList</div>
+                    <p class="comment">MkConstructorList creates a list of constructors for a datatype.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkDatatypeSort</h4>
+                    <div class="signature">func (c *Context) MkDatatypeSort(name string, constructors []*Constructor) *Sort</div>
+                    <p class="comment">MkDatatypeSort creates a datatype sort from a constructor list.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkDatatypeSorts</h4>
+                    <div class="signature">func (c *Context) MkDatatypeSorts(names []string, constructorLists [][]*Constructor) []*Sort</div>
+                    <p class="comment">MkDatatypeSorts creates multiple mutually recursive datatype sorts.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkEnumSort</h4>
+                    <div class="signature">func (c *Context) MkEnumSort(name string, enumNames []string) (*Sort, []*FuncDecl, []*FuncDecl)</div>
+                    <p class="comment">Enumeration sorts (special case of datatypes) MkEnumSort creates an enumeration sort with the given constants.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkListSort</h4>
+                    <div class="signature">func (c *Context) MkListSort(name string, elemSort *Sort) (*Sort, *FuncDecl, *FuncDecl, *FuncDecl, *FuncDecl, *FuncDecl, *FuncDecl)</div>
+                    <p class="comment">List sorts (special case of datatypes) MkListSort creates a list sort with the given element sort.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkTupleSort</h4>
+                    <div class="signature">func (c *Context) MkTupleSort(name string, fieldNames []string, fieldSorts []*Sort) (*Sort, *FuncDecl, []*FuncDecl)</div>
+                    <p class="comment">Tuple sorts (special case of datatypes) MkTupleSort creates a tuple sort with the given field sorts.</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav" style="margin-top: 3rem;">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

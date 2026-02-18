@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>seq.go - Z3 Go API</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #2d3748; color: white; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .nav { background: #edf2f7; padding: 1rem; margin-bottom: 2rem; border-radius: 4px; }
+        .nav a { color: #2b6cb0; text-decoration: none; margin-right: 1rem; }
+        .nav a:hover { text-decoration: underline; }
+        h2 { color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { color: #2d3748; margin-top: 1.5rem; }
+        .type-section, .function-section { margin: 1.5rem 0; }
+        .api-item { background: #f7fafc; padding: 1rem; margin: 1rem 0; border-left: 4px solid #4299e1; border-radius: 4px; }
+        .api-item h4 { margin: 0 0 0.5rem 0; color: #2b6cb0; font-family: monospace; }
+        .signature { background: #2d3748; color: #e2e8f0; padding: 0.75rem; border-radius: 4px; font-family: monospace; overflow-x: auto; margin: 0.5rem 0; }
+        .comment { color: #4a5568; margin: 0.5rem 0; }
+        code { background: #e2e8f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .method-list { margin-left: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>seq.go</h1>
+        <p>Sequences, strings, and regular expressions</p>
+    </header>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+            <a href="godoc.md">Complete API Reference (markdown)</a>
+            <a href="README.md">README</a>
+            <a href="../index.html">All Languages</a>
+        </div>
+        <h2>Functions</h2>
+        <div class="function-section">
+            <div class="api-item">
+                <h4>MkEmptySeq</h4>
+                <div class="signature">func (c *Context) MkEmptySeq(sort *Sort) *Expr</div>
+                <p class="comment">MkEmptySeq creates an empty sequence.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkInRe</h4>
+                <div class="signature">func (c *Context) MkInRe(seq, re *Expr) *Expr</div>
+                <p class="comment">MkInRe creates a membership predicate for a sequence in a regular expression.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkIntToStr</h4>
+                <div class="signature">func (c *Context) MkIntToStr(num *Expr) *Expr</div>
+                <p class="comment">MkIntToStr creates an integer-to-string conversion.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReAllchar</h4>
+                <div class="signature">func (c *Context) MkReAllchar(sort *Sort) *Expr</div>
+                <p class="comment">MkReAllchar creates a regular expression that accepts all single characters.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReComplement</h4>
+                <div class="signature">func (c *Context) MkReComplement(re *Expr) *Expr</div>
+                <p class="comment">MkReComplement creates the complement of a regular expression.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReConcat</h4>
+                <div class="signature">func (c *Context) MkReConcat(regexes ...*Expr) *Expr</div>
+                <p class="comment">MkReConcat creates a concatenation of regular expressions.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReDiff</h4>
+                <div class="signature">func (c *Context) MkReDiff(a, b *Expr) *Expr</div>
+                <p class="comment">MkReDiff creates the difference of two regular expressions (a - b).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReEmpty</h4>
+                <div class="signature">func (c *Context) MkReEmpty(sort *Sort) *Expr</div>
+                <p class="comment">MkReEmpty creates an empty regular expression (accepts no strings).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReFull</h4>
+                <div class="signature">func (c *Context) MkReFull(sort *Sort) *Expr</div>
+                <p class="comment">MkReFull creates a full regular expression (accepts all strings).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReIntersect</h4>
+                <div class="signature">func (c *Context) MkReIntersect(regexes ...*Expr) *Expr</div>
+                <p class="comment">MkReIntersect creates an intersection of regular expressions.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReLoop</h4>
+                <div class="signature">func (c *Context) MkReLoop(re *Expr, lo, hi uint) *Expr</div>
+                <p class="comment">MkReLoop creates a regular expression with bounded repetition (between lo and hi times). If hi is 0, it means unbounded (at least lo times).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReOption</h4>
+                <div class="signature">func (c *Context) MkReOption(re *Expr) *Expr</div>
+                <p class="comment">MkReOption creates an optional regular expression (zero or one repetition).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkRePlus</h4>
+                <div class="signature">func (c *Context) MkRePlus(re *Expr) *Expr</div>
+                <p class="comment">MkRePlus creates a Kleene plus (one or more repetitions) of a regular expression.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkRePower</h4>
+                <div class="signature">func (c *Context) MkRePower(re *Expr, n uint) *Expr</div>
+                <p class="comment">MkRePower creates a regular expression that matches exactly n repetitions.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReRange</h4>
+                <div class="signature">func (c *Context) MkReRange(lo, hi *Expr) *Expr</div>
+                <p class="comment">MkReRange creates a regular expression for a character range [lo, hi].</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReSort</h4>
+                <div class="signature">func (c *Context) MkReSort(seqSort *Sort) *Sort</div>
+                <p class="comment">Regular expression operations MkReSort creates a regular expression sort.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReStar</h4>
+                <div class="signature">func (c *Context) MkReStar(re *Expr) *Expr</div>
+                <p class="comment">MkReStar creates a Kleene star (zero or more repetitions) of a regular expression.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReUnion</h4>
+                <div class="signature">func (c *Context) MkReUnion(regexes ...*Expr) *Expr</div>
+                <p class="comment">MkReUnion creates a union (alternation) of regular expressions.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqAt</h4>
+                <div class="signature">func (c *Context) MkSeqAt(seq, index *Expr) *Expr</div>
+                <p class="comment">MkSeqAt creates a sequence element access operation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqConcat</h4>
+                <div class="signature">func (c *Context) MkSeqConcat(exprs ...*Expr) *Expr</div>
+                <p class="comment">MkSeqConcat creates a sequence concatenation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqContains</h4>
+                <div class="signature">func (c *Context) MkSeqContains(seq, substr *Expr) *Expr</div>
+                <p class="comment">MkSeqContains creates a sequence contains predicate.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqExtract</h4>
+                <div class="signature">func (c *Context) MkSeqExtract(seq, offset, length *Expr) *Expr</div>
+                <p class="comment">MkSeqExtract creates a sequence extract (substring) operation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqIndexOf</h4>
+                <div class="signature">func (c *Context) MkSeqIndexOf(seq, substr, offset *Expr) *Expr</div>
+                <p class="comment">MkSeqIndexOf creates a sequence index-of operation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqLength</h4>
+                <div class="signature">func (c *Context) MkSeqLength(seq *Expr) *Expr</div>
+                <p class="comment">MkSeqLength creates a sequence length operation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqPrefix</h4>
+                <div class="signature">func (c *Context) MkSeqPrefix(prefix, seq *Expr) *Expr</div>
+                <p class="comment">MkSeqPrefix creates a sequence prefix predicate.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqReplace</h4>
+                <div class="signature">func (c *Context) MkSeqReplace(seq, src, dst *Expr) *Expr</div>
+                <p class="comment">MkSeqReplace creates a sequence replace operation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqReplaceRe</h4>
+                <div class="signature">func (c *Context) MkSeqReplaceRe(seq, re, replacement *Expr) *Expr</div>
+                <p class="comment">MkSeqReplaceRe replaces the first occurrence matching a regular expression.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqReplaceReAll</h4>
+                <div class="signature">func (c *Context) MkSeqReplaceReAll(seq, re, replacement *Expr) *Expr</div>
+                <p class="comment">MkSeqReplaceReAll replaces all occurrences matching a regular expression.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqSort</h4>
+                <div class="signature">func (c *Context) MkSeqSort(elemSort *Sort) *Sort</div>
+                <p class="comment">Sequence and string operations MkSeqSort creates a sequence sort.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqSuffix</h4>
+                <div class="signature">func (c *Context) MkSeqSuffix(suffix, seq *Expr) *Expr</div>
+                <p class="comment">MkSeqSuffix creates a sequence suffix predicate.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqUnit</h4>
+                <div class="signature">func (c *Context) MkSeqUnit(elem *Expr) *Expr</div>
+                <p class="comment">MkSeqUnit creates a unit sequence containing a single element.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkStrToInt</h4>
+                <div class="signature">func (c *Context) MkStrToInt(str *Expr) *Expr</div>
+                <p class="comment">MkStrToInt creates a string-to-integer conversion.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkString</h4>
+                <div class="signature">func (c *Context) MkString(value string) *Expr</div>
+                <p class="comment">MkString creates a string constant.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkStringSort</h4>
+                <div class="signature">func (c *Context) MkStringSort() *Sort</div>
+                <p class="comment">MkStringSort creates a string sort (sequence of characters).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkToRe</h4>
+                <div class="signature">func (c *Context) MkToRe(seq *Expr) *Expr</div>
+                <p class="comment">MkToRe converts a sequence to a regular expression that accepts exactly that sequence.</p>
+            </div>
+        </div>
+        <div class="nav" style="margin-top: 3rem;">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

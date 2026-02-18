@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tactic.go - Z3 Go API</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #2d3748; color: white; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .nav { background: #edf2f7; padding: 1rem; margin-bottom: 2rem; border-radius: 4px; }
+        .nav a { color: #2b6cb0; text-decoration: none; margin-right: 1rem; }
+        .nav a:hover { text-decoration: underline; }
+        h2 { color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { color: #2d3748; margin-top: 1.5rem; }
+        .type-section, .function-section { margin: 1.5rem 0; }
+        .api-item { background: #f7fafc; padding: 1rem; margin: 1rem 0; border-left: 4px solid #4299e1; border-radius: 4px; }
+        .api-item h4 { margin: 0 0 0.5rem 0; color: #2b6cb0; font-family: monospace; }
+        .signature { background: #2d3748; color: #e2e8f0; padding: 0.75rem; border-radius: 4px; font-family: monospace; overflow-x: auto; margin: 0.5rem 0; }
+        .comment { color: #4a5568; margin: 0.5rem 0; }
+        code { background: #e2e8f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .method-list { margin-left: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>tactic.go</h1>
+        <p>Tactics, Goals, Probes, and Parameters for goal-based solving</p>
+    </header>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+            <a href="godoc.md">Complete API Reference (markdown)</a>
+            <a href="README.md">README</a>
+            <a href="../index.html">All Languages</a>
+        </div>
+        <h2>Types</h2>
+        <div class="type-section">
+            <h3>type ApplyResult</h3>
+            <p class="comment">ApplyResult represents the result of applying a tactic to a goal.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>NumSubgoals</h4>
+                    <div class="signature">func (ar *ApplyResult) NumSubgoals() uint</div>
+                    <p class="comment">NumSubgoals returns the number of subgoals in the result.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (ar *ApplyResult) String() string</div>
+                    <p class="comment">String returns the string representation of the apply result.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Subgoal</h4>
+                    <div class="signature">func (ar *ApplyResult) Subgoal(i uint) *Goal</div>
+                    <p class="comment">Subgoal returns the i-th subgoal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Context</h3>
+            <p class="comment">Context methods (receiver omitted for clarity)</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>MkGoal</h4>
+                    <div class="signature">func (c *Context) MkGoal(models, unsatCores, proofs bool) *Goal</div>
+                    <p class="comment">MkGoal creates a new goal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkParams</h4>
+                    <div class="signature">func (c *Context) MkParams() *Params</div>
+                    <p class="comment">MkParams creates a new parameter set.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkProbe</h4>
+                    <div class="signature">func (c *Context) MkProbe(name string) *Probe</div>
+                    <p class="comment">MkProbe creates a probe with the given name.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkTactic</h4>
+                    <div class="signature">func (c *Context) MkTactic(name string) *Tactic</div>
+                    <p class="comment">MkTactic creates a tactic with the given name.</p>
+                </div>
+                <div class="api-item">
+                    <h4>ProbeConst</h4>
+                    <div class="signature">func (c *Context) ProbeConst(val float64) *Probe</div>
+                    <p class="comment">ProbeConst creates a probe that always evaluates to the given value.</p>
+                </div>
+                <div class="api-item">
+                    <h4>TacticCond</h4>
+                    <div class="signature">func (c *Context) TacticCond(p *Probe, t1, t2 *Tactic) *Tactic</div>
+                    <p class="comment">TacticCond creates a conditional tactic: if p then t1 else t2.</p>
+                </div>
+                <div class="api-item">
+                    <h4>TacticFail</h4>
+                    <div class="signature">func (c *Context) TacticFail() *Tactic</div>
+                    <p class="comment">TacticFail creates a tactic that always fails.</p>
+                </div>
+                <div class="api-item">
+                    <h4>TacticSkip</h4>
+                    <div class="signature">func (c *Context) TacticSkip() *Tactic</div>
+                    <p class="comment">TacticSkip creates a tactic that always succeeds.</p>
+                </div>
+                <div class="api-item">
+                    <h4>TacticWhen</h4>
+                    <div class="signature">func (c *Context) TacticWhen(p *Probe, t *Tactic) *Tactic</div>
+                    <p class="comment">When creates a conditional tactic that applies t only if probe p evaluates to true.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Goal</h3>
+            <p class="comment">Goal represents a set of formulas that can be solved or transformed.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>Assert</h4>
+                    <div class="signature">func (g *Goal) Assert(constraint *Expr)</div>
+                    <p class="comment">Assert adds a constraint to the goal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Formula</h4>
+                    <div class="signature">func (g *Goal) Formula(i uint) *Expr</div>
+                    <p class="comment">Formula returns the i-th formula in the goal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>IsDecidedSat</h4>
+                    <div class="signature">func (g *Goal) IsDecidedSat() bool</div>
+                    <p class="comment">IsDecidedSat returns true if the goal is decided to be satisfiable.</p>
+                </div>
+                <div class="api-item">
+                    <h4>IsDecidedUnsat</h4>
+                    <div class="signature">func (g *Goal) IsDecidedUnsat() bool</div>
+                    <p class="comment">IsDecidedUnsat returns true if the goal is decided to be unsatisfiable.</p>
+                </div>
+                <div class="api-item">
+                    <h4>NumExprs</h4>
+                    <div class="signature">func (g *Goal) NumExprs() uint</div>
+                    <p class="comment">NumExprs returns the number of expressions in the goal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Reset</h4>
+                    <div class="signature">func (g *Goal) Reset()</div>
+                    <p class="comment">Reset removes all formulas from the goal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Size</h4>
+                    <div class="signature">func (g *Goal) Size() uint</div>
+                    <p class="comment">Size returns the number of formulas in the goal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (g *Goal) String() string</div>
+                    <p class="comment">String returns the string representation of the goal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Params</h3>
+            <p class="comment">Params represents a parameter set.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>SetBool</h4>
+                    <div class="signature">func (p *Params) SetBool(key string, value bool)</div>
+                    <p class="comment">SetBool sets a Boolean parameter.</p>
+                </div>
+                <div class="api-item">
+                    <h4>SetDouble</h4>
+                    <div class="signature">func (p *Params) SetDouble(key string, value float64)</div>
+                    <p class="comment">SetDouble sets a double parameter.</p>
+                </div>
+                <div class="api-item">
+                    <h4>SetSymbol</h4>
+                    <div class="signature">func (p *Params) SetSymbol(key string, value *Symbol)</div>
+                    <p class="comment">SetSymbol sets a symbol parameter.</p>
+                </div>
+                <div class="api-item">
+                    <h4>SetUint</h4>
+                    <div class="signature">func (p *Params) SetUint(key string, value uint)</div>
+                    <p class="comment">SetUint sets an unsigned integer parameter.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (p *Params) String() string</div>
+                    <p class="comment">String returns the string representation of the parameters.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Probe</h3>
+            <p class="comment">Probe represents a probe for checking properties of goals.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>And</h4>
+                    <div class="signature">func (p *Probe) And(p2 *Probe) *Probe</div>
+                    <p class="comment">ProbeAnd creates a probe that is the conjunction of p1 and p2.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Apply</h4>
+                    <div class="signature">func (p *Probe) Apply(g *Goal) float64</div>
+                    <p class="comment">Apply evaluates the probe on a goal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Eq</h4>
+                    <div class="signature">func (p *Probe) Eq(p2 *Probe) *Probe</div>
+                    <p class="comment">ProbeEq creates a probe that evaluates to true if p1 == p2.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Ge</h4>
+                    <div class="signature">func (p *Probe) Ge(p2 *Probe) *Probe</div>
+                    <p class="comment">ProbeGe creates a probe that evaluates to true if p1 >= p2.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Gt</h4>
+                    <div class="signature">func (p *Probe) Gt(p2 *Probe) *Probe</div>
+                    <p class="comment">ProbeGt creates a probe that evaluates to true if p1 > p2.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Le</h4>
+                    <div class="signature">func (p *Probe) Le(p2 *Probe) *Probe</div>
+                    <p class="comment">ProbeLe creates a probe that evaluates to true if p1 <= p2.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Lt</h4>
+                    <div class="signature">func (p *Probe) Lt(p2 *Probe) *Probe</div>
+                    <p class="comment">ProbeLt creates a probe that evaluates to true if p1 < p2.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Not</h4>
+                    <div class="signature">func (p *Probe) Not() *Probe</div>
+                    <p class="comment">ProbeNot creates a probe that is the negation of p.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Or</h4>
+                    <div class="signature">func (p *Probe) Or(p2 *Probe) *Probe</div>
+                    <p class="comment">ProbeOr creates a probe that is the disjunction of p1 and p2.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Tactic</h3>
+            <p class="comment">Tactic represents a Z3 tactic for transforming goals.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>AndThen</h4>
+                    <div class="signature">func (t *Tactic) AndThen(t2 *Tactic) *Tactic</div>
+                    <p class="comment">AndThen creates a tactic that applies t1 and then t2.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Apply</h4>
+                    <div class="signature">func (t *Tactic) Apply(g *Goal) *ApplyResult</div>
+                    <p class="comment">Apply applies the tactic to a goal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetHelp</h4>
+                    <div class="signature">func (t *Tactic) GetHelp() string</div>
+                    <p class="comment">GetHelp returns help information for the tactic.</p>
+                </div>
+                <div class="api-item">
+                    <h4>OrElse</h4>
+                    <div class="signature">func (t *Tactic) OrElse(t2 *Tactic) *Tactic</div>
+                    <p class="comment">OrElse creates a tactic that applies t1, and if it fails, applies t2.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Repeat</h4>
+                    <div class="signature">func (t *Tactic) Repeat(max uint) *Tactic</div>
+                    <p class="comment">Repeat creates a tactic that applies t repeatedly (at most max times).</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav" style="margin-top: 3rem;">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

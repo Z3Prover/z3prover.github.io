@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>solver.go - Z3 Go API</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #2d3748; color: white; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .nav { background: #edf2f7; padding: 1rem; margin-bottom: 2rem; border-radius: 4px; }
+        .nav a { color: #2b6cb0; text-decoration: none; margin-right: 1rem; }
+        .nav a:hover { text-decoration: underline; }
+        h2 { color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { color: #2d3748; margin-top: 1.5rem; }
+        .type-section, .function-section { margin: 1.5rem 0; }
+        .api-item { background: #f7fafc; padding: 1rem; margin: 1rem 0; border-left: 4px solid #4299e1; border-radius: 4px; }
+        .api-item h4 { margin: 0 0 0.5rem 0; color: #2b6cb0; font-family: monospace; }
+        .signature { background: #2d3748; color: #e2e8f0; padding: 0.75rem; border-radius: 4px; font-family: monospace; overflow-x: auto; margin: 0.5rem 0; }
+        .comment { color: #4a5568; margin: 0.5rem 0; }
+        code { background: #e2e8f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .method-list { margin-left: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>solver.go</h1>
+        <p>Solver and Model API for SMT solving</p>
+    </header>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+            <a href="godoc.md">Complete API Reference (markdown)</a>
+            <a href="README.md">README</a>
+            <a href="../index.html">All Languages</a>
+        </div>
+        <h2>Types</h2>
+        <div class="type-section">
+            <h3>type Context</h3>
+            <p class="comment">Context methods (receiver omitted for clarity)</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>NewSolver</h4>
+                    <div class="signature">func (c *Context) NewSolver() *Solver</div>
+                    <p class="comment">NewSolver creates a new solver for the given context.</p>
+                </div>
+                <div class="api-item">
+                    <h4>NewSolverForLogic</h4>
+                    <div class="signature">func (c *Context) NewSolverForLogic(logic string) *Solver</div>
+                    <p class="comment">NewSolverForLogic creates a solver for a specific logic.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type FuncInterp</h3>
+            <p class="comment">FuncInterp represents a function interpretation in a model.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>GetArity</h4>
+                    <div class="signature">func (fi *FuncInterp) GetArity() uint</div>
+                    <p class="comment">GetArity returns the arity of the function interpretation.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetElse</h4>
+                    <div class="signature">func (fi *FuncInterp) GetElse() *Expr</div>
+                    <p class="comment">GetElse returns the else value of the function interpretation.</p>
+                </div>
+                <div class="api-item">
+                    <h4>NumEntries</h4>
+                    <div class="signature">func (fi *FuncInterp) NumEntries() uint</div>
+                    <p class="comment">NumEntries returns the number of entries in the function interpretation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Model</h3>
+            <p class="comment">Model represents a Z3 model (satisfying assignment).</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>Eval</h4>
+                    <div class="signature">func (m *Model) Eval(expr *Expr, modelCompletion bool) (*Expr, bool)</div>
+                    <p class="comment">Eval evaluates an expression in the model. If modelCompletion is true, Z3 will assign an interpretation for uninterpreted constants.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetConstDecl</h4>
+                    <div class="signature">func (m *Model) GetConstDecl(i uint) *FuncDecl</div>
+                    <p class="comment">GetConstDecl returns the i-th constant declaration in the model.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetConstInterp</h4>
+                    <div class="signature">func (m *Model) GetConstInterp(decl *FuncDecl) *Expr</div>
+                    <p class="comment">GetConstInterp returns the interpretation of a constant.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetFuncDecl</h4>
+                    <div class="signature">func (m *Model) GetFuncDecl(i uint) *FuncDecl</div>
+                    <p class="comment">GetFuncDecl returns the i-th function declaration in the model.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetFuncInterp</h4>
+                    <div class="signature">func (m *Model) GetFuncInterp(decl *FuncDecl) *FuncInterp</div>
+                    <p class="comment">GetFuncInterp returns the interpretation of a function.</p>
+                </div>
+                <div class="api-item">
+                    <h4>NumConsts</h4>
+                    <div class="signature">func (m *Model) NumConsts() uint</div>
+                    <p class="comment">NumConsts returns the number of constants in the model.</p>
+                </div>
+                <div class="api-item">
+                    <h4>NumFuncs</h4>
+                    <div class="signature">func (m *Model) NumFuncs() uint</div>
+                    <p class="comment">NumFuncs returns the number of function interpretations in the model.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (m *Model) String() string</div>
+                    <p class="comment">String returns the string representation of the model.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Solver</h3>
+            <p class="comment">Solver represents a Z3 solver.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>Assert</h4>
+                    <div class="signature">func (s *Solver) Assert(constraint *Expr)</div>
+                    <p class="comment">Assert adds a constraint to the solver.</p>
+                </div>
+                <div class="api-item">
+                    <h4>AssertAndTrack</h4>
+                    <div class="signature">func (s *Solver) AssertAndTrack(constraint, track *Expr)</div>
+                    <p class="comment">AssertAndTrack adds a constraint with a tracking literal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Assertions</h4>
+                    <div class="signature">func (s *Solver) Assertions() []*Expr</div>
+                    <p class="comment">Assertions returns the assertions in the solver.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Check</h4>
+                    <div class="signature">func (s *Solver) Check() Status</div>
+                    <p class="comment">Check checks the satisfiability of the constraints.</p>
+                </div>
+                <div class="api-item">
+                    <h4>CheckAssumptions</h4>
+                    <div class="signature">func (s *Solver) CheckAssumptions(assumptions ...*Expr) Status</div>
+                    <p class="comment">CheckAssumptions checks satisfiability under assumptions.</p>
+                </div>
+                <div class="api-item">
+                    <h4>CongruenceExplain</h4>
+                    <div class="signature">func (s *Solver) CongruenceExplain(a, b *Expr) *Expr</div>
+                    <p class="comment">CongruenceExplain returns an explanation for why two expressions are congruent. The result is an expression that justifies the congruence between a and b. Note: This function works primarily with SimpleSolver. Terms and variables that are eliminated during pre-processing are not visible to the congruence closure.</p>
+                </div>
+                <div class="api-item">
+                    <h4>CongruenceNext</h4>
+                    <div class="signature">func (s *Solver) CongruenceNext(expr *Expr) *Expr</div>
+                    <p class="comment">CongruenceNext returns the next element in the congruence class of the given expression. This allows iteration through all elements in a congruence class. Note: This function works primarily with SimpleSolver. Terms and variables that are eliminated during pre-processing are not visible to the congruence closure.</p>
+                </div>
+                <div class="api-item">
+                    <h4>CongruenceRoot</h4>
+                    <div class="signature">func (s *Solver) CongruenceRoot(expr *Expr) *Expr</div>
+                    <p class="comment">CongruenceRoot returns the congruence class representative of the given expression. This returns the root element in the congruence closure for the term. Note: This function works primarily with SimpleSolver. Terms and variables that are eliminated during pre-processing are not visible to the congruence closure.</p>
+                </div>
+                <div class="api-item">
+                    <h4>FromFile</h4>
+                    <div class="signature">func (s *Solver) FromFile(filename string)</div>
+                    <p class="comment">FromFile parses and asserts SMT-LIB2 formulas from a file. The solver will contain the assertions from the file after this call.</p>
+                </div>
+                <div class="api-item">
+                    <h4>FromString</h4>
+                    <div class="signature">func (s *Solver) FromString(str string)</div>
+                    <p class="comment">FromString parses and asserts SMT-LIB2 formulas from a string. The solver will contain the assertions from the string after this call.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetHelp</h4>
+                    <div class="signature">func (s *Solver) GetHelp() string</div>
+                    <p class="comment">GetHelp returns a string describing all available solver parameters.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetParamDescrs</h4>
+                    <div class="signature">func (s *Solver) GetParamDescrs() *ParamDescrs</div>
+                    <p class="comment">GetParamDescrs returns parameter descriptions for the solver.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetStatistics</h4>
+                    <div class="signature">func (s *Solver) GetStatistics() *Statistics</div>
+                    <p class="comment">GetStatistics returns the statistics for the solver. Statistics include performance metrics, memory usage, and decision statistics.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Interrupt</h4>
+                    <div class="signature">func (s *Solver) Interrupt()</div>
+                    <p class="comment">Interrupt interrupts the solver execution. This is useful for stopping long-running solver operations gracefully.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Model</h4>
+                    <div class="signature">func (s *Solver) Model() *Model</div>
+                    <p class="comment">Model returns the model if the constraints are satisfiable.</p>
+                </div>
+                <div class="api-item">
+                    <h4>NonUnits</h4>
+                    <div class="signature">func (s *Solver) NonUnits() []*Expr</div>
+                    <p class="comment">NonUnits returns the non-unit clauses in the solver's current state. These are clauses that have not been reduced to unit clauses. This is useful for debugging and understanding solver behavior.</p>
+                </div>
+                <div class="api-item">
+                    <h4>NumScopes</h4>
+                    <div class="signature">func (s *Solver) NumScopes() uint</div>
+                    <p class="comment">NumScopes returns the number of backtracking points.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Pop</h4>
+                    <div class="signature">func (s *Solver) Pop(n uint)</div>
+                    <p class="comment">Pop removes backtracking points.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Push</h4>
+                    <div class="signature">func (s *Solver) Push()</div>
+                    <p class="comment">Push creates a backtracking point.</p>
+                </div>
+                <div class="api-item">
+                    <h4>ReasonUnknown</h4>
+                    <div class="signature">func (s *Solver) ReasonUnknown() string</div>
+                    <p class="comment">ReasonUnknown returns the reason why the result is unknown.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Reset</h4>
+                    <div class="signature">func (s *Solver) Reset()</div>
+                    <p class="comment">Reset removes all assertions from the solver.</p>
+                </div>
+                <div class="api-item">
+                    <h4>SetParams</h4>
+                    <div class="signature">func (s *Solver) SetParams(params *Params)</div>
+                    <p class="comment">SetParams sets solver parameters. Parameters control solver behavior such as timeout, proof generation, etc.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (s *Solver) String() string</div>
+                    <p class="comment">String returns the string representation of the solver.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Trail</h4>
+                    <div class="signature">func (s *Solver) Trail() []*Expr</div>
+                    <p class="comment">Trail returns the decision trail of the solver. The trail contains the sequence of literals assigned during search. This is useful for understanding the solver's decision history. Note: This function works primarily with SimpleSolver. For solvers created using tactics (e.g., NewSolver()), it may return an error.</p>
+                </div>
+                <div class="api-item">
+                    <h4>TrailLevels</h4>
+                    <div class="signature">func (s *Solver) TrailLevels() []uint</div>
+                    <p class="comment">TrailLevels returns the decision levels for each literal in the trail. The returned slice has the same length as the trail, where each element indicates the decision level at which the corresponding trail literal was assigned. This is useful for understanding the structure of the search tree. Note: This function works primarily with SimpleSolver. For solvers created using tactics (e.g., NewSolver()), it may return an error.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Units</h4>
+                    <div class="signature">func (s *Solver) Units() []*Expr</div>
+                    <p class="comment">Units returns the unit clauses (literals) learned by the solver. Unit clauses are assertions that have been simplified to single literals. This is useful for debugging and understanding solver behavior.</p>
+                </div>
+                <div class="api-item">
+                    <h4>UnsatCore</h4>
+                    <div class="signature">func (s *Solver) UnsatCore() []*Expr</div>
+                    <p class="comment">UnsatCore returns the unsat core if the constraints are unsatisfiable.</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav" style="margin-top: 3rem;">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

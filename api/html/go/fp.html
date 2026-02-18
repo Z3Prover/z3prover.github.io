@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fp.go - Z3 Go API</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #2d3748; color: white; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .nav { background: #edf2f7; padding: 1rem; margin-bottom: 2rem; border-radius: 4px; }
+        .nav a { color: #2b6cb0; text-decoration: none; margin-right: 1rem; }
+        .nav a:hover { text-decoration: underline; }
+        h2 { color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { color: #2d3748; margin-top: 1.5rem; }
+        .type-section, .function-section { margin: 1.5rem 0; }
+        .api-item { background: #f7fafc; padding: 1rem; margin: 1rem 0; border-left: 4px solid #4299e1; border-radius: 4px; }
+        .api-item h4 { margin: 0 0 0.5rem 0; color: #2b6cb0; font-family: monospace; }
+        .signature { background: #2d3748; color: #e2e8f0; padding: 0.75rem; border-radius: 4px; font-family: monospace; overflow-x: auto; margin: 0.5rem 0; }
+        .comment { color: #4a5568; margin: 0.5rem 0; }
+        code { background: #e2e8f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .method-list { margin-left: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>fp.go</h1>
+        <p>IEEE 754 floating-point operations</p>
+    </header>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+            <a href="godoc.md">Complete API Reference (markdown)</a>
+            <a href="README.md">README</a>
+            <a href="../index.html">All Languages</a>
+        </div>
+        <h2>Functions</h2>
+        <div class="function-section">
+            <div class="api-item">
+                <h4>MkFPAbs</h4>
+                <div class="signature">func (c *Context) MkFPAbs(expr *Expr) *Expr</div>
+                <p class="comment">MkFPAbs creates a floating-point absolute value.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPAdd</h4>
+                <div class="signature">func (c *Context) MkFPAdd(rm, lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkFPAdd creates a floating-point addition.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPDiv</h4>
+                <div class="signature">func (c *Context) MkFPDiv(rm, lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkFPDiv creates a floating-point division.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPEq</h4>
+                <div class="signature">func (c *Context) MkFPEq(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkFPEq creates a floating-point equality.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPGE</h4>
+                <div class="signature">func (c *Context) MkFPGE(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkFPGE creates a floating-point greater-than-or-equal.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPGT</h4>
+                <div class="signature">func (c *Context) MkFPGT(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkFPGT creates a floating-point greater-than.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPInf</h4>
+                <div class="signature">func (c *Context) MkFPInf(sort *Sort, negative bool) *Expr</div>
+                <p class="comment">MkFPInf creates a floating-point infinity.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPIsInf</h4>
+                <div class="signature">func (c *Context) MkFPIsInf(expr *Expr) *Expr</div>
+                <p class="comment">MkFPIsInf creates a predicate checking if a floating-point number is infinite.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPIsNaN</h4>
+                <div class="signature">func (c *Context) MkFPIsNaN(expr *Expr) *Expr</div>
+                <p class="comment">MkFPIsNaN creates a predicate checking if a floating-point number is NaN.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPIsZero</h4>
+                <div class="signature">func (c *Context) MkFPIsZero(expr *Expr) *Expr</div>
+                <p class="comment">MkFPIsZero creates a predicate checking if a floating-point number is zero.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPLE</h4>
+                <div class="signature">func (c *Context) MkFPLE(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkFPLE creates a floating-point less-than-or-equal.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPLT</h4>
+                <div class="signature">func (c *Context) MkFPLT(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkFPLT creates a floating-point less-than.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPMul</h4>
+                <div class="signature">func (c *Context) MkFPMul(rm, lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkFPMul creates a floating-point multiplication.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPNaN</h4>
+                <div class="signature">func (c *Context) MkFPNaN(sort *Sort) *Expr</div>
+                <p class="comment">MkFPNaN creates a floating-point NaN.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPNeg</h4>
+                <div class="signature">func (c *Context) MkFPNeg(expr *Expr) *Expr</div>
+                <p class="comment">MkFPNeg creates a floating-point negation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPNumeral</h4>
+                <div class="signature">func (c *Context) MkFPNumeral(value string, sort *Sort) *Expr</div>
+                <p class="comment">MkFPNumeral creates a floating-point numeral from a string.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPRoundingModeSort</h4>
+                <div class="signature">func (c *Context) MkFPRoundingModeSort() *Sort</div>
+                <p class="comment">MkFPRoundingModeSort creates the rounding mode sort.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPSort</h4>
+                <div class="signature">func (c *Context) MkFPSort(ebits, sbits uint) *Sort</div>
+                <p class="comment">Floating-point operations MkFPSort creates a floating-point sort.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPSort128</h4>
+                <div class="signature">func (c *Context) MkFPSort128() *Sort</div>
+                <p class="comment">MkFPSort128 creates a 128-bit floating-point sort (quadruple precision).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPSort16</h4>
+                <div class="signature">func (c *Context) MkFPSort16() *Sort</div>
+                <p class="comment">MkFPSort16 creates a 16-bit floating-point sort.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPSort32</h4>
+                <div class="signature">func (c *Context) MkFPSort32() *Sort</div>
+                <p class="comment">MkFPSort32 creates a 32-bit floating-point sort (single precision).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPSort64</h4>
+                <div class="signature">func (c *Context) MkFPSort64() *Sort</div>
+                <p class="comment">MkFPSort64 creates a 64-bit floating-point sort (double precision).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPSqrt</h4>
+                <div class="signature">func (c *Context) MkFPSqrt(rm, expr *Expr) *Expr</div>
+                <p class="comment">MkFPSqrt creates a floating-point square root.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPSub</h4>
+                <div class="signature">func (c *Context) MkFPSub(rm, lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkFPSub creates a floating-point subtraction.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPZero</h4>
+                <div class="signature">func (c *Context) MkFPZero(sort *Sort, negative bool) *Expr</div>
+                <p class="comment">MkFPZero creates a floating-point zero.</p>
+            </div>
+        </div>
+        <div class="nav" style="margin-top: 3rem;">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

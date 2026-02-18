@@ -1,46 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Z3 Go API Documentation</title>
-<style>
-body { font-family: Arial, sans-serif; margin: 40px; }
-h1 { color: #333; }
-ul { list-style-type: none; padding: 0; }
-li { margin: 10px 0; }
-a { color: #0066cc; text-decoration: none; font-size: 18px; }
-a:hover { text-decoration: underline; }
-.description { color: #666; margin-left: 20px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z3 Go API Documentation</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #2d3748; color: white; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 0.5rem 0 0 0; font-size: 1.1rem; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .section { margin: 2rem 0; }
+        .section h2 { color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; }
+        .file-list { list-style: none; padding: 0; }
+        .file-item { background: #f7fafc; border-left: 4px solid #4299e1; margin: 1rem 0; padding: 1rem; border-radius: 4px; }
+        .file-item h3 { margin: 0 0 0.5rem 0; color: #2d3748; }
+        .file-item h3 a { color: #2b6cb0; text-decoration: none; }
+        .file-item h3 a:hover { color: #4299e1; text-decoration: underline; }
+        .file-item p { margin: 0; color: #4a5568; }
+        .code-block { background: #2d3748; color: #e2e8f0; padding: 1.5rem; border-radius: 4px; overflow-x: auto; }
+        .code-block pre { margin: 0; }
+        .install-section { background: #edf2f7; padding: 1.5rem; border-radius: 4px; margin: 1rem 0; }
+        .back-link { display: inline-block; margin-top: 2rem; color: #2b6cb0; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
-<h1>Z3 Go API Documentation</h1>
-<p>Go bindings for the Z3 Theorem Prover.</p>
-<h2>Package: github.com/Z3Prover/z3/src/api/go</h2>
-<ul>
-<li><a href="README.html">README - Getting Started</a></li>
-<li><a href="#core">z3.go</a> - Core types (Context, Config, Symbol, Sort, Expr, FuncDecl)</li>
-<li><a href="#solver">solver.go</a> - Solver and Model API</li>
-<li><a href="#tactic">tactic.go</a> - Tactics, Goals, Probes, and Parameters</li>
-<li><a href="#bitvec">bitvec.go</a> - Bit-vector operations</li>
-<li><a href="#fp">fp.go</a> - Floating-point operations</li>
-<li><a href="#seq">seq.go</a> - Sequences, strings, and regular expressions</li>
-<li><a href="#datatype">datatype.go</a> - Algebraic datatypes, tuples, enumerations</li>
-<li><a href="#optimize">optimize.go</a> - Optimization with maximize/minimize objectives</li>
-</ul>
-<h2>Usage</h2>
-<pre>
-import "github.com/Z3Prover/z3/src/api/go"
+    <header>
+        <h1>Z3 Go API Documentation</h1>
+        <p>Go bindings for the Z3 Theorem Prover</p>
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>Overview</h2>
+            <p>The Z3 Go bindings provide idiomatic Go access to the Z3 SMT solver. These bindings use CGO to wrap the Z3 C API and provide automatic memory management through Go finalizers.</p>
+            <p><strong>Package:</strong> <code>github.com/Z3Prover/z3/src/api/go</code></p>
+        </div>
+        <div class="section">
+            <h2>Quick Start</h2>
+            <div class="code-block">
+                <pre>package main
 
-ctx := z3.NewContext()
-solver := ctx.NewSolver()
-x := ctx.MkIntConst("x")
-solver.Assert(ctx.MkGt(x, ctx.MkInt(0, ctx.MkIntSort())))
-if solver.Check() == z3.Satisfiable {
-    fmt.Println("sat")
-}
-</pre>
-<h2>Installation</h2>
-<p>See <a href="README.html">README</a> for build instructions.</p>
-<p>Go back to <a href="../index.html">main API documentation</a>.</p>
+import (
+    "fmt"
+    "github.com/Z3Prover/z3/src/api/go"
+)
+
+func main() {
+    // Create a context
+    ctx := z3.NewContext()
+
+    // Create integer variable
+    x := ctx.MkIntConst("x")
+
+    // Create solver
+    solver := ctx.NewSolver()
+
+    // Add constraint: x > 0
+    zero := ctx.MkInt(0, ctx.MkIntSort())
+    solver.Assert(ctx.MkGt(x, zero))
+
+    // Check satisfiability
+    if solver.Check() == z3.Satisfiable {
+        fmt.Println("sat")
+        model := solver.Model()
+        if val, ok := model.Eval(x, true); ok {
+            fmt.Println("x =", val.String())
+        }
+    }
+}</pre>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Installation</h2>
+            <div class="install-section">
+                <p><strong>Prerequisites:</strong></p>
+                <ul>
+                    <li>Go 1.20 or later</li>
+                    <li>Z3 built as a shared library</li>
+                    <li>CGO enabled (default)</li>
+                </ul>
+                <p><strong>Build Z3 with Go bindings:</strong></p>
+                <div class="code-block">
+                    <pre># Using CMake
+mkdir build && cd build
+cmake -DZ3_BUILD_GO_BINDINGS=ON -DZ3_BUILD_LIBZ3_SHARED=ON ..
+make
+
+# Using Python build script
+python scripts/mk_make.py --go
+cd build && make</pre>
+                </div>
+                <p><strong>Set environment variables:</strong></p>
+                <div class="code-block">
+                    <pre>export CGO_CFLAGS="-I${Z3_ROOT}/src/api"
+export CGO_LDFLAGS="-L${Z3_ROOT}/build -lz3"
+export LD_LIBRARY_PATH="${Z3_ROOT}/build:$LD_LIBRARY_PATH"</pre>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>API Modules</h2>
+            <div class="file-item" id="z3">
+                <h3><a href="z3.html">z3.go</a></h3>
+                <p>Core types (Context, Config, Symbol, Sort, Expr, FuncDecl, Quantifier, Lambda) and basic operations</p>
+                <p><strong>Types:</strong> <code>AST</code>, <code>ASTVector</code>, <code>Config</code>, <code>Context</code>, <code>Expr</code>, <code>FuncDecl</code>, <code>Lambda</code>, <code>ParamDescrs</code>, <code>Pattern</code>, <code>Quantifier</code>, <code>Sort</code>, <code>Symbol</code></p>
+                <p><strong>Key Functions:</strong> <code>AsExpr()</code>, <code>AsExpr()</code>, <code>Equal()</code>, <code>Equal()</code>, <code>Equal()</code>, <code>GetArity()</code>, <code>GetBody()</code>, <code>GetBody()</code>, <code>GetBoundName()</code>, <code>GetBoundName()</code>, <code>GetBoundSort()</code>, <code>GetBoundSort()</code>, <code>GetDomain()</code>, <code>GetName()</code>, <code>GetNoPattern()</code> <em>(+51 more)</em></p>
+                <p><a href="z3.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="solver">
+                <h3><a href="solver.html">solver.go</a></h3>
+                <p>Solver and Model API for SMT solving</p>
+                <p><strong>Types:</strong> <code>FuncInterp</code>, <code>Model</code>, <code>Solver</code></p>
+                <p><strong>Key Functions:</strong> <code>Assert()</code>, <code>AssertAndTrack()</code>, <code>Assertions()</code>, <code>Check()</code>, <code>CheckAssumptions()</code>, <code>CongruenceExplain()</code>, <code>CongruenceNext()</code>, <code>CongruenceRoot()</code>, <code>Eval()</code>, <code>FromFile()</code>, <code>FromString()</code>, <code>GetArity()</code>, <code>GetConstDecl()</code>, <code>GetConstInterp()</code>, <code>GetElse()</code> <em>(+26 more)</em></p>
+                <p><a href="solver.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="tactic">
+                <h3><a href="tactic.html">tactic.go</a></h3>
+                <p>Tactics, Goals, Probes, and Parameters for goal-based solving</p>
+                <p><strong>Types:</strong> <code>ApplyResult</code>, <code>Goal</code>, <code>Params</code>, <code>Probe</code>, <code>Tactic</code></p>
+                <p><strong>Key Functions:</strong> <code>And()</code>, <code>AndThen()</code>, <code>Apply()</code>, <code>Apply()</code>, <code>Assert()</code>, <code>Eq()</code>, <code>Formula()</code>, <code>Ge()</code>, <code>GetHelp()</code>, <code>Gt()</code>, <code>IsDecidedSat()</code>, <code>IsDecidedUnsat()</code>, <code>Le()</code>, <code>Lt()</code>, <code>MkGoal()</code> <em>(+24 more)</em></p>
+                <p><a href="tactic.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="arith">
+                <h3><a href="arith.html">arith.go</a></h3>
+                <p>Arithmetic operations (integers, reals) and comparisons</p>
+                <p><strong>Key Functions:</strong> <code>MkAdd()</code>, <code>MkDiv()</code>, <code>MkGe()</code>, <code>MkGt()</code>, <code>MkInt()</code>, <code>MkInt64()</code>, <code>MkIntConst()</code>, <code>MkIntSort()</code>, <code>MkLe()</code>, <code>MkLt()</code>, <code>MkMod()</code>, <code>MkMul()</code>, <code>MkReal()</code>, <code>MkRealConst()</code>, <code>MkRealSort()</code> <em>(+2 more)</em></p>
+                <p><a href="arith.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="array">
+                <h3><a href="array.html">array.go</a></h3>
+                <p>Array operations (select, store, constant arrays)</p>
+                <p><strong>Key Functions:</strong> <code>MkArraySort()</code>, <code>MkConstArray()</code>, <code>MkSelect()</code>, <code>MkStore()</code></p>
+                <p><a href="array.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="bitvec">
+                <h3><a href="bitvec.html">bitvec.go</a></h3>
+                <p>Bit-vector operations and constraints</p>
+                <p><strong>Key Functions:</strong> <code>MkBV()</code>, <code>MkBVAShr()</code>, <code>MkBVAdd()</code>, <code>MkBVAnd()</code>, <code>MkBVConst()</code>, <code>MkBVFromInt64()</code>, <code>MkBVLShr()</code>, <code>MkBVMul()</code>, <code>MkBVNeg()</code>, <code>MkBVNot()</code>, <code>MkBVOr()</code>, <code>MkBVSDiv()</code>, <code>MkBVSGE()</code>, <code>MkBVSGT()</code>, <code>MkBVSLE()</code> <em>(+15 more)</em></p>
+                <p><a href="bitvec.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="fp">
+                <h3><a href="fp.html">fp.go</a></h3>
+                <p>IEEE 754 floating-point operations</p>
+                <p><strong>Key Functions:</strong> <code>MkFPAbs()</code>, <code>MkFPAdd()</code>, <code>MkFPDiv()</code>, <code>MkFPEq()</code>, <code>MkFPGE()</code>, <code>MkFPGT()</code>, <code>MkFPInf()</code>, <code>MkFPIsInf()</code>, <code>MkFPIsNaN()</code>, <code>MkFPIsZero()</code>, <code>MkFPLE()</code>, <code>MkFPLT()</code>, <code>MkFPMul()</code>, <code>MkFPNaN()</code>, <code>MkFPNeg()</code> <em>(+10 more)</em></p>
+                <p><a href="fp.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="seq">
+                <h3><a href="seq.html">seq.go</a></h3>
+                <p>Sequences, strings, and regular expressions</p>
+                <p><strong>Key Functions:</strong> <code>MkEmptySeq()</code>, <code>MkInRe()</code>, <code>MkIntToStr()</code>, <code>MkReAllchar()</code>, <code>MkReComplement()</code>, <code>MkReConcat()</code>, <code>MkReDiff()</code>, <code>MkReEmpty()</code>, <code>MkReFull()</code>, <code>MkReIntersect()</code>, <code>MkReLoop()</code>, <code>MkReOption()</code>, <code>MkRePlus()</code>, <code>MkRePower()</code>, <code>MkReRange()</code> <em>(+20 more)</em></p>
+                <p><a href="seq.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="datatype">
+                <h3><a href="datatype.html">datatype.go</a></h3>
+                <p>Algebraic datatypes, tuples, and enumerations</p>
+                <p><strong>Types:</strong> <code>Constructor</code>, <code>ConstructorList</code></p>
+                <p><strong>Key Functions:</strong> <code>GetDatatypeSortConstructor()</code>, <code>GetDatatypeSortConstructorAccessor()</code>, <code>GetDatatypeSortNumConstructors()</code>, <code>GetDatatypeSortRecognizer()</code>, <code>MkConstructor()</code>, <code>MkConstructorList()</code>, <code>MkDatatypeSort()</code>, <code>MkDatatypeSorts()</code>, <code>MkEnumSort()</code>, <code>MkListSort()</code>, <code>MkTupleSort()</code></p>
+                <p><a href="datatype.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="optimize">
+                <h3><a href="optimize.html">optimize.go</a></h3>
+                <p>Optimization with maximize/minimize objectives</p>
+                <p><strong>Types:</strong> <code>Optimize</code></p>
+                <p><strong>Key Functions:</strong> <code>Assert()</code>, <code>AssertAndTrack()</code>, <code>AssertSoft()</code>, <code>Assertions()</code>, <code>Check()</code>, <code>FromFile()</code>, <code>FromString()</code>, <code>GetHelp()</code>, <code>GetLower()</code>, <code>GetLowerAsVector()</code>, <code>GetUpper()</code>, <code>GetUpperAsVector()</code>, <code>Maximize()</code>, <code>Minimize()</code>, <code>Model()</code> <em>(+8 more)</em></p>
+                <p><a href="optimize.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="fixedpoint">
+                <h3><a href="fixedpoint.html">fixedpoint.go</a></h3>
+                <p>Fixedpoint solver for Datalog and constrained Horn clauses (CHC)</p>
+                <p><strong>Types:</strong> <code>Fixedpoint</code>, <code>Statistics</code></p>
+                <p><strong>Key Functions:</strong> <code>AddCover()</code>, <code>AddFact()</code>, <code>AddRule()</code>, <code>Assert()</code>, <code>FromFile()</code>, <code>FromString()</code>, <code>GetAnswer()</code>, <code>GetAssertions()</code>, <code>GetCoverDelta()</code>, <code>GetDoubleValue()</code>, <code>GetHelp()</code>, <code>GetKey()</code>, <code>GetNumLevels()</code>, <code>GetParamDescrs()</code>, <code>GetReasonUnknown()</code> <em>(+15 more)</em></p>
+                <p><a href="fixedpoint.html">→ View full API reference</a></p>
+            </div>
+            <div class="file-item" id="log">
+                <h3><a href="log.html">log.go</a></h3>
+                <p>Interaction logging for debugging and analysis</p>
+                <p><strong>Key Functions:</strong> <code>AppendLog()</code>, <code>CloseLog()</code>, <code>IsLogOpen()</code>, <code>OpenLog()</code></p>
+                <p><a href="log.html">→ View full API reference</a></p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Features</h2>
+            <ul>
+                <li><strong>Core SMT:</strong> Boolean logic, arithmetic, arrays, quantifiers</li>
+                <li><strong>Bit-vectors:</strong> Fixed-size bit-vector arithmetic and operations</li>
+                <li><strong>Floating-point:</strong> IEEE 754 floating-point arithmetic</li>
+                <li><strong>Strings & Sequences:</strong> String constraints and sequence operations</li>
+                <li><strong>Regular Expressions:</strong> Pattern matching and regex constraints</li>
+                <li><strong>Datatypes:</strong> Algebraic datatypes, tuples, enumerations</li>
+                <li><strong>Tactics:</strong> Goal-based solving with tactic combinators</li>
+                <li><strong>Optimization:</strong> MaxSMT with maximize/minimize objectives</li>
+                <li><strong>Memory Management:</strong> Automatic via Go finalizers</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="https://github.com/Z3Prover/z3">Z3 GitHub Repository</a></li>
+                <li><a href="../index.html">All API Documentation</a></li>
+                <li><a href="README.md">Go API README (markdown)</a></li>
+                <li><a href="godoc.md">Complete API Reference (godoc markdown)</a></li>
+            </ul>
+        </div>
+        <a href="../index.html" class="back-link">← Back to main API documentation</a>
+    </div>
 </body>
 </html>

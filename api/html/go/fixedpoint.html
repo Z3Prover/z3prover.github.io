@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fixedpoint.go - Z3 Go API</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #2d3748; color: white; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .nav { background: #edf2f7; padding: 1rem; margin-bottom: 2rem; border-radius: 4px; }
+        .nav a { color: #2b6cb0; text-decoration: none; margin-right: 1rem; }
+        .nav a:hover { text-decoration: underline; }
+        h2 { color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { color: #2d3748; margin-top: 1.5rem; }
+        .type-section, .function-section { margin: 1.5rem 0; }
+        .api-item { background: #f7fafc; padding: 1rem; margin: 1rem 0; border-left: 4px solid #4299e1; border-radius: 4px; }
+        .api-item h4 { margin: 0 0 0.5rem 0; color: #2b6cb0; font-family: monospace; }
+        .signature { background: #2d3748; color: #e2e8f0; padding: 0.75rem; border-radius: 4px; font-family: monospace; overflow-x: auto; margin: 0.5rem 0; }
+        .comment { color: #4a5568; margin: 0.5rem 0; }
+        code { background: #e2e8f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .method-list { margin-left: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>fixedpoint.go</h1>
+        <p>Fixedpoint solver for Datalog and constrained Horn clauses (CHC)</p>
+    </header>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+            <a href="godoc.md">Complete API Reference (markdown)</a>
+            <a href="README.md">README</a>
+            <a href="../index.html">All Languages</a>
+        </div>
+        <h2>Types</h2>
+        <div class="type-section">
+            <h3>type Context</h3>
+            <p class="comment">Context methods (receiver omitted for clarity)</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>NewFixedpoint</h4>
+                    <div class="signature">func (ctx *Context) NewFixedpoint() *Fixedpoint</div>
+                    <p class="comment">NewFixedpoint creates a new fixedpoint solver</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Fixedpoint</h3>
+            <p class="comment">Fixedpoint represents a fixedpoint solver for Datalog/CHC queries</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>AddCover</h4>
+                    <div class="signature">func (f *Fixedpoint) AddCover(level int, predicate *FuncDecl, property *Expr)</div>
+                    <p class="comment">AddCover adds a cover constraint to a predicate at a given level</p>
+                </div>
+                <div class="api-item">
+                    <h4>AddFact</h4>
+                    <div class="signature">func (f *Fixedpoint) AddFact(pred *FuncDecl, args []int)</div>
+                    <p class="comment">AddFact adds a table fact to the fixedpoint solver</p>
+                </div>
+                <div class="api-item">
+                    <h4>AddRule</h4>
+                    <div class="signature">func (f *Fixedpoint) AddRule(rule *Expr, name *Symbol)</div>
+                    <p class="comment">AddRule adds a rule (Horn clause) to the fixedpoint solver The rule should be an implication of the form body => head where head is a relation and body is a conjunction of relations</p>
+                </div>
+                <div class="api-item">
+                    <h4>Assert</h4>
+                    <div class="signature">func (f *Fixedpoint) Assert(constraint *Expr)</div>
+                    <p class="comment">Assert adds a constraint into the fixedpoint solver</p>
+                </div>
+                <div class="api-item">
+                    <h4>FromFile</h4>
+                    <div class="signature">func (f *Fixedpoint) FromFile(filename string)</div>
+                    <p class="comment">FromFile parses a Datalog program from a file</p>
+                </div>
+                <div class="api-item">
+                    <h4>FromString</h4>
+                    <div class="signature">func (f *Fixedpoint) FromString(s string)</div>
+                    <p class="comment">FromString parses a Datalog program from a string</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetAnswer</h4>
+                    <div class="signature">func (f *Fixedpoint) GetAnswer() *Expr</div>
+                    <p class="comment">GetAnswer retrieves the satisfying instance or instances of solver, or definitions for the recursive predicates that show unsatisfiability</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetAssertions</h4>
+                    <div class="signature">func (f *Fixedpoint) GetAssertions() *ASTVector</div>
+                    <p class="comment">GetAssertions retrieves the fixedpoint assertions as an AST vector</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetCoverDelta</h4>
+                    <div class="signature">func (f *Fixedpoint) GetCoverDelta(level int, predicate *FuncDecl) *Expr</div>
+                    <p class="comment">GetCoverDelta retrieves the cover delta for a given predicate and level</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetHelp</h4>
+                    <div class="signature">func (f *Fixedpoint) GetHelp() string</div>
+                    <p class="comment">GetHelp returns a string describing all available fixedpoint solver parameters</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetNumLevels</h4>
+                    <div class="signature">func (f *Fixedpoint) GetNumLevels(predicate *FuncDecl) int</div>
+                    <p class="comment">GetNumLevels retrieves the number of levels explored for a given predicate</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetParamDescrs</h4>
+                    <div class="signature">func (f *Fixedpoint) GetParamDescrs() *ParamDescrs</div>
+                    <p class="comment">GetParamDescrs retrieves parameter descriptions for the fixedpoint solver</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetReasonUnknown</h4>
+                    <div class="signature">func (f *Fixedpoint) GetReasonUnknown() string</div>
+                    <p class="comment">GetReasonUnknown retrieves explanation why fixedpoint engine returned status Unknown</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetRules</h4>
+                    <div class="signature">func (f *Fixedpoint) GetRules() string</div>
+                    <p class="comment">GetRules retrieves the current rules as a string</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetStatistics</h4>
+                    <div class="signature">func (f *Fixedpoint) GetStatistics() *Statistics</div>
+                    <p class="comment">GetStatistics retrieves statistics for the fixedpoint solver</p>
+                </div>
+                <div class="api-item">
+                    <h4>Query</h4>
+                    <div class="signature">func (f *Fixedpoint) Query(query *Expr) Status</div>
+                    <p class="comment">Query queries the fixedpoint solver with a constraint Returns Satisfiable if there is a derivation, Unsatisfiable if not</p>
+                </div>
+                <div class="api-item">
+                    <h4>QueryRelations</h4>
+                    <div class="signature">func (f *Fixedpoint) QueryRelations(relations []*FuncDecl) Status</div>
+                    <p class="comment">QueryRelations queries the fixedpoint solver with an array of relations Returns Satisfiable if any relation is non-empty, Unsatisfiable otherwise</p>
+                </div>
+                <div class="api-item">
+                    <h4>RegisterRelation</h4>
+                    <div class="signature">func (f *Fixedpoint) RegisterRelation(funcDecl *FuncDecl)</div>
+                    <p class="comment">RegisterRelation registers a predicate as a recursive relation</p>
+                </div>
+                <div class="api-item">
+                    <h4>SetParams</h4>
+                    <div class="signature">func (f *Fixedpoint) SetParams(params *Params)</div>
+                    <p class="comment">SetParams sets the fixedpoint solver parameters</p>
+                </div>
+                <div class="api-item">
+                    <h4>SetPredicateRepresentation</h4>
+                    <div class="signature">func (f *Fixedpoint) SetPredicateRepresentation(funcDecl *FuncDecl, kinds []C.Z3_symbol)</div>
+                    <p class="comment">SetPredicateRepresentation sets the predicate representation for a given relation</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (f *Fixedpoint) String() string</div>
+                    <p class="comment">String returns the string representation of the fixedpoint solver</p>
+                </div>
+                <div class="api-item">
+                    <h4>UpdateRule</h4>
+                    <div class="signature">func (f *Fixedpoint) UpdateRule(rule *Expr, name *Symbol)</div>
+                    <p class="comment">UpdateRule updates a named rule in the fixedpoint solver</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Statistics</h3>
+            <p class="comment">Statistics represents statistics for Z3 solvers</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>GetDoubleValue</h4>
+                    <div class="signature">func (s *Statistics) GetDoubleValue(idx int) float64</div>
+                    <p class="comment">GetDoubleValue returns the double value at the given index</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetKey</h4>
+                    <div class="signature">func (s *Statistics) GetKey(idx int) string</div>
+                    <p class="comment">GetKey returns the key (name) of a statistical data entry at the given index</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetUintValue</h4>
+                    <div class="signature">func (s *Statistics) GetUintValue(idx int) uint64</div>
+                    <p class="comment">GetUintValue returns the unsigned integer value at the given index</p>
+                </div>
+                <div class="api-item">
+                    <h4>IsDouble</h4>
+                    <div class="signature">func (s *Statistics) IsDouble(idx int) bool</div>
+                    <p class="comment">IsDouble returns true if the statistical data at the given index is double</p>
+                </div>
+                <div class="api-item">
+                    <h4>IsUint</h4>
+                    <div class="signature">func (s *Statistics) IsUint(idx int) bool</div>
+                    <p class="comment">IsUint returns true if the statistical data at the given index is unsigned integer</p>
+                </div>
+                <div class="api-item">
+                    <h4>Size</h4>
+                    <div class="signature">func (s *Statistics) Size() int</div>
+                    <p class="comment">Size returns the number of statistical data entries</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (s *Statistics) String() string</div>
+                    <p class="comment">String returns the string representation of statistics</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav" style="margin-top: 3rem;">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

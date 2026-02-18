@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arith.go - Z3 Go API</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #2d3748; color: white; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .nav { background: #edf2f7; padding: 1rem; margin-bottom: 2rem; border-radius: 4px; }
+        .nav a { color: #2b6cb0; text-decoration: none; margin-right: 1rem; }
+        .nav a:hover { text-decoration: underline; }
+        h2 { color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { color: #2d3748; margin-top: 1.5rem; }
+        .type-section, .function-section { margin: 1.5rem 0; }
+        .api-item { background: #f7fafc; padding: 1rem; margin: 1rem 0; border-left: 4px solid #4299e1; border-radius: 4px; }
+        .api-item h4 { margin: 0 0 0.5rem 0; color: #2b6cb0; font-family: monospace; }
+        .signature { background: #2d3748; color: #e2e8f0; padding: 0.75rem; border-radius: 4px; font-family: monospace; overflow-x: auto; margin: 0.5rem 0; }
+        .comment { color: #4a5568; margin: 0.5rem 0; }
+        code { background: #e2e8f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .method-list { margin-left: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>arith.go</h1>
+        <p>Arithmetic operations (integers, reals) and comparisons</p>
+    </header>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+            <a href="godoc.md">Complete API Reference (markdown)</a>
+            <a href="README.md">README</a>
+            <a href="../index.html">All Languages</a>
+        </div>
+        <h2>Functions</h2>
+        <div class="function-section">
+            <div class="api-item">
+                <h4>MkAdd</h4>
+                <div class="signature">func (c *Context) MkAdd(exprs ...*Expr) *Expr</div>
+                <p class="comment">MkAdd creates an addition.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkDiv</h4>
+                <div class="signature">func (c *Context) MkDiv(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkDiv creates a division.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkGe</h4>
+                <div class="signature">func (c *Context) MkGe(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkGe creates a greater-than-or-equal constraint.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkGt</h4>
+                <div class="signature">func (c *Context) MkGt(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkGt creates a greater-than constraint.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkInt</h4>
+                <div class="signature">func (c *Context) MkInt(value int, sort *Sort) *Expr</div>
+                <p class="comment">MkInt creates an integer constant from an int.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkInt64</h4>
+                <div class="signature">func (c *Context) MkInt64(value int64, sort *Sort) *Expr</div>
+                <p class="comment">MkInt64 creates an integer constant from an int64.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkIntConst</h4>
+                <div class="signature">func (c *Context) MkIntConst(name string) *Expr</div>
+                <p class="comment">MkIntConst creates an integer constant (variable) with the given name.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkIntSort</h4>
+                <div class="signature">func (c *Context) MkIntSort() *Sort</div>
+                <p class="comment">Arithmetic operations and sorts MkIntSort creates the integer sort.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkLe</h4>
+                <div class="signature">func (c *Context) MkLe(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkLe creates a less-than-or-equal constraint.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkLt</h4>
+                <div class="signature">func (c *Context) MkLt(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkLt creates a less-than constraint.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkMod</h4>
+                <div class="signature">func (c *Context) MkMod(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkMod creates a modulo operation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkMul</h4>
+                <div class="signature">func (c *Context) MkMul(exprs ...*Expr) *Expr</div>
+                <p class="comment">MkMul creates a multiplication.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReal</h4>
+                <div class="signature">func (c *Context) MkReal(num, den int) *Expr</div>
+                <p class="comment">MkReal creates a real constant from numerator and denominator.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkRealConst</h4>
+                <div class="signature">func (c *Context) MkRealConst(name string) *Expr</div>
+                <p class="comment">MkRealConst creates a real constant (variable) with the given name.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkRealSort</h4>
+                <div class="signature">func (c *Context) MkRealSort() *Sort</div>
+                <p class="comment">MkRealSort creates the real number sort.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkRem</h4>
+                <div class="signature">func (c *Context) MkRem(lhs, rhs *Expr) *Expr</div>
+                <p class="comment">MkRem creates a remainder operation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSub</h4>
+                <div class="signature">func (c *Context) MkSub(exprs ...*Expr) *Expr</div>
+                <p class="comment">MkSub creates a subtraction.</p>
+            </div>
+        </div>
+        <div class="nav" style="margin-top: 3rem;">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z3.go - Z3 Go API</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        header { background: #2d3748; color: white; padding: 2rem; }
+        header h1 { margin: 0; font-size: 2rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .nav { background: #edf2f7; padding: 1rem; margin-bottom: 2rem; border-radius: 4px; }
+        .nav a { color: #2b6cb0; text-decoration: none; margin-right: 1rem; }
+        .nav a:hover { text-decoration: underline; }
+        h2 { color: #2d3748; border-bottom: 2px solid #4299e1; padding-bottom: 0.5rem; margin-top: 2rem; }
+        h3 { color: #2d3748; margin-top: 1.5rem; }
+        .type-section, .function-section { margin: 1.5rem 0; }
+        .api-item { background: #f7fafc; padding: 1rem; margin: 1rem 0; border-left: 4px solid #4299e1; border-radius: 4px; }
+        .api-item h4 { margin: 0 0 0.5rem 0; color: #2b6cb0; font-family: monospace; }
+        .signature { background: #2d3748; color: #e2e8f0; padding: 0.75rem; border-radius: 4px; font-family: monospace; overflow-x: auto; margin: 0.5rem 0; }
+        .comment { color: #4a5568; margin: 0.5rem 0; }
+        code { background: #e2e8f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .method-list { margin-left: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>z3.go</h1>
+        <p>Core types (Context, Config, Symbol, Sort, Expr, FuncDecl, Quantifier, Lambda) and basic operations</p>
+    </header>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← Back to Index</a>
+            <a href="godoc.md">Complete API Reference (markdown)</a>
+            <a href="README.md">README</a>
+            <a href="../index.html">All Languages</a>
+        </div>
+        <h2>Types</h2>
+        <div class="type-section">
+            <h3>type AST</h3>
+            <p class="comment">AST represents a Z3 abstract syntax tree node.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>Equal</h4>
+                    <div class="signature">func (a *AST) Equal(other *AST) bool</div>
+                    <p class="comment">Equal checks if two ASTs are equal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Hash</h4>
+                    <div class="signature">func (a *AST) Hash() uint32</div>
+                    <p class="comment">Hash returns the hash code of the AST.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (a *AST) String() string</div>
+                    <p class="comment">String returns the string representation of the AST.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type ASTVector</h3>
+            <p class="comment">ASTVector represents a vector of Z3 ASTs.</p>
+        </div>
+        <div class="type-section">
+            <h3>type Config</h3>
+            <p class="comment">Config represents a Z3 configuration object.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>SetParamValue</h4>
+                    <div class="signature">func (c *Config) SetParamValue(paramID, paramValue string)</div>
+                    <p class="comment">SetParamValue sets a configuration parameter.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Context</h3>
+            <p class="comment">Context methods (receiver omitted for clarity)</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>MkAnd</h4>
+                    <div class="signature">func (c *Context) MkAnd(exprs ...*Expr) *Expr</div>
+                    <p class="comment">Boolean operations MkAnd creates a conjunction.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkApp</h4>
+                    <div class="signature">func (c *Context) MkApp(decl *FuncDecl, args ...*Expr) *Expr</div>
+                    <p class="comment">MkApp creates a function application.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkBool</h4>
+                    <div class="signature">func (c *Context) MkBool(value bool) *Expr</div>
+                    <p class="comment">MkBool creates a Boolean constant.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkBoolConst</h4>
+                    <div class="signature">func (c *Context) MkBoolConst(name string) *Expr</div>
+                    <p class="comment">MkBoolConst creates a Boolean constant (variable) with the given name.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkBoolSort</h4>
+                    <div class="signature">func (c *Context) MkBoolSort() *Sort</div>
+                    <p class="comment">MkBoolSort creates the Boolean sort.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkBvSort</h4>
+                    <div class="signature">func (c *Context) MkBvSort(sz uint) *Sort</div>
+                    <p class="comment">MkBvSort creates a bit-vector sort of the given size.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkConst</h4>
+                    <div class="signature">func (c *Context) MkConst(name *Symbol, sort *Sort) *Expr</div>
+                    <p class="comment">MkConst creates a constant (variable) with the given name and sort.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkDistinct</h4>
+                    <div class="signature">func (c *Context) MkDistinct(exprs ...*Expr) *Expr</div>
+                    <p class="comment">MkDistinct creates a distinct constraint.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkEq</h4>
+                    <div class="signature">func (c *Context) MkEq(lhs, rhs *Expr) *Expr</div>
+                    <p class="comment">Comparison operations MkEq creates an equality.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkExists</h4>
+                    <div class="signature">func (c *Context) MkExists(bound []*Expr, body *Expr) *Expr</div>
+                    <p class="comment">MkExists creates an existential quantifier.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkFalse</h4>
+                    <div class="signature">func (c *Context) MkFalse() *Expr</div>
+                    <p class="comment">MkFalse creates the Boolean constant false.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkForall</h4>
+                    <div class="signature">func (c *Context) MkForall(bound []*Expr, body *Expr) *Expr</div>
+                    <p class="comment">Quantifier operations MkForall creates a universal quantifier.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkFuncDecl</h4>
+                    <div class="signature">func (c *Context) MkFuncDecl(name *Symbol, domain []*Sort, range_ *Sort) *FuncDecl</div>
+                    <p class="comment">MkFuncDecl creates a function declaration.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkIff</h4>
+                    <div class="signature">func (c *Context) MkIff(lhs, rhs *Expr) *Expr</div>
+                    <p class="comment">MkIff creates a bi-implication (if and only if).</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkImplies</h4>
+                    <div class="signature">func (c *Context) MkImplies(lhs, rhs *Expr) *Expr</div>
+                    <p class="comment">MkImplies creates an implication.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkIntSymbol</h4>
+                    <div class="signature">func (c *Context) MkIntSymbol(i int) *Symbol</div>
+                    <p class="comment">MkIntSymbol creates an integer symbol.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkLambda</h4>
+                    <div class="signature">func (c *Context) MkLambda(sorts []*Sort, names []*Symbol, body *Expr) *Lambda</div>
+                    <p class="comment">MkLambda creates a lambda expression with sorts and names</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkLambdaConst</h4>
+                    <div class="signature">func (c *Context) MkLambdaConst(bound []*Expr, body *Expr) *Lambda</div>
+                    <p class="comment">MkLambdaConst creates a lambda expression using constant bound variables</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkNot</h4>
+                    <div class="signature">func (c *Context) MkNot(expr *Expr) *Expr</div>
+                    <p class="comment">MkNot creates a negation.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkNumeral</h4>
+                    <div class="signature">func (c *Context) MkNumeral(numeral string, sort *Sort) *Expr</div>
+                    <p class="comment">MkNumeral creates a numeral from a string.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkOr</h4>
+                    <div class="signature">func (c *Context) MkOr(exprs ...*Expr) *Expr</div>
+                    <p class="comment">MkOr creates a disjunction.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkQuantifier</h4>
+                    <div class="signature">func (c *Context) MkQuantifier(isForall bool, weight int, sorts []*Sort, names []*Symbol, body *Expr, patterns []*Pattern) *Quantifier</div>
+                    <p class="comment">MkQuantifier creates a quantifier with patterns</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkQuantifierConst</h4>
+                    <div class="signature">func (c *Context) MkQuantifierConst(isForall bool, weight int, bound []*Expr, body *Expr, patterns []*Pattern) *Quantifier</div>
+                    <p class="comment">MkQuantifierConst creates a quantifier using constant bound variables</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkStringSymbol</h4>
+                    <div class="signature">func (c *Context) MkStringSymbol(s string) *Symbol</div>
+                    <p class="comment">MkStringSymbol creates a string symbol.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkTrue</h4>
+                    <div class="signature">func (c *Context) MkTrue() *Expr</div>
+                    <p class="comment">MkTrue creates the Boolean constant true.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkTypeVariable</h4>
+                    <div class="signature">func (c *Context) MkTypeVariable(name *Symbol) *Sort</div>
+                    <p class="comment">MkTypeVariable creates a type variable sort for use in polymorphic functions and datatypes</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkXor</h4>
+                    <div class="signature">func (c *Context) MkXor(lhs, rhs *Expr) *Expr</div>
+                    <p class="comment">MkXor creates exclusive or.</p>
+                </div>
+                <div class="api-item">
+                    <h4>SetParam</h4>
+                    <div class="signature">func (c *Context) SetParam(key, value string)</div>
+                    <p class="comment">SetParam sets a global or context parameter.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Expr</h3>
+            <p class="comment">Expr represents a Z3 expression.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>Equal</h4>
+                    <div class="signature">func (e *Expr) Equal(other *Expr) bool</div>
+                    <p class="comment">Equal checks if two expressions are equal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetSort</h4>
+                    <div class="signature">func (e *Expr) GetSort() *Sort</div>
+                    <p class="comment">GetSort returns the sort of the expression.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Simplify</h4>
+                    <div class="signature">func (e *Expr) Simplify() *Expr</div>
+                    <p class="comment">Simplify simplifies an expression.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (e *Expr) String() string</div>
+                    <p class="comment">String returns the string representation of the expression.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type FuncDecl</h3>
+            <p class="comment">FuncDecl represents a function declaration.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>GetArity</h4>
+                    <div class="signature">func (f *FuncDecl) GetArity() int</div>
+                    <p class="comment">GetArity returns the arity (number of parameters) of the function.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetDomain</h4>
+                    <div class="signature">func (f *FuncDecl) GetDomain(i int) *Sort</div>
+                    <p class="comment">GetDomain returns the sort of the i-th parameter.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetName</h4>
+                    <div class="signature">func (f *FuncDecl) GetName() *Symbol</div>
+                    <p class="comment">GetName returns the name of the function declaration.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetRange</h4>
+                    <div class="signature">func (f *FuncDecl) GetRange() *Sort</div>
+                    <p class="comment">GetRange returns the sort of the return value.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (f *FuncDecl) String() string</div>
+                    <p class="comment">String returns the string representation of the function declaration.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Lambda</h3>
+            <p class="comment">Lambda represents a lambda expression</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>AsExpr</h4>
+                    <div class="signature">func (l *Lambda) AsExpr() *Expr</div>
+                    <p class="comment">AsExpr converts a Lambda to an Expr</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetBody</h4>
+                    <div class="signature">func (l *Lambda) GetBody() *Expr</div>
+                    <p class="comment">GetBody returns the body of the lambda expression</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetBoundName</h4>
+                    <div class="signature">func (l *Lambda) GetBoundName(idx int) *Symbol</div>
+                    <p class="comment">GetBoundName returns the name of the bound variable at the given index</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetBoundSort</h4>
+                    <div class="signature">func (l *Lambda) GetBoundSort(idx int) *Sort</div>
+                    <p class="comment">GetBoundSort returns the sort of the bound variable at the given index</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetNumBound</h4>
+                    <div class="signature">func (l *Lambda) GetNumBound() int</div>
+                    <p class="comment">GetNumBound returns the number of bound variables</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (l *Lambda) String() string</div>
+                    <p class="comment">String returns the string representation of the lambda</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type ParamDescrs</h3>
+            <p class="comment">ParamDescrs represents parameter descriptions for Z3 objects.</p>
+        </div>
+        <div class="type-section">
+            <h3>type Pattern</h3>
+            <p class="comment">Pattern represents a Z3 pattern for quantifier instantiation.</p>
+        </div>
+        <div class="type-section">
+            <h3>type Quantifier</h3>
+            <p class="comment">Quantifier represents a quantified formula (forall or exists)</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>AsExpr</h4>
+                    <div class="signature">func (q *Quantifier) AsExpr() *Expr</div>
+                    <p class="comment">AsExpr converts a Quantifier to an Expr</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetBody</h4>
+                    <div class="signature">func (q *Quantifier) GetBody() *Expr</div>
+                    <p class="comment">GetBody returns the body of the quantifier</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetBoundName</h4>
+                    <div class="signature">func (q *Quantifier) GetBoundName(idx int) *Symbol</div>
+                    <p class="comment">GetBoundName returns the name of the bound variable at the given index</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetBoundSort</h4>
+                    <div class="signature">func (q *Quantifier) GetBoundSort(idx int) *Sort</div>
+                    <p class="comment">GetBoundSort returns the sort of the bound variable at the given index</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetNoPattern</h4>
+                    <div class="signature">func (q *Quantifier) GetNoPattern(idx int) *Pattern</div>
+                    <p class="comment">GetNoPattern returns the no-pattern at the given index</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetNumBound</h4>
+                    <div class="signature">func (q *Quantifier) GetNumBound() int</div>
+                    <p class="comment">GetNumBound returns the number of bound variables</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetNumNoPatterns</h4>
+                    <div class="signature">func (q *Quantifier) GetNumNoPatterns() int</div>
+                    <p class="comment">GetNumNoPatterns returns the number of no-patterns</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetNumPatterns</h4>
+                    <div class="signature">func (q *Quantifier) GetNumPatterns() int</div>
+                    <p class="comment">GetNumPatterns returns the number of patterns</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetPattern</h4>
+                    <div class="signature">func (q *Quantifier) GetPattern(idx int) *Pattern</div>
+                    <p class="comment">GetPattern returns the pattern at the given index</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetWeight</h4>
+                    <div class="signature">func (q *Quantifier) GetWeight() int</div>
+                    <p class="comment">GetWeight returns the weight of the quantifier</p>
+                </div>
+                <div class="api-item">
+                    <h4>IsExistential</h4>
+                    <div class="signature">func (q *Quantifier) IsExistential() bool</div>
+                    <p class="comment">IsExistential returns true if this is an existential quantifier (exists)</p>
+                </div>
+                <div class="api-item">
+                    <h4>IsUniversal</h4>
+                    <div class="signature">func (q *Quantifier) IsUniversal() bool</div>
+                    <p class="comment">IsUniversal returns true if this is a universal quantifier (forall)</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (q *Quantifier) String() string</div>
+                    <p class="comment">String returns the string representation of the quantifier</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Sort</h3>
+            <p class="comment">Sort represents a Z3 sort (type).</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>Equal</h4>
+                    <div class="signature">func (s *Sort) Equal(other *Sort) bool</div>
+                    <p class="comment">Equal checks if two sorts are equal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (s *Sort) String() string</div>
+                    <p class="comment">String returns the string representation of the sort.</p>
+                </div>
+            </div>
+        </div>
+        <div class="type-section">
+            <h3>type Symbol</h3>
+            <p class="comment">Symbol represents a Z3 symbol.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (s *Symbol) String() string</div>
+                    <p class="comment">String returns the string representation of the symbol.</p>
+                </div>
+            </div>
+        </div>
+        <h2>Functions</h2>
+        <div class="function-section">
+            <div class="api-item">
+                <h4>NewConfig</h4>
+                <div class="signature">func NewConfig() *Config</div>
+                <p class="comment">NewConfig creates a new Z3 configuration.</p>
+            </div>
+            <div class="api-item">
+                <h4>NewContext</h4>
+                <div class="signature">func NewContext() *Context</div>
+                <p class="comment">NewContext creates a new Z3 context with default configuration.</p>
+            </div>
+            <div class="api-item">
+                <h4>NewContextWithConfig</h4>
+                <div class="signature">func NewContextWithConfig(cfg *Config) *Context</div>
+                <p class="comment">NewContextWithConfig creates a new Z3 context with the given configuration.</p>
+            </div>
+        </div>
+        <div class="nav" style="margin-top: 3rem;">
+            <a href="index.html">← Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

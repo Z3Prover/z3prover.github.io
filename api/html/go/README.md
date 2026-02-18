@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Z3 Go API - README</title>
-<style>body { font-family: Arial, sans-serif; margin: 40px; max-width: 900px; }</style>
-</head>
-<body>
-<pre>
 # Z3 Go Bindings
 
 This directory contains Go language bindings for the Z3 theorem prover.
@@ -337,6 +329,3 @@ Bug reports and contributions are welcome! Please submit issues and pull request
 - [Z3 GitHub Repository](https://github.com/Z3Prover/z3)
 - [Z3 API Documentation](https://z3prover.github.io/api/html/index.html)
 - [Z3 Guide](https://microsoft.github.io/z3guide/)
-</pre>
-</body>
-</html>
