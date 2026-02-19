@@ -116,6 +116,11 @@
                     <p class="comment">NumFuncs returns the number of function interpretations in the model.</p>
                 </div>
                 <div class="api-item">
+                    <h4>SortUniverse</h4>
+                    <div class="signature">func (m *Model) SortUniverse(sort *Sort) []*Expr</div>
+                    <p class="comment">SortUniverse returns the universe of values for an uninterpreted sort in the model. The universe is represented as a list of distinct expressions. Returns nil if the sort is not an uninterpreted sort in this model.</p>
+                </div>
+                <div class="api-item">
                     <h4>String</h4>
                     <div class="signature">func (m *Model) String() string</div>
                     <p class="comment">String returns the string representation of the model.</p>
@@ -231,6 +236,11 @@
                     <h4>Reset</h4>
                     <div class="signature">func (s *Solver) Reset()</div>
                     <p class="comment">Reset removes all assertions from the solver.</p>
+                </div>
+                <div class="api-item">
+                    <h4>SetInitialValue</h4>
+                    <div class="signature">func (s *Solver) SetInitialValue(variable, value *Expr)</div>
+                    <p class="comment">SetInitialValue provides an initial value hint for a variable to the solver. This can help guide the solver to find solutions more efficiently. The variable must be a constant or function application, and the value must be compatible with the variable's sort.</p>
                 </div>
                 <div class="api-item">
                     <h4>SetParams</h4>

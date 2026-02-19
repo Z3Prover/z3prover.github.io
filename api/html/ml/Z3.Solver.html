@@ -259,4 +259,75 @@
       that are not selected for interrupts are left alone.</p>
 </div>
 </div>
+
+<pre><span id="VALget_units"><span class="keyword">val</span> get_units</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p>Retrieve the set of units from the solver.
+      Units are clauses of size 1 learned by the solver during solving.</p>
+</div>
+</div>
+
+<pre><span id="VALget_non_units"><span class="keyword">val</span> get_non_units</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p>Retrieve the set of non-units from the solver.
+      Non-units are clauses of size greater than 1 learned by the solver.</p>
+</div>
+</div>
+
+<pre><span id="VALget_trail"><span class="keyword">val</span> get_trail</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p>Retrieve the trail (sequence of assignments) from the solver.
+      The trail shows the sequence of literal assignments made by the solver.</p>
+</div>
+</div>
+
+<pre><span id="VALget_levels"><span class="keyword">val</span> get_levels</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -&gt; int array</code></pre><div class="info ">
+<div class="info-desc">
+<p>Retrieve the decision levels of trail literals.
+      Given a list of literals from the trail, returns an array of their decision levels.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Returns</b> Array of decision levels corresponding to the input literals</li>
+</ul>
+</div>
+
+<pre><span id="VALcongruence_root"><span class="keyword">val</span> congruence_root</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Retrieve the congruence closure root of an expression.
+      Returns the representative of the equivalence class containing the expression.</p>
+</div>
+</div>
+
+<pre><span id="VALcongruence_next"><span class="keyword">val</span> congruence_next</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Retrieve the next element in the congruence closure equivalence class.
+      Congruence classes form a circular list; this returns the next element.</p>
+</div>
+</div>
+
+<pre><span id="VALcongruence_explain"><span class="keyword">val</span> congruence_explain</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Retrieve an explanation for why two expressions are congruent.
+      Returns an expression that justifies the congruence between a and b.</p>
+</div>
+</div>
+
+<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; string -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Parse SMT-LIB2 formulas from a file and assert them into the solver.</p>
+</div>
+</div>
+
+<pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; string -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Parse SMT-LIB2 formulas from a string and assert them into the solver.</p>
+</div>
+</div>
+
+<pre><span id="VALset_initial_value"><span class="keyword">val</span> set_initial_value</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Provide an initial value hint for a variable to the solver.
+      This can help guide the solver to find solutions more efficiently.</p>
+</div>
+</div>
 </body></html>
