@@ -19,3 +19,4 @@
 * [AVM 2025 tutorial, Arithmetic in Z3](https://z3prover.github.io/slides/avm.html)
 * [Guest Lectures, Wien, October 2025](https://z3prover.github.io/slides/guest-lectures-wien-2025/)
 * [Guest lecture, Rosario National University, November 2025](https://z3prover.github.io/slides/guest-lecture-guido-2025.pptx)
+* [Collogium, Cleveland State University, May 7](https://z3prover.github.io/slides/CSU2026.pptx)
