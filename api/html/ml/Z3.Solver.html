@@ -248,6 +248,12 @@
 </div>
 </div>
 
+<pre><span id="VALto_dimacs"><span class="keyword">val</span> to_dimacs</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; bool -&gt; string</code></pre><div class="info ">
+<div class="info-desc">
+<p>Convert the solver's Boolean formula to DIMACS CNF format.</p>
+</div>
+</div>
+
 <pre><span id="VALinterrupt"><span class="keyword">val</span> interrupt</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Solver local interrupt.</p>
@@ -328,6 +334,41 @@
 <div class="info-desc">
 <p>Provide an initial value hint for a variable to the solver.
       This can help guide the solver to find solutions more efficiently.</p>
+</div>
+</div>
+
+<pre><span id="VALcube"><span class="keyword">val</span> cube</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -&gt; int -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p>Extract cubes from the solver for cube-and-conquer parallel solving.
+      vars is a list of variables to use as cube variables; use an empty list for automatic selection.
+      cutoff is the backtrack level cutoff for cube generation.
+      Returns a list of expressions representing the cube literals.</p>
+</div>
+</div>
+
+<pre><span id="VALget_consequences"><span class="keyword">val</span> get_consequences</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt;<br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -&gt;<br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -&gt; <a href="Z3.Solver.html#TYPEstatus">status</a> * <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p>Retrieve fixed assignments to variables as consequences given assumptions.
+      Returns the solver status and a list of consequence expressions.
+      Each consequence is an implication: assumptions =&gt; variable = value.</p>
+</div>
+</div>
+
+<pre><span id="VALsolve_for"><span class="keyword">val</span> solve_for</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt;<br>       <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Solve constraints treating given variables symbolically.
+      variables are the variables to solve for, terms are the substitution terms,
+      and guards are Boolean guards for the substitutions.</p>
+</div>
+</div>
+
+<pre><span id="VALregister_on_clause"><span class="keyword">val</span> register_on_clause</span> : <code class="type"><a href="Z3.Solver.html#TYPEsolver">solver</a> -&gt;<br>       (<a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> option -&gt; int list -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> list -&gt; unit) -&gt; unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>Register a callback that is invoked when clauses are inferred during solving.
+      The callback is called when a clause is asserted to the CDCL engine, inferred
+      by CDCL(T), or deleted by the CDCL(T) engine.
+      The callback receives an optional proof hint expression, a list of dependency
+      indices, and the inferred clause as a list of literal expressions.</p>
 </div>
 </div>
 </body></html>

@@ -148,14 +148,44 @@
                 <p class="comment">MkSeqExtract creates a sequence extract (substring) operation.</p>
             </div>
             <div class="api-item">
+                <h4>MkSeqFoldl</h4>
+                <div class="signature">func (c *Context) MkSeqFoldl(f, a, seq *Expr) *Expr</div>
+                <p class="comment">MkSeqFoldl applies a fold-left operation to a sequence.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqFoldli</h4>
+                <div class="signature">func (c *Context) MkSeqFoldli(f, i, a, seq *Expr) *Expr</div>
+                <p class="comment">MkSeqFoldli applies an indexed fold-left operation to a sequence.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkSeqIndexOf</h4>
                 <div class="signature">func (c *Context) MkSeqIndexOf(seq, substr, offset *Expr) *Expr</div>
                 <p class="comment">MkSeqIndexOf creates a sequence index-of operation.</p>
             </div>
             <div class="api-item">
+                <h4>MkSeqLastIndex</h4>
+                <div class="signature">func (c *Context) MkSeqLastIndex(seq, substr *Expr) *Expr</div>
+                <p class="comment">MkSeqLastIndex returns the last index of substr in seq.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkSeqLength</h4>
                 <div class="signature">func (c *Context) MkSeqLength(seq *Expr) *Expr</div>
                 <p class="comment">MkSeqLength creates a sequence length operation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqMap</h4>
+                <div class="signature">func (c *Context) MkSeqMap(f, seq *Expr) *Expr</div>
+                <p class="comment">MkSeqMap applies a function to each element of a sequence, returning a new sequence.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqMapi</h4>
+                <div class="signature">func (c *Context) MkSeqMapi(f, i, seq *Expr) *Expr</div>
+                <p class="comment">MkSeqMapi applies an indexed function to each element of a sequence, returning a new sequence.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqNth</h4>
+                <div class="signature">func (c *Context) MkSeqNth(seq, index *Expr) *Expr</div>
+                <p class="comment">MkSeqNth retrieves the n-th element of a sequence as a single-element expression.</p>
             </div>
             <div class="api-item">
                 <h4>MkSeqPrefix</h4>
@@ -166,6 +196,11 @@
                 <h4>MkSeqReplace</h4>
                 <div class="signature">func (c *Context) MkSeqReplace(seq, src, dst *Expr) *Expr</div>
                 <p class="comment">MkSeqReplace creates a sequence replace operation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkSeqReplaceAll</h4>
+                <div class="signature">func (c *Context) MkSeqReplaceAll(seq, src, dst *Expr) *Expr</div>
+                <p class="comment">MkSeqReplaceAll replaces all occurrences of src with dst in seq.</p>
             </div>
             <div class="api-item">
                 <h4>MkSeqReplaceRe</h4>
@@ -193,6 +228,16 @@
                 <p class="comment">MkSeqUnit creates a unit sequence containing a single element.</p>
             </div>
             <div class="api-item">
+                <h4>MkStrLe</h4>
+                <div class="signature">func (c *Context) MkStrLe(s1, s2 *Expr) *Expr</div>
+                <p class="comment">MkStrLe creates a string less-than-or-equal comparison.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkStrLt</h4>
+                <div class="signature">func (c *Context) MkStrLt(s1, s2 *Expr) *Expr</div>
+                <p class="comment">MkStrLt creates a string less-than comparison.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkStrToInt</h4>
                 <div class="signature">func (c *Context) MkStrToInt(str *Expr) *Expr</div>
                 <p class="comment">MkStrToInt creates a string-to-integer conversion.</p>
@@ -203,9 +248,19 @@
                 <p class="comment">MkString creates a string constant.</p>
             </div>
             <div class="api-item">
+                <h4>MkStringFromCode</h4>
+                <div class="signature">func (c *Context) MkStringFromCode(code *Expr) *Expr</div>
+                <p class="comment">MkStringFromCode converts a Unicode code point to a single-character string.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkStringSort</h4>
                 <div class="signature">func (c *Context) MkStringSort() *Sort</div>
                 <p class="comment">MkStringSort creates a string sort (sequence of characters).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkStringToCode</h4>
+                <div class="signature">func (c *Context) MkStringToCode(s *Expr) *Expr</div>
+                <p class="comment">MkStringToCode converts a single-character string to its Unicode code point.</p>
             </div>
             <div class="api-item">
                 <h4>MkToRe</h4>

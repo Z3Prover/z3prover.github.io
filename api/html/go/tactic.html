@@ -64,6 +64,16 @@
             <div class="method-list">
                 <h4>Methods:</h4>
                 <div class="api-item">
+                    <h4>GetProbeDescr</h4>
+                    <div class="signature">func (c *Context) GetProbeDescr(name string) string</div>
+                    <p class="comment">GetProbeDescr returns a description of the probe with the given name.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetTacticDescr</h4>
+                    <div class="signature">func (c *Context) GetTacticDescr(name string) string</div>
+                    <p class="comment">GetTacticDescr returns a description of the tactic with the given name.</p>
+                </div>
+                <div class="api-item">
                     <h4>MkGoal</h4>
                     <div class="signature">func (c *Context) MkGoal(models, unsatCores, proofs bool) *Goal</div>
                     <p class="comment">MkGoal creates a new goal.</p>
@@ -84,6 +94,16 @@
                     <p class="comment">MkTactic creates a tactic with the given name.</p>
                 </div>
                 <div class="api-item">
+                    <h4>NewSolverFromTactic</h4>
+                    <div class="signature">func (c *Context) NewSolverFromTactic(t *Tactic) *Solver</div>
+                    <p class="comment">NewSolverFromTactic creates a solver from the given tactic. The solver uses the tactic to solve goals.</p>
+                </div>
+                <div class="api-item">
+                    <h4>ParOr</h4>
+                    <div class="signature">func (c *Context) ParOr(tactics []*Tactic) *Tactic</div>
+                    <p class="comment">ParOr creates a tactic that applies the given tactics in parallel.</p>
+                </div>
+                <div class="api-item">
                     <h4>ProbeConst</h4>
                     <div class="signature">func (c *Context) ProbeConst(val float64) *Probe</div>
                     <p class="comment">ProbeConst creates a probe that always evaluates to the given value.</p>
@@ -97,6 +117,16 @@
                     <h4>TacticFail</h4>
                     <div class="signature">func (c *Context) TacticFail() *Tactic</div>
                     <p class="comment">TacticFail creates a tactic that always fails.</p>
+                </div>
+                <div class="api-item">
+                    <h4>TacticFailIf</h4>
+                    <div class="signature">func (c *Context) TacticFailIf(p *Probe) *Tactic</div>
+                    <p class="comment">TacticFailIf creates a tactic that fails if the probe p evaluates to false.</p>
+                </div>
+                <div class="api-item">
+                    <h4>TacticFailIfNotDecided</h4>
+                    <div class="signature">func (c *Context) TacticFailIfNotDecided() *Tactic</div>
+                    <p class="comment">TacticFailIfNotDecided creates a tactic that fails if the goal is not trivially satisfiable (empty) or trivially unsatisfiable (contains false).</p>
                 </div>
                 <div class="api-item">
                     <h4>TacticSkip</h4>
@@ -121,6 +151,16 @@
                     <p class="comment">Assert adds a constraint to the goal.</p>
                 </div>
                 <div class="api-item">
+                    <h4>ConvertModel</h4>
+                    <div class="signature">func (g *Goal) ConvertModel(m *Model) *Model</div>
+                    <p class="comment">ConvertModel converts a model from the original goal into a model for this goal. Use this when a tactic has transformed the goal and you need a model for the original.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Depth</h4>
+                    <div class="signature">func (g *Goal) Depth() uint</div>
+                    <p class="comment">Depth returns the depth of the goal. It tracks how many times the goal was transformed by a tactic.</p>
+                </div>
+                <div class="api-item">
                     <h4>Formula</h4>
                     <div class="signature">func (g *Goal) Formula(i uint) *Expr</div>
                     <p class="comment">Formula returns the i-th formula in the goal.</p>
@@ -136,9 +176,19 @@
                     <p class="comment">IsDecidedUnsat returns true if the goal is decided to be unsatisfiable.</p>
                 </div>
                 <div class="api-item">
+                    <h4>IsInconsistent</h4>
+                    <div class="signature">func (g *Goal) IsInconsistent() bool</div>
+                    <p class="comment">IsInconsistent returns true if the goal contains the formula false.</p>
+                </div>
+                <div class="api-item">
                     <h4>NumExprs</h4>
                     <div class="signature">func (g *Goal) NumExprs() uint</div>
                     <p class="comment">NumExprs returns the number of expressions in the goal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Precision</h4>
+                    <div class="signature">func (g *Goal) Precision() uint</div>
+                    <p class="comment">Precision returns the precision of the goal as a uint. Possible values: 0 = precise, 1 = under-approximation, 2 = over-approximation, 3 = under+over.</p>
                 </div>
                 <div class="api-item">
                     <h4>Reset</h4>
@@ -154,6 +204,16 @@
                     <h4>String</h4>
                     <div class="signature">func (g *Goal) String() string</div>
                     <p class="comment">String returns the string representation of the goal.</p>
+                </div>
+                <div class="api-item">
+                    <h4>ToDimacsString</h4>
+                    <div class="signature">func (g *Goal) ToDimacsString(includeNames bool) string</div>
+                    <p class="comment">ToDimacsString converts the goal to a string in DIMACS format. If includeNames is true, formula names are included as comments.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Translate</h4>
+                    <div class="signature">func (g *Goal) Translate(target *Context) *Goal</div>
+                    <p class="comment">Translate creates a copy of the goal in the target context.</p>
                 </div>
             </div>
         </div>
@@ -257,9 +317,19 @@
                     <p class="comment">Apply applies the tactic to a goal.</p>
                 </div>
                 <div class="api-item">
+                    <h4>ApplyEx</h4>
+                    <div class="signature">func (t *Tactic) ApplyEx(g *Goal, params *Params) *ApplyResult</div>
+                    <p class="comment">ApplyEx applies the tactic to a goal with the given parameters.</p>
+                </div>
+                <div class="api-item">
                     <h4>GetHelp</h4>
                     <div class="signature">func (t *Tactic) GetHelp() string</div>
                     <p class="comment">GetHelp returns help information for the tactic.</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetParamDescrs</h4>
+                    <div class="signature">func (t *Tactic) GetParamDescrs() *ParamDescrs</div>
+                    <p class="comment">GetParamDescrs returns parameter descriptions for the tactic.</p>
                 </div>
                 <div class="api-item">
                     <h4>OrElse</h4>
@@ -267,9 +337,24 @@
                     <p class="comment">OrElse creates a tactic that applies t1, and if it fails, applies t2.</p>
                 </div>
                 <div class="api-item">
+                    <h4>ParAndThen</h4>
+                    <div class="signature">func (t *Tactic) ParAndThen(t2 *Tactic) *Tactic</div>
+                    <p class="comment">ParAndThen creates a tactic that applies t to a goal and then t2 to every subgoal produced by t, processing subgoals in parallel.</p>
+                </div>
+                <div class="api-item">
                     <h4>Repeat</h4>
                     <div class="signature">func (t *Tactic) Repeat(max uint) *Tactic</div>
                     <p class="comment">Repeat creates a tactic that applies t repeatedly (at most max times).</p>
+                </div>
+                <div class="api-item">
+                    <h4>TryFor</h4>
+                    <div class="signature">func (t *Tactic) TryFor(ms uint) *Tactic</div>
+                    <p class="comment">TryFor returns a tactic that applies t for at most ms milliseconds. If t does not terminate in ms milliseconds, then it fails.</p>
+                </div>
+                <div class="api-item">
+                    <h4>UsingParams</h4>
+                    <div class="signature">func (t *Tactic) UsingParams(params *Params) *Tactic</div>
+                    <p class="comment">UsingParams returns a tactic that applies t using the given parameters.</p>
                 </div>
             </div>
         </div>

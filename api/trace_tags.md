@@ -468,6 +468,7 @@ This document contains the trace tags and their descriptions used in Z3.
 | Global | ite_bug | ite bug |
 | Global | lar_solver_feas | lar solver feas |
 | Global | lar_solver_inf_heap | lar solver inf heap |
+| Global | lar_solver_restore | lar solver restore |
 | Global | lcm_bug | lcm bug |
 | Global | le_bug | le bug |
 | Global | le_extra | le extra |
@@ -1024,6 +1025,7 @@ This document contains the trace tags and their descriptions used in Z3.
 | ctx_propagate_assertions | ctx_propagate_assertions | ctx propagate assertions |
 | ctx_solver_simplify_tactic | ctx_solver_simplify_tactic | ctx solver simplify tactic |
 | default_qm_plugin | default_qm_plugin | default qm plugin |
+| default_qm_plugin | ho_matching | ho matching |
 | default_qm_plugin | mam_stats | mam stats |
 | default_qm_plugin | quantifier | quantifier |
 | elim_uncnstr_tactic | elim_uncnstr | elim uncnstr |
@@ -1034,6 +1036,7 @@ This document contains the trace tags and their descriptions used in Z3.
 | eq_der | top_sort | top sort |
 | expr_substitution_simplifier | expr_substitution_simplifier | expr substitution simplifier |
 | expr_substitution_simplifier | propagate_values | propagate values |
+| finite_set | finite_set | finite set |
 | fm_model_converter | fm_mc | fm mc |
 | fm_model_converter | fm_model_converter | fm model converter |
 | get_implied_equalities_impl | get_implied_equalities | get implied equalities |

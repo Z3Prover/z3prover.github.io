@@ -38,6 +38,11 @@
         <h2>Functions</h2>
         <div class="function-section">
             <div class="api-item">
+                <h4>MkAbs</h4>
+                <div class="signature">func (c *Context) MkAbs(arg *Expr) *Expr</div>
+                <p class="comment">MkAbs creates an absolute value expression.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkAdd</h4>
                 <div class="signature">func (c *Context) MkAdd(exprs ...*Expr) *Expr</div>
                 <p class="comment">MkAdd creates an addition.</p>
@@ -46,6 +51,11 @@
                 <h4>MkDiv</h4>
                 <div class="signature">func (c *Context) MkDiv(lhs, rhs *Expr) *Expr</div>
                 <p class="comment">MkDiv creates a division.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkDivides</h4>
+                <div class="signature">func (c *Context) MkDivides(t1, t2 *Expr) *Expr</div>
+                <p class="comment">MkDivides creates an integer divisibility predicate (t1 divides t2).</p>
             </div>
             <div class="api-item">
                 <h4>MkGe</h4>
@@ -63,6 +73,11 @@
                 <p class="comment">MkInt creates an integer constant from an int.</p>
             </div>
             <div class="api-item">
+                <h4>MkInt2Real</h4>
+                <div class="signature">func (c *Context) MkInt2Real(arg *Expr) *Expr</div>
+                <p class="comment">MkInt2Real coerces an integer expression to a real.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkInt64</h4>
                 <div class="signature">func (c *Context) MkInt64(value int64, sort *Sort) *Expr</div>
                 <p class="comment">MkInt64 creates an integer constant from an int64.</p>
@@ -76,6 +91,11 @@
                 <h4>MkIntSort</h4>
                 <div class="signature">func (c *Context) MkIntSort() *Sort</div>
                 <p class="comment">Arithmetic operations and sorts MkIntSort creates the integer sort.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkIsInt</h4>
+                <div class="signature">func (c *Context) MkIsInt(arg *Expr) *Expr</div>
+                <p class="comment">MkIsInt creates a predicate that checks whether a real expression is an integer.</p>
             </div>
             <div class="api-item">
                 <h4>MkLe</h4>
@@ -98,9 +118,19 @@
                 <p class="comment">MkMul creates a multiplication.</p>
             </div>
             <div class="api-item">
+                <h4>MkPower</h4>
+                <div class="signature">func (c *Context) MkPower(base, exp *Expr) *Expr</div>
+                <p class="comment">MkPower creates an exponentiation expression (base^exp).</p>
+            </div>
+            <div class="api-item">
                 <h4>MkReal</h4>
                 <div class="signature">func (c *Context) MkReal(num, den int) *Expr</div>
                 <p class="comment">MkReal creates a real constant from numerator and denominator.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkReal2Int</h4>
+                <div class="signature">func (c *Context) MkReal2Int(arg *Expr) *Expr</div>
+                <p class="comment">MkReal2Int converts a real expression to an integer (floor).</p>
             </div>
             <div class="api-item">
                 <h4>MkRealConst</h4>

@@ -37,6 +37,7 @@ pattern inference (heuristics) for universal formulas (without annotation)
  ----------|------|-------------|--------
 arith | unsigned int  |  0 - do not infer patterns with arithmetic terms, 1 - use patterns with arithmetic terms if there is no other pattern, 2 - always use patterns with arithmetic terms | 1
 arith_weight | unsigned int  |  default weight for quantifiers where the only available pattern has nested arithmetic terms | 5
+avoid_skolems | bool  |  avoid skolem functions when computing patterns | true
 block_loop_patterns | bool  |  block looping patterns during pattern inference | true
 decompose_patterns | bool  |  allow decomposition of patterns into multipatterns | true
 enabled | bool  |  enable a heuristic to infer patterns, when they are not provided | true
@@ -251,10 +252,16 @@ linear programming parameters
 dio | bool  |  use Diophantine equalities | true
 dio_branching_period | unsigned int  |  Period of calling branching on undef in Diophantine handler | 100
 dio_calls_period | unsigned int  |  Period of calling the Diophantine handler in the final_check() | 1
+dio_calls_period_decrease | unsigned int  |  Amount by which dio_calls_period is decreased on each final_check() call where the Diophantine handler is not triggered, until it returns to its initial value | 2
 dio_cuts_enable_gomory | bool  |  enable Gomory cuts together with Diophantine cuts, only relevant when dioph_eq is true | false
 dio_cuts_enable_hnf | bool  |  enable hnf cuts together with Diophantine cuts, only relevant when dioph_eq is true | true
+dio_gomory_enable_period | unsigned int  |  number of consecutive unproductive (undef) Diophantine-handler calls after which the controller starts running Gomory cuts and the gcd test alongside dio; a dio conflict resets the count and stops them; set very large to never start them this way so Gomory follows dio_cuts_enable_gomory only | 16
 dio_ignore_big_nums | bool  |  Ignore the terms with big numbers in the Diophantine handler, only relevant when dioph_eq is true | true
 dio_run_gcd | bool  |  Run the GCD heuristic if dio is on, if dio is disabled the option is not used | false
+int_hammer_period | unsigned int  |  period (in final_check calls) for the integer cut/cube heuristics (find_cube, hnf, gomory); a smaller value calls them more often | 4
+lcube | bool  |  use the largest cube test for integer feasibility | true
+lcube_flips | unsigned int  |  maximal number of coordinate flips when repairing the rounded largest cube center, only relevant when lcube is true | 16
+random_hammers | bool  |  draw the periodic integer heuristic gates (find_cube, lcube, hnf, gomory, dio) at random with the same 1/period rate instead of a deterministic every-k-th-call modulus | true
 
 ## opt
 
@@ -297,11 +304,15 @@ parameters for parallel solver
 
  Parameter | Type | Description | Default
  ----------|------|-------------|--------
+ablate_backtracking | bool  |  ablation: pass entire cube as core instead of unsat core during backtracking | false
 conquer.backtrack_frequency | unsigned int  |  frequency to apply core minimization during conquer | 10
 conquer.batch_size | unsigned int  |  number of cubes to batch together for fast conquer | 100
 conquer.delay | unsigned int  |  delay of cubes until applying conquer | 10
 conquer.restart.max | unsigned int  |  maximal number of restarts during conquer phase | 5
+core_minimize | bool  |  minimize unsat cores used for parallel cube backtracking | true
+cube.lookahead | bool  |  use lookahead cubing in the parallel solver; when false, use VSIDS activity to select one split literal | false
 enable | bool  |  enable parallel solver by default on selected tactics (for QF_BV) | false
+num_bb_threads | unsigned int  |  run Janota-style chunking backbone worker threads; default is 2 (negative and positive mode), supported values are 0 (off), 1 (negative mode only) or 2 (negative and positive mode) | 2
 simplify.exp | double  |  restart and inprocess max is multiplied by simplify.exp ^ depth | 1
 simplify.inprocess.max | unsigned int  |  maximal number of inprocessing steps during simplification | 2
 simplify.max_conflicts | unsigned int  |  maximal number of conflicts during simplification phase | 4294967295
@@ -382,7 +393,9 @@ lazy | unsigned int  |  how lazy the solver is. | 0
 log_lemma_smtrat | bool  |  log lemmas to be readable by smtrat | false
 log_lemmas | bool  |  display lemmas as self-contained SMT formulas | false
 lws | bool  |  apply levelwise. | true
-lws_spt_threshold | unsigned int  |  minimum both-side polynomial count to apply spanning tree optimization; &lt; 2 disables spanning tree | 2
+lws_spt_threshold | unsigned int  |  minimum both-side polynomial count to apply spanning tree optimization; &lt; 2 disables spanning tree | 4
+lws_witness_subs_disc | bool  |  try substitute the non-nullified witness by the discriminant | true
+lws_witness_subs_lc | bool  |  try substitute the non-nullified witness by the lc | true
 max_conflicts | unsigned int  |  maximum number of conflicts. | 4294967295
 max_memory | unsigned int  |  maximum amount of memory in megabytes | 4294967295
 minimize_conflicts | bool  |  minimize conflicts | false
@@ -471,6 +484,7 @@ print_fixedpoint_extensions | bool  |  use SMT-LIB2 fixedpoint extensions, inste
 print_low_level_smt2 | bool  |  use (faster) low-level SMT2 printer (the printer is scalable but the result may not be as readable) | false
 print_statistics | bool  |  print statistics | false
 print_with_variable_declarations | bool  |  use variable declarations when displaying rules (instead of attempting to use original names) | true
+rlimit | unsigned int  |  deterministic resource limit (0 means no limit) | 0
 spacer.arith.solver | unsigned int  |  arithmetic solver: 0 - no solver, 1 - bellman-ford based solver (diff. logic only), 2 - simplex based solver, 3 - floyd-warshall based solver (diff. logic only) and no theory combination 4 - utvpi, 5 - infinitary lra, 6 - lra solver | 2
 spacer.blast_term_ite_inflation | unsigned int  |  Maximum inflation for non-Boolean ite-terms expansion: 0 (none), k (multiplicative) | 3
 spacer.ctp | bool  |  Enable counterexample-to-pushing | true
@@ -557,15 +571,6 @@ xform.tail_simplifier_pve | bool  |  propagate_variable_equivalences | true
 xform.transform_arrays | bool  |  Rewrites arrays equalities and applies select over store | false
 xform.unfold_rules | unsigned int  |  unfold rules statically using iterative squaring | 0
 
-## smt_parallel
-
-Experimental parameters for parallel solving
-
- Parameter | Type | Description | Default
- ----------|------|-------------|--------
-inprocessing | bool  |  integrate in-processing as a heuristic simplification | false
-sls | bool  |  add sls-tactic as a separate worker thread outside the search tree parallelism | false
-
 ## smt
 
 smt solver based on lazy smt
@@ -592,6 +597,7 @@ arith.nl.expensive_patching | bool  |  use the expensive of monomials | false
 arith.nl.expp | bool  |  expensive patching | false
 arith.nl.gr_q | unsigned int  |  grobner's quota | 10
 arith.nl.grobner | bool  |  run grobner's basis heuristic | true
+arith.nl.grobner_adaptive | bool  |  scale grobner growth knobs (eqs/size/degree/max_simplified) up on productive runs and down on misses | false
 arith.nl.grobner_cnfl_to_report | unsigned int  |  grobner's maximum number of conflicts to report | 1
 arith.nl.grobner_eqs_growth | unsigned int  |  grobner's number of equalities growth  | 10
 arith.nl.grobner_exp_delay | bool  |  use exponential delay between grobner basis attempts | true
@@ -609,13 +615,20 @@ arith.nl.horner_frequency | unsigned int  |  horner's call frequency | 4
 arith.nl.horner_row_length_limit | unsigned int  |  row is disregarded by the heuristic if its length is longer than the value | 10
 arith.nl.horner_subs_fixed | unsigned int  |  0 - no subs, 1 - substitute, 2 - substitute fixed zeros only | 2
 arith.nl.log | bool  |  Log lemmas sent to nra solver | false
+arith.nl.monomial_binomial_sign | bool  |  derive bound on a binomial-monomial factor anchored on the current LP value of the monomial; replaces order_lemma_on_binomial_sign with a deterministic factor bound conditioned on a one-sided snapshot of the monomial value | false
+arith.nl.monomial_sandwich | bool  |  derive bound on a monomial factor by pairing two LP rows that share the other factor | false
+arith.nl.monomial_sandwich.max_fanout | unsigned int  |  skip monomial sandwich when the conclusion factor appears in more than this many monomials (0 = no limit) | 0
 arith.nl.nra | bool  |  call nra_solver when incremental linearization does not produce a lemma, this option is ignored when arith.nl=false, relevant only if smt.arith.solver=6 | true
+arith.nl.nra_check_assignment | bool  |  call check_assignment in nra_solver to verify current assignment against nlsat constraints | true
+arith.nl.nra_check_assignment_max_fail | unsigned int  |  maximum consecutive check_assignment failures before disabling it | 7
 arith.nl.optimize_bounds | bool  |  enable bounds optimization | true
 arith.nl.order | bool  |  run order lemmas | true
+arith.nl.order.binomial_sign | bool  |  run order_lemma_on_binomial_sign; disabling it keeps the structural order-lemma splitting | true
 arith.nl.propagate_linear_monomials | bool  |  propagate linear monomials | true
 arith.nl.reduce_pseudo_linear | bool  |  create incremental linearization axioms for pseudo-linear monomials | true
 arith.nl.rounds | unsigned int  |  threshold for number of (nested) final checks for non linear arithmetic, relevant only if smt.arith.solver=2 | 1024
 arith.nl.tangents | bool  |  run tangent lemmas | true
+arith.nl.tangents.box_corners | bool  |  choose tangent-plane points at the bound-box corners instead of the model-centered val(x) +/- delta; produces the McCormick under/over envelope and is deterministic and snapshot-independent | false
 arith.print_ext_var_names | bool  |  print external variable names | false
 arith.print_stats | bool  |  print statistic | false
 arith.propagate_eqs | bool  |  propagate (cheap) equalities | true
@@ -655,6 +668,8 @@ delay_units_threshold | unsigned int  |  maximum number of learned unit clauses 
 dt_lazy_splits | unsigned int  |  How lazy datatype splits are performed: 0- eager, 1- lazy for infinite types, 2- lazy | 1
 elim_unconstrained | bool  |  pre-processing: eliminate unconstrained subterms | true
 ematching | bool  |  E-Matching based quantifier instantiation | true
+ho_matching | bool  |  higher-order matching for quantifier instantiation | false
+ho_matching_bound | unsigned int  |  per-problem expansion-step budget of the higher-order matching search; bounds the (undecidable) HO unification to guarantee termination | 10000
 induction | bool  |  enable generation of induction lemmas | false
 lemma_gc_strategy | unsigned int  |  lemma garbage collection strategy: 0 - fixed, 1 - geometric, 2 - at restart, 3 - none | 0
 logic | symbol  |  logic used to setup the SMT solver | 
@@ -695,13 +710,17 @@ restart_strategy | unsigned int  |  0 - geometric, 1 - inner-outer-geometric, 2 
 restricted_quasi_macros | bool  |  try to find universally quantified formulas that are restricted quasi-macros | false
 seq.max_unfolding | unsigned int  |  maximal unfolding depth for checking string equations and regular expressions | 1000000000
 seq.min_unfolding | unsigned int  |  initial bound for strings whose lengths are bounded by iterative deepening. Set this to a higher value if there are only models with larger string lengths | 1
+seq.regex_factorization_enabled | bool  |  apply regex factorization (sigma splitting) | false
+seq.regex_factorization_threshold | unsigned int  |  maximum number of cases to factor a regex into in a single step | 10
 seq.split_w_len | bool  |  enable splitting guided by length constraints | true
 seq.validate | bool  |  enable self-validation of theory axioms created by seq theory | false
 sls.enable | bool  |  enable sls co-processor with SMT engine | false
 sls.parallel | bool  |  use sls co-processor in parallel or sequential with SMT engine | true
 solve_eqs | bool  |  pre-processing: solve equalities | true
+solve_eqs.linear | bool  |  allow only linear substitutions where a variable is replaced by a term having at most one non-constant argument | false
 solve_eqs.non_ground | bool  |  pre-processing: solve equalities. Allow eliminating variables by non-ground solutions which can break behavior for model evaluation. | true
 string_solver | symbol  |  solver for string/sequence theories. options are: 'z3str3' (specialized string solver), 'seq' (sequence solver), 'auto' (use static features to choose best solver), 'empty' (a no-op solver that forces an answer unknown if strings were used), 'none' (no solver) | seq
+term_enumeration | bool  |  use term enumeration to populate instantiation sets for higher-order variables during model-based quantifier instantiation | false
 theory_aware_branching | bool  |  Allow the context to use extra information from theory solvers regarding literal branching prioritization. | false
 theory_case_split | bool  |  Allow the context to use heuristics involving theory case splits, which are a set of literals of which exactly one can be assigned True. If this option is false, the context will generate extra axioms to enforce this instead. | false
 threads | unsigned int  |  maximal number of parallel threads. | 1

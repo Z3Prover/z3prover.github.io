@@ -98,7 +98,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03711">3711</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03756">3756</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac27e465a0bf4800a41673455eb4879ac" name="ac27e465a0bf4800a41673455eb4879ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac27e465a0bf4800a41673455eb4879ac">&#9670;&#160;</a></span>constructor_list()</h2>
@@ -124,13 +124,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03765">3765</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3765</span>                                                                   : ctx(cs.ctx) {</div>
-<div class="line"><span class="lineno"> 3766</span>        array&lt;Z3_constructor&gt; cons(cs.size());</div>
-<div class="line"><span class="lineno"> 3767</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; cs.size(); ++i)</div>
-<div class="line"><span class="lineno"> 3768</span>            cons[i] = cs[i];</div>
-<div class="line"><span class="lineno"> 3769</span>        clist = <a class="code hl_function" href="group__capi.html#gac9305d5d4eb1ce68d17300f5af19fafd">Z3_mk_constructor_list</a>(ctx, cs.size(), cons.ptr());</div>
-<div class="line"><span class="lineno"> 3770</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03810">3810</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3810</span>                                                                   : ctx(cs.ctx) {</div>
+<div class="line"><span class="lineno"> 3811</span>        array&lt;Z3_constructor&gt; cons(cs.size());</div>
+<div class="line"><span class="lineno"> 3812</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; cs.size(); ++i)</div>
+<div class="line"><span class="lineno"> 3813</span>            cons[i] = cs[i];</div>
+<div class="line"><span class="lineno"> 3814</span>        clist = <a class="code hl_function" href="group__capi.html#gac9305d5d4eb1ce68d17300f5af19fafd">Z3_mk_constructor_list</a>(ctx, cs.size(), cons.ptr());</div>
+<div class="line"><span class="lineno"> 3815</span>    }</div>
 <div class="ttc" id="agroup__capi_html_gac9305d5d4eb1ce68d17300f5af19fafd"><div class="ttname"><a href="group__capi.html#gac9305d5d4eb1ce68d17300f5af19fafd">Z3_mk_constructor_list</a></div><div class="ttdeci">Z3_constructor_list Z3_API Z3_mk_constructor_list(Z3_context c, unsigned num_constructors, Z3_constructor const constructors[])</div><div class="ttdoc">Create list of constructors.</div></div>
 </div><!-- fragment -->
 </div>
@@ -158,8 +158,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03716">3716</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3716</span>{ <a class="code hl_function" href="group__capi.html#gaa7a2e823e23fdfba407ea5088c8d1709">Z3_del_constructor_list</a>(ctx, clist); }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03761">3761</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3761</span>{ <a class="code hl_function" href="group__capi.html#gaa7a2e823e23fdfba407ea5088c8d1709">Z3_del_constructor_list</a>(ctx, clist); }</div>
 <div class="ttc" id="agroup__capi_html_gaa7a2e823e23fdfba407ea5088c8d1709"><div class="ttname"><a href="group__capi.html#gaa7a2e823e23fdfba407ea5088c8d1709">Z3_del_constructor_list</a></div><div class="ttdeci">void Z3_API Z3_del_constructor_list(Z3_context c, Z3_constructor_list clist)</div><div class="ttdoc">Reclaim memory allocated for constructor list.</div></div>
 </div><!-- fragment -->
 </div>
@@ -188,15 +188,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03717">3717</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 3717</span>{ <span class="keywordflow">return</span> clist; }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l03762">3762</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 3762</span>{ <span class="keywordflow">return</span> clist; }</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 19 2026 05:10:48 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Jul 17 2026 02:38:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

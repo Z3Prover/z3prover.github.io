@@ -358,46 +358,56 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    }</div>
 </div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
-<div class="foldopen" id="foldopen00403" data-start="{" data-end="}">
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#af8ec440c88d2910dfab13b940fcdd7e0">  403</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_statistics.html">Statistics</a> <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#af8ec440c88d2910dfab13b940fcdd7e0">getStatistics</a>()</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>    {</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_statistics.html">Statistics</a>(getContext(), Native.optimizeGetStatistics(getContext().nCtx(), getNativeObject()));</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>    }</div>
+<div class="foldopen" id="foldopen00408" data-start="{" data-end="}">
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#a04e348c7f38b177e339166b7971a3336">  408</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#a04e348c7f38b177e339166b7971a3336">setInitialValue</a>(<a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;?&gt;</a> var, <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_expr.html">Expr&lt;?&gt;</a> value)</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    {</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>        getContext().checkContextMatch(var);</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>        getContext().checkContextMatch(value);</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>        Native.optimizeSetInitialValue(getContext().nCtx(), getNativeObject(),</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>            var.getNativeObject(), value.getNativeObject());</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>    }</div>
 </div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span> </div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_optimize.html">Optimize</a>(<a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx, <span class="keywordtype">long</span> obj) <span class="keywordflow">throws</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_z3_exception.html">Z3Exception</a></div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>    {</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>        super(ctx, obj);</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>    }</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>    Optimize(Context ctx) <span class="keywordflow">throws</span> Z3Exception</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    {</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>        super(ctx, Native.mkOptimize(ctx.nCtx()));</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    }</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>    @Override</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    <span class="keywordtype">void</span> incRef() {</div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>        Native.optimizeIncRef(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span> </div>
+<div class="foldopen" id="foldopen00419" data-start="{" data-end="}">
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno"><a class="line" href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#af8ec440c88d2910dfab13b940fcdd7e0">  419</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_statistics.html">Statistics</a> <a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#af8ec440c88d2910dfab13b940fcdd7e0">getStatistics</a>()</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    {</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_statistics.html">Statistics</a>(getContext(), Native.optimizeGetStatistics(getContext().nCtx(), getNativeObject()));</div>
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>    }</div>
+</div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    @Override</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    <span class="keywordtype">void</span> addToReferenceQueue() {</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        getContext().getReferenceQueue().storeReference(<span class="keyword">this</span>, OptimizeRef::new);</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>    }</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class </span>OptimizeRef <span class="keyword">extends</span> Z3ReferenceQueue.Reference&lt;Optimize&gt; {</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span> </div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>        <span class="keyword">private</span> OptimizeRef(Optimize referent, ReferenceQueue&lt;Z3Object&gt; q) {</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>            super(referent, q);</div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        }</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_optimize.html">Optimize</a>(<a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx, <span class="keywordtype">long</span> obj) <span class="keywordflow">throws</span> <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_z3_exception.html">Z3Exception</a></div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    {</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        super(ctx, obj);</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    }</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span> </div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    Optimize(Context ctx) <span class="keywordflow">throws</span> Z3Exception</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>    {</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        super(ctx, Native.mkOptimize(ctx.nCtx()));</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>    }</div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span> </div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        @Override</div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        <span class="keywordtype">void</span> decRef(Context ctx, <span class="keywordtype">long</span> z3Obj) {</div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>            Native.optimizeDecRef(ctx.nCtx(), z3Obj);</div>
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>        }</div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    }</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>}</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>    @Override</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>    <span class="keywordtype">void</span> incRef() {</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        Native.optimizeIncRef(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    }</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span> </div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    @Override</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>    <span class="keywordtype">void</span> addToReferenceQueue() {</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>        getContext().getReferenceQueue().storeReference(<span class="keyword">this</span>, OptimizeRef::new);</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    }</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span> </div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class </span>OptimizeRef <span class="keyword">extends</span> Z3ReferenceQueue.Reference&lt;Optimize&gt; {</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span> </div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        <span class="keyword">private</span> OptimizeRef(Optimize referent, ReferenceQueue&lt;Z3Object&gt; q) {</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>            super(referent, q);</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>        }</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span> </div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>        @Override</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>        <span class="keywordtype">void</span> decRef(Context ctx, <span class="keywordtype">long</span> z3Obj) {</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>            Native.optimizeDecRef(ctx.nCtx(), z3Obj);</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>        }</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    }</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>}</div>
 </div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_a_s_t_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_a_s_t.html">com.microsoft.z3.AST</a></div><div class="ttdef"><b>Definition</b> <a href="_a_s_t_8java_source.html#l00027">AST.java:28</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_a_s_t_vector_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_a_s_t_vector.html">com.microsoft.z3.ASTVector</a></div><div class="ttdef"><b>Definition</b> <a href="_a_s_t_vector_8java_source.html#l00025">ASTVector.java:25</a></div></div>
@@ -410,6 +420,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_model_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_model.html">com.microsoft.z3.Model</a></div><div class="ttdef"><b>Definition</b> <a href="_model_8java_source.html#l00028">Model.java:28</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html">com.microsoft.z3.Optimize</a></div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00030">Optimize.java:30</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html_a018ee86e93e5f5b79efff7fa3436c578"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#a018ee86e93e5f5b79efff7fa3436c578">com.microsoft.z3.Optimize.Check</a></div><div class="ttdeci">Status Check(Expr&lt; BoolSort &gt;... assumptions)</div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00200">Optimize.java:200</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html_a04e348c7f38b177e339166b7971a3336"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#a04e348c7f38b177e339166b7971a3336">com.microsoft.z3.Optimize.setInitialValue</a></div><div class="ttdeci">void setInitialValue(Expr&lt;?&gt; var, Expr&lt;?&gt; value)</div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00408">Optimize.java:408</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html_a1142fd0b1bab2db5dfe623abfb55945e"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#a1142fd0b1bab2db5dfe623abfb55945e">com.microsoft.z3.Optimize.getObjectives</a></div><div class="ttdeci">Expr&lt;?&gt;[] getObjectives()</div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00394">Optimize.java:394</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html_a1c3b29e8ffc7b299cbbaee39f4a29a3f"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#a1c3b29e8ffc7b299cbbaee39f4a29a3f">com.microsoft.z3.Optimize.Assert</a></div><div class="ttdeci">void Assert(Expr&lt; BoolSort &gt;... constraints)</div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00061">Optimize.java:61</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html_a3082fc35170478e419e0daa3df0b485a"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#a3082fc35170478e419e0daa3df0b485a">com.microsoft.z3.Optimize.AssertAndTrack</a></div><div class="ttdeci">void AssertAndTrack(Expr&lt; BoolSort &gt; constraint, Expr&lt; BoolSort &gt; p)</div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00091">Optimize.java:91</a></div></div>
@@ -428,7 +439,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html_ae692b3a009c75076842064acd32c2fa0"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#ae692b3a009c75076842064acd32c2fa0">com.microsoft.z3.Optimize.fromFile</a></div><div class="ttdeci">void fromFile(String file)</div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00369">Optimize.java:369</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html_aea51f78eb769aae6a9f3a73e4547f95d"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#aea51f78eb769aae6a9f3a73e4547f95d">com.microsoft.z3.Optimize.getReasonUnknown</a></div><div class="ttdeci">String getReasonUnknown()</div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00351">Optimize.java:351</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html_af80a558a3d823cc5fb65285191593486"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#af80a558a3d823cc5fb65285191593486">com.microsoft.z3.Optimize.AssertSoft</a></div><div class="ttdeci">Handle&lt;?&gt; AssertSoft(Expr&lt; BoolSort &gt; constraint, String weight, String group)</div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00188">Optimize.java:188</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html_af8ec440c88d2910dfab13b940fcdd7e0"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#af8ec440c88d2910dfab13b940fcdd7e0">com.microsoft.z3.Optimize.getStatistics</a></div><div class="ttdeci">Statistics getStatistics()</div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00403">Optimize.java:403</a></div></div>
+<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_optimize_html_af8ec440c88d2910dfab13b940fcdd7e0"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_optimize.html#af8ec440c88d2910dfab13b940fcdd7e0">com.microsoft.z3.Optimize.getStatistics</a></div><div class="ttdeci">Statistics getStatistics()</div><div class="ttdef"><b>Definition</b> <a href="_optimize_8java_source.html#l00419">Optimize.java:419</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_param_descrs_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_param_descrs.html">com.microsoft.z3.ParamDescrs</a></div><div class="ttdef"><b>Definition</b> <a href="_param_descrs_8java_source.html#l00027">ParamDescrs.java:27</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_params_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_params.html">com.microsoft.z3.Params</a></div><div class="ttdef"><b>Definition</b> <a href="_params_8java_source.html#l00026">Params.java:26</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_sort_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_sort.html">com.microsoft.z3.Sort</a></div><div class="ttdef"><b>Definition</b> <a href="_sort_8java_source.html#l00026">Sort.java:27</a></div></div>
@@ -445,11 +456,11 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="ttc" id="agroup__capi_html_ga6c2de6ea89b244e37c3ffb17a9ea2a89"><div class="ttname"><a href="group__capi.html#ga6c2de6ea89b244e37c3ffb17a9ea2a89">Z3_lbool</a></div><div class="ttdeci">Z3_lbool</div><div class="ttdoc">Lifted Boolean type: false, undefined, true.</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l00057">z3_api.h:58</a></div></div>
 <div class="ttc" id="agroup__capi_html_gga6c2de6ea89b244e37c3ffb17a9ea2a89a49e51eb02c28801719ea866fb4b08f64"><div class="ttname"><a href="group__capi.html#gga6c2de6ea89b244e37c3ffb17a9ea2a89a49e51eb02c28801719ea866fb4b08f64">Z3_L_TRUE</a></div><div class="ttdeci">@ Z3_L_TRUE</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l00062">z3_api.h:61</a></div></div>
 <div class="ttc" id="agroup__capi_html_gga6c2de6ea89b244e37c3ffb17a9ea2a89a84a8e525044a54b688a285934b6056ba"><div class="ttname"><a href="group__capi.html#gga6c2de6ea89b244e37c3ffb17a9ea2a89a84a8e525044a54b688a285934b6056ba">Z3_L_FALSE</a></div><div class="ttdeci">@ Z3_L_FALSE</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l00059">z3_api.h:59</a></div></div>
-<div class="ttc" id="anamespacez3py_html_a2fb40ff76afdb7265871a7d4613060f0"><div class="ttname"><a href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">z3py.String</a></div><div class="ttdeci">String(name, ctx=None)</div><div class="ttdef"><b>Definition</b> <a href="z3py_8py_source.html#l11344">z3py.py:11344</a></div></div>
+<div class="ttc" id="anamespacez3py_html_a2fb40ff76afdb7265871a7d4613060f0"><div class="ttname"><a href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">z3py.String</a></div><div class="ttdeci">String(name, ctx=None)</div><div class="ttdef"><b>Definition</b> <a href="z3py_8py_source.html#l11743">z3py.py:11743</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 19 2026 05:10:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Jul 17 2026 02:38:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

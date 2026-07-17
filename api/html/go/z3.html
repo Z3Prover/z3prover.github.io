@@ -61,6 +61,24 @@
         <div class="type-section">
             <h3>type ASTVector</h3>
             <p class="comment">ASTVector represents a vector of Z3 ASTs.</p>
+            <div class="method-list">
+                <h4>Methods:</h4>
+                <div class="api-item">
+                    <h4>Get</h4>
+                    <div class="signature">func (v *ASTVector) Get(i uint) *Expr</div>
+                    <p class="comment">Get returns the i-th AST in the vector.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Size</h4>
+                    <div class="signature">func (v *ASTVector) Size() uint</div>
+                    <p class="comment">Size returns the number of ASTs in the vector.</p>
+                </div>
+                <div class="api-item">
+                    <h4>String</h4>
+                    <div class="signature">func (v *ASTVector) String() string</div>
+                    <p class="comment">String returns the string representation of the AST vector.</p>
+                </div>
+            </div>
         </div>
         <div class="type-section">
             <h3>type Config</h3>
@@ -80,6 +98,11 @@
             <div class="method-list">
                 <h4>Methods:</h4>
                 <div class="api-item">
+                    <h4>AddRecDef</h4>
+                    <div class="signature">func (c *Context) AddRecDef(f *FuncDecl, args []*Expr, body *Expr)</div>
+                    <p class="comment">AddRecDef adds the definition (body) for a recursive function created with MkRecFuncDecl.</p>
+                </div>
+                <div class="api-item">
                     <h4>MkAnd</h4>
                     <div class="signature">func (c *Context) MkAnd(exprs ...*Expr) *Expr</div>
                     <p class="comment">Boolean operations MkAnd creates a conjunction.</p>
@@ -88,6 +111,16 @@
                     <h4>MkApp</h4>
                     <div class="signature">func (c *Context) MkApp(decl *FuncDecl, args ...*Expr) *Expr</div>
                     <p class="comment">MkApp creates a function application.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkAtLeast</h4>
+                    <div class="signature">func (c *Context) MkAtLeast(args []*Expr, k uint) *Expr</div>
+                    <p class="comment">MkAtLeast encodes p1 + p2 + ... + pn >= k.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkAtMost</h4>
+                    <div class="signature">func (c *Context) MkAtMost(args []*Expr, k uint) *Expr</div>
+                    <p class="comment">Pseudo-Boolean / cardinality constraints MkAtMost encodes p1 + p2 + ... + pn <= k.</p>
                 </div>
                 <div class="api-item">
                     <h4>MkBool</h4>
@@ -185,6 +218,21 @@
                     <p class="comment">MkOr creates a disjunction.</p>
                 </div>
                 <div class="api-item">
+                    <h4>MkPBEq</h4>
+                    <div class="signature">func (c *Context) MkPBEq(args []*Expr, coeffs []int, k int) *Expr</div>
+                    <p class="comment">MkPBEq encodes k1*p1 + k2*p2 + ... + kn*pn = k.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkPBGe</h4>
+                    <div class="signature">func (c *Context) MkPBGe(args []*Expr, coeffs []int, k int) *Expr</div>
+                    <p class="comment">MkPBGe encodes k1*p1 + k2*p2 + ... + kn*pn >= k.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkPBLe</h4>
+                    <div class="signature">func (c *Context) MkPBLe(args []*Expr, coeffs []int, k int) *Expr</div>
+                    <p class="comment">MkPBLe encodes k1*p1 + k2*p2 + ... + kn*pn <= k.</p>
+                </div>
+                <div class="api-item">
                     <h4>MkQuantifier</h4>
                     <div class="signature">func (c *Context) MkQuantifier(isForall bool, weight int, sorts []*Sort, names []*Symbol, body *Expr, patterns []*Pattern) *Quantifier</div>
                     <p class="comment">MkQuantifier creates a quantifier with patterns</p>
@@ -193,6 +241,11 @@
                     <h4>MkQuantifierConst</h4>
                     <div class="signature">func (c *Context) MkQuantifierConst(isForall bool, weight int, bound []*Expr, body *Expr, patterns []*Pattern) *Quantifier</div>
                     <p class="comment">MkQuantifierConst creates a quantifier using constant bound variables</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkRecFuncDecl</h4>
+                    <div class="signature">func (c *Context) MkRecFuncDecl(name *Symbol, domain []*Sort, range_ *Sort) *FuncDecl</div>
+                    <p class="comment">MkRecFuncDecl creates a recursive function declaration. After creating, use AddRecDef to provide the function body.</p>
                 </div>
                 <div class="api-item">
                     <h4>MkStringSymbol</h4>
@@ -227,14 +280,29 @@
             <div class="method-list">
                 <h4>Methods:</h4>
                 <div class="api-item">
+                    <h4>Arg</h4>
+                    <div class="signature">func (e *Expr) Arg(i uint) *Expr</div>
+                    <p class="comment">Arg returns the i-th argument of an application expression.</p>
+                </div>
+                <div class="api-item">
                     <h4>Equal</h4>
                     <div class="signature">func (e *Expr) Equal(other *Expr) bool</div>
                     <p class="comment">Equal checks if two expressions are equal.</p>
                 </div>
                 <div class="api-item">
+                    <h4>GetDecl</h4>
+                    <div class="signature">func (e *Expr) GetDecl() *FuncDecl</div>
+                    <p class="comment">GetDecl returns the function declaration of an application expression.</p>
+                </div>
+                <div class="api-item">
                     <h4>GetSort</h4>
                     <div class="signature">func (e *Expr) GetSort() *Sort</div>
                     <p class="comment">GetSort returns the sort of the expression.</p>
+                </div>
+                <div class="api-item">
+                    <h4>NumArgs</h4>
+                    <div class="signature">func (e *Expr) NumArgs() uint</div>
+                    <p class="comment">NumArgs returns the number of arguments of an application expression.</p>
                 </div>
                 <div class="api-item">
                     <h4>Simplify</h4>
@@ -245,6 +313,21 @@
                     <h4>String</h4>
                     <div class="signature">func (e *Expr) String() string</div>
                     <p class="comment">String returns the string representation of the expression.</p>
+                </div>
+                <div class="api-item">
+                    <h4>Substitute</h4>
+                    <div class="signature">func (e *Expr) Substitute(from, to []*Expr) *Expr</div>
+                    <p class="comment">Substitute replaces every occurrence of from[i] in the expression with to[i]. The from and to slices must have the same length.</p>
+                </div>
+                <div class="api-item">
+                    <h4>SubstituteFuns</h4>
+                    <div class="signature">func (e *Expr) SubstituteFuns(from []*FuncDecl, to []*Expr) *Expr</div>
+                    <p class="comment">SubstituteFuns replaces every occurrence of from[i] applied to arguments with to[i] in the expression. The from and to slices must have the same length.</p>
+                </div>
+                <div class="api-item">
+                    <h4>SubstituteVars</h4>
+                    <div class="signature">func (e *Expr) SubstituteVars(to []*Expr) *Expr</div>
+                    <p class="comment">SubstituteVars replaces free variables in the expression with the expressions in to. Variable with de-Bruijn index i is replaced with to[i].</p>
                 </div>
             </div>
         </div>
@@ -429,6 +512,11 @@
         <h2>Functions</h2>
         <div class="function-section">
             <div class="api-item">
+                <h4>GetGlobalParam</h4>
+                <div class="signature">func GetGlobalParam(id string) (string, bool)</div>
+                <p class="comment">GetGlobalParam retrieves the value of a global Z3 parameter. Returns the value and true if the parameter exists, or empty string and false otherwise.</p>
+            </div>
+            <div class="api-item">
                 <h4>NewConfig</h4>
                 <div class="signature">func NewConfig() *Config</div>
                 <p class="comment">NewConfig creates a new Z3 configuration.</p>
@@ -442,6 +530,16 @@
                 <h4>NewContextWithConfig</h4>
                 <div class="signature">func NewContextWithConfig(cfg *Config) *Context</div>
                 <p class="comment">NewContextWithConfig creates a new Z3 context with the given configuration.</p>
+            </div>
+            <div class="api-item">
+                <h4>ResetAllGlobalParams</h4>
+                <div class="signature">func ResetAllGlobalParams()</div>
+                <p class="comment">ResetAllGlobalParams resets all global Z3 parameters to their default values.</p>
+            </div>
+            <div class="api-item">
+                <h4>SetGlobalParam</h4>
+                <div class="signature">func SetGlobalParam(id, value string)</div>
+                <p class="comment">SetGlobalParam sets a global Z3 parameter.</p>
             </div>
         </div>
         <div class="nav" style="margin-top: 3rem;">

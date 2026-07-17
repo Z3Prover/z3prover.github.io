@@ -10,8 +10,9 @@ var searchData=
   ['realsort_2ejava_7',['RealSort.java',['../_real_sort_8java.html',1,'']]],
   ['reexpr_2ecs_8',['ReExpr.cs',['../_re_expr_8cs.html',1,'']]],
   ['reexpr_2ejava_9',['ReExpr.java',['../_re_expr_8java.html',1,'']]],
-  ['relationsort_2ecs_10',['RelationSort.cs',['../_relation_sort_8cs.html',1,'']]],
-  ['relationsort_2ejava_11',['RelationSort.java',['../_relation_sort_8java.html',1,'']]],
-  ['resort_2ecs_12',['ReSort.cs',['../_re_sort_8cs.html',1,'']]],
-  ['resort_2ejava_13',['ReSort.java',['../_re_sort_8java.html',1,'']]]
+  ['relations_2ego_10',['relations.go',['../relations_8go.html',1,'']]],
+  ['relationsort_2ecs_11',['RelationSort.cs',['../_relation_sort_8cs.html',1,'']]],
+  ['relationsort_2ejava_12',['RelationSort.java',['../_relation_sort_8java.html',1,'']]],
+  ['resort_2ecs_13',['ReSort.cs',['../_re_sort_8cs.html',1,'']]],
+  ['resort_2ejava_14',['ReSort.java',['../_re_sort_8java.html',1,'']]]
 ];

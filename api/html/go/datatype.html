@@ -100,6 +100,11 @@
                     <p class="comment">List sorts (special case of datatypes) MkListSort creates a list sort with the given element sort.</p>
                 </div>
                 <div class="api-item">
+                    <h4>MkPolymorphicDatatypeSort</h4>
+                    <div class="signature">func (c *Context) MkPolymorphicDatatypeSort(name string, typeParams []*Sort, constructors []*Constructor) *Sort</div>
+                    <p class="comment">MkPolymorphicDatatypeSort creates a polymorphic datatype sort with explicit type parameters. typeParams should be sorts created with MkTypeVariable. Self-recursive field sorts should be passed as nil; use the fieldSortRefs parameter in MkConstructor to indicate the recursive reference by index.</p>
+                </div>
+                <div class="api-item">
                     <h4>MkTupleSort</h4>
                     <div class="signature">func (c *Context) MkTupleSort(name string, fieldNames []string, fieldSorts []*Sort) (*Sort, *FuncDecl, []*FuncDecl)</div>
                     <p class="comment">Tuple sorts (special case of datatypes) MkTupleSort creates a tuple sort with the given field sorts.</p>

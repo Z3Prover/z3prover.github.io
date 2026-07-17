@@ -109,6 +109,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a82c01b9ad7cb0908da8ffca12fc52df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b7717a243ec056a2f089a890e3f695c" id="r_a0b7717a243ec056a2f089a890e3f695c"><td class="memItemLeft" align="right" valign="top">BigInteger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_rat_num.html#a0b7717a243ec056a2f089a890e3f695c">getBigIntDenominator</a> ()</td></tr>
 <tr class="separator:a0b7717a243ec056a2f089a890e3f695c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50305ba65120d112e72acfcbc3c19071" id="r_a50305ba65120d112e72acfcbc3c19071"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_rat_num.html#a50305ba65120d112e72acfcbc3c19071">getSmall</a> ()</td></tr>
+<tr class="separator:a50305ba65120d112e72acfcbc3c19071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d691219a4c64bf00ddcb342e76c512" id="r_aa6d691219a4c64bf00ddcb342e76c512"><td class="memItemLeft" align="right" valign="top">long[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_rat_num.html#aa6d691219a4c64bf00ddcb342e76c512">getRationalInt64</a> ()</td></tr>
+<tr class="separator:aa6d691219a4c64bf00ddcb342e76c512"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ae11314fea14ed272d982fd8a1fd2c" id="r_a83ae11314fea14ed272d982fd8a1fd2c"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_rat_num.html#a83ae11314fea14ed272d982fd8a1fd2c">toDecimalString</a> (int precision)</td></tr>
 <tr class="separator:a83ae11314fea14ed272d982fd8a1fd2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad146fa8579a5f8a876c4688cc5a68520" id="r_ad146fa8579a5f8a876c4688cc5a68520"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1microsoft_1_1z3_1_1_rat_num.html#ad146fa8579a5f8a876c4688cc5a68520">toString</a> ()</td></tr>
@@ -253,6 +257,76 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa6d691219a4c64bf00ddcb342e76c512" name="aa6d691219a4c64bf00ddcb342e76c512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6d691219a4c64bf00ddcb342e76c512">&#9670;&#160;</a></span>getRationalInt64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long[] getRationalInt64 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the numerator and denominator as 64-bit integers. Returns null if the value does not fit in 64-bit integers. </p><dl class="section return"><dt>Returns</dt><dd>a two-element array [numerator, denominator], or null </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_rat_num_8java_source.html#l00082">82</a> of file <a class="el" href="_rat_num_8java_source.html">RatNum.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>    {</div>
+<div class="line"><span class="lineno">   84</span>        Native.LongPtr num = <span class="keyword">new</span> Native.LongPtr();</div>
+<div class="line"><span class="lineno">   85</span>        Native.LongPtr den = <span class="keyword">new</span> Native.LongPtr();</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">if</span> (!Native.getNumeralRationalInt64(getContext().nCtx(), getNativeObject(), num, den))</div>
+<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">long</span>[] { num.value, den.value };</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a50305ba65120d112e72acfcbc3c19071" name="a50305ba65120d112e72acfcbc3c19071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50305ba65120d112e72acfcbc3c19071">&#9670;&#160;</a></span>getSmall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long[] getSmall </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieve the numerator and denominator as 64-bit integers. Throws if the value does not fit in 64-bit integers. </p><dl class="section return"><dt>Returns</dt><dd>a two-element array [numerator, denominator] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_rat_num_8java_source.html#l00068">68</a> of file <a class="el" href="_rat_num_8java_source.html">RatNum.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        Native.LongPtr num = <span class="keyword">new</span> Native.LongPtr();</div>
+<div class="line"><span class="lineno">   71</span>        Native.LongPtr den = <span class="keyword">new</span> Native.LongPtr();</div>
+<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">if</span> (!Native.getNumeralSmall(getContext().nCtx(), getNativeObject(), num, den))</div>
+<div class="line"><span class="lineno">   73</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> Z3Exception(<span class="stringliteral">&quot;Numeral does not fit in int64&quot;</span>);</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">long</span>[] { num.value, den.value };</div>
+<div class="line"><span class="lineno">   75</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a83ae11314fea14ed272d982fd8a1fd2c" name="a83ae11314fea14ed272d982fd8a1fd2c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83ae11314fea14ed272d982fd8a1fd2c">&#9670;&#160;</a></span>toDecimalString()</h2>
 
@@ -278,11 +352,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Returns a string representation in decimal notation. Remarks: The result has at most <code class="JavaDocCode">precision</code> decimal places. </p>
 
-<p class="definition">Definition at line <a class="el" href="_rat_num_8java_source.html#l00068">68</a> of file <a class="el" href="_rat_num_8java_source.html">RatNum.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
-<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> Native.getNumeralDecimalString(getContext().nCtx(), getNativeObject(),</div>
-<div class="line"><span class="lineno">   71</span>                precision);</div>
-<div class="line"><span class="lineno">   72</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_rat_num_8java_source.html#l00096">96</a> of file <a class="el" href="_rat_num_8java_source.html">RatNum.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>    {</div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">return</span> Native.getNumeralDecimalString(getContext().nCtx(), getNativeObject(),</div>
+<div class="line"><span class="lineno">   99</span>                precision);</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -310,17 +384,17 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Returns a string representation of the numeral. </p>
 
-<p class="definition">Definition at line <a class="el" href="_rat_num_8java_source.html#l00078">78</a> of file <a class="el" href="_rat_num_8java_source.html">RatNum.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>                             {</div>
-<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">return</span> Native.getNumeralString(getContext().nCtx(), getNativeObject());</div>
-<div class="line"><span class="lineno">   80</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_rat_num_8java_source.html#l00106">106</a> of file <a class="el" href="_rat_num_8java_source.html">RatNum.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>                             {</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">return</span> Native.getNumeralString(getContext().nCtx(), getNativeObject());</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 19 2026 05:10:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Jul 17 2026 02:38:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

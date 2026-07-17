@@ -58,6 +58,16 @@
                 <p class="comment">MkFPEq creates a floating-point equality.</p>
             </div>
             <div class="api-item">
+                <h4>MkFPFMA</h4>
+                <div class="signature">func (c *Context) MkFPFMA(rm, t1, t2, t3 *Expr) *Expr</div>
+                <p class="comment">MkFPFMA creates a floating-point fused multiply-add: round((t1 * t2) + t3, rm).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPFP</h4>
+                <div class="signature">func (c *Context) MkFPFP(sgn, exp, sig *Expr) *Expr</div>
+                <p class="comment">MkFPFP creates a floating-point number from a sign bit (1-bit BV), exponent BV, and significand BV.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkFPGE</h4>
                 <div class="signature">func (c *Context) MkFPGE(lhs, rhs *Expr) *Expr</div>
                 <p class="comment">MkFPGE creates a floating-point greater-than-or-equal.</p>
@@ -83,6 +93,26 @@
                 <p class="comment">MkFPIsNaN creates a predicate checking if a floating-point number is NaN.</p>
             </div>
             <div class="api-item">
+                <h4>MkFPIsNegative</h4>
+                <div class="signature">func (c *Context) MkFPIsNegative(expr *Expr) *Expr</div>
+                <p class="comment">MkFPIsNegative creates a predicate checking if a floating-point number is negative.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPIsNormal</h4>
+                <div class="signature">func (c *Context) MkFPIsNormal(expr *Expr) *Expr</div>
+                <p class="comment">MkFPIsNormal creates a predicate checking if a floating-point number is normal.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPIsPositive</h4>
+                <div class="signature">func (c *Context) MkFPIsPositive(expr *Expr) *Expr</div>
+                <p class="comment">MkFPIsPositive creates a predicate checking if a floating-point number is positive.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPIsSubnormal</h4>
+                <div class="signature">func (c *Context) MkFPIsSubnormal(expr *Expr) *Expr</div>
+                <p class="comment">MkFPIsSubnormal creates a predicate checking if a floating-point number is subnormal.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkFPIsZero</h4>
                 <div class="signature">func (c *Context) MkFPIsZero(expr *Expr) *Expr</div>
                 <p class="comment">MkFPIsZero creates a predicate checking if a floating-point number is zero.</p>
@@ -96,6 +126,16 @@
                 <h4>MkFPLT</h4>
                 <div class="signature">func (c *Context) MkFPLT(lhs, rhs *Expr) *Expr</div>
                 <p class="comment">MkFPLT creates a floating-point less-than.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPMax</h4>
+                <div class="signature">func (c *Context) MkFPMax(t1, t2 *Expr) *Expr</div>
+                <p class="comment">MkFPMax creates the maximum of two floating-point values.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPMin</h4>
+                <div class="signature">func (c *Context) MkFPMin(t1, t2 *Expr) *Expr</div>
+                <p class="comment">MkFPMin creates the minimum of two floating-point values.</p>
             </div>
             <div class="api-item">
                 <h4>MkFPMul</h4>
@@ -116,6 +156,66 @@
                 <h4>MkFPNumeral</h4>
                 <div class="signature">func (c *Context) MkFPNumeral(value string, sort *Sort) *Expr</div>
                 <p class="comment">MkFPNumeral creates a floating-point numeral from a string.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPNumeralDouble</h4>
+                <div class="signature">func (c *Context) MkFPNumeralDouble(v float64, sort *Sort) *Expr</div>
+                <p class="comment">MkFPNumeralDouble creates a floating-point numeral from a float64 value.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPNumeralFloat</h4>
+                <div class="signature">func (c *Context) MkFPNumeralFloat(v float32, sort *Sort) *Expr</div>
+                <p class="comment">MkFPNumeralFloat creates a floating-point numeral from a float32 value.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPNumeralInt</h4>
+                <div class="signature">func (c *Context) MkFPNumeralInt(v int, sort *Sort) *Expr</div>
+                <p class="comment">MkFPNumeralInt creates a floating-point numeral from a signed integer.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPNumeralInt64Uint64</h4>
+                <div class="signature">func (c *Context) MkFPNumeralInt64Uint64(sgn bool, exp int64, sig uint64, sort *Sort) *Expr</div>
+                <p class="comment">MkFPNumeralInt64Uint64 creates a floating-point numeral from a sign, int64 exponent, and uint64 significand.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPNumeralIntUint</h4>
+                <div class="signature">func (c *Context) MkFPNumeralIntUint(sgn bool, exp int, sig uint, sort *Sort) *Expr</div>
+                <p class="comment">MkFPNumeralIntUint creates a floating-point numeral from a sign, signed exponent, and unsigned significand.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPRNA</h4>
+                <div class="signature">func (c *Context) MkFPRNA() *Expr</div>
+                <p class="comment">MkFPRNA creates the round-nearest-ties-to-away rounding mode.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPRNE</h4>
+                <div class="signature">func (c *Context) MkFPRNE() *Expr</div>
+                <p class="comment">MkFPRNE creates the round-nearest-ties-to-even rounding mode.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPRTN</h4>
+                <div class="signature">func (c *Context) MkFPRTN() *Expr</div>
+                <p class="comment">MkFPRTN creates the round-toward-negative rounding mode.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPRTP</h4>
+                <div class="signature">func (c *Context) MkFPRTP() *Expr</div>
+                <p class="comment">MkFPRTP creates the round-toward-positive rounding mode.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPRTZ</h4>
+                <div class="signature">func (c *Context) MkFPRTZ() *Expr</div>
+                <p class="comment">MkFPRTZ creates the round-toward-zero rounding mode.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPRem</h4>
+                <div class="signature">func (c *Context) MkFPRem(t1, t2 *Expr) *Expr</div>
+                <p class="comment">MkFPRem creates a floating-point remainder.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPRoundToIntegral</h4>
+                <div class="signature">func (c *Context) MkFPRoundToIntegral(rm, t *Expr) *Expr</div>
+                <p class="comment">MkFPRoundToIntegral creates a floating-point round-to-integral operation.</p>
             </div>
             <div class="api-item">
                 <h4>MkFPRoundingModeSort</h4>
@@ -156,6 +256,51 @@
                 <h4>MkFPSub</h4>
                 <div class="signature">func (c *Context) MkFPSub(rm, lhs, rhs *Expr) *Expr</div>
                 <p class="comment">MkFPSub creates a floating-point subtraction.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPToFPBV</h4>
+                <div class="signature">func (c *Context) MkFPToFPBV(bv *Expr, sort *Sort) *Expr</div>
+                <p class="comment">MkFPToFPBV converts a bit-vector to a floating-point number (reinterpretation of IEEE 754 bits).</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPToFPFloat</h4>
+                <div class="signature">func (c *Context) MkFPToFPFloat(rm, t *Expr, sort *Sort) *Expr</div>
+                <p class="comment">MkFPToFPFloat converts a floating-point number to another floating-point sort with rounding.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPToFPReal</h4>
+                <div class="signature">func (c *Context) MkFPToFPReal(rm, t *Expr, sort *Sort) *Expr</div>
+                <p class="comment">MkFPToFPReal converts a real number to a floating-point number with rounding.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPToFPSigned</h4>
+                <div class="signature">func (c *Context) MkFPToFPSigned(rm, t *Expr, sort *Sort) *Expr</div>
+                <p class="comment">MkFPToFPSigned converts a signed bit-vector to a floating-point number with rounding.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPToFPUnsigned</h4>
+                <div class="signature">func (c *Context) MkFPToFPUnsigned(rm, t *Expr, sort *Sort) *Expr</div>
+                <p class="comment">MkFPToFPUnsigned converts an unsigned bit-vector to a floating-point number with rounding.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPToIEEEBV</h4>
+                <div class="signature">func (c *Context) MkFPToIEEEBV(expr *Expr) *Expr</div>
+                <p class="comment">MkFPToIEEEBV converts a floating-point number to its IEEE 754 bit-vector representation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPToReal</h4>
+                <div class="signature">func (c *Context) MkFPToReal(expr *Expr) *Expr</div>
+                <p class="comment">MkFPToReal converts a floating-point number to a real number.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPToSBV</h4>
+                <div class="signature">func (c *Context) MkFPToSBV(rm, t *Expr, sz uint) *Expr</div>
+                <p class="comment">MkFPToSBV converts a floating-point number to a signed bit-vector with rounding.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkFPToUBV</h4>
+                <div class="signature">func (c *Context) MkFPToUBV(rm, t *Expr, sz uint) *Expr</div>
+                <p class="comment">MkFPToUBV converts a floating-point number to an unsigned bit-vector with rounding.</p>
             </div>
             <div class="api-item">
                 <h4>MkFPZero</h4>

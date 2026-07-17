@@ -144,18 +144,22 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
 </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_enum_sort.html">EnumSort</a>(<a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx, <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_symbol.html">Symbol</a> name, <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_symbol.html">Symbol</a>[] enumNames)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_enum_sort.html">EnumSort</a>(<a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_context.html">Context</a> ctx, <span class="keywordtype">long</span> obj)</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        super(ctx, Native.mkEnumerationSort(ctx.<a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_context.html#a4f789d47d93c150a6e12a4d54ff1597a">nCtx</a>(),</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                name.getNativeObject(), enumNames.length,</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <a class="code hl_class" href="classcom_1_1microsoft_1_1z3_1_1_symbol.html">Symbol</a>.<a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_z3_object.html#a51e3e516587e26ba64869b356aac873f">arrayToNative</a>(enumNames),</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                <span class="keyword">new</span> <span class="keywordtype">long</span>[enumNames.length], <span class="keyword">new</span> <span class="keywordtype">long</span>[enumNames.length]));</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        super(ctx, obj);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    EnumSort(Context ctx, Symbol name, Symbol[] enumNames)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        super(ctx, Native.mkEnumerationSort(ctx.nCtx(),</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                name.getNativeObject(), enumNames.length,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                Symbol.arrayToNative(enumNames),</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                <span class="keyword">new</span> <span class="keywordtype">long</span>[enumNames.length], <span class="keyword">new</span> <span class="keywordtype">long</span>[enumNames.length]));</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>};</div>
 </div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_bool_sort_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_bool_sort.html">com.microsoft.z3.BoolSort</a></div><div class="ttdef"><b>Definition</b> <a href="_bool_sort_8java_source.html#l00023">BoolSort.java:24</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_context_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_context.html">com.microsoft.z3.Context</a></div><div class="ttdef"><b>Definition</b> <a href="_context_8java_source.html#l00036">Context.java:36</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_context_html_a4f789d47d93c150a6e12a4d54ff1597a"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_context.html#a4f789d47d93c150a6e12a4d54ff1597a">com.microsoft.z3.Context.nCtx</a></div><div class="ttdeci">long nCtx()</div><div class="ttdef"><b>Definition</b> <a href="_context_8java_source.html#l04528">Context.java:4528</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_enum_sort_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_enum_sort.html">com.microsoft.z3.EnumSort</a></div><div class="ttdef"><b>Definition</b> <a href="_enum_sort_8java_source.html#l00024">EnumSort.java:25</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_enum_sort_html_a12c1b8022663c1c096010a7dc1b2d263"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_enum_sort.html#a12c1b8022663c1c096010a7dc1b2d263">com.microsoft.z3.EnumSort.getConst</a></div><div class="ttdeci">Expr&lt; EnumSort&lt; R &gt; &gt; getConst(int inx)</div><div class="ttdef"><b>Definition</b> <a href="_enum_sort_8java_source.html#l00067">EnumSort.java:67</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_enum_sort_html_a2cdc98f9a71e4eb76cfc558fde0cadb8"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_enum_sort.html#a2cdc98f9a71e4eb76cfc558fde0cadb8">com.microsoft.z3.EnumSort.getConstDecl</a></div><div class="ttdeci">FuncDecl&lt; EnumSort&lt; R &gt; &gt; getConstDecl(int inx)</div><div class="ttdef"><b>Definition</b> <a href="_enum_sort_8java_source.html#l00043">EnumSort.java:43</a></div></div>
@@ -165,12 +169,10 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_expr_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_expr.html">com.microsoft.z3.Expr</a></div><div class="ttdef"><b>Definition</b> <a href="_expr_8java_source.html#l00034">Expr.java:35</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_func_decl_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_func_decl.html">com.microsoft.z3.FuncDecl</a></div><div class="ttdef"><b>Definition</b> <a href="_func_decl_8java_source.html#l00027">FuncDecl.java:28</a></div></div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_sort_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_sort.html">com.microsoft.z3.Sort</a></div><div class="ttdef"><b>Definition</b> <a href="_sort_8java_source.html#l00026">Sort.java:27</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_symbol_html"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_symbol.html">com.microsoft.z3.Symbol</a></div><div class="ttdef"><b>Definition</b> <a href="_symbol_8java_source.html#l00025">Symbol.java:25</a></div></div>
-<div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_z3_object_html_a51e3e516587e26ba64869b356aac873f"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_z3_object.html#a51e3e516587e26ba64869b356aac873f">com.microsoft.z3.Z3Object.arrayToNative</a></div><div class="ttdeci">static long[] arrayToNative(Z3Object[] a)</div><div class="ttdef"><b>Definition</b> <a href="_z3_object_8java_source.html#l00073">Z3Object.java:73</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 19 2026 05:10:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Jul 17 2026 02:38:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

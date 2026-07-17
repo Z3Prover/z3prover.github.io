@@ -477,18 +477,29 @@ Properties</h2></td></tr>
 
 <p>Disposes of the context. </p>
 
-<p class="definition">Definition at line <a class="el" href="_native_context_8cs_source.html#l01371">1371</a> of file <a class="el" href="_native_context_8cs_source.html">NativeContext.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1372</span>        {</div>
-<div class="line"><span class="lineno"> 1373</span>            <span class="keywordflow">if</span> (m_ctx != IntPtr.Zero)</div>
-<div class="line"><span class="lineno"> 1374</span>            {</div>
-<div class="line"><span class="lineno"> 1375</span>                m_n_err_handler = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno"> 1376</span>                IntPtr ctx = m_ctx;</div>
-<div class="line"><span class="lineno"> 1377</span>                m_ctx = IntPtr.Zero;</div>
-<div class="line"><span class="lineno"> 1378</span>                Native.Z3_del_context(ctx);</div>
-<div class="line"><span class="lineno"> 1379</span>            }</div>
-<div class="line"><span class="lineno"> 1380</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno"> 1381</span>                GC.ReRegisterForFinalize(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno"> 1382</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_native_context_8cs_source.html#l01384">1384</a> of file <a class="el" href="_native_context_8cs_source.html">NativeContext.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1385</span>        {</div>
+<div class="line"><span class="lineno"> 1386</span>            IntPtr ctx = System.Threading.Interlocked.Exchange(ref m_ctx, IntPtr.Zero);</div>
+<div class="line"><span class="lineno"> 1387</span>            <span class="keywordflow">if</span> (ctx != IntPtr.Zero)</div>
+<div class="line"><span class="lineno"> 1388</span>            {</div>
+<div class="line"><span class="lineno"> 1389</span>                <span class="comment">// Suppress the finalizer before performing cleanup so that it cannot</span></div>
+<div class="line"><span class="lineno"> 1390</span>                <span class="comment">// run concurrently or redundantly if cleanup raises an exception.</span></div>
+<div class="line"><span class="lineno"> 1391</span>                GC.SuppressFinalize(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno"> 1392</span>                <span class="comment">// Keep a local reference to the error handler delegate to ensure it stays</span></div>
+<div class="line"><span class="lineno"> 1393</span>                <span class="comment">// alive throughout Z3_del_context. Setting m_n_err_handler = null releases</span></div>
+<div class="line"><span class="lineno"> 1394</span>                <span class="comment">// the field reference; without the local variable the GC could collect the</span></div>
+<div class="line"><span class="lineno"> 1395</span>                <span class="comment">// delegate before the native destructor finishes using the handler.</span></div>
+<div class="line"><span class="lineno"> 1396</span>                var errHandler = m_n_err_handler;</div>
+<div class="line"><span class="lineno"> 1397</span>                m_n_err_handler = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno"> 1398</span>                Native.Z3_del_context(ctx);</div>
+<div class="line"><span class="lineno"> 1399</span>                GC.KeepAlive(errHandler);</div>
+<div class="line"><span class="lineno"> 1400</span>                <span class="keywordflow">if</span> (m_memPressureAdded)</div>
+<div class="line"><span class="lineno"> 1401</span>                {</div>
+<div class="line"><span class="lineno"> 1402</span>                    GC.RemoveMemoryPressure(NativeMemoryPressureEstimate);</div>
+<div class="line"><span class="lineno"> 1403</span>                    m_memPressureAdded = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1404</span>                }</div>
+<div class="line"><span class="lineno"> 1405</span>            }</div>
+<div class="line"><span class="lineno"> 1406</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -524,11 +535,11 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_native_context_8cs_source.html#l01358">1358</a> of file <a class="el" href="_native_context_8cs_source.html">NativeContext.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1359</span>        {</div>
-<div class="line"><span class="lineno"> 1360</span>            Debug.Assert(!<span class="keywordtype">string</span>.IsNullOrEmpty(tag));</div>
-<div class="line"><span class="lineno"> 1361</span>            Native.Z3_enable_trace(tag);</div>
-<div class="line"><span class="lineno"> 1362</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_native_context_8cs_source.html#l01363">1363</a> of file <a class="el" href="_native_context_8cs_source.html">NativeContext.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1364</span>        {</div>
+<div class="line"><span class="lineno"> 1365</span>            Debug.Assert(!<span class="keywordtype">string</span>.IsNullOrEmpty(tag));</div>
+<div class="line"><span class="lineno"> 1366</span>            Native.Z3_enable_trace(tag);</div>
+<div class="line"><span class="lineno"> 1367</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -792,7 +803,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno"> 1126</span> </div>
 <div class="line"><span class="lineno"> 1127</span>            <span class="keywordflow">return</span> (<a class="code hl_enumeration" href="group__capi.html#ga1fe4399e5468621e2a799a680c6667cd">Z3_decl_kind</a>)Native.Z3_get_decl_kind(nCtx, decl);</div>
 <div class="line"><span class="lineno"> 1128</span>        }</div>
-<div class="ttc" id="agroup__capi_html_ga1fe4399e5468621e2a799a680c6667cd"><div class="ttname"><a href="group__capi.html#ga1fe4399e5468621e2a799a680c6667cd">Z3_decl_kind</a></div><div class="ttdeci">Z3_decl_kind</div><div class="ttdoc">The different kinds of interpreted function kinds.</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l00962">z3_api.h:962</a></div></div>
+<div class="ttc" id="agroup__capi_html_ga1fe4399e5468621e2a799a680c6667cd"><div class="ttname"><a href="group__capi.html#ga1fe4399e5468621e2a799a680c6667cd">Z3_decl_kind</a></div><div class="ttdeci">Z3_decl_kind</div><div class="ttdoc">The different kinds of interpreted function kinds.</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l00988">z3_api.h:988</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="_native_model_8cs_source.html#l00272">NativeModel.TryGetArrayValue()</a>.</p>
 
@@ -1121,13 +1132,13 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_native_context_8cs_source.html#l01407">1407</a> of file <a class="el" href="_native_context_8cs_source.html">NativeContext.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1408</span>        {</div>
-<div class="line"><span class="lineno"> 1409</span>            Native.Z3_stats_inc_ref(nCtx, stats);</div>
-<div class="line"><span class="lineno"> 1410</span>            var result = Statistics.NativeEntries(nCtx, stats);</div>
-<div class="line"><span class="lineno"> 1411</span>            Native.Z3_stats_dec_ref(nCtx, stats);</div>
-<div class="line"><span class="lineno"> 1412</span>            <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno"> 1413</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_native_context_8cs_source.html#l01431">1431</a> of file <a class="el" href="_native_context_8cs_source.html">NativeContext.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1432</span>        {</div>
+<div class="line"><span class="lineno"> 1433</span>            Native.Z3_stats_inc_ref(nCtx, stats);</div>
+<div class="line"><span class="lineno"> 1434</span>            var result = Statistics.NativeEntries(nCtx, stats);</div>
+<div class="line"><span class="lineno"> 1435</span>            Native.Z3_stats_dec_ref(nCtx, stats);</div>
+<div class="line"><span class="lineno"> 1436</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno"> 1437</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4176,16 +4187,16 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_native_context_8cs_source.html#l01391">1391</a> of file <a class="el" href="_native_context_8cs_source.html">NativeContext.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1392</span>        {</div>
-<div class="line"><span class="lineno"> 1393</span>            Native.Z3_ast_vector_inc_ref(nCtx, vec);</div>
-<div class="line"><span class="lineno"> 1394</span>            var sz = Native.Z3_ast_vector_size(nCtx, vec);</div>
-<div class="line"><span class="lineno"> 1395</span>            var result = <span class="keyword">new</span> <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a>[sz];</div>
-<div class="line"><span class="lineno"> 1396</span>            <span class="keywordflow">for</span> (uint i = 0; i &lt; sz; ++i)</div>
-<div class="line"><span class="lineno"> 1397</span>                result[i] = Native.Z3_ast_vector_get(nCtx, vec, i);</div>
-<div class="line"><span class="lineno"> 1398</span>            Native.Z3_ast_vector_dec_ref(nCtx, vec);</div>
-<div class="line"><span class="lineno"> 1399</span>            <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno"> 1400</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_native_context_8cs_source.html#l01415">1415</a> of file <a class="el" href="_native_context_8cs_source.html">NativeContext.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1416</span>        {</div>
+<div class="line"><span class="lineno"> 1417</span>            Native.Z3_ast_vector_inc_ref(nCtx, vec);</div>
+<div class="line"><span class="lineno"> 1418</span>            var sz = Native.Z3_ast_vector_size(nCtx, vec);</div>
+<div class="line"><span class="lineno"> 1419</span>            var result = <span class="keyword">new</span> <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a>[sz];</div>
+<div class="line"><span class="lineno"> 1420</span>            <span class="keywordflow">for</span> (uint i = 0; i &lt; sz; ++i)</div>
+<div class="line"><span class="lineno"> 1421</span>                result[i] = Native.Z3_ast_vector_get(nCtx, vec, i);</div>
+<div class="line"><span class="lineno"> 1422</span>            Native.Z3_ast_vector_dec_ref(nCtx, vec);</div>
+<div class="line"><span class="lineno"> 1423</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno"> 1424</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4606,7 +4617,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 19 2026 05:10:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Jul 17 2026 02:38:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

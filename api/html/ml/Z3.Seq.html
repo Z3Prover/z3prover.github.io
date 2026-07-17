@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Z3.BitVector.html">
-<link rel="next" href="Z3.FloatingPoint.html">
+<link rel="next" href="Z3.FiniteSet.html">
 <link rel="Up" href="Z3.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
@@ -18,7 +18,7 @@
 <body>
 <div class="navbar"><a class="pre" href="Z3.BitVector.html" title="Z3.BitVector">Previous</a>
 &nbsp;<a class="up" href="Z3.html" title="Z3">Up</a>
-&nbsp;<a class="post" href="Z3.FloatingPoint.html" title="Z3.FloatingPoint">Next</a>
+&nbsp;<a class="post" href="Z3.FiniteSet.html" title="Z3.FiniteSet">Next</a>
 </div>
 <h1>Module <a href="type_Z3.Seq.html">Z3.Seq</a></h1>
 
@@ -139,7 +139,29 @@
 
 <pre><span id="VALmk_seq_replace"><span class="keyword">val</span> mk_seq_replace</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
-<p>replace first occurrence of second argument by third</p>
+<p><code class="code">mk_seq_replace ctx seq target replacement</code> replaces the first occurrence
+      of <code class="code">target</code> within <code class="code">seq</code> with <code class="code">replacement</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_seq_replace_all"><span class="keyword">val</span> mk_seq_replace_all</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_seq_replace_all ctx seq target replacement</code> replaces all occurrences
+      of <code class="code">target</code> within <code class="code">seq</code> with <code class="code">replacement</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_seq_replace_re"><span class="keyword">val</span> mk_seq_replace_re</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_seq_replace_re ctx seq re replacement</code> replaces the first occurrence
+      matching the regular expression <code class="code">re</code> within <code class="code">seq</code> with <code class="code">replacement</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALmk_seq_replace_re_all"><span class="keyword">val</span> mk_seq_replace_re_all</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mk_seq_replace_re_all ctx seq re replacement</code> replaces all occurrences
+      matching the regular expression <code class="code">re</code> within <code class="code">seq</code> with <code class="code">replacement</code>.</p>
 </div>
 </div>
 
@@ -270,6 +292,12 @@
 </div>
 </div>
 
+<pre><span id="VALmk_re_allchar"><span class="keyword">val</span> mk_re_allchar</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Sort.html#TYPEsort">Sort.sort</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>the regular expression matching any single character of the given sort</p>
+</div>
+</div>
+
 <pre><span id="VALmk_re_loop"><span class="keyword">val</span> mk_re_loop</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; int -&gt; int -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>bounded loop regular expression</p>
@@ -285,6 +313,12 @@
 <pre><span id="VALmk_re_complement"><span class="keyword">val</span> mk_re_complement</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>the regular expression complement</p>
+</div>
+</div>
+
+<pre><span id="VALmk_re_diff"><span class="keyword">val</span> mk_re_diff</span> : <code class="type"><a href="Z3.html#TYPEcontext">context</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a> -&gt; <a href="Z3.Expr.html#TYPEexpr">Expr.expr</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>the regular expression difference</p>
 </div>
 </div>
 

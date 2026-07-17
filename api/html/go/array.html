@@ -38,9 +38,24 @@
         <h2>Functions</h2>
         <div class="function-section">
             <div class="api-item">
+                <h4>MkArrayDefault</h4>
+                <div class="signature">func (c *Context) MkArrayDefault(array *Expr) *Expr</div>
+                <p class="comment">MkArrayDefault returns the default value of an array.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkArrayExt</h4>
+                <div class="signature">func (c *Context) MkArrayExt(a1, a2 *Expr) *Expr</div>
+                <p class="comment">MkArrayExt returns the extensionality witness for two arrays. Two arrays are equal if and only if they are equal on the index returned by MkArrayExt.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkArraySort</h4>
                 <div class="signature">func (c *Context) MkArraySort(domain, range_ *Sort) *Sort</div>
                 <p class="comment">Array operations and sorts MkArraySort creates an array sort.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkAsArray</h4>
+                <div class="signature">func (c *Context) MkAsArray(f *FuncDecl) *Expr</div>
+                <p class="comment">MkAsArray creates an array from a function declaration. The resulting array maps each input to the output of the function.</p>
             </div>
             <div class="api-item">
                 <h4>MkConstArray</h4>
@@ -48,14 +63,29 @@
                 <p class="comment">MkConstArray creates a constant array.</p>
             </div>
             <div class="api-item">
+                <h4>MkMap</h4>
+                <div class="signature">func (c *Context) MkMap(f *FuncDecl, arrays ...*Expr) *Expr</div>
+                <p class="comment">MkMap applies a function to the elements of one or more arrays, returning a new array. The function f is applied element-wise to the given arrays.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkSelect</h4>
                 <div class="signature">func (c *Context) MkSelect(array, index *Expr) *Expr</div>
                 <p class="comment">MkSelect creates an array read (select) operation.</p>
             </div>
             <div class="api-item">
+                <h4>MkSelectN</h4>
+                <div class="signature">func (c *Context) MkSelectN(array *Expr, indices []*Expr) *Expr</div>
+                <p class="comment">MkSelectN creates a multi-index array read (select) operation.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkStore</h4>
                 <div class="signature">func (c *Context) MkStore(array, index, value *Expr) *Expr</div>
                 <p class="comment">MkStore creates an array write (store) operation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkStoreN</h4>
+                <div class="signature">func (c *Context) MkStoreN(array *Expr, indices []*Expr, value *Expr) *Expr</div>
+                <p class="comment">MkStoreN creates a multi-index array write (store) operation.</p>
             </div>
         </div>
         <div class="nav" style="margin-top: 3rem;">

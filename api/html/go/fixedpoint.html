@@ -64,6 +64,11 @@
                     <p class="comment">AddFact adds a table fact to the fixedpoint solver</p>
                 </div>
                 <div class="api-item">
+                    <h4>AddInvariant</h4>
+                    <div class="signature">func (f *Fixedpoint) AddInvariant(pred *FuncDecl, property *Expr)</div>
+                    <p class="comment">AddInvariant adds an assumed invariant for the predicate pred. This is a Spacer-specific function.</p>
+                </div>
+                <div class="api-item">
                     <h4>AddRule</h4>
                     <div class="signature">func (f *Fixedpoint) AddRule(rule *Expr, name *Symbol)</div>
                     <p class="comment">AddRule adds a rule (Horn clause) to the fixedpoint solver The rule should be an implication of the form body => head where head is a relation and body is a conjunction of relations</p>
@@ -99,6 +104,11 @@
                     <p class="comment">GetCoverDelta retrieves the cover delta for a given predicate and level</p>
                 </div>
                 <div class="api-item">
+                    <h4>GetGroundSatAnswer</h4>
+                    <div class="signature">func (f *Fixedpoint) GetGroundSatAnswer() *Expr</div>
+                    <p class="comment">GetGroundSatAnswer retrieves a bottom-up sequence of ground facts. The previous call to Query or QueryFromLvl must have returned Satisfiable. This is a Spacer-specific function.</p>
+                </div>
+                <div class="api-item">
                     <h4>GetHelp</h4>
                     <div class="signature">func (f *Fixedpoint) GetHelp() string</div>
                     <p class="comment">GetHelp returns a string describing all available fixedpoint solver parameters</p>
@@ -114,14 +124,29 @@
                     <p class="comment">GetParamDescrs retrieves parameter descriptions for the fixedpoint solver</p>
                 </div>
                 <div class="api-item">
+                    <h4>GetReachable</h4>
+                    <div class="signature">func (f *Fixedpoint) GetReachable(pred *FuncDecl) *Expr</div>
+                    <p class="comment">GetReachable retrieves the reachable states of a predicate. This is a Spacer-specific function.</p>
+                </div>
+                <div class="api-item">
                     <h4>GetReasonUnknown</h4>
                     <div class="signature">func (f *Fixedpoint) GetReasonUnknown() string</div>
                     <p class="comment">GetReasonUnknown retrieves explanation why fixedpoint engine returned status Unknown</p>
                 </div>
                 <div class="api-item">
+                    <h4>GetRuleNamesAlongTrace</h4>
+                    <div class="signature">func (f *Fixedpoint) GetRuleNamesAlongTrace() *Symbol</div>
+                    <p class="comment">GetRuleNamesAlongTrace returns the list of rule names along the counterexample trace. This is a Spacer-specific function.</p>
+                </div>
+                <div class="api-item">
                     <h4>GetRules</h4>
                     <div class="signature">func (f *Fixedpoint) GetRules() string</div>
                     <p class="comment">GetRules retrieves the current rules as a string</p>
+                </div>
+                <div class="api-item">
+                    <h4>GetRulesAlongTrace</h4>
+                    <div class="signature">func (f *Fixedpoint) GetRulesAlongTrace() *ASTVector</div>
+                    <p class="comment">GetRulesAlongTrace returns the list of rules along the counterexample trace. This is a Spacer-specific function.</p>
                 </div>
                 <div class="api-item">
                     <h4>GetStatistics</h4>
@@ -132,6 +157,11 @@
                     <h4>Query</h4>
                     <div class="signature">func (f *Fixedpoint) Query(query *Expr) Status</div>
                     <p class="comment">Query queries the fixedpoint solver with a constraint Returns Satisfiable if there is a derivation, Unsatisfiable if not</p>
+                </div>
+                <div class="api-item">
+                    <h4>QueryFromLvl</h4>
+                    <div class="signature">func (f *Fixedpoint) QueryFromLvl(query *Expr, lvl uint) Status</div>
+                    <p class="comment">QueryFromLvl poses a query against the asserted rules at the given level. This is a Spacer-specific function.</p>
                 </div>
                 <div class="api-item">
                     <h4>QueryRelations</h4>

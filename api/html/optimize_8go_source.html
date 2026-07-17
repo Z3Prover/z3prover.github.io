@@ -277,10 +277,22 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        defer C.free(unsafe.Pointer(cStr))</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        C.Z3_optimize_from_string(o.ctx.ptr, o.ptr, cStr)</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>// Translate creates a copy of the optimize context in the target context.</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>// This is useful when working with multiple Z3 contexts.</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>func (o *Optimize) Translate(target *Context) *Optimize {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        ptr := C.Z3_optimize_translate(o.ctx.ptr, o.ptr, target.ptr)</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        newOpt := &amp;Optimize{ctx: target, ptr: ptr}</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        C.Z3_optimize_inc_ref(target.ptr, ptr)</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        runtime.SetFinalizer(newOpt, func(opt *Optimize) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                C.Z3_optimize_dec_ref(opt.ctx.ptr, opt.ptr)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        })</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        return newOpt</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 19 2026 05:10:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Jul 17 2026 02:38:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

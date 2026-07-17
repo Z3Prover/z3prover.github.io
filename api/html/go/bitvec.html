@@ -53,6 +53,16 @@
                 <p class="comment">MkBVAdd creates a bit-vector addition.</p>
             </div>
             <div class="api-item">
+                <h4>MkBVAddNoOverflow</h4>
+                <div class="signature">func (c *Context) MkBVAddNoOverflow(t1, t2 *Expr, isSigned bool) *Expr</div>
+                <p class="comment">MkBVAddNoOverflow creates a predicate that checks that the bit-wise addition of t1 and t2 does not overflow. If isSigned is true, checks for signed overflow.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVAddNoUnderflow</h4>
+                <div class="signature">func (c *Context) MkBVAddNoUnderflow(t1, t2 *Expr) *Expr</div>
+                <p class="comment">MkBVAddNoUnderflow creates a predicate that checks that the bit-wise signed addition of t1 and t2 does not underflow.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkBVAnd</h4>
                 <div class="signature">func (c *Context) MkBVAnd(lhs, rhs *Expr) *Expr</div>
                 <p class="comment">MkBVAnd creates a bit-vector bitwise AND.</p>
@@ -61,6 +71,16 @@
                 <h4>MkBVConst</h4>
                 <div class="signature">func (c *Context) MkBVConst(name string, size uint) *Expr</div>
                 <p class="comment">Bit-vector operations MkBVConst creates a bit-vector constant with the given name and size.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVExtRotateLeft</h4>
+                <div class="signature">func (c *Context) MkBVExtRotateLeft(t1, t2 *Expr) *Expr</div>
+                <p class="comment">MkBVExtRotateLeft rotates the bits of t1 to the left by the number of bits given by t2. Both t1 and t2 must be bit-vectors of the same width.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVExtRotateRight</h4>
+                <div class="signature">func (c *Context) MkBVExtRotateRight(t1, t2 *Expr) *Expr</div>
+                <p class="comment">MkBVExtRotateRight rotates the bits of t1 to the right by the number of bits given by t2. Both t1 and t2 must be bit-vectors of the same width.</p>
             </div>
             <div class="api-item">
                 <h4>MkBVFromInt64</h4>
@@ -78,9 +98,24 @@
                 <p class="comment">MkBVMul creates a bit-vector multiplication.</p>
             </div>
             <div class="api-item">
+                <h4>MkBVMulNoOverflow</h4>
+                <div class="signature">func (c *Context) MkBVMulNoOverflow(t1, t2 *Expr, isSigned bool) *Expr</div>
+                <p class="comment">MkBVMulNoOverflow creates a predicate that checks that the bit-wise multiplication of t1 and t2 does not overflow. If isSigned is true, checks for signed overflow.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVMulNoUnderflow</h4>
+                <div class="signature">func (c *Context) MkBVMulNoUnderflow(t1, t2 *Expr) *Expr</div>
+                <p class="comment">MkBVMulNoUnderflow creates a predicate that checks that the bit-wise signed multiplication of t1 and t2 does not underflow.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkBVNeg</h4>
                 <div class="signature">func (c *Context) MkBVNeg(expr *Expr) *Expr</div>
                 <p class="comment">MkBVNeg creates a bit-vector negation.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVNegNoOverflow</h4>
+                <div class="signature">func (c *Context) MkBVNegNoOverflow(t1 *Expr) *Expr</div>
+                <p class="comment">MkBVNegNoOverflow creates a predicate that checks that bit-wise negation does not overflow when t1 is interpreted as a signed bit-vector.</p>
             </div>
             <div class="api-item">
                 <h4>MkBVNot</h4>
@@ -91,6 +126,26 @@
                 <h4>MkBVOr</h4>
                 <div class="signature">func (c *Context) MkBVOr(lhs, rhs *Expr) *Expr</div>
                 <p class="comment">MkBVOr creates a bit-vector bitwise OR.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVRedAnd</h4>
+                <div class="signature">func (c *Context) MkBVRedAnd(t *Expr) *Expr</div>
+                <p class="comment">MkBVRedAnd computes the bitwise AND reduction of a bit-vector, returning a 1-bit vector.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVRedOr</h4>
+                <div class="signature">func (c *Context) MkBVRedOr(t *Expr) *Expr</div>
+                <p class="comment">MkBVRedOr computes the bitwise OR reduction of a bit-vector, returning a 1-bit vector.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVRotateLeft</h4>
+                <div class="signature">func (c *Context) MkBVRotateLeft(i uint, t *Expr) *Expr</div>
+                <p class="comment">MkBVRotateLeft rotates the bits of t to the left by i positions.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVRotateRight</h4>
+                <div class="signature">func (c *Context) MkBVRotateRight(i uint, t *Expr) *Expr</div>
+                <p class="comment">MkBVRotateRight rotates the bits of t to the right by i positions.</p>
             </div>
             <div class="api-item">
                 <h4>MkBVSDiv</h4>
@@ -123,6 +178,11 @@
                 <p class="comment">MkBVSRem creates a signed bit-vector remainder.</p>
             </div>
             <div class="api-item">
+                <h4>MkBVSdivNoOverflow</h4>
+                <div class="signature">func (c *Context) MkBVSdivNoOverflow(t1, t2 *Expr) *Expr</div>
+                <p class="comment">MkBVSdivNoOverflow creates a predicate that checks that the bit-wise signed division of t1 and t2 does not overflow.</p>
+            </div>
+            <div class="api-item">
                 <h4>MkBVShl</h4>
                 <div class="signature">func (c *Context) MkBVShl(lhs, rhs *Expr) *Expr</div>
                 <p class="comment">MkBVShl creates a bit-vector shift left.</p>
@@ -131,6 +191,16 @@
                 <h4>MkBVSub</h4>
                 <div class="signature">func (c *Context) MkBVSub(lhs, rhs *Expr) *Expr</div>
                 <p class="comment">MkBVSub creates a bit-vector subtraction.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVSubNoOverflow</h4>
+                <div class="signature">func (c *Context) MkBVSubNoOverflow(t1, t2 *Expr) *Expr</div>
+                <p class="comment">MkBVSubNoOverflow creates a predicate that checks that the bit-wise signed subtraction of t1 and t2 does not overflow.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkBVSubNoUnderflow</h4>
+                <div class="signature">func (c *Context) MkBVSubNoUnderflow(t1, t2 *Expr, isSigned bool) *Expr</div>
+                <p class="comment">MkBVSubNoUnderflow creates a predicate that checks that the bit-wise subtraction of t1 and t2 does not underflow. If isSigned is true, checks for signed underflow.</p>
             </div>
             <div class="api-item">
                 <h4>MkBVUDiv</h4>
@@ -176,6 +246,11 @@
                 <h4>MkExtract</h4>
                 <div class="signature">func (c *Context) MkExtract(high, low uint, expr *Expr) *Expr</div>
                 <p class="comment">MkExtract creates a bit-vector extraction.</p>
+            </div>
+            <div class="api-item">
+                <h4>MkRepeat</h4>
+                <div class="signature">func (c *Context) MkRepeat(i uint, t *Expr) *Expr</div>
+                <p class="comment">MkRepeat repeats the given bit-vector t a total of i times.</p>
             </div>
             <div class="api-item">
                 <h4>MkSignExt</h4>
