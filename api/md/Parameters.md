@@ -20,6 +20,7 @@ proof | bool  |  proof generation, it must be enabled when the Z3 context is cre
 rlimit | unsigned int  |  default resource limit used for solvers. Unrestricted when set to 0. | 0
 smtlib2_compliant | bool  |  enable/disable SMT-LIB 2.0 compliance | false
 stats | bool  |  enable/disable statistics | false
+suppress_platform_verbose | bool  |  suppress memory and time information from verbose output | false
 timeout | unsigned int  |  (default: infty) timeout in milliseconds. | 4294967295
 trace | bool  |  trace generation for VCC | false
 trace_file_name | string  |  trace out file name (see option 'trace') | z3.log
@@ -242,6 +243,15 @@ proof.trim | bool  |  trim and save proof into a proof object that an be extract
 slice | bool  |  use slice solver that filters assertions to use symbols occuring in @query formulas | false
 smtlib2_log | symbol  |  file to save solver interaction | 
 timeout | unsigned int  |  timeout on the solver object; overwrites a global timeout | 4294967295
+
+## tptp
+
+TPTP frontend parameters
+
+ Parameter | Type | Description | Default
+ ----------|------|-------------|--------
+dump_smt2 | symbol  |  if non-empty, file path to dump the parsed TPTP goal as an SMT-LIB2 benchmark (replaces the Z3_TPTP_DUMP_SMT2 environment variable) | 
+root | symbol  |  root directory for resolving TPTP include() axiom paths (replaces the TPTP environment variable) | 
 
 ## lp
 
@@ -607,6 +617,7 @@ arith.nl.grobner_expr_size_growth | unsigned int  |  grobner's maximum expr size
 arith.nl.grobner_frequency | unsigned int  |  grobner's call frequency | 4
 arith.nl.grobner_gcd_test | bool  |  detect gcd conflicts for polynomial powers x^k - y = 0 | true
 arith.nl.grobner_max_simplified | unsigned int  |  grobner's maximum number of simplifications | 10000
+arith.nl.grobner_perfect_squares | bool  |  expand perfect squares with Grobner | true
 arith.nl.grobner_propagate_quotients | bool  |  detect conflicts x*y + z = 0 where x doesn't divide z | true
 arith.nl.grobner_row_length_limit | unsigned int  |  row is disregarded by the heuristic if its length is longer than the value | 10
 arith.nl.grobner_subs_fixed | unsigned int  |  0 - no subs, 1 - substitute, 2 - substitute fixed zeros only | 1
@@ -622,8 +633,10 @@ arith.nl.nra | bool  |  call nra_solver when incremental linearization does not 
 arith.nl.nra_check_assignment | bool  |  call check_assignment in nra_solver to verify current assignment against nlsat constraints | true
 arith.nl.nra_check_assignment_max_fail | unsigned int  |  maximum consecutive check_assignment failures before disabling it | 7
 arith.nl.optimize_bounds | bool  |  enable bounds optimization | true
+arith.nl.optimize_bounds_lp_max_vars | unsigned int  |  skip LP-based nonlinear bounds optimization when the number of candidate monomial variables exceeds this threshold (0 = unlimited) | 120
 arith.nl.order | bool  |  run order lemmas | true
 arith.nl.order.binomial_sign | bool  |  run order_lemma_on_binomial_sign; disabling it keeps the structural order-lemma splitting | true
+arith.nl.propagate_fixed_rows | bool  |  scan LP rows for fixed variables | false
 arith.nl.propagate_linear_monomials | bool  |  propagate linear monomials | true
 arith.nl.reduce_pseudo_linear | bool  |  create incremental linearization axioms for pseudo-linear monomials | true
 arith.nl.rounds | unsigned int  |  threshold for number of (nested) final checks for non linear arithmetic, relevant only if smt.arith.solver=2 | 1024
@@ -710,8 +723,7 @@ restart_strategy | unsigned int  |  0 - geometric, 1 - inner-outer-geometric, 2 
 restricted_quasi_macros | bool  |  try to find universally quantified formulas that are restricted quasi-macros | false
 seq.max_unfolding | unsigned int  |  maximal unfolding depth for checking string equations and regular expressions | 1000000000
 seq.min_unfolding | unsigned int  |  initial bound for strings whose lengths are bounded by iterative deepening. Set this to a higher value if there are only models with larger string lengths | 1
-seq.regex_factorization_enabled | bool  |  apply regex factorization (sigma splitting) | false
-seq.regex_factorization_threshold | unsigned int  |  maximum number of cases to factor a regex into in a single step | 10
+seq.regex_monadic | bool  |  use the monadic regular-expression end-game solver | false
 seq.split_w_len | bool  |  enable splitting guided by length constraints | true
 seq.validate | bool  |  enable self-validation of theory axioms created by seq theory | false
 sls.enable | bool  |  enable sls co-processor with SMT engine | false

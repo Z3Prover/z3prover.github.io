@@ -1986,7 +1986,7 @@ The parameter `t` is an expression whose values should be returned.
 <div class="line"><span class="lineno"> 8098</span>            <span class="keywordflow">while</span> s.check() == sat:</div>
 <div class="line"><span class="lineno"> 8099</span>                result = [s.model().eval(t_, model_completion=<span class="keyword">True</span>) <span class="keywordflow">for</span> t_ <span class="keywordflow">in</span> t]</div>
 <div class="line"><span class="lineno"> 8100</span>                <span class="keywordflow">yield</span> result</div>
-<div class="line"><span class="lineno"> 8101</span>                s.add(*(t_ != result_ <span class="keywordflow">for</span> t_, result_ <span class="keywordflow">in</span> zip(t, result)))</div>
+<div class="line"><span class="lineno"> 8101</span>                s.add(Or(t_ != result_ <span class="keywordflow">for</span> t_, result_ <span class="keywordflow">in</span> zip(t, result)))</div>
 <div class="line"><span class="lineno"> 8102</span>        <span class="keywordflow">else</span>:</div>
 <div class="line"><span class="lineno"> 8103</span>            <span class="keywordflow">while</span> s.check() == sat:</div>
 <div class="line"><span class="lineno"> 8104</span>                result = s.model().eval(t, model_completion=<span class="keyword">True</span>)</div>
@@ -2421,7 +2421,7 @@ sat
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 17 2026 02:38:48 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Aug 4 2026 22:00:08 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
