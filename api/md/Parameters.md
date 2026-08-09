@@ -625,6 +625,7 @@ arith.nl.horner | bool  |  run horner's heuristic | true
 arith.nl.horner_frequency | unsigned int  |  horner's call frequency | 4
 arith.nl.horner_row_length_limit | unsigned int  |  row is disregarded by the heuristic if its length is longer than the value | 10
 arith.nl.horner_subs_fixed | unsigned int  |  0 - no subs, 1 - substitute, 2 - substitute fixed zeros only | 2
+arith.nl.linearize_violated_monomials | bool  |  in final check, install the defining row m = k*w for violated monomials with at most one non-fixed factor before resorting to case splits and horner/grobner | true
 arith.nl.log | bool  |  Log lemmas sent to nra solver | false
 arith.nl.monomial_binomial_sign | bool  |  derive bound on a binomial-monomial factor anchored on the current LP value of the monomial; replaces order_lemma_on_binomial_sign with a deterministic factor bound conditioned on a one-sided snapshot of the monomial value | false
 arith.nl.monomial_sandwich | bool  |  derive bound on a monomial factor by pairing two LP rows that share the other factor | false
