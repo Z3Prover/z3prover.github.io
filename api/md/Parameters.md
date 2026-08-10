@@ -724,7 +724,7 @@ restart_strategy | unsigned int  |  0 - geometric, 1 - inner-outer-geometric, 2 
 restricted_quasi_macros | bool  |  try to find universally quantified formulas that are restricted quasi-macros | false
 seq.max_unfolding | unsigned int  |  maximal unfolding depth for checking string equations and regular expressions | 1000000000
 seq.min_unfolding | unsigned int  |  initial bound for strings whose lengths are bounded by iterative deepening. Set this to a higher value if there are only models with larger string lengths | 1
-seq.regex_monadic | bool  |  use the monadic regular-expression end-game solver | false
+seq.regex_monadic | bool  |  use the monadic regular-expression end-game solver | true
 seq.split_w_len | bool  |  enable splitting guided by length constraints | true
 seq.validate | bool  |  enable self-validation of theory axioms created by seq theory | false
 sls.enable | bool  |  enable sls co-processor with SMT engine | false
