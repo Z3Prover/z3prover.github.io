@@ -1,3 +1,8 @@
+---
+layout: default
+title: Online Papers
+---
+
 # Online papers
 
 * [Programming Z3](https://z3prover.github.io/papers/programmingz3.html)

@@ -1,3 +1,8 @@
+---
+layout: default
+title: Guest Lecture material at TU Wien October 2025
+---
+
 # Guest Lecture material at TU Wien October 2025
 
 [Lecture Overview](https://z3prover.github.io/slides/guest-lectures-wien-2025/lectures.html)
