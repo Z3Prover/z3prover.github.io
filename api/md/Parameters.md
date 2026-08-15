@@ -268,6 +268,7 @@ dio_cuts_enable_hnf | bool  |  enable hnf cuts together with Diophantine cuts, o
 dio_gomory_enable_period | unsigned int  |  number of consecutive unproductive (undef) Diophantine-handler calls after which the controller starts running Gomory cuts and the gcd test alongside dio; a dio conflict resets the count and stops them; set very large to never start them this way so Gomory follows dio_cuts_enable_gomory only | 16
 dio_ignore_big_nums | bool  |  Ignore the terms with big numbers in the Diophantine handler, only relevant when dioph_eq is true | true
 dio_run_gcd | bool  |  Run the GCD heuristic if dio is on, if dio is disabled the option is not used | false
+dio_undo_max_work | unsigned int  |  work budget, in machine words, for eliminating the columns of the retired terms from the certificate matrix of the Diophantine handler; when a scope pop exceeds it the Diophantine state is discarded and rebuilt lazily on the next check instead of being updated incrementally; 0 means no budget | 1000000
 int_hammer_period | unsigned int  |  period (in final_check calls) for the integer cut/cube heuristics (find_cube, hnf, gomory); a smaller value calls them more often | 4
 lcube | bool  |  use the largest cube test for integer feasibility | true
 lcube_flips | unsigned int  |  maximal number of coordinate flips when repairing the rounded largest cube center, only relevant when lcube is true | 16
