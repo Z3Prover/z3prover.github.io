@@ -173,6 +173,16 @@
                     <p class="comment">Quantifier operations MkForall creates a universal quantifier.</p>
                 </div>
                 <div class="api-item">
+                    <h4>MkFreshConst</h4>
+                    <div class="signature">func (c *Context) MkFreshConst(prefix string, sort *Sort) *Expr</div>
+                    <p class="comment">MkFreshConst creates a fresh constant with a name prefixed by prefix.</p>
+                </div>
+                <div class="api-item">
+                    <h4>MkFreshFuncDecl</h4>
+                    <div class="signature">func (c *Context) MkFreshFuncDecl(prefix string, domain []*Sort, range_ *Sort) *FuncDecl</div>
+                    <p class="comment">MkFreshFuncDecl creates a fresh function declaration with a name prefixed by prefix.</p>
+                </div>
+                <div class="api-item">
                     <h4>MkFuncDecl</h4>
                     <div class="signature">func (c *Context) MkFuncDecl(name *Symbol, domain []*Sort, range_ *Sort) *FuncDecl</div>
                     <p class="comment">MkFuncDecl creates a function declaration.</p>
@@ -266,6 +276,11 @@
                     <h4>MkXor</h4>
                     <div class="signature">func (c *Context) MkXor(lhs, rhs *Expr) *Expr</div>
                     <p class="comment">MkXor creates exclusive or.</p>
+                </div>
+                <div class="api-item">
+                    <h4>PolynomialSubresultants</h4>
+                    <div class="signature">func (c *Context) PolynomialSubresultants(p, q, x *Expr) *ASTVector</div>
+                    <p class="comment">PolynomialSubresultants returns the nonzero subresultants of p and q with respect to x. Non-polynomial subterms are treated as variables.</p>
                 </div>
                 <div class="api-item">
                     <h4>SetParam</h4>

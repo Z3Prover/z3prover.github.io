@@ -113,7 +113,7 @@ Data Fields</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">Simplifiers act as pre-processing utilities for solvers.
 Build a custom simplifier and add it to a solver</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08928">8928</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08943">8943</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a20ed4682fa8481e9c426912a8ebb1426" name="a20ed4682fa8481e9c426912a8ebb1426"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20ed4682fa8481e9c426912a8ebb1426">&#9670;&#160;</a></span>__init__()</h2>
@@ -147,28 +147,28 @@ Build a custom simplifier and add it to a solver</pre>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08932">8932</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8932</span>    <span class="keyword">def </span>__init__(self, simplifier, ctx=None):</div>
-<div class="line"><span class="lineno"> 8933</span>        self.ctx = _get_ctx(ctx)</div>
-<div class="line"><span class="lineno"> 8934</span>        self.simplifier = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno"> 8935</span>        <span class="keywordflow">if</span> isinstance(simplifier, SimplifierObj):</div>
-<div class="line"><span class="lineno"> 8936</span>            self.simplifier = simplifier</div>
-<div class="line"><span class="lineno"> 8937</span>        <span class="keywordflow">elif</span> isinstance(simplifier, list):</div>
-<div class="line"><span class="lineno"> 8938</span>            simps = [Simplifier(s, ctx) <span class="keywordflow">for</span> s <span class="keywordflow">in</span> simplifier]</div>
-<div class="line"><span class="lineno"> 8939</span>            self.simplifier = simps[0].simplifier</div>
-<div class="line"><span class="lineno"> 8940</span>            <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1, len(simps)):</div>
-<div class="line"><span class="lineno"> 8941</span>                self.simplifier = <a class="code hl_function" href="group__capi.html#ga04038c86863aa29e86520cebc5b4f9f9">Z3_simplifier_and_then</a>(self.ctx.ref(), self.simplifier, simps[i].simplifier)</div>
-<div class="line"><span class="lineno"> 8942</span>            <a class="code hl_function" href="group__capi.html#ga0b4a29a96c1429e1dd403524e75a16e6">Z3_simplifier_inc_ref</a>(self.ctx.ref(), self.simplifier)</div>
-<div class="line"><span class="lineno"> 8943</span>            <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno"> 8944</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8945</span>            <span class="keywordflow">if</span> z3_debug():</div>
-<div class="line"><span class="lineno"> 8946</span>                _z3_assert(isinstance(simplifier, str), <span class="stringliteral">&quot;simplifier name expected&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8947</span>            <span class="keywordflow">try</span>:</div>
-<div class="line"><span class="lineno"> 8948</span>                self.simplifier = <a class="code hl_function" href="group__capi.html#ga804ca660edf06cb1a3ae26a02af3881a">Z3_mk_simplifier</a>(self.ctx.ref(), str(simplifier))</div>
-<div class="line"><span class="lineno"> 8949</span>            <span class="keywordflow">except</span> Z3Exception:</div>
-<div class="line"><span class="lineno"> 8950</span>                <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;unknown simplifier &#39;%s&#39;&quot;</span> % simplifier)</div>
-<div class="line"><span class="lineno"> 8951</span>        <a class="code hl_function" href="group__capi.html#ga0b4a29a96c1429e1dd403524e75a16e6">Z3_simplifier_inc_ref</a>(self.ctx.ref(), self.simplifier)</div>
-<div class="line"><span class="lineno"> 8952</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08947">8947</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8947</span>    <span class="keyword">def </span>__init__(self, simplifier, ctx=None):</div>
+<div class="line"><span class="lineno"> 8948</span>        self.ctx = _get_ctx(ctx)</div>
+<div class="line"><span class="lineno"> 8949</span>        self.simplifier = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno"> 8950</span>        <span class="keywordflow">if</span> isinstance(simplifier, SimplifierObj):</div>
+<div class="line"><span class="lineno"> 8951</span>            self.simplifier = simplifier</div>
+<div class="line"><span class="lineno"> 8952</span>        <span class="keywordflow">elif</span> isinstance(simplifier, list):</div>
+<div class="line"><span class="lineno"> 8953</span>            simps = [Simplifier(s, ctx) <span class="keywordflow">for</span> s <span class="keywordflow">in</span> simplifier]</div>
+<div class="line"><span class="lineno"> 8954</span>            self.simplifier = simps[0].simplifier</div>
+<div class="line"><span class="lineno"> 8955</span>            <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1, len(simps)):</div>
+<div class="line"><span class="lineno"> 8956</span>                self.simplifier = <a class="code hl_function" href="group__capi.html#ga04038c86863aa29e86520cebc5b4f9f9">Z3_simplifier_and_then</a>(self.ctx.ref(), self.simplifier, simps[i].simplifier)</div>
+<div class="line"><span class="lineno"> 8957</span>            <a class="code hl_function" href="group__capi.html#ga0b4a29a96c1429e1dd403524e75a16e6">Z3_simplifier_inc_ref</a>(self.ctx.ref(), self.simplifier)</div>
+<div class="line"><span class="lineno"> 8958</span>            <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno"> 8959</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8960</span>            <span class="keywordflow">if</span> z3_debug():</div>
+<div class="line"><span class="lineno"> 8961</span>                _z3_assert(isinstance(simplifier, str), <span class="stringliteral">&quot;simplifier name expected&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8962</span>            <span class="keywordflow">try</span>:</div>
+<div class="line"><span class="lineno"> 8963</span>                self.simplifier = <a class="code hl_function" href="group__capi.html#ga804ca660edf06cb1a3ae26a02af3881a">Z3_mk_simplifier</a>(self.ctx.ref(), str(simplifier))</div>
+<div class="line"><span class="lineno"> 8964</span>            <span class="keywordflow">except</span> Z3Exception:</div>
+<div class="line"><span class="lineno"> 8965</span>                <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;unknown simplifier &#39;%s&#39;&quot;</span> % simplifier)</div>
+<div class="line"><span class="lineno"> 8966</span>        <a class="code hl_function" href="group__capi.html#ga0b4a29a96c1429e1dd403524e75a16e6">Z3_simplifier_inc_ref</a>(self.ctx.ref(), self.simplifier)</div>
+<div class="line"><span class="lineno"> 8967</span> </div>
 <div class="ttc" id="agroup__capi_html_ga04038c86863aa29e86520cebc5b4f9f9"><div class="ttname"><a href="group__capi.html#ga04038c86863aa29e86520cebc5b4f9f9">Z3_simplifier_and_then</a></div><div class="ttdeci">Z3_simplifier Z3_API Z3_simplifier_and_then(Z3_context c, Z3_simplifier t1, Z3_simplifier t2)</div><div class="ttdoc">Return a simplifier that applies t1 to a given goal and t2 to every subgoal produced by t1.</div></div>
 <div class="ttc" id="agroup__capi_html_ga0b4a29a96c1429e1dd403524e75a16e6"><div class="ttname"><a href="group__capi.html#ga0b4a29a96c1429e1dd403524e75a16e6">Z3_simplifier_inc_ref</a></div><div class="ttdeci">void Z3_API Z3_simplifier_inc_ref(Z3_context c, Z3_simplifier t)</div><div class="ttdoc">Increment the reference counter of the given simplifier.</div></div>
 <div class="ttc" id="agroup__capi_html_ga804ca660edf06cb1a3ae26a02af3881a"><div class="ttname"><a href="group__capi.html#ga804ca660edf06cb1a3ae26a02af3881a">Z3_mk_simplifier</a></div><div class="ttdeci">Z3_simplifier Z3_API Z3_mk_simplifier(Z3_context c, Z3_string name)</div><div class="ttdoc">Return a simplifier associated with the given name. The complete list of simplifiers may be obtained ...</div></div>
@@ -191,11 +191,11 @@ Build a custom simplifier and add it to a solver</pre>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08956">8956</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8956</span>    <span class="keyword">def </span>__del__(self):</div>
-<div class="line"><span class="lineno"> 8957</span>        <span class="keywordflow">if</span> self.simplifier <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_simplifier_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 8958</span>            <a class="code hl_function" href="group__capi.html#ga2ea46e572281c65f5ef9454e2c4c9e0c">Z3_simplifier_dec_ref</a>(self.ctx.ref(), self.simplifier)</div>
-<div class="line"><span class="lineno"> 8959</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08971">8971</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8971</span>    <span class="keyword">def </span>__del__(self):</div>
+<div class="line"><span class="lineno"> 8972</span>        <span class="keywordflow">if</span> self.simplifier <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_simplifier_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 8973</span>            <a class="code hl_function" href="group__capi.html#ga2ea46e572281c65f5ef9454e2c4c9e0c">Z3_simplifier_dec_ref</a>(self.ctx.ref(), self.simplifier)</div>
+<div class="line"><span class="lineno"> 8974</span> </div>
 <div class="ttc" id="agroup__capi_html_ga2ea46e572281c65f5ef9454e2c4c9e0c"><div class="ttname"><a href="group__capi.html#ga2ea46e572281c65f5ef9454e2c4c9e0c">Z3_simplifier_dec_ref</a></div><div class="ttdeci">void Z3_API Z3_simplifier_dec_ref(Z3_context c, Z3_simplifier g)</div><div class="ttdoc">Decrement the reference counter of the given simplifier.</div></div>
 </div><!-- fragment -->
 </div>
@@ -227,10 +227,10 @@ Build a custom simplifier and add it to a solver</pre>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08953">8953</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8953</span>    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
-<div class="line"><span class="lineno"> 8954</span>        <span class="keywordflow">return</span> Simplifier(self.simplifier, self.ctx)</div>
-<div class="line"><span class="lineno"> 8955</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08968">8968</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8968</span>    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
+<div class="line"><span class="lineno"> 8969</span>        <span class="keywordflow">return</span> Simplifier(self.simplifier, self.ctx)</div>
+<div class="line"><span class="lineno"> 8970</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -260,11 +260,11 @@ Build a custom simplifier and add it to a solver</pre>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a solver that applies the simplification pre-processing specified by the simplifier</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08965">8965</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8965</span>    <span class="keyword">def </span>add(self, solver):</div>
-<div class="line"><span class="lineno"> 8966</span>        <span class="stringliteral">&quot;&quot;&quot;Return a solver that applies the simplification pre-processing specified by the simplifier&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8967</span><span class="stringliteral">        return Solver(Z3_solver_add_simplifier(self.ctx.ref(), solver.solver, self.simplifier), self.ctx)</span></div>
-<div class="line"><span class="lineno"> 8968</span><span class="stringliteral"></span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08980">8980</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8980</span>    <span class="keyword">def </span>add(self, solver):</div>
+<div class="line"><span class="lineno"> 8981</span>        <span class="stringliteral">&quot;&quot;&quot;Return a solver that applies the simplification pre-processing specified by the simplifier&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8982</span><span class="stringliteral">        return Solver(Z3_solver_add_simplifier(self.ctx.ref(), solver.solver, self.simplifier), self.ctx)</span></div>
+<div class="line"><span class="lineno"> 8983</span><span class="stringliteral"></span> </div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07691">Solver.__iadd__()</a>.</p>
 
@@ -286,11 +286,11 @@ Build a custom simplifier and add it to a solver</pre>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Display a string containing a description of the available options for the `self` simplifier.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08969">8969</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8969</span>    <span class="keyword">def </span>help(self):</div>
-<div class="line"><span class="lineno"> 8970</span>        <span class="stringliteral">&quot;&quot;&quot;Display a string containing a description of the available options for the `self` simplifier.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8971</span>        print(<a class="code hl_function" href="group__capi.html#ga26682f83aeb0738f32bfb764ac1d1f25">Z3_simplifier_get_help</a>(self.ctx.ref(), self.simplifier))</div>
-<div class="line"><span class="lineno"> 8972</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08984">8984</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8984</span>    <span class="keyword">def </span>help(self):</div>
+<div class="line"><span class="lineno"> 8985</span>        <span class="stringliteral">&quot;&quot;&quot;Display a string containing a description of the available options for the `self` simplifier.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8986</span>        print(<a class="code hl_function" href="group__capi.html#ga26682f83aeb0738f32bfb764ac1d1f25">Z3_simplifier_get_help</a>(self.ctx.ref(), self.simplifier))</div>
+<div class="line"><span class="lineno"> 8987</span> </div>
 <div class="ttc" id="agroup__capi_html_ga26682f83aeb0738f32bfb764ac1d1f25"><div class="ttname"><a href="group__capi.html#ga26682f83aeb0738f32bfb764ac1d1f25">Z3_simplifier_get_help</a></div><div class="ttdeci">Z3_string Z3_API Z3_simplifier_get_help(Z3_context c, Z3_simplifier t)</div><div class="ttdoc">Return a string containing a description of parameters accepted by the given simplifier.</div></div>
 </div><!-- fragment -->
 </div>
@@ -311,12 +311,12 @@ Build a custom simplifier and add it to a solver</pre>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return the parameter description set.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08973">8973</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8973</span>    <span class="keyword">def </span>param_descrs(self):</div>
-<div class="line"><span class="lineno"> 8974</span>        <span class="stringliteral">&quot;&quot;&quot;Return the parameter description set.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8975</span>        <span class="keywordflow">return</span> ParamDescrsRef(<a class="code hl_function" href="group__capi.html#ga68e1c4d502eb7628b1e5b41d87f1ba7f">Z3_simplifier_get_param_descrs</a>(self.ctx.ref(), self.simplifier), self.ctx)</div>
-<div class="line"><span class="lineno"> 8976</span>        </div>
-<div class="line"><span class="lineno"> 8977</span>    </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08988">8988</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8988</span>    <span class="keyword">def </span>param_descrs(self):</div>
+<div class="line"><span class="lineno"> 8989</span>        <span class="stringliteral">&quot;&quot;&quot;Return the parameter description set.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8990</span>        <span class="keywordflow">return</span> ParamDescrsRef(<a class="code hl_function" href="group__capi.html#ga68e1c4d502eb7628b1e5b41d87f1ba7f">Z3_simplifier_get_param_descrs</a>(self.ctx.ref(), self.simplifier), self.ctx)</div>
+<div class="line"><span class="lineno"> 8991</span>        </div>
+<div class="line"><span class="lineno"> 8992</span>    </div>
 <div class="ttc" id="agroup__capi_html_ga68e1c4d502eb7628b1e5b41d87f1ba7f"><div class="ttname"><a href="group__capi.html#ga68e1c4d502eb7628b1e5b41d87f1ba7f">Z3_simplifier_get_param_descrs</a></div><div class="ttdeci">Z3_param_descrs Z3_API Z3_simplifier_get_param_descrs(Z3_context c, Z3_simplifier t)</div><div class="ttdoc">Return the parameter description set for the given simplifier object.</div></div>
 </div><!-- fragment -->
 </div>
@@ -353,12 +353,12 @@ Build a custom simplifier and add it to a solver</pre>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a simplifier that uses the given configuration options</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08960">8960</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8960</span>    <span class="keyword">def </span>using_params(self, *args, **keys):</div>
-<div class="line"><span class="lineno"> 8961</span>        <span class="stringliteral">&quot;&quot;&quot;Return a simplifier that uses the given configuration options&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8962</span>        p = args2params(args, keys, self.ctx)</div>
-<div class="line"><span class="lineno"> 8963</span>        <span class="keywordflow">return</span> Simplifier(<a class="code hl_function" href="group__capi.html#ga674fea2deed1bece79f28dc5bc4eb971">Z3_simplifier_using_params</a>(self.ctx.ref(), self.simplifier, p.params), self.ctx)</div>
-<div class="line"><span class="lineno"> 8964</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08975">8975</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8975</span>    <span class="keyword">def </span>using_params(self, *args, **keys):</div>
+<div class="line"><span class="lineno"> 8976</span>        <span class="stringliteral">&quot;&quot;&quot;Return a simplifier that uses the given configuration options&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8977</span>        p = args2params(args, keys, self.ctx)</div>
+<div class="line"><span class="lineno"> 8978</span>        <span class="keywordflow">return</span> Simplifier(<a class="code hl_function" href="group__capi.html#ga674fea2deed1bece79f28dc5bc4eb971">Z3_simplifier_using_params</a>(self.ctx.ref(), self.simplifier, p.params), self.ctx)</div>
+<div class="line"><span class="lineno"> 8979</span> </div>
 <div class="ttc" id="agroup__capi_html_ga674fea2deed1bece79f28dc5bc4eb971"><div class="ttname"><a href="group__capi.html#ga674fea2deed1bece79f28dc5bc4eb971">Z3_simplifier_using_params</a></div><div class="ttdeci">Z3_simplifier Z3_API Z3_simplifier_using_params(Z3_context c, Z3_simplifier t, Z3_params p)</div><div class="ttdoc">Return a simplifier that applies t using the given set of parameters.</div></div>
 </div><!-- fragment -->
 </div>
@@ -376,7 +376,7 @@ Build a custom simplifier and add it to a solver</pre>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08933">8933</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08948">8948</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02567">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03680">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03772">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00878">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06665">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00464">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06414">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06611">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06956">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l07324">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00382">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05560">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06046">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06111">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06417">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06614">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06645">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06764">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06959">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l07327">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l07365">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00377">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05637">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05649">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06049">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06114">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06177">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06483">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06648">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06767">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06874">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06992">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07368">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07561">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02666">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03849">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01060">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02800">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l03979">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06500">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l07204">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l07404">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06678">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02787">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03963">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03838">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02761">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l03931">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06487">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06652">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l07060">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l07390">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04025">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02774">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l03947">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02714">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l03892">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01677">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02590">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03703">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01081">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02741">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03827">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03749">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02638">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02580">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03693">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03785">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02693">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03872">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l06070">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06149">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06705">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l07372">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l04053">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02729">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l03913">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02605">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03716">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03762">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02652">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l04039">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l03995">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02628">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03739">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03808">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06529">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06689">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02615">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03726">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03795">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l05883">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01140">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06789">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l06917">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l06440">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07717">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l06303">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07661">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02255">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l05310">FiniteSetSortRef.cast()</a>, <a class="el" href="z3py_8py_source.html#l07747">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l06351">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00427">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01102">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l07251">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04829">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03173">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l06181">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l06387">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00815">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04768">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l06878">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l06931">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06708">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l07003">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l06273">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l06138">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l07077">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l07440">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l06133">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l06128">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l07144">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l07184">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l06199">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06737">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l07428">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07776">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00639">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02249">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06771">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l06901">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07629">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l07129">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00850">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02227">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03282">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07607">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l06217">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l07300">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l07312">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07585">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06547">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02210">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00827">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04773">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05855">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06722">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07647">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06559">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07572">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l06053">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l06383">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06620">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06999">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06118">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l06247">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02205">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06595">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00448">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l06391">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l07292">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l01176">ExprRef.update()</a>, <a class="el" href="z3py_8py_source.html#l05924">DatatypeRef.update_field()</a>, <a class="el" href="z3py_8py_source.html#l06073">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06820">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02278">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02294">QuantifierRef.var_sort()</a>.</p>
 
@@ -394,14 +394,14 @@ Build a custom simplifier and add it to a solver</pre>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08934">8934</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08949">8949</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 16 2026 04:06:43 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Aug 16 2026 05:08:24 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

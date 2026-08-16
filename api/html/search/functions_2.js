@@ -20,7 +20,7 @@ var searchData=
   ['boolsort_17',['BoolSort',['../namespacez3py.html#a0d2c3f934886a89b42456bfd7e5f5f0a',1,'z3py']]],
   ['boolval_18',['BoolVal',['../namespacez3py.html#acdfab482a3312650549ff6ba4ccb6ccd',1,'z3py']]],
   ['boolvector_19',['BoolVector',['../namespacez3py.html#a48c30f70e14fee186eab333a82896324',1,'z3py']]],
-  ['bv2int_20',['bv2int',['../namespacez3py.html#a68a151dd24829dc9716fe77b8b574870',1,'z3py.BV2Int()'],['../namespacez3.html#a3e5b53f18326e847a980bd6ee4a0d2b7',1,'z3::bv2int()']]],
+  ['bv2int_20',['bv2int',['../namespacez3.html#a3e5b53f18326e847a980bd6ee4a0d2b7',1,'z3::bv2int()'],['../namespacez3py.html#a68a151dd24829dc9716fe77b8b574870',1,'z3py.BV2Int()']]],
   ['bv_5fconst_21',['bv_const',['../classz3_1_1context.html#a43b316555ff2637cb2c7b3ec00d75d8a',1,'z3::context']]],
   ['bv_5fsize_22',['bv_size',['../classz3_1_1sort.html#a1244421efdbd792928d70898ee9df6ec',1,'z3::sort']]],
   ['bv_5fsort_23',['bv_sort',['../classz3_1_1context.html#aa2acb5cd89c940bc19fa4ca584b3c9e4',1,'z3::context']]],
