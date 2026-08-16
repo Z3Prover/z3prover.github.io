@@ -725,7 +725,10 @@ restart_strategy | unsigned int  |  0 - geometric, 1 - inner-outer-geometric, 2 
 restricted_quasi_macros | bool  |  try to find universally quantified formulas that are restricted quasi-macros | false
 seq.max_unfolding | unsigned int  |  maximal unfolding depth for checking string equations and regular expressions | 1000000000
 seq.min_unfolding | unsigned int  |  initial bound for strings whose lengths are bounded by iterative deepening. Set this to a higher value if there are only models with larger string lengths | 1
+seq.regex_budget | unsigned int  |  work budget (search nodes and product expansions) for a single decision of the monadic regular-expression solver, after which it gives up. A budget of 0 makes it give up immediately | 1000000
 seq.regex_monadic | bool  |  use the monadic regular-expression end-game solver | true
+seq.regex_orientation | symbol  |  direction the monadic regular-expression solver reads memberships in. options are: 'forward', 'reversed' (solve rev(t) in rev(R), which is equisatisfiable and can have a far smaller derivative automaton), 'retry' (read forwards and, if the search runs out of budget, read the same decision backwards) | retry
+seq.regex_transition_mode | symbol  |  transition mode of the monadic regular-expression solver. options are: 'light-ant' (split derivative targets over top-level unions), 'brz' (keep derivative targets in Brzozowski normal form) | light-ant
 seq.split_w_len | bool  |  enable splitting guided by length constraints | true
 seq.validate | bool  |  enable self-validation of theory axioms created by seq theory | false
 sls.enable | bool  |  enable sls co-processor with SMT engine | false
