@@ -168,55 +168,47 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        return newExpr(c, C.Z3_qe_lite(c.ptr, vars.ptr, body.ptr))</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>// QeModelProject projects variables given a model.</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>// bound is a slice of application expressions representing the variables to project.</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>func (c *Context) QeModelProject(m *Model, bound []*Expr, body *Expr) *Expr {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        n := len(bound)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        cBound := make([]C.Z3_app, n)</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        for i, b := range bound {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                cBound[i] = C.Z3_to_app(c.ptr, b.ptr)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        var boundPtr *C.Z3_app</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        if n &gt; 0 {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                boundPtr = &amp;cBound[0]</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        return newExpr(c, C.Z3_qe_model_project(c.ptr, m.ptr, C.uint(n), boundPtr, body.ptr))</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>// QeModelProjectSkolem projects variables given a model, storing the skolem witnesses in map_.</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>// bound is a slice of application expressions representing the variables to project.</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>func (c *Context) QeModelProjectSkolem(m *Model, bound []*Expr, body *Expr, map_ *ASTMap) *Expr {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        n := len(bound)</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        cBound := make([]C.Z3_app, n)</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        for i, b := range bound {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                cBound[i] = C.Z3_to_app(c.ptr, b.ptr)</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        var boundPtr *C.Z3_app</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        if n &gt; 0 {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                boundPtr = &amp;cBound[0]</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        return newExpr(c, C.Z3_qe_model_project_skolem(c.ptr, m.ptr, C.uint(n), boundPtr, body.ptr, map_.ptr))</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>// QeModelProjectWithWitness projects variables given a model and extracts witnesses.</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>// The map_ is populated with bindings of projected variables to witness terms.</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>// bound is a slice of application expressions representing the variables to project.</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>func (c *Context) QeModelProjectWithWitness(m *Model, bound []*Expr, body *Expr, map_ *ASTMap) *Expr {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        n := len(bound)</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        cBound := make([]C.Z3_app, n)</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        for i, b := range bound {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                cBound[i] = C.Z3_to_app(c.ptr, b.ptr)</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        }</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        var boundPtr *C.Z3_app</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        if n &gt; 0 {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                boundPtr = &amp;cBound[0]</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        return newExpr(c, C.Z3_qe_model_project_with_witness(c.ptr, m.ptr, C.uint(n), boundPtr, body.ptr, map_.ptr))</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>// toAppSlice converts a slice of *Expr to a C array of Z3_app and returns a</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>// pointer to the first element (or nil for an empty slice).</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>func (c *Context) toAppSlice(exprs []*Expr) ([]C.Z3_app, *C.Z3_app) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        apps := make([]C.Z3_app, len(exprs))</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        for i, e := range exprs {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                apps[i] = C.Z3_to_app(c.ptr, e.ptr)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        if len(apps) == 0 {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                return apps, nil</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        return apps, &amp;apps[0]</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>// QeModelProject projects variables given a model.</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>// bound is a slice of application expressions representing the variables to project.</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>func (c *Context) QeModelProject(m *Model, bound []*Expr, body *Expr) *Expr {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        apps, ptr := c.toAppSlice(bound)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        _ = apps</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        return newExpr(c, C.Z3_qe_model_project(c.ptr, m.ptr, C.uint(len(bound)), ptr, body.ptr))</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>// QeModelProjectSkolem projects variables given a model, storing the skolem witnesses in map_.</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>// bound is a slice of application expressions representing the variables to project.</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>func (c *Context) QeModelProjectSkolem(m *Model, bound []*Expr, body *Expr, map_ *ASTMap) *Expr {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        apps, ptr := c.toAppSlice(bound)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        _ = apps</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        return newExpr(c, C.Z3_qe_model_project_skolem(c.ptr, m.ptr, C.uint(len(bound)), ptr, body.ptr, map_.ptr))</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>// QeModelProjectWithWitness projects variables given a model and extracts witnesses.</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>// The map_ is populated with bindings of projected variables to witness terms.</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>// bound is a slice of application expressions representing the variables to project.</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>func (c *Context) QeModelProjectWithWitness(m *Model, bound []*Expr, body *Expr, map_ *ASTMap) *Expr {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        apps, ptr := c.toAppSlice(bound)</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        _ = apps</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        return newExpr(c, C.Z3_qe_model_project_with_witness(c.ptr, m.ptr, C.uint(len(bound)), ptr, body.ptr, map_.ptr))</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 16 2026 05:08:23 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Aug 17 2026 03:55:46 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

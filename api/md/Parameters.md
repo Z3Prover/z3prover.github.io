@@ -638,7 +638,6 @@ arith.nl.optimize_bounds | bool  |  enable bounds optimization | true
 arith.nl.optimize_bounds_lp_max_vars | unsigned int  |  skip LP-based nonlinear bounds optimization when the number of candidate monomial variables exceeds this threshold (0 = unlimited) | 120
 arith.nl.order | bool  |  run order lemmas | true
 arith.nl.order.binomial_sign | bool  |  run order_lemma_on_binomial_sign; disabling it keeps the structural order-lemma splitting | true
-arith.nl.propagate_fixed_rows | bool  |  scan LP rows for fixed variables | false
 arith.nl.propagate_linear_monomials | bool  |  propagate linear monomials | true
 arith.nl.reduce_pseudo_linear | bool  |  create incremental linearization axioms for pseudo-linear monomials | true
 arith.nl.rounds | unsigned int  |  threshold for number of (nested) final checks for non linear arithmetic, relevant only if smt.arith.solver=2 | 1024
