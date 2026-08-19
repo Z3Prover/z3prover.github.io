@@ -294,24 +294,24 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04641">4641</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4641</span>                                                 {</div>
-<div class="line"><span class="lineno"> 4642</span>        sort s = <a class="code hl_function" href="classz3_1_1func__decl.html#a6ebb7dcc87b352afcba05ecc4dd6cb81">range</a>();</div>
-<div class="line"><span class="lineno"> 4643</span>        assert(s.is_datatype());</div>
-<div class="line"><span class="lineno"> 4644</span>        <span class="keywordtype">unsigned</span> n = <a class="code hl_function" href="group__capi.html#ga655a30b499ea4c4d098f697f847331bb">Z3_get_datatype_sort_num_constructors</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s);</div>
-<div class="line"><span class="lineno"> 4645</span>        <span class="keywordtype">unsigned</span> idx = 0;</div>
-<div class="line"><span class="lineno"> 4646</span>        <span class="keywordflow">for</span> (; idx &lt; n; ++idx) {</div>
-<div class="line"><span class="lineno"> 4647</span>            <a class="code hl_function" href="classz3_1_1func__decl.html#aaa6db6d157d62713318034a87998e742">func_decl</a> f(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), <a class="code hl_function" href="group__capi.html#ga6b7db7830f1e98554b7179522f8c42c4">Z3_get_datatype_sort_constructor</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s, idx));</div>
-<div class="line"><span class="lineno"> 4648</span>            <span class="keywordflow">if</span> (<span class="keywordtype">id</span>() == f.id())</div>
-<div class="line"><span class="lineno"> 4649</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno"> 4650</span>        }</div>
-<div class="line"><span class="lineno"> 4651</span>        assert(idx &lt; n);</div>
-<div class="line"><span class="lineno"> 4652</span>        n = <a class="code hl_function" href="classz3_1_1func__decl.html#aee4d64fa3964d26da195947cb36ea2b7">arity</a>();</div>
-<div class="line"><span class="lineno"> 4653</span>        <a class="code hl_typedef" href="namespacez3.html#a1e18b9d8883cbc3394d698671752e2cd">func_decl_vector</a> as(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>());</div>
-<div class="line"><span class="lineno"> 4654</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; ++i) </div>
-<div class="line"><span class="lineno"> 4655</span>            as.push_back(<a class="code hl_function" href="classz3_1_1func__decl.html#aaa6db6d157d62713318034a87998e742">func_decl</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), <a class="code hl_function" href="group__capi.html#gafadf6fcb83ba59ebbb229565a6a8a792">Z3_get_datatype_sort_constructor_accessor</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s, idx, i)));</div>
-<div class="line"><span class="lineno"> 4656</span>        <span class="keywordflow">return</span> as;</div>
-<div class="line"><span class="lineno"> 4657</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04643">4643</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4643</span>                                                 {</div>
+<div class="line"><span class="lineno"> 4644</span>        sort s = <a class="code hl_function" href="classz3_1_1func__decl.html#a6ebb7dcc87b352afcba05ecc4dd6cb81">range</a>();</div>
+<div class="line"><span class="lineno"> 4645</span>        assert(s.is_datatype());</div>
+<div class="line"><span class="lineno"> 4646</span>        <span class="keywordtype">unsigned</span> n = <a class="code hl_function" href="group__capi.html#ga655a30b499ea4c4d098f697f847331bb">Z3_get_datatype_sort_num_constructors</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s);</div>
+<div class="line"><span class="lineno"> 4647</span>        <span class="keywordtype">unsigned</span> idx = 0;</div>
+<div class="line"><span class="lineno"> 4648</span>        <span class="keywordflow">for</span> (; idx &lt; n; ++idx) {</div>
+<div class="line"><span class="lineno"> 4649</span>            <a class="code hl_function" href="classz3_1_1func__decl.html#aaa6db6d157d62713318034a87998e742">func_decl</a> f(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), <a class="code hl_function" href="group__capi.html#ga6b7db7830f1e98554b7179522f8c42c4">Z3_get_datatype_sort_constructor</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s, idx));</div>
+<div class="line"><span class="lineno"> 4650</span>            <span class="keywordflow">if</span> (<span class="keywordtype">id</span>() == f.id())</div>
+<div class="line"><span class="lineno"> 4651</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno"> 4652</span>        }</div>
+<div class="line"><span class="lineno"> 4653</span>        assert(idx &lt; n);</div>
+<div class="line"><span class="lineno"> 4654</span>        n = <a class="code hl_function" href="classz3_1_1func__decl.html#aee4d64fa3964d26da195947cb36ea2b7">arity</a>();</div>
+<div class="line"><span class="lineno"> 4655</span>        <a class="code hl_typedef" href="namespacez3.html#a1e18b9d8883cbc3394d698671752e2cd">func_decl_vector</a> as(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>());</div>
+<div class="line"><span class="lineno"> 4656</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; ++i) </div>
+<div class="line"><span class="lineno"> 4657</span>            as.push_back(<a class="code hl_function" href="classz3_1_1func__decl.html#aaa6db6d157d62713318034a87998e742">func_decl</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), <a class="code hl_function" href="group__capi.html#gafadf6fcb83ba59ebbb229565a6a8a792">Z3_get_datatype_sort_constructor_accessor</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), s, idx, i)));</div>
+<div class="line"><span class="lineno"> 4658</span>        <span class="keywordflow">return</span> as;</div>
+<div class="line"><span class="lineno"> 4659</span>    }</div>
 <div class="ttc" id="aclassz3_1_1func__decl_html_a6ebb7dcc87b352afcba05ecc4dd6cb81"><div class="ttname"><a href="classz3_1_1func__decl.html#a6ebb7dcc87b352afcba05ecc4dd6cb81">z3::func_decl::range</a></div><div class="ttdeci">sort range() const</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00917">z3++.h:917</a></div></div>
 <div class="ttc" id="aclassz3_1_1func__decl_html_aaa6db6d157d62713318034a87998e742"><div class="ttname"><a href="classz3_1_1func__decl.html#aaa6db6d157d62713318034a87998e742">z3::func_decl::func_decl</a></div><div class="ttdeci">func_decl(context &amp;c)</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00906">z3++.h:906</a></div></div>
 <div class="ttc" id="aclassz3_1_1func__decl_html_aee4d64fa3964d26da195947cb36ea2b7"><div class="ttname"><a href="classz3_1_1func__decl.html#aee4d64fa3964d26da195947cb36ea2b7">z3::func_decl::arity</a></div><div class="ttdeci">unsigned arity() const</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00915">z3++.h:915</a></div></div>
@@ -350,7 +350,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  915</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga203f32e3b904955f703f61f91a8626a4">Z3_get_arity</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>); }</div>
 <div class="ttc" id="agroup__capi_html_ga203f32e3b904955f703f61f91a8626a4"><div class="ttname"><a href="group__capi.html#ga203f32e3b904955f703f61f91a8626a4">Z3_get_arity</a></div><div class="ttdeci">unsigned Z3_API Z3_get_arity(Z3_context c, Z3_func_decl d)</div><div class="ttdoc">Alias for Z3_get_domain_size.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04641">func_decl::accessors()</a>, <a class="el" href="z3_09_09_8h_source.html#l03780">fixedpoint::add_fact()</a>, <a class="el" href="z3_09_09_8h_source.html#l00916">func_decl::domain()</a>, and <a class="el" href="z3_09_09_8h_source.html#l00927">func_decl::is_const()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04643">func_decl::accessors()</a>, <a class="el" href="z3_09_09_8h_source.html#l03780">fixedpoint::add_fact()</a>, <a class="el" href="z3_09_09_8h_source.html#l00916">func_decl::domain()</a>, and <a class="el" href="z3_09_09_8h_source.html#l00927">func_decl::is_const()</a>.</p>
 
 </div>
 </div>
@@ -415,7 +415,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="agroup__capi_html_gad025402a9cac1a8d8facddba3f8cbddc"><div class="ttname"><a href="group__capi.html#gad025402a9cac1a8d8facddba3f8cbddc">Z3_get_domain</a></div><div class="ttdeci">Z3_sort Z3_API Z3_get_domain(Z3_context c, Z3_func_decl d, unsigned i)</div><div class="ttdoc">Return the sort of the i-th parameter of the given function declaration.</div></div>
 <div class="ttc" id="anamespace_microsoft_1_1_z3_html_ad38b64a05ac85e29a6eb4c6a95b3e59e"><div class="ttname"><a href="namespace_microsoft_1_1_z3.html#ad38b64a05ac85e29a6eb4c6a95b3e59e">Microsoft.Z3.Z3_sort</a></div><div class="ttdeci">System.IntPtr Z3_sort</div><div class="ttdef"><b>Definition</b> <a href="_native_context_8cs_source.html#l00033">NativeContext.cs:33</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l00878">FuncDeclRef::__call__()</a>, <a class="el" href="z3_09_09_8h_source.html#l04245">func_decl::operator()()</a>, <a class="el" href="z3_09_09_8h_source.html#l04232">func_decl::operator()()</a>, and <a class="el" href="z3_09_09_8h_source.html#l04252">func_decl::operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l00878">FuncDeclRef::__call__()</a>, <a class="el" href="z3_09_09_8h_source.html#l04247">func_decl::operator()()</a>, <a class="el" href="z3_09_09_8h_source.html#l04234">func_decl::operator()()</a>, and <a class="el" href="z3_09_09_8h_source.html#l04254">func_decl::operator()()</a>.</p>
 
 </div>
 </div>
@@ -448,7 +448,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  913</span>{ <span class="keywordtype">unsigned</span> r = <a class="code hl_function" href="group__capi.html#gad25ad0051b0398333dbca2dc68fabbcd">Z3_get_func_decl_id</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>); <a class="code hl_function" href="classz3_1_1object.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>(); <span class="keywordflow">return</span> r; }</div>
 <div class="ttc" id="agroup__capi_html_gad25ad0051b0398333dbca2dc68fabbcd"><div class="ttname"><a href="group__capi.html#gad25ad0051b0398333dbca2dc68fabbcd">Z3_get_func_decl_id</a></div><div class="ttdeci">unsigned Z3_API Z3_get_func_decl_id(Z3_context c, Z3_func_decl f)</div><div class="ttdoc">Return a unique identifier for f.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04641">func_decl::accessors()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04643">func_decl::accessors()</a>.</p>
 
 </div>
 </div>
@@ -596,12 +596,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04220">4220</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4220</span>                                            {</div>
-<div class="line"><span class="lineno"> 4221</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 0, 0);</div>
-<div class="line"><span class="lineno"> 4222</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4223</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4224</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04222">4222</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4222</span>                                            {</div>
+<div class="line"><span class="lineno"> 4223</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 0, 0);</div>
+<div class="line"><span class="lineno"> 4224</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4225</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4226</span>    }</div>
 <div class="ttc" id="aclassz3_1_1context_html_a4358f3b3cd7c58da06164a8102f7c83b"><div class="ttname"><a href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">z3::context::check_error</a></div><div class="ttdeci">Z3_error_code check_error() const</div><div class="ttdoc">Auxiliary method used to check for API usage errors.</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00241">z3++.h:241</a></div></div>
 <div class="ttc" id="agroup__capi_html_gacd5cf6613f8852ef19c4bb097c9b72c0"><div class="ttname"><a href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_app(Z3_context c, Z3_func_decl d, unsigned num_args, Z3_ast const args[])</div><div class="ttdoc">Create a constant or function application.</div></div>
 </div><!-- fragment -->
@@ -631,14 +631,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04225">4225</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4225</span>                                                          {</div>
-<div class="line"><span class="lineno"> 4226</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a);</div>
-<div class="line"><span class="lineno"> 4227</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[1] = { a };</div>
-<div class="line"><span class="lineno"> 4228</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 1, args);</div>
-<div class="line"><span class="lineno"> 4229</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4230</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4231</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04227">4227</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4227</span>                                                          {</div>
+<div class="line"><span class="lineno"> 4228</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a);</div>
+<div class="line"><span class="lineno"> 4229</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[1] = { a };</div>
+<div class="line"><span class="lineno"> 4230</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 1, args);</div>
+<div class="line"><span class="lineno"> 4231</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4232</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4233</span>    }</div>
 <div class="ttc" id="aclassz3_1_1object_html_a73b37674ea1dc5a6d4654e5840260cb5"><div class="ttname"><a href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">z3::object::check_context</a></div><div class="ttdeci">friend void check_context(object const &amp;a, object const &amp;b)</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00564">z3++.h:564</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -677,14 +677,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04238">4238</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4238</span>                                                                            {</div>
-<div class="line"><span class="lineno"> 4239</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a1); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a2);</div>
-<div class="line"><span class="lineno"> 4240</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[2] = { a1, a2 };</div>
-<div class="line"><span class="lineno"> 4241</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 2, args);</div>
-<div class="line"><span class="lineno"> 4242</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4243</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4244</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04240">4240</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4240</span>                                                                            {</div>
+<div class="line"><span class="lineno"> 4241</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a1); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a2);</div>
+<div class="line"><span class="lineno"> 4242</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[2] = { a1, a2 };</div>
+<div class="line"><span class="lineno"> 4243</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 2, args);</div>
+<div class="line"><span class="lineno"> 4244</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4245</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4246</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -728,14 +728,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04259">4259</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4259</span>                                                                                             {</div>
-<div class="line"><span class="lineno"> 4260</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a1); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a2); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a3);</div>
-<div class="line"><span class="lineno"> 4261</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[3] = { a1, a2, a3 };</div>
-<div class="line"><span class="lineno"> 4262</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 3, args);</div>
-<div class="line"><span class="lineno"> 4263</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4264</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4265</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04261">4261</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4261</span>                                                                                             {</div>
+<div class="line"><span class="lineno"> 4262</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a1); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a2); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a3);</div>
+<div class="line"><span class="lineno"> 4263</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[3] = { a1, a2, a3 };</div>
+<div class="line"><span class="lineno"> 4264</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 3, args);</div>
+<div class="line"><span class="lineno"> 4265</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4266</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4267</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -785,14 +785,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04266">4266</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4266</span>                                                                                                              {</div>
-<div class="line"><span class="lineno"> 4267</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a1); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a2); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a3); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a4);</div>
-<div class="line"><span class="lineno"> 4268</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[4] = { a1, a2, a3, a4 };</div>
-<div class="line"><span class="lineno"> 4269</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 4, args);</div>
-<div class="line"><span class="lineno"> 4270</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4271</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4272</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04268">4268</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4268</span>                                                                                                              {</div>
+<div class="line"><span class="lineno"> 4269</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a1); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a2); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a3); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a4);</div>
+<div class="line"><span class="lineno"> 4270</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[4] = { a1, a2, a3, a4 };</div>
+<div class="line"><span class="lineno"> 4271</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 4, args);</div>
+<div class="line"><span class="lineno"> 4272</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4273</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4274</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -848,14 +848,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04273">4273</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4273</span>                                                                                                                               {</div>
-<div class="line"><span class="lineno"> 4274</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a1); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a2); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a3); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a4); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a5);</div>
-<div class="line"><span class="lineno"> 4275</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[5] = { a1, a2, a3, a4, a5 };</div>
-<div class="line"><span class="lineno"> 4276</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 5, args);</div>
-<div class="line"><span class="lineno"> 4277</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4278</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4279</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04275">4275</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4275</span>                                                                                                                               {</div>
+<div class="line"><span class="lineno"> 4276</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a1); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a2); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a3); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a4); <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a5);</div>
+<div class="line"><span class="lineno"> 4277</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[5] = { a1, a2, a3, a4, a5 };</div>
+<div class="line"><span class="lineno"> 4278</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 5, args);</div>
+<div class="line"><span class="lineno"> 4279</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4280</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4281</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -893,15 +893,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04245">4245</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4245</span>                                                                   {</div>
-<div class="line"><span class="lineno"> 4246</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a1);</div>
-<div class="line"><span class="lineno"> 4247</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[2] = { a1, <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a1cfaa0b71706c9c81d2c7ddf8f3e6b60">num_val</a>(a2, <a class="code hl_function" href="classz3_1_1func__decl.html#ab6b9b71547733e67376a0a86b9242bbc">domain</a>(1)) };</div>
-<div class="line"><span class="lineno"> 4248</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 2, args);</div>
-<div class="line"><span class="lineno"> 4249</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4250</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4251</span>    }</div>
-<div class="ttc" id="aclassz3_1_1context_html_a1cfaa0b71706c9c81d2c7ddf8f3e6b60"><div class="ttname"><a href="classz3_1_1context.html#a1cfaa0b71706c9c81d2c7ddf8f3e6b60">z3::context::num_val</a></div><div class="ttdeci">expr num_val(int n, sort const &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l04197">z3++.h:4197</a></div></div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04247">4247</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4247</span>                                                                   {</div>
+<div class="line"><span class="lineno"> 4248</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a1);</div>
+<div class="line"><span class="lineno"> 4249</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[2] = { a1, <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a1cfaa0b71706c9c81d2c7ddf8f3e6b60">num_val</a>(a2, <a class="code hl_function" href="classz3_1_1func__decl.html#ab6b9b71547733e67376a0a86b9242bbc">domain</a>(1)) };</div>
+<div class="line"><span class="lineno"> 4250</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 2, args);</div>
+<div class="line"><span class="lineno"> 4251</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4252</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4253</span>    }</div>
+<div class="ttc" id="aclassz3_1_1context_html_a1cfaa0b71706c9c81d2c7ddf8f3e6b60"><div class="ttname"><a href="classz3_1_1context.html#a1cfaa0b71706c9c81d2c7ddf8f3e6b60">z3::context::num_val</a></div><div class="ttdeci">expr num_val(int n, sort const &amp;s)</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l04199">z3++.h:4199</a></div></div>
 <div class="ttc" id="aclassz3_1_1func__decl_html_ab6b9b71547733e67376a0a86b9242bbc"><div class="ttname"><a href="classz3_1_1func__decl.html#ab6b9b71547733e67376a0a86b9242bbc">z3::func_decl::domain</a></div><div class="ttdeci">sort domain(unsigned i) const</div><div class="ttdef"><b>Definition</b> <a href="z3_09_09_8h_source.html#l00916">z3++.h:916</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -930,17 +930,17 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04210">4210</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4210</span>                                                                   {</div>
-<div class="line"><span class="lineno"> 4211</span>        array&lt;Z3_ast&gt; _args(args.size());</div>
-<div class="line"><span class="lineno"> 4212</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; args.size(); ++i) {</div>
-<div class="line"><span class="lineno"> 4213</span>            <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, args[i]);</div>
-<div class="line"><span class="lineno"> 4214</span>            _args[i] = args[i];</div>
-<div class="line"><span class="lineno"> 4215</span>        }</div>
-<div class="line"><span class="lineno"> 4216</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, args.size(), _args.ptr());</div>
-<div class="line"><span class="lineno"> 4217</span>        <a class="code hl_function" href="classz3_1_1object.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4218</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4219</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04212">4212</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4212</span>                                                                   {</div>
+<div class="line"><span class="lineno"> 4213</span>        array&lt;Z3_ast&gt; _args(args.size());</div>
+<div class="line"><span class="lineno"> 4214</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; args.size(); ++i) {</div>
+<div class="line"><span class="lineno"> 4215</span>            <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, args[i]);</div>
+<div class="line"><span class="lineno"> 4216</span>            _args[i] = args[i];</div>
+<div class="line"><span class="lineno"> 4217</span>        }</div>
+<div class="line"><span class="lineno"> 4218</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, args.size(), _args.ptr());</div>
+<div class="line"><span class="lineno"> 4219</span>        <a class="code hl_function" href="classz3_1_1object.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4220</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4221</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -968,13 +968,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04232">4232</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4232</span>                                                 {</div>
-<div class="line"><span class="lineno"> 4233</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[1] = { <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a1cfaa0b71706c9c81d2c7ddf8f3e6b60">num_val</a>(a, <a class="code hl_function" href="classz3_1_1func__decl.html#ab6b9b71547733e67376a0a86b9242bbc">domain</a>(0)) };</div>
-<div class="line"><span class="lineno"> 4234</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 1, args);</div>
-<div class="line"><span class="lineno"> 4235</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4236</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4237</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04234">4234</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4234</span>                                                 {</div>
+<div class="line"><span class="lineno"> 4235</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[1] = { <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a1cfaa0b71706c9c81d2c7ddf8f3e6b60">num_val</a>(a, <a class="code hl_function" href="classz3_1_1func__decl.html#ab6b9b71547733e67376a0a86b9242bbc">domain</a>(0)) };</div>
+<div class="line"><span class="lineno"> 4236</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 1, args);</div>
+<div class="line"><span class="lineno"> 4237</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4238</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4239</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1012,14 +1012,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04252">4252</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4252</span>                                                                   {</div>
-<div class="line"><span class="lineno"> 4253</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a2);</div>
-<div class="line"><span class="lineno"> 4254</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[2] = { <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a1cfaa0b71706c9c81d2c7ddf8f3e6b60">num_val</a>(a1, <a class="code hl_function" href="classz3_1_1func__decl.html#ab6b9b71547733e67376a0a86b9242bbc">domain</a>(0)), a2 };</div>
-<div class="line"><span class="lineno"> 4255</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 2, args);</div>
-<div class="line"><span class="lineno"> 4256</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4257</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4258</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04254">4254</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4254</span>                                                                   {</div>
+<div class="line"><span class="lineno"> 4255</span>        <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, a2);</div>
+<div class="line"><span class="lineno"> 4256</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> args[2] = { <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a1cfaa0b71706c9c81d2c7ddf8f3e6b60">num_val</a>(a1, <a class="code hl_function" href="classz3_1_1func__decl.html#ab6b9b71547733e67376a0a86b9242bbc">domain</a>(0)), a2 };</div>
+<div class="line"><span class="lineno"> 4257</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, 2, args);</div>
+<div class="line"><span class="lineno"> 4258</span>        <a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>().<a class="code hl_function" href="classz3_1_1context.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4259</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4260</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1057,18 +1057,18 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04199">4199</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 4199</span>                                                                         {</div>
-<div class="line"><span class="lineno"> 4200</span>        array&lt;Z3_ast&gt; _args(n);</div>
-<div class="line"><span class="lineno"> 4201</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; ++i) {</div>
-<div class="line"><span class="lineno"> 4202</span>            <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, args[i]);</div>
-<div class="line"><span class="lineno"> 4203</span>            _args[i] = args[i];</div>
-<div class="line"><span class="lineno"> 4204</span>        }</div>
-<div class="line"><span class="lineno"> 4205</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, n, _args.ptr());</div>
-<div class="line"><span class="lineno"> 4206</span>        <a class="code hl_function" href="classz3_1_1object.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
-<div class="line"><span class="lineno"> 4207</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
-<div class="line"><span class="lineno"> 4208</span> </div>
-<div class="line"><span class="lineno"> 4209</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="z3_09_09_8h_source.html#l04201">4201</a> of file <a class="el" href="z3_09_09_8h_source.html">z3++.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 4201</span>                                                                         {</div>
+<div class="line"><span class="lineno"> 4202</span>        array&lt;Z3_ast&gt; _args(n);</div>
+<div class="line"><span class="lineno"> 4203</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; n; ++i) {</div>
+<div class="line"><span class="lineno"> 4204</span>            <a class="code hl_friend" href="classz3_1_1object.html#a73b37674ea1dc5a6d4654e5840260cb5">check_context</a>(*<span class="keyword">this</span>, args[i]);</div>
+<div class="line"><span class="lineno"> 4205</span>            _args[i] = args[i];</div>
+<div class="line"><span class="lineno"> 4206</span>        }</div>
+<div class="line"><span class="lineno"> 4207</span>        <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#aafac3844267f1923d666ee3c38f7d3c5">Z3_ast</a> r = <a class="code hl_function" href="group__capi.html#gacd5cf6613f8852ef19c4bb097c9b72c0">Z3_mk_app</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>, n, _args.ptr());</div>
+<div class="line"><span class="lineno"> 4208</span>        <a class="code hl_function" href="classz3_1_1object.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>();</div>
+<div class="line"><span class="lineno"> 4209</span>        <span class="keywordflow">return</span> expr(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r);</div>
+<div class="line"><span class="lineno"> 4210</span> </div>
+<div class="line"><span class="lineno"> 4211</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1099,7 +1099,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  917</span>{ <a class="code hl_typedef" href="namespace_microsoft_1_1_z3.html#ad38b64a05ac85e29a6eb4c6a95b3e59e">Z3_sort</a> r = <a class="code hl_function" href="group__capi.html#ga913ecf28cd4bddc8255f77f80b6aafe9">Z3_get_range</a>(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), *<span class="keyword">this</span>); <a class="code hl_function" href="classz3_1_1object.html#a4358f3b3cd7c58da06164a8102f7c83b">check_error</a>(); <span class="keywordflow">return</span> sort(<a class="code hl_function" href="classz3_1_1object.html#a45f401b271cc35accc9dec2c650dc9b1">ctx</a>(), r); }</div>
 <div class="ttc" id="agroup__capi_html_ga913ecf28cd4bddc8255f77f80b6aafe9"><div class="ttname"><a href="group__capi.html#ga913ecf28cd4bddc8255f77f80b6aafe9">Z3_get_range</a></div><div class="ttdeci">Z3_sort Z3_API Z3_get_range(Z3_context c, Z3_func_decl d)</div><div class="ttdoc">Return the range of the given declaration.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04641">func_decl::accessors()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3_09_09_8h_source.html#l04643">func_decl::accessors()</a>.</p>
 
 </div>
 </div>
@@ -1138,7 +1138,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2026 03:55:47 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Aug 19 2026 04:04:06 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
