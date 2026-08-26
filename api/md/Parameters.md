@@ -299,6 +299,7 @@ maxres.maximize_assignment | bool  |  find an MSS/MCS to improve current assignm
 maxres.pivot_on_correction_set | bool  |  reduce soft constraints if the current correction set is smaller than current core | true
 maxres.wmax | bool  |  use weighted theory solver to constrain upper bounds | false
 maxsat_engine | symbol  |  select engine for maxsat: 'core_maxsat', 'wmax', 'maxres', 'maxresw', 'pd-maxres', 'maxres-bin', 'rc2' | maxres
+optsmt_bisect_rounds | unsigned int  |  maximal number of solver calls spent bisecting the interval between the best model value and the refuted arithmetic bound of a real-valued objective (e.g. under nonlinear constraints); when exhausted the objective is reported as unknown with that interval | 64
 optsmt_engine | symbol  |  select optimization engine: 'basic', 'symba' | basic
 pb.compile_equality | bool  |  compile arithmetical equalities into pseudo-Boolean equality (instead of two inequalites) | false
 pp.neat | bool  |  use neat (as opposed to less readable, but faster) pretty printer when displaying context | true
