@@ -251,7 +251,9 @@ TPTP frontend parameters
  Parameter | Type | Description | Default
  ----------|------|-------------|--------
 dump_smt2 | symbol  |  if non-empty, file path to dump the parsed TPTP goal as an SMT-LIB2 benchmark (replaces the Z3_TPTP_DUMP_SMT2 environment variable) | 
+leibniz_instantiation | bool  |  pre-process the goal by synthesizing and adding Leibniz-equality style instantiations of universally quantified predicate variables applied to distinct argument terms | false
 root | symbol  |  root directory for resolving TPTP include() axiom paths (replaces the TPTP environment variable) | 
+unfold_lambda_macros | bool  |  pre-process the goal by unfolding constants that are defined as lambda terms (shallow embeddings of higher-order/modal operators), inlining and beta-reducing their occurrences | true
 
 ## lp
 
@@ -685,6 +687,7 @@ elim_unconstrained | bool  |  pre-processing: eliminate unconstrained subterms |
 ematching | bool  |  E-Matching based quantifier instantiation | true
 ho_matching | bool  |  higher-order matching for quantifier instantiation | false
 ho_matching_bound | unsigned int  |  per-problem expansion-step budget of the higher-order matching search; bounds the (undecidable) HO unification to guarantee termination | 10000
+ho_qmatcher | bool  |  higher-order matching and term-enumeration quantifier engine | false
 induction | bool  |  enable generation of induction lemmas | false
 lemma_gc_strategy | unsigned int  |  lemma garbage collection strategy: 0 - fixed, 1 - geometric, 2 - at restart, 3 - none | 0
 logic | symbol  |  logic used to setup the SMT solver | 
