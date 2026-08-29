@@ -1,3 +1,8 @@
+---
+layout: default
+title: Z3 Trace Tags Documentation
+---
+
 # Z3 Trace Tags Documentation
 
 This document contains the trace tags and their descriptions used in Z3.
