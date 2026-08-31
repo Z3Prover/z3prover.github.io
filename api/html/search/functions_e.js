@@ -8,7 +8,7 @@ var searchData=
   ['on_5fclause_5feh_5',['on_clause_eh',['../namespacez3py.html#ad100afee8d28029812c5fb1ca3519656',1,'z3py']]],
   ['onbindingeh_6',['OnBindingEh',['../class_microsoft_1_1_z3_1_1_user_propagator.html#ac2a9e71bcfef19b2f66c27255d0e1a83',1,'Microsoft::Z3::UserPropagator']]],
   ['onbindingwrapper_7',['onBindingWrapper',['../classcom_1_1microsoft_1_1z3_1_1_user_propagator_base.html#a5386ef7c9cb6fb5abd06ecdadb4671f0',1,'com::microsoft::z3::UserPropagatorBase']]],
-  ['onclause_8',['onclause',['../class_microsoft_1_1_z3_1_1_on_clause.html#a872a44d58b6126e20ffd5f621f33bccb',1,'Microsoft.Z3.OnClause.OnClause()'],['../classcom_1_1microsoft_1_1z3_1_1_on_clause.html#ad17e1f176caeb0530a25317f64ddf36d',1,'com.microsoft.z3.OnClause.OnClause(Context ctx, Solver solver)'],['../classcom_1_1microsoft_1_1z3_1_1_on_clause.html#aadff72b6da6476173262ca63c7360213',1,'com.microsoft.z3.OnClause.onClause(Expr&lt;?&gt; proof_hint, int[] deps, ASTVector literals)']]],
+  ['onclause_8',['onclause',['../classcom_1_1microsoft_1_1z3_1_1_on_clause.html#aadff72b6da6476173262ca63c7360213',1,'com.microsoft.z3.OnClause.onClause()'],['../class_microsoft_1_1_z3_1_1_on_clause.html#a872a44d58b6126e20ffd5f621f33bccb',1,'Microsoft.Z3.OnClause.OnClause()'],['../classcom_1_1microsoft_1_1z3_1_1_on_clause.html#ad17e1f176caeb0530a25317f64ddf36d',1,'com.microsoft.z3.OnClause.OnClause()']]],
   ['onclauseeh_9',['OnClauseEh',['../class_microsoft_1_1_z3_1_1_on_clause.html#a46945b86895ae2c5b8464bd171cf0da2',1,'Microsoft::Z3::OnClause']]],
   ['open_10',['open',['../classcom_1_1microsoft_1_1z3_1_1_log.html#ad57f9410a40ded1858176a544ee0944d',1,'com::microsoft::z3::Log']]],
   ['open_5flog_11',['open_log',['../namespacez3py.html#aaffd1365e54dcf041f28c3c410e59377',1,'z3py']]],

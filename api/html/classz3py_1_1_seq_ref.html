@@ -110,6 +110,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5851436f4e012e6c18660c3326e3ae7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a822325d636bf871bbe21eca688b6cffe" id="r_a822325d636bf871bbe21eca688b6cffe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_seq_ref.html#a822325d636bf871bbe21eca688b6cffe">__radd__</a> (self, other)</td></tr>
 <tr class="separator:a822325d636bf871bbe21eca688b6cffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a1711a33c6f9884f7d055218c895a0c" id="r_a2a1711a33c6f9884f7d055218c895a0c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_seq_ref.html#a2a1711a33c6f9884f7d055218c895a0c">__pow__</a> (self, other)</td></tr>
+<tr class="separator:a2a1711a33c6f9884f7d055218c895a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9837a05c6cf27a8b5ddd1af0dcb7fe7f" id="r_a9837a05c6cf27a8b5ddd1af0dcb7fe7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_seq_ref.html#a9837a05c6cf27a8b5ddd1af0dcb7fe7f">__getitem__</a> (self, i)</td></tr>
 <tr class="separator:a9837a05c6cf27a8b5ddd1af0dcb7fe7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e531b3c967333b606b276245ede20a3" id="r_a2e531b3c967333b606b276245ede20a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classz3py_1_1_seq_ref.html#a2e531b3c967333b606b276245ede20a3">at</a> (self, i)</td></tr>
@@ -276,10 +278,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11646">11646</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11646</span>    <span class="keyword">def </span>__ge__(self, other):</div>
-<div class="line"><span class="lineno">11647</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#ga14ce05dd1b86fd707c342412169955b3">Z3_mk_str_le</a>(self.ctx_ref(), other.as_ast(), self.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno">11648</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11649">11649</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11649</span>    <span class="keyword">def </span>__ge__(self, other):</div>
+<div class="line"><span class="lineno">11650</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#ga14ce05dd1b86fd707c342412169955b3">Z3_mk_str_le</a>(self.ctx_ref(), other.as_ast(), self.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno">11651</span> </div>
 <div class="ttc" id="agroup__capi_html_ga14ce05dd1b86fd707c342412169955b3"><div class="ttname"><a href="group__capi.html#ga14ce05dd1b86fd707c342412169955b3">Z3_mk_str_le</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_str_le(Z3_context c, Z3_ast prefix, Z3_ast s)</div><div class="ttdoc">Check if s1 is equal or lexicographically strictly less than s2.</div></div>
 </div><!-- fragment -->
 </div>
@@ -310,12 +312,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11613">11613</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11613</span>    <span class="keyword">def </span>__getitem__(self, i):</div>
-<div class="line"><span class="lineno">11614</span>        <span class="keywordflow">if</span> _is_int(i):</div>
-<div class="line"><span class="lineno">11615</span>            i = IntVal(i, self.ctx)</div>
-<div class="line"><span class="lineno">11616</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#gafcacc0ff140b54621945f3af02b97126">Z3_mk_seq_nth</a>(self.ctx_ref(), self.as_ast(), i.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno">11617</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11616">11616</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11616</span>    <span class="keyword">def </span>__getitem__(self, i):</div>
+<div class="line"><span class="lineno">11617</span>        <span class="keywordflow">if</span> _is_int(i):</div>
+<div class="line"><span class="lineno">11618</span>            i = IntVal(i, self.ctx)</div>
+<div class="line"><span class="lineno">11619</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#gafcacc0ff140b54621945f3af02b97126">Z3_mk_seq_nth</a>(self.ctx_ref(), self.as_ast(), i.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno">11620</span> </div>
 <div class="ttc" id="agroup__capi_html_gafcacc0ff140b54621945f3af02b97126"><div class="ttname"><a href="group__capi.html#gafcacc0ff140b54621945f3af02b97126">Z3_mk_seq_nth</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_seq_nth(Z3_context c, Z3_ast s, Z3_ast index)</div><div class="ttdoc">Retrieve from s the element positioned at position index. The function is under-specified if the inde...</div></div>
 </div><!-- fragment -->
 </div>
@@ -346,11 +348,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11649">11649</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11649</span>    <span class="keyword">def </span>__gt__(self, other):</div>
-<div class="line"><span class="lineno">11650</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#ga75db89aa47fca45433740b3c233e5252">Z3_mk_str_lt</a>(self.ctx_ref(), other.as_ast(), self.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno">11651</span> </div>
-<div class="line"><span class="lineno">11652</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11652">11652</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11652</span>    <span class="keyword">def </span>__gt__(self, other):</div>
+<div class="line"><span class="lineno">11653</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#ga75db89aa47fca45433740b3c233e5252">Z3_mk_str_lt</a>(self.ctx_ref(), other.as_ast(), self.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno">11654</span> </div>
+<div class="line"><span class="lineno">11655</span> </div>
 <div class="ttc" id="agroup__capi_html_ga75db89aa47fca45433740b3c233e5252"><div class="ttname"><a href="group__capi.html#ga75db89aa47fca45433740b3c233e5252">Z3_mk_str_lt</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_str_lt(Z3_context c, Z3_ast prefix, Z3_ast s)</div><div class="ttdoc">Check if s1 is lexicographically strictly less than s2.</div></div>
 </div><!-- fragment -->
 </div>
@@ -381,10 +383,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11640">11640</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11640</span>    <span class="keyword">def </span>__le__(self, other):</div>
-<div class="line"><span class="lineno">11641</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#ga14ce05dd1b86fd707c342412169955b3">Z3_mk_str_le</a>(self.ctx_ref(), self.as_ast(), other.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno">11642</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11643">11643</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11643</span>    <span class="keyword">def </span>__le__(self, other):</div>
+<div class="line"><span class="lineno">11644</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#ga14ce05dd1b86fd707c342412169955b3">Z3_mk_str_le</a>(self.ctx_ref(), self.as_ast(), other.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno">11645</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -414,10 +416,43 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11643">11643</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11643</span>    <span class="keyword">def </span>__lt__(self, other):</div>
-<div class="line"><span class="lineno">11644</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#ga75db89aa47fca45433740b3c233e5252">Z3_mk_str_lt</a>(self.ctx_ref(), self.as_ast(), other.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno">11645</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11646">11646</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11646</span>    <span class="keyword">def </span>__lt__(self, other):</div>
+<div class="line"><span class="lineno">11647</span>        <span class="keywordflow">return</span> _to_expr_ref(<a class="code hl_function" href="group__capi.html#ga75db89aa47fca45433740b3c233e5252">Z3_mk_str_lt</a>(self.ctx_ref(), self.as_ast(), other.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno">11648</span> </div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2a1711a33c6f9884f7d055218c895a0c" name="a2a1711a33c6f9884f7d055218c895a0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a1711a33c6f9884f7d055218c895a0c">&#9670;&#160;</a></span>__pow__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__pow__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>other</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11613">11613</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11613</span>    <span class="keyword">def </span>__pow__(self, other):</div>
+<div class="line"><span class="lineno">11614</span>        <span class="keywordflow">return</span> SeqPower(self, other)</div>
+<div class="line"><span class="lineno">11615</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -470,15 +505,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a string representation of sequence expression.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11629">11629</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11629</span>    <span class="keyword">def </span>as_string(self):</div>
-<div class="line"><span class="lineno">11630</span>        <span class="stringliteral">&quot;&quot;&quot;Return a string representation of sequence expression.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">11631</span>        <span class="keywordflow">if</span> self.is_string_value():</div>
-<div class="line"><span class="lineno">11632</span>            string_length = ctypes.c_uint()</div>
-<div class="line"><span class="lineno">11633</span>            chars = <a class="code hl_function" href="group__capi.html#ga409feb5fbc4568e02b55c6d45d5851c5">Z3_get_lstring</a>(self.ctx_ref(), self.as_ast(), byref(string_length))</div>
-<div class="line"><span class="lineno">11634</span>            <span class="keywordflow">return</span> string_at(chars, size=string_length.value).decode(<span class="stringliteral">&quot;latin-1&quot;</span>)</div>
-<div class="line"><span class="lineno">11635</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga3975f8427c68d0a938834afd78ccef4d">Z3_ast_to_string</a>(self.ctx_ref(), self.as_ast())</div>
-<div class="line"><span class="lineno">11636</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11632">11632</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11632</span>    <span class="keyword">def </span>as_string(self):</div>
+<div class="line"><span class="lineno">11633</span>        <span class="stringliteral">&quot;&quot;&quot;Return a string representation of sequence expression.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">11634</span>        <span class="keywordflow">if</span> self.is_string_value():</div>
+<div class="line"><span class="lineno">11635</span>            string_length = ctypes.c_uint()</div>
+<div class="line"><span class="lineno">11636</span>            chars = <a class="code hl_function" href="group__capi.html#ga409feb5fbc4568e02b55c6d45d5851c5">Z3_get_lstring</a>(self.ctx_ref(), self.as_ast(), byref(string_length))</div>
+<div class="line"><span class="lineno">11637</span>            <span class="keywordflow">return</span> string_at(chars, size=string_length.value).decode(<span class="stringliteral">&quot;latin-1&quot;</span>)</div>
+<div class="line"><span class="lineno">11638</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga3975f8427c68d0a938834afd78ccef4d">Z3_ast_to_string</a>(self.ctx_ref(), self.as_ast())</div>
+<div class="line"><span class="lineno">11639</span> </div>
 <div class="ttc" id="agroup__capi_html_ga3975f8427c68d0a938834afd78ccef4d"><div class="ttname"><a href="group__capi.html#ga3975f8427c68d0a938834afd78ccef4d">Z3_ast_to_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_ast_to_string(Z3_context c, Z3_ast a)</div><div class="ttdoc">Convert the given AST node into a string.</div></div>
 <div class="ttc" id="agroup__capi_html_ga409feb5fbc4568e02b55c6d45d5851c5"><div class="ttname"><a href="group__capi.html#ga409feb5fbc4568e02b55c6d45d5851c5">Z3_get_lstring</a></div><div class="ttdeci">Z3_char_ptr Z3_API Z3_get_lstring(Z3_context c, Z3_ast s, unsigned *length)</div><div class="ttdoc">Retrieve the string constant stored in s. The string can contain escape sequences....</div></div>
 </div><!-- fragment -->
@@ -512,12 +547,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11618">11618</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11618</span>    <span class="keyword">def </span>at(self, i):</div>
-<div class="line"><span class="lineno">11619</span>        <span class="keywordflow">if</span> _is_int(i):</div>
-<div class="line"><span class="lineno">11620</span>            i = IntVal(i, self.ctx)</div>
-<div class="line"><span class="lineno">11621</span>        <span class="keywordflow">return</span> SeqRef(<a class="code hl_function" href="group__capi.html#ga364b6a7f198511bca832403bc5342bfd">Z3_mk_seq_at</a>(self.ctx_ref(), self.as_ast(), i.as_ast()), self.ctx)</div>
-<div class="line"><span class="lineno">11622</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11621">11621</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11621</span>    <span class="keyword">def </span>at(self, i):</div>
+<div class="line"><span class="lineno">11622</span>        <span class="keywordflow">if</span> _is_int(i):</div>
+<div class="line"><span class="lineno">11623</span>            i = IntVal(i, self.ctx)</div>
+<div class="line"><span class="lineno">11624</span>        <span class="keywordflow">return</span> SeqRef(<a class="code hl_function" href="group__capi.html#ga364b6a7f198511bca832403bc5342bfd">Z3_mk_seq_at</a>(self.ctx_ref(), self.as_ast(), i.as_ast()), self.ctx)</div>
+<div class="line"><span class="lineno">11625</span> </div>
 <div class="ttc" id="agroup__capi_html_ga364b6a7f198511bca832403bc5342bfd"><div class="ttname"><a href="group__capi.html#ga364b6a7f198511bca832403bc5342bfd">Z3_mk_seq_at</a></div><div class="ttdeci">Z3_ast Z3_API Z3_mk_seq_at(Z3_context c, Z3_ast s, Z3_ast index)</div><div class="ttdoc">Retrieve from s the unit sequence positioned at position index. The sequence is empty if the index is...</div></div>
 </div><!-- fragment -->
 </div>
@@ -538,10 +573,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11623">11623</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11623</span>    <span class="keyword">def </span>is_string(self):</div>
-<div class="line"><span class="lineno">11624</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga5c4028a3ae92b7399e1189afacb900f4">Z3_is_string_sort</a>(self.ctx_ref(), <a class="code hl_function" href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a>(self.ctx_ref(), self.as_ast()))</div>
-<div class="line"><span class="lineno">11625</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11626">11626</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11626</span>    <span class="keyword">def </span>is_string(self):</div>
+<div class="line"><span class="lineno">11627</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga5c4028a3ae92b7399e1189afacb900f4">Z3_is_string_sort</a>(self.ctx_ref(), <a class="code hl_function" href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a>(self.ctx_ref(), self.as_ast()))</div>
+<div class="line"><span class="lineno">11628</span> </div>
 <div class="ttc" id="agroup__capi_html_ga5c4028a3ae92b7399e1189afacb900f4"><div class="ttname"><a href="group__capi.html#ga5c4028a3ae92b7399e1189afacb900f4">Z3_is_string_sort</a></div><div class="ttdeci">bool Z3_API Z3_is_string_sort(Z3_context c, Z3_sort s)</div><div class="ttdoc">Check if s is a string sort.</div></div>
 <div class="ttc" id="agroup__capi_html_gafa9565c0deefe46f8e2de14dc6b8b6a3"><div class="ttname"><a href="group__capi.html#gafa9565c0deefe46f8e2de14dc6b8b6a3">Z3_get_sort</a></div><div class="ttdeci">Z3_sort Z3_API Z3_get_sort(Z3_context c, Z3_ast a)</div><div class="ttdoc">Return the sort of an AST node.</div></div>
 </div><!-- fragment -->
@@ -563,10 +598,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11626">11626</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11626</span>    <span class="keyword">def </span>is_string_value(self):</div>
-<div class="line"><span class="lineno">11627</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gab07ea9c6d6e1a6a6aa58d2359518f32e">Z3_is_string</a>(self.ctx_ref(), self.as_ast())</div>
-<div class="line"><span class="lineno">11628</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11629">11629</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11629</span>    <span class="keyword">def </span>is_string_value(self):</div>
+<div class="line"><span class="lineno">11630</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gab07ea9c6d6e1a6a6aa58d2359518f32e">Z3_is_string</a>(self.ctx_ref(), self.as_ast())</div>
+<div class="line"><span class="lineno">11631</span> </div>
 <div class="ttc" id="agroup__capi_html_gab07ea9c6d6e1a6a6aa58d2359518f32e"><div class="ttname"><a href="group__capi.html#gab07ea9c6d6e1a6a6aa58d2359518f32e">Z3_is_string</a></div><div class="ttdeci">bool Z3_API Z3_is_string(Z3_context c, Z3_ast s)</div><div class="ttdoc">Determine if s is a string constant.</div></div>
 </div><!-- fragment -->
 </div>
@@ -589,10 +624,10 @@ Additional Inherited Members</h2></td></tr>
 <pre class="fragment">Return a Python value that is equivalent to `self`.</pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_ast_ref.html#a5d193971f7205a50fdaf86ef82a2286b">AstRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11637">11637</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">11637</span>    <span class="keyword">def </span>py_value(self):</div>
-<div class="line"><span class="lineno">11638</span>        <span class="keywordflow">return</span> self.as_string()</div>
-<div class="line"><span class="lineno">11639</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l11640">11640</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">11640</span>    <span class="keyword">def </span>py_value(self):</div>
+<div class="line"><span class="lineno">11641</span>        <span class="keywordflow">return</span> self.as_string()</div>
+<div class="line"><span class="lineno">11642</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -653,7 +688,7 @@ Real
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 27 2026 05:23:09 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Aug 31 2026 03:51:07 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
