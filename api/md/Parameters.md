@@ -303,7 +303,7 @@ maxres.wmax | bool  |  use weighted theory solver to constrain upper bounds | fa
 maxsat_engine | symbol  |  select engine for maxsat: 'core_maxsat', 'wmax', 'maxres', 'maxresw', 'pd-maxres', 'maxres-bin', 'rc2' | maxres
 optsmt_bisect_rounds | unsigned int  |  maximal number of solver calls spent bisecting the interval between the best model value and the refuted arithmetic bound of a real-valued objective (e.g. under nonlinear constraints); when exhausted the objective is reported as unknown with that interval | 64
 optsmt_engine | symbol  |  select optimization engine: 'basic', 'symba' | basic
-optsmt_nlsat | bool  |  for a real-valued objective under nonlinear constraints, optimize exactly over nlsat cells (the optimum may be an algebraic number, printed as a root-obj) before falling back to bisection | true
+optsmt_nlsat | bool  |  optimize real objectives under nonlinear constraints exactly over nlsat cells (algebraic optima print as root-obj; unboundedness proven by one nlqsat query) | true
 pb.compile_equality | bool  |  compile arithmetical equalities into pseudo-Boolean equality (instead of two inequalites) | false
 pp.neat | bool  |  use neat (as opposed to less readable, but faster) pretty printer when displaying context | true
 pp.wcnf | bool  |  print maxsat benchmark into wcnf format | false
@@ -729,6 +729,9 @@ restart_strategy | unsigned int  |  0 - geometric, 1 - inner-outer-geometric, 2 
 restricted_quasi_macros | bool  |  try to find universally quantified formulas that are restricted quasi-macros | false
 seq.max_unfolding | unsigned int  |  maximal unfolding depth for checking string equations and regular expressions | 1000000000
 seq.min_unfolding | unsigned int  |  initial bound for strings whose lengths are bounded by iterative deepening. Set this to a higher value if there are only models with larger string lengths | 1
+seq.parikh_chars | unsigned int  |  how many distinct characters the Parikh abstraction keeps apart. The remaining characters share one class | 6
+seq.parikh_k | unsigned int  |  maximal factor length of the Parikh abstraction over word equations. 1 counts single characters, 2 also counts adjacent pairs. 0 disables the abstraction. Values above 2 are clamped to 2 | 0
+seq.parikh_n | unsigned int  |  maximal modulus the Parikh abstraction over word equations uses to separate positions by their residue. 1 ignores positions | 2
 seq.regex_budget | unsigned int  |  work budget (search nodes and product expansions) for a single decision of the monadic regular-expression solver, after which it gives up. A budget of 0 makes it give up immediately | 1000000
 seq.regex_monadic | bool  |  use the monadic regular-expression end-game solver | true
 seq.regex_orientation | symbol  |  direction the monadic regular-expression solver reads memberships in. options are: 'forward', 'reversed' (solve rev(t) in rev(R), which is equisatisfiable and can have a far smaller derivative automaton), 'retry' (read forwards and, if the search runs out of budget, read the same decision backwards) | retry
