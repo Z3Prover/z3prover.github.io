@@ -305,6 +305,8 @@ optsmt_bisect_rounds | unsigned int  |  maximal number of solver calls spent bis
 optsmt_engine | symbol  |  select optimization engine: 'basic', 'symba' | basic
 optsmt_nlsat | bool  |  optimize real objectives under nonlinear constraints exactly over nlsat cells (algebraic optima print as root-obj; unboundedness proven by nlqsat queries under an escalating rlimit budget) | true
 pareto_nlsat | bool  |  enumerate Pareto fronts of pure NRA problems over an nlsat-backed solver, comparing objectives against exact algebraic model values instead of rounded isolating-interval endpoints | true
+pareto_nlsat_max_lemmas | unsigned int  |  maximum number of independent learned clauses retained between Pareto climbs; shorter clauses are preferred | 128
+pareto_nlsat_reuse | bool  |  reuse nlsat clauses across Pareto checks on polynomial real problems; false keeps the exact solver that starts each check from scratch | true
 pb.compile_equality | bool  |  compile arithmetical equalities into pseudo-Boolean equality (instead of two inequalites) | false
 pp.neat | bool  |  use neat (as opposed to less readable, but faster) pretty printer when displaying context | true
 pp.wcnf | bool  |  print maxsat benchmark into wcnf format | false
