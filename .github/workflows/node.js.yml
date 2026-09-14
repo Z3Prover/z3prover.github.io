@@ -38,13 +38,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: ${{ steps.package.outputs.has-lock == 'true' && 'npm' || '' }}
+        cache: ${{ steps.package.outputs.exists == 'true' && steps.package.outputs.has-lock == 'true' && 'npm' || '' }}
     # This repository publishes prebuilt static pages when no package metadata is present.
     - name: Verify static site entry points
       if: ${{ steps.package.outputs.exists != 'true' }}
       run: |
-        test -f index.html
-        test -f tutorial/guide.html
+        test -f index.html || (echo "index.html not found" && exit 1)
+        test -f tutorial/guide.html || (echo "tutorial/guide.html not found" && exit 1)
     - name: Build and test package
       if: ${{ steps.package.outputs.exists == 'true' }}
       run: |
