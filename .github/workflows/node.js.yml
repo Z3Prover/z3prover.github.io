@@ -24,8 +24,16 @@ jobs:
     - name: Detect package metadata
       id: package
       run: |
-        echo "exists=$([ -f package.json ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
-        echo "has-lock=$([ -f package-lock.json ] || [ -f npm-shrinkwrap.json ] || [ -f yarn.lock ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+        if [ -f package.json ]; then
+          echo "exists=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "exists=false" >> "$GITHUB_OUTPUT"
+        fi
+        if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ] || [ -f yarn.lock ]; then
+          echo "has-lock=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "has-lock=false" >> "$GITHUB_OUTPUT"
+        fi
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
