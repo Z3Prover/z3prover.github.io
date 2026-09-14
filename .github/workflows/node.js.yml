@@ -39,7 +39,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: ${{ steps.package.outputs.has-lock == 'true' && 'npm' || '' }}
-    - name: Verify static site files
+    # This repository publishes prebuilt static pages when no package metadata is present.
+    - name: Verify static site entry points
       if: ${{ steps.package.outputs.exists != 'true' }}
       run: |
         test -f index.html
