@@ -26,17 +26,11 @@ jobs:
       run: |
         echo "exists=$([ -f package.json ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
         echo "has-lock=$([ -f package-lock.json ] || [ -f npm-shrinkwrap.json ] || [ -f yarn.lock ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
-    - name: Use Node.js ${{ matrix.node-version }} with npm cache
-      if: ${{ steps.package.outputs.has-lock == 'true' }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - name: Use Node.js ${{ matrix.node-version }}
-      if: ${{ steps.package.outputs.has-lock != 'true' }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+        cache: ${{ steps.package.outputs.has-lock == 'true' && 'npm' || '' }}
     - name: Verify static site files
       if: ${{ steps.package.outputs.exists != 'true' }}
       run: |
