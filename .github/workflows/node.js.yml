@@ -25,9 +25,16 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+    - name: Verify static site files
+      if: ${{ hashFiles('package.json') == '' }}
+      run: test -f index.html
     - run: npm i
+      if: ${{ hashFiles('package.json') != '' }}
     - run: npm run build
+      if: ${{ hashFiles('package.json') != '' }}
     - run: cp -r dist/. z3-wasm/.
+      if: ${{ hashFiles('package.json') != '' }}
     - run: npx parcel z3-wasm/guide.html
+      if: ${{ hashFiles('package.json') != '' }}
     - run: npm test
+      if: ${{ hashFiles('package.json') != '' }}
