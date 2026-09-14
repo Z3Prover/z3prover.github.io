@@ -25,16 +25,19 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Detect package metadata
+      id: package
+      run: echo "exists=$([ -f package.json ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
     - name: Verify static site files
-      if: ${{ hashFiles('package.json') == '' }}
-      run: test -f index.html
-    - run: npm i
-      if: ${{ hashFiles('package.json') != '' }}
-    - run: npm run build
-      if: ${{ hashFiles('package.json') != '' }}
-    - run: cp -r dist/. z3-wasm/.
-      if: ${{ hashFiles('package.json') != '' }}
-    - run: npx parcel z3-wasm/guide.html
-      if: ${{ hashFiles('package.json') != '' }}
-    - run: npm test
-      if: ${{ hashFiles('package.json') != '' }}
+      if: ${{ steps.package.outputs.exists != 'true' }}
+      run: |
+        test -f index.html
+        test -f tutorial/guide.html
+    - name: Build and test package
+      if: ${{ steps.package.outputs.exists == 'true' }}
+      run: |
+        npm i
+        npm run build
+        cp -r dist/. z3-wasm/.
+        npx parcel z3-wasm/guide.html
+        npm test
