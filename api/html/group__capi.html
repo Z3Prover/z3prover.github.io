@@ -2883,7 +2883,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <tr class="memdesc:ga658c4858c031d5affffcea9f857636fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve upper bound value or approximation for the i'th optimization objective.  <br /></td></tr>
 <tr class="separator:ga658c4858c031d5affffcea9f857636fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga47303d64f47ad21e8235a99415704672" id="r_ga47303d64f47ad21e8235a99415704672"><td class="memItemLeft" align="right" valign="top">Z3_ast_vector Z3_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__capi.html#ga47303d64f47ad21e8235a99415704672">Z3_optimize_get_lower_as_vector</a> (Z3_context c, Z3_optimize o, unsigned idx)</td></tr>
-<tr class="memdesc:ga47303d64f47ad21e8235a99415704672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve lower bound value or approximation for the i'th optimization objective. The returned vector is of length 3. It always contains numerals. The three numerals are coefficients <code>a</code>, <code>b</code>, <code>c</code> and encode the result of <a class="el" href="group__capi.html#ga1c754dd577a3c138bd12badb0c2f1ad9" title="Retrieve lower bound value or approximation for the i&#39;th optimization objective.">Z3_optimize_get_lower</a> <code>a * infinity + b + c * epsilon</code>.  <br /></td></tr>
+<tr class="memdesc:ga47303d64f47ad21e8235a99415704672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve lower bound value or approximation for the i'th optimization objective. The returned vector is of length 3. Its entries are coefficients <code>a</code>, <code>b</code>, <code>c</code> and encode the result of <a class="el" href="group__capi.html#ga1c754dd577a3c138bd12badb0c2f1ad9" title="Retrieve lower bound value or approximation for the i&#39;th optimization objective.">Z3_optimize_get_lower</a> <code>a * infinity + b + c * epsilon</code>. The coefficients <code>a</code> and <code>c</code> are rational numerals. The finite value <code>b</code> is a rational numeral or an exact irrational algebraic numeral when such an optimum has been attained and certified. In the latter case, <code>a</code> and <code>c</code> are zero.  <br /></td></tr>
 <tr class="separator:ga47303d64f47ad21e8235a99415704672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1b371ccf1c207127354f7ab2a7fe8c7b" id="r_ga1b371ccf1c207127354f7ab2a7fe8c7b"><td class="memItemLeft" align="right" valign="top">Z3_ast_vector Z3_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__capi.html#ga1b371ccf1c207127354f7ab2a7fe8c7b">Z3_optimize_get_upper_as_vector</a> (Z3_context c, Z3_optimize o, unsigned idx)</td></tr>
 <tr class="memdesc:ga1b371ccf1c207127354f7ab2a7fe8c7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve upper bound value or approximation for the i'th optimization objective.  <br /></td></tr>
@@ -28274,6 +28274,7 @@ The number of arguments must be greater than zero. </dd></dl>
 </div><div class="memdoc">
 
 <p>Retrieve lower bound value or approximation for the i'th optimization objective. </p>
+<p>An attained, certified irrational algebraic optimum is returned as an exact algebraic numeral by both <a class="el" href="group__capi.html#ga1c754dd577a3c138bd12badb0c2f1ad9" title="Retrieve lower bound value or approximation for the i&#39;th optimization objective.">Z3_optimize_get_lower</a> and <a class="el" href="group__capi.html#ga658c4858c031d5affffcea9f857636fd" title="Retrieve upper bound value or approximation for the i&#39;th optimization objective.">Z3_optimize_get_upper</a>. Use <a class="el" href="group__capi.html#ga40775ed34e6fcf184b7a0a30deaf2a03" title="Return a lower bound for the given real algebraic number. The interval isolating the number is smalle...">Z3_get_algebraic_number_lower</a> and <a class="el" href="group__capi.html#ga84019f84e6a2e69d3bdfc80441ca0f7d" title="Return a upper bound for the given real algebraic number. The interval isolating the number is smalle...">Z3_get_algebraic_number_upper</a> to obtain rational approximations.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>- context </td></tr>
@@ -28324,7 +28325,7 @@ The number of arguments must be greater than zero. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieve lower bound value or approximation for the i'th optimization objective. The returned vector is of length 3. It always contains numerals. The three numerals are coefficients <code>a</code>, <code>b</code>, <code>c</code> and encode the result of <a class="el" href="group__capi.html#ga1c754dd577a3c138bd12badb0c2f1ad9" title="Retrieve lower bound value or approximation for the i&#39;th optimization objective.">Z3_optimize_get_lower</a> <code>a * infinity + b + c * epsilon</code>. </p>
+<p>Retrieve lower bound value or approximation for the i'th optimization objective. The returned vector is of length 3. Its entries are coefficients <code>a</code>, <code>b</code>, <code>c</code> and encode the result of <a class="el" href="group__capi.html#ga1c754dd577a3c138bd12badb0c2f1ad9" title="Retrieve lower bound value or approximation for the i&#39;th optimization objective.">Z3_optimize_get_lower</a> <code>a * infinity + b + c * epsilon</code>. The coefficients <code>a</code> and <code>c</code> are rational numerals. The finite value <code>b</code> is a rational numeral or an exact irrational algebraic numeral when such an optimum has been attained and certified. In the latter case, <code>a</code> and <code>c</code> are zero. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>- context </td></tr>
@@ -28576,6 +28577,7 @@ The number of arguments must be greater than zero. </dd></dl>
 </div><div class="memdoc">
 
 <p>Retrieve upper bound value or approximation for the i'th optimization objective. </p>
+<p>An attained, certified irrational algebraic optimum is returned exactly, as described for <a class="el" href="group__capi.html#ga1c754dd577a3c138bd12badb0c2f1ad9" title="Retrieve lower bound value or approximation for the i&#39;th optimization objective.">Z3_optimize_get_lower</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>- context </td></tr>
@@ -28627,6 +28629,7 @@ The number of arguments must be greater than zero. </dd></dl>
 </div><div class="memdoc">
 
 <p>Retrieve upper bound value or approximation for the i'th optimization objective. </p>
+<p>The returned vector has the same coefficient and algebraic-value semantics as <a class="el" href="group__capi.html#ga47303d64f47ad21e8235a99415704672" title="Retrieve lower bound value or approximation for the i&#39;th optimization objective. The returned vector ...">Z3_optimize_get_lower_as_vector</a>, and encodes the result of <a class="el" href="group__capi.html#ga658c4858c031d5affffcea9f857636fd" title="Retrieve upper bound value or approximation for the i&#39;th optimization objective.">Z3_optimize_get_upper</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>- context </td></tr>
@@ -35909,7 +35912,7 @@ The number of arguments must be greater than zero. </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 14 2026 03:56:01 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Sep 15 2026 03:38:04 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
