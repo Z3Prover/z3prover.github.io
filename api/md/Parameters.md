@@ -303,7 +303,8 @@ maxres.wmax | bool  |  use weighted theory solver to constrain upper bounds | fa
 maxsat_engine | symbol  |  select engine for maxsat: 'core_maxsat', 'wmax', 'maxres', 'maxresw', 'pd-maxres', 'maxres-bin', 'rc2' | maxres
 optsmt_bisect_rounds | unsigned int  |  maximal number of solver calls spent bisecting the interval between the best model value and the refuted arithmetic bound of a real-valued objective (e.g. under nonlinear constraints); when exhausted the objective is reported as unknown with that interval | 64
 optsmt_engine | symbol  |  select optimization engine: 'basic', 'symba' | basic
-optsmt_nlsat | bool  |  optimize real objectives under nonlinear constraints exactly over nlsat cells (algebraic optima print as root-obj; unboundedness proven by nlqsat queries under an escalating rlimit budget) | true
+optsmt_nlsat | bool  |  optimize real objectives under nonlinear constraints exactly over nlsat cells (algebraic optima print as root-obj; unboundedness proven by native nlsat projection under an escalating rlimit budget) | true
+optsmt_nlsat_supremum_rlimit | unsigned int  |  resource limit for certifying finite open suprema with native nlsat projection (0 disables the extra check) | 100000
 pareto_nlsat | bool  |  enumerate Pareto fronts of pure NRA problems over an nlsat-backed solver, comparing objectives against exact algebraic model values instead of rounded isolating-interval endpoints | true
 pareto_nlsat_max_lemmas | unsigned int  |  maximum number of independent learned clauses retained between Pareto climbs; shorter clauses are preferred | 128
 pareto_nlsat_reuse | bool  |  reuse nlsat clauses across Pareto checks on polynomial real problems; false keeps the exact solver that starts each check from scratch | true
