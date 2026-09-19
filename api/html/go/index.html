@@ -82,13 +82,8 @@ func main() {
                 </ul>
                 <p><strong>Build Z3 with Go bindings:</strong></p>
                 <div class="code-block">
-                    <pre># Using CMake
-cmake -S . -B build -DZ3_BUILD_GO_BINDINGS=ON -DBUILD_SHARED_LIBS=ON
-cmake --build build --parallel
-
-# Using Python build script
-python scripts/mk_make.py --go
-cd build && make</pre>
+                    <pre>cmake -S . -B build -DZ3_BUILD_GO_BINDINGS=ON -DBUILD_SHARED_LIBS=ON
+cmake --build build --parallel $(nproc)</pre>
                 </div>
                 <p><strong>Set environment variables:</strong></p>
                 <div class="code-block">

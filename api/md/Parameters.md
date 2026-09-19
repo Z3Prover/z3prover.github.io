@@ -725,6 +725,7 @@ qi.quick_checker | unsigned int  |  specify quick checker mode, 0 - no quick che
 qsat_use_qel | bool  |  Use QEL for lite quantifier elimination and model-based projection in QSAT | true
 quasi_macros | bool  |  try to find universally quantified formulas that are quasi-macros | false
 random_seed | unsigned int  |  random seed for the smt solver | 0
+recfun_finder | bool  |  detect (mutually) recursive function definitions among universally quantified axioms of the form (forall X (= (f X) body)) and register them as recursive function definitions | false
 refine_inj_axioms | bool  |  pre-processing: refine injectivity axioms | true
 relevancy | unsigned int  |  relevancy propagation heuristic: 0 - disabled, 1 - relevancy is tracked by only affects quantifier instantiation, 2 - relevancy is tracked, and an atom is only asserted if it is relevant | 2
 restart.max | unsigned int  |  maximal number of restarts. | 4294967295
