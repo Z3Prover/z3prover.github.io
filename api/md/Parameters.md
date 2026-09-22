@@ -255,26 +255,26 @@ leibniz_instantiation | bool  |  pre-process the goal by synthesizing and adding
 root | symbol  |  root directory for resolving TPTP include() axiom paths (replaces the TPTP environment variable) | 
 unfold_lambda_macros | bool  |  pre-process the goal by unfolding constants that are defined as lambda terms (shallow embeddings of higher-order/modal operators), inlining and beta-reducing their occurrences | true
 
-## lp
+## parallel
 
-linear programming parameters
+parameters for parallel solver
 
  Parameter | Type | Description | Default
  ----------|------|-------------|--------
-dio | bool  |  use Diophantine equalities | true
-dio_branching_period | unsigned int  |  Period of calling branching on undef in Diophantine handler | 100
-dio_calls_period | unsigned int  |  Period of calling the Diophantine handler in the final_check() | 1
-dio_calls_period_decrease | unsigned int  |  Amount by which dio_calls_period is decreased on each final_check() call where the Diophantine handler is not triggered, until it returns to its initial value | 2
-dio_cuts_enable_gomory | bool  |  enable Gomory cuts together with Diophantine cuts, only relevant when dioph_eq is true | false
-dio_cuts_enable_hnf | bool  |  enable hnf cuts together with Diophantine cuts, only relevant when dioph_eq is true | true
-dio_gomory_enable_period | unsigned int  |  number of consecutive unproductive (undef) Diophantine-handler calls after which the controller starts running Gomory cuts and the gcd test alongside dio; a dio conflict resets the count and stops them; set very large to never start them this way so Gomory follows dio_cuts_enable_gomory only | 16
-dio_ignore_big_nums | bool  |  Ignore the terms with big numbers in the Diophantine handler, only relevant when dioph_eq is true | true
-dio_run_gcd | bool  |  Run the GCD heuristic if dio is on, if dio is disabled the option is not used | false
-dio_undo_max_work | unsigned int  |  work budget, in machine words, for eliminating the columns of the retired terms from the certificate matrix of the Diophantine handler; when a scope pop exceeds it the Diophantine state is discarded and rebuilt lazily on the next check instead of being updated incrementally; 0 means no budget | 1000000
-int_hammer_period | unsigned int  |  period (in final_check calls) for the integer cut/cube heuristics (find_cube, hnf, gomory); a smaller value calls them more often | 4
-lcube | bool  |  use the largest cube test for integer feasibility | true
-lcube_flips | unsigned int  |  maximal number of coordinate flips when repairing the rounded largest cube center, only relevant when lcube is true | 16
-random_hammers | bool  |  draw the periodic integer heuristic gates (find_cube, lcube, hnf, gomory, dio) at random with the same 1/period rate instead of a deterministic every-k-th-call modulus | true
+ablate_backtracking | bool  |  ablation: pass entire cube as core instead of unsat core during backtracking | false
+conquer.backtrack_frequency | unsigned int  |  frequency to apply core minimization during conquer | 10
+conquer.batch_size | unsigned int  |  number of cubes to batch together for fast conquer | 100
+conquer.delay | unsigned int  |  delay of cubes until applying conquer | 10
+conquer.restart.max | unsigned int  |  maximal number of restarts during conquer phase | 5
+core_minimize | bool  |  minimize unsat cores used for parallel cube backtracking | true
+cube.lookahead | bool  |  use lookahead cubing in the parallel solver; when false, use VSIDS activity to select one split literal | false
+enable | bool  |  enable parallel solver by default on selected tactics (for QF_BV) | false
+num_bb_threads | unsigned int  |  run Janota-style chunking backbone worker threads; default is 2 (negative and positive mode), supported values are 0 (off), 1 (negative mode only) or 2 (negative and positive mode) | 2
+simplify.exp | double  |  restart and inprocess max is multiplied by simplify.exp ^ depth | 1
+simplify.inprocess.max | unsigned int  |  maximal number of inprocessing steps during simplification | 2
+simplify.max_conflicts | unsigned int  |  maximal number of conflicts during simplification phase | 4294967295
+simplify.restart.max | unsigned int  |  maximal number of restarts during simplification phase | 5000
+threads.max | unsigned int  |  caps maximal number of threads below the number of processors | 10000
 
 ## opt
 
@@ -317,26 +317,26 @@ rlimit | unsigned int  |  resource limit (0 means no limit) | 0
 solution_prefix | symbol  |  path prefix to dump intermediary, but non-optimal, solutions | 
 timeout | unsigned int  |  timeout (in milliseconds) (UINT_MAX and 0 mean no timeout) | 4294967295
 
-## parallel
+## lp
 
-parameters for parallel solver
+linear programming parameters
 
  Parameter | Type | Description | Default
  ----------|------|-------------|--------
-ablate_backtracking | bool  |  ablation: pass entire cube as core instead of unsat core during backtracking | false
-conquer.backtrack_frequency | unsigned int  |  frequency to apply core minimization during conquer | 10
-conquer.batch_size | unsigned int  |  number of cubes to batch together for fast conquer | 100
-conquer.delay | unsigned int  |  delay of cubes until applying conquer | 10
-conquer.restart.max | unsigned int  |  maximal number of restarts during conquer phase | 5
-core_minimize | bool  |  minimize unsat cores used for parallel cube backtracking | true
-cube.lookahead | bool  |  use lookahead cubing in the parallel solver; when false, use VSIDS activity to select one split literal | false
-enable | bool  |  enable parallel solver by default on selected tactics (for QF_BV) | false
-num_bb_threads | unsigned int  |  run Janota-style chunking backbone worker threads; default is 2 (negative and positive mode), supported values are 0 (off), 1 (negative mode only) or 2 (negative and positive mode) | 2
-simplify.exp | double  |  restart and inprocess max is multiplied by simplify.exp ^ depth | 1
-simplify.inprocess.max | unsigned int  |  maximal number of inprocessing steps during simplification | 2
-simplify.max_conflicts | unsigned int  |  maximal number of conflicts during simplification phase | 4294967295
-simplify.restart.max | unsigned int  |  maximal number of restarts during simplification phase | 5000
-threads.max | unsigned int  |  caps maximal number of threads below the number of processors | 10000
+dio | bool  |  use Diophantine equalities | true
+dio_branching_period | unsigned int  |  Period of calling branching on undef in Diophantine handler | 100
+dio_calls_period | unsigned int  |  Period of calling the Diophantine handler in the final_check() | 1
+dio_calls_period_decrease | unsigned int  |  Amount by which dio_calls_period is decreased on each final_check() call where the Diophantine handler is not triggered, until it returns to its initial value | 2
+dio_cuts_enable_gomory | bool  |  enable Gomory cuts together with Diophantine cuts, only relevant when dioph_eq is true | false
+dio_cuts_enable_hnf | bool  |  enable hnf cuts together with Diophantine cuts, only relevant when dioph_eq is true | true
+dio_gomory_enable_period | unsigned int  |  number of consecutive unproductive (undef) Diophantine-handler calls after which the controller starts running Gomory cuts and the gcd test alongside dio; a dio conflict resets the count and stops them; set very large to never start them this way so Gomory follows dio_cuts_enable_gomory only | 16
+dio_ignore_big_nums | bool  |  Ignore the terms with big numbers in the Diophantine handler, only relevant when dioph_eq is true | true
+dio_run_gcd | bool  |  Run the GCD heuristic if dio is on, if dio is disabled the option is not used | false
+dio_undo_max_work | unsigned int  |  work budget, in machine words, for eliminating the columns of the retired terms from the certificate matrix of the Diophantine handler; when a scope pop exceeds it the Diophantine state is discarded and rebuilt lazily on the next check instead of being updated incrementally; 0 means no budget | 1000000
+int_hammer_period | unsigned int  |  period (in final_check calls) for the integer cut/cube heuristics (find_cube, hnf, gomory); a smaller value calls them more often | 4
+lcube | bool  |  use the largest cube test for integer feasibility | true
+lcube_flips | unsigned int  |  maximal number of coordinate flips when repairing the rounded largest cube center, only relevant when lcube is true | 16
+random_hammers | bool  |  draw the periodic integer heuristic gates (find_cube, lcube, hnf, gomory, dio) at random with the same 1/period rate instead of a deterministic every-k-th-call modulus | true
 
 ## nnf
 
@@ -348,6 +348,16 @@ ignore_labels | bool  |  remove/ignore labels in the input formula, this option 
 max_memory | unsigned int  |  maximum amount of memory in megabytes | 4294967295
 mode | symbol  |  NNF translation mode: skolem (skolem normal form), quantifiers (skolem normal form + quantifiers in NNF), full | skolem
 sk_hack | bool  |  hack for VCC | false
+
+## combined_solver
+
+combines two solvers: non-incremental (solver1) and incremental (solver2)
+
+ Parameter | Type | Description | Default
+ ----------|------|-------------|--------
+ignore_solver1 | bool  |  if true, solver 2 is always used | false
+solver2_timeout | unsigned int  |  fallback to solver 1 after timeout even when in incremental model | 4294967295
+solver2_unknown | unsigned int  |  what should be done when solver 2 returns unknown: 0 - just return unknown, 1 - execute solver 1 if quantifier free problem, 2 - execute solver 1 | 1
 
 ## algebraic
 
@@ -361,16 +371,6 @@ factor_num_primes | unsigned int  |  parameter for the polynomial factorization 
 factor_search_size | unsigned int  |  parameter for the polynomial factorization procedure in the algebraic number module. Z3 polynomial factorization is composed of three steps: factorization in GF(p), lifting and search. This parameter can be used to limit the search space | 5000
 min_mag | unsigned int  |  Z3 represents algebraic numbers using a (square-free) polynomial p and an isolating interval (which contains one and only one root of p). This interval may be refined during the computations. This parameter specifies whether to cache the value of a refined interval or not. It says the minimal size of an interval for caching purposes is 1/2^16 | 16
 zero_accuracy | unsigned int  |  one of the most time-consuming operations in the real algebraic number module is determining the sign of a polynomial evaluated at a sample point with non-rational algebraic number values. Let k be the value of this option. If k is 0, Z3 uses precise computation. Otherwise, the result of a polynomial evaluation is considered to be 0 if Z3 can show it is inside the interval (-1/2^k, 1/2^k) | 0
-
-## combined_solver
-
-combines two solvers: non-incremental (solver1) and incremental (solver2)
-
- Parameter | Type | Description | Default
- ----------|------|-------------|--------
-ignore_solver1 | bool  |  if true, solver 2 is always used | false
-solver2_timeout | unsigned int  |  fallback to solver 1 after timeout even when in incremental model | 4294967295
-solver2_unknown | unsigned int  |  what should be done when solver 2 returns unknown: 0 - just return unknown, 1 - execute solver 1 if quantifier free problem, 2 - execute solver 1 | 1
 
 ## rcf
 
@@ -394,38 +394,6 @@ solving UF via ackermannization
 eager | bool  |  eagerly instantiate all congruence rules | true
 inc_sat_backend | bool  |  use incremental SAT | false
 sat_backend | bool  |  use SAT rather than SMT in qfufbv_ackr_tactic | false
-
-## nlsat
-
-nonlinear solver
-
- Parameter | Type | Description | Default
- ----------|------|-------------|--------
-add_all_coeffs | bool  |  add all polynomial coefficients during projection. | false
-canonicalize | bool  |  canonicalize polynomials. | true
-check_lemmas | bool  |  check lemmas on the fly using an independent nlsat solver | false
-dump_mathematica | bool  |  display lemmas as matematica | false
-factor | bool  |  factor polynomials produced during conflict resolution. | true
-inline_vars | bool  |  inline variables that can be isolated from equations (not supported in incremental mode) | false
-known_sat_assignment_file_name | string  |  the file name of a known solution: used for debugging only | 
-lazy | unsigned int  |  how lazy the solver is. | 0
-log_lemma_smtrat | bool  |  log lemmas to be readable by smtrat | false
-log_lemmas | bool  |  display lemmas as self-contained SMT formulas | false
-lws | bool  |  apply levelwise. | true
-lws_spt_threshold | unsigned int  |  minimum both-side polynomial count to apply spanning tree optimization; &lt; 2 disables spanning tree | 4
-lws_witness_subs_disc | bool  |  try substitute the non-nullified witness by the discriminant | true
-lws_witness_subs_lc | bool  |  try substitute the non-nullified witness by the lc | true
-max_conflicts | unsigned int  |  maximum number of conflicts. | 4294967295
-max_memory | unsigned int  |  maximum amount of memory in megabytes | 4294967295
-minimize_conflicts | bool  |  minimize conflicts | false
-randomize | bool  |  randomize selection of a witness in nlsat. | true
-reorder | bool  |  reorder variables. | true
-seed | unsigned int  |  random seed. | 0
-shuffle_vars | bool  |  use a random variable order. | false
-simple_check | bool  |  precheck polynomials using variables sign | false
-simplify_conflicts | bool  |  simplify conflicts using equalities before resolving them in nlsat solver. | true
-variable_ordering_strategy | unsigned int  |  Variable Ordering Strategy, 0 for none, 1 for BROWN, 2 for TRIANGULAR, 3 for ONLYPOLY | 0
-zero_disc | bool  |  add_zero_assumption to the vanishing discriminant. | false
 
 ## sls
 
@@ -464,6 +432,38 @@ walksat_ucb_forget | double  |  scale touched by this factor every base restart 
 walksat_ucb_init | bool  |  initialize total ucb touched to formula size | false
 walksat_ucb_noise | double  |  add noise 0 &lt;= 256 * ucb_noise to ucb score for assertion selection | 0.0002
 wp | unsigned int  |  random walk with probability wp / 1024 | 100
+
+## nlsat
+
+nonlinear solver
+
+ Parameter | Type | Description | Default
+ ----------|------|-------------|--------
+add_all_coeffs | bool  |  add all polynomial coefficients during projection. | false
+canonicalize | bool  |  canonicalize polynomials. | true
+check_lemmas | bool  |  check lemmas on the fly using an independent nlsat solver | false
+dump_mathematica | bool  |  display lemmas as matematica | false
+factor | bool  |  factor polynomials produced during conflict resolution. | true
+inline_vars | bool  |  inline variables that can be isolated from equations (not supported in incremental mode) | false
+known_sat_assignment_file_name | string  |  the file name of a known solution: used for debugging only | 
+lazy | unsigned int  |  how lazy the solver is. | 0
+log_lemma_smtrat | bool  |  log lemmas to be readable by smtrat | false
+log_lemmas | bool  |  display lemmas as self-contained SMT formulas | false
+lws | bool  |  apply levelwise. | true
+lws_spt_threshold | unsigned int  |  minimum both-side polynomial count to apply spanning tree optimization; &lt; 2 disables spanning tree | 4
+lws_witness_subs_disc | bool  |  try substitute the non-nullified witness by the discriminant | true
+lws_witness_subs_lc | bool  |  try substitute the non-nullified witness by the lc | true
+max_conflicts | unsigned int  |  maximum number of conflicts. | 4294967295
+max_memory | unsigned int  |  maximum amount of memory in megabytes | 4294967295
+minimize_conflicts | bool  |  minimize conflicts | false
+randomize | bool  |  randomize selection of a witness in nlsat. | true
+reorder | bool  |  reorder variables. | true
+seed | unsigned int  |  random seed. | 0
+shuffle_vars | bool  |  use a random variable order. | false
+simple_check | bool  |  precheck polynomials using variables sign | false
+simplify_conflicts | bool  |  simplify conflicts using equalities before resolving them in nlsat solver. | true
+variable_ordering_strategy | unsigned int  |  Variable Ordering Strategy, 0 for none, 1 for BROWN, 2 for TRIANGULAR, 3 for ONLYPOLY | 0
+zero_disc | bool  |  add_zero_assumption to the vanishing discriminant. | false
 
 ## fp
 
