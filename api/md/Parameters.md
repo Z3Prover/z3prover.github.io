@@ -651,6 +651,8 @@ arith.nl.reduce_pseudo_linear | bool  |  create incremental linearization axioms
 arith.nl.rounds | unsigned int  |  threshold for number of (nested) final checks for non linear arithmetic, relevant only if smt.arith.solver=2 | 1024
 arith.nl.tangents | bool  |  run tangent lemmas | true
 arith.nl.tangents.box_corners | bool  |  choose tangent-plane points at the bound-box corners instead of the model-centered val(x) +/- delta; produces the McCormick under/over envelope and is deterministic and snapshot-independent | false
+arith.nl.transcendental | bool  |  delta-check transcendental function applications (sin/cos/tan/asin/acos/atan/sinh/cosh/tanh/asinh/acosh/atanh) registered by theory_lra against the current assignment using floating point evaluation | true
+arith.nl.transcendental_tolerance | double  |  delta tolerance used when delta-checking transcendental function applications against the current assignment | 0.0000001
 arith.print_ext_var_names | bool  |  print external variable names | false
 arith.print_stats | bool  |  print statistic | false
 arith.propagate_eqs | bool  |  propagate (cheap) equalities | true
