@@ -302,7 +302,8 @@ maxres.pivot_on_correction_set | bool  |  reduce soft constraints if the current
 maxres.wmax | bool  |  use weighted theory solver to constrain upper bounds | false
 maxsat_engine | symbol  |  select engine for maxsat: 'core_maxsat', 'wmax', 'maxres', 'maxresw', 'pd-maxres', 'maxres-bin', 'rc2' | maxres
 optsmt_bisect_rounds | unsigned int  |  maximal number of solver calls spent bisecting the interval between the best model value and the refuted arithmetic bound of a real-valued objective (e.g. under nonlinear constraints); when exhausted the objective is reported as unknown with that interval | 64
-optsmt_dual_bounds | bool  |  retain exact rational nonlinear relaxation upper bounds whose LP dependencies hold at the assertion level, independently of hint attainability | true
+optsmt_dual_bound_rlimit | unsigned int  |  resource limit for a cross-branch nonlinear bound probe while no finite upper bound is known (0 disables the extra check) | 100
+optsmt_dual_bounds | bool  |  retain exact rational nonlinear relaxation upper bounds, independently of hint attainability | true
 optsmt_engine | symbol  |  select optimization engine: 'basic', 'symba' | basic
 optsmt_nlsat | bool  |  optimize real objectives under nonlinear constraints exactly over nlsat cells (algebraic optima print as root-obj; unboundedness proven by native nlsat projection under an escalating rlimit budget) | true
 optsmt_nlsat_supremum_rlimit | unsigned int  |  resource limit for certifying finite open suprema with native nlsat projection (0 disables the extra check) | 100000
