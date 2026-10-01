@@ -691,6 +691,7 @@ dack.gc_inv_decay | double  |  Dynamic ackermannization garbage collection decay
 dack.threshold | unsigned int  |   number of times the congruence rule must be used before Leibniz's axiom is expanded | 10
 delay_units | bool  |  if true then z3 will not restart when a unit clause is learned | false
 delay_units_threshold | unsigned int  |  maximum number of learned unit clauses before restarting, ignored if delay_units is false | 32
+distribute_forall | bool  |  distribute unpatterned universal conjunctions | true
 dt_lazy_splits | unsigned int  |  How lazy datatype splits are performed: 0- eager, 1- lazy for infinite types, 2- lazy | 1
 elim_unconstrained | bool  |  pre-processing: eliminate unconstrained subterms | true
 ematching | bool  |  E-Matching based quantifier instantiation | true
