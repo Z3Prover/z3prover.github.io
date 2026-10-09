@@ -724,6 +724,8 @@ qi.eager_threshold | double  |  threshold for eager quantifier instantiation | 1
 qi.lazy_threshold | double  |  threshold for lazy quantifier instantiation | 20.0
 qi.max_instances | unsigned int  |  maximum number of quantifier instantiations | 4294967295
 qi.max_multi_patterns | unsigned int  |  specify the number of extra multi patterns | 0
+qi.max_persistent_instances | unsigned int  |  maximal number of pattern-based quantifier instances re-asserted on a re-search when qi.persist_instances is set | 1000
+qi.persist_instances | bool  |  re-assert the quantifier instances produced by model-based instantiation (and up to qi.max_persistent_instances pattern-based ones) at base level when a theory requests a re-search, e.g. after a recursive function unfolding depth increase | false
 qi.profile | bool  |  profile quantifier instantiation | false
 qi.profile_freq | unsigned int  |  how frequent results are reported by qi.profile | 4294967295
 qi.quick_checker | unsigned int  |  specify quick checker mode, 0 - no quick checker, 1 - using unsat instances, 2 - using both unsat and no-sat instances | 0
