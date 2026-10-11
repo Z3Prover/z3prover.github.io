@@ -729,6 +729,7 @@ qi.persist_instances | bool  |  re-assert the quantifier instances produced by m
 qi.profile | bool  |  profile quantifier instantiation | false
 qi.profile_freq | unsigned int  |  how frequent results are reported by qi.profile | 4294967295
 qi.quick_checker | unsigned int  |  specify quick checker mode, 0 - no quick checker, 1 - using unsat instances, 2 - using both unsat and no-sat instances | 0
+qi.update_generation | bool  |  lower the generation of an already-internalized term when it is re-internalized at a lower generation (e.g., by a quantifier instantiation). when false, a term keeps the generation assigned at its first internalization | true
 qsat_use_qel | bool  |  Use QEL for lite quantifier elimination and model-based projection in QSAT | true
 quasi_macros | bool  |  try to find universally quantified formulas that are quasi-macros | false
 random_seed | unsigned int  |  random seed for the smt solver | 0
