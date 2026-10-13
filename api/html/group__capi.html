@@ -17243,7 +17243,9 @@ abs1(forall (x1) phi, x, n) = forall (x1) (abs1(phi, x, n+1))
 <li>Z3 uses hash-consing, i.e., when the same <code>Z3_ast</code> is created twice, Z3 will return the same pointer twice.</li>
 </ul>
 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__capi.html#ga0f3c008fd1bd9c2ef73ff8e5a64d8baa" title="Delete the given logical context.">Z3_del_context</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__capi.html#ga0f3c008fd1bd9c2ef73ff8e5a64d8baa" title="Delete the given logical context.">Z3_del_context</a> </dd>
+<dd>
+<a class="el" href="group__capi.html#ga88b58f0557f1f871d25ac6d66ee60da2" title="Register a Z3 error handler.">Z3_set_error_handler</a> </dd></dl>
 
 </div>
 </div>
@@ -17269,8 +17271,11 @@ abs1(forall (x1) phi, x, n) = forall (x1) (abs1(phi, x, n+1))
 <li><code>Z3_sort</code>, <code>Z3_func_decl</code>, <code>Z3_app</code>, <code>Z3_pattern</code> are <code>Z3_ast's</code>.</li>
 <li>After a context is created, the configuration cannot be changed.</li>
 <li>All main interaction with Z3 happens in the context of a <code>Z3_context</code>.</li>
-<li>Z3 uses hash-consing, i.e., when the same <code>Z3_ast</code> is created twice, Z3 will return the same pointer twice. </li>
+<li>Z3 uses hash-consing, i.e., when the same <code>Z3_ast</code> is created twice, Z3 will return the same pointer twice.</li>
 </ul>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__capi.html#ga0f3c008fd1bd9c2ef73ff8e5a64d8baa" title="Delete the given logical context.">Z3_del_context</a> </dd>
+<dd>
+<a class="el" href="group__capi.html#ga88b58f0557f1f871d25ac6d66ee60da2" title="Register a Z3 error handler.">Z3_set_error_handler</a> </dd></dl>
 
 </div>
 </div>
@@ -32001,8 +32006,13 @@ The number of arguments must be greater than zero. </dd></dl>
 
 <p>Register a Z3 error handler. </p>
 <p>A call to a Z3 function may return a non <code>Z3_OK</code> error code, when it is not used correctly. An error handler can be registered and will be called in this case. To disable the use of the error handler, simply register with <code>h=NULL</code>.</p>
+<p>By default, newly created contexts install an internal default error handler that prints the error message and terminates the process via <code>exit(1)</code>. While suitable for standalone CLI programs, calling raw <code>exit()</code> is unsafe when Z3 is invoked from within a managed runtime environment (such as Java/JNI under Android ART or the JVM, or .NET/CLR) or multi-threaded embedders: process termination can race with background runtime threads (e.g., JIT compilation or GC threads), producing crashes (SIGSEGV) in unrelated runtime threads. Embedders in managed runtimes should always register their own error handler or disable it by passing <code>h=NULL</code> and inspecting <a class="el" href="group__capi.html#gaad9e6bdd12c165b4157bba9496b04ade" title="Return the error code for the last API call.">Z3_get_error_code</a>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Log files, created using <a class="el" href="group__capi.html#ga06cbadb63b9bd30be1aacd4543c1b2a3" title="Log interaction to a file.">Z3_open_log</a>, may be potentially incomplete/incorrect if error handlers are used.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__capi.html#gaad9e6bdd12c165b4157bba9496b04ade" title="Return the error code for the last API call.">Z3_get_error_code</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__capi.html#gaad9e6bdd12c165b4157bba9496b04ade" title="Return the error code for the last API call.">Z3_get_error_code</a> </dd>
+<dd>
+<a class="el" href="group__capi.html#ga0ebc76c86d9cd5bc0a4ff89fcb25e79a" title="Create a context using the given configuration.">Z3_mk_context</a> </dd>
+<dd>
+<a class="el" href="group__capi.html#ga3a75fab5a37035cc2598b378add97dc5" title="Create a context using the given configuration. This function is similar to Z3_mk_context....">Z3_mk_context_rc</a> </dd></dl>
 
 </div>
 </div>
@@ -35913,7 +35923,7 @@ The number of arguments must be greater than zero. </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 12 2026 03:37:20 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Oct 13 2026 03:43:09 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -305,6 +305,7 @@ optsmt_bisect_rounds | unsigned int  |  maximal number of solver calls spent bis
 optsmt_dual_bound_rlimit | unsigned int  |  resource limit for a cross-branch nonlinear bound probe while no finite upper bound is known (0 disables the extra check) | 100
 optsmt_dual_bounds | bool  |  retain exact rational nonlinear relaxation upper bounds, independently of hint attainability | true
 optsmt_engine | symbol  |  select optimization engine: 'basic', 'symba' | basic
+optsmt_lex_after_unbounded | bool  |  after an unbounded lexicographic objective, determine later arithmetic objectives as the limits of their optima; false leaves them as unrestricted intervals | true
 optsmt_nlsat | bool  |  optimize real objectives under nonlinear constraints exactly over nlsat cells (algebraic optima print as root-obj; unboundedness proven by native nlsat projection under an escalating rlimit budget) | true
 optsmt_nlsat_supremum_rlimit | unsigned int  |  resource limit for certifying finite open suprema with native nlsat projection (0 disables the extra check) | 100000
 pareto_nlsat | bool  |  enumerate Pareto fronts of pure NRA problems over an nlsat-backed solver, comparing objectives against exact algebraic model values instead of rounded isolating-interval endpoints | true
