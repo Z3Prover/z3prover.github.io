@@ -137,7 +137,8 @@ failed:&nbsp;sort&nbsp;mismatch</span></p>
 <dt class="heading-text"><a href="z3.z3.html#FiniteDomainNumRef">FiniteDomainNumRef</a>
 </dt></dl>
 </dd>
-<dt class="heading-text"><a href="z3.z3.html#FiniteSetRef">FiniteSetRef</a>
+<dt class="heading-text"><a href="z3.z3.html#FiniteFieldRef">FiniteFieldRef</a>
+</dt><dt class="heading-text"><a href="z3.z3.html#FiniteSetRef">FiniteSetRef</a>
 </dt><dt class="heading-text"><a href="z3.z3.html#PatternRef">PatternRef</a>
 </dt><dt class="heading-text"><a href="z3.z3.html#ReRef">ReRef</a>
 </dt><dt class="heading-text"><a href="z3.z3.html#SeqRef">SeqRef</a>
@@ -156,6 +157,7 @@ failed:&nbsp;sort&nbsp;mismatch</span></p>
 </dt><dt class="heading-text"><a href="z3.z3.html#FPRMSortRef">FPRMSortRef</a>
 </dt><dt class="heading-text"><a href="z3.z3.html#FPSortRef">FPSortRef</a>
 </dt><dt class="heading-text"><a href="z3.z3.html#FiniteDomainSortRef">FiniteDomainSortRef</a>
+</dt><dt class="heading-text"><a href="z3.z3.html#FiniteFieldSortRef">FiniteFieldSortRef</a>
 </dt><dt class="heading-text"><a href="z3.z3.html#FiniteSetSortRef">FiniteSetSortRef</a>
 </dt><dt class="heading-text"><a href="z3.z3.html#ReSortRef">ReSortRef</a>
 </dt><dt class="heading-text"><a href="z3.z3.html#SeqSortRef">SeqSortRef</a>
@@ -6389,6 +6391,378 @@ Data descriptors inherited from <a href="z3.z3.html#Z3PPObject">Z3PPObject</a>:<
 </td></tr></table> <p>
 <table class="section">
 <tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="FiniteFieldRef">class <strong>FiniteFieldRef</strong></a>(<a href="z3.z3.html#ExprRef">ExprRef</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#FiniteFieldRef">FiniteFieldRef</a>(ast,&nbsp;ctx=None)<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="z3.z3.html#FiniteFieldRef">FiniteFieldRef</a></dd>
+<dd><a href="z3.z3.html#ExprRef">ExprRef</a></dd>
+<dd><a href="z3.z3.html#AstRef">AstRef</a></dd>
+<dd><a href="z3.z3.html#Z3PPObject">Z3PPObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="FiniteFieldRef-__add__"><strong>__add__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__mul__"><strong>__mul__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__neg__"><strong>__neg__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__pow__"><strong>__pow__</strong></a>(self, n)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__radd__"><strong>__radd__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__rmul__"><strong>__rmul__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__rsub__"><strong>__rsub__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__sub__"><strong>__sub__</strong></a>(self, other)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-as_long"><strong>as_long</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-sort"><strong>sort</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;sort&nbsp;of&nbsp;expression&nbsp;`self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-Int">Int</a>('x')<br>
+&gt;&gt;&gt;&nbsp;(x&nbsp;+&nbsp;1).<a href="#FiniteFieldRef-sort">sort</a>()<br>
+Int<br>
+&gt;&gt;&gt;&nbsp;y&nbsp;=&nbsp;<a href="#-Real">Real</a>('y')<br>
+&gt;&gt;&gt;&nbsp;(x&nbsp;+&nbsp;y).<a href="#FiniteFieldRef-sort">sort</a>()<br>
+Real</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="z3.z3.html#ExprRef">ExprRef</a>:<br>
+<dl><dt><a name="FiniteFieldRef-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><span class="code">Return&nbsp;a&nbsp;Z3&nbsp;expression&nbsp;that&nbsp;represents&nbsp;the&nbsp;constraint&nbsp;`self&nbsp;==&nbsp;other`.<br>
+&nbsp;<br>
+If&nbsp;`other`&nbsp;is&nbsp;`None`,&nbsp;then&nbsp;this&nbsp;method&nbsp;simply&nbsp;returns&nbsp;`False`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#-Int">Int</a>('a')<br>
+&gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;<a href="#-Int">Int</a>('b')<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;==&nbsp;b<br>
+a&nbsp;==&nbsp;b<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;is&nbsp;None<br>
+False</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-__hash__"><strong>__hash__</strong></a>(self)</dt><dd><span class="code">Hash&nbsp;code.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-__ne__"><strong>__ne__</strong></a>(self, other)</dt><dd><span class="code">Return&nbsp;a&nbsp;Z3&nbsp;expression&nbsp;that&nbsp;represents&nbsp;the&nbsp;constraint&nbsp;`self&nbsp;!=&nbsp;other`.<br>
+&nbsp;<br>
+If&nbsp;`other`&nbsp;is&nbsp;`None`,&nbsp;then&nbsp;this&nbsp;method&nbsp;simply&nbsp;returns&nbsp;`True`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#-Int">Int</a>('a')<br>
+&gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;<a href="#-Int">Int</a>('b')<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;!=&nbsp;b<br>
+a&nbsp;!=&nbsp;b<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;is&nbsp;not&nbsp;None<br>
+True</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-arg"><strong>arg</strong></a>(self, idx)</dt><dd><span class="code">Return&nbsp;argument&nbsp;`idx`&nbsp;of&nbsp;the&nbsp;application&nbsp;`self`.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;assumes&nbsp;that&nbsp;`self`&nbsp;is&nbsp;a&nbsp;function&nbsp;application&nbsp;with&nbsp;at&nbsp;least&nbsp;`idx+1`&nbsp;arguments.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#-Int">Int</a>('a')<br>
+&gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;<a href="#-Int">Int</a>('b')<br>
+&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;<a href="#-Function">Function</a>('f',&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>())<br>
+&gt;&gt;&gt;&nbsp;t&nbsp;=&nbsp;f(a,&nbsp;b,&nbsp;0)<br>
+&gt;&gt;&gt;&nbsp;t.<a href="#FiniteFieldRef-arg">arg</a>(0)<br>
+a<br>
+&gt;&gt;&gt;&nbsp;t.<a href="#FiniteFieldRef-arg">arg</a>(1)<br>
+b<br>
+&gt;&gt;&gt;&nbsp;t.<a href="#FiniteFieldRef-arg">arg</a>(2)<br>
+0</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-as_ast"><strong>as_ast</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;corresponding&nbsp;C&nbsp;Z3_ast&nbsp;<a href="builtins.html#object">object</a>.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-children"><strong>children</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;list&nbsp;containing&nbsp;the&nbsp;children&nbsp;of&nbsp;the&nbsp;given&nbsp;expression<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#-Int">Int</a>('a')<br>
+&gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;<a href="#-Int">Int</a>('b')<br>
+&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;<a href="#-Function">Function</a>('f',&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>())<br>
+&gt;&gt;&gt;&nbsp;t&nbsp;=&nbsp;f(a,&nbsp;b,&nbsp;0)<br>
+&gt;&gt;&gt;&nbsp;t.<a href="#FiniteFieldRef-children">children</a>()<br>
+[a,&nbsp;b,&nbsp;0]</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-decl"><strong>decl</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;Z3&nbsp;function&nbsp;declaration&nbsp;associated&nbsp;with&nbsp;a&nbsp;Z3&nbsp;application.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;<a href="#-Function">Function</a>('f',&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>())<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#-Int">Int</a>('a')<br>
+&gt;&gt;&gt;&nbsp;t&nbsp;=&nbsp;f(a)<br>
+&gt;&gt;&gt;&nbsp;<a href="#FiniteFieldRef-eq">eq</a>(t.<a href="#FiniteFieldRef-decl">decl</a>(),&nbsp;f)<br>
+True<br>
+&gt;&gt;&gt;&nbsp;(a&nbsp;+&nbsp;1).<a href="#FiniteFieldRef-decl">decl</a>()<br>
++</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-from_string"><strong>from_string</strong></a>(self, s)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-get_id"><strong>get_id</strong></a>(self)</dt><dd><span class="code">Return&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;<a href="builtins.html#object">object</a>.&nbsp;It&nbsp;can&nbsp;be&nbsp;used&nbsp;for&nbsp;hash-tables&nbsp;and&nbsp;maps.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-kind"><strong>kind</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;Z3&nbsp;internal&nbsp;kind&nbsp;of&nbsp;a&nbsp;function&nbsp;application.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-num_args"><strong>num_args</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;number&nbsp;of&nbsp;arguments&nbsp;of&nbsp;a&nbsp;Z3&nbsp;application.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#-Int">Int</a>('a')<br>
+&gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;<a href="#-Int">Int</a>('b')<br>
+&gt;&gt;&gt;&nbsp;(a&nbsp;+&nbsp;b).<a href="#FiniteFieldRef-num_args">num_args</a>()<br>
+2<br>
+&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;<a href="#-Function">Function</a>('f',&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>())<br>
+&gt;&gt;&gt;&nbsp;t&nbsp;=&nbsp;f(a,&nbsp;b,&nbsp;0)<br>
+&gt;&gt;&gt;&nbsp;t.<a href="#FiniteFieldRef-num_args">num_args</a>()<br>
+3</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-params"><strong>params</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-serialize"><strong>serialize</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-sort_kind"><strong>sort_kind</strong></a>(self)</dt><dd><span class="code">Shorthand&nbsp;for&nbsp;`self.<a href="#FiniteFieldRef-sort">sort</a>().<a href="#FiniteFieldRef-kind">kind</a>()`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#-Array">Array</a>('a',&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>())<br>
+&gt;&gt;&gt;&nbsp;a.<a href="#FiniteFieldRef-sort_kind">sort_kind</a>()&nbsp;==&nbsp;Z3_ARRAY_SORT<br>
+True<br>
+&gt;&gt;&gt;&nbsp;a.<a href="#FiniteFieldRef-sort_kind">sort_kind</a>()&nbsp;==&nbsp;Z3_INT_SORT<br>
+False</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-update"><strong>update</strong></a>(self, *args)</dt><dd><span class="code">Update&nbsp;the&nbsp;arguments&nbsp;of&nbsp;the&nbsp;expression.<br>
+&nbsp;<br>
+Return&nbsp;a&nbsp;new&nbsp;expression&nbsp;with&nbsp;the&nbsp;same&nbsp;function&nbsp;declaration&nbsp;and&nbsp;updated&nbsp;arguments.<br>
+The&nbsp;number&nbsp;of&nbsp;new&nbsp;arguments&nbsp;must&nbsp;match&nbsp;the&nbsp;current&nbsp;number&nbsp;of&nbsp;arguments.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;f&nbsp;=&nbsp;<a href="#-Function">Function</a>('f',&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>())<br>
+&gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#-Int">Int</a>('a')<br>
+&gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;<a href="#-Int">Int</a>('b')<br>
+&gt;&gt;&gt;&nbsp;c&nbsp;=&nbsp;<a href="#-Int">Int</a>('c')<br>
+&gt;&gt;&gt;&nbsp;t&nbsp;=&nbsp;f(a,&nbsp;b)<br>
+&gt;&gt;&gt;&nbsp;t.<a href="#FiniteFieldRef-update">update</a>(c,&nbsp;c)<br>
+f(c,&nbsp;c)</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="z3.z3.html#AstRef">AstRef</a>:<br>
+<dl><dt><a name="FiniteFieldRef-__bool__"><strong>__bool__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__copy__"><strong>__copy__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__deepcopy__"><strong>__deepcopy__</strong></a>(self, memo={})</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__init__"><strong>__init__</strong></a>(self, ast, ctx=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-__nonzero__"><strong>__nonzero__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldRef-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-__str__"><strong>__str__</strong></a>(self)</dt><dd><span class="code">Return&nbsp;str(self).</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-ctx_ref"><strong>ctx_ref</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;reference&nbsp;to&nbsp;the&nbsp;C&nbsp;context&nbsp;where&nbsp;this&nbsp;AST&nbsp;node&nbsp;is&nbsp;stored.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-eq"><strong>eq</strong></a>(self, other)</dt><dd><span class="code">Return&nbsp;`True`&nbsp;if&nbsp;`self`&nbsp;and&nbsp;`other`&nbsp;are&nbsp;structurally&nbsp;identical.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-Int">Int</a>('x')<br>
+&gt;&gt;&gt;&nbsp;n1&nbsp;=&nbsp;x&nbsp;+&nbsp;1<br>
+&gt;&gt;&gt;&nbsp;n2&nbsp;=&nbsp;1&nbsp;+&nbsp;x<br>
+&gt;&gt;&gt;&nbsp;n1.<a href="#FiniteFieldRef-eq">eq</a>(n2)<br>
+False<br>
+&gt;&gt;&gt;&nbsp;n1&nbsp;=&nbsp;<a href="#-simplify">simplify</a>(n1)<br>
+&gt;&gt;&gt;&nbsp;n2&nbsp;=&nbsp;<a href="#-simplify">simplify</a>(n2)<br>
+&gt;&gt;&gt;&nbsp;n1.<a href="#FiniteFieldRef-eq">eq</a>(n2)<br>
+True</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-hash"><strong>hash</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;hashcode&nbsp;for&nbsp;the&nbsp;`self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;n1&nbsp;=&nbsp;<a href="#-simplify">simplify</a>(<a href="#-Int">Int</a>('x')&nbsp;+&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;n2&nbsp;=&nbsp;<a href="#-simplify">simplify</a>(2&nbsp;+&nbsp;<a href="#-Int">Int</a>('x')&nbsp;-&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;n1.<a href="#FiniteFieldRef-hash">hash</a>()&nbsp;==&nbsp;n2.<a href="#FiniteFieldRef-hash">hash</a>()<br>
+True</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-py_value"><strong>py_value</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;Python&nbsp;value&nbsp;that&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;`self`.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-sexpr"><strong>sexpr</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;AST&nbsp;node&nbsp;in&nbsp;s-expression&nbsp;notation.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-Int">Int</a>('x')<br>
+&gt;&gt;&gt;&nbsp;((x&nbsp;+&nbsp;1)*x).<a href="#FiniteFieldRef-sexpr">sexpr</a>()<br>
+'(*&nbsp;(+&nbsp;x&nbsp;1)&nbsp;x)'</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldRef-translate"><strong>translate</strong></a>(self, target)</dt><dd><span class="code">Translate&nbsp;`self`&nbsp;to&nbsp;the&nbsp;context&nbsp;`target`.&nbsp;That&nbsp;is,&nbsp;return&nbsp;a&nbsp;copy&nbsp;of&nbsp;`self`&nbsp;in&nbsp;the&nbsp;context&nbsp;`target`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;c1&nbsp;=&nbsp;<a href="#Context">Context</a>()<br>
+&gt;&gt;&gt;&nbsp;c2&nbsp;=&nbsp;<a href="#Context">Context</a>()<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;&nbsp;=&nbsp;<a href="#-Int">Int</a>('x',&nbsp;c1)<br>
+&gt;&gt;&gt;&nbsp;y&nbsp;&nbsp;=&nbsp;<a href="#-Int">Int</a>('y',&nbsp;c2)<br>
+&gt;&gt;&gt;&nbsp;#&nbsp;Nodes&nbsp;in&nbsp;different&nbsp;contexts&nbsp;can't&nbsp;be&nbsp;mixed.<br>
+&gt;&gt;&gt;&nbsp;#&nbsp;However,&nbsp;we&nbsp;can&nbsp;translate&nbsp;nodes&nbsp;from&nbsp;one&nbsp;context&nbsp;to&nbsp;another.<br>
+&gt;&gt;&gt;&nbsp;x.<a href="#FiniteFieldRef-translate">translate</a>(c2)&nbsp;+&nbsp;y<br>
+x&nbsp;+&nbsp;y</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="z3.z3.html#Z3PPObject">Z3PPObject</a>:<br>
+<dl><dt><a name="FiniteFieldRef-use_pp"><strong>use_pp</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="z3.z3.html#Z3PPObject">Z3PPObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="FiniteFieldSortRef">class <strong>FiniteFieldSortRef</strong></a>(<a href="z3.z3.html#SortRef">SortRef</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#FiniteFieldSortRef">FiniteFieldSortRef</a>(ast,&nbsp;ctx=None)<br>
+&nbsp;<br>
+A&nbsp;prime&nbsp;field.&nbsp;Use&nbsp;<a href="#-SolverFor">SolverFor</a>('QF_FF')&nbsp;for&nbsp;incremental&nbsp;field&nbsp;solving.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="z3.z3.html#FiniteFieldSortRef">FiniteFieldSortRef</a></dd>
+<dd><a href="z3.z3.html#SortRef">SortRef</a></dd>
+<dd><a href="z3.z3.html#AstRef">AstRef</a></dd>
+<dd><a href="z3.z3.html#Z3PPObject">Z3PPObject</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="FiniteFieldSortRef-cast"><strong>cast</strong></a>(self, value)</dt><dd><span class="code">Try&nbsp;to&nbsp;cast&nbsp;`val`&nbsp;as&nbsp;an&nbsp;element&nbsp;of&nbsp;sort&nbsp;`self`.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;used&nbsp;in&nbsp;Z3Py&nbsp;to&nbsp;convert&nbsp;Python&nbsp;objects&nbsp;such&nbsp;as&nbsp;integers,<br>
+floats,&nbsp;longs&nbsp;and&nbsp;strings&nbsp;into&nbsp;Z3&nbsp;expressions.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-Int">Int</a>('x')<br>
+&gt;&gt;&gt;&nbsp;<a href="#-RealSort">RealSort</a>().<a href="#FiniteFieldSortRef-cast">cast</a>(x)<br>
+<a href="#-ToReal">ToReal</a>(x)</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-size"><strong>size</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="z3.z3.html#SortRef">SortRef</a>:<br>
+<dl><dt><a name="FiniteFieldSortRef-__eq__"><strong>__eq__</strong></a>(self, other)</dt><dd><span class="code">Return&nbsp;`True`&nbsp;if&nbsp;`self`&nbsp;and&nbsp;`other`&nbsp;are&nbsp;the&nbsp;same&nbsp;Z3&nbsp;sort.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;p&nbsp;=&nbsp;<a href="#-Bool">Bool</a>('p')<br>
+&gt;&gt;&gt;&nbsp;p.sort()&nbsp;==&nbsp;<a href="#-BoolSort">BoolSort</a>()<br>
+True<br>
+&gt;&gt;&gt;&nbsp;p.sort()&nbsp;==&nbsp;<a href="#-IntSort">IntSort</a>()<br>
+False</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-__gt__"><strong>__gt__</strong></a>(self, other)</dt><dd><span class="code">Create&nbsp;the&nbsp;function&nbsp;space&nbsp;<a href="#-Array">Array</a>(self,&nbsp;other)</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-__hash__"><strong>__hash__</strong></a>(self)</dt><dd><span class="code">Hash&nbsp;code.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-__ne__"><strong>__ne__</strong></a>(self, other)</dt><dd><span class="code">Return&nbsp;`True`&nbsp;if&nbsp;`self`&nbsp;and&nbsp;`other`&nbsp;are&nbsp;not&nbsp;the&nbsp;same&nbsp;Z3&nbsp;sort.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;p&nbsp;=&nbsp;<a href="#-Bool">Bool</a>('p')<br>
+&gt;&gt;&gt;&nbsp;p.sort()&nbsp;!=&nbsp;<a href="#-BoolSort">BoolSort</a>()<br>
+False<br>
+&gt;&gt;&gt;&nbsp;p.sort()&nbsp;!=&nbsp;<a href="#-IntSort">IntSort</a>()<br>
+True</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-as_ast"><strong>as_ast</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;pointer&nbsp;to&nbsp;the&nbsp;corresponding&nbsp;C&nbsp;Z3_ast&nbsp;<a href="builtins.html#object">object</a>.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-get_id"><strong>get_id</strong></a>(self)</dt><dd><span class="code">Return&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;<a href="builtins.html#object">object</a>.&nbsp;It&nbsp;can&nbsp;be&nbsp;used&nbsp;for&nbsp;hash-tables&nbsp;and&nbsp;maps.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-kind"><strong>kind</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;Z3&nbsp;internal&nbsp;kind&nbsp;of&nbsp;a&nbsp;sort.<br>
+This&nbsp;method&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;test&nbsp;if&nbsp;`self`&nbsp;is&nbsp;one&nbsp;of&nbsp;the&nbsp;Z3&nbsp;builtin&nbsp;sorts.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;<a href="#-BoolSort">BoolSort</a>()<br>
+&gt;&gt;&gt;&nbsp;b.<a href="#FiniteFieldSortRef-kind">kind</a>()&nbsp;==&nbsp;Z3_BOOL_SORT<br>
+True<br>
+&gt;&gt;&gt;&nbsp;b.<a href="#FiniteFieldSortRef-kind">kind</a>()&nbsp;==&nbsp;Z3_INT_SORT<br>
+False<br>
+&gt;&gt;&gt;&nbsp;A&nbsp;=&nbsp;<a href="#-ArraySort">ArraySort</a>(<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>())<br>
+&gt;&gt;&gt;&nbsp;A.<a href="#FiniteFieldSortRef-kind">kind</a>()&nbsp;==&nbsp;Z3_ARRAY_SORT<br>
+True<br>
+&gt;&gt;&gt;&nbsp;A.<a href="#FiniteFieldSortRef-kind">kind</a>()&nbsp;==&nbsp;Z3_INT_SORT<br>
+False</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-name"><strong>name</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;name&nbsp;(string)&nbsp;of&nbsp;sort&nbsp;`self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-BoolSort">BoolSort</a>().<a href="#FiniteFieldSortRef-name">name</a>()<br>
+'Bool'<br>
+&gt;&gt;&gt;&nbsp;<a href="#-ArraySort">ArraySort</a>(<a href="#-IntSort">IntSort</a>(),&nbsp;<a href="#-IntSort">IntSort</a>()).<a href="#FiniteFieldSortRef-name">name</a>()<br>
+'Array'</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-subsort"><strong>subsort</strong></a>(self, other)</dt><dd><span class="code">Return&nbsp;`True`&nbsp;if&nbsp;`self`&nbsp;is&nbsp;a&nbsp;subsort&nbsp;of&nbsp;`other`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;<a href="#-IntSort">IntSort</a>().<a href="#FiniteFieldSortRef-subsort">subsort</a>(<a href="#-RealSort">RealSort</a>())<br>
+True</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="z3.z3.html#AstRef">AstRef</a>:<br>
+<dl><dt><a name="FiniteFieldSortRef-__bool__"><strong>__bool__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-__copy__"><strong>__copy__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-__deepcopy__"><strong>__deepcopy__</strong></a>(self, memo={})</dt></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-__init__"><strong>__init__</strong></a>(self, ast, ctx=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-__nonzero__"><strong>__nonzero__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><span class="code">Return&nbsp;repr(self).</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-__str__"><strong>__str__</strong></a>(self)</dt><dd><span class="code">Return&nbsp;str(self).</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-ctx_ref"><strong>ctx_ref</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;reference&nbsp;to&nbsp;the&nbsp;C&nbsp;context&nbsp;where&nbsp;this&nbsp;AST&nbsp;node&nbsp;is&nbsp;stored.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-eq"><strong>eq</strong></a>(self, other)</dt><dd><span class="code">Return&nbsp;`True`&nbsp;if&nbsp;`self`&nbsp;and&nbsp;`other`&nbsp;are&nbsp;structurally&nbsp;identical.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-Int">Int</a>('x')<br>
+&gt;&gt;&gt;&nbsp;n1&nbsp;=&nbsp;x&nbsp;+&nbsp;1<br>
+&gt;&gt;&gt;&nbsp;n2&nbsp;=&nbsp;1&nbsp;+&nbsp;x<br>
+&gt;&gt;&gt;&nbsp;n1.<a href="#FiniteFieldSortRef-eq">eq</a>(n2)<br>
+False<br>
+&gt;&gt;&gt;&nbsp;n1&nbsp;=&nbsp;<a href="#-simplify">simplify</a>(n1)<br>
+&gt;&gt;&gt;&nbsp;n2&nbsp;=&nbsp;<a href="#-simplify">simplify</a>(n2)<br>
+&gt;&gt;&gt;&nbsp;n1.<a href="#FiniteFieldSortRef-eq">eq</a>(n2)<br>
+True</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-hash"><strong>hash</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;hashcode&nbsp;for&nbsp;the&nbsp;`self`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;n1&nbsp;=&nbsp;<a href="#-simplify">simplify</a>(<a href="#-Int">Int</a>('x')&nbsp;+&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;n2&nbsp;=&nbsp;<a href="#-simplify">simplify</a>(2&nbsp;+&nbsp;<a href="#-Int">Int</a>('x')&nbsp;-&nbsp;1)<br>
+&gt;&gt;&gt;&nbsp;n1.<a href="#FiniteFieldSortRef-hash">hash</a>()&nbsp;==&nbsp;n2.<a href="#FiniteFieldSortRef-hash">hash</a>()<br>
+True</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-py_value"><strong>py_value</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;Python&nbsp;value&nbsp;that&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;`self`.</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-sexpr"><strong>sexpr</strong></a>(self)</dt><dd><span class="code">Return&nbsp;a&nbsp;string&nbsp;representing&nbsp;the&nbsp;AST&nbsp;node&nbsp;in&nbsp;s-expression&nbsp;notation.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;=&nbsp;<a href="#-Int">Int</a>('x')<br>
+&gt;&gt;&gt;&nbsp;((x&nbsp;+&nbsp;1)*x).<a href="#FiniteFieldSortRef-sexpr">sexpr</a>()<br>
+'(*&nbsp;(+&nbsp;x&nbsp;1)&nbsp;x)'</span></dd></dl>
+
+<dl><dt><a name="FiniteFieldSortRef-translate"><strong>translate</strong></a>(self, target)</dt><dd><span class="code">Translate&nbsp;`self`&nbsp;to&nbsp;the&nbsp;context&nbsp;`target`.&nbsp;That&nbsp;is,&nbsp;return&nbsp;a&nbsp;copy&nbsp;of&nbsp;`self`&nbsp;in&nbsp;the&nbsp;context&nbsp;`target`.<br>
+&nbsp;<br>
+&gt;&gt;&gt;&nbsp;c1&nbsp;=&nbsp;<a href="#Context">Context</a>()<br>
+&gt;&gt;&gt;&nbsp;c2&nbsp;=&nbsp;<a href="#Context">Context</a>()<br>
+&gt;&gt;&gt;&nbsp;x&nbsp;&nbsp;=&nbsp;<a href="#-Int">Int</a>('x',&nbsp;c1)<br>
+&gt;&gt;&gt;&nbsp;y&nbsp;&nbsp;=&nbsp;<a href="#-Int">Int</a>('y',&nbsp;c2)<br>
+&gt;&gt;&gt;&nbsp;#&nbsp;Nodes&nbsp;in&nbsp;different&nbsp;contexts&nbsp;can't&nbsp;be&nbsp;mixed.<br>
+&gt;&gt;&gt;&nbsp;#&nbsp;However,&nbsp;we&nbsp;can&nbsp;translate&nbsp;nodes&nbsp;from&nbsp;one&nbsp;context&nbsp;to&nbsp;another.<br>
+&gt;&gt;&gt;&nbsp;x.<a href="#FiniteFieldSortRef-translate">translate</a>(c2)&nbsp;+&nbsp;y<br>
+x&nbsp;+&nbsp;y</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="z3.z3.html#Z3PPObject">Z3PPObject</a>:<br>
+<dl><dt><a name="FiniteFieldSortRef-use_pp"><strong>use_pp</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="z3.z3.html#Z3PPObject">Z3PPObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
 <td class="section-title" colspan=3>&nbsp;<br><a name="FiniteSetRef">class <strong>FiniteSetRef</strong></a>(<a href="z3.z3.html#ExprRef">ExprRef</a>)</td></tr>
     
 <tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
@@ -11757,6 +12131,11 @@ more&nbsp;than&nbsp;2&nbsp;constraints&nbsp;in&nbsp;the&nbsp;goal.<br>
 255<br>
 &gt;&gt;&gt;&nbsp;<a href="#-FiniteDomainVal">FiniteDomainVal</a>('100',&nbsp;s)<br>
 100</span></dd></dl>
+ <dl><dt><a name="-FiniteFieldBitsum"><strong>FiniteFieldBitsum</strong></a>(*args)</dt></dl>
+ <dl><dt><a name="-FiniteFieldElem"><strong>FiniteFieldElem</strong></a>(name, field, ctx=None)</dt></dl>
+ <dl><dt><a name="-FiniteFieldElems"><strong>FiniteFieldElems</strong></a>(names, field, ctx=None)</dt></dl>
+ <dl><dt><a name="-FiniteFieldSort"><strong>FiniteFieldSort</strong></a>(prime, ctx=None)</dt></dl>
+ <dl><dt><a name="-FiniteFieldVal"><strong>FiniteFieldVal</strong></a>(value, field, ctx=None)</dt></dl>
  <dl><dt><a name="-FiniteSetDifference"><strong>FiniteSetDifference</strong></a>(s1, s2)</dt><dd><span class="code">Create&nbsp;the&nbsp;set&nbsp;difference&nbsp;of&nbsp;two&nbsp;finite&nbsp;sets.<br>
 &gt;&gt;&gt;&nbsp;a&nbsp;=&nbsp;<a href="#-Const">Const</a>('a',&nbsp;<a href="#-FiniteSetSort">FiniteSetSort</a>(<a href="#-IntSort">IntSort</a>()))<br>
 &gt;&gt;&gt;&nbsp;b&nbsp;=&nbsp;<a href="#-Const">Const</a>('b',&nbsp;<a href="#-FiniteSetSort">FiniteSetSort</a>(<a href="#-IntSort">IntSort</a>()))<br>
@@ -13843,6 +14222,7 @@ True</span></dd></dl>
 <strong>Z3_EXCEPTION</strong> = 12<br>
 <strong>Z3_FILE_ACCESS_ERROR</strong> = 8<br>
 <strong>Z3_FINITE_DOMAIN_SORT</strong> = 8<br>
+<strong>Z3_FINITE_FIELD_SORT</strong> = 15<br>
 <strong>Z3_FLOATING_POINT_SORT</strong> = 9<br>
 <strong>Z3_FUNC_DECL_AST</strong> = 5<br>
 <strong>Z3_GOAL_OVER</strong> = 2<br>
@@ -13935,6 +14315,11 @@ True</span></dd></dl>
 <strong>Z3_OP_FALSE</strong> = 257<br>
 <strong>Z3_OP_FD_CONSTANT</strong> = 1549<br>
 <strong>Z3_OP_FD_LT</strong> = 1550<br>
+<strong>Z3_OP_FF_ADD</strong> = 53249<br>
+<strong>Z3_OP_FF_BITSUM</strong> = 53252<br>
+<strong>Z3_OP_FF_MUL</strong> = 53250<br>
+<strong>Z3_OP_FF_NEG</strong> = 53251<br>
+<strong>Z3_OP_FF_NUM</strong> = 53248<br>
 <strong>Z3_OP_FINITE_SET_DIFFERENCE</strong> = 49156<br>
 <strong>Z3_OP_FINITE_SET_EMPTY</strong> = 49152<br>
 <strong>Z3_OP_FINITE_SET_EXT</strong> = 49163<br>
@@ -14191,13 +14576,13 @@ True</span></dd></dl>
 <strong>Z3_UNKNOWN_SORT</strong> = 1000<br>
 <strong>Z3_VAR_AST</strong> = 2<br>
 <strong>cdll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
-<strong>d</strong> = '/home/runner/work/z3/z3/build-x64/libz3.so.5.1'<br>
-<strong>lds</strong> = ['/home/runner/work/z3/z3/_opam/bin', '/home/runner/work/_temp/3154a950-2b9e-48db-a212-40cbf15f5a92/emsdk-main', '/opt/hostedtoolcache/opam/2.6.1/x86_64', '/opt/hostedtoolcache/node/24.21.0/x64/bin', '/snap/bin', '/home/runner/.local/bin', '/opt/pipx_bin', '/home/runner/.cargo/bin', '/home/runner/.config/composer/vendor/bin', '/usr/local/.ghcup/bin', '/home/runner/.dotnet/tools', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin']<br>
+<strong>d</strong> = '/home/runner/work/z3/z3/build-x64/libz3.so.5.3'<br>
+<strong>lds</strong> = ['/home/runner/work/z3/z3/_opam/bin', '/home/runner/work/_temp/28bcfed0-6c93-419c-b82d-78eb3238021c/emsdk-main', '/opt/hostedtoolcache/opam/2.6.1/x86_64', '/opt/hostedtoolcache/node/24.21.0/x64/bin', '/snap/bin', '/home/runner/.local/bin', '/opt/pipx_bin', '/home/runner/.cargo/bin', '/home/runner/.config/composer/vendor/bin', '/usr/local/.ghcup/bin', '/home/runner/.dotnet/tools', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin']<br>
 <strong>lp</strong> = '/home/runner/work/z3/z3/_opam/bin:/home/runner/w...:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'<br>
 <strong>memmove</strong> = &lt;CFunctionType object&gt;<br>
 <strong>memset</strong> = &lt;CFunctionType object&gt;<br>
 <strong>pydll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
-<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7fe41d19e2e0&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7f5c885612e0&gt;<br>
 <strong>sat</strong> = sat<br>
 <strong>unknown</strong> = unknown<br>
 <strong>unsat</strong> = unsat<br>

@@ -345,6 +345,7 @@ This document contains the trace tags and their descriptions used in Z3.
 | Global | factor_rewriter | factor rewriter |
 | Global | farkas_learner2 | farkas learner2 |
 | Global | feas_bug | feas bug |
+| Global | ff_root_split_miss | ff root split miss |
 | Global | final_check | final check |
 | Global | final_check_result | final check result |
 | Global | final_check_stats | final check stats |

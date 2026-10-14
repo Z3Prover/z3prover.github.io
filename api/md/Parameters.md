@@ -696,6 +696,52 @@ distribute_forall | bool  |  distribute unpatterned universal conjunctions | fal
 dt_lazy_splits | unsigned int  |  How lazy datatype splits are performed: 0- eager, 1- lazy for infinite types, 2- lazy | 1
 elim_unconstrained | bool  |  pre-processing: eliminate unconstrained subterms | true
 ematching | bool  |  E-Matching based quantifier instantiation | true
+ff.adaptive_basis | bool  |  admit larger bases within storage bounds and compact retired pair records | false
+ff.adaptive_matrix | bool  |  allow more symbolic matrix reducers within a bounded storage allowance | false
+ff.adaptive_reduction | bool  |  fall back to scalar basis reduction when a matrix exceeds its storage budget | false
+ff.basis_bits | bool  |  recover Boolean domains and digit equalities from basis consequences | false
+ff.basis_cache | bool  |  reuse exact bounded finite-field bases across native checks | true
+ff.basis_max_bytes | unsigned int  |  estimated retained basis storage with adaptive_basis (capped at 1 GiB) | 16777216
+ff.batch | bool  |  batch small-field critical pairs using sparse modular elimination | true
+ff.bit_bounds | bool  |  propagate Boolean digits using no-wrap signed interval bounds | true
+ff.bit_propagation | bool  |  repeat no-wrap bit-sum propagation after algebraic elimination | true
+ff.boolean_split | bool  |  expose Boolean field domains to SAT (may change branching substantially) | false
+ff.bounded_elimination | bool  |  retain nonlinear definitions when substitution predicts polynomial growth | false
+ff.compact_encoding | bool  |  retain compact definitions when polynomial expansion would grow | true
+ff.compact_matrix | bool  |  use packed sparse matrix rows and smaller critical-pair batches | false
+ff.compact_retry | bool  |  retry the algebra tactic with compact definitions after an encoding size limit | true
+ff.disjunctive_bits | bool  |  rewrite disjunctive Boolean field domains as polynomial equations | true
+ff.div_masks | bool  |  filter reducer divisibility tests using support masks | false
+ff.f4 | bool  |  use the fixed-width F4 backend with zero-dimensional model construction | true
+ff.f4_budget | unsigned int  |  F4 work units allowed per unit of ff.max_steps | 40
+ff.f4_max_quotient | unsigned int  |  largest quotient-ring dimension explored by F4 model construction | 1024
+ff.f4_short_budget | unsigned int  |  F4 work units per unit of ff.max_steps on circuit-like systems (many Boolean variables) | 1
+ff.f4_slice | unsigned int  |  random x = r slices tried per level on positive-dimensional ideals in F4 model construction (SAT only) | 4
+ff.f4_value_split | bool  |  in F4 model construction over small fields, enumerate the values of a free variable | false
+ff.factor_split | bool  |  case-split equations whose monomials share a common symbolic factor, generalizing the literal top-level product-is-zero rule (may change branching substantially) | true
+ff.fused_reduction | bool  |  add scalar reducer multiples directly without temporary polynomials | false
+ff.geobucket | bool  |  accumulate scalar polynomial reductions in geometric buckets | false
+ff.gm_pairs | bool  |  install critical pairs using minimal lcm and strict chain criteria | true
+ff.lazy_matrix | bool  |  retain matrix reducers as basis references and monomial multipliers | false
+ff.linear_split | bool  |  exchange bounded linear and nonlinear basis consequences before elimination | false
+ff.max_factor_splits | unsigned int  |  maximum factor-split clauses emitted in one SMT search (0 disables factor splitting) | 4
+ff.max_steps | unsigned int  |  maximum native finite-field algebra operations before exact BV fallback | 2000000
+ff.max_terms | unsigned int  |  maximum terms in an expanded finite-field polynomial | 4096
+ff.model_search | bool  |  derive bounded quotient minimal polynomials and diversify witness probes | true
+ff.quotient_field | bool  |  adjoin bounded quotient reductions of finite-field Frobenius axioms | false
+ff.root_completion | bool  |  derive bounded quotient minimal polynomials without extra witness probes | false
+ff.root_split | bool  |  emit bounded finite-field factor and square-root case splits | true
+ff.small_coefficients | bool  |  use exact machine arithmetic for small-field polynomial coefficients | false
+ff.sparse_matrix_reducers | bool  |  prefer fewer-term basis rows during matrix symbolic preprocessing | false
+ff.sparse_witness | bool  |  try bounded univariate slices for underdetermined systems | true
+ff.sugar_pairs | bool  |  rank critical pairs by propagated sugar degree in all field sizes | true
+ff.tiny | bool  |  complete finite-domain search with forward checking over fields with p &lt; 64 | true
+ff.tiny_budget | unsigned int  |  tiny-field search work units per unit of ff.max_steps | 200
+ff.unique | bool  |  bounded uniqueness propagation before field solving | true
+ff.unique_depth | unsigned int  |  maximum Boolean split depth in uniqueness search (capped at 64) | 16
+ff.unique_equalities | bool  |  add derived root equalities after uniqueness propagation | false
+ff.unique_nodes | unsigned int  |  maximum nodes in uniqueness search | 50000
+ff.unique_work | unsigned int  |  local work allowance for the entire uniqueness attempt | 1000000
 ho_matching | bool  |  higher-order matching for quantifier instantiation | false
 ho_matching_bound | unsigned int  |  per-problem expansion-step budget of the higher-order matching search; bounds the (undecidable) HO unification to guarantee termination | 10000
 ho_qmatcher | bool  |  higher-order matching and term-enumeration quantifier engine | false
