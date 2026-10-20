@@ -776,6 +776,9 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <tr class="memitem:ga0f3c008fd1bd9c2ef73ff8e5a64d8baa" id="r_ga0f3c008fd1bd9c2ef73ff8e5a64d8baa"><td class="memItemLeft" align="right" valign="top">void Z3_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__capi.html#ga0f3c008fd1bd9c2ef73ff8e5a64d8baa">Z3_del_context</a> (Z3_context c)</td></tr>
 <tr class="memdesc:ga0f3c008fd1bd9c2ef73ff8e5a64d8baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the given logical context.  <br /></td></tr>
 <tr class="separator:ga0f3c008fd1bd9c2ef73ff8e5a64d8baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56a7ac8c01e93c91b8a68193eaa93acc" id="r_ga56a7ac8c01e93c91b8a68193eaa93acc"><td class="memItemLeft" align="right" valign="top">void Z3_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__capi.html#ga56a7ac8c01e93c91b8a68193eaa93acc">Z3_set_proof_check_callback</a> (Z3_context c, void *user_context, Z3_proof_check_eh callback)</td></tr>
+<tr class="memdesc:ga56a7ac8c01e93c91b8a68193eaa93acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a client proof checker for <code>c</code>.  <br /></td></tr>
+<tr class="separator:ga56a7ac8c01e93c91b8a68193eaa93acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf4d5ae3b9ca494f1f9f22f7732fba51c" id="r_gaf4d5ae3b9ca494f1f9f22f7732fba51c"><td class="memItemLeft" align="right" valign="top">void Z3_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__capi.html#gaf4d5ae3b9ca494f1f9f22f7732fba51c">Z3_inc_ref</a> (Z3_context c, Z3_ast a)</td></tr>
 <tr class="memdesc:gaf4d5ae3b9ca494f1f9f22f7732fba51c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the reference counter of the given AST. The context <code>c</code> should have been created using <a class="el" href="group__capi.html#ga3a75fab5a37035cc2598b378add97dc5" title="Create a context using the given configuration. This function is similar to Z3_mk_context....">Z3_mk_context_rc</a>. This function is a NOOP if <code>c</code> was created using <a class="el" href="group__capi.html#ga0ebc76c86d9cd5bc0a4ff89fcb25e79a" title="Create a context using the given configuration.">Z3_mk_context</a>.  <br /></td></tr>
 <tr class="separator:gaf4d5ae3b9ca494f1f9f22f7732fba51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4782,6 +4785,9 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <p>Z3 custom error handler (See <a class="el" href="group__capi.html#ga88b58f0557f1f871d25ac6d66ee60da2" title="Register a Z3 error handler.">Z3_set_error_handler</a>). </p>
 <p>Definitions for update_api.py</p>
 <p>callback functions for user propagator.</p>
+<p>Client proof checker. See <a class="el" href="group__capi.html#ga56a7ac8c01e93c91b8a68193eaa93acc" title="Register a client proof checker for c.">Z3_set_proof_check_callback</a>.</p>
+<p>The proof and assertion vector are borrowed and protected from collection until the callback returns. Retaining them requires the usual reference counting APIs. All handles belong to <code>c</code>.</p>
+<p>Return a non-null, null-terminated UTF-8 report. The returned storage belongs to the client and must remain valid immediately after the callback returns; Z3 copies it before invoking another callback. Returning null reports an error. The callback must not throw across the C ABI, delete <code>c</code>, or re-enter SMT-LIB command evaluation on <code>c</code>.</p>
 <p>A Goal is essentially a set of formulas. Z3 provide APIs for building strategies/tactics for solving and transforming Goals. Some of these transformations apply under/over approximations.</p>
 <ul>
 <li>Z3_GOAL_PRECISE: Approximations/Relaxations were not applied on the goal (sat and unsat answers were preserved).</li>
@@ -4796,18 +4802,18 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <tr><td class="fieldname"><a id="gga10dec23d76eb23c99ef1df02984e94aba82183edcc017cb977a08382ba5ada964" name="gga10dec23d76eb23c99ef1df02984e94aba82183edcc017cb977a08382ba5ada964"></a>Z3_GOAL_UNDER_OVER&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="z3__api_8h_source.html#l01436">1436</a> of file <a class="el" href="z3__api_8h_source.html">z3_api.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1437</span>{</div>
-<div class="line"><span class="lineno"> 1438</span>    <a class="code hl_enumvalue" href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94abaf76a7ed1ff6bad51b950ea4af486de38">Z3_GOAL_PRECISE</a>,</div>
-<div class="line"><span class="lineno"> 1439</span>    <a class="code hl_enumvalue" href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94aba54789ad7b25ca2018dac72294d2dc060">Z3_GOAL_UNDER</a>,</div>
-<div class="line"><span class="lineno"> 1440</span>    <a class="code hl_enumvalue" href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94abae8f4beae3bb6f11b7b48374066b9e7f5">Z3_GOAL_OVER</a>,</div>
-<div class="line"><span class="lineno"> 1441</span>    <a class="code hl_enumvalue" href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94aba82183edcc017cb977a08382ba5ada964">Z3_GOAL_UNDER_OVER</a></div>
-<div class="line"><span class="lineno"> 1442</span>} <a class="code hl_enumeration" href="group__capi.html#ga10dec23d76eb23c99ef1df02984e94ab">Z3_goal_prec</a>;</div>
-<div class="ttc" id="agroup__capi_html_ga10dec23d76eb23c99ef1df02984e94ab"><div class="ttname"><a href="group__capi.html#ga10dec23d76eb23c99ef1df02984e94ab">Z3_goal_prec</a></div><div class="ttdeci">Z3_goal_prec</div><div class="ttdoc">Z3 custom error handler (See Z3_set_error_handler).</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l01436">z3_api.h:1437</a></div></div>
-<div class="ttc" id="agroup__capi_html_gga10dec23d76eb23c99ef1df02984e94aba54789ad7b25ca2018dac72294d2dc060"><div class="ttname"><a href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94aba54789ad7b25ca2018dac72294d2dc060">Z3_GOAL_UNDER</a></div><div class="ttdeci">@ Z3_GOAL_UNDER</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l01439">z3_api.h:1439</a></div></div>
-<div class="ttc" id="agroup__capi_html_gga10dec23d76eb23c99ef1df02984e94aba82183edcc017cb977a08382ba5ada964"><div class="ttname"><a href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94aba82183edcc017cb977a08382ba5ada964">Z3_GOAL_UNDER_OVER</a></div><div class="ttdeci">@ Z3_GOAL_UNDER_OVER</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l01442">z3_api.h:1441</a></div></div>
-<div class="ttc" id="agroup__capi_html_gga10dec23d76eb23c99ef1df02984e94abae8f4beae3bb6f11b7b48374066b9e7f5"><div class="ttname"><a href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94abae8f4beae3bb6f11b7b48374066b9e7f5">Z3_GOAL_OVER</a></div><div class="ttdeci">@ Z3_GOAL_OVER</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l01440">z3_api.h:1440</a></div></div>
-<div class="ttc" id="agroup__capi_html_gga10dec23d76eb23c99ef1df02984e94abaf76a7ed1ff6bad51b950ea4af486de38"><div class="ttname"><a href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94abaf76a7ed1ff6bad51b950ea4af486de38">Z3_GOAL_PRECISE</a></div><div class="ttdeci">@ Z3_GOAL_PRECISE</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l01438">z3_api.h:1438</a></div></div>
+<p class="definition">Definition at line <a class="el" href="z3__api_8h_source.html#l01450">1450</a> of file <a class="el" href="z3__api_8h_source.html">z3_api.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1451</span>{</div>
+<div class="line"><span class="lineno"> 1452</span>    <a class="code hl_enumvalue" href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94abaf76a7ed1ff6bad51b950ea4af486de38">Z3_GOAL_PRECISE</a>,</div>
+<div class="line"><span class="lineno"> 1453</span>    <a class="code hl_enumvalue" href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94aba54789ad7b25ca2018dac72294d2dc060">Z3_GOAL_UNDER</a>,</div>
+<div class="line"><span class="lineno"> 1454</span>    <a class="code hl_enumvalue" href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94abae8f4beae3bb6f11b7b48374066b9e7f5">Z3_GOAL_OVER</a>,</div>
+<div class="line"><span class="lineno"> 1455</span>    <a class="code hl_enumvalue" href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94aba82183edcc017cb977a08382ba5ada964">Z3_GOAL_UNDER_OVER</a></div>
+<div class="line"><span class="lineno"> 1456</span>} <a class="code hl_enumeration" href="group__capi.html#ga10dec23d76eb23c99ef1df02984e94ab">Z3_goal_prec</a>;</div>
+<div class="ttc" id="agroup__capi_html_ga10dec23d76eb23c99ef1df02984e94ab"><div class="ttname"><a href="group__capi.html#ga10dec23d76eb23c99ef1df02984e94ab">Z3_goal_prec</a></div><div class="ttdeci">Z3_goal_prec</div><div class="ttdoc">Z3 custom error handler (See Z3_set_error_handler).</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l01450">z3_api.h:1451</a></div></div>
+<div class="ttc" id="agroup__capi_html_gga10dec23d76eb23c99ef1df02984e94aba54789ad7b25ca2018dac72294d2dc060"><div class="ttname"><a href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94aba54789ad7b25ca2018dac72294d2dc060">Z3_GOAL_UNDER</a></div><div class="ttdeci">@ Z3_GOAL_UNDER</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l01453">z3_api.h:1453</a></div></div>
+<div class="ttc" id="agroup__capi_html_gga10dec23d76eb23c99ef1df02984e94aba82183edcc017cb977a08382ba5ada964"><div class="ttname"><a href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94aba82183edcc017cb977a08382ba5ada964">Z3_GOAL_UNDER_OVER</a></div><div class="ttdeci">@ Z3_GOAL_UNDER_OVER</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l01456">z3_api.h:1455</a></div></div>
+<div class="ttc" id="agroup__capi_html_gga10dec23d76eb23c99ef1df02984e94abae8f4beae3bb6f11b7b48374066b9e7f5"><div class="ttname"><a href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94abae8f4beae3bb6f11b7b48374066b9e7f5">Z3_GOAL_OVER</a></div><div class="ttdeci">@ Z3_GOAL_OVER</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l01454">z3_api.h:1454</a></div></div>
+<div class="ttc" id="agroup__capi_html_gga10dec23d76eb23c99ef1df02984e94abaf76a7ed1ff6bad51b950ea4af486de38"><div class="ttname"><a href="group__capi.html#gga10dec23d76eb23c99ef1df02984e94abaf76a7ed1ff6bad51b950ea4af486de38">Z3_GOAL_PRECISE</a></div><div class="ttdeci">@ Z3_GOAL_PRECISE</div><div class="ttdef"><b>Definition</b> <a href="z3__api_8h_source.html#l01452">z3_api.h:1452</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -32301,6 +32307,46 @@ The number of arguments must be greater than zero. </dd></dl>
 
 </div>
 </div>
+<a id="ga56a7ac8c01e93c91b8a68193eaa93acc" name="ga56a7ac8c01e93c91b8a68193eaa93acc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56a7ac8c01e93c91b8a68193eaa93acc">&#9670;&#160;</a></span>Z3_set_proof_check_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Z3_API Z3_set_proof_check_callback </td>
+          <td>(</td>
+          <td class="paramtype">Z3_context&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Z3_proof_check_eh&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register a client proof checker for <code>c</code>. </p>
+<p>Replaces the previous callback and user data. Passing a null callback unregisters it. The client owns the callback and user data and must keep them alive until replacement, unregistration, or context destruction.</p>
+<p>SMT-LIB evaluation through <a class="el" href="group__capi.html#ga1bf14e02d5594bf0eb3bf01524e3a0c7" title="Parse and evaluate and SMT-LIB2 command sequence. The state from a previous call is saved so the next...">Z3_eval_smtlib2_string</a> invokes the callback after an unsatisfiable check-sat, check-sat-assuming, or check-sat-using command. Automatic reports go to the command context's diagnostic stream, included in the returned evaluation text. Ordinary <a class="el" href="group__capi.html#ga3570e58a8c3d493da4109568b1eca2ce" title="Check whether the assertions in a given solver are consistent or not.">Z3_solver_check</a> calls do not invoke it automatically.</p>
+<p>Automatic checking requires proof production to be enabled before assertions are added. An unavailable proof is reported as a command error. The automatic assertion vector contains the active input assertions and current check assumptions. Named assertions tracked for unsat cores are represented by their guarded assertions and tracking literals, matching the proof premises.</p>
+<p>Registration survives SMT-LIB reset commands. The report is opaque: Z3 does not interpret it or change the solver's satisfiability result. </p>
+
+</div>
+</div>
 <a id="ga04038c86863aa29e86520cebc5b4f9f9" name="ga04038c86863aa29e86520cebc5b4f9f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga04038c86863aa29e86520cebc5b4f9f9">&#9670;&#160;</a></span>Z3_simplifier_and_then()</h2>
 
@@ -36168,7 +36214,7 @@ The number of arguments must be greater than zero. </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 19 2026 03:28:39 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Oct 20 2026 03:25:27 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
