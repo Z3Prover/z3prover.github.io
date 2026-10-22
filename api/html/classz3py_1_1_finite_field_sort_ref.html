@@ -183,7 +183,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">A prime field. Use SolverFor('QF_FF') for incremental field solving.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l12643">12643</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l12747">12747</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af5c2aef9f442dfb6c7f44da37a423cef" name="af5c2aef9f442dfb6c7f44da37a423cef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5c2aef9f442dfb6c7f44da37a423cef">&#9670;&#160;</a></span>cast()</h2>
@@ -221,15 +221,15 @@ ToReal(x)
 </pre> 
 <p>Reimplemented from <a class="el" href="classz3py_1_1_sort_ref.html#ad1048721c384c7edd5394785462b0878">SortRef</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l12648">12648</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">12648</span>    <span class="keyword">def </span>cast(self, value):</div>
-<div class="line"><span class="lineno">12649</span>        <span class="keywordflow">if</span> is_expr(value):</div>
-<div class="line"><span class="lineno">12650</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.eq(value.sort()):</div>
-<div class="line"><span class="lineno">12651</span>                <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;finite-field sort mismatch&quot;</span>)</div>
-<div class="line"><span class="lineno">12652</span>            <span class="keywordflow">return</span> value</div>
-<div class="line"><span class="lineno">12653</span>        <span class="keywordflow">return</span> FiniteFieldVal(value, self)</div>
-<div class="line"><span class="lineno">12654</span> </div>
-<div class="line"><span class="lineno">12655</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l12752">12752</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">12752</span>    <span class="keyword">def </span>cast(self, value):</div>
+<div class="line"><span class="lineno">12753</span>        <span class="keywordflow">if</span> is_expr(value):</div>
+<div class="line"><span class="lineno">12754</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.eq(value.sort()):</div>
+<div class="line"><span class="lineno">12755</span>                <span class="keywordflow">raise</span> Z3Exception(<span class="stringliteral">&quot;finite-field sort mismatch&quot;</span>)</div>
+<div class="line"><span class="lineno">12756</span>            <span class="keywordflow">return</span> value</div>
+<div class="line"><span class="lineno">12757</span>        <span class="keywordflow">return</span> FiniteFieldVal(value, self)</div>
+<div class="line"><span class="lineno">12758</span> </div>
+<div class="line"><span class="lineno">12759</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -249,13 +249,13 @@ ToReal(x)
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l12645">12645</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">12645</span>    <span class="keyword">def </span>size(self):</div>
-<div class="line"><span class="lineno">12646</span>        <span class="keywordflow">return</span> int(<a class="code hl_function" href="group__capi.html#gaf74e6fb1cc67b728915a9b0e45de70b2">Z3_get_finite_field_sort_size</a>(self.ctx_ref(), self.ast))</div>
-<div class="line"><span class="lineno">12647</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l12749">12749</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">12749</span>    <span class="keyword">def </span>size(self):</div>
+<div class="line"><span class="lineno">12750</span>        <span class="keywordflow">return</span> int(<a class="code hl_function" href="group__capi.html#gaf74e6fb1cc67b728915a9b0e45de70b2">Z3_get_finite_field_sort_size</a>(self.ctx_ref(), self.ast))</div>
+<div class="line"><span class="lineno">12751</span> </div>
 <div class="ttc" id="agroup__capi_html_gaf74e6fb1cc67b728915a9b0e45de70b2"><div class="ttname"><a href="group__capi.html#gaf74e6fb1cc67b728915a9b0e45de70b2">Z3_get_finite_field_sort_size</a></div><div class="ttdeci">Z3_string Z3_API Z3_get_finite_field_sort_size(Z3_context c, Z3_sort s)</div><div class="ttdoc">Return the decimal modulus of a finite-field sort.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06129">ParamDescrsRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06266">Goal.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04086">BitVecNumRef.as_signed_long()</a>, and <a class="el" href="z3py_8py_source.html#l03627">BitVecSortRef.subsort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06233">ParamDescrsRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06370">Goal.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04190">BitVecNumRef.as_signed_long()</a>, and <a class="el" href="z3py_8py_source.html#l03731">BitVecSortRef.subsort()</a>.</p>
 
 </div>
 </div>
@@ -272,16 +272,16 @@ ToReal(x)
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l12646">12646</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l12750">12750</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l00880">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l00382">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00377">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00649">SortRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l00662">SortRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l05889">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l00807">FuncDeclRef.arity()</a>, <a class="el" href="z3py_8py_source.html#l00419">AstRef.as_ast()</a>, <a class="el" href="z3py_8py_source.html#l01033">ExprRef.as_ast()</a>, <a class="el" href="z3py_8py_source.html#l02134">QuantifierRef.as_ast()</a>, <a class="el" href="z3py_8py_source.html#l00793">FuncDeclRef.as_func_decl()</a>, <a class="el" href="z3py_8py_source.html#l02259">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l00817">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04772">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l02160">QuantifierRef.is_exists()</a>, <a class="el" href="z3py_8py_source.html#l02174">QuantifierRef.is_lambda()</a>, <a class="el" href="z3py_8py_source.html#l00839">FuncDeclRef.kind()</a>, <a class="el" href="z3py_8py_source.html#l00639">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02253">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l02249">QuantifierRef.num_no_patterns()</a>, <a class="el" href="z3py_8py_source.html#l02219">QuantifierRef.num_patterns()</a>, <a class="el" href="z3py_8py_source.html#l02270">QuantifierRef.num_vars()</a>, <a class="el" href="z3py_8py_source.html#l00852">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02231">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l02214">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00829">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04777">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05861">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l02209">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l02282">QuantifierRef.var_name()</a>, <a class="el" href="z3py_8py_source.html#l02298">QuantifierRef.var_sort()</a>, and <a class="el" href="z3py_8py_source.html#l02195">QuantifierRef.weight()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l00882">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l00382">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00377">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00649">SortRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l00662">SortRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l05993">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l00809">FuncDeclRef.arity()</a>, <a class="el" href="z3py_8py_source.html#l00419">AstRef.as_ast()</a>, <a class="el" href="z3py_8py_source.html#l01035">ExprRef.as_ast()</a>, <a class="el" href="z3py_8py_source.html#l02145">QuantifierRef.as_ast()</a>, <a class="el" href="z3py_8py_source.html#l00795">FuncDeclRef.as_func_decl()</a>, <a class="el" href="z3py_8py_source.html#l02270">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l00819">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04876">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l02171">QuantifierRef.is_exists()</a>, <a class="el" href="z3py_8py_source.html#l02185">QuantifierRef.is_lambda()</a>, <a class="el" href="z3py_8py_source.html#l00841">FuncDeclRef.kind()</a>, <a class="el" href="z3py_8py_source.html#l00639">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02264">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l02260">QuantifierRef.num_no_patterns()</a>, <a class="el" href="z3py_8py_source.html#l02230">QuantifierRef.num_patterns()</a>, <a class="el" href="z3py_8py_source.html#l02281">QuantifierRef.num_vars()</a>, <a class="el" href="z3py_8py_source.html#l00854">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02242">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l02225">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00831">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04881">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05965">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l02220">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l02293">QuantifierRef.var_name()</a>, <a class="el" href="z3py_8py_source.html#l02309">QuantifierRef.var_sort()</a>, and <a class="el" href="z3py_8py_source.html#l02206">QuantifierRef.weight()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 21 2026 03:28:48 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Oct 22 2026 03:33:02 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
