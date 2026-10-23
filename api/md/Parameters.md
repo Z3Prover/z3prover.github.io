@@ -677,7 +677,7 @@ bv.solver | unsigned int  |  bit-vector solver engine: 0 - bit-blasting, 1 - pol
 bv.watch_diseq | bool  |  use watch lists instead of eager axioms for bit-vectors | false
 candidate_models | bool  |  create candidate models even when quantifier or theory reasoning is incomplete | false
 case_split | unsigned int  |  0 - case split based on variable activity, 1 - similar to 0, but delay case splits created during the search, 2 - similar to 0, but cache the relevancy, 3 - case split based on relevancy (structural splitting), 4 - case split on relevancy and activity, 5 - case split on relevancy and current goal, 6 - activity-based case split with theory-aware branching activity | 1
-clause_proof | bool  |  record a clausal proof | false
+clause_proof | bool  |  record a clausal proof; with proof=true, replace learned-clause proof DAGs by a clause trail | false
 core.extend_nonlocal_patterns | bool  |  extend unsat cores with literals that have quantifiers with patterns that contain symbols which are not in the quantifier's body | false
 core.extend_patterns | bool  |  extend unsat core with literals that trigger (potential) quantifier instances | false
 core.extend_patterns.max_distance | unsigned int  |  limits the distance of a pattern-extended unsat core | 4294967295

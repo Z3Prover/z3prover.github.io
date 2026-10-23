@@ -42,7 +42,7 @@ var searchData=
   ['phantomreference_39',['PhantomReference',['../class_phantom_reference.html',1,'']]],
   ['piecewise_5flinear_5forder_40',['piecewise_linear_order',['../namespacez3.html#a5b2b09c8ce7ee03303eedba89da34bc4',1,'z3']]],
   ['piecewiselinearorder_41',['PiecewiseLinearOrder',['../namespacez3py.html#a25229842291372440b9e655dc89e2261',1,'z3py']]],
-  ['plus_42',['plus',['../namespacez3py.html#a45b7ca9fe72fe7f1057bfb829da62071',1,'z3py.Plus()'],['../namespacez3.html#aa036c673f5b8d4a8820cc7abe2ab2387',1,'z3::plus()']]],
+  ['plus_42',['plus',['../namespacez3.html#aa036c673f5b8d4a8820cc7abe2ab2387',1,'z3::plus()'],['../namespacez3py.html#a45b7ca9fe72fe7f1057bfb829da62071',1,'z3py.Plus()']]],
   ['poly_43',['poly',['../classz3py_1_1_algebraic_num_ref.html#a80441bd7debc7687083d84ae172a3f8c',1,'z3py::AlgebraicNumRef']]],
   ['polynomial_5fsubresultants_44',['polynomial_subresultants',['../namespacez3.html#a74a78f2d84df8d0ad690f2a38420a6cb',1,'z3']]],
   ['polynomialsubresultants_45',['polynomialsubresultants',['../classcom_1_1microsoft_1_1z3_1_1_context.html#a55a5b5b527575608262758e387e2ba01',1,'com.microsoft.z3.Context.polynomialSubresultants()'],['../class_microsoft_1_1_z3_1_1_context.html#a921cb11d5936321980709d2e24e2b4bf',1,'Microsoft.Z3.Context.PolynomialSubresultants()']]],
