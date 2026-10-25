@@ -707,6 +707,7 @@ ff.bit_bounds | bool  |  propagate Boolean digits using no-wrap signed interval 
 ff.bit_propagation | bool  |  repeat no-wrap bit-sum propagation after algebraic elimination | true
 ff.boolean_split | bool  |  expose Boolean field domains to SAT (may change branching substantially) | false
 ff.bounded_elimination | bool  |  retain nonlinear definitions when substitution predicts polynomial growth | false
+ff.bv_fallback_limit | unsigned int  |  give up (unknown) instead of bit-blasting a field when the estimated size of the exact BV fallback (bits, plus width^2 per nonlinear product) exceeds this (0 = no limit) | 0
 ff.compact_encoding | bool  |  retain compact definitions when polynomial expansion would grow | true
 ff.compact_matrix | bool  |  use packed sparse matrix rows and smaller critical-pair batches | false
 ff.compact_retry | bool  |  retry the algebra tactic with compact definitions after an encoding size limit | true

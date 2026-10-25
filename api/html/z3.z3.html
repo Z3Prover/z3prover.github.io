@@ -1884,7 +1884,29 @@ True<br>
 &gt;&gt;&gt;&nbsp;A[0]<br>
 x&nbsp;+&nbsp;1<br>
 &gt;&gt;&gt;&nbsp;A[1]<br>
-y</span></dd></dl>
+y<br>
+&gt;&gt;&gt;&nbsp;ctx&nbsp;=&nbsp;<a href="#Context">Context</a>()<br>
+&gt;&gt;&gt;&nbsp;A&nbsp;=&nbsp;<a href="#AstVector">AstVector</a>(ctx=ctx)<br>
+&gt;&gt;&gt;&nbsp;sorts&nbsp;=&nbsp;[<a href="#-BoolSort">BoolSort</a>(ctx),&nbsp;<a href="#-IntSort">IntSort</a>(ctx),&nbsp;<a href="#-RealSort">RealSort</a>(ctx),&nbsp;<a href="#-BitVecSort">BitVecSort</a>(8,&nbsp;ctx),<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#-ArraySort">ArraySort</a>(<a href="#-IntSort">IntSort</a>(ctx),&nbsp;<a href="#-BoolSort">BoolSort</a>(ctx)),&nbsp;<a href="#-DeclareSort">DeclareSort</a>('S',&nbsp;ctx)]<br>
+&gt;&gt;&gt;&nbsp;for&nbsp;s&nbsp;in&nbsp;sorts:&nbsp;A.<a href="#AstVector-push">push</a>(s)<br>
+&gt;&gt;&gt;&nbsp;all(isinstance(A[i],&nbsp;type(s))&nbsp;and&nbsp;A[i].<a href="#-eq">eq</a>(s)<br>
+...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i,&nbsp;s&nbsp;in&nbsp;enumerate(sorts))<br>
+True<br>
+&gt;&gt;&gt;&nbsp;A[-1].<a href="#-eq">eq</a>(sorts[-1])<br>
+True<br>
+&gt;&gt;&gt;&nbsp;all(a.<a href="#-eq">eq</a>(s)&nbsp;for&nbsp;a,&nbsp;s&nbsp;in&nbsp;zip(A[:],&nbsp;sorts))<br>
+True<br>
+&gt;&gt;&gt;&nbsp;A.<a href="#AstVector-push">push</a>(<a href="#-Int">Int</a>('z',&nbsp;ctx))<br>
+&gt;&gt;&gt;&nbsp;A.<a href="#AstVector-push">push</a>(<a href="#-Function">Function</a>('f',&nbsp;<a href="#-IntSort">IntSort</a>(ctx),&nbsp;<a href="#-IntSort">IntSort</a>(ctx)))<br>
+&gt;&gt;&gt;&nbsp;<a href="#-is_func_decl">is_func_decl</a>(A[-1])<br>
+True<br>
+&gt;&gt;&gt;&nbsp;[<a href="#-is_expr">is_expr</a>(a)&nbsp;for&nbsp;a&nbsp;in&nbsp;A]<br>
+[False,&nbsp;False,&nbsp;False,&nbsp;False,&nbsp;False,&nbsp;False,&nbsp;True,&nbsp;False]<br>
+&gt;&gt;&gt;&nbsp;ctx&nbsp;=&nbsp;<a href="#Context">Context</a>()<br>
+&gt;&gt;&gt;&nbsp;B&nbsp;=&nbsp;A.<a href="#AstVector-translate">translate</a>(ctx)<br>
+&gt;&gt;&gt;&nbsp;all(B[i].<a href="#-eq">eq</a>(s.<a href="#AstVector-translate">translate</a>(ctx))&nbsp;for&nbsp;i,&nbsp;s&nbsp;in&nbsp;enumerate(sorts))<br>
+True</span></dd></dl>
 
 <dl><dt><a name="AstVector-__init__"><strong>__init__</strong></a>(self, v=None, ctx=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
 
@@ -15186,12 +15208,12 @@ True</span></dd></dl>
 <strong>Z3_VAR_AST</strong> = 2<br>
 <strong>cdll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
 <strong>d</strong> = '/home/runner/work/z3/z3/build-x64/libz3.so.5.3'<br>
-<strong>lds</strong> = ['/home/runner/work/z3/z3/_opam/bin', '/home/runner/work/_temp/51a3f370-96d0-4e95-bcc7-f588d744587c/emsdk-main', '/opt/hostedtoolcache/opam/2.6.1/x86_64', '/opt/hostedtoolcache/node/24.21.0/x64/bin', '/snap/bin', '/home/runner/.local/bin', '/opt/pipx_bin', '/home/runner/.cargo/bin', '/home/runner/.config/composer/vendor/bin', '/usr/local/.ghcup/bin', '/home/runner/.dotnet/tools', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin']<br>
+<strong>lds</strong> = ['/home/runner/work/z3/z3/_opam/bin', '/home/runner/work/_temp/6ea43bd4-d9e6-466a-9993-132e53bc6c70/emsdk-main', '/opt/hostedtoolcache/opam/2.6.1/x86_64', '/opt/hostedtoolcache/node/24.21.0/x64/bin', '/snap/bin', '/home/runner/.local/bin', '/opt/pipx_bin', '/home/runner/.cargo/bin', '/home/runner/.config/composer/vendor/bin', '/usr/local/.ghcup/bin', '/home/runner/.dotnet/tools', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/snap/bin']<br>
 <strong>lp</strong> = '/home/runner/work/z3/z3/_opam/bin:/home/runner/w...:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'<br>
 <strong>memmove</strong> = &lt;CFunctionType object&gt;<br>
 <strong>memset</strong> = &lt;CFunctionType object&gt;<br>
 <strong>pydll</strong> = &lt;ctypes.LibraryLoader object&gt;<br>
-<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7fa8c5eca2e0&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'None', handle 7fe03a74b2e0&gt;<br>
 <strong>sat</strong> = sat<br>
 <strong>unknown</strong> = unknown<br>
 <strong>unsat</strong> = unsat<br>

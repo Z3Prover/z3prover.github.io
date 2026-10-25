@@ -199,7 +199,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Fixedpoint. </p>
 <pre class="fragment">Fixedpoint API provides methods for solving with recursive predicates</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08259">8259</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08288">8288</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa1b1e898a0e92b4ab5a6717deee7eae0" name="aa1b1e898a0e92b4ab5a6717deee7eae0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1b1e898a0e92b4ab5a6717deee7eae0">&#9670;&#160;</a></span>__init__()</h2>
@@ -233,18 +233,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08262">8262</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8262</span>    <span class="keyword">def </span>__init__(self, fixedpoint=None, ctx=None):</div>
-<div class="line"><span class="lineno"> 8263</span>        <span class="keyword">assert</span> fixedpoint <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> ctx <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno"> 8264</span>        self.ctx = _get_ctx(ctx)</div>
-<div class="line"><span class="lineno"> 8265</span>        self.fixedpoint = <span class="keywordtype">None</span></div>
-<div class="line"><span class="lineno"> 8266</span>        <span class="keywordflow">if</span> fixedpoint <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 8267</span>            self.fixedpoint = <a class="code hl_function" href="group__capi.html#ga8cc9ab5f3b9f835c743ed8c070ae0bdb">Z3_mk_fixedpoint</a>(self.ctx.ref())</div>
-<div class="line"><span class="lineno"> 8268</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8269</span>            self.fixedpoint = fixedpoint</div>
-<div class="line"><span class="lineno"> 8270</span>        <a class="code hl_function" href="group__capi.html#ga0a8e59b284ae5f071a5d9a381ac8f7d6">Z3_fixedpoint_inc_ref</a>(self.ctx.ref(), self.fixedpoint)</div>
-<div class="line"><span class="lineno"> 8271</span>        self.vars = []</div>
-<div class="line"><span class="lineno"> 8272</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08291">8291</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8291</span>    <span class="keyword">def </span>__init__(self, fixedpoint=None, ctx=None):</div>
+<div class="line"><span class="lineno"> 8292</span>        <span class="keyword">assert</span> fixedpoint <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> ctx <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno"> 8293</span>        self.ctx = _get_ctx(ctx)</div>
+<div class="line"><span class="lineno"> 8294</span>        self.fixedpoint = <span class="keywordtype">None</span></div>
+<div class="line"><span class="lineno"> 8295</span>        <span class="keywordflow">if</span> fixedpoint <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 8296</span>            self.fixedpoint = <a class="code hl_function" href="group__capi.html#ga8cc9ab5f3b9f835c743ed8c070ae0bdb">Z3_mk_fixedpoint</a>(self.ctx.ref())</div>
+<div class="line"><span class="lineno"> 8297</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8298</span>            self.fixedpoint = fixedpoint</div>
+<div class="line"><span class="lineno"> 8299</span>        <a class="code hl_function" href="group__capi.html#ga0a8e59b284ae5f071a5d9a381ac8f7d6">Z3_fixedpoint_inc_ref</a>(self.ctx.ref(), self.fixedpoint)</div>
+<div class="line"><span class="lineno"> 8300</span>        self.vars = []</div>
+<div class="line"><span class="lineno"> 8301</span> </div>
 <div class="ttc" id="agroup__capi_html_ga0a8e59b284ae5f071a5d9a381ac8f7d6"><div class="ttname"><a href="group__capi.html#ga0a8e59b284ae5f071a5d9a381ac8f7d6">Z3_fixedpoint_inc_ref</a></div><div class="ttdeci">void Z3_API Z3_fixedpoint_inc_ref(Z3_context c, Z3_fixedpoint d)</div><div class="ttdoc">Increment the reference counter of the given fixedpoint context.</div></div>
 <div class="ttc" id="agroup__capi_html_ga8cc9ab5f3b9f835c743ed8c070ae0bdb"><div class="ttname"><a href="group__capi.html#ga8cc9ab5f3b9f835c743ed8c070ae0bdb">Z3_mk_fixedpoint</a></div><div class="ttdeci">Z3_fixedpoint Z3_API Z3_mk_fixedpoint(Z3_context c)</div><div class="ttdoc">Create a new fixedpoint context.</div></div>
 </div><!-- fragment -->
@@ -266,11 +266,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08276">8276</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8276</span>    <span class="keyword">def </span>__del__(self):</div>
-<div class="line"><span class="lineno"> 8277</span>        <span class="keywordflow">if</span> self.fixedpoint <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_fixedpoint_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 8278</span>            <a class="code hl_function" href="group__capi.html#ga7552827f08f45b6a159300b53973416b">Z3_fixedpoint_dec_ref</a>(self.ctx.ref(), self.fixedpoint)</div>
-<div class="line"><span class="lineno"> 8279</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08305">8305</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8305</span>    <span class="keyword">def </span>__del__(self):</div>
+<div class="line"><span class="lineno"> 8306</span>        <span class="keywordflow">if</span> self.fixedpoint <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.ctx.ref() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> Z3_fixedpoint_dec_ref <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 8307</span>            <a class="code hl_function" href="group__capi.html#ga7552827f08f45b6a159300b53973416b">Z3_fixedpoint_dec_ref</a>(self.ctx.ref(), self.fixedpoint)</div>
+<div class="line"><span class="lineno"> 8308</span> </div>
 <div class="ttc" id="agroup__capi_html_ga7552827f08f45b6a159300b53973416b"><div class="ttname"><a href="group__capi.html#ga7552827f08f45b6a159300b53973416b">Z3_fixedpoint_dec_ref</a></div><div class="ttdeci">void Z3_API Z3_fixedpoint_dec_ref(Z3_context c, Z3_fixedpoint d)</div><div class="ttdoc">Decrement the reference counter of the given fixedpoint context.</div></div>
 </div><!-- fragment -->
 </div>
@@ -302,10 +302,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08273">8273</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8273</span>    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
-<div class="line"><span class="lineno"> 8274</span>        <span class="keywordflow">return</span> FixedPoint(self.fixedpoint, self.ctx)</div>
-<div class="line"><span class="lineno"> 8275</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08302">8302</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8302</span>    <span class="keyword">def </span>__deepcopy__(self, memo={}):</div>
+<div class="line"><span class="lineno"> 8303</span>        <span class="keywordflow">return</span> FixedPoint(self.fixedpoint, self.ctx)</div>
+<div class="line"><span class="lineno"> 8304</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -335,11 +335,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08312">8312</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8312</span>    <span class="keyword">def </span>__iadd__(self, fml):</div>
-<div class="line"><span class="lineno"> 8313</span>        self.add(fml)</div>
-<div class="line"><span class="lineno"> 8314</span>        <span class="keywordflow">return</span> self</div>
-<div class="line"><span class="lineno"> 8315</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08341">8341</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8341</span>    <span class="keyword">def </span>__iadd__(self, fml):</div>
+<div class="line"><span class="lineno"> 8342</span>        self.add(fml)</div>
+<div class="line"><span class="lineno"> 8343</span>        <span class="keywordflow">return</span> self</div>
+<div class="line"><span class="lineno"> 8344</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -359,11 +359,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return a formatted string with all added rules and constraints.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08473">8473</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8473</span>    <span class="keyword">def </span>__repr__(self):</div>
-<div class="line"><span class="lineno"> 8474</span>        <span class="stringliteral">&quot;&quot;&quot;Return a formatted string with all added rules and constraints.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8475</span>        <span class="keywordflow">return</span> self.sexpr()</div>
-<div class="line"><span class="lineno"> 8476</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08502">8502</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8502</span>    <span class="keyword">def </span>__repr__(self):</div>
+<div class="line"><span class="lineno"> 8503</span>        <span class="stringliteral">&quot;&quot;&quot;Return a formatted string with all added rules and constraints.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8504</span>        <span class="keywordflow">return</span> self.sexpr()</div>
+<div class="line"><span class="lineno"> 8505</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -399,16 +399,16 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08510">8510</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8510</span>    <span class="keyword">def </span>abstract(self, fml, is_forall=True):</div>
-<div class="line"><span class="lineno"> 8511</span>        <span class="keywordflow">if</span> self.vars == []:</div>
-<div class="line"><span class="lineno"> 8512</span>            <span class="keywordflow">return</span> fml</div>
-<div class="line"><span class="lineno"> 8513</span>        <span class="keywordflow">if</span> is_forall:</div>
-<div class="line"><span class="lineno"> 8514</span>            <span class="keywordflow">return</span> ForAll(self.vars, fml)</div>
-<div class="line"><span class="lineno"> 8515</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8516</span>            <span class="keywordflow">return</span> Exists(self.vars, fml)</div>
-<div class="line"><span class="lineno"> 8517</span> </div>
-<div class="line"><span class="lineno"> 8518</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08539">8539</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8539</span>    <span class="keyword">def </span>abstract(self, fml, is_forall=True):</div>
+<div class="line"><span class="lineno"> 8540</span>        <span class="keywordflow">if</span> self.vars == []:</div>
+<div class="line"><span class="lineno"> 8541</span>            <span class="keywordflow">return</span> fml</div>
+<div class="line"><span class="lineno"> 8542</span>        <span class="keywordflow">if</span> is_forall:</div>
+<div class="line"><span class="lineno"> 8543</span>            <span class="keywordflow">return</span> ForAll(self.vars, fml)</div>
+<div class="line"><span class="lineno"> 8544</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8545</span>            <span class="keywordflow">return</span> Exists(self.vars, fml)</div>
+<div class="line"><span class="lineno"> 8546</span> </div>
+<div class="line"><span class="lineno"> 8547</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -438,13 +438,13 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Assert constraints as background axioms for the fixedpoint solver. Alias for assert_expr.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08308">8308</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8308</span>    <span class="keyword">def </span>add(self, *args):</div>
-<div class="line"><span class="lineno"> 8309</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the fixedpoint solver. Alias for assert_expr.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8310</span>        self.assert_exprs(*args)</div>
-<div class="line"><span class="lineno"> 8311</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08337">8337</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8337</span>    <span class="keyword">def </span>add(self, *args):</div>
+<div class="line"><span class="lineno"> 8338</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the fixedpoint solver. Alias for assert_expr.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8339</span>        self.assert_exprs(*args)</div>
+<div class="line"><span class="lineno"> 8340</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07801">Solver.__iadd__()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l07830">Solver.__iadd__()</a>.</p>
 
 </div>
 </div>
@@ -488,13 +488,13 @@ Additional Inherited Members</h2></td></tr>
 <pre class="fragment">Add property to predicate for the level'th unfolding.
 -1 is treated as infinity (infinity)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08435">8435</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8435</span>    <span class="keyword">def </span>add_cover(self, level, predicate, property):</div>
-<div class="line"><span class="lineno"> 8436</span>        <span class="stringliteral">&quot;&quot;&quot;Add property to predicate for the level&#39;th unfolding.</span></div>
-<div class="line"><span class="lineno"> 8437</span><span class="stringliteral">        -1 is treated as infinity (infinity)</span></div>
-<div class="line"><span class="lineno"> 8438</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8439</span>        <a class="code hl_function" href="group__capi.html#gae4a8a4b290c2af668355465532314658">Z3_fixedpoint_add_cover</a>(self.ctx.ref(), self.fixedpoint, level, predicate.ast, property.ast)</div>
-<div class="line"><span class="lineno"> 8440</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08464">8464</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8464</span>    <span class="keyword">def </span>add_cover(self, level, predicate, property):</div>
+<div class="line"><span class="lineno"> 8465</span>        <span class="stringliteral">&quot;&quot;&quot;Add property to predicate for the level&#39;th unfolding.</span></div>
+<div class="line"><span class="lineno"> 8466</span><span class="stringliteral">        -1 is treated as infinity (infinity)</span></div>
+<div class="line"><span class="lineno"> 8467</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8468</span>        <a class="code hl_function" href="group__capi.html#gae4a8a4b290c2af668355465532314658">Z3_fixedpoint_add_cover</a>(self.ctx.ref(), self.fixedpoint, level, predicate.ast, property.ast)</div>
+<div class="line"><span class="lineno"> 8469</span> </div>
 <div class="ttc" id="agroup__capi_html_gae4a8a4b290c2af668355465532314658"><div class="ttname"><a href="group__capi.html#gae4a8a4b290c2af668355465532314658">Z3_fixedpoint_add_cover</a></div><div class="ttdeci">void Z3_API Z3_fixedpoint_add_cover(Z3_context c, Z3_fixedpoint d, int level, Z3_func_decl pred, Z3_ast property)</div><div class="ttdoc">Add property about the predicate pred. Add a property of predicate pred at level. It gets pushed forw...</div></div>
 </div><!-- fragment -->
 </div>
@@ -547,30 +547,30 @@ Additional Inherited Members</h2></td></tr>
 &gt;&gt;&gt; s.query(b)
 sat
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08324">8324</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8324</span>    <span class="keyword">def </span>add_rule(self, head, body=None, name=None):</div>
-<div class="line"><span class="lineno"> 8325</span>        <span class="stringliteral">&quot;&quot;&quot;Assert rules defining recursive predicates to the fixedpoint solver.</span></div>
-<div class="line"><span class="lineno"> 8326</span><span class="stringliteral">        &gt;&gt;&gt; a = Bool(&#39;a&#39;)</span></div>
-<div class="line"><span class="lineno"> 8327</span><span class="stringliteral">        &gt;&gt;&gt; b = Bool(&#39;b&#39;)</span></div>
-<div class="line"><span class="lineno"> 8328</span><span class="stringliteral">        &gt;&gt;&gt; s = Fixedpoint()</span></div>
-<div class="line"><span class="lineno"> 8329</span><span class="stringliteral">        &gt;&gt;&gt; s.register_relation(a.decl())</span></div>
-<div class="line"><span class="lineno"> 8330</span><span class="stringliteral">        &gt;&gt;&gt; s.register_relation(b.decl())</span></div>
-<div class="line"><span class="lineno"> 8331</span><span class="stringliteral">        &gt;&gt;&gt; s.fact(a)</span></div>
-<div class="line"><span class="lineno"> 8332</span><span class="stringliteral">        &gt;&gt;&gt; s.rule(b, a)</span></div>
-<div class="line"><span class="lineno"> 8333</span><span class="stringliteral">        &gt;&gt;&gt; s.query(b)</span></div>
-<div class="line"><span class="lineno"> 8334</span><span class="stringliteral">        sat</span></div>
-<div class="line"><span class="lineno"> 8335</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8336</span>        <span class="keywordflow">if</span> name <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 8337</span>            name = <span class="stringliteral">&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8338</span>        name = to_symbol(name, self.ctx)</div>
-<div class="line"><span class="lineno"> 8339</span>        <span class="keywordflow">if</span> body <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 8340</span>            head = self.abstract(head)</div>
-<div class="line"><span class="lineno"> 8341</span>            <a class="code hl_function" href="group__capi.html#ga0be1fa179ce088c49de33179c4930d17">Z3_fixedpoint_add_rule</a>(self.ctx.ref(), self.fixedpoint, head.as_ast(), name)</div>
-<div class="line"><span class="lineno"> 8342</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8343</span>            body = _get_args(body)</div>
-<div class="line"><span class="lineno"> 8344</span>            f = self.abstract(Implies(And(body, self.ctx), head))</div>
-<div class="line"><span class="lineno"> 8345</span>            <a class="code hl_function" href="group__capi.html#ga0be1fa179ce088c49de33179c4930d17">Z3_fixedpoint_add_rule</a>(self.ctx.ref(), self.fixedpoint, f.as_ast(), name)</div>
-<div class="line"><span class="lineno"> 8346</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08353">8353</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8353</span>    <span class="keyword">def </span>add_rule(self, head, body=None, name=None):</div>
+<div class="line"><span class="lineno"> 8354</span>        <span class="stringliteral">&quot;&quot;&quot;Assert rules defining recursive predicates to the fixedpoint solver.</span></div>
+<div class="line"><span class="lineno"> 8355</span><span class="stringliteral">        &gt;&gt;&gt; a = Bool(&#39;a&#39;)</span></div>
+<div class="line"><span class="lineno"> 8356</span><span class="stringliteral">        &gt;&gt;&gt; b = Bool(&#39;b&#39;)</span></div>
+<div class="line"><span class="lineno"> 8357</span><span class="stringliteral">        &gt;&gt;&gt; s = Fixedpoint()</span></div>
+<div class="line"><span class="lineno"> 8358</span><span class="stringliteral">        &gt;&gt;&gt; s.register_relation(a.decl())</span></div>
+<div class="line"><span class="lineno"> 8359</span><span class="stringliteral">        &gt;&gt;&gt; s.register_relation(b.decl())</span></div>
+<div class="line"><span class="lineno"> 8360</span><span class="stringliteral">        &gt;&gt;&gt; s.fact(a)</span></div>
+<div class="line"><span class="lineno"> 8361</span><span class="stringliteral">        &gt;&gt;&gt; s.rule(b, a)</span></div>
+<div class="line"><span class="lineno"> 8362</span><span class="stringliteral">        &gt;&gt;&gt; s.query(b)</span></div>
+<div class="line"><span class="lineno"> 8363</span><span class="stringliteral">        sat</span></div>
+<div class="line"><span class="lineno"> 8364</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8365</span>        <span class="keywordflow">if</span> name <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 8366</span>            name = <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8367</span>        name = to_symbol(name, self.ctx)</div>
+<div class="line"><span class="lineno"> 8368</span>        <span class="keywordflow">if</span> body <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 8369</span>            head = self.abstract(head)</div>
+<div class="line"><span class="lineno"> 8370</span>            <a class="code hl_function" href="group__capi.html#ga0be1fa179ce088c49de33179c4930d17">Z3_fixedpoint_add_rule</a>(self.ctx.ref(), self.fixedpoint, head.as_ast(), name)</div>
+<div class="line"><span class="lineno"> 8371</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8372</span>            body = _get_args(body)</div>
+<div class="line"><span class="lineno"> 8373</span>            f = self.abstract(Implies(And(body, self.ctx), head))</div>
+<div class="line"><span class="lineno"> 8374</span>            <a class="code hl_function" href="group__capi.html#ga0be1fa179ce088c49de33179c4930d17">Z3_fixedpoint_add_rule</a>(self.ctx.ref(), self.fixedpoint, f.as_ast(), name)</div>
+<div class="line"><span class="lineno"> 8375</span> </div>
 <div class="ttc" id="agroup__capi_html_ga0be1fa179ce088c49de33179c4930d17"><div class="ttname"><a href="group__capi.html#ga0be1fa179ce088c49de33179c4930d17">Z3_fixedpoint_add_rule</a></div><div class="ttdeci">void Z3_API Z3_fixedpoint_add_rule(Z3_context c, Z3_fixedpoint d, Z3_ast rule, Z3_symbol name)</div><div class="ttdoc">Add a universal Horn clause as a named rule. The horn_rule should be of the form:</div></div>
 </div><!-- fragment -->
 </div>
@@ -601,11 +601,11 @@ sat
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Assert constraints as background axioms for the fixedpoint solver. Alias for assert_expr.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08316">8316</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8316</span>    <span class="keyword">def </span>append(self, *args):</div>
-<div class="line"><span class="lineno"> 8317</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the fixedpoint solver. Alias for assert_expr.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8318</span>        self.assert_exprs(*args)</div>
-<div class="line"><span class="lineno"> 8319</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08345">8345</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8345</span>    <span class="keyword">def </span>append(self, *args):</div>
+<div class="line"><span class="lineno"> 8346</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the fixedpoint solver. Alias for assert_expr.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8347</span>        self.assert_exprs(*args)</div>
+<div class="line"><span class="lineno"> 8348</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -635,24 +635,24 @@ sat
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Assert constraints as background axioms for the fixedpoint solver.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08294">8294</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8294</span>    <span class="keyword">def </span>assert_exprs(self, *args):</div>
-<div class="line"><span class="lineno"> 8295</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the fixedpoint solver.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8296</span>        args = _get_args(args)</div>
-<div class="line"><span class="lineno"> 8297</span>        s = BoolSort(self.ctx)</div>
-<div class="line"><span class="lineno"> 8298</span>        <span class="keywordflow">for</span> arg <span class="keywordflow">in</span> args:</div>
-<div class="line"><span class="lineno"> 8299</span>            <span class="keywordflow">if</span> isinstance(arg, Goal) <span class="keywordflow">or</span> isinstance(arg, AstVector):</div>
-<div class="line"><span class="lineno"> 8300</span>                <span class="keywordflow">for</span> f <span class="keywordflow">in</span> arg:</div>
-<div class="line"><span class="lineno"> 8301</span>                    f = self.abstract(f)</div>
-<div class="line"><span class="lineno"> 8302</span>                    <a class="code hl_function" href="group__capi.html#gad54e59bcbf031d4347f79c4800e756ef">Z3_fixedpoint_assert</a>(self.ctx.ref(), self.fixedpoint, f.as_ast())</div>
-<div class="line"><span class="lineno"> 8303</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8304</span>                arg = s.cast(arg)</div>
-<div class="line"><span class="lineno"> 8305</span>                arg = self.abstract(arg)</div>
-<div class="line"><span class="lineno"> 8306</span>                <a class="code hl_function" href="group__capi.html#gad54e59bcbf031d4347f79c4800e756ef">Z3_fixedpoint_assert</a>(self.ctx.ref(), self.fixedpoint, arg.as_ast())</div>
-<div class="line"><span class="lineno"> 8307</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08323">8323</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8323</span>    <span class="keyword">def </span>assert_exprs(self, *args):</div>
+<div class="line"><span class="lineno"> 8324</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the fixedpoint solver.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8325</span>        args = _get_args(args)</div>
+<div class="line"><span class="lineno"> 8326</span>        s = BoolSort(self.ctx)</div>
+<div class="line"><span class="lineno"> 8327</span>        <span class="keywordflow">for</span> arg <span class="keywordflow">in</span> args:</div>
+<div class="line"><span class="lineno"> 8328</span>            <span class="keywordflow">if</span> isinstance(arg, Goal) <span class="keywordflow">or</span> isinstance(arg, AstVector):</div>
+<div class="line"><span class="lineno"> 8329</span>                <span class="keywordflow">for</span> f <span class="keywordflow">in</span> arg:</div>
+<div class="line"><span class="lineno"> 8330</span>                    f = self.abstract(f)</div>
+<div class="line"><span class="lineno"> 8331</span>                    <a class="code hl_function" href="group__capi.html#gad54e59bcbf031d4347f79c4800e756ef">Z3_fixedpoint_assert</a>(self.ctx.ref(), self.fixedpoint, f.as_ast())</div>
+<div class="line"><span class="lineno"> 8332</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8333</span>                arg = s.cast(arg)</div>
+<div class="line"><span class="lineno"> 8334</span>                arg = self.abstract(arg)</div>
+<div class="line"><span class="lineno"> 8335</span>                <a class="code hl_function" href="group__capi.html#gad54e59bcbf031d4347f79c4800e756ef">Z3_fixedpoint_assert</a>(self.ctx.ref(), self.fixedpoint, arg.as_ast())</div>
+<div class="line"><span class="lineno"> 8336</span> </div>
 <div class="ttc" id="agroup__capi_html_gad54e59bcbf031d4347f79c4800e756ef"><div class="ttname"><a href="group__capi.html#gad54e59bcbf031d4347f79c4800e756ef">Z3_fixedpoint_assert</a></div><div class="ttdeci">void Z3_API Z3_fixedpoint_assert(Z3_context c, Z3_fixedpoint d, Z3_ast axiom)</div><div class="ttdoc">Assert a constraint to the fixedpoint context.</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06450">Goal.add()</a>, <a class="el" href="z3py_8py_source.html#l07790">Solver.add()</a>, <a class="el" href="z3py_8py_source.html#l06428">Goal.append()</a>, <a class="el" href="z3py_8py_source.html#l07805">Solver.append()</a>, <a class="el" href="z3py_8py_source.html#l06439">Goal.insert()</a>, and <a class="el" href="z3py_8py_source.html#l07816">Solver.insert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l06457">Goal.add()</a>, <a class="el" href="z3py_8py_source.html#l07819">Solver.add()</a>, <a class="el" href="z3py_8py_source.html#l06435">Goal.append()</a>, <a class="el" href="z3py_8py_source.html#l07834">Solver.append()</a>, <a class="el" href="z3py_8py_source.html#l06446">Goal.insert()</a>, and <a class="el" href="z3py_8py_source.html#l07845">Solver.insert()</a>.</p>
 
 </div>
 </div>
@@ -685,16 +685,16 @@ sat
 The added variable or variables will be bound in the rules
 and queries
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08501">8501</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8501</span>    <span class="keyword">def </span>declare_var(self, *vars):</div>
-<div class="line"><span class="lineno"> 8502</span>        <span class="stringliteral">&quot;&quot;&quot;Add variable or several variables.</span></div>
-<div class="line"><span class="lineno"> 8503</span><span class="stringliteral">        The added variable or variables will be bound in the rules</span></div>
-<div class="line"><span class="lineno"> 8504</span><span class="stringliteral">        and queries</span></div>
-<div class="line"><span class="lineno"> 8505</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8506</span>        vars = _get_args(vars)</div>
-<div class="line"><span class="lineno"> 8507</span>        <span class="keywordflow">for</span> v <span class="keywordflow">in</span> vars:</div>
-<div class="line"><span class="lineno"> 8508</span>            self.vars += [v]</div>
-<div class="line"><span class="lineno"> 8509</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08530">8530</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8530</span>    <span class="keyword">def </span>declare_var(self, *vars):</div>
+<div class="line"><span class="lineno"> 8531</span>        <span class="stringliteral">&quot;&quot;&quot;Add variable or several variables.</span></div>
+<div class="line"><span class="lineno"> 8532</span><span class="stringliteral">        The added variable or variables will be bound in the rules</span></div>
+<div class="line"><span class="lineno"> 8533</span><span class="stringliteral">        and queries</span></div>
+<div class="line"><span class="lineno"> 8534</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8535</span>        vars = _get_args(vars)</div>
+<div class="line"><span class="lineno"> 8536</span>        <span class="keywordflow">for</span> v <span class="keywordflow">in</span> vars:</div>
+<div class="line"><span class="lineno"> 8537</span>            self.vars += [v]</div>
+<div class="line"><span class="lineno"> 8538</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -730,11 +730,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Assert facts defining recursive predicates to the fixedpoint solver. Alias for add_rule.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08351">8351</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8351</span>    <span class="keyword">def </span>fact(self, head, name=None):</div>
-<div class="line"><span class="lineno"> 8352</span>        <span class="stringliteral">&quot;&quot;&quot;Assert facts defining recursive predicates to the fixedpoint solver. Alias for add_rule.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8353</span>        self.add_rule(head, <span class="keywordtype">None</span>, name)</div>
-<div class="line"><span class="lineno"> 8354</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08380">8380</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8380</span>    <span class="keyword">def </span>fact(self, head, name=None):</div>
+<div class="line"><span class="lineno"> 8381</span>        <span class="stringliteral">&quot;&quot;&quot;Assert facts defining recursive predicates to the fixedpoint solver. Alias for add_rule.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8382</span>        self.add_rule(head, <span class="keywordtype">None</span>, name)</div>
+<div class="line"><span class="lineno"> 8383</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -754,12 +754,12 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Retrieve answer from last query call.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08402">8402</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8402</span>    <span class="keyword">def </span>get_answer(self):</div>
-<div class="line"><span class="lineno"> 8403</span>        <span class="stringliteral">&quot;&quot;&quot;Retrieve answer from last query call.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8404</span>        r = <a class="code hl_function" href="group__capi.html#gadf9e004d12d356451461a82f5774d411">Z3_fixedpoint_get_answer</a>(self.ctx.ref(), self.fixedpoint)</div>
-<div class="line"><span class="lineno"> 8405</span>        <span class="keywordflow">return</span> _to_expr_ref(r, self.ctx)</div>
-<div class="line"><span class="lineno"> 8406</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08431">8431</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8431</span>    <span class="keyword">def </span>get_answer(self):</div>
+<div class="line"><span class="lineno"> 8432</span>        <span class="stringliteral">&quot;&quot;&quot;Retrieve answer from last query call.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8433</span>        r = <a class="code hl_function" href="group__capi.html#gadf9e004d12d356451461a82f5774d411">Z3_fixedpoint_get_answer</a>(self.ctx.ref(), self.fixedpoint)</div>
+<div class="line"><span class="lineno"> 8434</span>        <span class="keywordflow">return</span> _to_expr_ref(r, self.ctx)</div>
+<div class="line"><span class="lineno"> 8435</span> </div>
 <div class="ttc" id="agroup__capi_html_gadf9e004d12d356451461a82f5774d411"><div class="ttname"><a href="group__capi.html#gadf9e004d12d356451461a82f5774d411">Z3_fixedpoint_get_answer</a></div><div class="ttdeci">Z3_ast Z3_API Z3_fixedpoint_get_answer(Z3_context c, Z3_fixedpoint d)</div><div class="ttdoc">Retrieve a formula that encodes satisfying answers to the query.</div></div>
 </div><!-- fragment -->
 </div>
@@ -780,11 +780,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">retrieve assertions that have been added to fixedpoint context</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08469">8469</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8469</span>    <span class="keyword">def </span>get_assertions(self):</div>
-<div class="line"><span class="lineno"> 8470</span>        <span class="stringliteral">&quot;&quot;&quot;retrieve assertions that have been added to fixedpoint context&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8471</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga3a0ded96cc0fff964504a304cd518d2e">Z3_fixedpoint_get_assertions</a>(self.ctx.ref(), self.fixedpoint), self.ctx)</div>
-<div class="line"><span class="lineno"> 8472</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08498">8498</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8498</span>    <span class="keyword">def </span>get_assertions(self):</div>
+<div class="line"><span class="lineno"> 8499</span>        <span class="stringliteral">&quot;&quot;&quot;retrieve assertions that have been added to fixedpoint context&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8500</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga3a0ded96cc0fff964504a304cd518d2e">Z3_fixedpoint_get_assertions</a>(self.ctx.ref(), self.fixedpoint), self.ctx)</div>
+<div class="line"><span class="lineno"> 8501</span> </div>
 <div class="ttc" id="agroup__capi_html_ga3a0ded96cc0fff964504a304cd518d2e"><div class="ttname"><a href="group__capi.html#ga3a0ded96cc0fff964504a304cd518d2e">Z3_fixedpoint_get_assertions</a></div><div class="ttdeci">Z3_ast_vector Z3_API Z3_fixedpoint_get_assertions(Z3_context c, Z3_fixedpoint f)</div><div class="ttdoc">Retrieve set of background assertions from fixedpoint context.</div></div>
 </div><!-- fragment -->
 </div>
@@ -823,14 +823,14 @@ and queries
 <pre class="fragment">Retrieve properties known about predicate for the level'th unfolding.
 -1 is treated as the limit (infinity)
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08428">8428</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8428</span>    <span class="keyword">def </span>get_cover_delta(self, level, predicate):</div>
-<div class="line"><span class="lineno"> 8429</span>        <span class="stringliteral">&quot;&quot;&quot;Retrieve properties known about predicate for the level&#39;th unfolding.</span></div>
-<div class="line"><span class="lineno"> 8430</span><span class="stringliteral">        -1 is treated as the limit (infinity)</span></div>
-<div class="line"><span class="lineno"> 8431</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8432</span>        r = <a class="code hl_function" href="group__capi.html#gaa312cba6a0448d104ebecf8d4ad5fbda">Z3_fixedpoint_get_cover_delta</a>(self.ctx.ref(), self.fixedpoint, level, predicate.ast)</div>
-<div class="line"><span class="lineno"> 8433</span>        <span class="keywordflow">return</span> _to_expr_ref(r, self.ctx)</div>
-<div class="line"><span class="lineno"> 8434</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08457">8457</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8457</span>    <span class="keyword">def </span>get_cover_delta(self, level, predicate):</div>
+<div class="line"><span class="lineno"> 8458</span>        <span class="stringliteral">&quot;&quot;&quot;Retrieve properties known about predicate for the level&#39;th unfolding.</span></div>
+<div class="line"><span class="lineno"> 8459</span><span class="stringliteral">        -1 is treated as the limit (infinity)</span></div>
+<div class="line"><span class="lineno"> 8460</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8461</span>        r = <a class="code hl_function" href="group__capi.html#gaa312cba6a0448d104ebecf8d4ad5fbda">Z3_fixedpoint_get_cover_delta</a>(self.ctx.ref(), self.fixedpoint, level, predicate.ast)</div>
+<div class="line"><span class="lineno"> 8462</span>        <span class="keywordflow">return</span> _to_expr_ref(r, self.ctx)</div>
+<div class="line"><span class="lineno"> 8463</span> </div>
 <div class="ttc" id="agroup__capi_html_gaa312cba6a0448d104ebecf8d4ad5fbda"><div class="ttname"><a href="group__capi.html#gaa312cba6a0448d104ebecf8d4ad5fbda">Z3_fixedpoint_get_cover_delta</a></div><div class="ttdeci">Z3_ast Z3_API Z3_fixedpoint_get_cover_delta(Z3_context c, Z3_fixedpoint d, int level, Z3_func_decl pred)</div></div>
 </div><!-- fragment -->
 </div>
@@ -851,12 +851,12 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Retrieve a ground cex from last query call.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08407">8407</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8407</span>    <span class="keyword">def </span>get_ground_sat_answer(self):</div>
-<div class="line"><span class="lineno"> 8408</span>        <span class="stringliteral">&quot;&quot;&quot;Retrieve a ground cex from last query call.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8409</span>        r = Z3_fixedpoint_get_ground_sat_answer(self.ctx.ref(), self.fixedpoint)</div>
-<div class="line"><span class="lineno"> 8410</span>        <span class="keywordflow">return</span> _to_expr_ref(r, self.ctx)</div>
-<div class="line"><span class="lineno"> 8411</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08436">8436</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8436</span>    <span class="keyword">def </span>get_ground_sat_answer(self):</div>
+<div class="line"><span class="lineno"> 8437</span>        <span class="stringliteral">&quot;&quot;&quot;Retrieve a ground cex from last query call.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8438</span>        r = Z3_fixedpoint_get_ground_sat_answer(self.ctx.ref(), self.fixedpoint)</div>
+<div class="line"><span class="lineno"> 8439</span>        <span class="keywordflow">return</span> _to_expr_ref(r, self.ctx)</div>
+<div class="line"><span class="lineno"> 8440</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -886,11 +886,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Retrieve number of levels used for predicate in PDR engine</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08424">8424</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8424</span>    <span class="keyword">def </span>get_num_levels(self, predicate):</div>
-<div class="line"><span class="lineno"> 8425</span>        <span class="stringliteral">&quot;&quot;&quot;Retrieve number of levels used for predicate in PDR engine&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8426</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga9816ae0fb7572f335699320100a2927b">Z3_fixedpoint_get_num_levels</a>(self.ctx.ref(), self.fixedpoint, predicate.ast)</div>
-<div class="line"><span class="lineno"> 8427</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08453">8453</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8453</span>    <span class="keyword">def </span>get_num_levels(self, predicate):</div>
+<div class="line"><span class="lineno"> 8454</span>        <span class="stringliteral">&quot;&quot;&quot;Retrieve number of levels used for predicate in PDR engine&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8455</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga9816ae0fb7572f335699320100a2927b">Z3_fixedpoint_get_num_levels</a>(self.ctx.ref(), self.fixedpoint, predicate.ast)</div>
+<div class="line"><span class="lineno"> 8456</span> </div>
 <div class="ttc" id="agroup__capi_html_ga9816ae0fb7572f335699320100a2927b"><div class="ttname"><a href="group__capi.html#ga9816ae0fb7572f335699320100a2927b">Z3_fixedpoint_get_num_levels</a></div><div class="ttdeci">unsigned Z3_API Z3_fixedpoint_get_num_levels(Z3_context c, Z3_fixedpoint d, Z3_func_decl pred)</div><div class="ttdoc">Query the PDR engine for the maximal levels properties are known about predicate.</div></div>
 </div><!-- fragment -->
 </div>
@@ -911,15 +911,15 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">retrieve rule names along the counterexample trace</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08416">8416</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8416</span>    <span class="keyword">def </span>get_rule_names_along_trace(self):</div>
-<div class="line"><span class="lineno"> 8417</span>        <span class="stringliteral">&quot;&quot;&quot;retrieve rule names along the counterexample trace&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8418</span>        <span class="comment"># this is a hack as I don&#39;t know how to return a list of symbols from C++;</span></div>
-<div class="line"><span class="lineno"> 8419</span>        <span class="comment"># obtain names as a single string separated by semicolons</span></div>
-<div class="line"><span class="lineno"> 8420</span>        names = _symbol2py(self.ctx, Z3_fixedpoint_get_rule_names_along_trace(self.ctx.ref(), self.fixedpoint))</div>
-<div class="line"><span class="lineno"> 8421</span>        <span class="comment"># split into individual names</span></div>
-<div class="line"><span class="lineno"> 8422</span>        <span class="keywordflow">return</span> names.split(<span class="stringliteral">&quot;;&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8423</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08445">8445</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8445</span>    <span class="keyword">def </span>get_rule_names_along_trace(self):</div>
+<div class="line"><span class="lineno"> 8446</span>        <span class="stringliteral">&quot;&quot;&quot;retrieve rule names along the counterexample trace&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8447</span>        <span class="comment"># this is a hack as I don&#39;t know how to return a list of symbols from C++;</span></div>
+<div class="line"><span class="lineno"> 8448</span>        <span class="comment"># obtain names as a single string separated by semicolons</span></div>
+<div class="line"><span class="lineno"> 8449</span>        names = _symbol2py(self.ctx, Z3_fixedpoint_get_rule_names_along_trace(self.ctx.ref(), self.fixedpoint))</div>
+<div class="line"><span class="lineno"> 8450</span>        <span class="comment"># split into individual names</span></div>
+<div class="line"><span class="lineno"> 8451</span>        <span class="keywordflow">return</span> names.split(<span class="stringliteral">&quot;;&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8452</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -939,11 +939,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">retrieve rules that have been added to fixedpoint context</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08465">8465</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8465</span>    <span class="keyword">def </span>get_rules(self):</div>
-<div class="line"><span class="lineno"> 8466</span>        <span class="stringliteral">&quot;&quot;&quot;retrieve rules that have been added to fixedpoint context&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8467</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga85cd5e4d070fd9dfae0f3741c3533455">Z3_fixedpoint_get_rules</a>(self.ctx.ref(), self.fixedpoint), self.ctx)</div>
-<div class="line"><span class="lineno"> 8468</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08494">8494</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8494</span>    <span class="keyword">def </span>get_rules(self):</div>
+<div class="line"><span class="lineno"> 8495</span>        <span class="stringliteral">&quot;&quot;&quot;retrieve rules that have been added to fixedpoint context&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8496</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga85cd5e4d070fd9dfae0f3741c3533455">Z3_fixedpoint_get_rules</a>(self.ctx.ref(), self.fixedpoint), self.ctx)</div>
+<div class="line"><span class="lineno"> 8497</span> </div>
 <div class="ttc" id="agroup__capi_html_ga85cd5e4d070fd9dfae0f3741c3533455"><div class="ttname"><a href="group__capi.html#ga85cd5e4d070fd9dfae0f3741c3533455">Z3_fixedpoint_get_rules</a></div><div class="ttdeci">Z3_ast_vector Z3_API Z3_fixedpoint_get_rules(Z3_context c, Z3_fixedpoint f)</div><div class="ttdoc">Retrieve set of rules from fixedpoint context.</div></div>
 </div><!-- fragment -->
 </div>
@@ -964,11 +964,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">retrieve rules along the counterexample trace</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08412">8412</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8412</span>    <span class="keyword">def </span>get_rules_along_trace(self):</div>
-<div class="line"><span class="lineno"> 8413</span>        <span class="stringliteral">&quot;&quot;&quot;retrieve rules along the counterexample trace&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8414</span>        <span class="keywordflow">return</span> AstVector(Z3_fixedpoint_get_rules_along_trace(self.ctx.ref(), self.fixedpoint), self.ctx)</div>
-<div class="line"><span class="lineno"> 8415</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08441">8441</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8441</span>    <span class="keyword">def </span>get_rules_along_trace(self):</div>
+<div class="line"><span class="lineno"> 8442</span>        <span class="stringliteral">&quot;&quot;&quot;retrieve rules along the counterexample trace&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8443</span>        <span class="keywordflow">return</span> AstVector(Z3_fixedpoint_get_rules_along_trace(self.ctx.ref(), self.fixedpoint), self.ctx)</div>
+<div class="line"><span class="lineno"> 8444</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -988,11 +988,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Display a string describing all available options.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08286">8286</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8286</span>    <span class="keyword">def </span>help(self):</div>
-<div class="line"><span class="lineno"> 8287</span>        <span class="stringliteral">&quot;&quot;&quot;Display a string describing all available options.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8288</span>        print(<a class="code hl_function" href="group__capi.html#gad024ad3a1a616142438a75e5038e7ab2">Z3_fixedpoint_get_help</a>(self.ctx.ref(), self.fixedpoint))</div>
-<div class="line"><span class="lineno"> 8289</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08315">8315</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8315</span>    <span class="keyword">def </span>help(self):</div>
+<div class="line"><span class="lineno"> 8316</span>        <span class="stringliteral">&quot;&quot;&quot;Display a string describing all available options.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8317</span>        print(<a class="code hl_function" href="group__capi.html#gad024ad3a1a616142438a75e5038e7ab2">Z3_fixedpoint_get_help</a>(self.ctx.ref(), self.fixedpoint))</div>
+<div class="line"><span class="lineno"> 8318</span> </div>
 <div class="ttc" id="agroup__capi_html_gad024ad3a1a616142438a75e5038e7ab2"><div class="ttname"><a href="group__capi.html#gad024ad3a1a616142438a75e5038e7ab2">Z3_fixedpoint_get_help</a></div><div class="ttdeci">Z3_string Z3_API Z3_fixedpoint_get_help(Z3_context c, Z3_fixedpoint f)</div><div class="ttdoc">Return a string describing all fixedpoint available parameters.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1023,11 +1023,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Assert constraints as background axioms for the fixedpoint solver. Alias for assert_expr.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08320">8320</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8320</span>    <span class="keyword">def </span>insert(self, *args):</div>
-<div class="line"><span class="lineno"> 8321</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the fixedpoint solver. Alias for assert_expr.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8322</span>        self.assert_exprs(*args)</div>
-<div class="line"><span class="lineno"> 8323</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08349">8349</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8349</span>    <span class="keyword">def </span>insert(self, *args):</div>
+<div class="line"><span class="lineno"> 8350</span>        <span class="stringliteral">&quot;&quot;&quot;Assert constraints as background axioms for the fixedpoint solver. Alias for assert_expr.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8351</span>        self.assert_exprs(*args)</div>
+<div class="line"><span class="lineno"> 8352</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1047,11 +1047,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Return the parameter description set.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08290">8290</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8290</span>    <span class="keyword">def </span>param_descrs(self):</div>
-<div class="line"><span class="lineno"> 8291</span>        <span class="stringliteral">&quot;&quot;&quot;Return the parameter description set.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8292</span>        <span class="keywordflow">return</span> ParamDescrsRef(<a class="code hl_function" href="group__capi.html#ga21cc50399a79dc6f5717e5fa31efc882">Z3_fixedpoint_get_param_descrs</a>(self.ctx.ref(), self.fixedpoint), self.ctx)</div>
-<div class="line"><span class="lineno"> 8293</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08319">8319</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8319</span>    <span class="keyword">def </span>param_descrs(self):</div>
+<div class="line"><span class="lineno"> 8320</span>        <span class="stringliteral">&quot;&quot;&quot;Return the parameter description set.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8321</span>        <span class="keywordflow">return</span> ParamDescrsRef(<a class="code hl_function" href="group__capi.html#ga21cc50399a79dc6f5717e5fa31efc882">Z3_fixedpoint_get_param_descrs</a>(self.ctx.ref(), self.fixedpoint), self.ctx)</div>
+<div class="line"><span class="lineno"> 8322</span> </div>
 <div class="ttc" id="agroup__capi_html_ga21cc50399a79dc6f5717e5fa31efc882"><div class="ttname"><a href="group__capi.html#ga21cc50399a79dc6f5717e5fa31efc882">Z3_fixedpoint_get_param_descrs</a></div><div class="ttdeci">Z3_param_descrs Z3_API Z3_fixedpoint_get_param_descrs(Z3_context c, Z3_fixedpoint f)</div><div class="ttdoc">Return the parameter description set for the given fixedpoint object.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1082,11 +1082,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Parse rules and queries from a file</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08461">8461</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8461</span>    <span class="keyword">def </span>parse_file(self, f):</div>
-<div class="line"><span class="lineno"> 8462</span>        <span class="stringliteral">&quot;&quot;&quot;Parse rules and queries from a file&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8463</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga17f340245c9ca9f08b17c36a5adc0fcf">Z3_fixedpoint_from_file</a>(self.ctx.ref(), self.fixedpoint, f), self.ctx)</div>
-<div class="line"><span class="lineno"> 8464</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08490">8490</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8490</span>    <span class="keyword">def </span>parse_file(self, f):</div>
+<div class="line"><span class="lineno"> 8491</span>        <span class="stringliteral">&quot;&quot;&quot;Parse rules and queries from a file&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8492</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga17f340245c9ca9f08b17c36a5adc0fcf">Z3_fixedpoint_from_file</a>(self.ctx.ref(), self.fixedpoint, f), self.ctx)</div>
+<div class="line"><span class="lineno"> 8493</span> </div>
 <div class="ttc" id="agroup__capi_html_ga17f340245c9ca9f08b17c36a5adc0fcf"><div class="ttname"><a href="group__capi.html#ga17f340245c9ca9f08b17c36a5adc0fcf">Z3_fixedpoint_from_file</a></div><div class="ttdeci">Z3_ast_vector Z3_API Z3_fixedpoint_from_file(Z3_context c, Z3_fixedpoint f, Z3_string s)</div><div class="ttdoc">Parse an SMT-LIB2 file with fixedpoint rules. Add the rules to the current fixedpoint context....</div></div>
 </div><!-- fragment -->
 </div>
@@ -1117,11 +1117,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Parse rules and queries from a string</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08457">8457</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8457</span>    <span class="keyword">def </span>parse_string(self, s):</div>
-<div class="line"><span class="lineno"> 8458</span>        <span class="stringliteral">&quot;&quot;&quot;Parse rules and queries from a string&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8459</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga325c1eb3d851a3749cfed850d60299d4">Z3_fixedpoint_from_string</a>(self.ctx.ref(), self.fixedpoint, s), self.ctx)</div>
-<div class="line"><span class="lineno"> 8460</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08486">8486</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8486</span>    <span class="keyword">def </span>parse_string(self, s):</div>
+<div class="line"><span class="lineno"> 8487</span>        <span class="stringliteral">&quot;&quot;&quot;Parse rules and queries from a string&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8488</span>        <span class="keywordflow">return</span> AstVector(<a class="code hl_function" href="group__capi.html#ga325c1eb3d851a3749cfed850d60299d4">Z3_fixedpoint_from_string</a>(self.ctx.ref(), self.fixedpoint, s), self.ctx)</div>
+<div class="line"><span class="lineno"> 8489</span> </div>
 <div class="ttc" id="agroup__capi_html_ga325c1eb3d851a3749cfed850d60299d4"><div class="ttname"><a href="group__capi.html#ga325c1eb3d851a3749cfed850d60299d4">Z3_fixedpoint_from_string</a></div><div class="ttdeci">Z3_ast_vector Z3_API Z3_fixedpoint_from_string(Z3_context c, Z3_fixedpoint f, Z3_string s)</div><div class="ttdoc">Parse an SMT-LIB2 string with fixedpoint rules. Add the rules to the current fixedpoint context....</div></div>
 </div><!-- fragment -->
 </div>
@@ -1154,29 +1154,29 @@ and queries
 <pre class="fragment">Query the fixedpoint engine whether formula is derivable.
    You can also pass an tuple or list of recursive predicates.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08355">8355</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8355</span>    <span class="keyword">def </span>query(self, *query):</div>
-<div class="line"><span class="lineno"> 8356</span>        <span class="stringliteral">&quot;&quot;&quot;Query the fixedpoint engine whether formula is derivable.</span></div>
-<div class="line"><span class="lineno"> 8357</span><span class="stringliteral">           You can also pass an tuple or list of recursive predicates.</span></div>
-<div class="line"><span class="lineno"> 8358</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8359</span>        query = _get_args(query)</div>
-<div class="line"><span class="lineno"> 8360</span>        sz = len(query)</div>
-<div class="line"><span class="lineno"> 8361</span>        <span class="keywordflow">if</span> sz &gt;= 1 <span class="keywordflow">and</span> isinstance(query[0], FuncDeclRef):</div>
-<div class="line"><span class="lineno"> 8362</span>            _decls = (FuncDecl * sz)()</div>
-<div class="line"><span class="lineno"> 8363</span>            i = 0</div>
-<div class="line"><span class="lineno"> 8364</span>            <span class="keywordflow">for</span> q <span class="keywordflow">in</span> query:</div>
-<div class="line"><span class="lineno"> 8365</span>                _decls[i] = q.ast</div>
-<div class="line"><span class="lineno"> 8366</span>                i = i + 1</div>
-<div class="line"><span class="lineno"> 8367</span>            r = <a class="code hl_function" href="group__capi.html#gae7e017998cae734999e36f3552eccfe5">Z3_fixedpoint_query_relations</a>(self.ctx.ref(), self.fixedpoint, sz, _decls)</div>
-<div class="line"><span class="lineno"> 8368</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8369</span>            <span class="keywordflow">if</span> sz == 1:</div>
-<div class="line"><span class="lineno"> 8370</span>                query = query[0]</div>
-<div class="line"><span class="lineno"> 8371</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8372</span>                query = And(query, self.ctx)</div>
-<div class="line"><span class="lineno"> 8373</span>            query = self.abstract(query, <span class="keyword">False</span>)</div>
-<div class="line"><span class="lineno"> 8374</span>            r = <a class="code hl_function" href="group__capi.html#ga7ccbab6726c6bb478702eb4eef638a25">Z3_fixedpoint_query</a>(self.ctx.ref(), self.fixedpoint, query.as_ast())</div>
-<div class="line"><span class="lineno"> 8375</span>        <span class="keywordflow">return</span> CheckSatResult(r)</div>
-<div class="line"><span class="lineno"> 8376</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08384">8384</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8384</span>    <span class="keyword">def </span>query(self, *query):</div>
+<div class="line"><span class="lineno"> 8385</span>        <span class="stringliteral">&quot;&quot;&quot;Query the fixedpoint engine whether formula is derivable.</span></div>
+<div class="line"><span class="lineno"> 8386</span><span class="stringliteral">           You can also pass an tuple or list of recursive predicates.</span></div>
+<div class="line"><span class="lineno"> 8387</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8388</span>        query = _get_args(query)</div>
+<div class="line"><span class="lineno"> 8389</span>        sz = len(query)</div>
+<div class="line"><span class="lineno"> 8390</span>        <span class="keywordflow">if</span> sz &gt;= 1 <span class="keywordflow">and</span> isinstance(query[0], FuncDeclRef):</div>
+<div class="line"><span class="lineno"> 8391</span>            _decls = (FuncDecl * sz)()</div>
+<div class="line"><span class="lineno"> 8392</span>            i = 0</div>
+<div class="line"><span class="lineno"> 8393</span>            <span class="keywordflow">for</span> q <span class="keywordflow">in</span> query:</div>
+<div class="line"><span class="lineno"> 8394</span>                _decls[i] = q.ast</div>
+<div class="line"><span class="lineno"> 8395</span>                i = i + 1</div>
+<div class="line"><span class="lineno"> 8396</span>            r = <a class="code hl_function" href="group__capi.html#gae7e017998cae734999e36f3552eccfe5">Z3_fixedpoint_query_relations</a>(self.ctx.ref(), self.fixedpoint, sz, _decls)</div>
+<div class="line"><span class="lineno"> 8397</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8398</span>            <span class="keywordflow">if</span> sz == 1:</div>
+<div class="line"><span class="lineno"> 8399</span>                query = query[0]</div>
+<div class="line"><span class="lineno"> 8400</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8401</span>                query = And(query, self.ctx)</div>
+<div class="line"><span class="lineno"> 8402</span>            query = self.abstract(query, <span class="keyword">False</span>)</div>
+<div class="line"><span class="lineno"> 8403</span>            r = <a class="code hl_function" href="group__capi.html#ga7ccbab6726c6bb478702eb4eef638a25">Z3_fixedpoint_query</a>(self.ctx.ref(), self.fixedpoint, query.as_ast())</div>
+<div class="line"><span class="lineno"> 8404</span>        <span class="keywordflow">return</span> CheckSatResult(r)</div>
+<div class="line"><span class="lineno"> 8405</span> </div>
 <div class="ttc" id="agroup__capi_html_ga7ccbab6726c6bb478702eb4eef638a25"><div class="ttname"><a href="group__capi.html#ga7ccbab6726c6bb478702eb4eef638a25">Z3_fixedpoint_query</a></div><div class="ttdeci">Z3_lbool Z3_API Z3_fixedpoint_query(Z3_context c, Z3_fixedpoint d, Z3_ast query)</div><div class="ttdoc">Pose a query against the asserted rules.</div></div>
 <div class="ttc" id="agroup__capi_html_gae7e017998cae734999e36f3552eccfe5"><div class="ttname"><a href="group__capi.html#gae7e017998cae734999e36f3552eccfe5">Z3_fixedpoint_query_relations</a></div><div class="ttdeci">Z3_lbool Z3_API Z3_fixedpoint_query_relations(Z3_context c, Z3_fixedpoint d, unsigned num_relations, Z3_func_decl const relations[])</div><div class="ttdoc">Pose multiple queries against the asserted rules.</div></div>
 </div><!-- fragment -->
@@ -1215,23 +1215,23 @@ and queries
 </div><div class="memdoc">
 <pre class="fragment">Query the fixedpoint engine whether formula is derivable starting at the given query level.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08377">8377</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8377</span>    <span class="keyword">def </span>query_from_lvl(self, lvl, *query):</div>
-<div class="line"><span class="lineno"> 8378</span>        <span class="stringliteral">&quot;&quot;&quot;Query the fixedpoint engine whether formula is derivable starting at the given query level.</span></div>
-<div class="line"><span class="lineno"> 8379</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8380</span>        query = _get_args(query)</div>
-<div class="line"><span class="lineno"> 8381</span>        sz = len(query)</div>
-<div class="line"><span class="lineno"> 8382</span>        <span class="keywordflow">if</span> sz &gt;= 1 <span class="keywordflow">and</span> isinstance(query[0], FuncDecl):</div>
-<div class="line"><span class="lineno"> 8383</span>            _z3_assert(<span class="keyword">False</span>, <span class="stringliteral">&quot;unsupported&quot;</span>)</div>
-<div class="line"><span class="lineno"> 8384</span>        <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8385</span>            <span class="keywordflow">if</span> sz == 1:</div>
-<div class="line"><span class="lineno"> 8386</span>                query = query[0]</div>
-<div class="line"><span class="lineno"> 8387</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno"> 8388</span>                query = And(query)</div>
-<div class="line"><span class="lineno"> 8389</span>            query = self.abstract(query, <span class="keyword">False</span>)</div>
-<div class="line"><span class="lineno"> 8390</span>            r = Z3_fixedpoint_query_from_lvl(self.ctx.ref(), self.fixedpoint, query.as_ast(), lvl)</div>
-<div class="line"><span class="lineno"> 8391</span>        <span class="keywordflow">return</span> CheckSatResult(r)</div>
-<div class="line"><span class="lineno"> 8392</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08406">8406</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8406</span>    <span class="keyword">def </span>query_from_lvl(self, lvl, *query):</div>
+<div class="line"><span class="lineno"> 8407</span>        <span class="stringliteral">&quot;&quot;&quot;Query the fixedpoint engine whether formula is derivable starting at the given query level.</span></div>
+<div class="line"><span class="lineno"> 8408</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8409</span>        query = _get_args(query)</div>
+<div class="line"><span class="lineno"> 8410</span>        sz = len(query)</div>
+<div class="line"><span class="lineno"> 8411</span>        <span class="keywordflow">if</span> sz &gt;= 1 <span class="keywordflow">and</span> isinstance(query[0], FuncDecl):</div>
+<div class="line"><span class="lineno"> 8412</span>            _z3_assert(<span class="keyword">False</span>, <span class="stringliteral">&quot;unsupported&quot;</span>)</div>
+<div class="line"><span class="lineno"> 8413</span>        <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8414</span>            <span class="keywordflow">if</span> sz == 1:</div>
+<div class="line"><span class="lineno"> 8415</span>                query = query[0]</div>
+<div class="line"><span class="lineno"> 8416</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno"> 8417</span>                query = And(query)</div>
+<div class="line"><span class="lineno"> 8418</span>            query = self.abstract(query, <span class="keyword">False</span>)</div>
+<div class="line"><span class="lineno"> 8419</span>            r = Z3_fixedpoint_query_from_lvl(self.ctx.ref(), self.fixedpoint, query.as_ast(), lvl)</div>
+<div class="line"><span class="lineno"> 8420</span>        <span class="keywordflow">return</span> CheckSatResult(r)</div>
+<div class="line"><span class="lineno"> 8421</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1252,12 +1252,12 @@ and queries
 </div><div class="memdoc">
 <pre class="fragment">Return a string describing why the last `query()` returned `unknown`.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08496">8496</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8496</span>    <span class="keyword">def </span>reason_unknown(self):</div>
-<div class="line"><span class="lineno"> 8497</span>        <span class="stringliteral">&quot;&quot;&quot;Return a string describing why the last `query()` returned `unknown`.</span></div>
-<div class="line"><span class="lineno"> 8498</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8499</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gace47e378e537e18cffc643e60e3aa1e9">Z3_fixedpoint_get_reason_unknown</a>(self.ctx.ref(), self.fixedpoint)</div>
-<div class="line"><span class="lineno"> 8500</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08525">8525</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8525</span>    <span class="keyword">def </span>reason_unknown(self):</div>
+<div class="line"><span class="lineno"> 8526</span>        <span class="stringliteral">&quot;&quot;&quot;Return a string describing why the last `query()` returned `unknown`.</span></div>
+<div class="line"><span class="lineno"> 8527</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8528</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#gace47e378e537e18cffc643e60e3aa1e9">Z3_fixedpoint_get_reason_unknown</a>(self.ctx.ref(), self.fixedpoint)</div>
+<div class="line"><span class="lineno"> 8529</span> </div>
 <div class="ttc" id="agroup__capi_html_gace47e378e537e18cffc643e60e3aa1e9"><div class="ttname"><a href="group__capi.html#gace47e378e537e18cffc643e60e3aa1e9">Z3_fixedpoint_get_reason_unknown</a></div><div class="ttdeci">Z3_string Z3_API Z3_fixedpoint_get_reason_unknown(Z3_context c, Z3_fixedpoint d)</div><div class="ttdoc">Retrieve a string that describes the last status returned by Z3_fixedpoint_query.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1288,13 +1288,13 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Register relation as recursive</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08441">8441</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8441</span>    <span class="keyword">def </span>register_relation(self, *relations):</div>
-<div class="line"><span class="lineno"> 8442</span>        <span class="stringliteral">&quot;&quot;&quot;Register relation as recursive&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8443</span>        relations = _get_args(relations)</div>
-<div class="line"><span class="lineno"> 8444</span>        <span class="keywordflow">for</span> f <span class="keywordflow">in</span> relations:</div>
-<div class="line"><span class="lineno"> 8445</span>            <a class="code hl_function" href="group__capi.html#gae42940250900faa800504d3c52587a09">Z3_fixedpoint_register_relation</a>(self.ctx.ref(), self.fixedpoint, f.ast)</div>
-<div class="line"><span class="lineno"> 8446</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08470">8470</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8470</span>    <span class="keyword">def </span>register_relation(self, *relations):</div>
+<div class="line"><span class="lineno"> 8471</span>        <span class="stringliteral">&quot;&quot;&quot;Register relation as recursive&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8472</span>        relations = _get_args(relations)</div>
+<div class="line"><span class="lineno"> 8473</span>        <span class="keywordflow">for</span> f <span class="keywordflow">in</span> relations:</div>
+<div class="line"><span class="lineno"> 8474</span>            <a class="code hl_function" href="group__capi.html#gae42940250900faa800504d3c52587a09">Z3_fixedpoint_register_relation</a>(self.ctx.ref(), self.fixedpoint, f.ast)</div>
+<div class="line"><span class="lineno"> 8475</span> </div>
 <div class="ttc" id="agroup__capi_html_gae42940250900faa800504d3c52587a09"><div class="ttname"><a href="group__capi.html#gae42940250900faa800504d3c52587a09">Z3_fixedpoint_register_relation</a></div><div class="ttdeci">void Z3_API Z3_fixedpoint_register_relation(Z3_context c, Z3_fixedpoint d, Z3_func_decl f)</div><div class="ttdoc">Register relation as Fixedpoint defined. Fixedpoint defined relations have least-fixedpoint semantics...</div></div>
 </div><!-- fragment -->
 </div>
@@ -1337,11 +1337,11 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Assert rules defining recursive predicates to the fixedpoint solver. Alias for add_rule.</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08347">8347</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8347</span>    <span class="keyword">def </span>rule(self, head, body=None, name=None):</div>
-<div class="line"><span class="lineno"> 8348</span>        <span class="stringliteral">&quot;&quot;&quot;Assert rules defining recursive predicates to the fixedpoint solver. Alias for add_rule.&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8349</span>        self.add_rule(head, body, name)</div>
-<div class="line"><span class="lineno"> 8350</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08376">8376</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8376</span>    <span class="keyword">def </span>rule(self, head, body=None, name=None):</div>
+<div class="line"><span class="lineno"> 8377</span>        <span class="stringliteral">&quot;&quot;&quot;Assert rules defining recursive predicates to the fixedpoint solver. Alias for add_rule.&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8378</span>        self.add_rule(head, body, name)</div>
+<div class="line"><span class="lineno"> 8379</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1378,13 +1378,13 @@ and queries
 </div><div class="memdoc">
 <pre class="fragment">Set a configuration option. The method `help()` return a string containing all available options.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08280">8280</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8280</span>    <span class="keyword">def </span>set(self, *args, **keys):</div>
-<div class="line"><span class="lineno"> 8281</span>        <span class="stringliteral">&quot;&quot;&quot;Set a configuration option. The method `help()` return a string containing all available options.</span></div>
-<div class="line"><span class="lineno"> 8282</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8283</span>        p = args2params(args, keys, self.ctx)</div>
-<div class="line"><span class="lineno"> 8284</span>        <a class="code hl_function" href="group__capi.html#gadd4c786be5a3e1465bdb07e5958e0e18">Z3_fixedpoint_set_params</a>(self.ctx.ref(), self.fixedpoint, p.params)</div>
-<div class="line"><span class="lineno"> 8285</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08309">8309</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8309</span>    <span class="keyword">def </span>set(self, *args, **keys):</div>
+<div class="line"><span class="lineno"> 8310</span>        <span class="stringliteral">&quot;&quot;&quot;Set a configuration option. The method `help()` return a string containing all available options.</span></div>
+<div class="line"><span class="lineno"> 8311</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8312</span>        p = args2params(args, keys, self.ctx)</div>
+<div class="line"><span class="lineno"> 8313</span>        <a class="code hl_function" href="group__capi.html#gadd4c786be5a3e1465bdb07e5958e0e18">Z3_fixedpoint_set_params</a>(self.ctx.ref(), self.fixedpoint, p.params)</div>
+<div class="line"><span class="lineno"> 8314</span> </div>
 <div class="ttc" id="agroup__capi_html_gadd4c786be5a3e1465bdb07e5958e0e18"><div class="ttname"><a href="group__capi.html#gadd4c786be5a3e1465bdb07e5958e0e18">Z3_fixedpoint_set_params</a></div><div class="ttdeci">void Z3_API Z3_fixedpoint_set_params(Z3_context c, Z3_fixedpoint f, Z3_params p)</div><div class="ttdoc">Set parameters on fixedpoint context.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1421,17 +1421,17 @@ and queries
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Control how relation is represented</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08447">8447</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8447</span>    <span class="keyword">def </span>set_predicate_representation(self, f, *representations):</div>
-<div class="line"><span class="lineno"> 8448</span>        <span class="stringliteral">&quot;&quot;&quot;Control how relation is represented&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8449</span>        representations = _get_args(representations)</div>
-<div class="line"><span class="lineno"> 8450</span>        representations = [to_symbol(s) <span class="keywordflow">for</span> s <span class="keywordflow">in</span> representations]</div>
-<div class="line"><span class="lineno"> 8451</span>        sz = len(representations)</div>
-<div class="line"><span class="lineno"> 8452</span>        args = (Symbol * sz)()</div>
-<div class="line"><span class="lineno"> 8453</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(sz):</div>
-<div class="line"><span class="lineno"> 8454</span>            args[i] = representations[i]</div>
-<div class="line"><span class="lineno"> 8455</span>        <a class="code hl_function" href="group__capi.html#ga0ccc3975aa02d85079b1b33801acf1e9">Z3_fixedpoint_set_predicate_representation</a>(self.ctx.ref(), self.fixedpoint, f.ast, sz, args)</div>
-<div class="line"><span class="lineno"> 8456</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08476">8476</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8476</span>    <span class="keyword">def </span>set_predicate_representation(self, f, *representations):</div>
+<div class="line"><span class="lineno"> 8477</span>        <span class="stringliteral">&quot;&quot;&quot;Control how relation is represented&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8478</span>        representations = _get_args(representations)</div>
+<div class="line"><span class="lineno"> 8479</span>        representations = [to_symbol(s) <span class="keywordflow">for</span> s <span class="keywordflow">in</span> representations]</div>
+<div class="line"><span class="lineno"> 8480</span>        sz = len(representations)</div>
+<div class="line"><span class="lineno"> 8481</span>        args = (Symbol * sz)()</div>
+<div class="line"><span class="lineno"> 8482</span>        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(sz):</div>
+<div class="line"><span class="lineno"> 8483</span>            args[i] = representations[i]</div>
+<div class="line"><span class="lineno"> 8484</span>        <a class="code hl_function" href="group__capi.html#ga0ccc3975aa02d85079b1b33801acf1e9">Z3_fixedpoint_set_predicate_representation</a>(self.ctx.ref(), self.fixedpoint, f.ast, sz, args)</div>
+<div class="line"><span class="lineno"> 8485</span> </div>
 <div class="ttc" id="agroup__capi_html_ga0ccc3975aa02d85079b1b33801acf1e9"><div class="ttname"><a href="group__capi.html#ga0ccc3975aa02d85079b1b33801acf1e9">Z3_fixedpoint_set_predicate_representation</a></div><div class="ttdeci">void Z3_API Z3_fixedpoint_set_predicate_representation(Z3_context c, Z3_fixedpoint d, Z3_func_decl f, unsigned num_relations, Z3_symbol const relation_kinds[])</div><div class="ttdoc">Configure the predicate representation.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1454,13 +1454,13 @@ and queries
 <pre class="fragment">Return a formatted string (in Lisp-like format) with all added constraints.
 We say the string is in s-expression format.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08477">8477</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8477</span>    <span class="keyword">def </span>sexpr(self):</div>
-<div class="line"><span class="lineno"> 8478</span>        <span class="stringliteral">&quot;&quot;&quot;Return a formatted string (in Lisp-like format) with all added constraints.</span></div>
-<div class="line"><span class="lineno"> 8479</span><span class="stringliteral">        We say the string is in s-expression format.</span></div>
-<div class="line"><span class="lineno"> 8480</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8481</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga9ff992618800631602f9a1711ae7ea67">Z3_fixedpoint_to_string</a>(self.ctx.ref(), self.fixedpoint, 0, (Ast * 0)())</div>
-<div class="line"><span class="lineno"> 8482</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08506">8506</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8506</span>    <span class="keyword">def </span>sexpr(self):</div>
+<div class="line"><span class="lineno"> 8507</span>        <span class="stringliteral">&quot;&quot;&quot;Return a formatted string (in Lisp-like format) with all added constraints.</span></div>
+<div class="line"><span class="lineno"> 8508</span><span class="stringliteral">        We say the string is in s-expression format.</span></div>
+<div class="line"><span class="lineno"> 8509</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8510</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga9ff992618800631602f9a1711ae7ea67">Z3_fixedpoint_to_string</a>(self.ctx.ref(), self.fixedpoint, 0, (Ast * 0)())</div>
+<div class="line"><span class="lineno"> 8511</span> </div>
 <div class="ttc" id="agroup__capi_html_ga9ff992618800631602f9a1711ae7ea67"><div class="ttname"><a href="group__capi.html#ga9ff992618800631602f9a1711ae7ea67">Z3_fixedpoint_to_string</a></div><div class="ttdeci">Z3_string Z3_API Z3_fixedpoint_to_string(Z3_context c, Z3_fixedpoint f, unsigned num_queries, Z3_ast queries[])</div><div class="ttdoc">Print the current rules and background axioms as a string.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1482,12 +1482,12 @@ We say the string is in s-expression format.
 </div><div class="memdoc">
 <pre class="fragment">Return statistics for the last `query()`.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08491">8491</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8491</span>    <span class="keyword">def </span>statistics(self):</div>
-<div class="line"><span class="lineno"> 8492</span>        <span class="stringliteral">&quot;&quot;&quot;Return statistics for the last `query()`.</span></div>
-<div class="line"><span class="lineno"> 8493</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8494</span>        <span class="keywordflow">return</span> Statistics(<a class="code hl_function" href="group__capi.html#gabb626983ccba2af7156f6f8efd84f2b0">Z3_fixedpoint_get_statistics</a>(self.ctx.ref(), self.fixedpoint), self.ctx)</div>
-<div class="line"><span class="lineno"> 8495</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08520">8520</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8520</span>    <span class="keyword">def </span>statistics(self):</div>
+<div class="line"><span class="lineno"> 8521</span>        <span class="stringliteral">&quot;&quot;&quot;Return statistics for the last `query()`.</span></div>
+<div class="line"><span class="lineno"> 8522</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8523</span>        <span class="keywordflow">return</span> Statistics(<a class="code hl_function" href="group__capi.html#gabb626983ccba2af7156f6f8efd84f2b0">Z3_fixedpoint_get_statistics</a>(self.ctx.ref(), self.fixedpoint), self.ctx)</div>
+<div class="line"><span class="lineno"> 8524</span> </div>
 <div class="ttc" id="agroup__capi_html_gabb626983ccba2af7156f6f8efd84f2b0"><div class="ttname"><a href="group__capi.html#gabb626983ccba2af7156f6f8efd84f2b0">Z3_fixedpoint_get_statistics</a></div><div class="ttdeci">Z3_stats Z3_API Z3_fixedpoint_get_statistics(Z3_context c, Z3_fixedpoint d)</div><div class="ttdoc">Retrieve statistics information from the last call to Z3_fixedpoint_query.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1521,15 +1521,15 @@ We say the string is in s-expression format.
    We say the string is in s-expression format.
    Include also queries.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08483">8483</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8483</span>    <span class="keyword">def </span>to_string(self, queries):</div>
-<div class="line"><span class="lineno"> 8484</span>        <span class="stringliteral">&quot;&quot;&quot;Return a formatted string (in Lisp-like format) with all added constraints.</span></div>
-<div class="line"><span class="lineno"> 8485</span><span class="stringliteral">           We say the string is in s-expression format.</span></div>
-<div class="line"><span class="lineno"> 8486</span><span class="stringliteral">           Include also queries.</span></div>
-<div class="line"><span class="lineno"> 8487</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8488</span>        args, len = _to_ast_array(queries)</div>
-<div class="line"><span class="lineno"> 8489</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga9ff992618800631602f9a1711ae7ea67">Z3_fixedpoint_to_string</a>(self.ctx.ref(), self.fixedpoint, len, args)</div>
-<div class="line"><span class="lineno"> 8490</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08512">8512</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8512</span>    <span class="keyword">def </span>to_string(self, queries):</div>
+<div class="line"><span class="lineno"> 8513</span>        <span class="stringliteral">&quot;&quot;&quot;Return a formatted string (in Lisp-like format) with all added constraints.</span></div>
+<div class="line"><span class="lineno"> 8514</span><span class="stringliteral">           We say the string is in s-expression format.</span></div>
+<div class="line"><span class="lineno"> 8515</span><span class="stringliteral">           Include also queries.</span></div>
+<div class="line"><span class="lineno"> 8516</span><span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8517</span>        args, len = _to_ast_array(queries)</div>
+<div class="line"><span class="lineno"> 8518</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="group__capi.html#ga9ff992618800631602f9a1711ae7ea67">Z3_fixedpoint_to_string</a>(self.ctx.ref(), self.fixedpoint, len, args)</div>
+<div class="line"><span class="lineno"> 8519</span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1571,16 +1571,16 @@ We say the string is in s-expression format.
       </table>
 </div><div class="memdoc">
 <pre class="fragment">update rule</pre> 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08393">8393</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 8393</span>    <span class="keyword">def </span>update_rule(self, head, body, name):</div>
-<div class="line"><span class="lineno"> 8394</span>        <span class="stringliteral">&quot;&quot;&quot;update rule&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8395</span>        <span class="keywordflow">if</span> name <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno"> 8396</span>            name = <span class="stringliteral">&quot;&quot;</span></div>
-<div class="line"><span class="lineno"> 8397</span>        name = to_symbol(name, self.ctx)</div>
-<div class="line"><span class="lineno"> 8398</span>        body = _get_args(body)</div>
-<div class="line"><span class="lineno"> 8399</span>        f = self.abstract(Implies(And(body, self.ctx), head))</div>
-<div class="line"><span class="lineno"> 8400</span>        <a class="code hl_function" href="group__capi.html#ga28713df54575ab180cfd298779e565fa">Z3_fixedpoint_update_rule</a>(self.ctx.ref(), self.fixedpoint, f.as_ast(), name)</div>
-<div class="line"><span class="lineno"> 8401</span> </div>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08422">8422</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 8422</span>    <span class="keyword">def </span>update_rule(self, head, body, name):</div>
+<div class="line"><span class="lineno"> 8423</span>        <span class="stringliteral">&quot;&quot;&quot;update rule&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8424</span>        <span class="keywordflow">if</span> name <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno"> 8425</span>            name = <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><span class="lineno"> 8426</span>        name = to_symbol(name, self.ctx)</div>
+<div class="line"><span class="lineno"> 8427</span>        body = _get_args(body)</div>
+<div class="line"><span class="lineno"> 8428</span>        f = self.abstract(Implies(And(body, self.ctx), head))</div>
+<div class="line"><span class="lineno"> 8429</span>        <a class="code hl_function" href="group__capi.html#ga28713df54575ab180cfd298779e565fa">Z3_fixedpoint_update_rule</a>(self.ctx.ref(), self.fixedpoint, f.as_ast(), name)</div>
+<div class="line"><span class="lineno"> 8430</span> </div>
 <div class="ttc" id="agroup__capi_html_ga28713df54575ab180cfd298779e565fa"><div class="ttname"><a href="group__capi.html#ga28713df54575ab180cfd298779e565fa">Z3_fixedpoint_update_rule</a></div><div class="ttdeci">void Z3_API Z3_fixedpoint_update_rule(Z3_context c, Z3_fixedpoint d, Z3_ast a, Z3_symbol name)</div><div class="ttdoc">Update a named rule. A rule with the same name must have been previously created.</div></div>
 </div><!-- fragment -->
 </div>
@@ -1598,9 +1598,9 @@ We say the string is in s-expression format.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08264">8264</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08293">8293</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02582">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03788">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03880">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00882">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06775">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00464">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06524">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06721">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l07066">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l07434">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00382">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05670">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06156">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06221">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06527">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06724">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06755">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06874">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l07069">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l07437">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l07475">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00377">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05747">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05759">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06159">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06224">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06287">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06593">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06758">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06877">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06984">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07102">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07478">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07671">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02681">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03957">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01064">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02815">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l04087">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06610">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l07314">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l07514">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06788">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02802">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l04071">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03946">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02776">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l04039">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06597">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06762">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l07170">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l07500">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04133">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02789">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l04055">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02729">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l04000">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01692">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02605">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03811">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01085">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02756">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03935">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03857">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02653">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02595">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03801">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03893">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02708">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03980">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l06180">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06259">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06815">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l07482">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l04161">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02744">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l04021">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02620">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03824">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03870">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02667">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l04147">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l04103">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02643">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03847">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03916">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06639">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06799">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02630">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03834">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03903">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l05993">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01144">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06899">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l07027">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l06550">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07827">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l06413">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07771">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02270">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l05420">FiniteSetSortRef.cast()</a>, <a class="el" href="z3py_8py_source.html#l07857">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l06461">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00427">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01106">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l07361">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04937">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03188">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l06291">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l06497">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00819">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04876">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l06988">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l07041">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06818">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l07113">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l06383">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l06248">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l07187">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l07550">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l06243">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l06238">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l07254">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l07294">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l06309">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06847">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l07538">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07886">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00639">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02264">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06881">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l07011">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07739">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l07239">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00854">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02242">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03297">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07717">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l06327">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l07410">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l07422">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07695">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06657">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02225">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00831">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04881">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05965">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06832">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07757">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06669">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07682">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l06163">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l06493">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06730">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l07109">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06228">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l06357">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02220">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06705">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00448">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l06501">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l07402">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l01180">ExprRef.update()</a>, <a class="el" href="z3py_8py_source.html#l06034">DatatypeRef.update_field()</a>, <a class="el" href="z3py_8py_source.html#l06183">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06930">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02293">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02309">QuantifierRef.var_sort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="z3py_8py_source.html#l02589">ArithRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03795">BitVecRef.__add__()</a>, <a class="el" href="z3py_8py_source.html#l03887">BitVecRef.__and__()</a>, <a class="el" href="z3py_8py_source.html#l00884">FuncDeclRef.__call__()</a>, <a class="el" href="z3py_8py_source.html#l06804">AstMap.__contains__()</a>, <a class="el" href="z3py_8py_source.html#l00464">AstRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06531">Goal.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l06750">AstVector.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l07095">FuncInterp.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l07463">ModelRef.__copy__()</a>, <a class="el" href="z3py_8py_source.html#l00382">AstRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l05677">Datatype.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06163">ParamsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06228">ParamDescrsRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06534">Goal.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06753">AstVector.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06784">AstMap.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l06903">FuncEntry.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l07098">FuncInterp.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l07466">ModelRef.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l07504">Statistics.__deepcopy__()</a>, <a class="el" href="z3py_8py_source.html#l00222">Context.__del__()</a>, <a class="el" href="z3py_8py_source.html#l00377">AstRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05754">ScopedConstructor.__del__()</a>, <a class="el" href="z3py_8py_source.html#l05766">ScopedConstructorList.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06166">ParamsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06231">ParamDescrsRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06294">Goal.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06600">AstVector.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06787">AstMap.__del__()</a>, <a class="el" href="z3py_8py_source.html#l06906">FuncEntry.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07013">FuncInterp.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07131">ModelRef.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07507">Statistics.__del__()</a>, <a class="el" href="z3py_8py_source.html#l07700">Solver.__del__()</a>, <a class="el" href="z3py_8py_source.html#l02688">ArithRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l03964">BitVecRef.__div__()</a>, <a class="el" href="z3py_8py_source.html#l01066">ExprRef.__eq__()</a>, <a class="el" href="z3py_8py_source.html#l02822">ArithRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l04094">BitVecRef.__ge__()</a>, <a class="el" href="z3py_8py_source.html#l06617">AstVector.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l07343">ModelRef.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l07543">Statistics.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l06817">AstMap.__getitem__()</a>, <a class="el" href="z3py_8py_source.html#l02809">ArithRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l04078">BitVecRef.__gt__()</a>, <a class="el" href="z3py_8py_source.html#l03953">BitVecRef.__invert__()</a>, <a class="el" href="z3py_8py_source.html#l02783">ArithRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l04046">BitVecRef.__le__()</a>, <a class="el" href="z3py_8py_source.html#l06604">AstVector.__len__()</a>, <a class="el" href="z3py_8py_source.html#l06791">AstMap.__len__()</a>, <a class="el" href="z3py_8py_source.html#l07199">ModelRef.__len__()</a>, <a class="el" href="z3py_8py_source.html#l07529">Statistics.__len__()</a>, <a class="el" href="z3py_8py_source.html#l04140">BitVecRef.__lshift__()</a>, <a class="el" href="z3py_8py_source.html#l02796">ArithRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l04062">BitVecRef.__lt__()</a>, <a class="el" href="z3py_8py_source.html#l02736">ArithRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l04007">BitVecRef.__mod__()</a>, <a class="el" href="z3py_8py_source.html#l01698">BoolRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l02612">ArithRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l03818">BitVecRef.__mul__()</a>, <a class="el" href="z3py_8py_source.html#l01087">ExprRef.__ne__()</a>, <a class="el" href="z3py_8py_source.html#l02763">ArithRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03942">BitVecRef.__neg__()</a>, <a class="el" href="z3py_8py_source.html#l03864">BitVecRef.__or__()</a>, <a class="el" href="z3py_8py_source.html#l02660">ArithRef.__pow__()</a>, <a class="el" href="z3py_8py_source.html#l02602">ArithRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03808">BitVecRef.__radd__()</a>, <a class="el" href="z3py_8py_source.html#l03900">BitVecRef.__rand__()</a>, <a class="el" href="z3py_8py_source.html#l02715">ArithRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l03987">BitVecRef.__rdiv__()</a>, <a class="el" href="z3py_8py_source.html#l06187">ParamsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06266">ParamDescrsRef.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l06844">AstMap.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l07511">Statistics.__repr__()</a>, <a class="el" href="z3py_8py_source.html#l04168">BitVecRef.__rlshift__()</a>, <a class="el" href="z3py_8py_source.html#l02751">ArithRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l04028">BitVecRef.__rmod__()</a>, <a class="el" href="z3py_8py_source.html#l02627">ArithRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03831">BitVecRef.__rmul__()</a>, <a class="el" href="z3py_8py_source.html#l03877">BitVecRef.__ror__()</a>, <a class="el" href="z3py_8py_source.html#l02674">ArithRef.__rpow__()</a>, <a class="el" href="z3py_8py_source.html#l04154">BitVecRef.__rrshift__()</a>, <a class="el" href="z3py_8py_source.html#l04110">BitVecRef.__rshift__()</a>, <a class="el" href="z3py_8py_source.html#l02650">ArithRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03854">BitVecRef.__rsub__()</a>, <a class="el" href="z3py_8py_source.html#l03923">BitVecRef.__rxor__()</a>, <a class="el" href="z3py_8py_source.html#l06668">AstVector.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l06828">AstMap.__setitem__()</a>, <a class="el" href="z3py_8py_source.html#l02637">ArithRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03841">BitVecRef.__sub__()</a>, <a class="el" href="z3py_8py_source.html#l03910">BitVecRef.__xor__()</a>, <a class="el" href="z3py_8py_source.html#l06000">DatatypeSortRef.accessor()</a>, <a class="el" href="z3py_8py_source.html#l01146">ExprRef.arg()</a>, <a class="el" href="z3py_8py_source.html#l06928">FuncEntry.arg_value()</a>, <a class="el" href="z3py_8py_source.html#l07056">FuncInterp.arity()</a>, <a class="el" href="z3py_8py_source.html#l06557">Goal.as_expr()</a>, <a class="el" href="z3py_8py_source.html#l07856">Solver.assert_and_track()</a>, <a class="el" href="z3py_8py_source.html#l06420">Goal.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l07800">Solver.assert_exprs()</a>, <a class="el" href="z3py_8py_source.html#l02277">QuantifierRef.body()</a>, <a class="el" href="z3py_8py_source.html#l05427">FiniteSetSortRef.cast()</a>, <a class="el" href="z3py_8py_source.html#l07886">Solver.check()</a>, <a class="el" href="z3py_8py_source.html#l06468">Goal.convert_model()</a>, <a class="el" href="z3py_8py_source.html#l00427">AstRef.ctx_ref()</a>, <a class="el" href="z3py_8py_source.html#l01108">ExprRef.decl()</a>, <a class="el" href="z3py_8py_source.html#l07390">ModelRef.decls()</a>, <a class="el" href="z3py_8py_source.html#l04944">ArrayRef.default()</a>, <a class="el" href="z3py_8py_source.html#l03195">RatNumRef.denominator()</a>, <a class="el" href="z3py_8py_source.html#l06298">Goal.depth()</a>, <a class="el" href="z3py_8py_source.html#l06504">Goal.dimacs()</a>, <a class="el" href="z3py_8py_source.html#l00821">FuncDeclRef.domain()</a>, <a class="el" href="z3py_8py_source.html#l04883">ArraySortRef.domain_n()</a>, <a class="el" href="z3py_8py_source.html#l07017">FuncInterp.else_value()</a>, <a class="el" href="z3py_8py_source.html#l07070">FuncInterp.entry()</a>, <a class="el" href="z3py_8py_source.html#l06847">AstMap.erase()</a>, <a class="el" href="z3py_8py_source.html#l07142">ModelRef.eval()</a>, <a class="el" href="z3py_8py_source.html#l06390">Goal.get()</a>, <a class="el" href="z3py_8py_source.html#l06255">ParamDescrsRef.get_documentation()</a>, <a class="el" href="z3py_8py_source.html#l07216">ModelRef.get_interp()</a>, <a class="el" href="z3py_8py_source.html#l07579">Statistics.get_key_value()</a>, <a class="el" href="z3py_8py_source.html#l06250">ParamDescrsRef.get_kind()</a>, <a class="el" href="z3py_8py_source.html#l06245">ParamDescrsRef.get_name()</a>, <a class="el" href="z3py_8py_source.html#l07283">ModelRef.get_sort()</a>, <a class="el" href="z3py_8py_source.html#l07323">ModelRef.get_universe()</a>, <a class="el" href="z3py_8py_source.html#l06316">Goal.inconsistent()</a>, <a class="el" href="z3py_8py_source.html#l06876">AstMap.keys()</a>, <a class="el" href="z3py_8py_source.html#l07567">Statistics.keys()</a>, <a class="el" href="z3py_8py_source.html#l07915">Solver.model()</a>, <a class="el" href="z3py_8py_source.html#l00640">SortRef.name()</a>, <a class="el" href="z3py_8py_source.html#l02271">QuantifierRef.no_pattern()</a>, <a class="el" href="z3py_8py_source.html#l06910">FuncEntry.num_args()</a>, <a class="el" href="z3py_8py_source.html#l07040">FuncInterp.num_entries()</a>, <a class="el" href="z3py_8py_source.html#l07768">Solver.num_scopes()</a>, <a class="el" href="z3py_8py_source.html#l07268">ModelRef.num_sorts()</a>, <a class="el" href="z3py_8py_source.html#l00856">FuncDeclRef.params()</a>, <a class="el" href="z3py_8py_source.html#l02249">QuantifierRef.pattern()</a>, <a class="el" href="z3py_8py_source.html#l03304">AlgebraicNumRef.poly()</a>, <a class="el" href="z3py_8py_source.html#l07746">Solver.pop()</a>, <a class="el" href="z3py_8py_source.html#l06334">Goal.prec()</a>, <a class="el" href="z3py_8py_source.html#l07439">ModelRef.project()</a>, <a class="el" href="z3py_8py_source.html#l07451">ModelRef.project_with_witness()</a>, <a class="el" href="z3py_8py_source.html#l07724">Solver.push()</a>, <a class="el" href="z3py_8py_source.html#l06686">AstVector.push()</a>, <a class="el" href="z3py_8py_source.html#l02232">QuantifierRef.qid()</a>, <a class="el" href="z3py_8py_source.html#l00833">FuncDeclRef.range()</a>, <a class="el" href="z3py_8py_source.html#l04888">ArraySortRef.range()</a>, <a class="el" href="z3py_8py_source.html#l05972">DatatypeSortRef.recognizer()</a>, <a class="el" href="z3py_8py_source.html#l00228">Context.ref()</a>, <a class="el" href="z3py_8py_source.html#l06861">AstMap.reset()</a>, <a class="el" href="z3py_8py_source.html#l07786">Solver.reset()</a>, <a class="el" href="z3py_8py_source.html#l06698">AstVector.resize()</a>, <a class="el" href="z3py_8py_source.html#l07711">Solver.set()</a>, <a class="el" href="z3py_8py_source.html#l06170">ParamsRef.set()</a>, <a class="el" href="z3py_8py_source.html#l06500">Goal.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06759">AstVector.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l07138">ModelRef.sexpr()</a>, <a class="el" href="z3py_8py_source.html#l06235">ParamDescrsRef.size()</a>, <a class="el" href="z3py_8py_source.html#l06364">Goal.size()</a>, <a class="el" href="z3py_8py_source.html#l02227">QuantifierRef.skolem_id()</a>, <a class="el" href="z3py_8py_source.html#l06734">AstVector.translate()</a>, <a class="el" href="z3py_8py_source.html#l00448">AstRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l06508">Goal.translate()</a>, <a class="el" href="z3py_8py_source.html#l07431">ModelRef.translate()</a>, <a class="el" href="z3py_8py_source.html#l01182">ExprRef.update()</a>, <a class="el" href="z3py_8py_source.html#l06041">DatatypeRef.update_field()</a>, <a class="el" href="z3py_8py_source.html#l06190">ParamsRef.validate()</a>, <a class="el" href="z3py_8py_source.html#l06959">FuncEntry.value()</a>, <a class="el" href="z3py_8py_source.html#l02300">QuantifierRef.var_name()</a>, and <a class="el" href="z3py_8py_source.html#l02316">QuantifierRef.var_sort()</a>.</p>
 
 </div>
 </div>
@@ -1616,7 +1616,7 @@ We say the string is in s-expression format.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08265">8265</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08294">8294</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
 </div>
 </div>
@@ -1632,14 +1632,14 @@ We say the string is in s-expression format.
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08271">8271</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="z3py_8py_source.html#l08300">8300</a> of file <a class="el" href="z3py_8py_source.html">z3py.py</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 23 2026 03:23:11 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Oct 25 2026 05:04:21 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -120,13 +120,13 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>// MkIntConst creates an integer constant (variable) with the given name.</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>func (c *Context) MkIntConst(name string) *Expr {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        sym := c.MkStringSymbol(name)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        return c.MkConst(sym, c.MkIntSort())</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        return newExpr(c, C.Z3_mk_const(c.ptr, sym.ptr, C.Z3_mk_int_sort(c.ptr)))</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>// MkRealConst creates a real constant (variable) with the given name.</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>func (c *Context) MkRealConst(name string) *Expr {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        sym := c.MkStringSymbol(name)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        return c.MkConst(sym, c.MkRealSort())</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        return newExpr(c, C.Z3_mk_const(c.ptr, sym.ptr, C.Z3_mk_real_sort(c.ptr)))</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>// MkAdd creates an addition.</div>
@@ -241,7 +241,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 23 2026 03:23:10 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Oct 25 2026 05:04:20 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

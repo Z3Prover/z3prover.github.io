@@ -95,17 +95,17 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>// MkBVConst creates a bit-vector constant with the given name and size.</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>func (c *Context) MkBVConst(name string, size uint) *Expr {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        sym := c.MkStringSymbol(name)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        return c.MkConst(sym, c.MkBvSort(size))</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        return newExpr(c, C.Z3_mk_const(c.ptr, sym.ptr, C.Z3_mk_bv_sort(c.ptr, C.uint(size))))</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>// MkBV creates a bit-vector numeral from an integer.</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>func (c *Context) MkBV(value int, size uint) *Expr {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        return newExpr(c, C.Z3_mk_int(c.ptr, C.int(value), c.MkBvSort(size).ptr))</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        return newExpr(c, C.Z3_mk_int(c.ptr, C.int(value), C.Z3_mk_bv_sort(c.ptr, C.uint(size))))</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>// MkBVFromInt64 creates a bit-vector from an int64.</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>func (c *Context) MkBVFromInt64(value int64, size uint) *Expr {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        return newExpr(c, C.Z3_mk_int64(c.ptr, C.int64_t(value), c.MkBvSort(size).ptr))</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        return newExpr(c, C.Z3_mk_int64(c.ptr, C.int64_t(value), C.Z3_mk_bv_sort(c.ptr, C.uint(size))))</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>// MkBVAdd creates a bit-vector addition.</div>
@@ -330,7 +330,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 23 2026 03:23:10 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Oct 25 2026 05:04:20 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
