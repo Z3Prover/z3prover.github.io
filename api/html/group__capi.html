@@ -2485,7 +2485,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <tr class="separator:ga702facf6ce72d9141652a3fdfd7cca2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga45af1fac92c060a0cc5fae5134ba87f8" id="r_ga45af1fac92c060a0cc5fae5134ba87f8"><td class="memItemLeft" align="right" valign="top">bool Z3_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__capi.html#ga45af1fac92c060a0cc5fae5134ba87f8">Z3_solver_propagate_consequence</a> (Z3_context c, Z3_solver_callback cb, unsigned num_fixed, Z3_ast const *fixed, unsigned num_eqs, Z3_ast const *eq_lhs, Z3_ast const *eq_rhs, Z3_ast conseq)</td></tr>
 <tr class="memdesc:ga45af1fac92c060a0cc5fae5134ba87f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">propagate a consequence based on fixed values and equalities. <br  />
- A client may invoke it during the <code>propagate_fixed</code>, <code>propagate_eq</code>, <code>propagate_diseq</code>, and <code>propagate_final</code> callbacks. The callback adds a propagation consequence based on the fixed values passed <code>ids</code> and equalities <code>eqs</code> based on parameters <code>lhs</code>, <code>rhs</code>.  <br /></td></tr>
+ A client may invoke it during the <code>propagate_fixed</code>, <code>propagate_eq</code>, <code>propagate_diseq</code>, and <code>propagate_final</code> callbacks. The callback adds a propagation consequence based on the fixed values passed in <code>fixed</code> and equalities between <code>eq_lhs</code> and <code>eq_rhs</code>.  <br /></td></tr>
 <tr class="separator:ga45af1fac92c060a0cc5fae5134ba87f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6e08de759dc0255737d826d6e862df0e" id="r_ga6e08de759dc0255737d826d6e862df0e"><td class="memItemLeft" align="right" valign="top">void Z3_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__capi.html#ga6e08de759dc0255737d826d6e862df0e">Z3_solver_set_initial_value</a> (Z3_context c, Z3_solver s, Z3_ast v, Z3_ast val)</td></tr>
 <tr class="memdesc:ga6e08de759dc0255737d826d6e862df0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">provide an initialization hint to the solver. The initialization hint is used to calibrate an initial value of the expression that represents a variable. If the variable is Boolean, the initial phase is set according to <code>value</code>. If the variable is an integer or real, the initial Simplex tableau is recalibrated to attempt to follow the value assignment.  <br /></td></tr>
@@ -34117,18 +34117,18 @@ The number of arguments must be greater than zero. </dd></dl>
 </div><div class="memdoc">
 
 <p>propagate a consequence based on fixed values and equalities. <br  />
- A client may invoke it during the <code>propagate_fixed</code>, <code>propagate_eq</code>, <code>propagate_diseq</code>, and <code>propagate_final</code> callbacks. The callback adds a propagation consequence based on the fixed values passed <code>ids</code> and equalities <code>eqs</code> based on parameters <code>lhs</code>, <code>rhs</code>. </p>
+ A client may invoke it during the <code>propagate_fixed</code>, <code>propagate_eq</code>, <code>propagate_diseq</code>, and <code>propagate_final</code> callbacks. The callback adds a propagation consequence based on the fixed values passed in <code>fixed</code> and equalities between <code>eq_lhs</code> and <code>eq_rhs</code>. </p>
 <p>The solver might discard the propagation in case it is true in the current state. The function returns false in this case; otw. the function returns true. At least one propagation in the final callback has to return true in order to prevent the solver from finishing.</p>
-<p>Assume the callback has the signature: <code>propagate_consequence_eh(context, solver_cb, num_ids, ids, num_eqs, lhs, rhs, consequence)</code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>- context </td></tr>
-    <tr><td class="paramname">solver_cb</td><td>- solver callback </td></tr>
-    <tr><td class="paramname">num_ids</td><td>- number of fixed terms used as premise to propagation </td></tr>
-    <tr><td class="paramname">ids</td><td>- array of length <code>num_ids</code> containing terms that are fixed in the current scope </td></tr>
+    <tr><td class="paramname">cb</td><td>- solver callback </td></tr>
+    <tr><td class="paramname">num_fixed</td><td>- number of fixed terms used as premise to propagation </td></tr>
+    <tr><td class="paramname">fixed</td><td>- array of length <code>num_fixed</code> containing terms that are fixed in the current scope </td></tr>
     <tr><td class="paramname">num_eqs</td><td>- number of equalities used as premise to propagation </td></tr>
-    <tr><td class="paramname">lhs</td><td>- left side of equalities </td></tr>
-    <tr><td class="paramname">rhs</td><td>- right side of equalities </td></tr>
-    <tr><td class="paramname">consequence</td><td>- consequence to propagate. It is typically an atomic formula, but it can be an arbitrary formula. </td></tr>
+    <tr><td class="paramname">eq_lhs</td><td>- left side of equalities </td></tr>
+    <tr><td class="paramname">eq_rhs</td><td>- right side of equalities </td></tr>
+    <tr><td class="paramname">conseq</td><td>- consequence to propagate. It is typically an atomic formula, but it can be an arbitrary formula. </td></tr>
   </table>
   </dd>
 </dl>
@@ -36383,7 +36383,7 @@ The number of arguments must be greater than zero. </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 25 2026 14:17:03 for Z3 by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
