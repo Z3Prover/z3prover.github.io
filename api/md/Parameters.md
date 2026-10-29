@@ -294,6 +294,8 @@ lns_conflicts | unsigned int  |  initial conflict count for LNS search | 1000
 maxlex.enable | bool  |  enable maxlex heuristic for lexicographic MaxSAT problems | true
 maxres.add_upper_bound_block | bool  |  restrict upper bound with constraint | false
 maxres.hill_climb | bool  |  give preference for large weight cores | true
+maxres.lp_relaxation | bool  |  bound the cost of core-guided MaxSMT from below by the linear relaxation of the hard constraints over the soft literals, and try the relaxation's integral soft literals as the first assignment | true
+maxres.lp_relaxation_rlimit | unsigned int  |  resource limit for solving the linear relaxation (0 disables the limit) | 1000000
 maxres.max_core_size | unsigned int  |  break batch of generated cores if size reaches this number | 3
 maxres.max_correction_set_size | unsigned int  |  allow generating correction set constraints up to maximal size | 3
 maxres.max_num_cores | unsigned int  |  maximal number of cores per round | 200
