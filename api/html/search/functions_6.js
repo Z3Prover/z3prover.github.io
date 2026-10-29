@@ -123,7 +123,7 @@ var searchData=
   ['fpunsignedtofp_120',['fpUnsignedToFP',['../namespacez3py.html#a619cfb6caef127e240e255a402df86ac',1,'z3py']]],
   ['fpval_121',['FPVal',['../namespacez3py.html#ac14c6df67f4926a5a4d4071b5ff51372',1,'z3py']]],
   ['fpzero_122',['fpZero',['../namespacez3py.html#af1873863dc7b30ef4babd3ffd8037e2d',1,'z3py']]],
-  ['fresh_123',['fresh',['../class_microsoft_1_1_z3_1_1_user_propagator.html#a8f759272257547146e0161c9d0f9e099',1,'Microsoft.Z3.UserPropagator.Fresh()'],['../classcom_1_1microsoft_1_1z3_1_1_user_propagator_base.html#a2fc59872e253b6ba0debe55503c336e1',1,'com.microsoft.z3.UserPropagatorBase.fresh()'],['../classz3_1_1user__propagator__base.html#ac736acc1047c1812214e29a5567cb277',1,'z3::user_propagator_base::fresh()'],['../classz3py_1_1_user_propagate_base.html#af7c04e8ac423e693c7bebe9c32a15951',1,'z3py.UserPropagateBase.fresh()']]],
+  ['fresh_123',['fresh',['../classcom_1_1microsoft_1_1z3_1_1_user_propagator_base.html#a2fc59872e253b6ba0debe55503c336e1',1,'com.microsoft.z3.UserPropagatorBase.fresh()'],['../classz3_1_1user__propagator__base.html#ac736acc1047c1812214e29a5567cb277',1,'z3::user_propagator_base::fresh()'],['../classz3py_1_1_user_propagate_base.html#af7c04e8ac423e693c7bebe9c32a15951',1,'z3py.UserPropagateBase.fresh()'],['../class_microsoft_1_1_z3_1_1_user_propagator.html#a8f759272257547146e0161c9d0f9e099',1,'Microsoft.Z3.UserPropagator.Fresh()']]],
   ['freshbool_124',['FreshBool',['../namespacez3py.html#aaea88d1224255d5013c1f4f2115d8c7e',1,'z3py']]],
   ['freshconst_125',['FreshConst',['../namespacez3py.html#a58d94607d7380e5741361fc4084803b0',1,'z3py']]],
   ['freshfunction_126',['FreshFunction',['../namespacez3py.html#a30e140bbe3e94c95c20350bd13063dec',1,'z3py']]],
