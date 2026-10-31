@@ -310,6 +310,8 @@ optsmt_engine | symbol  |  select optimization engine: 'basic', 'symba' | basic
 optsmt_lex_after_unbounded | bool  |  after an unbounded lexicographic objective, determine later arithmetic objectives as the limits of their optima; false leaves them as unrestricted intervals | true
 optsmt_nlsat | bool  |  optimize real objectives under nonlinear constraints exactly over nlsat cells (algebraic optima print as root-obj; unboundedness proven by native nlsat projection under an escalating rlimit budget) | true
 optsmt_nlsat_supremum_rlimit | unsigned int  |  resource limit for certifying finite open suprema with native nlsat projection (0 disables the extra check) | 100000
+optsmt_unbounded_curve | bool  |  certify an unbounded objective along a polynomial curve through recent models (a ray, a quadratic, a cubic, or a unit direction) whose points all satisfy the hard constraints; applies to integer and mixed objectives as well | true
+pareto_cone_rlimit | unsigned int  |  resource limit for the step that, once a Pareto climb on the nlsat-backed solver finds a dominating model, maximizes the objectives in turn over the models that are at least as good as that one, so that a continuous front yields a point (0 disables it) | 1000000
 pareto_nlsat | bool  |  enumerate Pareto fronts of pure NRA problems over an nlsat-backed solver, comparing objectives against exact algebraic model values instead of rounded isolating-interval endpoints | true
 pareto_nlsat_max_lemmas | unsigned int  |  maximum number of independent learned clauses retained between Pareto climbs; shorter clauses are preferred | 128
 pareto_nlsat_reuse | bool  |  reuse nlsat clauses across Pareto checks on polynomial real problems; false keeps the exact solver that starts each check from scratch | true
@@ -745,6 +747,7 @@ ff.unique_depth | unsigned int  |  maximum Boolean split depth in uniqueness sea
 ff.unique_equalities | bool  |  add derived root equalities after uniqueness propagation | false
 ff.unique_nodes | unsigned int  |  maximum nodes in uniqueness search | 50000
 ff.unique_work | unsigned int  |  local work allowance for the entire uniqueness attempt | 1000000
+finite_set.reuse_witness | bool  |  reuse known distinguishing members instead of introducing finite-set extensionality witnesses (may change branching) | false
 ho_matching | bool  |  higher-order matching for quantifier instantiation | false
 ho_matching_bound | unsigned int  |  per-problem expansion-step budget of the higher-order matching search; bounds the (undecidable) HO unification to guarantee termination | 10000
 ho_qmatcher | bool  |  higher-order matching and term-enumeration quantifier engine | false
