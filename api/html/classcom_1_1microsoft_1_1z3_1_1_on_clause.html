@@ -109,9 +109,10 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Clause inference callback. </p>
 <p>Allows users to observe clauses learned during solving. Useful for custom learning strategies, clause sharing in parallel solvers, debugging, and proof extraction. </p>
-<p>Usage: create an instance, override <code><a class="el" href="">onClause(Expr, int[], ASTVector)</a></code>, and close the instance when done. </p>
+<p>Usage: create an instance, override <code class="JavaDocCode">onClause</code>, and close the instance when done. </p>
+<dl class="section see"><dt>See also</dt><dd>OnClause::onClause </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_on_clause_8java_source.html#l00034">34</a> of file <a class="el" href="_on_clause_8java_source.html">OnClause.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_on_clause_8java_source.html#l00035">35</a> of file <a class="el" href="_on_clause_8java_source.html">OnClause.java</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad17e1f176caeb0530a25317f64ddf36d" name="ad17e1f176caeb0530a25317f64ddf36d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad17e1f176caeb0530a25317f64ddf36d">&#9670;&#160;</a></span>OnClause()</h2>
@@ -161,11 +162,11 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_on_clause_8java_source.html#l00046">46</a> of file <a class="el" href="_on_clause_8java_source.html">OnClause.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>                                                {</div>
-<div class="line"><span class="lineno">   47</span>        this.ctx = ctx;</div>
-<div class="line"><span class="lineno">   48</span>        javainfo = Native.onClauseInit(<span class="keyword">this</span>, ctx.<a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_context.html#a4f789d47d93c150a6e12a4d54ff1597a">nCtx</a>(), solver.getNativeObject());</div>
-<div class="line"><span class="lineno">   49</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_on_clause_8java_source.html#l00047">47</a> of file <a class="el" href="_on_clause_8java_source.html">OnClause.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>                                                {</div>
+<div class="line"><span class="lineno">   48</span>        this.ctx = ctx;</div>
+<div class="line"><span class="lineno">   49</span>        javainfo = Native.onClauseInit(<span class="keyword">this</span>, ctx.<a class="code hl_function" href="classcom_1_1microsoft_1_1z3_1_1_context.html#a4f789d47d93c150a6e12a4d54ff1597a">nCtx</a>(), solver.getNativeObject());</div>
+<div class="line"><span class="lineno">   50</span>    }</div>
 <div class="ttc" id="aclasscom_1_1microsoft_1_1z3_1_1_context_html_a4f789d47d93c150a6e12a4d54ff1597a"><div class="ttname"><a href="classcom_1_1microsoft_1_1z3_1_1_context.html#a4f789d47d93c150a6e12a4d54ff1597a">com.microsoft.z3.Context.nCtx</a></div><div class="ttdeci">long nCtx()</div><div class="ttdef"><b>Definition</b> <a href="_context_8java_source.html#l04854">Context.java:4854</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -195,13 +196,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Unregisters the callback and frees associated resources. Must be called when the callback is no longer needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="_on_clause_8java_source.html#l00079">79</a> of file <a class="el" href="_on_clause_8java_source.html">OnClause.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>                        {</div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span> (javainfo != 0) {</div>
-<div class="line"><span class="lineno">   81</span>            Native.onClauseDestroy(javainfo);</div>
-<div class="line"><span class="lineno">   82</span>            javainfo = 0;</div>
-<div class="line"><span class="lineno">   83</span>        }</div>
-<div class="line"><span class="lineno">   84</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_on_clause_8java_source.html#l00080">80</a> of file <a class="el" href="_on_clause_8java_source.html">OnClause.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>                        {</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">if</span> (javainfo != 0) {</div>
+<div class="line"><span class="lineno">   82</span>            Native.onClauseDestroy(javainfo);</div>
+<div class="line"><span class="lineno">   83</span>            javainfo = 0;</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -255,8 +256,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_on_clause_8java_source.html#l00063">63</a> of file <a class="el" href="_on_clause_8java_source.html">OnClause.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="_on_clause_8java_source.html#l00064">64</a> of file <a class="el" href="_on_clause_8java_source.html">OnClause.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>

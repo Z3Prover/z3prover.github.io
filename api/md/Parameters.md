@@ -285,6 +285,7 @@ optimization parameters
 dump_benchmarks | bool  |  dump benchmarks for profiling | false
 dump_models | bool  |  display intermediary models to stdout | false
 elim_01 | bool  |  eliminate 01 variables | true
+elim_quantifiers_rlimit | unsigned int  |  resource limit for replacing hard constraints that quantify over linear integer or linear real arithmetic by equivalent quantifier-free constraints before optimization (0 disables it) | 1000000
 enable_core_rotate | bool  |  enable core rotation to both sample cores and correction sets | false
 enable_lns | bool  |  enable LNS during weighted maxsat | false
 enable_sat | bool  |  enable the new SAT core for propositional constraints | true
@@ -311,7 +312,7 @@ optsmt_lex_after_unbounded | bool  |  after an unbounded lexicographic objective
 optsmt_nlsat | bool  |  optimize real objectives under nonlinear constraints exactly over nlsat cells (algebraic optima print as root-obj; unboundedness proven by native nlsat projection under an escalating rlimit budget) | true
 optsmt_nlsat_supremum_rlimit | unsigned int  |  resource limit for certifying finite open suprema with native nlsat projection (0 disables the extra check) | 100000
 optsmt_unbounded_curve | bool  |  certify an unbounded objective along a polynomial curve through recent models (a ray, a quadratic, a cubic, or a unit direction) whose points all satisfy the hard constraints; applies to integer and mixed objectives as well | true
-pareto_cone_rlimit | unsigned int  |  resource limit for the step that, once a Pareto climb on the nlsat-backed solver finds a dominating model, maximizes the objectives in turn over the models that are at least as good as that one, so that a continuous front yields a point (0 disables it) | 1000000
+pareto_cone_rlimit | unsigned int  |  resource limit for the step that, once a Pareto climb finds a dominating model, maximizes the objectives in turn over the models that are at least as good as that one, so that a continuous front yields a point (0 disables it) | 1000000
 pareto_nlsat | bool  |  enumerate Pareto fronts of pure NRA problems over an nlsat-backed solver, comparing objectives against exact algebraic model values instead of rounded isolating-interval endpoints | true
 pareto_nlsat_max_lemmas | unsigned int  |  maximum number of independent learned clauses retained between Pareto climbs; shorter clauses are preferred | 128
 pareto_nlsat_reuse | bool  |  reuse nlsat clauses across Pareto checks on polynomial real problems; false keeps the exact solver that starts each check from scratch | true
@@ -681,6 +682,7 @@ bv.solver | unsigned int  |  bit-vector solver engine: 0 - bit-blasting, 1 - pol
 bv.watch_diseq | bool  |  use watch lists instead of eager axioms for bit-vectors | false
 candidate_models | bool  |  create candidate models even when quantifier or theory reasoning is incomplete | false
 case_split | unsigned int  |  0 - case split based on variable activity, 1 - similar to 0, but delay case splits created during the search, 2 - similar to 0, but cache the relevancy, 3 - case split based on relevancy (structural splitting), 4 - case split on relevancy and activity, 5 - case split on relevancy and current goal, 6 - activity-based case split with theory-aware branching activity | 1
+case_split_relevant_first | bool  |  prefer relevant variables in activity-based case splits (case_split=0,1,2) when relevancy is enabled | false
 clause_proof | bool  |  record a clausal proof; with proof=true, replace learned-clause proof DAGs by a clause trail | false
 core.extend_nonlocal_patterns | bool  |  extend unsat cores with literals that have quantifiers with patterns that contain symbols which are not in the quantifier's body | false
 core.extend_patterns | bool  |  extend unsat core with literals that trigger (potential) quantifier instances | false

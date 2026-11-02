@@ -90,113 +90,326 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> java.io.InputStream;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> java.nio.file.Files;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> java.nio.file.Path;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.util.Locale;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">final</span> <span class="keyword">class </span>NativeLibraryLoader {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">private</span> NativeLibraryLoader() { }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// Called only from Native&#39;s class initializer, which the JVM serializes.</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> load() {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">if</span> (Boolean.parseBoolean(System.getProperty(<span class="stringliteral">&quot;z3.skipLibraryLoad&quot;</span>))) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        UnsatisfiedLinkError first;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            System.loadLibrary(<span class="stringliteral">&quot;z3java&quot;</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        } <span class="keywordflow">catch</span> (UnsatisfiedLinkError ex) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            first = ex;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        UnsatisfiedLinkError second;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            System.loadLibrary(<span class="stringliteral">&quot;libz3java&quot;</span>);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        } <span class="keywordflow">catch</span> (UnsatisfiedLinkError ex) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            second = ex;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.nio.file.Paths;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.nio.file.LinkOption;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> java.nio.file.DirectoryStream;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> java.nio.file.StandardCopyOption;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">import</span> java.nio.file.StandardOpenOption;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">import</span> java.nio.file.attribute.PosixFilePermissions;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">import</span> java.nio.file.attribute.PosixFilePermission;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">import</span> java.nio.channels.FileChannel;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">import</span> java.nio.channels.FileLock;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">import</span> java.nio.channels.OverlappingFileLockException;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">import</span> java.security.MessageDigest;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">import</span> java.security.NoSuchAlgorithmException;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">import</span> java.util.Locale;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">import</span> java.util.Set;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">import</span> java.util.TreeMap;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">final</span> <span class="keyword">class </span>NativeLibraryLoader {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">private</span> NativeLibraryLoader() { }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// Called only from Native&#39;s class initializer, which the JVM serializes.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> load() {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">if</span> (Boolean.parseBoolean(System.getProperty(<span class="stringliteral">&quot;z3.skipLibraryLoad&quot;</span>))) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> platform = platform();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> stage = <span class="stringliteral">&quot;finding bundled resources for &quot;</span> + platform;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> core = libraryName(platform, <span class="stringliteral">&quot;z3&quot;</span>);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> bridge = libraryName(platform, <span class="stringliteral">&quot;z3java&quot;</span>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="comment">// Check both before creating a directory or loading either library.</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordflow">try</span> (InputStream coreInput = resource(platform, core);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                 InputStream bridgeInput = resource(platform, bridge)) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                Path directory = Files.createTempDirectory(<span class="stringliteral">&quot;z3-native-&quot;</span>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                directory.toFile().deleteOnExit();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                stage = <span class="stringliteral">&quot;extracting bundled resources for &quot;</span> + platform + <span class="stringliteral">&quot; to &quot;</span> + directory;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                Path corePath = extract(directory, core, coreInput);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                Path bridgePath = extract(directory, bridge, bridgeInput);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                stage = <span class="stringliteral">&quot;loading &quot;</span> + corePath;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                System.load(corePath.toAbsolutePath().toString());</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                stage = <span class="stringliteral">&quot;loading &quot;</span> + bridgePath;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                System.load(bridgePath.toAbsolutePath().toString());</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        } <span class="keywordflow">catch</span> (IOException | UnsatisfiedLinkError | SecurityException ex) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            UnsatisfiedLinkError error = <span class="keyword">new</span> UnsatisfiedLinkError(</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="stringliteral">&quot;Failed to load Z3 native libraries for &quot;</span> + platform + <span class="stringliteral">&quot; while &quot;</span> + stage</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                + <span class="stringliteral">&quot;. System attempts: z3java: &quot;</span> + first.getMessage()</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                + <span class="stringliteral">&quot;; libz3java: &quot;</span> + second.getMessage()</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                + <span class="stringliteral">&quot;. Bundled attempt: &quot;</span> + ex.getMessage()</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                + <span class="stringliteral">&quot;. Check the platform classifier, native runtime dependencies and writable java.io.tmpdir.&quot;</span>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            error.initCause(ex);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            error.addSuppressed(first);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            error.addSuppressed(second);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">throw</span> error;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">private</span> <span class="keyword">static</span> InputStream resource(String platform, String name) <span class="keywordflow">throws</span> IOException {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> path = <span class="stringliteral">&quot;/com/microsoft/z3/native/&quot;</span> + platform + <span class="stringliteral">&quot;/&quot;</span> + name;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        InputStream input = NativeLibraryLoader.class.getResourceAsStream(path);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span> (input == <span class="keyword">null</span>) {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="stringliteral">&quot;Missing bundled native resource &quot;</span> + path);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> input;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">private</span> <span class="keyword">static</span> Path extract(Path directory, String name, InputStream input) <span class="keywordflow">throws</span> IOException {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        Path target = directory.resolve(name);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="comment">// The directory is unique; do not overwrite or use a shared extraction cache.</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        target.toFile().deleteOnExit();</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        Files.copy(input, target);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">return</span> target;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">private</span> <span class="keyword">static</span> <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> libraryName(String platform, String name) {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">if</span> (platform.startsWith(<span class="stringliteral">&quot;win-&quot;</span>)) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">return</span> name.equals(<span class="stringliteral">&quot;z3&quot;</span>) ? <span class="stringliteral">&quot;libz3.dll&quot;</span> : <span class="stringliteral">&quot;z3java.dll&quot;</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;lib&quot;</span> + name + (platform.startsWith(<span class="stringliteral">&quot;osx-&quot;</span>) ? <span class="stringliteral">&quot;.dylib&quot;</span> : <span class="stringliteral">&quot;.so&quot;</span>);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">static</span> <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> platform() {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> os = System.getProperty(<span class="stringliteral">&quot;os.name&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).toLowerCase(Locale.ROOT);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> arch = System.getProperty(<span class="stringliteral">&quot;os.arch&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).toLowerCase(Locale.ROOT);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> osPart;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">if</span> (os.startsWith(<span class="stringliteral">&quot;windows&quot;</span>)) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            osPart = <span class="stringliteral">&quot;win&quot;</span>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (os.startsWith(<span class="stringliteral">&quot;mac&quot;</span>) || os.equals(<span class="stringliteral">&quot;darwin&quot;</span>)) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            osPart = <span class="stringliteral">&quot;osx&quot;</span>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (os.equals(<span class="stringliteral">&quot;linux&quot;</span>)) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            osPart = <span class="stringliteral">&quot;linux&quot;</span>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            osPart = <span class="stringliteral">&quot;unsupported-os&quot;</span>;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> archPart;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">if</span> (arch.equals(<span class="stringliteral">&quot;amd64&quot;</span>) || arch.equals(<span class="stringliteral">&quot;x86_64&quot;</span>)) {</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            archPart = <span class="stringliteral">&quot;x64&quot;</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arch.equals(<span class="stringliteral">&quot;aarch64&quot;</span>) || arch.equals(<span class="stringliteral">&quot;arm64&quot;</span>)) {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            archPart = <span class="stringliteral">&quot;arm64&quot;</span>;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arch.equals(<span class="stringliteral">&quot;x86&quot;</span>) || arch.matches(<span class="stringliteral">&quot;i[3-6]86&quot;</span>)) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            archPart = <span class="stringliteral">&quot;x86&quot;</span>;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            archPart = <span class="stringliteral">&quot;unsupported-arch&quot;</span>;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">return</span> osPart + <span class="stringliteral">&quot;-&quot;</span> + archPart;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        UnsatisfiedLinkError first;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            System.loadLibrary(<span class="stringliteral">&quot;z3java&quot;</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        } <span class="keywordflow">catch</span> (UnsatisfiedLinkError ex) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            first = ex;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        UnsatisfiedLinkError second;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            System.loadLibrary(<span class="stringliteral">&quot;libz3java&quot;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        } <span class="keywordflow">catch</span> (UnsatisfiedLinkError ex) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            second = ex;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> platform = platform();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> stage = <span class="stringliteral">&quot;finding bundled resources for &quot;</span> + platform;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        Throwable cacheFailure = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> core = libraryName(platform, <span class="stringliteral">&quot;z3&quot;</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> bridge = libraryName(platform, <span class="stringliteral">&quot;z3java&quot;</span>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keywordflow">if</span> (!<span class="stringliteral">&quot;false&quot;</span>.equalsIgnoreCase(System.getProperty(<span class="stringliteral">&quot;z3.nativeCache&quot;</span>))) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    loadCached(platform, core, bridge);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            } <span class="keywordflow">catch</span> (IOException | UnsatisfiedLinkError | SecurityException</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                     | OverlappingFileLockException | java.nio.file.InvalidPathException</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                     | UnsupportedOperationException ex) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                <span class="comment">// Restricted properties/filesystems and other ClassLoaders keep the private path.</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                cacheFailure = ex;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="comment">// Check both before creating a directory or loading either library.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">try</span> (InputStream coreInput = resource(platform, core);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                 InputStream bridgeInput = resource(platform, bridge)) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                Path directory = Files.createTempDirectory(<span class="stringliteral">&quot;z3-native-&quot;</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                directory.toFile().deleteOnExit();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                stage = <span class="stringliteral">&quot;extracting bundled resources for &quot;</span> + platform + <span class="stringliteral">&quot; to &quot;</span> + directory;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                Path corePath = extract(directory, core, coreInput);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                Path bridgePath = extract(directory, bridge, bridgeInput);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                stage = <span class="stringliteral">&quot;loading &quot;</span> + corePath;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                System.load(corePath.toAbsolutePath().toString());</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                stage = <span class="stringliteral">&quot;loading &quot;</span> + bridgePath;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                System.load(bridgePath.toAbsolutePath().toString());</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        } <span class="keywordflow">catch</span> (IOException | UnsatisfiedLinkError | SecurityException ex) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            UnsatisfiedLinkError error = <span class="keyword">new</span> UnsatisfiedLinkError(</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="stringliteral">&quot;Failed to load Z3 native libraries for &quot;</span> + platform + <span class="stringliteral">&quot; while &quot;</span> + stage</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                + <span class="stringliteral">&quot;. System attempts: z3java: &quot;</span> + first.getMessage()</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                + <span class="stringliteral">&quot;; libz3java: &quot;</span> + second.getMessage()</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                + (cacheFailure == <span class="keyword">null</span> ? <span class="stringliteral">&quot;&quot;</span> : <span class="stringliteral">&quot;. Cache attempt: &quot;</span> + cacheFailure)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                + <span class="stringliteral">&quot;. Bundled attempt: &quot;</span> + ex.getMessage()</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                + <span class="stringliteral">&quot;. Check the platform classifier, native runtime dependencies and writable java.io.tmpdir.&quot;</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            error.initCause(ex);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            error.addSuppressed(first);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            error.addSuppressed(second);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">if</span> (cacheFailure != <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                ex.addSuppressed(cacheFailure);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">throw</span> error;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">private</span> <span class="keyword">static</span> InputStream resource(String platform, String name) <span class="keywordflow">throws</span> IOException {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> path = <span class="stringliteral">&quot;/com/microsoft/z3/native/&quot;</span> + platform + <span class="stringliteral">&quot;/&quot;</span> + name;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        InputStream input = NativeLibraryLoader.class.getResourceAsStream(path);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span> (input == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="stringliteral">&quot;Missing bundled native resource &quot;</span> + path);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> input;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">private</span> <span class="keyword">static</span> Path extract(Path directory, String name, InputStream input) <span class="keywordflow">throws</span> IOException {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        Path target = directory.resolve(name);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="comment">// Private fallback for disabled/unavailable caching or another ClassLoader.</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        target.toFile().deleteOnExit();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        Files.copy(input, target);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> target;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">private</span> <span class="keyword">static</span> MessageDigest digest() {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">return</span> MessageDigest.getInstance(<span class="stringliteral">&quot;SHA-256&quot;</span>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        } <span class="keywordflow">catch</span> (NoSuchAlgorithmException ex) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> AssertionError(<span class="stringliteral">&quot;SHA-256 is required by Java&quot;</span>, ex);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">private</span> <span class="keyword">static</span> <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> hash(InputStream input) <span class="keywordflow">throws</span> IOException {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        MessageDigest digest = digest();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordtype">byte</span>[] buffer = <span class="keyword">new</span> <span class="keywordtype">byte</span>[65536];</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordtype">int</span> count;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordflow">while</span> ((count = input.read(buffer)) != -1) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            digest.update(buffer, 0, count);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        StringBuilder text = <span class="keyword">new</span> StringBuilder(64);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">for</span> (<span class="keywordtype">byte</span> value : digest.digest()) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            text.append(Character.forDigit((value &amp; 255) &gt;&gt;&gt; 4, 16));</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            text.append(Character.forDigit(value &amp; 15, 16));</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">return</span> text.toString();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">boolean</span> matches(Path path, String expected) <span class="keywordflow">throws</span> IOException {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">if</span> (!Files.isRegularFile(path, LinkOption.NOFOLLOW_LINKS)) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">try</span> (InputStream input = Files.newInputStream(path, LinkOption.NOFOLLOW_LINKS)) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">return</span> expected.equals(hash(input));</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> checkPath(Path path) <span class="keywordflow">throws</span> IOException {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">for</span> (Path part = path; part != <span class="keyword">null</span>; part = part.getParent()) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            <span class="keywordflow">if</span> (Files.isSymbolicLink(part)) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> IOException(<span class="stringliteral">&quot;Symbolic link in native cache path: &quot;</span> + part);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keyword">private</span> <span class="keyword">static</span> Path cacheRoot() throws IOException {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> configured = System.getProperty(<span class="stringliteral">&quot;z3.nativeCacheDir&quot;</span>);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> profile = System.getProperty(<span class="stringliteral">&quot;user.home&quot;</span>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">if</span> (profile == <span class="keyword">null</span> || profile.isEmpty()) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IOException(<span class="stringliteral">&quot;No user.home for the native cache&quot;</span>);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        Path root = (configured == <span class="keyword">null</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            ? Paths.get(profile, <span class="stringliteral">&quot;.z3&quot;</span>, <span class="stringliteral">&quot;native&quot;</span>)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            : Paths.get(configured)).toAbsolutePath().normalize();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        checkPath(root);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">if</span> (root.getFileSystem().supportedFileAttributeViews().contains(<span class="stringliteral">&quot;posix&quot;</span>)) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            Files.createDirectories(root, PosixFilePermissions.asFileAttribute(</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                PosixFilePermissions.fromString(<span class="stringliteral">&quot;rwx------&quot;</span>)));</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            Set&lt;PosixFilePermission&gt; permissions = Files.getPosixFilePermissions(root);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordflow">if</span> (permissions.contains(PosixFilePermission.GROUP_WRITE)</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    || permissions.contains(PosixFilePermission.OTHERS_WRITE)) {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> IOException(<span class="stringliteral">&quot;Native cache is writable by other users: &quot;</span> + root);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="comment">// On Windows inherit the user&#39;s profile ACL, including for .z3/native.</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            Files.createDirectories(root);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        checkPath(root);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">if</span> (!Files.getOwner(root).equals(Files.getOwner(Paths.get(System.getProperty(<span class="stringliteral">&quot;user.home&quot;</span>))))) {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IOException(<span class="stringliteral">&quot;Native cache is not owned by the profile owner: &quot;</span> + root);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">return</span> root;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> loadCached(String platform, String core, String bridge) <span class="keywordflow">throws</span> IOException {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="comment">// Interned strings are shared across ClassLoaders. Keep one cache channel open</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="comment">// per JVM: on some systems closing another channel releases this JVM&#39;s locks.</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keyword">synchronized</span> (<span class="stringliteral">&quot;com.microsoft.z3.NativeLibraryLoader.cache&quot;</span>) {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            loadCachedLocked(platform, core, bridge);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> loadCachedLocked(String platform, String core, String bridge) <span class="keywordflow">throws</span> IOException {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> coreHash;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> bridgeHash;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="comment">// Derive identity from the actual bundled bytes, not the version or a mutable manifest.</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keywordflow">try</span> (InputStream input = resource(platform, core)) {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            coreHash = hash(input);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">try</span> (InputStream input = resource(platform, bridge)) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            bridgeHash = hash(input);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> identity;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">try</span> (InputStream input = <span class="keyword">new</span> java.io.ByteArrayInputStream(</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                (coreHash + bridgeHash).getBytes(java.nio.charset.StandardCharsets.US_ASCII))) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            identity = hash(input);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        Path root = cacheRoot();</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="comment">// One process lock covers verification, publication, loading and eviction.</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="comment">// File locks overlap across ClassLoaders in one JVM; that case uses private copies.</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <span class="keywordflow">try</span> (FileChannel channel = FileChannel.open(root.resolve(<span class="stringliteral">&quot;.lock&quot;</span>),</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                StandardOpenOption.CREATE, StandardOpenOption.WRITE, LinkOption.NOFOLLOW_LINKS);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>             FileLock lock = channel.lock()) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            Path directory = root.resolve(platform + <span class="stringliteral">&quot;-&quot;</span> + identity);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            checkPath(directory);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            <span class="keywordflow">if</span> (!matches(directory.resolve(core), coreHash) || !matches(directory.resolve(bridge), bridgeHash)) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                <span class="keywordflow">if</span> (Files.exists(directory, LinkOption.NOFOLLOW_LINKS)) {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                    removeEntry(directory, core, bridge);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                Path staging = Files.createTempDirectory(root, <span class="stringliteral">&quot;.extract-&quot;</span>);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                    <span class="keywordflow">try</span> (InputStream input = resource(platform, core)) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                        Files.copy(input, staging.resolve(core));</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                    }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                    <span class="keywordflow">try</span> (InputStream input = resource(platform, bridge)) {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                        Files.copy(input, staging.resolve(bridge));</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                    }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                    <span class="keywordflow">if</span> (!matches(staging.resolve(core), coreHash) || !matches(staging.resolve(bridge), bridgeHash)) {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                        <span class="keywordflow">throw</span> <span class="keyword">new</span> IOException(<span class="stringliteral">&quot;Bundled native resources changed during extraction&quot;</span>);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                    }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                    <span class="comment">// Publish only complete, verified pairs. If atomic moves are unavailable,</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                    <span class="comment">// preserve the old private-extraction behavior instead of a partial cache.</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                    Files.move(staging, directory, StandardCopyOption.ATOMIC_MOVE);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                } <span class="keywordflow">finally</span> {</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                    <span class="keywordflow">if</span> (Files.exists(staging, LinkOption.NOFOLLOW_LINKS)) {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                        removeEntry(staging, core, bridge);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                    }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            Files.setLastModifiedTime(directory, java.nio.file.attribute.FileTime.fromMillis(System.currentTimeMillis()));</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            System.load(directory.resolve(core).toString());</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            System.load(directory.resolve(bridge).toString());</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            prune(root, directory, platform, core, bridge);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        }</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="comment">// Never recursively remove a directory, follow links, or touch unknown files.</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> checkEntry(Path directory, String core, String bridge) <span class="keywordflow">throws</span> IOException {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <span class="keywordflow">if</span> (!Files.isDirectory(directory, LinkOption.NOFOLLOW_LINKS)) {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IOException(<span class="stringliteral">&quot;Not a native cache directory: &quot;</span> + directory);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        }</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">try</span> (DirectoryStream&lt;Path&gt; files = Files.newDirectoryStream(directory)) {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            <span class="keywordflow">for</span> (Path file : files) {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> name = file.getFileName().toString();</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                <span class="keywordflow">if</span> ((!name.equals(core) &amp;&amp; !name.equals(bridge))</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                        || !Files.isRegularFile(file, LinkOption.NOFOLLOW_LINKS)) {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    <span class="keywordflow">throw</span> <span class="keyword">new</span> IOException(<span class="stringliteral">&quot;Unexpected native cache entry: &quot;</span> + file);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        }</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> removeEntry(Path directory, String core, String bridge) <span class="keywordflow">throws</span> IOException {</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        checkEntry(directory, core, bridge);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        Files.deleteIfExists(directory.resolve(core));</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        Files.deleteIfExists(directory.resolve(bridge));</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        Files.delete(directory);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    }</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> prune(Path root, Path current, String platform, String core, String bridge) {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            TreeMap&lt;String, Path&gt; previous = <span class="keyword">new</span> TreeMap&lt;String, Path&gt;();</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            <span class="keywordtype">long</span> stale = System.currentTimeMillis() - 30L * 24 * 60 * 60 * 1000;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            <span class="keywordflow">try</span> (DirectoryStream&lt;Path&gt; entries = Files.newDirectoryStream(root)) {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                <span class="keywordflow">for</span> (Path entry : entries) {</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                    <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> name = entry.getFileName().toString();</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                    <span class="keywordflow">if</span> (entry.equals(current) || !Files.isDirectory(entry, LinkOption.NOFOLLOW_LINKS)) {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                    }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                    <span class="keywordtype">long</span> modified = Files.getLastModifiedTime(entry, LinkOption.NOFOLLOW_LINKS).toMillis();</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                    <span class="keywordflow">if</span> (name.matches(platform + <span class="stringliteral">&quot;-[0-9a-f]{64}&quot;</span>)) {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                        <span class="keywordflow">try</span> { checkEntry(entry, core, bridge); } <span class="keywordflow">catch</span> (IOException ignored) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                        previous.put(<a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a>.format(Locale.ROOT, <span class="stringliteral">&quot;%020d-%s&quot;</span>, modified, name), entry);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (name.startsWith(<span class="stringliteral">&quot;.extract-&quot;</span>) &amp;&amp; modified &lt; stale) {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                        <span class="keywordflow">try</span> { removeEntry(entry, core, bridge); } <span class="keywordflow">catch</span> (IOException ignored) { }</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                    }</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                }</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>            }</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            <span class="comment">// Keep this pair and the two most recently used pairs for this platform.</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>            <span class="keywordflow">while</span> (previous.size() &gt; 2) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                Path entry = previous.pollFirstEntry().getValue();</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                <span class="keywordflow">try</span> { removeEntry(entry, core, bridge); } <span class="keywordflow">catch</span> (IOException ignored) { }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            }</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        } <span class="keywordflow">catch</span> (IOException | SecurityException ignored) {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            <span class="comment">// A loaded DLL may remain locked on Windows. Cleanup cannot break a working load.</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    }</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="keyword">private</span> <span class="keyword">static</span> <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> libraryName(String platform, String name) {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keywordflow">if</span> (platform.startsWith(<span class="stringliteral">&quot;win-&quot;</span>)) {</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            <span class="keywordflow">return</span> name.equals(<span class="stringliteral">&quot;z3&quot;</span>) ? <span class="stringliteral">&quot;libz3.dll&quot;</span> : <span class="stringliteral">&quot;z3java.dll&quot;</span>;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        }</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;lib&quot;</span> + name + (platform.startsWith(<span class="stringliteral">&quot;osx-&quot;</span>) ? <span class="stringliteral">&quot;.dylib&quot;</span> : <span class="stringliteral">&quot;.so&quot;</span>);</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <span class="keyword">static</span> <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> platform() {</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> os = System.getProperty(<span class="stringliteral">&quot;os.name&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).toLowerCase(Locale.ROOT);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> arch = System.getProperty(<span class="stringliteral">&quot;os.arch&quot;</span>, <span class="stringliteral">&quot;&quot;</span>).toLowerCase(Locale.ROOT);</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> osPart;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="keywordflow">if</span> (os.startsWith(<span class="stringliteral">&quot;windows&quot;</span>)) {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            osPart = <span class="stringliteral">&quot;win&quot;</span>;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (os.startsWith(<span class="stringliteral">&quot;mac&quot;</span>) || os.equals(<span class="stringliteral">&quot;darwin&quot;</span>)) {</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            osPart = <span class="stringliteral">&quot;osx&quot;</span>;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (os.equals(<span class="stringliteral">&quot;linux&quot;</span>)) {</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>            osPart = <span class="stringliteral">&quot;linux&quot;</span>;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>            osPart = <span class="stringliteral">&quot;unsupported-os&quot;</span>;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <a class="code hl_function" href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">String</a> archPart;</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        <span class="keywordflow">if</span> (arch.equals(<span class="stringliteral">&quot;amd64&quot;</span>) || arch.equals(<span class="stringliteral">&quot;x86_64&quot;</span>)) {</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>            archPart = <span class="stringliteral">&quot;x64&quot;</span>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arch.equals(<span class="stringliteral">&quot;aarch64&quot;</span>) || arch.equals(<span class="stringliteral">&quot;arm64&quot;</span>)) {</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>            archPart = <span class="stringliteral">&quot;arm64&quot;</span>;</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arch.equals(<span class="stringliteral">&quot;x86&quot;</span>) || arch.matches(<span class="stringliteral">&quot;i[3-6]86&quot;</span>)) {</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>            archPart = <span class="stringliteral">&quot;x86&quot;</span>;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            archPart = <span class="stringliteral">&quot;unsupported-arch&quot;</span>;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        }</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="keywordflow">return</span> osPart + <span class="stringliteral">&quot;-&quot;</span> + archPart;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>}</div>
 <div class="ttc" id="anamespacez3py_html_a2fb40ff76afdb7265871a7d4613060f0"><div class="ttname"><a href="namespacez3py.html#a2fb40ff76afdb7265871a7d4613060f0">z3py.String</a></div><div class="ttdeci">String(name, ctx=None)</div><div class="ttdef"><b>Definition</b> <a href="z3py_8py_source.html#l11932">z3py.py:11932</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
